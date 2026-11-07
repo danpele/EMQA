@@ -1,0 +1,175 @@
+% C4_brief.tex -- ONE source for the English and Romanian case brief of Case 4 (Lecture 4).
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Research case 4 (Lecture 4)}{Studiul de caz 4 (cursul 4)}}
+\begin{document}
+\emqatitle{\T{Case 4: A risk meter for energy companies --- systemic stress, price--volume risk and the dry year}%
+                {Studiul de caz 4: Un indicator de risc pentru companiile energetice --- stresul sistemic, riscul preț--volum și anii secetoși}}%
+          {\T{Based on}{Studiu bazat pe lucrarea} Toma, Dima, Grecu, Pele \& Lessmann (2026), \emph{Energy Financial Risk Meter: systemic risk in the EU energy sector},
+           SSRN 6985301, \href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}}
+
+\begin{scenario}
+\T{The risk committee of a Romanian energy group meets every month. It wants one dashboard that answers three questions.
+\textbf{Is the energy sector as a whole under stress} (so that funding, collateral and counterparties may suddenly become a problem)?
+\textbf{How much does our supply business lose because customers consume most when power is expensive} (price--volume risk)?
+And \textbf{how much would a dry year cost our hydro business if we have already sold the expected output forward?}
+The first question is the subject of the paper; the other two are the risks that make energy companies different from banks.}%
+{Comitetul de risc al unui grup energetic din România se reunește lunar și dorește un tablou de bord unic, care să răspundă la trei întrebări.
+\textbf{Se află sectorul energetic, în ansamblul său, într-o situație de stres} (astfel încît finanțarea, garanțiile și riscul de contrapartidă pot deveni brusc o problemă)?
+\textbf{Cît pierde activitatea de furnizare din cauză că clienții consumă cel mai mult atunci cînd energia este scumpă} (riscul preț--volum)?
+\textbf{Cît ne-ar costa un an secetos în activitatea hidro, dacă producția așteptată a fost deja vîndută la termen?}
+Prima întrebare face obiectul lucrării; celelalte două privesc riscurile prin care companiile energetice se deosebesc de bănci.}
+\end{scenario}
+
+\section{\T{What the paper did}{Lucrarea de referință}}
+\textbf{\T{Question.}{Întrebarea de cercetare.}} \T{Can a sector-specific systemic-risk indicator be built for the EU energy sector, how does geopolitical risk transmit to it, and does energy-sector risk transmit to equity and credit markets (Sections~1--2.4)?
+Can a risk manager observing the indicator today form better expectations about adverse outcomes than with broad stress indices alone (Section~4.8)?}%
+{Se poate construi un indicator de risc sistemic specific sectorului energetic din UE, cum influențează riscul geopolitic acest indicator și se propagă riscul din sectorul energetic către piețele de acțiuni și de credit (secțiunile~1--2.4)?
+Poate un manager de risc care urmărește astăzi indicatorul să anticipeze mai bine evenimentele nefavorabile decît cu ajutorul indicilor generali de stres (secțiunea~4.8)?}
+
+\textbf{\T{Data.}{Datele.}} \T{Daily returns and market capitalisation of 100 European energy companies plus European factors (TTF gas and Brent futures, Brent spot, STOXX Europe 600 Oil \& Gas, STOXX Europe 600, VSTOXX, crude-oil stocks), LSEG, April 2016 -- April 2026;
+the Caldara--Iacoviello daily geopolitical risk index (GPRD), 5-year CDS (credit default swap) spreads, and the ECB's Composite Indicator of Systemic Stress (CISS) as benchmark (Section~3.3).}%
+{Randamentele zilnice și capitalizarea bursieră a 100 de companii energetice europene, precum și factori la nivel european (contracte futures pe gazele TTF și pe Brent, prețul spot Brent, indicii STOXX Europe 600 Oil \& Gas și STOXX Europe 600, VSTOXX, stocurile de țiței), LSEG, aprilie 2016 -- aprilie 2026;
+indicele zilnic de risc geopolitic Caldara--Iacoviello (GPRD), marjele CDS (\emph{credit default swap}) la 5 ani și, ca reper, indicatorul compozit de stres sistemic al BCE (CISS) (secțiunea~3.3).}
+
+\textbf{\T{Main findings of the paper.}{Principalele rezultate ale lucrării.}}
+\begin{itemize}
+\item \T{``The EFRM index captures major systemic events in the energy markets, namely the 2020 COVID pandemic and the 2022 Russia--Ukraine war'' (Abstract).
+Bai--Perron tests find breaks in the monthly EFRM in February 2020 and July 2021, and the EFRM leads geopolitical risk by about seven months (Section~3.4).}%
+{Indicele EFRM surprinde principalele evenimente sistemice de pe piețele energetice: pandemia de COVID-19 din 2020 și războiul dintre Rusia și Ucraina din 2022 (rezumat).
+Testele Bai--Perron identifică rupturi structurale în seria lunară EFRM în februarie 2020 și în iulie 2021, iar EFRM devansează riscul geopolitic cu aproximativ șapte luni (secțiunea~3.4).}
+\item \T{A previously dormant geopolitical channel switched on with the invasion: the response of the EFRM to a geopolitical shock moves from $-0.2146$~pp before the war to $+1.3082$~pp after it (TVP-VAR, Section~4.1.2), while transmission from energy risk to the STOXX 600 is attenuated by ``approximately 60\,\%'' (Section~4.2.1).}%
+{Un canal geopolitic inactiv pînă atunci s-a activat odată cu invazia: răspunsul EFRM la un șoc geopolitic trece de la $-0{,}2146$~pp înainte de război la $+1{,}3082$~pp după declanșarea acestuia (TVP-VAR, secțiunea~4.1.2), iar transmiterea riscului energetic către indicele STOXX 600 se reduce cu aproximativ 60\,\% (secțiunea~4.2.1).}
+\item \T{Out of sample, predicting months of high energy-sector volatility: EFRM + CISS has AUC 0.731, EFRM alone 0.708, CISS alone 0.673 (58 months, 11 events; Table ``Out-of-Sample Probit Results'', Section~4.8.3).
+The EFRM is built to monitor systemic stress; this exercise measures its additional predictive information (Section~4.8).}%
+{În afara eșantionului de estimare, pentru prognoza lunilor cu volatilitate ridicată în sectorul energetic: EFRM + CISS are AUC 0,731, EFRM singur 0,708, iar CISS singur 0,673 (58 de luni, 11 evenimente; tabelul „Out-of-Sample Probit Results”, secțiunea~4.8.3).
+EFRM este conceput pentru monitorizarea stresului sistemic; acest exercițiu măsoară conținutul informațional suplimentar pentru prognoză (secțiunea~4.8).}
+\end{itemize}
+
+\section{\T{The method, step by step}{Metoda, pas cu pas}}
+\begin{intuition}
+\T{On a bad day, is a company hurt alone or together with the others? For each company we explain its worst days by the returns of all the other companies and by oil and gas.
+When everything is tangled, many links matter and the estimation needs a stronger ``brake'' (a larger penalty $\lambda$) to stay stable. The average brake across companies is the risk meter.}%
+{Într-o zi cu pierderi mari, este afectată o singură companie sau toate deodată? Pentru fiecare companie modelăm cuantila de 5\,\% a randamentelor (zilele cu cele mai mari pierderi) în funcție de randamentele tuturor celorlalte companii și de prețurile petrolului și gazelor.
+Cînd legăturile sînt numeroase și greu de separat, estimarea are nevoie de o penalizare $\lambda$ mai mare pentru a rămîne stabilă. Media acestei penalizări pe toate companiile este indicatorul de risc.}
+\end{intuition}
+\T{For company $j$ and a rolling window of $n$ days, the paper estimates the $\tau=5\,\%$ quantile regression (Section~3.1.1)}%
+{Pentru compania $j$ și o fereastră mobilă de $n$ zile, lucrarea estimează o regresie cuantilică pentru $\tau=5\,\%$ (secțiunea~3.1.1)}
+\[
+\min_{\alpha_j,\boldsymbol\beta_j}\ \sum_{t=1}^{n}\rho_\tau\!\left(X_{j,t}-\alpha_j-\mathbf A_{j,t}'\boldsymbol\beta_j\right)+\lambda_j\|\boldsymbol\beta_j\|_1,\qquad
+\rho_\tau(u)=|u|\,\bigl|\tau-\mathbb 1\{u<0\}\bigr|,
+\]
+\T{where $X_{j,t}$ is the log return of company $j$, $\mathbf A_{j,t}$ stacks the returns of the other $J-1$ companies and the $M$ macro factors, $\rho_\tau$ is the check (``pinball'') loss that targets the 5\,\% quantile, and $\|\boldsymbol\beta_j\|_1=\sum_k|\beta_{j,k}|$ is the LASSO penalty that sets weak links to zero.
+$\lambda_j$ is chosen by minimising $\mathrm{GACV}=\sum_t\rho_\tau(\hat u_t)/(n-\mathrm{df})$, with df the number of non-zero coefficients. The index is $\mathrm{EFRM}_t=\frac1J\sum_j\lambda_{j,t}$;
+monthly values weight days by $1/\sigma_t$, the inverse of the 5-day volatility of the index (Section~3.1.2).
+Energy-specific risks need no model: the \emph{price--volume premium} of a month is the load-weighted price minus the base price, $\sum_h p_hL_h/\sum_hL_h-\frac1H\sum_hp_h$;
+the \emph{dry-year buy-back cost} of a producer that sold its median (P50) hydro output forward is $\max(0,\mathrm{P50}-Q_y)\times\bar p_y$, with $Q_y$ the output and $\bar p_y$ the average spot price of year $y$.}%
+{unde $X_{j,t}$ este randamentul logaritmic al companiei $j$, $\mathbf A_{j,t}$ conține randamentele celorlalte $J-1$ companii și cei $M$ factori macroeconomici, $\rho_\tau$ este funcția de pierdere de tip „pinball”, asociată cuantilei de 5\,\%, iar $\|\boldsymbol\beta_j\|_1=\sum_k|\beta_{j,k}|$ este penalizarea LASSO (\emph{Least Absolute Shrinkage and Selection Operator}), care anulează coeficienții legăturilor slabe.
+Valoarea $\lambda_j$ se alege prin minimizarea criteriului $\mathrm{GACV}=\sum_t\rho_\tau(\hat u_t)/(n-\mathrm{df})$, unde df este numărul de coeficienți nenuli. Indicele este $\mathrm{EFRM}_t=\frac1J\sum_j\lambda_{j,t}$;
+valorile lunare sînt medii ale valorilor zilnice, cu ponderi proporționale cu $1/\sigma_t$, inversul volatilității indicelui pe 5 zile (secțiunea~3.1.2).
+Riscurile specifice sectorului energetic nu necesită un model: \emph{prima preț--volum} dintr-o lună este diferența dintre prețul ponderat cu consumul și prețul de bază, $\sum_h p_hL_h/\sum_hL_h-\frac1H\sum_hp_h$;
+\emph{costul de recumpărare într-un an secetos} pentru un producător care a vîndut la termen producția hidro mediană (P50) este $\max(0,\mathrm{P50}-Q_y)\times\bar p_y$, unde $Q_y$ este producția, iar $\bar p_y$ prețul spot mediu din anul $y$.}
+\begin{decision}
+\T{A systemic meter needs a broad cross-section of companies; for a single Romanian group, the risks that actually move the profit and loss are the shape of demand and the weather.
+Put them on the same dashboard, measured in EUR.}%
+{Un indicator sistemic necesită un eșantion larg de companii; pentru un singur grup din România, riscurile care influențează efectiv profitul sînt profilul cererii și condițiile meteorologice.
+Includeți-le în același tablou de bord, exprimate în EUR.}
+\end{decision}
+
+\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\T{Notebook \texttt{C4\_notebook\_EN.ipynb}: (A) a ``RO-ERM'' from OMV Petrom, Romgaz and Nuclearelectrica with Brent and Henry Hub as factors, \NnObs\ trading days, 250-day windows re-estimated every 5 days (\NnWin\ windows, \Nstart--\Nend); the window length is our choice.
+(B) An expanding-window probit for ``next month's volatility above the 75th percentile'', \NnOOS\ out-of-sample months (\NnEvents\ events); no CISS in our data, so past volatility is the benchmark.
+(C) Hourly prices and load for the price--volume premium; daily hydro output (reservoir + run-of-river) for the dry-year cost.}%
+{Notebook-ul \texttt{C4\_notebook\_RO.ipynb} conține trei părți. (A) Un indicator „RO-ERM” construit din OMV Petrom, Romgaz și Nuclearelectrica, cu Brent și Henry Hub ca factori: \NnObs\ de zile de tranzacționare, ferestre de 250 de zile reestimate la fiecare 5 zile (\NnWin\ ferestre, \Nstart--\Nend); lungimea ferestrei este aleasă de noi.
+(B) Un model probit estimat pe o fereastră care se extinde treptat pentru evenimentul „volatilitatea din luna următoare depășește percentila 75”, evaluat pe \NnOOS\ de luni din afara eșantionului de estimare (\NnEvents\ de evenimente); CISS nu se află în datele cursului, de aceea reperul este volatilitatea trecută.
+(C) Prețurile și consumul orar, pentru prima preț--volum; producția hidro zilnică (din lacuri de acumulare și pe firul apei), pentru costul anului secetos.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.56\linewidth}\centering
+\includegraphics[width=\linewidth]{f1_risk_meter}
+\caption{\T{The RO-ERM: average LASSO penalty across the three companies.}{RO-ERM: penalizarea LASSO medie pentru cele trei companii.}}
+\src{\T{our estimates on EODHD and Yahoo Finance data, \Nstart--\Nend.}{estimările noastre pe date EODHD și Yahoo Finance, \Nstart--\Nend.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\centering
+\includegraphics[width=\linewidth]{f2_early_warning}
+\caption{\T{Out-of-sample ROC curves for turbulent months.}{Curbele ROC în afara eșantionului de estimare, pentru lunile cu volatilitate ridicată.}}
+\src{\T{our probit models; \NnOOS\ months.}{modelele noastre probit; \NnOOS\ de luni.}}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{Early warning of a turbulent next month (AUC = area under the ROC curve, 0.5 = no discrimination; Brier skill score $>0$ = better than the base rate). Best in bold.}%
+{Avertizarea timpurie privind o lună cu volatilitate ridicată (AUC = aria de sub curba ROC; 0,5 = lipsa puterii de discriminare; scorul Brier relativ $>0$ = mai bun decît frecvența de bază). Cea mai bună valoare este marcată cu aldine.}}
+\tabin{early_warning}
+\src{\T{our computation. Paper (100 EU firms, CISS benchmark): EFRM 0.708, CISS 0.673, EFRM + CISS 0.731.}{calcule proprii. Lucrarea (100 de companii din UE, reper CISS): EFRM 0,708, CISS 0,673, EFRM + CISS 0,731.}}
+\end{table}
+
+\T{\textbf{What our data show (A--B).} Our three-company meter peaks in \NermPeak; it is higher in March--June 2020 (\NermCovid\ $\times10^{-3}$) than in 2018--2019 (\NermPre), and lower during the 2022 war (\NermWar).
+As an early warning it reaches AUC \NaucERM, while past volatility alone reaches \NaucVol. With only four covariates, GACV chooses (almost) no penalty in \NlamFloor\,\% of the firm-windows, so $\lambda$ carries little information in a network this small.
+The managerial lesson: breadth of the cross-section matters --- a systemic meter needs a broad set of firms, as in the paper's 100-company design.}%
+{\textbf{Ce arată datele (A--B).} Indicatorul nostru construit din trei companii atinge maximul în \NermPeak; este mai ridicat în martie--iunie 2020 (\NermCovid\ $\times10^{-3}$) decît în 2018--2019 (\NermPre) și mai scăzut în timpul războiului din 2022 (\NermWar).
+Ca instrument de avertizare timpurie, obține un AUC de \NaucERM, în timp ce volatilitatea trecută, singură, ajunge la \NaucVol. Cu numai patru variabile explicative, criteriul GACV alege o penalizare nulă sau aproape nulă în \NlamFloor\,\% din perechile companie--fereastră, deci $\lambda$ conține puțină informație într-o rețea atît de mică.
+Concluzia pentru management: dimensiunea eșantionului contează --- un indicator sistemic are nevoie de un număr mare de companii, ca în cadrul cu 100 de companii din lucrare.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.56\linewidth}\centering
+\includegraphics[width=\linewidth]{f3_price_volume}
+\caption{\T{Monthly price--volume premium: load-weighted minus base price.}{Prima preț--volum lunară: diferența dintre prețul ponderat cu consumul și prețul de bază.}}
+\src{energy-charts.info; \T{hourly 2016--Oct 2026.}{date orare, 2016--oct.\ 2026.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\centering
+\includegraphics[width=\linewidth]{f4_dry_year}
+\caption{\T{Annual hydro output vs average spot price.}{Producția hidro anuală și prețul spot mediu.}}
+\src{energy-charts.info; 2016--2025.}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{Dry-year risk of a hydro producer that sold its median output (P50 = \NPfifty\ TWh) forward. Largest cost in bold.}{Riscul anului secetos pentru un producător hidro care a vîndut la termen producția mediană (P50 = \NPfifty\ TWh). Cel mai mare cost este marcat cu aldine.}}
+\tabin{hydro}
+\src{\T{our computation on energy-charts.info data (national hydro output, all producers).}{calcule proprii pe date energy-charts.info (producția hidro națională, toți producătorii).}}
+\end{table}
+
+\T{\textbf{Energy-specific risks (C).} Serving the household profile with flat baseload costs a premium of \NpremEarly\,\% on average in 2016--2019, \NpremTwoTwo\ EUR/MWh (\NpremPctTwoTwo\,\%) in 2022 and \NpremLast\ EUR/MWh (\NpremPctLast\,\%) in 2025 --- the cost of evening peaks and of solar middays.
+Hydro output and price are negatively related (correlation \NcorrHP): dry years are expensive years. Having sold P50 forward, a producer of the size of the whole Romanian hydro fleet would have had to buy back \NshortTwoTwo\ TWh in 2022 for about \NbuyTwoTwo\ million EUR, and \NshortTwoFive\ TWh in 2025 for about \NbuyTwoFive\ million EUR.
+\textbf{Decision number:} the worst year in ten (\NmaxBuyYear) cost \NmaxBuy\ million EUR --- this sets the size of the liquidity buffer, and argues for selling forward less than P50.}%
+{\textbf{Riscurile specifice sectorului energetic (C).} Acoperirea profilului de consum casnic cu o bandă constantă presupune o primă medie de \NpremEarly\,\% în 2016--2019, de \NpremTwoTwo\ EUR/MWh (\NpremPctTwoTwo\,\%) în 2022 și de \NpremLast\ EUR/MWh (\NpremPctLast\,\%) în 2025 --- costul vîrfurilor de seară și al orelor de prînz cu producție solară mare.
+Producția hidro și prețul sînt corelate negativ (corelație \NcorrHP): anii secetoși sînt și ani cu prețuri mari. După ce a vîndut la termen producția P50, un producător de dimensiunea întregului parc hidro din România ar fi trebuit să recumpere \NshortTwoTwo\ TWh în 2022, pentru aproximativ \NbuyTwoTwo\ de milioane EUR, și \NshortTwoFive\ TWh în 2025, pentru aproximativ \NbuyTwoFive\ de milioane EUR.
+\textbf{Cifra relevantă pentru decizie:} cel mai nefavorabil an dintre ultimii zece (\NmaxBuyYear) a costat \NmaxBuy\ de milioane EUR --- această valoare stabilește dimensiunea rezervei de lichiditate și justifică vînzări la termen sub nivelul P50.}
+
+\section{\T{Discussion questions for managers}{Întrebări pentru discuție}}
+\begin{enumerate}
+\item \T{What coverage of firms and market factors would your risk committee require from a systemic indicator? How would you combine a European sector meter with your company's own exposures?}%
+{Ce acoperire, ca număr de companii și de factori de piață, ar cere comitetul dumneavoastră de risc unui indicator sistemic? Cum ați combina un indicator sectorial european cu expunerile proprii ale companiei?}
+\item \T{The paper finds the meter rising months before geopolitical risk (from July 2021). What concrete actions could a company take in such a lead time?}%
+{Lucrarea arată că indicatorul crește cu cîteva luni înaintea riscului geopolitic (din iulie 2021). Ce măsuri concrete ar putea lua o companie într-un astfel de interval?}
+\item \T{Who in your company owns the price--volume premium: sales, trading or risk? How is it priced into retail offers?}%
+{Cine răspunde în compania dumneavoastră de prima preț--volum: departamentul de vînzări, cel de tranzacționare sau cel de risc? Cum este inclusă această primă în prețul ofertelor de furnizare?}
+\item \T{Using the hydro table, how much of the expected output would you sell forward one year ahead (P50, P75, P90)? What is the trade-off?}%
+{Pe baza tabelului privind producția hidro, ce parte din producția așteptată ați vinde la termen cu un an înainte (P50, P75, P90)? Ce compromis presupune această alegere?}
+\item \T{Which of the three risks would you report to the board every month, and in which unit (index points, EUR, MWh)?}%
+{Pe care dintre cele trei riscuri le-ați raporta lunar consiliului de administrație și în ce unitate de măsură (puncte de indice, EUR, MWh)?}
+\end{enumerate}
+
+\section{\T{Limitations of the classroom replication}{Limitele replicării}}
+\T{(i) Our meter: 3 companies, no TTF daily, no GPRD or CISS, window length chosen by us; it is a teaching illustration, not the EFRM.
+(ii) The hydro buy-back uses the national fleet and the annual average price; a producer buys back in specific months at specific prices.
+(iii) The price--volume premium uses national load, not a supplier's own portfolio.}%
+{(i) Indicatorul nostru folosește 3 companii, fără TTF zilnic, fără GPRD sau CISS, cu o lungime a ferestrei aleasă de noi; este o ilustrare didactică, nu indicele EFRM.
+(ii) Calculul recumpărării folosește întregul parc hidro național și prețul mediu anual; în realitate, un producător recumpără în anumite luni, la prețurile din acele luni.
+(iii) Prima preț--volum se calculează pe consumul național, nu pe portofoliul propriu al unui furnizor.}
+
+\newpage
+\section*{\T{Case 4 at a glance}{Studiul de caz 4 pe scurt}}
+\glance{\T{Is the energy sector under stress, and what do demand shape and dry years cost us?}{Se află sectorul energetic în stres și cît ne costă profilul cererii și anii secetoși?}}%
+{\T{Daily SNP, SNG, SNN, Brent, Henry Hub 2015--2026; hourly price and load; daily hydro output.}{SNP, SNG, SNN, Brent, Henry Hub, date zilnice 2015--2026; prețul și consumul orar; producția hidro zilnică.}}%
+{\T{LASSO quantile regression ($\tau$=5\,\%), average penalty; probit + AUC; price--volume and P50 buy-back.}{Regresie cuantilică LASSO ($\tau$=5\,\%), penalizarea medie; probit + AUC; prima preț--volum și recumpărarea P50.}}%
+{\T{Paper (100 firms): EFRM AUC 0.708; our 3-firm version: \NaucERM\ --- breadth matters. Dry year \NmaxBuyYear: \NmaxBuy\ mil.\ EUR.}{Lucrarea (100 de companii): EFRM, AUC 0,708; versiunea noastră cu 3 companii: \NaucERM\ --- dimensiunea eșantionului contează. Anul secetos \NmaxBuyYear: \NmaxBuy\ de mil.\ EUR.}}%
+{\T{Use a broad EU meter for systemic stress; size liquidity by the dry-year and shape risks.}{Folosiți un indicator european larg pentru stresul sistemic; dimensionați lichiditatea în funcție de riscul anilor secetoși și de profilul cererii.}}
+\begin{center}
+\includegraphics[width=0.66\linewidth]{fig_headline_\lang}
+\src{\T{our RO-ERM on EODHD and Yahoo Finance data, \Nstart--\Nend.}{RO-ERM-ul nostru pe date EODHD și Yahoo Finance, \Nstart--\Nend.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NaucERM}\\ \small \T{AUC of our 3-firm meter (paper, 100 firms: 0.708)}{AUC al indicatorului nostru cu 3 companii (lucrarea, cu 100 de companii: 0,708)}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NpremPctLast\,\%}\\ \small \T{price--volume premium, 2025}{prima preț--volum, 2025}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \NmaxBuy}\\ \small \T{mil.\ EUR dry-year buy-back (\NmaxBuyYear)}{mil.\ EUR, costul recumpărării în anul secetos (\NmaxBuyYear)}\end{minipage}
+\end{document}

@@ -1,0 +1,172 @@
+% C3_brief.tex -- ONE source for the English and Romanian case brief of Case 3 (Lecture 3).
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Research case 3 (Lecture 3)}{Studiul de caz 3 (cursul 3)}}
+\begin{document}
+\emqatitle{\T{Case 3: Do Romanian energy stocks move with oil? Time-varying correlation and hedging}%
+                {Studiul de caz 3: Evoluează acțiunile companiilor energetice românești în același sens cu petrolul? Corelația variabilă în timp și acoperirea riscului}}%
+          {\T{Based on}{Studiu bazat pe lucrarea} Grecu, Cramer, Pele \& Lessmann (2025), \emph{The link between energy prices and stock markets in European Union countries},
+           North American Journal of Economics and Finance 78, 102420, \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}}
+
+\begin{scenario}
+\T{The treasury of a Romanian energy group holds a portfolio of listed energy shares (OMV Petrom, Romgaz, Nuclearelectrica), and a pension fund holds the same shares for its clients.
+After the oil shocks of 2020 and 2022 the risk committee asks two questions.
+\textbf{Is the link between these shares and oil stable, or does it switch with crises?}
+And \textbf{can we cut the risk of the position by selling Brent futures?}
+The answer decides whether the committee approves a commodity hedging programme or relies on diversification.}%
+{Trezoreria unui grup energetic din România deține un portofoliu de acțiuni ale unor companii energetice listate (OMV Petrom, Romgaz, Nuclearelectrica), iar un fond de pensii deține aceleași acțiuni în numele participanților.
+După șocurile de pe piața petrolului din 2020 și 2022, comitetul de risc formulează două întrebări.
+\textbf{Este legătura dintre aceste acțiuni și prețul petrolului stabilă sau se modifică în perioadele de criză?}
+\textbf{Putem reduce riscul poziției prin vînzarea de contracte futures pe Brent?}
+De răspuns depinde dacă comitetul aprobă un program de acoperire a riscului cu instrumente pe mărfuri sau se bazează pe diversificare.}
+\end{scenario}
+
+\section{\T{What the paper did}{Lucrarea de referință}}
+\textbf{\T{Question.}{Întrebarea de cercetare.}} \T{How do changes in oil and gas prices influence the returns of the main stock indices of the 27 European Union (EU) countries, and does the link differ by region (Central and Eastern Europe, CEE; North; South; West) and by industrial development (Abstract; Introduction)?}%
+{Cum influențează variațiile prețurilor petrolului și gazelor naturale randamentele principalilor indici bursieri din cele 27 de state ale Uniunii Europene (UE) și diferă această legătură în funcție de regiune (Europa Centrală și de Est, ECE; Nord; Sud; Vest) și de nivelul de industrializare (rezumat; introducere)?}
+
+\textbf{\T{Data.}{Datele.}} \T{27 national indices (Romania's BET included), generic Brent and European (TTF) gas futures, Bloomberg, 2010--2023; daily data for the correlations, quarterly data for the shock analysis (Section~3.1, Table~1).}%
+{27 de indici bursieri naționali (inclusiv indicele BET al Bursei de Valori București), contracte futures generice pe Brent și pe gazele naturale europene (TTF), Bloomberg, 2010--2023; date zilnice pentru corelații și date trimestriale pentru analiza șocurilor (secțiunea~3.1, Tabelul~1).}
+
+\textbf{\T{Method.}{Metoda.}} \T{DCC-GARCH (Dynamic Conditional Correlation with Generalised AutoRegressive Conditional Heteroskedasticity) for the daily correlation;
+a two-regime Markov-switching model on that correlation; TVP-VAR (Time-Varying Parameter Vector AutoRegression) impulse responses to oil and gas shocks.}%
+{Modelul DCC-GARCH (corelație condiționată dinamică, cu heteroscedasticitate condiționată autoregresivă generalizată) pentru corelația zilnică;
+un model Markov cu două regimuri estimat pe această corelație; funcții de răspuns la impuls dintr-un model TVP-VAR (model vectorial autoregresiv cu parametri variabili în timp) la șocurile prețurilor petrolului și gazelor.}
+
+\textbf{\T{Main findings of the paper.}{Principalele rezultate ale lucrării.}}
+\begin{itemize}
+\item \T{The correlation with oil ``was predominantly positive, generally ranging between 0 and 0,4. However, the capital market index in the CEE region was, on average, the least correlated'' (Section~4.1).
+For CEE the maximum was 0.53 (2020) and the minimum $-0.11$ (2022) (Table~2).}%
+{Corelația cu petrolul a fost în general pozitivă, de regulă între 0 și 0,4, iar indicele regiunii ECE a fost, în medie, cel mai slab corelat (secțiunea~4.1).
+Pentru ECE, valoarea maximă a fost de 0,53 (2020), iar cea minimă de $-0{,}11$ (2022) (Tabelul~2).}
+\item \T{Regimes are persistent: ``the probability of remaining in the same regime \dots{} is very high, above 98 percent in all of the EU region'' (Section~4.1, Table~4).}%
+{Regimurile sînt persistente: probabilitatea de a rămîne în același regim depășește 98\,\% în toate regiunile UE (secțiunea~4.1, Tabelul~4).}
+\item \T{Gas: correlations ``typically in the range of $-0.3$ to 0.2''; after Russia's invasion of Ukraine the CEE correlation with gas dropped below $-0.4$ (Section~4.1, Table~5).}%
+{Gazele naturale: corelațiile se situează în general între $-0{,}3$ și 0,2; după invadarea Ucrainei de către Rusia, corelația indicelui ECE cu prețul gazelor a coborît sub $-0{,}4$ (secțiunea~4.1, Tabelul~5).}
+\item \T{``European capital markets are more closely correlated with oil price dynamics than with gas price dynamics''; more industrialised countries are more strongly linked to oil (Conclusions; Table~8).}%
+{Piețele de capital europene sînt mai strîns legate de evoluția prețului petrolului decît de cea a prețului gazelor; în țările mai industrializate, legătura cu petrolul este mai puternică (concluzii; Tabelul~8).}
+\end{itemize}
+{\footnotesize\color{FooterGray}\T{Section and table numbers refer to the authors' revised manuscript; the published article (open access, CC BY) may number pages differently.}%
+{Numerotarea secțiunilor și a tabelelor urmează manuscrisul revizuit al autorilor; articolul publicat (acces deschis, CC BY) poate avea altă paginare.}}
+
+\section{\T{The method, step by step}{Metoda, pas cu pas}}
+\begin{intuition}
+\T{A single correlation computed over ten years hides everything a risk manager cares about: in a crash all shares fall together, in quiet times they drift apart.
+DCC-GARCH gives one correlation \emph{per day}, updated with every new return; the Markov model then asks whether that daily correlation lives in a ``high'' or a ``low'' regime and how often it switches.}%
+{O singură corelație, calculată pe zece ani, ascunde tocmai ceea ce contează pentru un manager de risc: într-un crah bursier toate acțiunile scad simultan, iar în perioadele liniștite evoluează mai independent.
+Modelul DCC-GARCH furnizează o corelație \emph{pentru fiecare zi}, actualizată la fiecare nou randament; modelul Markov stabilește apoi dacă această corelație zilnică se află într-un regim „ridicat” sau „scăzut” și cît de des trece dintr-un regim în altul.}
+\end{intuition}
+\T{Let $r_{i,t}$ be the daily log return of asset $i$ (\%). Step 1 fits a GARCH(1,1) to each return, $\sigma^2_{i,t}=\omega_i+\alpha_i\varepsilon^2_{i,t-1}+\beta_i\sigma^2_{i,t-1}$, and standardises it: $z_{i,t}=\varepsilon_{i,t}/\sigma_{i,t}$.
+Step 2 (DCC) updates a ``quasi-correlation'' matrix $Q_t=(1-a-b)\bar Q+a\,\mathbf z_{t-1}\mathbf z_{t-1}'+b\,Q_{t-1}$, where $\bar Q$ is the average correlation of the $z$'s, $a$ measures the reaction to news and $b$ the persistence ($a,b\ge0$, $a+b<1$);
+the conditional correlation is $\rho_t=Q_{12,t}/\sqrt{Q_{11,t}Q_{22,t}}$.
+Step 3 (Markov switching) writes $\rho_t=\mu_{s_t}+u_t$, where the hidden regime $s_t\in\{H,L\}$ follows a Markov chain with $p_{HH}=\Pr(s_t=H\mid s_{t-1}=H)$ and $p_{LL}$; $1/(1-p_{HH})$ is the expected duration of the high regime in days.
+For the hedge, selling $h$ units of Brent per unit of shares gives the return $r_s-h\,r_b$; its variance is smallest at $h^*=\rho\,\sigma_s/\sigma_b$, and the DCC model gives a daily $h^*_t=\rho_t\sigma_{s,t}/\sigma_{b,t}$.}%
+{Fie $r_{i,t}$ randamentul logaritmic zilnic al activului $i$ (\%). În primul pas se estimează un model GARCH(1,1) pentru fiecare serie de randamente, $\sigma^2_{i,t}=\omega_i+\alpha_i\varepsilon^2_{i,t-1}+\beta_i\sigma^2_{i,t-1}$, iar reziduurile se standardizează: $z_{i,t}=\varepsilon_{i,t}/\sigma_{i,t}$.
+În al doilea pas (DCC) se actualizează o matrice de „cvasicorelații” $Q_t=(1-a-b)\bar Q+a\,\mathbf z_{t-1}\mathbf z_{t-1}'+b\,Q_{t-1}$, unde $\bar Q$ este matricea de corelație necondiționată a reziduurilor $z$, $a$ măsoară reacția la informațiile noi, iar $b$ persistența ($a,b\ge0$, $a+b<1$);
+corelația condiționată este $\rho_t=Q_{12,t}/\sqrt{Q_{11,t}Q_{22,t}}$.
+În al treilea pas (modelul Markov) se scrie $\rho_t=\mu_{s_t}+u_t$, unde regimul neobservat $s_t\in\{H,L\}$ urmează un lanț Markov cu probabilitățile $p_{HH}=\Pr(s_t=H\mid s_{t-1}=H)$ și $p_{LL}$; $1/(1-p_{HH})$ este durata medie, în zile, a regimului ridicat.
+Pentru acoperirea riscului, vînzarea a $h$ unități de Brent pentru fiecare unitate de acțiuni conduce la randamentul $r_s-h\,r_b$; varianța acestuia este minimă pentru $h^*=\rho\,\sigma_s/\sigma_b$, iar modelul DCC oferă un raport zilnic $h^*_t=\rho_t\sigma_{s,t}/\sigma_{b,t}$.}
+\begin{decision}
+\T{A hedge only works if the correlation is high \emph{and} stable. With a correlation of 0.1--0.2 the best hedge removes at most $\rho^2\approx1$--4\,\% of the variance --- not worth the margin calls and the basis risk.}%
+{Acoperirea riscului este eficientă numai dacă corelația este ridicată \emph{și} stabilă. La o corelație de 0,1--0,2, chiar și acoperirea optimă elimină cel mult $\rho^2\approx1$--4\,\% din varianță --- un cîștig care nu justifică apelurile în marjă și riscul de bază.}
+\end{decision}
+
+\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\T{Notebook \texttt{C3\_notebook\_EN.ipynb}: dividend-adjusted closing prices of SNP, SNG and SNN (EODHD) and Brent in EUR (Yahoo Finance, ECB), \Nstart\ -- \Nend, \NnObs\ common trading days; an equal-weight ``RO energy basket''.
+Classroom implementation: three companies instead of 27 indices; 2015--2026 instead of 2010--2023; monthly TTF (World Bank) for gas, because daily TTF is not free.}%
+{Notebook-ul \texttt{C3\_notebook\_RO.ipynb} folosește prețurile de închidere ajustate pentru dividende ale acțiunilor SNP, SNG și SNN (EODHD) și prețul Brent în EUR (Yahoo Finance, BCE), \Nstart\ -- \Nend, \NnObs\ de zile de tranzacționare comune; construim un „coș energetic RO” cu ponderi egale.
+Față de lucrare, implementarea de la curs folosește trei companii în locul celor 27 de indici, perioada 2015--2026 în locul perioadei 2010--2023 și, pentru gaze, prețul TTF lunar (Banca Mondială), deoarece seria zilnică TTF nu este disponibilă gratuit.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f1_prices}
+\caption{\T{Total-return indices of the three shares and Brent (log scale).}{Indicii de randament total ai celor trei acțiuni și prețul Brent (scară logaritmică).}}
+\src{EODHD; Yahoo Finance; \Nstart--\Nend.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f2_dcc_correlation}
+\caption{\T{DCC correlation with Brent; shaded: high-correlation regime.}{Corelația DCC cu Brent; zona evidențiată: regimul de corelație ridicată.}}
+\src{\T{our DCC-GARCH and Markov-switching estimates.}{estimările noastre DCC-GARCH și Markov.}}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{DCC correlation with Brent and Markov-switching regimes ($p_{HH}$, $p_{LL}$: probability of staying in the high / low regime). Highest value in bold.}%
+{Corelația DCC cu Brent și regimurile Markov ($p_{HH}$, $p_{LL}$: probabilitatea de a rămîne în regimul ridicat, respectiv scăzut). Cea mai mare valoare este marcată cu aldine.}}
+\tabin{dcc}
+\src{\T{our computation; daily data \Nstart--\Nend. Paper, CEE region vs oil: max 0.53 (2020), min $-0.11$ (2022), regimes 0.2553 / 0.1201, $p_{00}$ = 0.9875, $p_{11}$ = 0.9904 (Tables~2--4).}%
+{calcule proprii; date zilnice \Nstart--\Nend. În lucrare, pentru regiunea ECE față de petrol: max 0,53 (2020), min $-0{,}11$ (2022), regimuri 0,2553 / 0,1201, $p_{00}=0{,}9875$, $p_{11}=0{,}9904$ (Tabelele~2--4).}}
+\end{table}
+
+\T{\textbf{What our data show.} The basket's correlation with Brent averages \NrhoMean, peaks at \NrhoMax\ in \NrhoMaxYear\ and reaches its minimum, \NrhoMin, in \NrhoMinYear\ --- the same calendar as the paper's CEE index (max 0.53 in 2020, min $-0.11$ in 2022).
+The DCC parameters ($a$ = \NdccA, $b$ = \NdccB) mean that the correlation reacts slowly and is very persistent. The Markov model finds a high regime at \NmsHigh\ and a low one at \NmsLow, each lasting long ($p_{HH}$ = \NpHH, $p_{LL}$ = \NpLL); in the high regime, oil shocks move the three stocks noticeably more together.
+Monthly, the basket correlates more with Brent (\NbrentCorrM) than with TTF gas (\NttfCorr); even Romgaz, a gas producer, has only \NsngTTF\ with TTF --- under the 2022--2025 Romanian price caps and windfall taxes, gas prices did not reach its earnings.}%
+{\textbf{Ce arată datele.} Corelația coșului cu Brent are media \NrhoMean, atinge maximul, \NrhoMax, în \NrhoMaxYear\ și minimul, \NrhoMin, în \NrhoMinYear\ --- aceeași cronologie ca la indicele ECE din lucrare (max 0,53 în 2020, min $-0{,}11$ în 2022).
+Parametrii DCC ($a = \NdccA$, $b = \NdccB$) indică o corelație care reacționează lent la informațiile noi și este foarte persistentă. Modelul Markov identifică un regim ridicat, cu media \NmsHigh, și unul scăzut, cu media \NmsLow, ambele de lungă durată ($p_{HH} = \NpHH$, $p_{LL} = \NpLL$); în regimul ridicat, șocurile prețului petrolului antrenează cele trei acțiuni vizibil mai mult în aceeași direcție.
+Pe date lunare, coșul este mai corelat cu Brent (\NbrentCorrM) decît cu prețul gazelor TTF (\NttfCorr); chiar și Romgaz, producător de gaze naturale, are o corelație de numai \NsngTTF\ cu TTF --- în condițiile plafonării prețurilor și ale supraimpozitării din România din perioada 2022--2025, prețul gazelor nu s-a regăsit în profiturile companiei.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f3_gas_monthly}
+\caption{\T{24-month rolling correlation with Brent and with TTF gas.}{Corelația mobilă pe 24 de luni cu Brent și cu prețul gazelor TTF.}}
+\src{\T{World Bank (TTF), EODHD, Yahoo Finance; monthly 2015--2026.}{Banca Mondială (TTF), EODHD, Yahoo Finance; date lunare 2015--2026.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f4_hedge_ratio}
+\caption{\T{Dynamic (DCC) and static minimum-variance hedge ratio.}{Raportul de acoperire cu varianță minimă: dinamic (DCC) și static.}}
+\src{\T{our estimates.}{estimările noastre.}}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{Hedging with Brent, out of sample (after \Nhalf, \NnOOS\ trading days): variance reduction of the hedged position. Best value in bold.}%
+{Acoperirea cu Brent în afara eșantionului de estimare (după \Nhalf, \NnOOS\ de zile de tranzacționare): reducerea varianței poziției acoperite. Cea mai bună valoare este marcată cu aldine.}}
+\tabin{hedge}
+\src{\T{our computation; negative = the hedge increased risk.}{calcule proprii; o valoare negativă înseamnă că acoperirea a mărit riscul.}}
+\end{table}
+
+\T{\textbf{Decision number.} Out of sample (GARCH and DCC parameters estimated on the first half only), the static Brent hedge cut the basket's variance by \NeffStatic\,\% and the dynamic DCC hedge by \NeffDyn\,\% (a negative value means that the hedge increased the variance) --- no reduction at all.
+Brent futures are not a useful hedge for Romanian energy shares: their risk is driven by domestic regulation, dividends and the local market, not by oil.}%
+{\textbf{Cifra relevantă pentru decizie.} În afara eșantionului de estimare (parametrii GARCH și DCC sînt estimați numai pe prima jumătate a eșantionului), acoperirea statică cu Brent a redus varianța coșului cu \NeffStatic\,\%, iar acoperirea dinamică DCC cu \NeffDyn\,\% (o valoare negativă înseamnă că acoperirea a mărit varianța) --- nicio reducere a riscului.
+Contractele futures pe Brent nu sînt un instrument util de acoperire pentru acțiunile energetice românești: riscul acestora provine din reglementarea internă, din politica de dividende și din piața locală, nu din prețul petrolului.}
+
+\section{\T{Discussion questions for managers}{Întrebări pentru discuție}}
+\begin{enumerate}
+\item \T{The paper finds the CEE index the least correlated with oil. What features of the Romanian market (state ownership, regulation, liquidity) could explain this?}%
+{Lucrarea arată că indicele ECE este cel mai slab corelat cu petrolul. Ce caracteristici ale pieței românești (acționariatul de stat, reglementarea, lichiditatea) ar putea explica acest rezultat?}
+\item \T{The correlation turned negative in 2022, exactly when oil prices exploded. Why might oil-company shares fall when oil rises?}%
+{Corelația a devenit negativă în 2022, exact cînd prețul petrolului a crescut puternic. De ce ar putea scădea acțiunile companiilor petroliere atunci cînd prețul petrolului crește?}
+\item \T{If the hedge does not reduce risk, what other instruments or policies would you use to manage the risk of this portfolio?}%
+{Dacă acoperirea nu reduce riscul, ce alte instrumente sau politici ați folosi pentru a gestiona riscul acestui portofoliu?}
+\item \T{The high-correlation regime lasts, on average, $1/(1-p_{HH})$ days. How would you use that number in a risk-limit policy?}%
+{Regimul de corelație ridicată durează, în medie, $1/(1-p_{HH})$ zile. Cum ați folosi această valoare într-o politică de limite de risc?}
+\item \T{Would you expect Hidroelectrica (listed 2023) to be linked to oil, to gas, to power prices or to rainfall? How would you test it?}%
+{V-ați aștepta ca acțiunile Hidroelectrica (listate în 2023) să fie legate de prețul petrolului, de cel al gazelor, de prețul energiei electrice sau de precipitații? Cum ați testa această ipoteză?}
+\end{enumerate}
+
+\section{\T{Limitations of the classroom replication}{Limitele replicării}}
+\T{(i) Our replication is explanatory, not a forecasting tool.
+(ii) Three companies are a small, regulation-dominated sample, not a market index; BET is not in our data.
+(iii) Bucharest and ICE trading days differ; returns over holidays mix several days.
+(iv) The gas leg is monthly and TTF is a converted World Bank average, not a traded daily price.
+(v) Our Markov model allows a different variance in each regime, so ``high'' and ``low'' are partly volatility regimes.}%
+{(i) Replicarea noastră are un caracter explicativ; nu este un instrument de prognoză.
+(ii) Trei companii formează un eșantion mic, puternic influențat de reglementare, nu un indice de piață; indicele BET nu se află în datele cursului.
+(iii) Zilele de tranzacționare de la Bursa de Valori București și de la ICE nu coincid; randamentele de după zilele libere acoperă mai multe zile.
+(iv) Analiza pentru gaze folosește date lunare, iar TTF este o medie lunară publicată de Banca Mondială și convertită, nu un preț zilnic de tranzacționare.
+(v) Modelul Markov folosit permite o varianță diferită în fiecare regim, astfel că regimurile „ridicat” și „scăzut” sînt, în parte, și regimuri de volatilitate.}
+
+\newpage
+\section*{\T{Case 3 at a glance}{Studiul de caz 3 pe scurt}}
+\glance{\T{Is the link between RO energy shares and oil stable, and does a Brent hedge cut risk?}{Este stabilă legătura dintre acțiunile energetice românești și petrol și reduce acoperirea cu Brent riscul?}}%
+{\T{Daily SNP, SNG, SNN and Brent (EUR), 2015--2026; monthly TTF.}{SNP, SNG, SNN și Brent (EUR), date zilnice 2015--2026; TTF lunar.}}%
+{\T{GARCH + DCC daily correlation; 2-regime Markov switching; minimum-variance hedge.}{GARCH + corelație DCC zilnică; model Markov cu 2 regimuri; acoperire cu varianță minimă.}}%
+{\T{Mean corr.\ \NrhoMean; max \NrhoMax\ (\NrhoMaxYear), min \NrhoMin\ (\NrhoMinYear) --- as in the paper's CEE index.}{Corelația medie \NrhoMean; max \NrhoMax\ (\NrhoMaxYear), min \NrhoMin\ (\NrhoMinYear) --- la fel ca indicele ECE din lucrare.}}%
+{\T{Do not hedge the shares with Brent: out-of-sample variance cut \NeffDyn\,\% (negative = more risk). Manage regulatory and local risk instead.}{Nu acoperiți acțiunile cu Brent: reducerea varianței în afara eșantionului este de \NeffDyn\,\% (o valoare negativă înseamnă risc mai mare). Gestionați riscul de reglementare și riscul pieței locale.}}
+\begin{center}
+\includegraphics[width=0.66\linewidth]{fig_headline_\lang}
+\src{\T{our DCC-GARCH on EODHD and Yahoo Finance data, \Nstart--\Nend.}{estimarea noastră DCC-GARCH pe date EODHD și Yahoo Finance, \Nstart--\Nend.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NrhoMean}\\ \small \T{mean daily correlation with Brent}{corelația zilnică medie cu Brent}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NpHH}\\ \small \T{prob.\ of staying in the high regime}{probabilitatea de a rămîne în regimul ridicat}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \NeffDyn\,\%}\\ \small \T{out-of-sample variance cut by the Brent hedge (negative = more risk)}{reducerea varianței prin acoperirea cu Brent, în afara eșantionului (negativă = risc mai mare)}\end{minipage}
+\end{document}

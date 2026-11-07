@@ -1,0 +1,201 @@
+% C1_brief.tex -- ONE source for the English and Romanian case brief of Case 1 (Lecture 1).
+% Compile C1_case_EN.tex or C1_case_RO.tex. Numbers come from numbers_<lang>.tex, written by the notebook.
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Research case 1 (Lecture 1)}{Studiul de caz 1 (cursul 1)}}
+\begin{document}
+\emqatitle{\T{Case 1: The summer-2024 price crisis --- which intervention would have helped?}%
+                {Studiul de caz 1: Criza prețurilor din vara anului 2024 --- ce intervenție ar fi fost eficientă?}}%
+          {\T{Based on}{Studiu bazat pe lucrarea} Andrei, Pele \& Cramer (2026), \emph{Evaluating intervention effectiveness during extreme price events:
+           a counterfactual analysis of Romania's 2024 energy crisis}, PICBE 20(1), 84--103, \href{https://doi.org/10.2478/picbe-2026-0013}{doi:10.2478/picbe-2026-0013}}
+
+\begin{scenario}
+\T{In July 2024 the Romanian day-ahead market (PZU, \emph{Piața pentru Ziua Următoare}, run by OPCOM) cleared at more than 900 EUR/MWh in some evening hours.
+Three decision makers ask different questions about the same event.
+The \textbf{transmission system operator (TSO)}, Transelectrica, must decide which emergency lever to pull when the next heatwave comes: call contracted demand response (DR), maximise imports, or count on more renewables.
+A \textbf{supplier} must decide whether to pay large industrial clients to cut load in the critical hours.
+A \textbf{large consumer} must decide whether to sign a curtailment contract.
+All three need the same number: \emph{by how much does the price fall if demand is cut by $x$\,\% in the spike hours?}}%
+{În iulie 2024, pe piața pentru ziua următoare (PZU) din România, administrată de OPCOM, prețul de închidere a depășit 900 EUR/MWh în unele ore de seară.
+Același episod ridică întrebări diferite pentru trei decidenți.
+\textbf{Operatorul de transport și de sistem (OTS)}, Transelectrica, trebuie să aleagă instrumentul de urgență la care va recurge în următorul val de căldură: răspunsul contractat al cererii (DR, \emph{demand response}), importuri maxime sau o producție regenerabilă mai mare.
+Un \textbf{furnizor} trebuie să stabilească dacă merită să plătească marii clienți industriali pentru a-și reduce consumul în orele critice.
+Un \textbf{mare consumator} trebuie să decidă dacă semnează un contract de reducere a consumului la cerere.
+Toți trei au nevoie de aceeași informație: \emph{cu cît scade prețul dacă cererea se reduce cu $x$\,\% în orele cu vîrfuri de preț?}}
+\end{scenario}
+
+\section{\T{What the paper did}{Lucrarea de referință}}
+\textbf{\T{Question.}{Întrebarea de cercetare.}} \T{Which intervention types reduce extreme prices most, how large must they be, how do they combine, which are feasible, and how do time of day and weather limit them (p.~85)?}%
+{Ce tipuri de intervenții reduc cel mai mult prețurile extreme, ce amploare trebuie să aibă, cum se combină între ele, care sînt fezabile și în ce măsură ora din zi și condițiile meteorologice le limitează efectul (p.~85)?}
+
+\textbf{\T{Data.}{Datele.}} \T{Romania, January 2018 to mid-2024, hourly ENTSO-E (European Network of Transmission System Operators for Electricity) data: generation by fuel, day-ahead load, solar and wind forecasts;
+day-ahead prices (a daily series aligned to the hourly records); temperature in 10 cities; oil, gas and carbon prices. The models use the last 5,000 hours (about 208 days):
+4,000 for training and 1,000 for testing, the test set covering June--July 2024 (p.~88).}%
+{România, ianuarie 2018 -- mijlocul anului 2024, date orare ENTSO-E (Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică): producția pe tipuri de combustibil, prognozele pentru ziua următoare privind consumul și producția solară și eoliană;
+prețurile pentru ziua următoare (serie zilnică, aliniată la înregistrările orare); temperaturile din 10 orașe; prețurile petrolului, gazelor naturale și certificatelor de emisii de CO$_2$. Modelele folosesc ultimele 5.000 de ore (aproximativ 208 zile):
+4.000 de ore pentru antrenare și 1.000 pentru testare, perioada de test acoperind lunile iunie--iulie 2024 (p.~88).}
+
+\textbf{\T{Method.}{Metoda.}} \T{A Random Forest (RF) with 70 engineered features predicts the price; a Ridge regression is used as a cross-check.
+Each scenario changes the inputs (less load, more solar or wind), recomputes the derived features and reads the new prediction.}%
+{Prețul este prognozat cu un model Random Forest (RF), adică un ansamblu de arbori de regresie (în română, „pădure aleatoare”), pe baza a 70 de variabile explicative construite de autori; o regresie Ridge (regresie liniară cu penalizare) servește drept verificare a robusteții.
+Fiecare scenariu modifică datele de intrare (consum mai mic, producție solară sau eoliană mai mare), recalculează variabilele derivate și reține noua prognoză.}
+
+\textbf{\T{Main findings of the paper.}{Principalele rezultate ale lucrării.}}
+\begin{itemize}
+\item \T{Model fit: ``the Random Forest achieved a coefficient of determination ($R^2$) of 0.5963'' (p.~90); for prices above 500 EUR/MWh ``underprediction reaches 53.9 percent'' (p.~91).
+The peak event at 1,021.61 EUR/MWh was predicted at 325.18 (p.~91).}%
+{Calitatea ajustării: modelul RF atinge un coeficient de determinare $R^2 = 0{,}5963$ (p.~90); pentru prețurile de peste 500 EUR/MWh, subestimarea ajunge la 53,9\,\% (p.~91).
+Pentru episodul de vîrf, de 1.021,61 EUR/MWh, prognoza a fost de numai 325,18 EUR/MWh (p.~91).}
+\item \T{At the peak, solar output was ``just 3 megawatts'' and the supply--demand deficit was 2,686 MW (Table~1, p.~94--95).}%
+{În ora de vîrf, producția solară era de numai 3 MW, iar deficitul de ofertă față de cerere atingea 2.686 MW (Tabelul~1, p.~94--95).}
+\item \T{``Demand response of 10 percent (corresponding to approximately 728 megawatts of load reduction) achieves a 70.4 percent price reduction'' (Table~2, p.~95);
+``no single intervention --- nor any combination of interventions --- achieves a price below 200 euros per megawatt-hour'' (p.~95).}%
+{Un răspuns al cererii de 10\,\% (aproximativ 728 MW de consum redus) scade prețul cu 70,4\,\% (Tabelul~2, p.~95);
+nicio intervenție, aplicată separat sau în combinație cu altele, nu coboară prețul sub 200 EUR/MWh (p.~95).}
+\item \T{RF and Ridge rank the 147 scenarios consistently (Spearman $\rho = 0.7299$, $p<10^{-25}$) and both put demand response in all of their top-10 scenarios (Table~3, p.~97).
+Demand response is the ``Tier~1'' consensus lever; the best feasible combination adds ``only 0.6 percentage points'' to demand response alone (Tables~4--5, p.~98--99).}%
+{Modelele RF și Ridge produc clasamente similare pentru cele 147 de scenarii (coeficientul Spearman $\rho = 0{,}7299$, $p<10^{-25}$), iar ambele includ răspunsul cererii în toate cele 10 scenarii aflate pe primele locuri (Tabelul~3, p.~97).
+Ambele modele indică răspunsul cererii drept instrumentul prioritar („Nivelul~1”); cea mai bună combinație fezabilă aduce, față de răspunsul cererii aplicat singur, doar 0,6 puncte procentuale în plus (Tabelele~4--5, p.~98--99).}
+\end{itemize}
+
+\section{\T{The method, step by step}{Metoda, pas cu pas}}
+\begin{intuition}
+\T{Train a model that has learnt how the price responds to load, sun and wind in normal times. Then ask it: ``what would the price have been in the crisis evening if load had been 10\,\% lower?''
+The difference between the two predictions is the estimated effect of the intervention --- a \emph{counterfactual}: what would have happened under a situation that did not occur.}%
+{Estimăm un model care învață, din perioadele normale, cum reacționează prețul la consum și la producția solară și eoliană. Apoi îi punem întrebarea: „Care ar fi fost prețul în seara de criză dacă consumul ar fi fost cu 10\,\% mai mic?”
+Diferența dintre cele două prognoze este efectul estimat al intervenției --- un \emph{contrafactual}, adică ceea ce s-ar fi întîmplat într-o situație care nu s-a produs în realitate.}
+\end{intuition}
+\T{Let $y_t$ be the day-ahead price in hour $t$ (EUR/MWh), $L_t$ the load, $S_t$ the solar and $W_t$ the wind generation (MW). The residual load
+$L^{res}_t = L_t - S_t - W_t$ is the demand that must be covered by dispatchable plants (gas, coal, hydro, nuclear) and imports.
+The model $\hat y_t = \hat f(\mathbf x_t)$ maps the feature vector $\mathbf x_t$ (load, solar, wind, residual load, renewable share $(S_t+W_t)/L_t$, lagged prices and lagged supply, calendar terms) to a price.
+A Random Forest averages $B$ regression trees, $\hat f(\mathbf x) = \frac1B\sum_{b=1}^{B} h_b(\mathbf x)$, each tree $h_b$ being a set of if--then splits learnt on a bootstrap sample.
+A scenario with demand response $d$ sets $L'_t = (1-d)L_t$ and recomputes $L'^{res}_t$ and the renewable share (the paper's eq.~10--11). The estimated effect is}%
+{Fie $y_t$ prețul pentru ziua următoare în ora $t$ (EUR/MWh), $L_t$ consumul, iar $S_t$ și $W_t$ producția solară, respectiv eoliană (MW). Consumul rezidual
+$L^{res}_t = L_t - S_t - W_t$ este cererea care trebuie acoperită de centralele dispecerizabile (pe gaze, pe cărbune, hidrocentrale, nucleare) și din importuri.
+Modelul $\hat y_t = \hat f(\mathbf x_t)$ asociază un preț vectorului de variabile explicative $\mathbf x_t$ (consum, producție solară și eoliană, consum rezidual, ponderea regenerabilelor $(S_t+W_t)/L_t$, valori decalate ale prețului și ale ofertei, variabile calendaristice).
+Modelul RF calculează media prognozelor furnizate de $B$ arbori de regresie, $\hat f(\mathbf x) = \frac1B\sum_{b=1}^{B} h_b(\mathbf x)$, fiecare arbore $h_b$ fiind o succesiune de reguli de tip „dacă--atunci”, estimate pe un eșantion bootstrap.
+Un scenariu cu răspunsul cererii $d$ înlocuiește consumul cu $L'_t = (1-d)L_t$ și recalculează $L'^{res}_t$ și ponderea regenerabilelor (ec.~10--11 din lucrare). Efectul estimat este}
+\[
+\Delta P_t(d) = \hat f(\mathbf x_t) - \hat f(\mathbf x'_t(d)) \quad [\text{EUR/MWh}], \qquad \Delta P_t^{\%}(d) = 100\,\frac{\Delta P_t(d)}{\hat f(\mathbf x_t)} .
+\]
+\T{\textbf{Reference prices.} The paper expresses scenario prices relative to the observed peak price $y^*_t$ (eq.~9); this exercise measures the change against each model's own baseline $\hat f(\mathbf x_t)$.
+The two percentages use different reference prices and should be labelled separately.}%
+{\textbf{Prețurile de referință.} Lucrarea raportează prețurile din scenarii la prețul de vîrf observat, $y^*_t$ (ec.~9); exercițiul nostru măsoară variația față de prognoza de bază a fiecărui model, $\hat f(\mathbf x_t)$.
+Cele două procente au baze de raportare diferite, de aceea trebuie prezentate separat.}
+
+\begin{decision}
+\T{Rank the levers first, then stress-test the price level. The paper and our replication both identify cutting demand in the evening spike hours as the priority lever; extra solar does not help after sunset.
+Read absolute effects together with each model's accuracy in extreme-price hours.}%
+{Stabiliți mai întîi ordinea instrumentelor, apoi verificați nivelul prețului prin teste de stres. Atît lucrarea, cît și replicarea noastră arată că reducerea cererii în orele de vîrf de seară este instrumentul prioritar; o producție solară suplimentară nu ajută după apusul soarelui.
+Interpretați efectele absolute ținînd seama de acuratețea fiecărui model în orele cu prețuri extreme.}
+\end{decision}
+
+\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\T{Notebook \texttt{C1\_notebook\_EN.ipynb} uses the course data (\texttt{data/clean/}: hourly prices, Romanian generation and load, cross-border flows from energy-charts.info).
+Training: 1 January 2023 -- 31 May 2024 (\NnTrain\ hours); test: June--July 2024 (\NnTest\ hours). Classroom implementation: actual (not forecast) load, solar and wind; hourly prices; no weather variables.}%
+{Notebook-ul \texttt{C1\_notebook\_RO.ipynb} folosește datele cursului (\texttt{data/clean/}: prețurile orare, producția și consumul din România și fluxurile transfrontaliere, preluate de pe energy-charts.info).
+Eșantionul de antrenare: 1 ianuarie 2023 -- 31 mai 2024 (\NnTrain\ ore); eșantionul de test: iunie--iulie 2024 (\NnTest\ de ore). Față de lucrare, implementarea de la curs folosește valorile efective (nu prognozele) ale consumului și ale producției solare și eoliene, prețuri orare și nicio variabilă meteorologică.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f1_daily_prices}
+\caption{\T{Daily base price, 2023--2024; crisis window shaded.}{Prețul zilnic de bază, 2023--2024; perioada crizei este evidențiată.}}
+\src{energy-charts.info; 1.1.2023--31.12.2024.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f2_hourly_profile}
+\caption{\T{Hourly profile, June--July 2024 vs 2023.}{Profilul orar, iunie--iulie 2024 comparativ cu aceeași perioadă din 2023.}}
+\src{energy-charts.info; \T{June--July 2023 and 2024.}{iunie--iulie 2023 și 2024.}}
+\end{minipage}
+\end{figure}
+
+\T{\textbf{What our data show.} The crisis window averaged \NcrisisMean\ EUR/MWh, with a maximum of \NcrisisMax\ EUR/MWh on \NpeakTime\ (local time).
+The crisis was an evening problem: at \NpeakHour:00 the mean price was \NevePrice\ EUR/MWh (\NevePriceN\ a year earlier) while solar output averaged \NpeakSolar\ MW, against \NnoonSolar\ MW at 13:00 (Figure~2) ---
+consistent with the paper's peak event, which had almost no solar.
+The highest training price was \NtrainMax\ EUR/MWh, so the models had never seen prices like those of July 2024.}%
+{\textbf{Ce arată datele.} În perioada crizei, prețul mediu a fost de \NcrisisMean\ EUR/MWh, iar maximul, de \NcrisisMax\ EUR/MWh, s-a înregistrat la \NpeakTime\ (timp local).
+Criza s-a manifestat seara: la ora \NpeakHour:00, prețul mediu a fost de \NevePrice\ EUR/MWh (față de \NevePriceN\ cu un an înainte), în timp ce producția solară medie era de \NpeakSolar\ MW, comparativ cu \NnoonSolar\ MW la ora 13:00 (Figura~2) ---
+în concordanță cu episodul de vîrf analizat în lucrare, cînd producția solară era practic nulă.
+Cel mai mare preț din eșantionul de antrenare a fost de \NtrainMax\ EUR/MWh, deci modelele nu întîlniseră niciodată prețuri de nivelul celor din iulie 2024.}
+
+\begin{table}[H]\centering\small
+\caption{\T{Test accuracy, \NtestStart\ -- \NtestEnd\ (CET delivery days, \NnTest\ hours; ``perfect foresight'' = actual load, solar and wind of the hour, optimistic; ``gate-closure information'' = prices of $d-1$, realised fundamentals of $d-2$; MAE = mean absolute error, EUR/MWh; ``Under.'' = mean underprediction in \% of the actual price). Best value in bold.}%
+{Acuratețea prognozelor pe eșantionul de test, \NtestStart\ -- \NtestEnd\ (zile de livrare CET, \NnTest\ de ore; „previziune perfectă” = consumul și producția solară și eoliană efective din ora respectivă, o variantă optimistă; „informația de la închiderea porții” = prețurile din ziua $d-1$ și variabilele fundamentale realizate din ziua $d-2$; MAE = eroarea absolută medie, EUR/MWh; „Subestimare” = subestimarea medie, în \% din prețul efectiv). Cea mai bună valoare este marcată cu aldine.}}
+\tabin{accuracy}
+\src{\T{our computation on energy-charts.info data; \NnGt\ test hours above 500 EUR/MWh.}{calcule proprii pe date energy-charts.info; \NnGt\ de ore de test cu prețuri peste 500 EUR/MWh.}}
+\end{table}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f3_model_fit}
+\caption{\T{Actual vs predicted, 10--24 July 2024.}{Prețul efectiv și prețul prognozat, 10--24 iulie 2024.}}
+\src{\T{our models; energy-charts.info.}{modelele noastre; energy-charts.info.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering
+\includegraphics[width=\linewidth]{f4_demand_response}
+\caption{\T{Predicted price fall vs demand cut, mean over the \NnSpike\ spike hours.}{Scăderea prognozată a prețului în funcție de reducerea cererii, media pe cele \NnSpike\ de ore cu vîrfuri de preț.}}
+\src{\T{our models; test window June--July 2024.}{modelele noastre; perioada de test, iunie--iulie 2024.}}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{Scenario effects in the \NnSpike\ spike hours (price above \NspikeThr\ EUR/MWh), reduction against each model's own baseline. Largest effect in bold.}%
+{Efectele scenariilor în cele \NnSpike\ de ore cu vîrfuri de preț (prețuri peste \NspikeThr\ EUR/MWh), măsurate ca reducere față de prognoza de bază a fiecărui model. Cel mai mare efect este marcat cu aldine.}}
+\tabin{scenarios}
+\end{table}
+
+\T{\textbf{Our result.} The RF has $R^2 = \NrfRtwo$ and the lowest MAE (\NrfMAE\ EUR/MWh), but in hours above 500 EUR/MWh it underpredicts by \NrfUnder\,\% on average, so scenario price levels should be read together with this diagnostic.
+These RF and Ridge rows use the actual load, solar and wind of the delivery hour (perfect foresight), so their accuracy is optimistic, not a forecast;
+with only the information available at gate closure (12:00 CET on $d-1$: prices of $d-1$; realised fundamentals only up to $d-2$, the last metered day), the same RF reaches $R^2 = \NgcRtwo$ and MAE \NgcMAE\ EUR/MWh.
+The scenarios use the perfect-foresight model because they change the fundamentals of the spike hour itself.
+A 10\,\% demand cut (\NdrTenMW\ MW on average) lowers the predicted spike price by \NdrTenRF\ EUR/MWh (\NdrTenRFpct\,\%) in the RF and by \NdrTenRidge\ EUR/MWh in Ridge; solar $+50\,\%$ changes almost nothing (\NsolarRF\ EUR/MWh), because spike hours are after sunset.
+The two models rank the \NnGrid\ scenarios similarly (Spearman $\rho = \Nrho$).
+\textbf{Decision number:} at the RF effect, the remaining 90\,\% of load in the spike hours would have paid about \NdrTenSave\ million EUR less; this is the upper bound a supplier could pay for \NdrTenMWh\ MWh of curtailment.}%
+{\textbf{Rezultatul replicării.} Modelul RF are $R^2 = \NrfRtwo$ și cea mai mică eroare MAE (\NrfMAE\ EUR/MWh), însă în orele cu prețuri de peste 500 EUR/MWh subestimează prețul, în medie, cu \NrfUnder\,\%; de aceea, nivelurile de preț din scenarii trebuie interpretate ținînd seama de acest diagnostic.
+Rîndurile RF și Ridge folosesc valorile efective ale consumului și ale producției solare și eoliene din ora de livrare (previziune perfectă), deci acuratețea lor este optimistă;
+numai cu informația de la închiderea porții (prețurile din ziua $d-1$; variabilele fundamentale realizate numai pînă în ziua $d-2$, ultima zi măsurată), același RF obține $R^2 = \NgcRtwo$ și MAE \NgcMAE\ EUR/MWh.
+Scenariile folosesc modelul cu previziune perfectă, deoarece modifică variabilele fundamentale ale orei de vîrf.
+O reducere a cererii cu 10\,\% (în medie \NdrTenMW\ MW) scade prețul prognozat în orele de vîrf cu \NdrTenRF\ EUR/MWh (\NdrTenRFpct\,\%) în modelul RF și cu \NdrTenRidge\ EUR/MWh în modelul Ridge; o producție solară mai mare cu 50\,\% nu schimbă aproape nimic (\NsolarRF\ EUR/MWh), deoarece vîrfurile de preț apar după apusul soarelui.
+Cele două modele ordonează similar cele \NnGrid\ de scenarii (coeficientul Spearman $\rho = \Nrho$).
+\textbf{Cifra relevantă pentru decizie:} dacă reducerea prețului ar fi cea estimată de RF, cele 90\,\% din consum rămase în orele de vîrf ar fi costat cu aproximativ \NdrTenSave\ milioane EUR mai puțin; aceasta este suma maximă pe care un furnizor ar putea-o plăti pentru \NdrTenMWh\ MWh de consum redus.}
+
+\section{\T{Discussion questions for managers}{Întrebări pentru discuție}}
+\begin{enumerate}
+\item \T{In a board memo on demand response, how would you distinguish the observed event price, the model baseline and the scenario price? Which comparison supports your decision?}%
+{Într-o notă către consiliul de administrație privind răspunsul cererii, cum ați face distincția între prețul observat în timpul episodului, prognoza de bază a modelului și prețul din scenariu? Care dintre aceste comparații vă susține decizia?}
+\item \T{Transelectrica holds about 800 MW of contracted demand response (paper, p.~87). Is that enough for a July-2024-type evening? What would you need to know?}%
+{Transelectrica dispune de aproximativ 800 MW de răspuns al cererii contractat (lucrarea, p.~87). Este suficient pentru o seară asemănătoare celor din iulie 2024? Ce informații suplimentare v-ar fi necesare?}
+\item \T{Your company owns a solar park. Why does it earn little in a crisis like this one, and what asset would earn more?}%
+{Compania dumneavoastră deține un parc fotovoltaic. De ce obține venituri reduse într-o criză ca aceasta și ce tip de activ ar fi mai profitabil?}
+\item \T{The model never saw prices above \NtrainMax\ EUR/MWh during training. How should this change the way you use its scenarios?}%
+{În eșantionul de antrenare, modelul nu a întîlnit prețuri mai mari de \NtrainMax\ EUR/MWh. Cum ar trebui să influențeze acest fapt modul în care folosiți scenariile sale?}
+\item \T{A large consumer is offered 300 EUR per MWh not consumed in critical hours. Using Table~2, would you sign? What else matters (production loss, notice time)?}%
+{Unui mare consumator i se oferă 300 EUR pentru fiecare MWh neconsumat în orele critice. Pe baza Tabelului~2, ați semna contractul? Ce alți factori contează (pierderea de producție, termenul de preaviz)?}
+\end{enumerate}
+
+\section{\T{Limitations of the classroom replication}{Limitele replicării}}
+\T{(i) Our scenarios are model-based associations, not a simulation of the merit order.
+(ii) Sample: we average over \NnSpike\ hours of one summer.
+(iii) Extrapolation: crisis prices lie outside our training range, so absolute effects should be stress-tested.
+(iv) Imports, interconnector limits and hydro reservoirs are not scenario levers in our notebook.
+(v) Our scenario model uses actual rather than forecast fundamentals (perfect foresight), so it is optimistic about what was knowable the day before.}%
+{(i) Scenariile noastre reflectă asocieri estimate de modele, nu o simulare a curbei de ofertă construite după ordinea de merit (\emph{merit order}).
+(ii) Eșantionul: mediile sînt calculate pe numai \NnSpike\ de ore dintr-o singură vară.
+(iii) Extrapolarea: prețurile din perioada crizei depășesc intervalul observat în eșantionul de antrenare, de aceea efectele absolute trebuie verificate prin teste de stres.
+(iv) Importurile, limitele capacității de interconexiune și rezervele din lacurile de acumulare nu sînt incluse ca instrumente în scenariile din notebook.
+(v) Modelul folosit în scenarii are ca intrări valorile efective ale variabilelor fundamentale (previziune perfectă), deci supraestimează ceea ce se putea ști cu o zi înainte.}
+
+\newpage
+\section*{\T{Case 1 at a glance}{Studiul de caz 1 pe scurt}}
+\glance{\T{Which emergency lever lowers the spike price most in a heatwave evening?}{Ce instrument de urgență reduce cel mai mult prețul de vîrf într-o seară caniculară?}}%
+{\T{Hourly RO prices, load, solar, wind, hydro, gas, imports; train 2023--May 2024, test June--July 2024.}{Prețuri orare RO, consum, producție solară, eoliană, hidro, pe gaze, importuri; antrenare 2023--mai 2024, test iunie--iulie 2024.}}%
+{\T{Random Forest + Ridge; counterfactual: change load/solar/wind, re-predict.}{Random Forest + Ridge; contrafactual: modificăm consumul și producția solară sau eoliană, apoi refacem prognoza.}}%
+{\T{DR 10\,\%: $-$\NdrTenRF\ EUR/MWh (RF), $-$\NdrTenRidge\ (Ridge); solar +50\,\%: $\approx$0. Paper: DR is Tier~1.}{DR 10\,\%: $-$\NdrTenRF\ EUR/MWh (RF), $-$\NdrTenRidge\ (Ridge); solar +50\,\%: $\approx$0. Lucrarea: DR este instrumentul de Nivel~1.}}%
+{\T{Contract evening demand response first; value it at most \NdrTenSave\ mil.\ EUR per summer like 2024.}{Contractați mai întîi răspunsul cererii în orele de seară; valoarea sa este de cel mult \NdrTenSave\ mil.\ EUR într-o vară ca cea din 2024.}}
+\begin{center}
+\includegraphics[width=0.62\linewidth]{fig_headline_\lang}
+\src{\T{our RF and Ridge models on energy-charts.info data, spike hours of June--July 2024.}{modelele noastre RF și Ridge pe date energy-charts.info, orele cu vîrfuri de preț din iunie--iulie 2024.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NcrisisMax}\\ \small \T{EUR/MWh, peak hour, \NpeakTime}{EUR/MWh, ora de vîrf, \NpeakTime}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NpeakSolar}\\ \small \T{MW mean solar at \NpeakHour:00 in the crisis}{MW, producția solară medie la ora \NpeakHour:00 în criză}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \NrfUnder\,\%}\\ \small \T{RF underprediction above 500 EUR/MWh}{subestimarea RF pentru prețuri peste 500 EUR/MWh}\end{minipage}
+\end{document}

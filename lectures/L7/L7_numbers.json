@@ -1,0 +1,780 @@
+{
+ "charts": {
+  "split_ml": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
+   "period_en": "daily base price, 2022-01-01 to 2026-10-31, CET delivery days",
+   "period_ro": "pre\u021b zilnic de baz\u0103, 2022-01-01 - 2026-10-31, zile de livrare CET"
+  },
+  "search": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "validation year 2024-11-01 to 2025-10-31; 25 configurations per model, quarterly refits",
+   "period_ro": "anul de validare 2024-11-01 - 2025-10-31; 25 de configura\u021bii pe model, reestimare trimestrial\u0103"
+  },
+  "learning_curve": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "chosen DNN, refit for 2026-10, seed 1",
+   "period_ro": "re\u021beaua DNN aleas\u0103, reestimarea pentru 2026-10, ini\u021bializarea 1"
+  },
+  "monthly_ml": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31"
+  },
+  "dm_matrix": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale"
+  },
+  "combo_weight": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; illustration, the weight is not chosen on the test year",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; ilustrare, ponderea nu se alege pe anul de test"
+  },
+  "cost_gain": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; time measured on one core of the author's computer",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; timp m\u0103surat pe un nucleu al calculatorului autorului"
+  },
+  "shap_global": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours; XGBoost refitted monthly",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore; XGBoost reestimat lunar"
+  },
+  "shap_res": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
+  },
+  "perm_dnn": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; 5 random permutations of the test days",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; 5 permut\u0103ri aleatoare ale zilelor de test"
+  },
+  "events_hour": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
+   "period_en": "test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31"
+  },
+  "roc": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
+  },
+  "decision": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; 1 MW of flexible load, C = 30 EUR/MWh (assumed)",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; 1 MW de consum flexibil, C = 30 EUR/MWh (ipotez\u0103)"
+  },
+  "snooping": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "validation year and test year 2025-11-01 to 2026-10-31; one seed per configuration",
+   "period_ro": "anul de validare \u0219i anul de test 2025-11-01 - 2026-10-31; o ini\u021bializare pe configura\u021bie"
+  },
+  "pit_leak": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; XGBoost, configura\u021bia aleas\u0103"
+  },
+  "pit_retrain": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; XGBoost, configura\u021bia aleas\u0103"
+  },
+  "case_week": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "2026-06-27 to 2026-07-03, hourly",
+   "period_ro": "2026-06-27 - 2026-07-03, date orare"
+  },
+  "shap_local": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "period_en": "2026-06-30, hour 20:00 CET; contributions rescaled to EUR/MWh (Appendix C)",
+   "period_ro": "2026-06-30, ora 20:00 CET; contribu\u021bii exprimate \u00een EUR/MWh (anexa C)"
+  },
+  "foundation_hour": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
+   "period_en": "test year 2025-11-01 to 2026-10-31; zero-shot, context = last 2048 hourly prices",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; f\u0103r\u0103 reantrenare, context = ultimele 2048 de pre\u021buri orare"
+  }
+ },
+ "cutoff": {
+  "end": "2026-10-31",
+  "year": 2026,
+  "month": 10,
+  "download": "2026-11-04"
+ },
+ "data": {
+  "start": "2022-01-01",
+  "end": "2026-10-31",
+  "n_days": 1765
+ },
+ "design": {
+  "train_start": "2022-01-08",
+  "train_end": "2024-10-31",
+  "val_start": "2024-11-01",
+  "val_end": "2025-10-31",
+  "test_start": "2025-11-01",
+  "test_end": "2026-10-31",
+  "n_test": 365,
+  "n_val": 365,
+  "n_train_days_val": 1028,
+  "n_train_days_last": 1727,
+  "n_dst_test": 2
+ },
+ "acc": {
+  "naive": {
+   "mae": 27.82,
+   "rmse": 44.54,
+   "rmae": 1.0,
+   "vs_lear": -23.5
+  },
+  "aw_arx": {
+   "mae": 22.3,
+   "rmse": 36.34,
+   "rmae": 0.802,
+   "vs_lear": 1.0
+  },
+  "aw_lear": {
+   "mae": 22.53,
+   "rmse": 36.35,
+   "rmae": 0.81,
+   "vs_lear": 0.0
+  },
+  "ens4": {
+   "mae": 22.13,
+   "rmse": 35.76,
+   "rmae": 0.795,
+   "vs_lear": 1.8
+  },
+  "gbm2": {
+   "mae": 24.05,
+   "rmse": 37.73,
+   "rmae": 0.864,
+   "vs_lear": -6.7
+  },
+  "mlp2": {
+   "mae": 25.54,
+   "rmse": 40.05,
+   "rmae": 0.918,
+   "vs_lear": -13.3
+  },
+  "xgb0": {
+   "mae": 24.23,
+   "rmse": 37.88,
+   "rmae": 0.871,
+   "vs_lear": -7.5
+  },
+  "dnn0": {
+   "mae": 24.21,
+   "rmse": 37.28,
+   "rmae": 0.87,
+   "vs_lear": -7.4
+  },
+  "xgb": {
+   "mae": 23.26,
+   "rmse": 36.94,
+   "rmae": 0.836,
+   "vs_lear": -3.2
+  },
+  "dnn": {
+   "mae": 22.95,
+   "rmse": 36.42,
+   "rmae": 0.825,
+   "vs_lear": -1.8
+  },
+  "bolt": {
+   "mae": 22.15,
+   "rmse": 35.65,
+   "rmae": 0.796,
+   "vs_lear": 1.7
+  },
+  "chr2": {
+   "mae": 20.82,
+   "rmse": 34.32,
+   "rmae": 0.748,
+   "vs_lear": 7.6
+  },
+  "ens_ld": {
+   "mae": 22.29,
+   "rmse": 35.83,
+   "rmae": 0.801,
+   "vs_lear": 1.1
+  },
+  "ens_lx": {
+   "mae": 22.1,
+   "rmse": 35.66,
+   "rmae": 0.794,
+   "vs_lear": 1.9
+  },
+  "ens_ldx": {
+   "mae": 21.97,
+   "rmse": 35.42,
+   "rmae": 0.79,
+   "vs_lear": 2.5
+  },
+  "ens_t4": {
+   "mae": 21.69,
+   "rmse": 35.25,
+   "rmae": 0.779,
+   "vs_lear": 3.8
+  },
+  "ens_lc": {
+   "mae": 20.81,
+   "rmse": 34.11,
+   "rmae": 0.748,
+   "vs_lear": 7.6
+  },
+  "ens_t5": {
+   "mae": 21.12,
+   "rmse": 34.5,
+   "rmae": 0.759,
+   "vs_lear": 6.3
+  },
+  "dnn1": {
+   "mae": 23.34
+  }
+ },
+ "best": {
+  "key": "ens_lc",
+  "mae": 20.81,
+  "rmae": 0.748,
+  "vs_lear": 7.6
+ },
+ "test": {
+  "n_hours": 8760,
+  "mean": 134.46,
+  "max": 954.59
+ },
+ "dm": {
+  "aw_lear__xgb": {
+   "stat": -2.15,
+   "p": 0.9843
+  },
+  "xgb__aw_lear": {
+   "stat": 2.15,
+   "p": 0.0157
+  },
+  "aw_lear__dnn": {
+   "stat": -1.58,
+   "p": 0.9435
+  },
+  "dnn__aw_lear": {
+   "stat": 1.58,
+   "p": 0.0565
+  },
+  "aw_lear__ens_ld": {
+   "stat": 1.62,
+   "p": 0.053
+  },
+  "aw_lear__ens_lx": {
+   "stat": 2.33,
+   "p": 0.01
+  },
+  "aw_lear__ens_ldx": {
+   "stat": 3.09,
+   "p": 0.001
+  },
+  "aw_lear__ens_t4": {
+   "stat": 4.42,
+   "p": 0.0
+  },
+  "ens4__ens_t4": {
+   "stat": 4.2,
+   "p": 0.0
+  },
+  "ens4__ens_ldx": {
+   "stat": 1.32,
+   "p": 0.0935
+  },
+  "naive__chr2": {
+   "stat": 10.41,
+   "p": 0.0
+  },
+  "aw_lear__chr2": {
+   "stat": 3.24,
+   "p": 0.0006
+  },
+  "chr2__aw_lear": {
+   "stat": -3.24,
+   "p": 0.9994
+  },
+  "gbm2__xgb": {
+   "stat": 3.14,
+   "p": 0.0008
+  },
+  "mlp2__dnn": {
+   "stat": 6.18,
+   "p": 0.0
+  },
+  "naive__bolt": {
+   "stat": 9.66,
+   "p": 0.0
+  },
+  "bolt__naive": {
+   "stat": -9.66,
+   "p": 1.0
+  },
+  "ens4__ens_t5": {
+   "stat": 6.05,
+   "p": 0.0
+  },
+  "ens_t4__ens_t5": {
+   "stat": 5.58,
+   "p": 0.0
+  },
+  "chr2__ens_lc": {
+   "stat": 0.02,
+   "p": 0.4907
+  },
+  "chr2__ens_t5": {
+   "stat": -0.94,
+   "p": 0.8272
+  },
+  "aw_lear__ens4": {
+   "stat": 2.21,
+   "p": 0.0137
+  },
+  "aw_lear__aw_arx": {
+   "stat": 0.83,
+   "p": 0.2032
+  },
+  "aw_lear__ens_t5": {
+   "stat": 5.42,
+   "p": 0.0
+  },
+  "aw_lear__gbm2": {
+   "stat": -3.93,
+   "p": 1.0
+  },
+  "aw_lear__mlp2": {
+   "stat": -6.48,
+   "p": 1.0
+  },
+  "aw_lear__bolt": {
+   "stat": 0.77,
+   "p": 0.2201
+  },
+  "ens4__chr2": {
+   "stat": 2.85,
+   "p": 0.0022
+  },
+  "ens_t4__chr2": {
+   "stat": 2.07,
+   "p": 0.0192
+  },
+  "bolt__chr2": {
+   "stat": 5.22,
+   "p": 0.0
+  },
+  "n_beat_lear": 6
+ },
+ "combo": {
+  "corr": {
+   "dnn": 0.94,
+   "xgb": 0.89,
+   "chr2": 0.86,
+   "dnn_xgb": 0.89
+  },
+  "sd_lear": 36.25,
+  "sd_dnn": 36.37,
+  "sd_xgb": 36.9,
+  "w_best_xgb": 0.4,
+  "w_best_dnn": 0.4,
+  "mae_wbest_xgb": 22.06,
+  "theory_ratio_xgb": 0.982
+ },
+ "bymonth": {
+  "n_xgb_beats_lear": 3,
+  "n_dnn_beats_lear": 3,
+  "n_ldx_beats_lear": 10,
+  "worst_month": "2026-10",
+  "n_months": 12
+ },
+ "byhour": {
+  "xgb_beats_lear_h": 7,
+  "dnn_beats_lear_h": 5,
+  "ldx_beats_lear_h": 20,
+  "chr2_worst_h": 19
+ },
+ "search": {
+  "n_cfg": 25,
+  "n_random": 24,
+  "n_val_refits": 4,
+  "naive_val": 26.9,
+  "dnn": {
+   "best": 17,
+   "val_best": 22.59,
+   "val_l2": 24.24,
+   "val_worst": 25.32,
+   "rank_l2": 14,
+   "test_chosen": 23.34,
+   "test_best": 22.52,
+   "test_best_cfg": 14,
+   "test_l2": 24.21,
+   "test_worst": 26.82,
+   "snoop_gain": 0.81,
+   "snoop_pct": 3.5,
+   "rank_chosen_on_test": 6,
+   "spearman": 0.86,
+   "n_test_below_lear": 1,
+   "epochs_med": 56,
+   "epochs_min": 23,
+   "epochs_max": 92,
+   "cfg": {
+    "n1": 512,
+    "n2": 0,
+    "act": "softplus",
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 1e-05,
+    "l1": 0.0,
+    "batch": 64,
+    "load": true,
+    "res": true,
+    "fund": true,
+    "p3": true,
+    "lr_s": "3e-4"
+   },
+   "n_inputs": 251,
+   "n_params": 141336
+  },
+  "xgb": {
+   "best": 9,
+   "val_best": 22.76,
+   "val_l2": 23.83,
+   "val_worst": 25.44,
+   "rank_l2": 14,
+   "test_chosen": 23.26,
+   "test_best": 22.73,
+   "test_best_cfg": 21,
+   "test_l2": 24.23,
+   "test_worst": 26.97,
+   "snoop_gain": 0.53,
+   "snoop_pct": 2.3,
+   "rank_chosen_on_test": 5,
+   "spearman": 0.94,
+   "n_test_below_lear": 0,
+   "cfg": {
+    "n_est": 1500,
+    "eta": 0.02,
+    "depth": 8,
+    "mcw": 5,
+    "sub": 0.8,
+    "col": 1.0,
+    "lam": 0.1,
+    "obj": "reg:absoluteerror"
+   }
+  }
+ },
+ "curve": {
+  "best_ep": 51,
+  "n_ep": 76,
+  "month": "2026-10",
+  "tr_end": 23.06,
+  "v_best": 24.5,
+  "v_end": 25.07
+ },
+ "found": {
+  "val_chr2": 21.05,
+  "val_bolt": 22.64,
+  "cov80": 76.5,
+  "ctx_days": 85,
+  "ctx": 2048,
+  "chr2_beats_lear_h": 24,
+  "chr2_beats_lear_m": 9
+ },
+ "cost": {
+  "naive": 0.0,
+  "aw_lear": 87.6,
+  "xgb": 2.6,
+  "dnn": 2.7,
+  "bolt": 0.1,
+  "chr2": 0.3,
+  "ens_ldx": 93.0,
+  "ens_lx": 90.3,
+  "ens_lc": 88.0,
+  "search": 7.3,
+  "lear_day_s": 14.4,
+  "dnn_refit_s": 3.4,
+  "xgb_refit_s": 13.1,
+  "cores": 18
+ },
+ "shap": {
+  "top": [
+   "P(d-1,h)",
+   "P(d-7,h)",
+   "day of week",
+   "P(d-1,23)",
+   "L(d-7,h)"
+  ],
+  "top_share": [
+   32.9,
+   15.6,
+   9.3,
+   8.7,
+   5.4
+  ],
+  "groups": {
+   "price": 69.3,
+   "load": 8.5,
+   "res": 2.5,
+   "fund": 6.3,
+   "cal": 13.4
+  },
+  "check": 9e-06,
+  "res_corr": -0.64
+ },
+ "tree": {
+  "feat": "P(d-1,h)",
+  "split": 119.5,
+  "n_trees": 1500,
+  "n_leaves_t0": 233,
+  "n_rows": 41448,
+  "month": "2026-10"
+ },
+ "perm": {
+  "price_d1": 22.82,
+  "price_d2": 1.04,
+  "price_d3": 1.41,
+  "price_d7": 1.89,
+  "load": 2.12,
+  "wind_solar": -0.08,
+  "fund": 0.14,
+  "day_of_week": 3.66,
+  "top": "price d-1"
+ },
+ "spike": {
+  "theta_min": 166.8,
+  "theta_max": 202.4,
+  "share_test": 22.1,
+  "n_test": 1938,
+  "share_train_last": 14.3,
+  "brier_clim": 0.1723,
+  "xgb": {
+   "auc": 0.953,
+   "prec": 0.826,
+   "rec": 0.685,
+   "f1": 0.749,
+   "brier": 0.0721
+  },
+  "logit": {
+   "auc": 0.953,
+   "prec": 0.847,
+   "rec": 0.641,
+   "f1": 0.73,
+   "brier": 0.0716
+  },
+  "persist": {
+   "auc": 0.918,
+   "prec": 0.761,
+   "rec": 0.681,
+   "f1": 0.719,
+   "brier": 0.0831
+  },
+  "lear": {
+   "auc": 0.959,
+   "prec": 0.851,
+   "rec": 0.733,
+   "f1": 0.788
+  },
+  "peak_h": 19,
+  "peak_h_share": 57.0
+ },
+ "neg": {
+  "share_test": 2.9,
+  "n_test": 255,
+  "share_train_last": 2.0,
+  "n_days": 53,
+  "xgb": {
+   "auc": 0.98,
+   "prec": 0.735,
+   "rec": 0.467,
+   "f1": 0.571,
+   "brier": 0.0162
+  },
+  "logit": {
+   "auc": 0.98,
+   "prec": 0.668,
+   "rec": 0.514,
+   "f1": 0.581,
+   "brier": 0.0161
+  },
+  "persist": {
+   "auc": 0.847,
+   "prec": 0.407,
+   "rec": 0.137,
+   "f1": 0.205,
+   "brier": 0.0251
+  },
+  "lear": {
+   "auc": 0.983,
+   "prec": 0.753,
+   "rec": 0.443,
+   "f1": 0.558
+  },
+  "peak_h": 13
+ },
+ "decision": {
+  "C": 30.0,
+  "Lbar": 72.5,
+  "cut": 0.414,
+  "v_cut": 33.0,
+  "v_half": 36.7,
+  "v_perfect": 62.4,
+  "v_persist": 11.8,
+  "v_logit": 34.2,
+  "v_always_spike": 50.1,
+  "n_alerts_cut": 1806,
+  "n_alerts_half": 1606,
+  "best_cut": 0.64
+ },
+ "case": {
+  "day": "2026-06-30",
+  "hour": 20,
+  "price": 954.59,
+  "theta": 171.1,
+  "p_xgb": 0.992,
+  "p_logit": 1.0,
+  "p_persist": 1.0,
+  "day_mean": 293.44,
+  "n_spike_h": 11,
+  "prev_max": 766.66,
+  "prev_mean": 223.54,
+  "naive": 766.66,
+  "mae_naive": 69.9,
+  "aw_lear": 519.7,
+  "mae_aw_lear": 113.03,
+  "xgb": 498.56,
+  "mae_xgb": 106.17,
+  "dnn": 613.74,
+  "mae_dnn": 102.57,
+  "chr2": 607.29,
+  "mae_chr2": 93.3,
+  "ens_ldx": 544.0,
+  "mae_ens_ldx": 106.49,
+  "ens4": 500.05,
+  "mae_ens4": 112.39,
+  "week_start": "2026-06-27",
+  "week_end": "2026-07-03",
+  "wmae_naive": 59.81,
+  "wmae_aw_lear": 51.32,
+  "wmae_xgb": 50.19,
+  "wmae_dnn": 52.8,
+  "wmae_ens_ldx": 50.43,
+  "wmae_ens4": 53.25,
+  "wmae_chr2": 49.32,
+  "wmean": 173.94,
+  "w_spike_h": 47,
+  "w_alerts": 45,
+  "w_hits": 39,
+  "base_eur": 125.16,
+  "xgb_eur": 498.56,
+  "top_feat": [
+   "P(d-1,h)",
+   "P(d-7,h)",
+   "P(d-3,h)"
+  ],
+  "top_eur": [
+   212.9,
+   63.8,
+   20.9
+  ],
+  "top_val": [
+   766.7,
+   493.0,
+   374.2
+  ],
+  "load_d2_h": 6836.0,
+  "res_d2_h": 153.0,
+  "load_d_h": 7628.0,
+  "res_d_h": 250.0
+ },
+ "pit": {
+  "honest": 23.26,
+  "leak": 22.55,
+  "shuffled": 22.01,
+  "quarterly": 23.77,
+  "once": 24.25,
+  "roll365": 25.59,
+  "roll730": 24.45,
+  "leak_gain": 3.1,
+  "shuf_gain": 5.4,
+  "leak_rmae": 0.811,
+  "shuf_rmae": 0.791,
+  "once_loss": 4.3,
+  "n_quarters": 5,
+  "once_last_q": 3.7,
+  "once_first_q": 0.15
+ },
+ "leak": {
+  "n_months": 12,
+  "n_runs": 24,
+  "max_xgb": 0.0,
+  "max_dnn": 0.0005409391498005789,
+  "max_clf": 0.0,
+  "passed": true
+ },
+ "c7": {
+  "thr": 163.424,
+  "spikeTrain": 10.005701,
+  "spikeVal": 14.183744,
+  "spikeTest": 22.140572,
+  "nTest": 11567,
+  "pStar": 0.525,
+  "WStar": 0.5,
+  "top": "Price, same hour yesterday",
+  "second": "Price, same hour last week",
+  "third": "Day of week",
+  "xPrec": 0.822761,
+  "xRec": 0.516595,
+  "xFone": 0.634685,
+  "xAUC": 0.945525,
+  "wPrec": 0.6819,
+  "wRec": 0.442796,
+  "wFone": 0.536932,
+  "wAUC": 0.861351,
+  "nFone": 0.767333,
+  "oFone": 0.502357,
+  "oAUC": 0.890259,
+  "oRec": 0.374463,
+  "testStart": "01 July 2025",
+  "testEnd": "26 October 2026",
+  "rFone": 0.763142,
+  "peakTime": "30 June 2026, 21:00",
+  "peakPrice": 954.59,
+  "peakProb": 0.899816,
+  "loss": 150.764455,
+  "pc": 0.198986,
+  "valPc": 148.816032,
+  "valPstar": 111.962089,
+  "bestCut": 0.1,
+  "bestVal": 151.784203
+ },
+ "l2": {
+  "aw_lear": 22.53,
+  "ens_all": 22.13,
+  "gbm": 24.05,
+  "mlp": 25.54,
+  "naive": 27.82,
+  "ens_rmae": 0.7953,
+  "lear_rmae": 0.8099
+ }
+}

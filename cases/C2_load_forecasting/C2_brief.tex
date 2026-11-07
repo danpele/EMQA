@@ -1,0 +1,174 @@
+% C2_brief.tex -- ONE source for the English and Romanian case brief of Case 2 (Lecture 2).
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Research case 2 (Lecture 2)}{Studiul de caz 2 (cursul 2)}}
+\begin{document}
+\emqatitle{\T{Case 2: Watt's next? Forecasting national consumption one day ahead}%
+                {Studiul de caz 2: Watt's next? Prognoza consumului național pentru ziua următoare}}%
+          {\T{Based on}{Studiu bazat pe lucrarea} Proșcanu, Proșcanu, Pele \& Costea (2025), \emph{Watt's next? Benchmarking time series models on Romania's national electricity consumption},
+           Romanian Journal of Economic Forecasting 28(3), 146--163, \href{https://EconPapers.repec.org/RePEc:rjr:romjef:v::y:2025:i:3:p:146-163}{RePEc}}
+
+\begin{scenario}
+\T{Every morning, a Romanian supplier or the balancing team of a producer must notify the transmission system operator (TSO), Transelectrica, of the volume it will consume or deliver in each hour of the next day.
+Every MWh of error becomes an \emph{imbalance}, settled at a price that is usually worse than the day-ahead price.
+The head of trading must decide: \textbf{which forecasting model do we run in production --- a classical seasonal model, a machine-learning model, or a pretrained ``foundation'' model --- and is the gain worth the cost?}}%
+{În fiecare dimineață, un furnizor din România sau echipa de echilibrare a unui producător trebuie să transmită operatorului de transport și de sistem (OTS), Transelectrica, notificarea privind volumul pe care îl va consuma sau livra în fiecare oră din ziua următoare.
+Fiecare MWh de eroare se transformă într-un \emph{dezechilibru}, decontat de regulă la un preț mai dezavantajos decît cel de pe piața pentru ziua următoare (PZU).
+Directorul de tranzacționare trebuie să decidă: \textbf{ce model de prognoză folosim în activitatea curentă --- un model sezonier clasic, un model de învățare automată sau un model fundamental preantrenat (\emph{foundation model}) --- și justifică îmbunătățirea acurateței costul implementării?}}
+\end{scenario}
+
+\section{\T{What the paper did}{Lucrarea de referință}}
+\textbf{\T{Question.}{Întrebarea de cercetare.}} \T{The paper benchmarks univariate forecasting models on Romania's national electricity consumption, (1) on predictive accuracy (MSE, MAE, $R^2$) and (2) on the effect of model architecture (p.~147).}%
+{Lucrarea compară modele de prognoză univariate aplicate consumului național de energie electrică al României, (1) din punctul de vedere al acurateței (MSE, MAE, $R^2$) și (2) din punctul de vedere al efectului pe care îl are arhitectura modelului (p.~147).}
+
+\textbf{\T{Data.}{Datele.}} \T{Hourly national consumption, 1 January 2022 -- 31 December 2024, 26,304 observations in MWh (sistemulenergetic.ro); mean 6,230.59, minimum 2,871.75, maximum 9,210.75 (Table~1, p.~149).
+Lowest demand at 2--5 a.m., peak around 7 p.m.; winter months highest (p.~150).}%
+{Consumul național orar, 1 ianuarie 2022 -- 31 decembrie 2024, 26.304 observații, în MWh (sistemulenergetic.ro); media 6.230,59, minimul 2.871,75, maximul 9.210,75 (Tabelul~1, p.~149).
+Consumul este minim între orele 2 și 5 și atinge vîrful în jurul orei 19; lunile de iarnă au cel mai mare consum (p.~150).}
+
+\textbf{\T{Method.}{Metoda.}} \T{Nine models: SARIMA (Seasonal AutoRegressive Integrated Moving Average), the neural networks N-BEATS, NHITS, LSTM (Long Short-Term Memory), Mamba, Titans and RetNet,
+and two pretrained foundation models used zero-shot, Chronos-T5 and TimesFM. Look-back 168 hours, horizon 24 hours, chronological 80/20 split (Table~3, p.~157).}%
+{Nouă modele: SARIMA (model autoregresiv integrat cu medie mobilă, cu componentă sezonieră), rețelele neuronale N-BEATS, NHITS, LSTM (\emph{Long Short-Term Memory}, rețea recurentă cu memorie de lungă durată), Mamba, Titans și RetNet,
+precum și două modele fundamentale preantrenate, folosite fără reantrenare pe datele românești (\emph{zero-shot}): Chronos-T5 și TimesFM. Fereastra de intrare are 168 de ore, orizontul de prognoză 24 de ore, iar eșantionul este împărțit cronologic în proporția 80/20 (Tabelul~3, p.~157).}
+
+\textbf{\T{Main findings of the paper.}{Principalele rezultate ale lucrării.}}
+\begin{itemize}
+\item \T{``The N-BEATS model has been the most successful'', with MAPE 2.324\,\% and ``the highest coefficient of determination ($R^2$ = 0.956)'' (p.~158; Table~4, p.~157).
+N-BEATS ``lowers MAPE from 3.63\,\% (SARIMA) to 2.32\,\%'' (p.~159).}%
+{Cel mai performant model este N-BEATS, cu MAPE 2,324\,\% și cel mai mare coeficient de determinare ($R^2 = 0{,}956$) (p.~158; Tabelul~4, p.~157).
+Față de SARIMA, N-BEATS reduce MAPE de la 3,63\,\% la 2,32\,\% (p.~159).}
+\item \T{RetNet and Titans also perform very well (p.~158--159).}%
+{RetNet și Titans au, de asemenea, performanțe foarte bune (p.~158--159).}
+\item \T{``TimesFM consistently underperforms'' (MAPE 5.895\,\%, $R^2$ = 0.673); Chronos-T5 is the fastest (7 seconds) with MAPE 3.325\,\% (p.~159; Table~4).}%
+{TimesFM are în mod constant rezultate mai slabe (MAPE 5,895\,\%, $R^2 = 0{,}673$); Chronos-T5 este cel mai rapid (7 secunde), cu MAPE 3,325\,\% (p.~159; Tabelul~4).}
+\item \T{SARIMA ``remains a viable and efficient option'' when resources are constrained; neural models suit capacity planning and renewable integration (p.~160).}%
+{SARIMA rămîne o opțiune viabilă și eficientă atunci cînd resursele de calcul sînt limitate; modelele neuronale sînt potrivite pentru planificarea capacităților și integrarea surselor regenerabile (p.~160).}
+\end{itemize}
+
+\section{\T{The method, step by step}{Metoda, pas cu pas}}
+\begin{intuition}
+\T{Consumption repeats itself: every day has the same shape, every week has quiet weekends, every year has cold winters. A forecasting model is a machine for copying the right past pattern and adjusting it.
+Simple models copy one pattern (``two days ago'', ``last week''); better models learn which past hours matter and how much.}%
+{Consumul are un caracter repetitiv: profilul orar se repetă de la o zi la alta, sfîrșitul de săptămînă aduce un consum mai redus, iar iernile sînt reci în fiecare an. Un model de prognoză preia tiparul potrivit din trecut și îl ajustează.
+Modelele simple preiau un singur tipar („acum două zile”, „săptămîna trecută”); modelele mai bune învață care ore din trecut sînt relevante și cu ce pondere.}
+\end{intuition}
+\T{Let $L_{d,h}$ be the load (MW) in hour $h$ of day $d$. At gate closure, 12:00 CET on day $d-1$, we forecast the 24 values $\hat L_{d,0},\dots,\hat L_{d,23}$. At that time load is metered only up to the end of day $d-2$, so:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item every model uses load data up to day $d-2$ only (lags of at least 48 hours, plus $d-7$);
+\item no value of day $d-1$ is used, not even its daily mean.
+\end{itemize}
+The \emph{naive} forecasts are $\hat L_{d,h}=L_{d-2,h}$ (two days earlier) and $\hat L_{d,h}=L_{d-7,h}$ (last week).
+SARIMA$(1,0,1)(1,1,1)_{24}$ models the 24-hour difference $L_t-L_{t-24}$ as depending on its own past and on past errors.
+The \emph{linear regression} and \emph{gradient boosting} (an ensemble of small decision trees, each fitted to the errors of the previous ones) use lagged load (48, 72, 168, 336 hours), the mean of day $d-2$, hour, weekday, month and holidays.
+The \emph{neural network} maps the 168 hours up to the end of $d-2$ directly to the 24 hours of day $d$.
+Chronos-Bolt is a model pretrained on many public time series; it reads the 512 hours up to the end of $d-2$ and outputs forecast quantiles without being trained on our data (zero-shot).
+Accuracy is measured on all $N$ test hours with}%
+{Fie $L_{d,h}$ consumul (MW) în ora $h$ a zilei $d$. La închiderea porții, ora 12:00 CET în ziua $d-1$, prognozăm cele 24 de valori $\hat L_{d,0},\dots,\hat L_{d,23}$. În acel moment, consumul este măsurat numai pînă la sfîrșitul zilei $d-2$, de aceea:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item fiecare model folosește date de consum numai pînă în ziua $d-2$ (decalaje de cel puțin 48 de ore, plus $d-7$);
+\item nu se folosește nicio valoare din ziua $d-1$, nici măcar media ei zilnică.
+\end{itemize}
+Prognozele \emph{naive} sînt $\hat L_{d,h}=L_{d-2,h}$ (cu două zile înainte) și $\hat L_{d,h}=L_{d-7,h}$ (aceeași zi din săptămîna precedentă).
+Modelul SARIMA$(1,0,1)(1,1,1)_{24}$ descrie diferența pe 24 de ore, $L_t-L_{t-24}$, în funcție de valorile și de erorile sale anterioare.
+\emph{Regresia liniară} și modelul \emph{gradient boosting} (un ansamblu de arbori de decizie mici, fiecare estimat pe erorile celor anteriori) folosesc consumul decalat (cu 48, 72, 168 și 336 de ore), media zilei $d-2$, ora, ziua săptămînii, luna și zilele de sărbătoare.
+\emph{Rețeaua neuronală} transformă direct cele 168 de ore de pînă la sfîrșitul zilei $d-2$ în prognoza pentru cele 24 de ore ale zilei $d$.
+Chronos-Bolt este un model preantrenat pe un număr mare de serii de timp publice; preia cele 512 ore de pînă la sfîrșitul zilei $d-2$ și furnizează cuantilele prognozei fără a fi antrenat pe datele noastre (\emph{zero-shot}).
+Acuratețea se măsoară pe toate cele $N$ ore din perioada de test, cu indicatorii}
+\[
+\text{MAE}=\frac1N\sum_{t}|L_t-\hat L_t|,\qquad \text{MAPE}=\frac{100}{N}\sum_t\left|\frac{L_t-\hat L_t}{L_t}\right|,\qquad R^2=1-\frac{\sum_t(L_t-\hat L_t)^2}{\sum_t(L_t-\bar L)^2}.
+\]
+\begin{decision}
+\T{The model choice is a money question: annual imbalance volume $\approx$ MAE $\times$ 8,760 hours $\times$ your market share; multiply by the imbalance cost per MWh. A model is worth deploying if this saving exceeds its running and maintenance cost.}%
+{Alegerea modelului are o miză financiară: volumul anual al dezechilibrelor $\approx$ MAE $\times$ 8.760 de ore $\times$ cota dumneavoastră de piață; înmulțit cu costul dezechilibrului pe MWh, acesta dă costul anual. Un model merită introdus în activitatea curentă dacă economia astfel obținută depășește costurile de operare și de întreținere.}
+\end{decision}
+
+\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\T{Notebook \texttt{C2\_notebook\_EN.ipynb}: hourly load from ENTSO-E via energy-charts.info (\texttt{generation\_ro\_mw\_hourly\_utc.csv}), the paper's sample and an 80/20 split; the test period starts on \NtestStart\ (\NnDays\ forecast days).
+Our series reproduces the paper's Table~1: \NnHours\ hours, mean \NmeanLoad\ MW, minimum \NminLoad, maximum \NmaxLoad\ --- the same Transelectrica metering, published twice.}%
+{Notebook-ul \texttt{C2\_notebook\_RO.ipynb} folosește consumul orar publicat de ENTSO-E, preluat de pe energy-charts.info (\texttt{generation\_ro\_mw\_hourly\_utc.csv}), același eșantion ca lucrarea și aceeași împărțire 80/20; perioada de test începe la \NtestStart\ (\NnDays\ zile de prognoză).
+Seria noastră reproduce Tabelul~1 din lucrare: \NnHours\ ore, media \NmeanLoad\ MW, minimul \NminLoad, maximul \NmaxLoad\ --- sînt aceleași măsurători Transelectrica, publicate de două surse.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.55\linewidth}\centering
+\includegraphics[width=\linewidth]{f1_load_series}
+\caption{\T{Daily mean load and the test period (left); mean hourly profile by month (right).}{Consumul mediu zilnic și perioada de test (stînga); profilul orar mediu, pe luni (dreapta).}}
+\src{energy-charts.info (ENTSO-E); 1.1.2022--31.12.2024.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.43\linewidth}\centering
+\includegraphics[width=\linewidth]{f2_mape_by_model}
+\caption{\T{Test MAPE by model.}{MAPE pe perioada de test, pe modele.}}
+\src{\T{our forecasts; test period \NtestStart--31.12.2024.}{prognozele noastre; perioada de test \NtestStart--31.12.2024.}}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{\T{Day-ahead forecast accuracy on the test period, \NnDays\ days $\times$ 24 hours. Best value in bold (Bias closest to zero).}%
+{Acuratețea prognozelor pentru ziua următoare în perioada de test, \NnDays\ zile $\times$ 24 de ore. Cea mai bună valoare este marcată cu aldine (pentru abatere, valoarea cea mai apropiată de zero).}}
+\tabin{accuracy}
+\src{\T{our computation; Bias = mean of actual minus forecast.}{calcule proprii; abaterea = media diferenței dintre valoarea efectivă și prognoză.}}
+\end{table}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.55\linewidth}\centering
+\includegraphics[width=\linewidth]{f3_forecast_week}
+\caption{\T{One week of forecasts in November 2024.}{O săptămînă de prognoze în noiembrie 2024.}}
+\src{\T{our forecasts; energy-charts.info.}{prognozele noastre; energy-charts.info.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.43\linewidth}\centering
+\includegraphics[width=\linewidth]{f4_error_by_hour}
+\caption{\T{MAE by hour of the forecast day.}{MAE pe orele zilei prognozate.}}
+\src{\T{our forecasts; test period.}{prognozele noastre; perioada de test.}}
+\end{minipage}
+\end{figure}
+
+\T{\textbf{Our result.} The best model on our test period is \NbestName\ with MAPE \NbestMAPE\,\% (MAE \NbestMAE\ MW, $R^2$ = \NbestRtwo), followed closely by Chronos-Bolt used zero-shot (\NchronosMAPE\,\%).
+The naive ``two days earlier'' rule has \NnaiveMAPE\,\%, ``last week'' \NweekMAPE\,\%; our SARIMA reaches \NsarimaMAPE\,\%, with parameters estimated on 8 weeks and held fixed over the test, so it does not adapt to holidays and the summer.
+As in the paper, a pretrained model used zero-shot is competitive, and the ranking depends on the metric. The 10\,\%--90\,\% interval of Chronos-Bolt covered \Ncover\,\% of the hours (target 80\,\%).
+Our numbers reflect our test window, forecast origin and model versions; the ranking is ex post (the ``best'' model is identified on the test period itself), so the saving below is an upper estimate.
+\textbf{Decision number:} for a supplier with 10\,\% of national consumption and an illustrative imbalance cost of 50 EUR/MWh, moving from the naive rule to the best model cuts the annual imbalance bill from \NcostNaive\ to \NcostBest\ million EUR (saving \Nsaving\ million EUR).}%
+{\textbf{Rezultatul replicării.} În perioada noastră de test, cel mai bun model este \NbestName, cu MAPE \NbestMAPE\,\% (MAE \NbestMAE\ MW, $R^2 = \NbestRtwo$), urmat îndeaproape de Chronos-Bolt, folosit fără reantrenare (\NchronosMAPE\,\%).
+Regula naivă „acum două zile” are MAPE \NnaiveMAPE\,\%, iar regula „săptămîna trecută” \NweekMAPE\,\%; modelul SARIMA ajunge la \NsarimaMAPE\,\%, deoarece parametrii săi sînt estimați pe 8 săptămîni și rămîn neschimbați pe toată perioada de test, astfel că nu se adaptează la sărbători și la sezonul de vară.
+Ca și în lucrare, un model preantrenat folosit fără reantrenare este competitiv, iar ierarhia modelelor depinde de indicatorul de eroare ales. Intervalul dintre cuantilele de 10\,\% și 90\,\% ale modelului Chronos-Bolt a cuprins consumul efectiv în \Ncover\,\% din ore (nivelul-țintă este 80\,\%).
+Rezultatele depind de perioada de test, de momentul prognozei și de versiunile modelelor folosite; ierarhia este stabilită ex post („cel mai bun” model este identificat chiar pe perioada de test), de aceea economia de mai jos este o estimare superioară.
+\textbf{Cifra relevantă pentru decizie:} pentru un furnizor cu 10\,\% din consumul național și un cost ilustrativ al dezechilibrului de 50 EUR/MWh, trecerea de la regula naivă la cel mai bun model reduce costul anual al dezechilibrelor de la \NcostNaive\ la \NcostBest\ milioane EUR (o economie de \Nsaving\ milioane EUR).}
+
+\section{\T{Discussion questions for managers}{Întrebări pentru discuție}}
+\begin{enumerate}
+\item \T{Using the paper's benchmarking framework, what evidence would you need before choosing a model for production: seasonal performance, imbalance cost, runtime or maintenance?}%
+{Pornind de la cadrul de comparație din lucrare, de ce informații ați avea nevoie înainte de a alege modelul care va fi folosit în activitatea curentă: performanța pe sezoane, costul dezechilibrelor, timpul de calcul sau efortul de întreținere?}
+\item \T{A pretrained model needs no training on your data. What are the risks of relying on a model you cannot inspect or retrain?}%
+{Un model preantrenat nu trebuie antrenat pe datele dumneavoastră. Ce riscuri presupune să vă bazați pe un model pe care nu îl puteți analiza în detaliu sau reantrena?}
+\item \T{Which hours of the day carry the largest errors (Figure~4), and are they the expensive hours for your portfolio?}%
+{În ce ore ale zilei apar cele mai mari erori (Figura~4) și sînt acestea orele cele mai costisitoare pentru portofoliul dumneavoastră?}
+\item \T{National load is smooth; your own portfolio (a few hundred clients, rooftop solar) is not. How would you expect the ranking of models to change?}%
+{Consumul național are o evoluție netedă; portofoliul dumneavoastră (cîteva sute de clienți, panouri fotovoltaice pe acoperișuri) nu are. Cum credeți că s-ar modifica ierarhia modelelor?}
+\item \T{Is a MAPE improvement of one percentage point worth a data-science team? Use the decision number above and your own share and imbalance cost.}%
+{Justifică o reducere a MAPE cu un punct procentual costul unei echipe de analiză a datelor? Folosiți cifra relevantă pentru decizie de mai sus, cu propria cotă de piață și propriul cost al dezechilibrului.}
+\end{enumerate}
+
+\section{\T{Limitations of the classroom replication}{Limitele replicării}}
+\T{(i) Our models are univariate: no weather or economic drivers.
+(ii) One test window (late May -- December 2024); rankings can change with the season.
+(iii) National load hides the behind-the-meter solar boom; a supplier's own portfolio is noisier.
+(iv) The imbalance cost of 50 EUR/MWh is an illustrative assumption, not a market statistic.
+(v) Our neural network and Chronos version are compact implementations chosen to run in class.}%
+{(i) Modelele noastre sînt univariate: nu includ variabile meteorologice sau economice.
+(ii) Folosim o singură perioadă de test (sfîrșitul lunii mai -- decembrie 2024); ierarhia modelelor se poate schimba de la un sezon la altul.
+(iii) Consumul național nu reflectă direct creșterea rapidă a producției fotovoltaice a prosumatorilor; portofoliul unui furnizor are o variabilitate mai mare.
+(iv) Costul dezechilibrului de 50 EUR/MWh este o ipoteză ilustrativă, nu o statistică de piață.
+(v) Rețeaua neuronală și versiunea Chronos folosite sînt implementări compacte, alese pentru a putea rula la curs.}
+
+\newpage
+\section*{\T{Case 2 at a glance}{Studiul de caz 2 pe scurt}}
+\glance{\T{Which model should forecast tomorrow's hourly consumption, and is the gain worth it?}{Ce model ar trebui să prognozeze consumul orar de mîine și justifică îmbunătățirea costul?}}%
+{\T{Hourly national load 2022--2024 (\NnHours\ h), same series as the paper; last 20\,\% for testing.}{Consumul național orar 2022--2024 (\NnHours\ h), aceeași serie ca în lucrare; ultimele 20\,\% din date pentru test.}}%
+{\T{Naive, SARIMA, regression, gradient boosting, neural net, Chronos zero-shot; MAE, MAPE, $R^2$.}{Naiv, SARIMA, regresie, gradient boosting, rețea neuronală, Chronos zero-shot; MAE, MAPE, $R^2$.}}%
+{\T{Best: \NbestName, MAPE \NbestMAPE\,\% vs \NnaiveMAPE\,\% naive. Paper: N-BEATS 2.324\,\% vs SARIMA 3.63\,\%.}{Cel mai bun: \NbestName, MAPE \NbestMAPE\,\% față de \NnaiveMAPE\,\% pentru regula naivă. Lucrarea: N-BEATS 2,324\,\% față de SARIMA 3,63\,\%.}}%
+{\T{Deploy a modern model if the imbalance saving ($\approx$\Nsaving\ mil.\ EUR/yr for a 10\,\% supplier) exceeds its cost.}{Introduceți un model modern dacă economia la costul dezechilibrelor ($\approx$\Nsaving\ mil.\ EUR/an pentru un furnizor cu 10\,\%) depășește costul acestuia.}}
+\begin{center}
+\includegraphics[width=0.62\linewidth]{fig_headline_\lang}
+\src{\T{our forecasts on energy-charts.info (ENTSO-E) load; test period \NtestStart--31.12.2024.}{prognozele noastre pe datele de consum de pe energy-charts.info (ENTSO-E); perioada de test \NtestStart--31.12.2024.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NbestMAPE\,\%}\\ \small \T{best MAPE on our test}{cel mai bun MAPE în perioada de test}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NnaiveMAPE\,\%}\\ \small \T{naive ``two days earlier'' rule}{regula naivă „acum două zile”}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \Nsaving}\\ \small \T{mil.\ EUR/yr imbalance saving, 10\,\% supplier}{mil.\ EUR/an economie la costul dezechilibrelor, furnizor cu 10\,\%}\end{minipage}
+\end{document}

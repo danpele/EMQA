@@ -1,0 +1,532 @@
+% A1_brief.tex -- ONE source for the English and Romanian brief of Assignment 1.
+% Compile A1_brief_EN.tex or A1_brief_RO.tex (they set the language and \input this file).
+\renewcommand{\emqaassign}{\T{Assignment 1}{Tema 1}}
+\begin{document}
+\emqatitle{\T{Assignment 1: Forecasting the Romanian day-ahead price for a bidding desk}%
+                {Tema 1: Prognoza prețului PZU din România, pentru un birou de ofertare}}%
+          {\T{Point and probabilistic forecasts, forecast tests and volatility --- lectures 1--3}%
+             {Prognoze punctuale și probabilistice, teste de acuratețe și volatilitate --- cursurile 1--3}}
+
+\begin{todobox}\small
+\textbf{\T{Instructor to fill in}{De completat de profesor}:}
+\T{Deadline}{Termen}: \textbf{TODO} \quad\textbullet\quad
+\T{Weight in the final grade}{Pondere în nota finală}: \textbf{TODO} \quad\textbullet\quad
+\T{Individual or teams of 2}{Individual sau echipe de cîte 2}: \textbf{TODO} \quad\textbullet\quad
+\T{Oral defence slots}{Programarea susținerilor orale}: \textbf{TODO} \quad\textbullet\quad
+\T{Late policy}{Regula pentru întîrzieri}: \textbf{TODO}.
+\T{Submit on Moodle.}{Predarea se face pe Moodle.}
+\end{todobox}
+
+\begin{scenario}
+\T{You work on the day-ahead desk of a Romanian energy company: a supplier, a producer or a large consumer.
+Every day, before 12:00 CET (Central European Time) on day $d-1$, the desk sends bids to the Romanian day-ahead market
+(PZU, \emph{Piața pentru Ziua Următoare}, operated by OPCOM, the Romanian power and gas market operator) for each hour of day $d$.
+Today the desk prices its bids with ``the price of yesterday'' (a naive rule).
+Your manager asks three questions.
+(1) Should we replace the naive rule by a statistical model, at least in the hours that matter most for us (your \emph{focus block})?
+(2) How wide is the uncertainty we should communicate with every forecast?
+(3) Is the market now in a high-volatility regime that justifies a larger credit or collateral buffer?
+You answer with a reproducible notebook and a two-page memo that ends in a clear decision.}%
+{Lucrați la biroul de ofertare pentru ziua următoare al unei companii energetice din România: un furnizor, un producător sau un consumator mare.
+În fiecare zi, înainte de ora 12:00 CET (ora Europei Centrale) din ziua $d-1$, biroul trimite oferte pe piața pentru ziua următoare
+(PZU; în engleză \emph{day-ahead market}, operată de OPCOM, operatorul pieței de energie electrică și de gaze naturale din România) pentru fiecare oră a zilei $d$.
+Astăzi biroul își stabilește ofertele cu „prețul de ieri'' (o regulă naivă).
+Managerul vă pune trei întrebări.
+(1) Înlocuim regula naivă cu un model statistic, măcar în orele care contează cel mai mult pentru noi (\emph{blocul dumneavoastră de interes})?
+(2) Cît de mare este incertitudinea pe care trebuie să o comunicăm odată cu fiecare prognoză?
+(3) Este piața acum într-un regim de volatilitate ridicată, care justifică o rezervă mai mare de credit sau de garanții?
+Răspundeți cu un notebook reproductibil și cu un memoriu de două pagini care se încheie cu o decizie clară.}
+\end{scenario}
+
+\section{\T{What you submit}{Ce predați}}
+\begin{enumerate}[label=\textbf{D\arabic*}]
+\item \T{\textbf{Notebook} \texttt{A1\_<ID>.ipynb}, built from the starter \texttt{A1\_starter\_EN.ipynb}. It must run with \emph{Restart \& Run All}
+  from the course data folder, without errors, in at most 30 minutes on a normal laptop.}%
+  {\textbf{Notebook-ul} \texttt{A1\_<ID>.ipynb}, construit pornind de la \texttt{A1\_starter\_RO.ipynb}. Trebuie să ruleze cu \emph{Restart \& Run All}
+  din dosarul de date al cursului, fără erori, în cel mult 30 de minute pe un laptop obișnuit.}
+\item \T{\textbf{Numbers file} \texttt{my\_numbers\_A1\_<ID>\_personal.json}, written by the notebook (last cell of the starter).}%
+  {\textbf{Fișierul de numere} \texttt{my\_numbers\_A1\_<ID>\_personal.json}, scris de notebook (ultima celulă a notebook-ului de pornire).}
+\item \T{\textbf{Memo} (PDF, 11 pt, at most 2 pages): page 1 is the recommendation for your manager; page 2 is the appendix
+  (key tables and the hand-reconciliation table). Structure in Task 8.}%
+  {\textbf{Memoriul} (PDF, 11 pt, cel mult 2 pagini): pagina 1 este recomandarea pentru manager; pagina 2 este anexa
+  (tabelele principale și tabelul de reconciliere manuală). Structura este în sarcina 8.}
+\item \T{\textbf{Oral defence} (about 10 minutes): the instructor picks one day and one hour of your test window and one adverse question;
+  you explain your numbers from your own notebook.}%
+  {\textbf{Susținerea orală} (circa 10 minute): profesorul alege o zi și o oră din fereastra dumneavoastră de test și o întrebare dificilă;
+  explicați numerele din propriul notebook.}
+\end{enumerate}
+
+\section{\T{Your personal parameters}{Parametrii dumneavoastră personali}}
+\T{Every student (or team) receives different settings. They are computed from your student ID by a fixed rule (a seed from the SHA-256 secure hash algorithm),
+so you always get the same values and nobody else gets the same set. Get them in either way:}%
+{Fiecare student (sau echipă) primește alți parametri. Ei sînt calculați din numărul matricol printr-o regulă fixă (o valoare inițială, \emph{seed}, obținută cu algoritmul de hash SHA-256, \emph{Secure Hash Algorithm}),
+deci obțineți mereu aceleași valori și nimeni altcineva nu are același set. Îi obțineți în oricare dintre aceste două moduri:}
+\begin{itemize}
+\item \texttt{python make\_assignment.py -{}-id <ID> -{}-assignment 1} \T{(folder \texttt{repo/assignments}); team: \texttt{-{}-id "ID1+ID2"};}{(dosarul \texttt{repo/assignments}); echipă: \texttt{-{}-id "ID1+ID2"};}
+\item \T{or the first cell of the starter notebook (\texttt{STUDENT\_ID = ...}).}{sau prima celulă a notebook-ului de pornire (\texttt{STUDENT\_ID = ...}).}
+\end{itemize}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{>{\ttfamily}l X}
+\toprule
+\T{\normalfont\textbf{Parameter}}{\normalfont\textbf{Parametru}} & \T{\textbf{Meaning}}{\textbf{Semnificație}}\\
+\midrule
+test\_start, test\_end & \T{your 365-day test window (first day of a month between Sep 2024 and Nov 2025)}{fereastra dumneavoastră de test, de 365 de zile (începe în prima zi a unei luni între sept.\ 2024 și nov.\ 2025)}\\
+burn\_in\_days & \T{112 days before the test window that you also forecast; their errors feed the probabilistic forecasts (Task 6)}{112 zile dinaintea ferestrei de test, pe care le prognozați de asemenea; erorile lor alimentează prognozele probabilistice (sarcina 6)}\\
+focus\_hours & \T{the hours that matter for your desk (CET): night, morning ramp, solar hours or evening peak}{orele care contează pentru biroul dumneavoastră (CET): noapte, rampa de dimineață, orele solare sau vîrful de seară}\\
+arx\_windows & \T{the six calibration windows 56, 84, 112, 714, 721, 728 days (the same for everybody)}{cele șase ferestre de calibrare: 56, 84, 112, 714, 721, 728 de zile (aceleași pentru toți)}\\
+lear\_window & \T{your calibration window for LEAR: 364, 546 or 728 days}{fereastra dumneavoastră de calibrare pentru LEAR: 364, 546 sau 728 de zile}\\
+error\_window & \T{$W$: number of past days of errors used for HS and CP intervals: 56, 84 or 112}{$W$: numărul de zile anterioare ale căror erori se folosesc pentru intervalele HS și CP: 56, 84 sau 112}\\
+garch\_years & \T{length of the GARCH estimation sample before test\_start: 3, 4 or 5 years}{lungimea eșantionului de estimare GARCH dinainte de test\_start: 3, 4 sau 5 ani}\\
+check\_days, check\_hour & \T{two days and one hour you must reconcile by hand (Task 8)}{două zile și o oră pe care trebuie să le reconciliați manual (sarcina 8)}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\T{Copy the printed block, unchanged, into the memo appendix. A memo with someone else's parameters receives 0 points.}%
+{Copiați blocul afișat, nemodificat, în anexa memoriului. Un memoriu cu parametrii altcuiva primește 0 puncte.}
+
+\section{\T{Data, time and notation}{Date, timp și notație}}
+\T{All data are in \texttt{repo/data/clean/} (sources and download dates in \texttt{repo/data/SOURCES.md}).
+Use the helper \texttt{emqa\_assign.py}; do not download other data and do not edit the data files.}%
+{Toate datele sînt în \texttt{repo/data/clean/} (sursele și data descărcării în \texttt{repo/data/SOURCES.md}).
+Folosiți modulul \texttt{emqa\_assign.py}; nu descărcați alte date și nu modificați fișierele de date.}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{l l X}
+\toprule
+\T{\textbf{Object}}{\textbf{Obiect}} & \T{\textbf{Call}}{\textbf{Apel}} & \T{\textbf{Content}}{\textbf{Conținut}}\\
+\midrule
+$P_{d,h}$ & \texttt{ea.panel("RO")[0]} & \T{day-ahead price of Romania, day $d$, hour $h$ (EUR/MWh)}{prețul PZU al României, ziua $d$, ora $h$ (EUR/MWh)}\\
+$L_{d,h}$ & \texttt{ea.panel("RO")[1]} & \T{actual load of Romania (mean MW in the hour)}{consumul realizat al României (MW medii în oră)}\\
+$R_{d,h}$ & \texttt{ea.panel("RO")[2]} & \T{actual wind + solar generation of Romania (MW)}{producția eoliană + solară realizată a României (MW)}\\
+$\bar P_d$ & \texttt{ea.daily\_prices()["RO"]} & \T{daily base price: mean of all market time units of the CET day}{prețul zilnic de bază: media tuturor intervalelor de tranzacționare ale zilei CET}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\begin{itemize}
+\item \T{\textbf{Days and hours.} One row per delivery day $d$ in CET (Central European Time, the time zone of the European market coupling, SDAC);
+columns \texttt{h00}--\texttt{h23} are CET hours, $h=0,\dots,23$. Romanian local time (EET, Eastern European Time) is one hour later: \texttt{h00} is 01:00--02:00 in Bucharest.}%
+{\textbf{Zile și ore.} Un rînd pe zi de livrare $d$ în ora CET (ora Europei Centrale, fusul orar al cuplării unice a piețelor pentru ziua următoare, SDAC);
+coloanele \texttt{h00}--\texttt{h23} sînt ore CET, $h=0,\dots,23$. Ora României (EET, ora Europei de Est) este cu o oră mai tîrziu: \texttt{h00} înseamnă 01:00--02:00 la București.}
+\item \T{\textbf{15-minute market time unit (MTU).} Since delivery day 1 October 2025 the market clears 96 quarter-hours per day.
+In the hourly matrix each hour after that date is the mean of its four quarter-hours. Forecast and evaluate hourly values.}%
+{\textbf{Intervalul de tranzacționare de 15 minute (MTU, \emph{market time unit}).} Din ziua de livrare 1 octombrie 2025 prețurile se stabilesc pentru 96 de sferturi de oră pe zi.
+În matricea orară, fiecare oră de după această dată este media celor patru sferturi de oră. Prognozați și evaluați valori orare.}
+\item \T{\textbf{Information set (gate closure).} A forecast of day $d$ is made at 12:00 CET on day $d-1$. At that time:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item \emph{prices}: all prices up to day $d-1$ are known (the $d-1$ auction cleared on day $d-2$);
+\item \emph{realised load $L$ and wind+solar $R$}: only values already metered, i.e.\ up to the end of day $d-2$; day $d-1$ is \emph{not} yet complete;
+\item \emph{fuels and carbon}: the last close before 12:00 on $d-1$, in practice the close of day $d-2$;
+\item \emph{transformations, scalers, thresholds}: fitted on these data only.
+\end{itemize}
+A real desk would use the forecasts of the transmission system operator (TSO, Transelectrica); our free data contain only actual values.
+\textbf{Rule:} use the actual $L$ and $R$ of day $d-2$ (same hour) as the proxy for day $d$, and $d-3$, $d-7$ as further lags. \texttt{ea.leakage\_check} enforces this rule.}%
+{\textbf{Setul de informații (închiderea porții, \emph{gate closure}).} Prognoza pentru ziua $d$ se face la 12:00 CET în ziua $d-1$. În acel moment:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item \emph{prețurile}: toate prețurile pînă în ziua $d-1$ sînt cunoscute (licitația pentru ziua $d-1$ s-a încheiat în ziua $d-2$);
+\item \emph{consumul $L$ și producția eoliană+solară $R$ realizate}: numai valorile deja măsurate, adică pînă la sfîrșitul zilei $d-2$; ziua $d-1$ \emph{nu} este încă încheiată;
+\item \emph{combustibilii și certificatele de emisii}: ultima cotație de închidere dinainte de ora 12:00 din ziua $d-1$, în practică cea din ziua $d-2$;
+\item \emph{transformările, standardizările și pragurile}: estimate numai pe aceste date.
+\end{itemize}
+Un birou real ar folosi prognozele operatorului de transport și sistem (OTS, Transelectrica); datele noastre gratuite conțin doar valori realizate.
+\textbf{Regulă:} folosiți $L$ și $R$ realizate din ziua $d-2$ (aceeași oră) ca substitut (proxy) pentru ziua $d$, iar $d-3$ și $d-7$ ca decalaje suplimentare. \texttt{ea.leakage\_check} verifică respectarea acestei reguli.}
+\item \T{\textbf{Daylight saving time (DST).} The CET day has 23 hours in March and 25 in October. The helper keeps 24 columns:
+the missing hour is the mean of its neighbours, the doubled hour is averaged (column \texttt{dst} marks these days).}%
+{\textbf{Ora de vară (DST).} Ziua CET are 23 de ore în martie și 25 în octombrie. Modulul păstrează 24 de coloane:
+ora lipsă este media orelor vecine, ora dublată este mediată (coloana \texttt{dst} marchează aceste zile).}
+\end{itemize}
+
+\section{\T{Tasks}{Sarcinile}}
+\T{Do the tasks in order. Each task says what to compute, on which data, with which method, and what to show.
+The points add up to 100.}%
+{Rezolvați sarcinile în ordine. Fiecare sarcină spune ce calculați, pe ce date, cu ce metodă și ce arătați.
+Punctele însumează 100.}
+
+\task{1}{\T{Know your test window}{Cunoașteți-vă fereastra de test}}{8}
+\T{On the 365 test days, compute the mean, standard deviation, minimum and maximum of $P_{d,h}$; the number of negative hours;
+the number of negative market time units (MTUs) in \texttt{ea.quarter\_hours("RO")} (hourly rows before 1 October 2025, quarter-hour rows after; filter on the CET date of the index); and the share of test days with 15-minute MTU.
+Plot the daily base price from 1 January 2023 to the end of your test window and shade the window.
+In three sentences, name the market events inside your window (for example the Romania--Hungary (RO--HU) price separation of summer 2024,
+the dry hydro year 2025, negative prices in spring and summer, the 15-minute MTU from October 2025).}%
+{Pe cele 365 de zile de test calculați media, abaterea standard, minimul și maximul lui $P_{d,h}$; numărul de ore cu preț negativ;
+numărul intervalelor de tranzacționare (MTU) cu preț negativ din \texttt{ea.quarter\_hours("RO")} (rînduri orare înainte de 1 octombrie 2025, sferturi de oră după; filtrați după data CET a indexului); ponderea zilelor de test cu MTU de 15 minute.
+Reprezentați grafic prețul zilnic de bază de la 1 ianuarie 2023 pînă la sfîrșitul ferestrei de test și hașurați fereastra.
+În trei propoziții, numiți evenimentele de piață din fereastra dumneavoastră (de exemplu separarea prețurilor România--Ungaria (RO--HU) din vara 2024,
+anul hidrologic secetos 2025, prețurile negative din primăvară și vară, MTU de 15 minute din octombrie 2025).}
+\out{\T{table T1 (one column); figure with x-axis ``date'', y-axis ``EUR/MWh'', legend below the plot.}{tabelul T1 (o coloană); figura cu axa x „data'', axa y „EUR/MWh'', legenda sub grafic.}}
+
+\task{2}{\T{Two naive benchmarks}{Două modele naive de referință}}{6}
+\T{For every day of burn-in + test (\texttt{fdays}) and every hour:}%
+{Pentru fiecare zi din perioada de rodaj (\emph{burn-in}) + test (\texttt{fdays}) și fiecare oră:}
+\begin{equation}
+\hat P^{\text{naive}}_{d,h}=\begin{cases}P_{d-7,h}, & d=\text{\T{Mon, Sat, Sun}{luni, sîmbătă, duminică}}\\ P_{d-1,h}, & d=\text{\T{Tue--Fri}{marți--vineri}}\end{cases}
+\qquad\qquad \hat P^{(7)}_{d,h}=P_{d-7,h}.
+\end{equation}
+\T{The first is the naive benchmark of the electricity-price-forecasting (EPF) literature \cite{Weron2014,Lago2021}; the second is the seasonal naive.
+Every later model is judged against $\hat P^{\text{naive}}$.}%
+{Primul este modelul naiv de referință din literatura de prognoză a prețului energiei electrice (EPF, \emph{electricity price forecasting}) \cite{Weron2014,Lago2021}; al doilea este modelul naiv sezonier.
+Toate modelele următoare sînt evaluate în raport cu $\hat P^{\text{naive}}$.}
+\out{\T{both forecasts stored in \texttt{F} (\texttt{DataFrame}, rows \texttt{fdays}, columns \texttt{h00}..\texttt{h23}); \texttt{ea.leakage\_check} passed.}{ambele prognoze salvate în \texttt{F} (\texttt{DataFrame}, rînduri \texttt{fdays}, coloane \texttt{h00}..\texttt{h23}); testul \texttt{ea.leakage\_check} reușit.}}
+
+\task{3}{\T{Expert ARX model, rolling windows and window averaging}{Modelul expert ARX, ferestre glisante și medierea pe ferestre}}{12}
+\T{\textbf{Transform.} Prices have spikes and negative values, so never take logarithms of prices.
+Use the variance-stabilising transformation (VST) of \cite{Uniejewski2018}:}%
+{\textbf{Transformarea.} Prețurile au salturi și valori negative, deci nu logaritmați niciodată prețurile.
+Folosiți transformarea de stabilizare a varianței (VST, \emph{variance-stabilising transformation}) din \cite{Uniejewski2018}:}
+\begin{equation}
+Y_{d,h}=\asinh\!\left(\frac{P_{d,h}-m}{s}\right),\qquad \asinh(x)=\ln\!\big(x+\sqrt{x^2+1}\big),\qquad P_{d,h}=m+s\,\sinh(\hat Y_{d,h}),
+\end{equation}
+\T{\where\ $m$ is the median and $s$ the median absolute deviation (MAD, scaled by 1\ds 4826) of the prices in the calibration window only.}%
+{\where\ $m$ este mediana și $s$ abaterea absolută mediană (MAD, înmulțită cu 1\ds 4826) a prețurilor numai din fereastra de calibrare.}
+
+\T{\textbf{Model.} For each hour $h$ separately (24 regressions per day) estimate by ordinary least squares (OLS) the expert ARX model
+(autoregressive model with exogenous variables) of \cite{Ziel2018}:}%
+{\textbf{Modelul.} Pentru fiecare oră $h$ separat (24 de regresii pe zi) estimați prin metoda celor mai mici pătrate (OLS, \emph{ordinary least squares}) modelul expert ARX
+(model autoregresiv cu variabile exogene) din \cite{Ziel2018}:}
+\begin{multline}
+Y_{d,h}=\beta_{h,0}+\beta_{h,1}Y_{d-1,h}+\beta_{h,2}Y_{d-2,h}+\beta_{h,3}Y_{d-7,h}+\beta_{h,4}Y_{d-1,23}+\beta_{h,5}Y^{\min}_{d-1}+\beta_{h,6}Y^{\max}_{d-1}\\
++\beta_{h,7}\tilde L_{d,h}+\beta_{h,8}\tilde R_{d,h}+\beta_{h,9}D^{\text{Mon}}_d+\beta_{h,10}D^{\text{Sat}}_d+\beta_{h,11}D^{\text{Sun}}_d+\varepsilon_{d,h}
+\end{multline}
+\T{\where\ $Y_{d-1,23}$ is the last hour of the previous day; $Y^{\min}_{d-1},Y^{\max}_{d-1}$ are the minimum and maximum over the 24 hours of day $d-1$;
+$\tilde L_{d,h}=L_{d-2,h}$ and $\tilde R_{d,h}=R_{d-2,h}$ are the proxies (the last metered day; standardised with the mean and standard deviation of the calibration window, rows up to $d-2$);
+$D$ are 0/1 dummies for Monday, Saturday and Sunday; $\varepsilon_{d,h}$ is the error.}%
+{\where\ $Y_{d-1,23}$ este ultima oră a zilei precedente; $Y^{\min}_{d-1},Y^{\max}_{d-1}$ sînt minimul și maximul celor 24 de ore din ziua $d-1$;
+$\tilde L_{d,h}=L_{d-2,h}$ și $\tilde R_{d,h}=R_{d-2,h}$ sînt substitutele (ultima zi măsurată; standardizate cu media și abaterea standard din fereastra de calibrare, rîndurile pînă în $d-2$);
+$D$ sînt variabile 0/1 pentru luni, sîmbătă și duminică; $\varepsilon_{d,h}$ este eroarea.}
+
+\T{\textbf{Rolling calibration.} For each forecast day $d$ and each window length $T\in\{56,84,112,714,721,728\}$, estimate on the $T$ target days
+$d-T,\dots,d-1$, then forecast day $d$; move one day forward and re-estimate (daily recalibration).
+\textbf{Averaging.} The combined forecast is the simple mean over the six windows,
+$\hat P^{\text{AW}}_{d,h}=\tfrac16\sum_{T}\hat P^{(T)}_{d,h}$ \cite{Hubicka2019}.}%
+{\textbf{Calibrarea glisantă.} Pentru fiecare zi de prognoză $d$ și fiecare lungime de fereastră $T\in\{56,84,112,714,721,728\}$, estimați pe cele $T$ zile-țintă
+$d-T,\dots,d-1$, apoi prognozați ziua $d$; avansați o zi și reestimați (recalibrare zilnică).
+\textbf{Medierea.} Prognoza combinată este media simplă pe cele șase ferestre,
+$\hat P^{\text{AW}}_{d,h}=\tfrac16\sum_{T}\hat P^{(T)}_{d,h}$ \cite{Hubicka2019}.}
+\out{\T{seven forecasts in \texttt{F}: ARX(56), \dots, ARX(728) and AW-ARX; \texttt{ea.leakage\_check} passed for ARX(56).}{șapte prognoze în \texttt{F}: ARX(56), \dots, ARX(728) și AW-ARX; testul \texttt{ea.leakage\_check} reușit pentru ARX(56).}}
+
+\task{4}{\T{LEAR, the strong benchmark}{LEAR, modelul de referință puternic}}{10}
+\T{LEAR (LASSO-estimated autoregression; LASSO = least absolute shrinkage and selection operator) \cite{Uniejewski2016,Lago2021}
+uses many candidate regressors and lets the LASSO penalty switch off the useless ones. For each hour $h$:}%
+{LEAR (autoregresie estimată cu LASSO; LASSO = \emph{least absolute shrinkage and selection operator}) \cite{Uniejewski2016,Lago2021}
+folosește mulți regresori candidați și lasă penalizarea LASSO să-i anuleze pe cei inutili. Pentru fiecare oră $h$:}
+\begin{equation}
+\hat{\bm\beta}_h=\arg\min_{\bm\beta}\Big\{\sum_{d\in\text{cal}}\big(Y_{d,h}-\mathbf x_d^\top\bm\beta\big)^2+\lambda_h\sum_{j}|\beta_j|\Big\},
+\end{equation}
+\T{\where\ $\mathbf x_d$ has 247 entries: $Y_{d-k,0},\dots,Y_{d-k,23}$ for $k=1,2,3,7$ (96); load and wind+solar proxies of $d-2,d-3,d-7$ for all 24 hours,
+after the same $\asinh$ transform (144); 7 day-of-week dummies. All columns are standardised with calibration-window means and standard deviations.
+$\lambda_h\ge 0$ is chosen by the Akaike information criterion (AIC): \texttt{LassoLarsIC(criterion="aic")} in \texttt{scikit-learn}.
+Use your \texttt{lear\_window}; recalibrate daily (weekly recalibration is allowed if you say so and report the run time).}%
+{\where\ $\mathbf x_d$ are 247 de elemente: $Y_{d-k,0},\dots,Y_{d-k,23}$ pentru $k=1,2,3,7$ (96); substitutele de consum și eolian+solar din $d-2,d-3,d-7$ pentru toate cele 24 de ore,
+după aceeași transformare $\asinh$ (144); 7 variabile pentru ziua săptămînii. Toate coloanele se standardizează cu mediile și abaterile standard din fereastra de calibrare.
+$\lambda_h\ge 0$ se alege cu criteriul informațional Akaike (AIC): \texttt{LassoLarsIC(criterion="aic")} din \texttt{scikit-learn}.
+Folosiți \texttt{lear\_window}; recalibrați zilnic (recalibrarea săptămînală este permisă dacă o declarați și raportați timpul de rulare).}
+\out{\T{LEAR forecasts in \texttt{F}; the number of non-zero coefficients for hour \texttt{check\_hour} on your first test day.}{prognozele LEAR în \texttt{F}; numărul de coeficienți nenuli pentru ora \texttt{check\_hour} în prima zi de test.}}
+
+\task{5}{\T{Accuracy and Diebold--Mariano tests}{Acuratețe și testele Diebold--Mariano}}{16}
+\T{On the test window only (never on the burn-in), with errors $e_{d,h}=P_{d,h}-\hat P_{d,h}$ and $N$ the number of (day, hour) pairs:}%
+{Numai pe fereastra de test (niciodată pe rodaj), cu erorile $e_{d,h}=P_{d,h}-\hat P_{d,h}$ și $N$ numărul de perechi (zi, oră):}
+\begin{equation}
+\text{MAE}=\frac1N\sum|e_{d,h}|,\qquad \text{RMSE}=\sqrt{\frac1N\sum e_{d,h}^2},\qquad \text{rMAE}=\frac{\text{MAE}_{\text{model}}}{\text{MAE}_{\text{naive}}}.
+\end{equation}
+\T{MAE is the mean absolute error, RMSE the root mean squared error, rMAE the relative MAE \cite{Lago2021} (below 1: better than naive).
+Do not use the mean absolute percentage error (MAPE): it explodes when prices are near zero.
+Report all models: (a) all 24 hours, (b) your focus block, (c) each calendar year inside your window, (d) each quarter for Naive, AW-ARX and LEAR.}%
+{MAE este eroarea absolută medie, RMSE rădăcina erorii pătratice medii, rMAE eroarea absolută medie relativă \cite{Lago2021} (sub 1: mai bun decît modelul naiv).
+Nu folosiți eroarea procentuală absolută medie (MAPE): crește necontrolat cînd prețurile sînt aproape de zero.
+Raportați toate modelele: (a) toate cele 24 de ore, (b) blocul de interes, (c) fiecare an calendaristic din fereastră, (d) fiecare trimestru pentru Naive, AW-ARX și LEAR.}
+
+\T{\textbf{Diebold--Mariano (DM) test} \cite{Diebold1995}, multivariate version \cite{Ziel2018}. For models A and B and each test day $d$:}%
+{\textbf{Testul Diebold--Mariano (DM)} \cite{Diebold1995}, varianta multivariată \cite{Ziel2018}. Pentru modelele A și B și fiecare zi de test $d$:}
+\begin{equation}
+\Delta_d=\frac1{|H|}\sum_{h\in H}|e^{A}_{d,h}|-\frac1{|H|}\sum_{h\in H}|e^{B}_{d,h}|,\qquad
+\text{DM}=\frac{\bar\Delta}{\sqrt{\hat\sigma^2_{\text{NW}}/n}},\qquad p=1-\Phi(\text{DM}),
+\end{equation}
+\T{\where\ $H$ is the set of hours (all 24, or your focus block), $n$ the number of test days, $\bar\Delta$ the mean of $\Delta_d$,
+$\hat\sigma^2_{\text{NW}}$ the Newey--West (heteroskedasticity- and autocorrelation-consistent, HAC) variance of $\Delta_d$ with 7 lags, and $\Phi$ the standard normal distribution function.
+A small $p$ (e.g.\ below 0\ds 05) means: B is significantly more accurate than A. Show two $6\times6$ matrices of $p$-values (all hours; focus block)
+for Naive, seasonal naive, ARX(56), ARX(728), AW-ARX, LEAR.}%
+{\where\ $H$ este mulțimea orelor (toate 24 sau blocul de interes), $n$ numărul de zile de test, $\bar\Delta$ media lui $\Delta_d$,
+$\hat\sigma^2_{\text{NW}}$ varianța Newey--West (robustă la heteroscedasticitate și autocorelare, HAC) a lui $\Delta_d$ cu 7 decalaje, iar $\Phi$ funcția de repartiție normală standard.
+Un $p$ mic (de exemplu sub 0\ds 05) înseamnă: B este semnificativ mai precis decît A. Arătați două matrice $6\times6$ de valori $p$ (toate orele; blocul de interes)
+pentru Naive, naiv sezonier, ARX(56), ARX(728), AW-ARX, LEAR.}
+\out{\T{table T5 (rows = models; columns MAE, RMSE, rMAE overall, focus block, per year); quarterly MAE table; two DM matrices; two sentences: which model wins, and is the win significant?}%
+{tabelul T5 (rînduri = modele; coloane MAE, RMSE, rMAE total, bloc de interes, pe ani); tabelul MAE pe trimestre; cele două matrice DM; două propoziții: care model cîștigă și este cîștigul semnificativ?}}
+
+\task{6}{\T{Probabilistic forecasts: historical simulation and conformal prediction}{Prognoze probabilistice: simulare istorică și predicție conformală}}{14}
+\T{Turn a point forecast into 99 quantiles $\hat q^{\tau}_{d,h}$, $\tau=0\ds01,\dots,0\ds99$, using the errors of the same hour on the previous $W$ days
+(\texttt{error\_window}), $e_{d-W,h},\dots,e_{d-1,h}$ \cite{Nowotarski2018,Lipiecki2024}:}%
+{Transformați o prognoză punctuală în 99 de cuantile $\hat q^{\tau}_{d,h}$, $\tau=0\ds01,\dots,0\ds99$, folosind erorile aceleiași ore din cele $W$ zile anterioare
+(\texttt{error\_window}), $e_{d-W,h},\dots,e_{d-1,h}$ \cite{Nowotarski2018,Lipiecki2024}:}
+\begin{align}
+\text{HS:}&\quad \hat q^{\tau}_{d,h}=\hat P_{d,h}+Q_\tau\big(e_{d-W,h},\dots,e_{d-1,h}\big),\\
+\text{CP:}&\quad \hat q^{\tau}_{d,h}=\hat P_{d,h}+\operatorname{sign}(\tau-0\ds5)\;Q_{|2\tau-1|}\big(|e_{d-W,h}|,\dots,|e_{d-1,h}|\big),
+\end{align}
+\T{\where\ $Q_a(\cdot)$ is the empirical $a$-quantile (\texttt{numpy.quantile}, default linear interpolation). HS (historical simulation) uses the signed errors, so the interval can be asymmetric;
+CP (conformal prediction) uses absolute errors, so it is symmetric around $\hat P_{d,h}$. Apply HS and CP to Naive, AW-ARX and LEAR (6 combinations).
+\textbf{Pinball score} for quantile level $\tau$ and actual price $y$, and its average, the average pinball score (APS):}%
+{\where\ $Q_a(\cdot)$ este cuantila empirică de ordin $a$ (\texttt{numpy.quantile}, interpolare liniară implicită). HS (simularea istorică, \emph{historical simulation}) folosește erorile cu semn, deci intervalul poate fi asimetric;
+CP (predicția conformală, \emph{conformal prediction}) folosește erorile în valoare absolută, deci intervalul este simetric în jurul lui $\hat P_{d,h}$. Aplicați HS și CP pentru Naive, AW-ARX și LEAR (6 combinații).
+\textbf{Scorul pinball} pentru nivelul $\tau$ și prețul realizat $y$, și media lui, scorul pinball mediu (APS, \emph{average pinball score}):}
+\begin{equation}
+\text{PS}(\hat q^\tau,y,\tau)=\big(\1\{y<\hat q^\tau\}-\tau\big)\big(\hat q^\tau-y\big),\qquad
+\text{APS}=\frac{1}{99\,N}\sum_{d,h}\sum_{\tau}\text{PS}(\hat q^\tau_{d,h},P_{d,h},\tau),\qquad \text{CRPS}\approx 2\cdot\text{APS},
+\end{equation}
+\T{\where\ $\1\{\cdot\}$ is 1 if the condition holds and 0 otherwise; CRPS is the continuous ranked probability score \cite{Gneiting2007}. Lower is better.
+\textbf{Coverage}: share of (day, hour) pairs with $P_{d,h}$ inside the 50\% interval $[\hat q^{0\ds25},\hat q^{0\ds75}]$ and the 90\% interval $[\hat q^{0\ds05},\hat q^{0\ds95}]$.
+\textbf{Kupiec test} \cite{Kupiec1995} on the focus block for the 90\% interval, with $x$ misses out of $n$ cases and nominal miss rate $p_0=0\ds10$:}%
+{\where\ $\1\{\cdot\}$ este 1 dacă este adevărată condiția și 0 altfel; CRPS este scorul probabilistic continuu ordonat (\emph{continuous ranked probability score}) \cite{Gneiting2007}. Mai mic înseamnă mai bine.
+\textbf{Acoperirea}: ponderea perechilor (zi, oră) cu $P_{d,h}$ în intervalul de 50\% $[\hat q^{0\ds25},\hat q^{0\ds75}]$ și în cel de 90\% $[\hat q^{0\ds05},\hat q^{0\ds95}]$.
+\textbf{Testul Kupiec} \cite{Kupiec1995} pe blocul de interes, pentru intervalul de 90\%, cu $x$ ratări din $n$ cazuri și rata nominală de ratare $p_0=0\ds10$:}
+\begin{equation}
+\text{LR}_{\text{UC}}=-2\ln\frac{(1-p_0)^{n-x}p_0^{\,x}}{(1-\hat p)^{n-x}\hat p^{\,x}},\qquad \hat p=x/n,\qquad \text{LR}_{\text{UC}}\sim\chi^2_1\ \text{\T{under}{sub}}\ H_0.
+\end{equation}
+\out{\T{table T6 (rows = 6 combinations; columns APS, APS on focus block, coverage 50\%, coverage 90\%, coverage 90\% on focus block, Kupiec $p$-value, mean width of the 90\% interval on the focus block);
+one figure: one test week, actual price and the 50\% and 90\% bands of your best combination.}%
+{tabelul T6 (rînduri = 6 combinații; coloane APS, APS pe bloc, acoperire 50\%, acoperire 90\%, acoperire 90\% pe bloc, valoarea $p$ Kupiec, lățimea medie a intervalului de 90\% pe bloc);
+o figură: o săptămînă de test, prețul realizat și benzile de 50\% și 90\% ale celei mai bune combinații.}}
+
+\task{7}{\T{Volatility: GARCH, GJR-GARCH, EGARCH}{Volatilitate: GARCH, GJR-GARCH, EGARCH}}{12}
+\T{GARCH is the generalised autoregressive conditional heteroskedasticity model; GJR-GARCH its asymmetric version of Glosten, Jagannathan and Runkle; EGARCH the exponential GARCH. Use daily base prices. Because prices can be zero or negative, do not use log-returns; use}%
+{GARCH este modelul autoregresiv generalizat cu heteroscedasticitate condiționată (\emph{generalised autoregressive conditional heteroskedasticity}); GJR-GARCH este varianta asimetrică Glosten--Jagannathan--Runkle; EGARCH este GARCH exponențial. Folosiți prețurile zilnice de bază. Deoarece prețurile pot fi zero sau negative, nu folosiți randamente logaritmice; folosiți}
+\begin{equation}
+r_t=100\,\big[\asinh(\bar P_t)-\asinh(\bar P_{t-1})\big],\qquad \varepsilon_t=r_t-\mu-\delta_{\text{dow}(t)}=\sigma_t z_t,\quad z_t\sim t_\nu\ \text{\T{(standardised)}{(standardizată)}},
+\end{equation}
+\T{\where\ $\delta_{\text{dow}(t)}$ is the mean of $r$ on that weekday, computed on the estimation sample only (subtract it before fitting), $\sigma_t$ the conditional volatility and $\nu$ the degrees of freedom. Estimate by maximum likelihood (package \texttt{arch}) on the \texttt{garch\_years} before \texttt{test\_start}:}%
+{\where\ $\delta_{\text{dow}(t)}$ este media lui $r$ în acea zi a săptămînii, calculată numai pe eșantionul de estimare (o scădeți înainte de estimare), $\sigma_t$ este volatilitatea condiționată, iar $\nu$ numărul gradelor de libertate. Estimați prin metoda verosimilității maxime (pachetul \texttt{arch}) pe cei \texttt{garch\_years} ani dinaintea lui \texttt{test\_start}:}
+\begin{align}
+\text{GARCH(1,1):}&\quad \sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\beta\sigma_{t-1}^2,\\
+\text{GJR(1,1,1):}&\quad \sigma_t^2=\omega+\alpha\varepsilon_{t-1}^2+\gamma\varepsilon_{t-1}^2\1\{\varepsilon_{t-1}<0\}+\beta\sigma_{t-1}^2,\\
+\text{EGARCH(1,1,1):}&\quad \ln\sigma_t^2=\omega+\alpha\big(|z_{t-1}|-\E|z_{t-1}|\big)+\gamma z_{t-1}+\beta\ln\sigma_{t-1}^2.
+\end{align}
+\T{In GJR, $\gamma>0$ means falls raise volatility more (``leverage'', usual for stocks); $\gamma<0$ means price jumps raise volatility more (``inverse leverage'', often reported for gas and power).
+In EGARCH the signs are reversed in meaning: $\gamma<0$ = falls raise volatility more. \textbf{Test, do not assume}: report $\gamma$ and its $p$-value.
+Persistence is $\alpha+\beta+\gamma/2$ (GJR), $\alpha+\beta$ (GARCH), $\beta$ (EGARCH); half-life $=\ln 0\ds5/\ln(\text{persistence})$ days.
+Then, with the parameters fixed, filter through the test window and compare the one-day-ahead variance forecasts $\hat\sigma^2_t$ with the proxy $\varepsilon_t^2$ by the quasi-likelihood loss
+$\text{QLIKE}=\frac1n\sum_t\big(\ln\hat\sigma^2_t+\varepsilon_t^2/\hat\sigma^2_t\big)$ (lower is better) \cite{Patton2011}.
+Finally translate into money the one-day-ahead forecast $\hat\sigma_T$ for the last test day $T$: the approximate 99\% one-day upward move of the base price, $\bar P_{T-1}\,[\exp(z_{0\ds99}\hat\sigma_T/100)-1]$, with $\bar P_{T-1}$ the actual base price of the day before and $z_{0\ds99}=t^{-1}_\nu(0\ds99)\sqrt{(\nu-2)/\nu}$ the 99\% quantile of the standardised $t_\nu$.}%
+{În GJR, $\gamma>0$ înseamnă că scăderile cresc mai mult volatilitatea („efect de levier'', obișnuit la acțiuni); $\gamma<0$ înseamnă că salturile de preț cresc mai mult volatilitatea („efect de levier invers'', des raportat pentru gaze și energie electrică).
+În EGARCH semnificația semnelor este inversă: $\gamma<0$ = scăderile cresc mai mult volatilitatea. \textbf{Testați, nu presupuneți}: raportați $\gamma$ și valoarea $p$.
+Persistența este $\alpha+\beta+\gamma/2$ (GJR), $\alpha+\beta$ (GARCH), $\beta$ (EGARCH); timpul de înjumătățire $=\ln 0\ds5/\ln(\text{persistență})$ zile.
+Apoi, cu parametrii fixați, aplicați filtrul pe fereastra de test și comparați prognozele de varianță pentru o zi înainte, $\hat\sigma^2_t$, cu substitutul $\varepsilon_t^2$ prin funcția de pierdere de cvasi-verosimilitate
+$\text{QLIKE}=\frac1n\sum_t\big(\ln\hat\sigma^2_t+\varepsilon_t^2/\hat\sigma^2_t\big)$ (mai mic înseamnă mai bine) \cite{Patton2011}.
+La final traduceți în bani prognoza pentru o zi înainte $\hat\sigma_T$ a ultimei zile de test $T$: creșterea aproximativă a prețului de bază într-o zi, la cuantila de 99\%, $\bar P_{T-1}\,[\exp(z_{0\ds99}\hat\sigma_T/100)-1]$, unde $\bar P_{T-1}$ este prețul de bază realizat în ziua precedentă, iar $z_{0\ds99}=t^{-1}_\nu(0\ds99)\sqrt{(\nu-2)/\nu}$ este cuantila de 99\% a repartiției $t_\nu$ standardizate.}
+\out{\T{table T7 (rows = 3 models; columns $\omega,\alpha,\gamma,\beta,\nu$, log-likelihood, AIC, BIC (Bayesian information criterion), persistence, half-life, $p$-value of $\gamma$, QLIKE on test); figure of $|\varepsilon_t|$ and the three $\hat\sigma_t$ on the test window; the 99\% move in EUR/MWh.}%
+{tabelul T7 (rînduri = 3 modele; coloane $\omega,\alpha,\gamma,\beta,\nu$, log-verosimilitate, AIC, BIC (criteriul informațional bayesian), persistență, timp de înjumătățire, valoarea $p$ pentru $\gamma$, QLIKE pe test); figura cu $|\varepsilon_t|$ și cele trei $\hat\sigma_t$ pe fereastra de test; creșterea la cuantila de 99\%, în EUR/MWh.}}
+
+\task{8}{\T{The memo: decision, reconciliation, your company}{Memoriul: decizie, reconciliere, compania dumneavoastră}}{22}
+\T{\textbf{Page 1 (recommendation, at most 450 words):}}{\textbf{Pagina 1 (recomandarea, cel mult 450 de cuvinte):}}
+\begin{enumerate}[label=(\alph*)]
+\item \T{\textbf{Decision} in the first two lines: which model the desk should use for the focus block, from which date, and what it replaces.}%
+{\textbf{Decizia} în primele două rînduri: ce model să folosească biroul pentru blocul de interes, de la ce dată și ce înlocuiește.}
+\item \T{\textbf{Evidence} (three bullets, each with a number from your notebook): accuracy gain vs naive (rMAE, EUR/MWh), DM $p$-value, the 90\% interval width and its coverage.}%
+{\textbf{Dovezile} (trei enumerări, fiecare cu un număr din notebook): cîștigul de acuratețe față de modelul naiv (rMAE, EUR/MWh), valoarea $p$ DM, lățimea intervalului de 90\% și acoperirea lui.}
+\item \T{\textbf{Risk}: what the GARCH result says about the current regime, and your buffer recommendation in EUR/MWh.}%
+{\textbf{Riscul}: ce spune rezultatul GARCH despre regimul actual și recomandarea privind rezerva, în EUR/MWh.}
+\item \T{\textbf{Limits}: the load/renewables proxy, one period where your model failed, and what you would add next.}%
+{\textbf{Limitele}: substitutul pentru consum/regenerabile, o perioadă în care modelul a eșuat și ce ați adăuga în continuare.}
+\item \T{\textbf{How this applies in my company} (at most 120 words). Public information only: never use or disclose confidential data. Example: ``our supplier buys about X\% of its portfolio on PZU in the evening peak''
+is acceptable only if X is public; otherwise describe the mechanism without numbers.}%
+{\textbf{Cum se aplică în compania mea} (cel mult 120 de cuvinte). Numai informații publice: nu folosiți și nu divulgați date confidențiale. Exemplu: „furnizorul nostru cumpără circa X\% din portofoliu pe PZU la vîrful de seară''
+este acceptabil numai dacă X este public; altfel descrieți mecanismul fără cifre.}
+\end{enumerate}
+\T{\textbf{Page 2 (appendix):} your parameter block; excerpts of T5, T6, T7; and the \textbf{hand-reconciliation table}:
+for each of your two \texttt{check\_days} at \texttt{check\_hour}, write by hand the actual price, the Naive, AW-ARX and LEAR forecasts, each absolute error,
+the LEAR+CP 5\% and 95\% quantiles, whether the price was inside, and the pinball score at $\tau=0\ds95$, with the arithmetic shown (e.g.\ $(0-0\ds95)(278\ds9-394\ds9)=110\ds2$).}%
+{\textbf{Pagina 2 (anexa):} blocul de parametri; extrase din T5, T6, T7; și \textbf{tabelul de reconciliere manuală}:
+pentru fiecare dintre cele două \texttt{check\_days} la \texttt{check\_hour}, scrieți de mînă prețul realizat, prognozele Naive, AW-ARX și LEAR, fiecare eroare absolută,
+cuantilele de 5\% și 95\% LEAR+CP, dacă prețul a fost în interval și scorul pinball la $\tau=0\ds95$, cu calculul arătat (de exemplu $(0-0\ds95)(278\ds9-394\ds9)=110\ds2$).}
+
+\section{\T{Exact conventions (answers to the questions students usually ask)}{Convenții exacte (răspunsuri la întrebările frecvente ale studenților)}}
+\small
+\begin{enumerate}[label=\textbf{C\arabic*}]
+\item \T{\textbf{Names in \texttt{F}} (a Python \texttt{dict} of \texttt{DataFrame}s, rows \texttt{fdays}, columns \texttt{h00}..\texttt{h23}): \texttt{"Naive (Weron)"}, \texttt{"Seasonal naive d-7"}, \texttt{"ARX(56)"}, \dots, \texttt{"ARX(728)"}, \texttt{"AW-ARX(6 windows)"}, \texttt{"LEAR(<lear\_window>)"}. Columns of T5 per year: \texttt{MAE\_2025}, \texttt{RMSE\_2025}, \texttt{rMAE\_2025}.}%
+{\textbf{Numele din \texttt{F}} (un \texttt{dict} Python de \texttt{DataFrame}-uri, rînduri \texttt{fdays}, coloane \texttt{h00}..\texttt{h23}): \texttt{"Naive (Weron)"}, \texttt{"Seasonal naive d-7"}, \texttt{"ARX(56)"}, \dots, \texttt{"ARX(728)"}, \texttt{"AW-ARX(6 windows)"}, \texttt{"LEAR(<lear\_window>)"}. Coloanele T5 pe ani: \texttt{MAE\_2025}, \texttt{RMSE\_2025}, \texttt{rMAE\_2025}.}
+\item \T{\textbf{VST}: $m$ and $s$ are computed once per forecast day and window, \emph{pooled over all 24 hours} of the price rows $d-T-7,\dots,d-1$ (targets plus lag rows; hence 63 days in the worked example for $T=56$), and used for every hour.
+\textbf{ARX exogenous}: $L$ and $R$ are z-scored with one mean and one standard deviation pooled over the same rows and hours, but only up to row $d-2$ (no $\asinh$).
+\textbf{LEAR exogenous}: $L$ and $R$ get their own $\asinh$ transform (own median/MAD, same rows up to $d-2$), then every one of the 247 columns, dummies included, is z-scored with calibration means and standard deviations. For $h=23$ the ARX regressor $Y_{d-1,23}$ appears twice: drop the duplicate (11 regressors).}%
+{\textbf{VST}: $m$ și $s$ se calculează o dată pentru fiecare zi de prognoză și fereastră, \emph{comun pentru toate cele 24 de ore} ale rîndurilor de preț $d-T-7,\dots,d-1$ (ținte plus rîndurile decalajelor; de aceea 63 de zile în exemplul rezolvat pentru $T=56$) și se folosesc pentru fiecare oră.
+\textbf{Variabilele exogene ARX}: $L$ și $R$ se standardizează cu o singură medie și o singură abatere standard, comune pentru aceleași rînduri și ore, dar numai pînă la rîndul $d-2$ (fără $\asinh$).
+\textbf{Variabilele exogene LEAR}: $L$ și $R$ primesc propria transformare $\asinh$ (mediană/MAD proprii, aceleași rînduri pînă în $d-2$), apoi fiecare dintre cele 247 de coloane, inclusiv variabilele zilei, se standardizează cu mediile și abaterile standard din calibrare. Pentru $h=23$, regresorul ARX $Y_{d-1,23}$ apare de două ori: eliminați dublura (11 regresori).}
+\item \T{\textbf{Years and quarters}: calendar years and calendar quarters intersected with your window (partial periods allowed; report the number of days). rMAE always divides by the Naive MAE on the same subset (same days, same hours).}%
+{\textbf{Ani și trimestre}: ani și trimestre calendaristice intersectate cu fereastra (perioadele parțiale sînt permise; raportați numărul de zile). rMAE se împarte întotdeauna la MAE naiv pe aceeași submulțime (aceleași zile, aceleași ore).}
+\item \T{\textbf{DM matrix}: the cell in row A, column B holds $p=1-\Phi(\text{DM})$ with $\Delta_d=$ mean $|e^A|-$ mean $|e^B|$; the diagonal is empty.}%
+{\textbf{Matricea DM}: celula din rîndul A, coloana B conține $p=1-\Phi(\text{DM})$ cu $\Delta_d=$ media $|e^A|-$ media $|e^B|$; diagonala este goală.}
+\item \T{\textbf{Kupiec on the focus block}: $n$ = test days $\times$ number of focus hours; $x$ = (day, hour) pairs outside $[\hat q^{0\ds05},\hat q^{0\ds95}]$ on either side; ``inside'' includes the bounds; if $x=0$ use $0\cdot\ln 0=0$. The pairs within a day are not independent: mention it.
+\textbf{Best combination} (for the figure) = lowest APS on the test window; any test week. Report CRPS $\approx2\cdot$APS as an extra column.}%
+{\textbf{Kupiec pe blocul de interes}: $n$ = zile de test $\times$ numărul orelor de interes; $x$ = perechile (zi, oră) în afara lui $[\hat q^{0\ds05},\hat q^{0\ds95}]$, de oricare parte; „în interval'' include capetele; dacă $x=0$ folosiți $0\cdot\ln 0=0$. Perechile din aceeași zi nu sînt independente: menționați acest lucru.
+\textbf{Cea mai bună combinație} (pentru figură) = APS minim pe fereastra de test; orice săptămînă de test. Raportați CRPS $\approx2\cdot$APS ca o coloană suplimentară.}
+\item \T{\textbf{GARCH in \texttt{arch}}: \texttt{garch\_years} are calendar years (\texttt{test\_start - pd.DateOffset(years=g)}). Subtract the estimation-sample weekday means from all $r_t$ (estimation and test).
+Fit \texttt{arch\_model(r, mean="Constant", vol="GARCH", p=1, o=0 or 1, q=1, dist="t")} on the series up to \texttt{test\_end} with \texttt{.fit(last\_obs=test\_start)} (parameters use only the estimation sample), then \texttt{.forecast(horizon=1, start=<last estimation day>, reindex=False)}: the forecast made at day $t$ is the variance of day $t+1$. For EGARCH use \texttt{vol="EGARCH"}. The $p$-value of $\gamma$ is ``n/a'' for GARCH(1,1).}%
+{\textbf{GARCH în \texttt{arch}}: \texttt{garch\_years} sînt ani calendaristici (\texttt{test\_start - pd.DateOffset(years=g)}). Scădeți mediile pe zile ale săptămînii din eșantionul de estimare din toate valorile $r_t$ (estimare și test).
+Estimați \texttt{arch\_model(r, mean="Constant", vol="GARCH", p=1, o=0 sau 1, q=1, dist="t")} pe seria pînă la \texttt{test\_end} cu \texttt{.fit(last\_obs=test\_start)} (parametrii folosesc doar eșantionul de estimare), apoi \texttt{.forecast(horizon=1, start=<ultima zi de estimare>, reindex=False)}: prognoza făcută în ziua $t$ este varianța zilei $t+1$. Pentru EGARCH folosiți \texttt{vol="EGARCH"}. Valoarea $p$ pentru $\gamma$ este „n/a'' la GARCH(1,1).}
+\item \T{\textbf{Leakage check}: run \texttt{ea.leakage\_check} at least for Naive, ARX(56) and LEAR on the first test day.
+\textbf{Where to work}: keep your notebook in \texttt{repo/assignments/A1/} next to the starter (it imports \texttt{emqa\_assign} from the parent folder).
+\textbf{\texttt{MODE="latest"}}: only a clean run is required; tables may contain empty cells (e.g.\ one quarter only).
+\textbf{Hand reconciliation}: typed arithmetic is fine; the pinball score is that of the LEAR+CP quantile $\hat q^{0\ds95}$.}%
+{\textbf{Verificarea scurgerii}: rulați \texttt{ea.leakage\_check} cel puțin pentru Naive, ARX(56) și LEAR în prima zi de test.
+\textbf{Unde lucrați}: păstrați notebook-ul în \texttt{repo/assignments/A1/}, lîngă cel de pornire (importă \texttt{emqa\_assign} din dosarul părinte).
+\textbf{\texttt{MODE="latest"}}: se cere doar o rulare fără erori; tabelele pot avea celule goale (de exemplu un singur trimestru).
+\textbf{Reconcilierea manuală}: calculele tastate sînt acceptate; scorul pinball este cel al cuantilei LEAR+CP $\hat q^{0\ds95}$.}
+\end{enumerate}
+\normalsize
+
+\section{\T{Worked example (real data): the rolling window and an HS/CP interval}{Exemplu rezolvat (date reale): fereastra glisantă și un interval HS/CP}}
+\T{\textbf{Forecast day} $d=$ Tuesday 4 March 2025, hour \texttt{h19} (19:00--20:00 CET), information cut-off 3 March 2025, 12:00 CET.}%
+{\textbf{Ziua de prognoză} $d=$ marți, 4 martie 2025, ora \texttt{h19} (19:00--20:00 CET), momentul-limită al informației: 3 martie 2025, ora 12:00 CET.}
+
+\T{\textbf{(1) Calibration window for ARX(56).}}{\textbf{(1) Fereastra de calibrare pentru ARX(56).}}
+\begin{center}\small
+\begin{tabular}{l l l}
+\toprule
+\T{Item}{Element} & \T{Dates}{Date} & \T{Why}{De ce}\\
+\midrule
+\T{target days (56)}{zile-țintă (56)} & 2025-01-07 \dots\ 2025-03-03 & $d-56,\dots,d-1$\\
+\T{oldest price row used}{cel mai vechi rînd de preț folosit} & 2024-12-31 & \T{lag 7 of the first target}{decalajul 7 al primei ținte}\\
+$m,s$ \T{of the VST}{ale VST} & \T{prices 2024-12-31 \dots\ 2025-03-03}{prețurile 2024-12-31 \dots\ 2025-03-03} & \T{never the test day}{niciodată ziua de test}\\
+\T{$L$, $R$ (proxies, scaling)}{$L$, $R$ (substitute, standardizare)} & \T{rows up to 2025-03-02}{rîndurile pînă la 2025-03-02} & \T{$d-1$ not yet metered}{$d-1$ nu este încă măsurată}\\
+\T{next step}{pasul următor} & \T{targets 2025-01-08 \dots\ 2025-03-04}{ținte 2025-01-08 \dots\ 2025-03-04} & \T{forecast 5 March (roll one day)}{prognoza pentru 5 martie}\\
+\bottomrule
+\end{tabular}
+\end{center}
+\T{\textbf{(2) Regressors of $d$ for hour h19 (before the VST), from the course data.}}{\textbf{(2) Regresorii zilei $d$ pentru ora h19 (înainte de VST), din datele cursului.}}
+\begin{center}\small\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{cccccccccc}
+\toprule
+$P_{d-1,19}$ & $P_{d-2,19}$ & $P_{d-7,19}$ & $P_{d-1,23}$ & $P^{\min}_{d-1}$ & $P^{\max}_{d-1}$ & $L_{d-2,19}$ & $R_{d-2,19}$ & $D^{\text{Mon}},D^{\text{Sat}},D^{\text{Sun}}$ & \T{actual}{realizat} $P_{d,19}$\\
+\midrule
+198\ds18 & 178\ds86 & 438\ds63 & 151\ds23 & 46\ds34 & 286\ds21 & 7\,119 MW & 843 MW & 0/0/0 & 231\ds65\\
+\bottomrule
+\end{tabular}
+\end{center}
+\T{The naive forecast is $P_{d-1,19}=198\ds18$ (Tuesday uses $d-1$), error $231\ds65-198\ds18=33\ds47$ EUR/MWh.}%
+{Prognoza naivă este $P_{d-1,19}=198\ds18$ (marțea folosește $d-1$), eroarea $231\ds65-198\ds18=33\ds47$ EUR/MWh.}
+
+\T{\textbf{(3) An 80\% interval from the last $W=10$ naive errors at h19} (22 Feb -- 3 Mar 2025; $W=10$ only to keep the example short):}%
+{\textbf{(3) Un interval de 80\% din ultimele $W=10$ erori naive la h19} (22 feb.\ -- 3 mar.\ 2025; $W=10$ numai ca exemplul să fie scurt):}
+\begin{center}\small
+\begin{tabular}{l r r r r r r r r r r}
+\toprule
+\T{sorted errors}{erorile sortate} & $-246\ds5$ & $-159\ds4$ & $-66\ds0$ & $-16\ds8$ & $-13\ds3$ & $55\ds1$ & $64\ds3$ & $66\ds0$ & $81\ds1$ & $140\ds7$\\
+\T{sorted $|e|$}{$|e|$ sortate} & $13\ds3$ & $16\ds8$ & $55\ds1$ & $64\ds3$ & $66\ds0$ & $66\ds0$ & $81\ds1$ & $140\ds7$ & $159\ds4$ & $246\ds5$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\T{HS: $Q_{0\ds10}(e)=-168\ds1$ and $Q_{0\ds90}(e)=87\ds0$ (linear interpolation), so the interval is $[198\ds2-168\ds1,\;198\ds2+87\ds0]=[30\ds1,\;285\ds2]$.
+CP: $Q_{0\ds80}(|e|)=144\ds4$, so $[198\ds2-144\ds4,\;198\ds2+144\ds4]=[53\ds7,\;342\ds6]$. The actual 231\ds65 lies inside both.
+Pinball at $\tau=0\ds90$ for HS: $\hat q=285\ds2>y=231\ds65$, so $\text{PS}=(1-0\ds9)(285\ds2-231\ds65)=5\ds36$.}%
+{HS: $Q_{0\ds10}(e)=-168\ds1$ și $Q_{0\ds90}(e)=87\ds0$ (interpolare liniară), deci intervalul este $[198\ds2-168\ds1,\;198\ds2+87\ds0]=[30\ds1,\;285\ds2]$.
+CP: $Q_{0\ds80}(|e|)=144\ds4$, deci $[198\ds2-144\ds4,\;198\ds2+144\ds4]=[53\ds7,\;342\ds6]$. Valoarea realizată 231\ds65 este în ambele.
+Scorul pinball la $\tau=0\ds90$ pentru HS: $\hat q=285\ds2>y=231\ds65$, deci $\text{PS}=(1-0\ds9)(285\ds2-231\ds65)=5\ds36$.}
+
+\T{\textbf{(4) DM in one line.} If on a test day the mean $|e|$ over your focus hours is 30 for Naive (A) and 22 for LEAR (B), then $\Delta_d=+8$:
+LEAR was better that day. The test asks whether the mean of these daily differences is significantly above zero.}%
+{\textbf{(4) DM într-un rînd.} Dacă într-o zi de test media lui $|e|$ pe orele de interes este 30 pentru Naive (A) și 22 pentru LEAR (B), atunci $\Delta_d=+8$:
+LEAR a fost mai bun în acea zi. Testul verifică dacă media acestor diferențe zilnice este semnificativ peste zero.}
+
+\section{\T{Rules: reproducibility and use of AI tools}{Reguli: reproductibilitate și folosirea instrumentelor de inteligență artificială}}
+\begin{enumerate}[label=\textbf{R\arabic*}]
+\item \T{\textbf{Runs end-to-end}: \emph{Restart \& Run All} works on the course data with the packages of the course environment (\texttt{numpy}, \texttt{pandas}, \texttt{scikit-learn}, \texttt{statsmodels}, \texttt{arch}, \texttt{matplotlib}).}%
+{\textbf{Rulează complet}: \emph{Restart \& Run All} funcționează pe datele cursului cu pachetele mediului cursului (\texttt{numpy}, \texttt{pandas}, \texttt{scikit-learn}, \texttt{statsmodels}, \texttt{arch}, \texttt{matplotlib}).}
+\item \T{\textbf{No hard-coded dates or numbers}: dates come from \texttt{p}. The instructor re-runs every notebook with \texttt{MODE = "latest"} on data downloaded after the deadline (an unseen hold-out); it must run.}%
+{\textbf{Fără date sau numere introduse direct în cod (\emph{hard-coded})}: datele calendaristice vin din \texttt{p}. Profesorul rulează din nou fiecare notebook cu \texttt{MODE = "latest"} pe date descărcate după termen (un set de verificare nevăzut); trebuie să ruleze.}
+\item \T{\textbf{Data version}: the notebook prints \texttt{ea.data\_version()} (file hashes).}{\textbf{Versiunea datelor}: notebook-ul afișează \texttt{ea.data\_version()} (amprentele fișierelor).}
+\item \T{\textbf{No look-ahead}: \texttt{ea.leakage\_check} passes for every model you report.}{\textbf{Fără informații din viitor}: \texttt{ea.leakage\_check} trece pentru fiecare model raportat.}
+\item \T{\textbf{Every number in the memo is in \texttt{MY\_NUMBERS}}. A number that is not, or that differs from the notebook, costs 2 points (up to 10).}%
+{\textbf{Fiecare număr din memoriu se află în \texttt{MY\_NUMBERS}}. Un număr care nu este acolo sau care diferă de notebook costă 2 puncte (pînă la 10).}
+\item \T{\textbf{AI tools} (ChatGPT, Claude, Copilot, \dots) are allowed for code, with disclosure: add a cell ``AI use'' that names the tool and what it did.
+They are not allowed to write the memo's numbers or conclusions. You must be able to explain every line at the oral defence.}%
+{\textbf{Instrumentele de inteligență artificială} (ChatGPT, Claude, Copilot, \dots) sînt permise pentru cod, cu declarare: adăugați o celulă „Folosirea AI'' care numește instrumentul și ce a făcut.
+Nu au voie să scrie numerele sau concluziile memoriului. Trebuie să puteți explica fiecare linie la susținerea orală.}
+\end{enumerate}
+\T{If the notebook does not run (R1), Tasks 1--7 are capped at 50\%. If you cannot explain a result at the oral defence, the instructor may set the points of that task to 0.}%
+{Dacă notebook-ul nu rulează (R1), sarcinile 1--7 sînt plafonate la 50\%. Dacă nu puteți explica un rezultat la susținerea orală, profesorul poate acorda 0 puncte pentru acea sarcină.}
+
+\section{\T{Common pitfalls}{Greșeli frecvente}}
+\begin{warnbox}\small
+\begin{itemize}
+\item \T{\textbf{Look-ahead leakage}: using $L_{d,h}$ or $R_{d,h}$ of the forecast day; fitting the VST, the scaler or the LASSO on data that include day $d$; choosing a model on the test window and then reporting its test accuracy as if it were out-of-sample.}%
+{\textbf{Scurgerea de informație din viitor}: folosirea lui $L_{d,h}$ sau $R_{d,h}$ din ziua prognozată; estimarea VST, a standardizării sau a LASSO pe date care includ ziua $d$; alegerea modelului pe fereastra de test și raportarea acurateței pe același test ca și cum ar fi în afara eșantionului.}
+\item \T{\textbf{Logarithms of prices} or log-returns: RO had 196 negative hours in 2025 alone. Use $\asinh$.}{\textbf{Logaritmarea prețurilor} sau randamentele logaritmice: România a avut 196 de ore cu prețuri negative numai în 2025. Folosiți $\asinh$.}
+\item \T{\textbf{MAPE} with prices near zero; deleting negative prices to make the errors look smaller.}{\textbf{MAPE} cu prețuri apropiate de zero; ștergerea prețurilor negative ca erorile să pară mai mici.}
+\item \T{\textbf{Mixing 15-minute and hourly data}, or UTC and CET hours (a one-hour shift destroys the hourly models).}{\textbf{Amestecarea datelor de 15 minute cu cele orare} sau a orelor UTC cu cele CET (un decalaj de o oră strică modelele orare).}
+\item \T{\textbf{In-sample fit reported as forecast accuracy}; $R^2$ instead of MAE/RMSE on the test window.}{\textbf{Ajustarea în eșantion raportată drept acuratețe a prognozei}; $R^2$ în loc de MAE/RMSE pe fereastra de test.}
+\item \T{\textbf{Reading DM backwards}: our $p$-value is for ``column better than row''.}{\textbf{Citirea inversă a testului DM}: valoarea noastră $p$ este pentru „coloana mai bună decît rîndul''.}
+\item \T{\textbf{Generic text}: ``electricity prices are volatile'' earns nothing. Every claim needs a number from your window.}{\textbf{Text generic}: „prețurile energiei sînt volatile'' nu aduce puncte. Fiecare afirmație are nevoie de un număr din fereastra dumneavoastră.}
+\end{itemize}
+\end{warnbox}
+
+\section{\T{Before you submit: checklist}{Înainte de predare: lista de verificare}}
+\begin{itemize}[label=$\square$]
+\item \T{Parameter block printed in the notebook and copied into the memo appendix.}{Blocul de parametri afișat în notebook și copiat în anexa memoriului.}
+\item \T{\emph{Restart \& Run All} works; run time noted; \texttt{MODE = "latest"} also runs.}{\emph{Restart \& Run All} funcționează; timpul de rulare notat; și \texttt{MODE = "latest"} rulează.}
+\item \T{\texttt{ea.data\_version()} printed; \texttt{ea.leakage\_check} passed for Naive, ARX(56), LEAR.}{\texttt{ea.data\_version()} afișat; testul \texttt{ea.leakage\_check} reușit pentru Naive, ARX(56), LEAR.}
+\item \T{Tables T1, T5, T6, T7, two DM matrices, three figures (axes with units, legend below).}{Tabelele T1, T5, T6, T7, cele două matrice DM, trei figuri (axe cu unități, legenda dedesubt).}
+\item \T{Memo $\le$ 2 pages; decision in the first two lines; every number traceable to \texttt{MY\_NUMBERS}.}{Memoriul $\le$ 2 pagini; decizia în primele două rînduri; fiecare număr se regăsește în \texttt{MY\_NUMBERS}.}
+\item \T{Hand-reconciliation table with arithmetic; ``AI use'' cell; no confidential company data.}{Tabelul de reconciliere manuală cu calcule; celula „Folosirea AI''; fără date confidențiale ale companiei.}
+\end{itemize}
+
+\section{\T{Frequently asked questions}{Întrebări frecvente}}
+\small
+\begin{description}[style=nextline, leftmargin=0pt, itemsep=2pt]
+\item[\T{Which time zone?}{Ce fus orar?}] \T{CET/CEST everywhere (the files are already converted). Bucharest time = CET + 1 h. Do not convert again.}{CET/CEST peste tot (fișierele sînt deja convertite). Ora Bucureștiului = CET + 1 h. Nu le mai convertiți.}
+\item[\T{Can I forecast the 96 quarter-hours?}{Pot prognoza cele 96 de sferturi de oră?}] \T{Not required. The models and the grading use the hourly matrix. A 15-minute analysis is welcome as an extra figure but earns no extra points.}{Nu este obligatoriu. Modelele și notarea folosesc matricea orară. O analiză pe 15 minute este binevenită ca figură suplimentară, dar nu aduce puncte în plus.}
+\item[\T{What about negative prices and the price floor?}{Ce fac cu prețurile negative și cu limita minimă?}] \T{Keep them; they are real. The harmonised minimum clearing price of the day-ahead coupling (SDAC) is $-500$ EUR/MWh and became $-600$ EUR/MWh for delivery from 29 May 2026 (OPCOM notice of 7 May 2026).}{Le păstrați; sînt reale. Prețul minim armonizat de echilibru (\emph{clearing}) al cuplării pentru ziua următoare (SDAC) este $-500$ EUR/MWh și a devenit $-600$ EUR/MWh pentru livrările de la 29 mai 2026 (anunțul OPCOM din 7 mai 2026).}
+\item[\T{Are there missing days?}{Există zile lipsă?}] \T{Not in \texttt{ea.panel()} from 2022 on (checked). If your code finds a gap, you probably mixed time zones. Days before 2019 have gaps; you do not need them.}{Nu în \texttt{ea.panel()} începînd cu 2022 (verificat). Dacă codul găsește un gol, probabil ați amestecat fusurile orare. Zilele dinainte de 2019 au goluri; nu aveți nevoie de ele.}
+\item[\T{Why the burn-in?}{De ce perioada de rodaj?}] \T{HS and CP need $W$ past forecast errors. Without the 112 burn-in days your first test days would have no interval. Accuracy is measured on the test window only.}{HS și CP au nevoie de $W$ erori de prognoză anterioare. Fără cele 112 zile de rodaj, primele zile de test nu ar avea interval. Acuratețea se măsoară numai pe fereastra de test.}
+\item[\T{LEAR is slow. What can I do?}{LEAR merge încet. Ce pot face?}] \T{About 1 minute on 8 cores with \texttt{joblib.Parallel} over days; 10--20 minutes on one core. Weekly recalibration is allowed if declared.}{Circa 1 minut pe 8 nuclee cu \texttt{joblib.Parallel} pe zile; 10--20 de minute pe un singur nucleu. Recalibrarea săptămînală este permisă dacă o declarați.}
+\item[\T{Can I add XGBoost, Prophet or a neural network?}{Pot adăuga XGBoost, Prophet sau o rețea neurală?}] \T{Yes, in addition to (not instead of) the required models, with the same rolling scheme. No extra points in Assignment 1; machine learning is graded in Assignment 2.}{Da, în plus față de modelele cerute (nu în locul lor), cu aceeași schemă glisantă. Nu aduce puncte în plus la tema 1; învățarea automată este notată la tema 2.}
+\item[\T{My DM $p$-value is 1\ds 000. Is that an error?}{Valoarea $p$ DM este 1\ds 000. Este o eroare?}] \T{No. It means the column model is clearly \emph{worse} than the row model; read the symmetric cell.}{Nu. Înseamnă că modelul de pe coloană este clar \emph{mai slab} decît cel de pe rînd; citiți celula simetrică.}
+\item[\T{Which quantile convention?}{Ce convenție pentru cuantile?}] \T{\texttt{numpy.quantile} default (linear). Small differences from other conventions are not penalised.}{Cea implicită din \texttt{numpy.quantile} (liniară). Diferențele mici față de alte convenții nu se depunctează.}
+\item[\T{Why $\asinh$ for GARCH and not percentage returns?}{De ce $\asinh$ pentru GARCH și nu randamente procentuale?}] \T{Percentage changes explode when $\bar P_{t-1}$ is near zero. For prices well above 1 EUR/MWh, $\asinh(P)\approx\ln(2P)$, so $r_t$ behaves like a log-return.}{Variațiile procentuale explodează cînd $\bar P_{t-1}$ este aproape de zero. Pentru prețuri mult peste 1 EUR/MWh, $\asinh(P)\approx\ln(2P)$, deci $r_t$ se comportă ca un randament logaritmic.}
+\item[\T{My GJR $\gamma$ is positive, but the lecture said ``inverse leverage''.}{$\gamma$ din GJR este pozitiv, dar la curs s-a vorbit de „levier invers''.}] \T{Report what your data say and discuss why (e.g.\ daily base prices after weekday adjustment vs.\ hourly spikes). There is no ``right sign'' for the grade.}{Raportați ce arată datele și discutați de ce (de exemplu prețuri zilnice de bază după ajustarea pentru ziua săptămînii vs.\ salturi orare). Nu există un „semn corect'' pentru notă.}
+\item[\T{Can I use R or Excel?}{Pot folosi R sau Excel?}] \T{The graded notebook must be Python (TODO: instructor may allow R).}{Notebook-ul notat trebuie să fie Python (TODO: profesorul poate permite R).}
+\item[\T{Team work?}{Lucru în echipă?}] \T{If allowed (see the box on page 1), use \texttt{-{}-id "ID1+ID2"}; both members defend orally and must explain any part.}{Dacă este permis (vezi caseta de pe pagina 1), folosiți \texttt{-{}-id "ID1+ID2"}; ambii membri susțin oral și trebuie să explice orice parte.}
+\end{description}
+\normalsize
+
+\section{\T{Grading rubric (100 points)}{Grila de notare (100 de puncte)}}
+\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{0.8cm} >{\raggedright\arraybackslash}p{4.4cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{3.6cm}}
+\toprule
+\T{Task}{Sarcina} & \T{Pts}{Pct.} & \T{Excellent (90--100\%)}{Excelent (90--100\%)} & \T{Adequate (50--70\%)}{Adecvat (50--70\%)} & \T{Poor (0--30\%)}{Slab (0--30\%)}\\
+\midrule\endhead
+\T{1 Test window}{1 Fereastra de test} & 8 & \T{T1 complete incl.\ negative MTUs; clean figure; events named and dated from the data}{T1 complet, inclusiv intervalele MTU negative; figură curată; evenimente numite și datate din date} & \T{table complete, events generic}{tabel complet, evenimente generice} & \T{wrong window or missing table}{fereastră greșită sau tabel lipsă}\\
+\T{2 Naive}{2 Naive} & 6 & \T{both rules exact (weekday logic), leakage check passed}{ambele reguli exacte (logica zilelor), verificarea scurgerii trecută} & \T{one rule wrong on some weekdays}{o regulă greșită în unele zile} & \T{missing or uses day $d$}{lipsește sau folosește ziua $d$}\\
+\T{3 ARX + averaging}{3 ARX + mediere} & 12 & \T{exact regressors, VST fitted in-window, 6 rolling windows, daily recalibration, AW}{regresori exacți, VST estimat în fereastră, 6 ferestre glisante, recalibrare zilnică, AW} & \T{fixed window or some regressors missing}{fereastră fixă sau lipsesc unii regresori} & \T{in-sample fit only, or leakage}{doar ajustare în eșantion sau scurgere de informație}\\
+\T{4 LEAR}{4 LEAR} & 10 & \T{247 regressors, AIC-selected $\lambda$ per hour, rolling, sparsity reported}{247 de regresori, $\lambda$ ales prin AIC pentru fiecare oră, glisant, numărul de coeficienți raportat} & \T{fewer regressors or fixed $\lambda$}{mai puțini regresori sau $\lambda$ fix} & \T{not rolling / not run}{nu este glisant / nu rulează}\\
+\T{5 Accuracy, DM}{5 Acuratețe, DM} & 16 & \T{all metrics by year, quarter and focus block; HAC DM both matrices; correct reading; significance discussed}{toate măsurile pe ani, trimestre și bloc; ambele matrice DM HAC; citire corectă; semnificația discutată} & \T{metrics right, DM missing one matrix or misread once}{măsuri corecte, o matrice DM lipsă sau citită greșit o dată} & \T{metrics on burn-in, MAPE, no DM}{măsuri pe rodaj, MAPE, fără DM}\\
+\T{6 Probabilistic}{6 Probabilistic} & 14 & \T{6 combinations, correct HS/CP, APS, coverage, Kupiec, figure; calibration vs sharpness discussed}{6 combinații, HS/CP corecte, APS, acoperire, Kupiec, figură; calibrarea vs.\ precizia discutate} & \T{HS or CP only, no Kupiec}{numai HS sau CP, fără Kupiec} & \T{intervals from in-sample residuals or future errors}{intervale din reziduuri în eșantion sau din erori viitoare}\\
+\T{7 Volatility}{7 Volatilitate} & 12 & \T{3 models with $t$ errors, $\gamma$ tested and interpreted, persistence, QLIKE out-of-sample, 99\% move in EUR}{3 modele cu erori $t$, $\gamma$ testat și interpretat, persistență, QLIKE în afara eșantionului, creșterea la cuantila de 99\% în EUR} & \T{in-sample only or no money translation}{numai în eșantion sau fără traducere în bani} & \T{log-returns of prices; no estimation window}{randamente logaritmice ale prețurilor; fără fereastră de estimare}\\
+\T{8a Decision}{8a Decizia} & 10 & \T{clear decision first; 3 numbers; limits and failure period honest}{decizie clară la început; 3 numere; limite și perioada de eșec onest prezentate} & \T{decision vague or numbers without meaning}{decizie vagă sau numere fără semnificație} & \T{generic text, no decision}{text generic, fără decizie}\\
+\T{8b Reconciliation}{8b Reconciliere} & 6 & \T{both days by hand, arithmetic shown, matches notebook}{ambele zile de mînă, calcule arătate, coincid cu notebook-ul} & \T{one day or arithmetic missing}{o zi sau calcule lipsă} & \T{missing or inconsistent}{lipsă sau inconsistent}\\
+\T{8c My company}{8c Compania mea} & 6 & \T{concrete mechanism in the student's job, public data only}{mecanism concret în postul studentului, numai date publice} & \T{plausible but generic}{plauzibil, dar generic} & \T{absent, or confidential data}{lipsă sau date confidențiale}\\
+\bottomrule
+\end{longtable}
+\normalsize
+\T{Penalties and gates: R1 (does not run) caps Tasks 1--7 at 50\%; R5 costs 2 points per untraceable number (up to 10); wrong personal parameters = 0.
+A short oral defence confirms authorship and may reduce, never increase, the points of a task.}%
+{Penalizări și condiții: R1 (nu rulează) plafonează sarcinile 1--7 la 50\%; R5 costă 2 puncte pentru fiecare număr care nu se regăsește (pînă la 10); parametri personali greșiți = 0.
+Susținerea orală scurtă confirmă paternitatea lucrării și poate reduce, niciodată crește, punctajul unei sarcini.}
+
+\section{\T{Further reading (papers of the course instructor and co-authors)}{Lecturi suplimentare (articole ale titularului de curs și ale coautorilor)}}
+\small
+\begin{itemize}
+\item A.-V.~Andrei, G.~Velev, F.-M.~Toma, D.T.~Pele, S.~Lessmann (2024). \emph{Energy Price Modelling: A Comparative Evaluation of four Generations of Forecasting Methods}, arXiv:2411.03372 --- \T{Tasks 2--5}{sarcinile 2--5}.
+\item \emph{Explainable AI-Based Early Warning System for Electricity Price Spikes: Evidence from the Romanian Market}, PICBE 2026, doi:10.2478/picbe-2026-0352 --- \T{Tasks 1 and 7}{sarcinile 1 și 7}.
+\item \emph{Evaluating Intervention Effectiveness during Extreme Price Events: Romania's 2024 Energy Crisis}, PICBE 2026, doi:10.2478/picbe-2026-0013 --- \T{Task 1}{sarcina 1}.
+\end{itemize}
+\normalsize
+\begin{thebibliography}{99}\small
+\bibitem{Diebold1995} F.X.~Diebold, R.S.~Mariano (1995). Comparing predictive accuracy. \emph{Journal of Business \& Economic Statistics} 13(3), 253--263.
+\bibitem{Gneiting2007} T.~Gneiting, A.E.~Raftery (2007). Strictly proper scoring rules, prediction, and estimation. \emph{Journal of the American Statistical Association} 102, 359--378.
+\bibitem{Hubicka2019} K.~Hubicka, G.~Marcjasz, R.~Weron (2019). A note on averaging day-ahead electricity price forecasts across calibration windows. \emph{IEEE Transactions on Sustainable Energy} 10(1), 321--323.
+\bibitem{Kupiec1995} P.~Kupiec (1995). Techniques for verifying the accuracy of risk measurement models. \emph{Journal of Derivatives} 3, 73--84.
+\bibitem{Lago2021} J.~Lago, G.~Marcjasz, B.~De Schutter, R.~Weron (2021). Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark. \emph{Applied Energy} 293, 116983 (\texttt{epftoolbox}).
+\bibitem{Lipiecki2024} A.~Lipiecki, B.~Uniejewski, R.~Weron (2024). Postprocessing of point predictions for probabilistic forecasting of day-ahead electricity prices: The benefits of using isotonic distributional regression. \emph{Energy Economics} 139, 107934.
+\bibitem{Nowotarski2018} J.~Nowotarski, R.~Weron (2018). Recent advances in electricity price forecasting: A review of probabilistic forecasting. \emph{Renewable and Sustainable Energy Reviews} 81, 1548--1568.
+\bibitem{Patton2011} A.J.~Patton (2011). Volatility forecast comparison using imperfect volatility proxies. \emph{Journal of Econometrics} 160, 246--256.
+\bibitem{Uniejewski2016} B.~Uniejewski, J.~Nowotarski, R.~Weron (2016). Automated variable selection and shrinkage for day-ahead electricity price forecasting. \emph{Energies} 9, 621.
+\bibitem{Uniejewski2018} B.~Uniejewski, R.~Weron, F.~Ziel (2018). Variance stabilizing transformations for electricity spot price forecasting. \emph{IEEE Transactions on Power Systems} 33(2), 2219--2229.
+\bibitem{Weron2014} R.~Weron (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. \emph{International Journal of Forecasting} 30(4), 1030--1081.
+\bibitem{WeronIIF} R.~Weron (2025). \emph{Electricity Price Forecasting}, IIF Distinguished Lectures, parts I--II, ISEA 2025, and \emph{Machine learning for electricity price forecasting}, keynote, AIDA 2026, Bucharest.
+\bibitem{Ziel2018} F.~Ziel, R.~Weron (2018). Day-ahead electricity price forecasting with high-dimensional structures: Univariate vs.\ multivariate modeling frameworks. \emph{Energy Economics} 70, 396--420.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,272 @@
+% C8_brief.tex -- ONE source for the English and Romanian brief of Case 8 (case study, not built on a paper).
+% Compile C8_case_EN.tex or C8_case_RO.tex. Every number comes from numbers_<lang>.tex (macros \N...), written by the notebook;
+% the only numbers typed here are period labels (years), consumption-band definitions of Eurostat and bibliographic data.
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Case study 8}{Studiul de caz 8}}
+\newcommand{\fig}[4]{\begin{minipage}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth]{#1}\caption{#2}\label{fig:#1}\src{#3}\end{minipage}#4}
+\newcommand{\eveh}{\NeveA--\NeveB}
+\newcommand{\midh}{\NmidA--\NmidB}
+\begin{document}
+\emqatitle{\T{Case 8: Why is electricity expensive in Romania?}%
+                {Studiul de caz 8: De ce este scumpă energia electrică în România?}}%
+          {\T{Case study on the course data, OPCOM, Transelectrica and Eurostat --- a descriptive decomposition, without causal claims}%
+             {Studiu de caz pe datele cursului, pe date OPCOM, Transelectrica și Eurostat --- o descompunere descriptivă, fără pretenții cauzale}}
+
+\begin{scenario}
+\T{In autumn 2026 the board of a Romanian supplier, producer or large industrial consumer asks: \emph{why do we pay more for electricity than our competitors in Germany, and will it last?}
+The answer shapes the hedging policy, the power purchase agreements (PPAs) for the next years and the case for storage or flexible demand.}%
+{În toamna anului 2026, consiliul de administrație al unui furnizor, al unui producător sau al unui mare consumator industrial din România întreabă: \emph{de ce plătim energia electrică mai scump decît concurenții din Germania și cît va dura această situație?}
+Răspunsul orientează politica de acoperire a riscului de preț, contractele de achiziție de energie pe termen lung (PPA, \emph{power purchase agreement}) din anii următori și argumentele pentru stocare sau pentru consum flexibil.}
+\end{scenario}
+
+\section{\T{The question}{Întrebarea}}
+\begin{itemize}
+\item \T{How much more expensive is electricity in Romania (RO) than in Hungary (HU), Bulgaria (BG) and Germany-Luxembourg (DE-LU), and in which hours?}%
+{Cu cît este mai scumpă energia electrică în România (RO) decît în Ungaria (HU), Bulgaria (BG) și Germania-Luxemburg (DE-LU) și în ce ore?}
+  \begin{itemize}
+  \item \T{We follow the price along the chain: forward contracts $\to$ day-ahead market (PZU, \emph{Piața pentru Ziua Următoare}, run by OPCOM, the Romanian power and gas market operator) $\to$ balancing $\to$ retail, and compare it with the cost of importing.}%
+  {Urmărim prețul de-a lungul lanțului: contracte la termen $\to$ piața pentru ziua următoare (PZU), administrată de OPCOM (operatorul pieței de energie electrică și de gaze naturale) $\to$ echilibrare $\to$ consumatorul final, și îl comparăm cu costul importului.}
+  \end{itemize}
+\item \T{Which observable factors move with the price, and how much of the 2024--2026 increase do they account for in an in-sample accounting decomposition?}%
+{Ce factori observabili evoluează împreună cu prețul și ce parte din creșterea dintre 2024 și 2026 acoperă ei într-o descompunere contabilă în eșantion?}
+  \begin{itemize}
+  \item \T{\textbf{No causal claim is made.} The factors are correlated with each other and partly with the price itself.}%
+  {\textbf{Nu formulăm concluzii cauzale.} Factorii sînt corelați între ei și, parțial, cu prețul însuși.}
+  \end{itemize}
+\end{itemize}
+
+\section{\T{The data}{Datele}}
+{\small
+\begin{itemize}
+\item \T{\textbf{Course data} (\texttt{data/SOURCES.md}), downloaded \NcourseDl, used to \NdataEnd\ (``2026*'' = January--October): day-ahead prices; RO generation, load and cross-border flows (energy-charts.info, from ENTSO-E, the European network of transmission system operators); TTF gas (Title Transfer Facility, World Bank, monthly); EU emission allowances (EUA): auctions of the European Energy Exchange (EEX), after the last auction (\NlastAuction) an exchange-traded EUA product rescaled by the 2025 auction/product price ratio (\NetcRatio).}%
+{\textbf{Datele cursului} (\texttt{data/SOURCES.md}), descărcate la \NcourseDl, folosite pînă la \NdataEnd\ („2026*” = ianuarie--octombrie): prețurile pentru ziua următoare; producția, consumul și fluxurile transfrontaliere ale României (energy-charts.info, pe baza ENTSO-E, rețeaua europeană a operatorilor de transport și de sistem); gazele la TTF (\emph{Title Transfer Facility}, Banca Mondială, lunar); certificatele de emisii ale UE (EUA, \emph{EU allowance}): licitațiile bursei europene EEX (\emph{European Energy Exchange}), după ultima licitație (\NlastAuction) un produs bursier pe EUA, rescalat cu raportul de preț licitație/produs din 2025 (\NetcRatio).}
+\item \T{\textbf{Downloaded for this case} on \NcDl\ by \texttt{download\_c8\_data.py} (URLs, server response codes and dates in \texttt{data\_c8/download\_log.json}):}%
+{\textbf{Descărcate pentru acest studiu} la \NcDl\ de \texttt{download\_c8\_data.py} (adresele, codurile de răspuns ale serverului și datele în \texttt{data\_c8/download\_log.json}):}
+  \begin{itemize}
+  \item \T{forward: OPCOM ROPEX\_FM index (\url{https://www.opcom.ro/ropexfm/ro}), the volume-weighted price of all contracts in delivery in a month on the OPCOM forward markets (centralised bilateral markets PCCB-LE and PCCB-NC, the continuous double-negotiation market PC-OTC and others), converted at the monthly EUR/RON rate of the European Central Bank (ECB);}%
+  {la termen: indicele OPCOM ROPEX\_FM (\url{https://www.opcom.ro/ropexfm/ro}), prețul mediu ponderat cu volumul al tuturor contractelor aflate în livrare într-o lună pe piețele la termen ale OPCOM (piețele centralizate ale contractelor bilaterale PCCB-LE și PCCB-NC, piața cu negociere continuă PC-OTC și altele), convertit la cursul mediu lunar EUR/RON al Băncii Centrale Europene (BCE);}
+  \item \T{balancing: Transelectrica (the transmission system operator) single final imbalance prices, \NmtuMin\ minutes, \NimbStart--\NimbEnd, monthly files, latest settlement run (\url{https://www.transelectrica.ro/web/tel/rezultate-decontare-piata-de-echilibrare}); \NblankImb\,\% of the quarter-hours (counted with the summer-time changes) have no price in the files and stay missing;}%
+  {echilibrare: prețurile finale unice de dezechilibru ale Transelectrica (operatorul de transport și de sistem), la \NmtuMin\ minute, \NimbStart--\NimbEnd, fișiere lunare, ultima decontare (\url{https://www.transelectrica.ro/web/tel/rezultate-decontare-piata-de-echilibrare}); \NblankImb\,\% din sferturile de oră (numărate ținînd seama de ora de vară) nu au preț în fișiere și rămîn valori lipsă;}
+  \item \T{retail (downloaded \NesDl): Eurostat \texttt{nrg\_pc\_204} (households, band DC, 2,500--4,999 kWh/year, in EUR and in purchasing power standards, PPS), \texttt{nrg\_pc\_205} (non-households, band ID, 2,000--19,999 MWh/year), half-yearly to \NlastSem; components \texttt{nrg\_pc\_204\_c}, \texttt{nrg\_pc\_205\_c}, annual to \NlastYear\ (\url{https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/}).}%
+  {cu amănuntul (descărcate la \NesDl): Eurostat \texttt{nrg\_pc\_204} (consumatori casnici, banda DC, 2.500--4.999 kWh/an, în EUR și în standarde ale puterii de cumpărare, PPS), \texttt{nrg\_pc\_205} (consumatori noncasnici, banda ID, 2.000--19.999 MWh/an), semestrial pînă în \NlastSem; componentele \texttt{nrg\_pc\_204\_c}, \texttt{nrg\_pc\_205\_c}, anual pînă în \NlastYear\ (\url{https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/}).}
+  \end{itemize}
+\item \T{\textbf{Not obtained in this exercise} (nothing was imputed): long-term capacity auctions of the Joint Allocation Office (JAO, \url{https://api.jao.eu/OWSMP/getauctions}: error 401, an access key is required); a price series from the offer comparator of the energy regulator ANRE (\url{https://posf.ro/comparator?comparatorType=electric}: an interactive tool, no series obtained); intraday prices.}%
+{\textbf{Neobținute în acest exercițiu} (nu am completat nimic): licitațiile de capacitate pe termen lung ale JAO (\emph{Joint Allocation Office}, \url{https://api.jao.eu/OWSMP/getauctions}: eroarea 401, este necesară o cheie de acces); o serie de prețuri din comparatorul de oferte al Autorității Naționale de Reglementare în domeniul Energiei, ANRE (\url{https://posf.ro/comparator?comparatorType=electric}: instrument interactiv, nu am obținut o serie); prețurile intrazilnice.}
+\end{itemize}}
+
+\section{\T{What the data show: the price chain}{Ce arată datele: lanțul prețurilor}}
+\begin{itemize}
+\item \T{\textbf{PZU: a regional, not a national, premium.} In 2026* RO averaged \NroTwentySix\ EUR/MWh, HU \NhuTwentySix, BG \NbgTwentySix, DE-LU \NdeTwentySix\ (Table~\ref{tab:wh}).}%
+{\textbf{PZU: o primă regională, nu națională.} În 2026*, prețul mediu a fost de \NroTwentySix\ EUR/MWh în România, \NhuTwentySix\ în Ungaria, \NbgTwentySix\ în Bulgaria și \NdeTwentySix\ în Germania-Luxemburg (Tabelul~\ref{tab:wh}).}
+  \begin{itemize}
+  \item \T{RO--HU: \NpremHUavg\ EUR/MWh on average in 2019--2025, \NpremHUTwentySix\ in 2026*. RO--DE: \NpremDEavg\ and \NpremDETwentySix.}%
+  {RO--HU: în medie \NpremHUavg\ EUR/MWh în 2019--2025 și \NpremHUTwentySix\ în 2026*. RO--DE: \NpremDEavg, respectiv \NpremDETwentySix.}
+  \item \T{The premium over Germany is concentrated in the evening: \NeveDETwentySix\ EUR/MWh at \eveh~h vs \NmidDETwentySix\ at \midh~h in 2026*; in the evening RO was even cheaper than HU (\NeveHUTwentySix; Figure~\ref{fig:f2_premium_by_hour}).}%
+  {Prima față de Germania se concentrează seara: \NeveDETwentySix\ EUR/MWh între orele \NeveA\ și \NeveB, față de \NmidDETwentySix\ între \NmidA\ și \NmidB, în 2026*; seara, România a fost chiar mai ieftină decît Ungaria (\NeveHUTwentySix; Figura~\ref{fig:f2_premium_by_hour}).}
+  \end{itemize}
+\item \T{\textbf{Forward: buying ahead was not systematically dearer.} With the same monthly volume weights for both legs, contracts in delivery cost \NfwdTT\ EUR/MWh in 2023 against a PZU of \NpzuTT, about the PZU in 2024--2025 (\NpremTF\ and \NpremFive) and \NpremSixAbs\ EUR/MWh below it in 2026* (Table~\ref{tab:chain}, Figure~\ref{fig:f10_forward}).}%
+{\textbf{La termen: cumpărarea în avans nu a fost sistematic mai scumpă.} Cu aceleași ponderi lunare de volum pentru ambele prețuri, contractele aflate în livrare au costat \NfwdTT\ EUR/MWh în 2023, față de un PZU de \NpzuTT, aproximativ cît PZU în 2024--2025 (\NpremTF\ și \NpremFive) și cu \NpremSixAbs\ EUR/MWh sub PZU în 2026* (Tabelul~\ref{tab:chain}, Figura~\ref{fig:f10_forward}).}
+  \begin{itemize}
+  \item \T{ROPEX\_FM describes contracts in delivery, signed at different dates; it is not an estimate of an ex-ante risk premium. Already contracted for 2027: \NvolNext\ TWh at about \NfwdNext\ EUR/MWh (OPCOM report of \NropexDate).}%
+  {ROPEX\_FM descrie contractele aflate în livrare, încheiate la date diferite; nu este o estimare a unei prime de risc ex ante. Deja contractat pentru 2027: \NvolNext\ TWh, la aproximativ \NfwdNext\ EUR/MWh (raportul OPCOM din \NropexDate).}
+  \end{itemize}
+\item \T{\textbf{Balancing: a risk, not a mean cost.} On matched quarter-hours of 2026* (January--September) the imbalance price averaged \NimbSix\ EUR/MWh (median \NimbMedSix) against a PZU of \NpzuImbSix\ in the same quarter-hours; mean difference \NsprSix, standard deviation of the difference \NsprSdSix, mean absolute difference \NsprAbsSix\ EUR/MWh.}%
+{\textbf{Echilibrarea: un risc, nu un cost mediu.} Pe sferturile de oră comune din 2026* (ianuarie--septembrie), prețul de dezechilibru a fost în medie de \NimbSix\ EUR/MWh (mediana \NimbMedSix), față de un PZU de \NpzuImbSix\ în aceleași sferturi de oră; diferența medie \NsprSix, abaterea standard a diferenței \NsprSdSix, diferența absolută medie \NsprAbsSix\ EUR/MWh.}
+  \begin{itemize}
+  \item \T{The pooled dispersion is largest around midday: s.d.\ \NsdMid\ EUR/MWh at \midh~h vs \NsdEve\ at \eveh~h (\NtwStart--\NtwEnd; Figure~\ref{fig:f11_imbalance}).}%
+  {Dispersia, calculată pe toate sferturile de oră, este cea mai mare în jurul prînzului: abaterea standard \NsdMid\ EUR/MWh între \NmidA\ și \NmidB, față de \NsdEve\ între \NeveA\ și \NeveB\ (\NtwStart--\NtwEnd; Figura~\ref{fig:f11_imbalance}).}
+  \end{itemize}
+\item \T{\textbf{Neighbour-price benchmark (import parity).} With the cheaper of the HU and BG prices as benchmark (implicit day-ahead allocation has no separate capacity payment, although capacity has a scarcity value; JAO prices not obtained), RO was above it by more than \NsepThr\ EUR/MWh in \NaboveSix\,\% of the hours of 2026* (\NaboveFive\,\% in 2025), by \NgapSix\ EUR/MWh on average.}%
+{\textbf{Reperul prețului vecinilor (paritatea de import).} Dacă luăm prețul mai mic dintre HU și BG drept reper (alocarea implicită din piața pentru ziua următoare nu presupune o plată separată pentru capacitate, deși aceasta are o valoare de raritate; prețurile JAO nu au fost obținute), PZU a depășit reperul cu peste \NsepThr\ EUR/MWh în \NaboveSix\,\% din orele din 2026* (\NaboveFive\,\% în 2025), în medie cu \NgapSix\ EUR/MWh.}
+  \begin{itemize}
+  \item \T{\NaboveEve\,\% of the evening hours vs \NaboveMid\,\% at midday (Figure~\ref{fig:f12_import_parity}): in these hours some import constraint (a border or the flow-based network) was binding; prices alone do not show which one.}%
+  {Este cazul în \NaboveEve\,\% din orele de seară, față de \NaboveMid\,\% la prînz (Figura~\ref{fig:f12_import_parity}): în aceste ore, o restricție de import (o frontieră sau rețeaua în algoritmul bazat pe fluxuri) a fost activă; prețurile singure nu arată care.}
+  \end{itemize}
+\end{itemize}
+
+\begin{table}[!htb]\centering\small
+\caption{\T{Day-ahead prices and differences, EUR/MWh; last two columns: RO--DE at \eveh~h and \midh~h, local time. 2026* = January--October.}%
+{Prețurile PZU și diferențele de preț, EUR/MWh; ultimele două coloane: RO--DE între orele \NeveA\ și \NeveB, respectiv \NmidA\ și \NmidB, ora locală. 2026* = ianuarie--octombrie.}}\label{tab:wh}
+\tabin{wholesale}
+\src{\T{our computation on energy-charts.info data; to \NdataEnd.}{calcule proprii pe date energy-charts.info; pînă la \NdataEnd.}}
+\end{table}
+\begin{table}[!htb]\centering\small
+\caption{\T{The price chain, EUR/MWh. Forward and PZU: ROPEX\_FM volume weights; imbalance from 2024, compared with the PZU of the same quarter-hours (2026*: January--September); import parity: share of hours with RO more than \NsepThr\ EUR/MWh above the cheaper of HU and BG, and the mean gap in those hours.}%
+{Lanțul prețurilor, EUR/MWh. Termen și PZU: ponderile de volum ROPEX\_FM; dezechilibrul din 2024, comparat cu PZU din aceleași sferturi de oră (2026*: ianuarie--septembrie); paritatea de import: ponderea orelor în care PZU depășește cu peste \NsepThr\ EUR/MWh prețul mai mic dintre HU și BG și diferența medie în aceste ore.}}\label{tab:chain}
+\tabin{chain}
+\src{\T{OPCOM, Transelectrica, ECB, energy-charts.info; our computation; to \NdataEnd.}{OPCOM, Transelectrica, BCE, energy-charts.info; calcule proprii; pînă la \NdataEnd.}}
+\end{table}
+
+\begin{figure}[!htb]
+\fig{f2_premium_by_hour}{\T{RO--DE price difference by hour, by year; dashed: RO--HU, 2026*.}{Diferența RO--DE pe ore, pe ani; linia întreruptă: RO--HU, 2026*.}}%
+{\T{our computation on energy-charts.info data; 2023--2026*.}{calcule proprii pe date energy-charts.info; 2023--2026*.}}{\hfill}%
+\fig{f10_forward}{\T{Forward contracts in delivery (ROPEX\_FM) vs PZU, monthly.}{Contractele la termen în livrare (ROPEX\_FM) și PZU, lunar.}}%
+{\T{OPCOM (\NropexDate), ECB, energy-charts.info; 2021--2026*.}{OPCOM (\NropexDate), BCE, energy-charts.info; 2021--2026*.}}{}\\[4pt]
+\fig{f11_imbalance}{\T{Imbalance price vs PZU, by hour of day.}{Prețul de dezechilibru și PZU, pe ore.}}%
+{\T{Transelectrica, ECB, energy-charts.info; \NtwStart--\NtwEnd.}{Transelectrica, BCE, energy-charts.info; \NtwStart--\NtwEnd.}}{\hfill}%
+\fig{f12_import_parity}{\T{Hours with RO above import parity (cheaper of HU and BG), by hour.}{Ore în care PZU depășește paritatea de import (minimul HU, BG), pe ore.}}%
+{\T{our computation on energy-charts.info data; 2024--2026*.}{calcule proprii pe date energy-charts.info; 2024--2026*.}}{}
+\end{figure}
+
+\begin{itemize}
+\item \T{\textbf{Retail, households.} \NlastSem, all taxes included: \NhhRO\ EUR cents/kWh in Romania vs \NhhEU\ in the EU, \NhhHU\ in Hungary, \NhhBG\ in Bulgaria; \NhhROprev\ in Romania in 2025-S1.}%
+{\textbf{Cu amănuntul, gospodării.} \NlastSem, cu toate taxele: \NhhRO\ eurocenți/kWh în România, față de \NhhEU\ în UE, \NhhHU\ în Ungaria și \NhhBG\ în Bulgaria; \NhhROprev\ în România în 2025-S1.}
+  \begin{itemize}
+  \item \T{In PPS, a price-level adjustment, the Romanian price is \NppsRatio\,\% above the EU average, the highest in the group.}%
+  {În PPS, o corecție pentru nivelul general al prețurilor din fiecare țară, prețul din România este cu \NppsRatio\,\% peste media UE, cel mai ridicat din grup.}
+  \item \T{Components, \NlastYear\ (Figure~\ref{fig:retail}): energy \NchEnRO\ vs \NchEnEU\ cents in the EU, network \NchNetRO\ vs \NchNetEU, taxes incl.\ value added tax (VAT) \NchTaxRO\ vs \NchTaxEU: none above the EU average. Against BG (regulated household tariffs) RO is higher in all three: energy \NchBGenS, network \NchBGnetS, taxes \NchBGtaxS.}%
+  {Componentele, \NlastYear\ (Figura~\ref{fig:retail}): energie \NchEnRO\ eurocenți, față de \NchEnEU\ în UE; rețea \NchNetRO\ față de \NchNetEU; taxe, inclusiv taxa pe valoarea adăugată (TVA), \NchTaxRO\ față de \NchTaxEU: niciuna peste media UE. Față de BG (tarife reglementate pentru gospodării), România este mai scumpă la toate trei: energie \NchBGenS, rețea \NchBGnetS, taxe \NchBGtaxS.}
+  \end{itemize}
+\item \T{\textbf{Retail, firms} (band ID, excluding VAT and other recoverable taxes): \NnhRO\ cents/kWh in \NlastSem\ vs \NnhEU\ in the EU (\NnhGapS). Components, \NlastYear: energy and supply \NcnGapEnS, network \NcnGapNetS, taxes \NcnGapTax\ against the EU.}%
+{\textbf{Cu amănuntul, firme} (banda ID, fără TVA și alte taxe recuperabile): \NnhRO\ eurocenți/kWh în \NlastSem, față de \NnhEU\ în UE (\NnhGapS). Componentele, \NlastYear, față de UE: energie și furnizare \NcnGapEnS, rețea \NcnGapNetS, taxe \NcnGapTax.}
+\end{itemize}
+
+\begin{figure}[!htb]\centering
+\includegraphics[width=0.8\linewidth]{f3_retail_components}
+\caption{\T{Retail price components, \NlastYear, EUR cents/kWh; households incl.\ VAT, non-households excl.\ VAT.}%
+{Componentele prețului cu amănuntul, \NlastYear, eurocenți/kWh; gospodării cu TVA, firme fără TVA.}}\label{fig:retail}
+\src{\T{Eurostat \texttt{nrg\_pc\_204\_c}, \texttt{nrg\_pc\_205\_c}, downloaded \NesDl; bands DC and ID.}{Eurostat \texttt{nrg\_pc\_204\_c}, \texttt{nrg\_pc\_205\_c}, descărcate la \NesDl; benzile DC și ID.}}
+\end{figure}
+
+\section{\T{The drivers}{Factorii explicativi}}
+\T{We report associations between each factor and the price, without establishing causal relations.}{Analiza identifică asocieri între factori și preț, fără a stabili relații cauzale.}
+\begin{itemize}
+\item \T{\textbf{Evening scarcity.} Solar output at \NsolHour:00 rose from \NsolNoonTT\ MW (2023) to \NsolNoon\ MW (2026*); Romania now exports at noon (\NimpNoon\ MW net imports) and imports in the evening (\NimpEve\ MW at \NimpA--\NimpB~h, \NimpEveTT\ MW in 2023).}%
+{\textbf{Deficitul de seară.} Producția solară la ora \NsolHour:00 a crescut de la \NsolNoonTT\ MW (2023) la \NsolNoon\ MW (2026*); România exportă acum la prînz (importuri nete de \NimpNoon\ MW) și importă seara (\NimpEve\ MW între orele \NimpA\ și \NimpB, față de \NimpEveTT\ MW în 2023).}
+  \begin{itemize}
+  \item \T{PZU in 2026*: \NeveRO\ EUR/MWh in the evening, \NmidRO\ at midday, a spread of \NspreadEM\ (\NspreadEMTF\ in 2024).}%
+  {PZU în 2026*: \NeveRO\ EUR/MWh seara și \NmidRO\ la prînz, o diferență de \NspreadEM\ EUR/MWh (\NspreadEMTF\ în 2024).}
+  \end{itemize}
+\item \T{\textbf{Lower hydro output.} \NhydroTwentyFive\ MW in 2025 (\NhydroGapFive\,\% against the 2015--2024 mean of \NhydroRefFull\ MW) and \NhydroTwentySix\ MW in 2026* (\NhydroGap\,\% against the January--October mean of \NhydroRef\ MW; Figure~\ref{fig:f5_hydro}).}%
+{\textbf{Producția hidro mai mică.} \NhydroTwentyFive\ MW în 2025 (\NhydroGapFive\,\% față de media 2015--2024, de \NhydroRefFull\ MW) și \NhydroTwentySix\ MW în 2026* (\NhydroGap\,\% față de media lunilor ianuarie--octombrie, de \NhydroRef\ MW; Figura~\ref{fig:f5_hydro}).}
+\item \T{\textbf{Nuclear output.} \NnucTwentySix\ MW in 2026* vs \NnucRef\ MW in 2015--2024; days below \NnucOff\ MW: \NnucZero; days between \NnucOff\ and \NnucOne\ MW: \NnucLow; days without data: \NnucNA. The reasons for the low output are not in our data.}%
+{\textbf{Producția nucleară.} \NnucTwentySix\ MW în 2026*, față de \NnucRef\ MW în 2015--2024; zile sub \NnucOff\ MW: \NnucZero; zile între \NnucOff\ și \NnucOne\ MW: \NnucLow; zile fără date: \NnucNA. Motivele producției reduse nu se regăsesc în datele noastre.}
+\item \T{\textbf{Gas SRMC as a benchmark} (hypothesis: gas units set the price in many hours). Short-run marginal cost (SRMC) of a gas plant with electrical efficiency $\eta$:}%
+{\textbf{SRMC-ul centralelor pe gaze ca reper} (ipoteză: unitățile pe gaze stabilesc prețul în multe ore). Costul marginal pe termen scurt (SRMC, \emph{short-run marginal cost}) al unei centrale pe gaze cu randamentul electric $\eta$:}
+\[
+\text{SRMC}_t=\frac{P^{\text{TTF}}_t}{\eta}+P^{\text{EUA}}_t\,\frac{e_{th}}{\eta}\ \ [\text{EUR/MWh}_{el}],\qquad e_{th}=\text{\NefTh}\ \text{tCO}_2/\text{MWh}_{th},\quad \eta=\text{\Neta}.
+\]
+  \begin{itemize}
+  \item \T{With $\eta=$ \Neta: \NgasIn\ MWh of gas and \NefEl\ tCO$_2$ per MWh of electricity. October 2026: TTF \NttfOct\ EUR/MWh, EUA \NeuaOct\ EUR/t, SRMC \NsrmcOct\ EUR/MWh; monthly correlation with the PZU in 2023--2026*: \NcorrSrmc, mean gap \NgapSrmc\ EUR/MWh (Figure~\ref{fig:f7_srmc}; band: $\eta$ from \NetaLo\ to \NetaHi).}%
+  {Cu $\eta=$ \Neta: \NgasIn\ MWh de gaze și \NefEl\ tCO$_2$ pentru un MWh de energie electrică. Octombrie 2026: TTF \NttfOct\ EUR/MWh, EUA \NeuaOct\ EUR/t, SRMC \NsrmcOct\ EUR/MWh; corelația lunară cu PZU în 2023--2026*: \NcorrSrmc, diferența medie \NgapSrmc\ EUR/MWh (Figura~\ref{fig:f7_srmc}; banda: $\eta$ între \NetaLo\ și \NetaHi).}
+  \end{itemize}
+\item \T{\textbf{Coupling and the mix.} Price separation (absolute difference above \NsepThr\ EUR/MWh) in 2026*: RO--HU \NsepHU\,\% of market time units (MTUs), \NsepHUeve\,\% in the evening; RO--BG \NsepBG\,\% (\NsepBGfive\,\% in 2025). Coal output fell from \NcoalNineteen\ MW (2019) to \NcoalTwentySix\ MW (2026*), gas is flat (\NgasTwentySix\ MW).}%
+{\textbf{Cuplarea piețelor și mixul.} Separarea prețurilor (diferență absolută de peste \NsepThr\ EUR/MWh) în 2026*: RO--HU \NsepHU\,\% din intervalele de tranzacționare ale pieței (MTU, \emph{market time unit}), \NsepHUeve\,\% seara; RO--BG \NsepBG\,\% (\NsepBGfive\,\% în 2025). Producția pe cărbune a scăzut de la \NcoalNineteen\ MW (2019) la \NcoalTwentySix\ MW (2026*), iar cea pe gaze a rămas constantă (\NgasTwentySix\ MW).}
+\end{itemize}
+
+\begin{figure}[!htb]
+\fig{f5_hydro}{\T{Monthly hydro output, 2025 and 2026* vs 2015--2024.}{Producția hidro lunară, 2025 și 2026*, față de 2015--2024.}}%
+{\T{energy-charts.info (ENTSO-E); 2015--2026*.}{energy-charts.info (ENTSO-E); 2015--2026*.}}{\hfill}%
+\fig{f7_srmc}{\T{Monthly PZU vs gas SRMC (monthly averages).}{PZU lunar și SRMC-ul centralelor pe gaze (medii lunare).}}%
+{\T{World Bank, EEX, EUA product, energy-charts.info; own computation; 2019--2026*.}{Banca Mondială, EEX, produsul EUA, energy-charts.info; calcule proprii; 2019--2026*.}}{}
+\end{figure}
+
+\section{\T{A simple model}{Un model simplu}}
+\begin{itemize}
+\item \T{Daily ordinary least squares (OLS) on a chronological sample, \NregStart--\NregEnd, estimated \textbf{in sample} (no out-of-sample claim):}%
+{Regresie zilnică prin metoda celor mai mici pătrate (MCMMP), pe un eșantion cronologic, \NregStart--\NregEnd, estimată \textbf{în eșantion} (fără afirmații în afara eșantionului):}
+\[
+P_d=\alpha+\beta_1 RL_d+\beta_2 H_d+\beta_3 N_d+\beta_4 M_d+\beta_5\,\text{SRMC}_{d}+\textstyle\sum_{k=2}^{12}\gamma_k\mathbf{1}[\T{\text{month}}{\text{luna}}(d)=k]+u_d ,
+\]
+\T{$RL$: residual load (load minus wind and solar), $H$: hydro, $N$: nuclear, $M$: net imports, all in GW, same-day realised values, known at the end of day $d$ but not when the PZU clears (so this is an ex-post explanatory model, not a forecasting model); SRMC$_d$ uses only prices known on day $d$ (the latest published monthly TTF, available from day \NttfPubDay\ of the following month, and the last EUA price before $d$).}%
+{$RL$: consumul rezidual (consumul minus producția eoliană și solară), $H$: hidro, $N$: nuclear, $M$: importuri nete, toate în GW, valori efective din aceeași zi, cunoscute la sfîrșitul zilei $d$, dar nu la închiderea PZU (deci un model explicativ ex post, nu un model de prognoză); SRMC$_d$ folosește doar prețuri cunoscute în ziua $d$ (ultimul TTF lunar publicat, disponibil din ziua \NttfPubDay\ a lunii următoare, și ultimul preț EUA dinaintea zilei $d$).}
+  \begin{itemize}
+  \item \T{Complete-case sample: \NnObs\ of \NnCal\ days (\NnDrop\ dropped for missing data). Standard errors: Newey--West heteroskedasticity- and autocorrelation-consistent (HAC), \NhacLags\ lags over the retained days, and clustered by month as a check.}%
+  {Eșantion cu observații complete: \NnObs\ din \NnCal\ zile (\NnDrop\ eliminate din cauza datelor lipsă). Erori standard Newey--West robuste la heteroscedasticitate și autocorelare (HAC), \NhacLags\ întîrzieri pe zilele reținute, și, ca verificare, grupate pe luni.}
+  \item \T{$R^2=\NrTwo$; all five coefficients have the expected sign; each additional EUR/MWh of SRMC goes with \NbSrmcS\ EUR/MWh of price (HAC s.e.\ \NseSrmc, month-clustered \NseclSrmc). Largest variance inflation factor (VIF): \NvifMax: the drivers overlap.}%
+  {$R^2=\NrTwo$; toți cei cinci coeficienți au semnul așteptat; fiecare EUR/MWh în plus la SRMC se asociază cu \NbSrmcS\ EUR/MWh la preț (eroarea standard HAC: \NseSrmc; grupată pe luni: \NseclSrmc). Cel mai mare factor de inflație a varianței (VIF): \NvifMax: factorii se suprapun.}
+  \end{itemize}
+\item \T{\textbf{Accounting decomposition}, January--October 2024 ($A$, \NnA\ days) to 2026 ($B$, \NnB\ days): $\bar P_B-\bar P_A=\sum_k\hat\beta_k(\bar x_{k,B}-\bar x_{k,A})+(\bar{\hat u}_B-\bar{\hat u}_A)$.}%
+{\textbf{Descompunerea contabilă}, ianuarie--octombrie 2024 ($A$, \NnA\ zile) $\to$ 2026 ($B$, \NnB\ zile): $\bar P_B-\bar P_A=\sum_k\hat\beta_k(\bar x_{k,B}-\bar x_{k,A})+(\bar{\hat u}_B-\bar{\hat u}_A)$.}
+  \begin{itemize}
+  \item \T{\NdPS\ EUR/MWh (\NpA\ $\to$ \NpB): gas-and-carbon SRMC \NcSrmcS, nuclear \NcNucS, hydro \NcHydroS, residual load \NcResid, net imports \NcImp, month mix \NcCal, unexplained \NcUnexS\ (Table~\ref{tab:reg}; waterfall on the last page).}%
+  {\NdPS\ EUR/MWh (\NpA\ $\to$ \NpB): SRMC gaze și carbon \NcSrmcS, nuclear \NcNucS, hidro \NcHydroS, consum rezidual \NcResid, importuri nete \NcImp, structura lunilor \NcCal, neexplicat \NcUnexS\ (Tabelul~\ref{tab:reg}; graficul în cascadă de pe ultima pagină).}
+  \item \T{With 2023 as reference: \NdPTTS, of which SRMC \NcSrmcTTS\ and nuclear plus hydro \NcSupplyTTS: the split depends on the reference year.}%
+  {Cu 2023 ca referință: \NdPTTS, din care SRMC \NcSrmcTTS\ și nuclear plus hidro \NcSupplyTTS: împărțirea depinde de anul de referință.}
+  \item \T{\textbf{An in-sample accounting identity on correlated drivers, not a causal attribution:} hydro and imports react to the price; the SRMC term may also capture omitted influences correlated with gas and carbon prices.}%
+  {\textbf{O identitate contabilă în eșantion, pe factori corelați, nu o atribuire cauzală:} producția hidro și importurile reacționează la preț; termenul SRMC poate prelua și influențe omise, corelate cu prețurile gazelor și ale certificatelor de emisii.}
+  \end{itemize}
+\end{itemize}
+\begin{table}[!htb]\centering\small
+\caption{\T{Daily in-sample regression of the PZU (EUR/MWh) and decomposition of the change, January--October 2024 to 2026 (*). Month dummies and constant not shown.}%
+{Regresia zilnică în eșantion a PZU (EUR/MWh) și descompunerea variației, ianuarie--octombrie 2024 $\to$ 2026 (*). Variabilele lunare și constanta nu sînt prezentate.}}\label{tab:reg}
+\tabin{regression}
+\src{\T{our computation; \NregStart--\NregEnd; HAC (Newey--West, \NhacLags\ lags) and month-clustered standard errors.}{calcule proprii; \NregStart--\NregEnd; erori standard HAC (Newey--West, \NhacLags\ întîrzieri) și grupate pe luni.}}
+\end{table}
+
+\section{\T{Implications for companies}{Implicații pentru companii}}
+\begin{itemize}
+\item \T{\textbf{Hedge the shape, not only the base.} The average price premium is largest in the evening hours.}{\textbf{Acoperiți profilul orar, nu doar banda.} Prima medie de preț este cea mai mare seara.}
+  \begin{itemize}
+  \item \T{Evening prices were \NspreadEM\ EUR/MWh above midday in 2026*: peak and evening products or options matter more than base-load forwards alone.}%
+  {În 2026*, prețurile de seară au fost cu \NspreadEM\ EUR/MWh peste cele de la prînz: produsele de vîrf și de seară sau opțiunile contează mai mult decît contractele la termen în bandă.}
+  \item \T{Contracts in delivery were cheaper than the PZU in 2026* and dearer in 2023 (\NpremTTS): layered purchases spread the contracting dates over time instead of betting on one date.}%
+  {Contractele aflate în livrare au fost mai ieftine decît PZU în 2026* și mai scumpe în 2023 (\NpremTTS): achizițiile eșalonate distribuie în timp momentele de contractare, în loc să mizeze pe o singură dată.}
+  \end{itemize}
+\item \T{\textbf{Forecasting and balancing.} The imbalance price differs from the PZU by \NsprAbsSix\ EUR/MWh on average in absolute value, with the largest dispersion around midday: better load and renewable forecasts and intraday trading reduce the exposure.}%
+{\textbf{Prognoza și echilibrarea.} Prețul de dezechilibru diferă de PZU, în valoare absolută, cu \NsprAbsSix\ EUR/MWh în medie, cu dispersia cea mai mare în jurul prînzului: prognozele mai bune ale consumului și ale producției regenerabile și tranzacțiile intrazilnice reduc expunerea.}
+\item \T{\textbf{Storage.} The evening--midday spread is a gross benchmark for one battery cycle, before losses, degradation and timing constraints (Case~6). Bulgarian batteries, reported from \NbgStart, discharged \NbgBatt\ MW on average in \NbgMonth; in September--October 2026 the evening RO--BG gap was \NbgEve\ EUR/MWh: a coincidence in time, not a proven effect. Romanian batteries: average discharge \NroBatt\ MW in \NbgMonth.}%
+{\textbf{Stocarea.} Diferența seară--prînz este un reper brut pentru un ciclu al unei baterii, înainte de pierderi, degradare și constrîngeri de programare (Studiul de caz~6). Bateriile din Bulgaria, raportate din \NbgStart, au descărcat în medie \NbgBatt\ MW în \NbgMonth; în septembrie--octombrie 2026, diferența de seară RO--BG a fost de \NbgEve\ EUR/MWh: o coincidență în timp, nu un efect demonstrat. Bateriile din România: descărcare medie de \NroBatt\ MW în \NbgMonth.}
+\item \T{\textbf{PPA design.} The market value of the national solar profile was \NcapSol\ EUR/MWh in 2026*, \NcapRate\,\% of the base price (\NcapRateTF\,\% in 2024); a pay-as-produced solar PPA leaves the evening exposure with the buyer, while hybrid (solar plus storage) or shaped PPAs move part of it to the seller only if the contract guarantees evening delivery or a shape, at a price.}%
+{\textbf{Structura PPA.} Valoarea de piață a profilului solar național a fost de \NcapSol\ EUR/MWh în 2026*, adică \NcapRate\,\% din prețul de bază (\NcapRateTF\,\% în 2024); un PPA solar plătit pe producția efectivă (\emph{pay-as-produced}) lasă expunerea de seară la cumpărător, iar contractele hibride (solar cu stocare) sau cele cu profil transferă o parte din ea către vînzător doar dacă garantează livrarea de seară sau un profil, contra unui preț.}
+\item \T{\textbf{Demand shifting.} The same spread is the gross value of moving one MWh from the evening to midday; household demand reacts little to price (Case~5), so the potential lies mainly in industrial loads.}%
+{\textbf{Mutarea consumului.} Aceeași diferență este valoarea brută a mutării unui MWh din orele de seară la prînz; consumul casnic reacționează puțin la preț (Studiul de caz~5), deci potențialul se află mai ales la consumatorii industriali.}
+\item \T{\textbf{System-level levers:} interconnection (RO above the neighbour benchmark in \NaboveEve\,\% of evening hours); storage and flexible demand; nuclear availability and outage planning. Hydro depends on the weather and gas is priced on the European market.}%
+{\textbf{Instrumente la nivel de sistem:} interconexiunea (PZU peste reperul vecinilor în \NaboveEve\,\% din orele de seară); stocarea și consumul flexibil; disponibilitatea nucleară și planificarea opririlor. Producția hidro depinde de vreme, iar prețul gazelor se formează pe piața europeană.}
+\end{itemize}
+
+\section{\T{Discussion questions}{Întrebări de discuție}}
+\begin{enumerate}
+\item \T{Your board says ``Romanian power is the most expensive in the region''. Using Table~\ref{tab:wh}, how would you qualify this?}%
+{Consiliul de administrație afirmă că „energia din România este cea mai scumpă din regiune”. Pe baza Tabelului~\ref{tab:wh}, cum ați nuanța afirmația?}
+\item \T{Your company buys mostly in the evening. Which products would you add to a base-load forward, and how would you size them?}%
+{Compania dumneavoastră cumpără energie mai ales seara. Ce produse ați adăuga unui contract la termen în bandă și cum le-ați dimensiona?}
+\item \T{The decomposition assigns \NcSrmc\ EUR/MWh to the gas-and-carbon SRMC. Why can you not conclude that cheaper gas would have lowered the price by exactly this amount?}%
+{Descompunerea atribuie \NcSrmc\ EUR/MWh SRMC-ului gazelor și carbonului. De ce nu puteți concluziona că un preț mai mic al gazelor ar fi redus prețul energiei exact cu această sumă?}
+\item \T{The mean imbalance price is close to the PZU. Why should your company still budget for imbalance costs, and how would you estimate them?}%
+{Prețul mediu de dezechilibru este apropiat de PZU. De ce trebuie totuși compania dumneavoastră să prevadă în buget costuri de dezechilibru și cum le-ați estima?}
+\item \T{Households pay about the EU average in euro but much more in PPS. Which figure would you use with a regulator, and which with your clients?}%
+{Gospodăriile plătesc în euro aproximativ media UE, dar mult mai mult în PPS. Ce indicator ați folosi în fața autorității de reglementare și ce indicator în fața clienților dumneavoastră?}
+\end{enumerate}
+
+\section{\T{Limitations of the analysis}{Limitele analizei}}
+{\small
+\begin{itemize}
+\item \T{\textbf{No causality:} imports and reservoir hydro respond to the price; the SRMC term may capture omitted influences correlated with gas and carbon prices; the decomposition is in sample and changes with the reference year.}%
+{\textbf{Fără cauzalitate:} importurile și producția hidro din lacurile de acumulare reacționează la preț; termenul SRMC poate prelua influențe omise, corelate cu prețurile gazelor și ale certificatelor de emisii; descompunerea este în eșantion și se schimbă odată cu anul de referință.}
+\item \T{\textbf{Data:} monthly TTF only; EUA from a rescaled exchange-traded product in 2026; physical regressors are realised values; gaps in the nuclear series; HAC lags count retained days; daily means hide the evening hours; the SRMC uses one efficiency and ignores operating costs, gas transport tariffs and the domestic gas price regime.}%
+{\textbf{Datele:} TTF doar lunar; EUA în 2026 dintr-un produs bursier rescalat; variabilele fizice sînt valori efective; lipsuri în seria nucleară; întîrzierile HAC se numără pe zilele reținute; mediile zilnice ascund orele de seară; SRMC folosește un singur randament și ignoră costurile de operare, tarifele de transport al gazelor și regimul prețului gazelor din producția internă.}
+\item \T{\textbf{Price chain:} ROPEX\_FM mixes products and contracts signed at different dates and is converted at a monthly rate (OPCOM uses the trade-date rate); \NblankImb\,\% of imbalance quarter-hours have no price; import parity ignores long-term capacity costs (JAO not obtained).}%
+{\textbf{Lanțul prețurilor:} ROPEX\_FM amestecă produse și contracte încheiate la date diferite și este convertit la un curs lunar (OPCOM folosește cursul zilei tranzacției); \NblankImb\,\% din sferturile de oră nu au preț de dezechilibru; paritatea de import ignoră costul capacității pe termen lung.}
+\item \T{\textbf{Retail:} one consumption band per category; annual components vs half-yearly prices; regulated tariffs in HU and BG make part of the comparison one of policies, not of markets.}%
+{\textbf{Prețurile cu amănuntul:} o singură bandă de consum pe categorie; componente anuale, prețuri semestriale; tarifele reglementate din HU și BG țin de politici, nu de piață.}
+\end{itemize}
+
+\newpage
+\section*{\T{Case 8 at a glance}{Studiul de caz 8 pe scurt}}
+\glance{\T{Why is Romanian electricity expensive, against whom and when?}{De ce este scumpă energia electrică în România, față de cine și cînd?}}%
+{\T{Forward contracts (OPCOM), PZU and neighbours, imbalance (Transelectrica), RO generation and flows, TTF, EUA, Eurostat retail.}{Contracte la termen (OPCOM), PZU și vecinii, dezechilibre (Transelectrica), producția și fluxurile RO, TTF, EUA, Eurostat.}}%
+{\T{Spreads by year and hour; gas SRMC; daily in-sample OLS with HAC errors; accounting decomposition.}{Diferențe pe ani și ore; SRMC gaze; MCMMP zilnic în eșantion, erori HAC; descompunere contabilă.}}%
+{\T{RO$-$DE \NpremDETwentySix\ EUR/MWh (evening \NeveDETwentySix); RO$-$HU \NpremHUTwentySix. 2024$\to$2026: \NdPS, gas and carbon \NcSrmcS, nuclear+hydro \NcSupplyS.}%
+{RO$-$DE \NpremDETwentySix\ EUR/MWh (seara \NeveDETwentySix); RO$-$HU \NpremHUTwentySix. 2024$\to$2026: \NdPS, gaze și carbon \NcSrmcS, nuclear+hidro \NcSupplyS.}}%
+{\T{Hedge the evening shape; layer forward purchases; value storage and flexible demand; shape PPAs.}{Acoperiți profilul de seară; eșalonați achizițiile la termen; evaluați stocarea și consumul flexibil; adaptați profilul PPA.}}
+\begin{center}
+\includegraphics[width=0.66\linewidth]{fig_headline_\lang}
+\captionof{figure}{\T{In-sample accounting decomposition of the change in the mean PZU, January--October 2024 to 2026 (not causal).}{Descompunerea contabilă în eșantion a variației PZU mediu, ianuarie--octombrie 2024 $\to$ 2026 (fără interpretare cauzală).}}
+\src{\T{our regression on energy-charts.info, World Bank and EEX data; \NregStart--\NregEnd.}{regresia noastră pe date energy-charts.info, Banca Mondială și EEX; \NregStart--\NregEnd.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NeveDETwentySix}\\ \small \T{EUR/MWh, RO$-$DE at \eveh~h, 2026*}{EUR/MWh, RO$-$DE între orele \NeveA\ și \NeveB, 2026*}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NspreadEM}\\ \small \T{EUR/MWh, PZU evening minus midday, 2026*}{EUR/MWh, PZU seara minus prînz, 2026*}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \NppsRatioS\,\%}\\ \small \T{household price vs EU, in PPS, \NlastSem}{prețul pentru gospodării față de UE, în PPS, \NlastSem}\end{minipage}
+
+\vspace{0.3cm}
+{\footnotesize\T{\textbf{Related work of our group (pointers).} Andrei, Pele \& Cramer (2026), Proceedings of the International Conference on Business Excellence (PICBE) 20(1), 84--103, \href{https://doi.org/10.2478/picbe-2026-0013}{doi:10.2478/picbe-2026-0013} (the 2024 crisis, Case~1);
+Proșcanu, Proșcanu \& Pele (2025), Journal of Social and Economic Statistics (JSES) 14(2), 131--141, \href{https://doi.org/10.2478/jses-2025-0009}{doi:10.2478/jses-2025-0009} (price elasticity of demand, Case~5);
+Andrei et al.\ (2026), SSRN 6872381, \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381} (battery arbitrage, Case~6).}%
+{\textbf{Lucrări conexe ale grupului (trimiteri).} Andrei, Pele și Cramer (2026), Proceedings of the International Conference on Business Excellence (PICBE) 20(1), 84--103, \href{https://doi.org/10.2478/picbe-2026-0013}{doi:10.2478/picbe-2026-0013} (criza din 2024, Studiul de caz~1);
+Proșcanu, Proșcanu și Pele (2025), Journal of Social and Economic Statistics (JSES) 14(2), 131--141, \href{https://doi.org/10.2478/jses-2025-0009}{doi:10.2478/jses-2025-0009} (elasticitatea cererii în raport cu prețul, Studiul de caz~5);
+Andrei et al.\ (2026), SSRN 6872381, \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381} (arbitrajul cu baterii, Studiul de caz~6).}}}\par
+\vspace{0.3cm}
+{\scriptsize\color{FooterGray}\T{\textbf{Abbreviations.} ANRE: Romanian Energy Regulatory Authority; ECB: European Central Bank; EEX: European Energy Exchange; EUA: EU emission allowance; HAC: heteroskedasticity- and autocorrelation-consistent; JAO: Joint Allocation Office; MTU: market time unit; OLS: ordinary least squares; PCCB-LE, PCCB-NC: OPCOM centralised bilateral markets; PC-OTC: OPCOM continuous OTC market; PPA: power purchase agreement; PPS: purchasing power standards; PZU: Romanian day-ahead market; ROPEX\_FM: OPCOM forward-market price index; SRMC: short-run marginal cost; TTF: Title Transfer Facility; VAT: value added tax; VIF: variance inflation factor.}%
+{\textbf{Abrevieri.} ANRE: Autoritatea Națională de Reglementare în domeniul Energiei; BCE: Banca Centrală Europeană; EEX: bursa europeană de energie; EUA: certificat de emisii al UE; HAC: robust la heteroscedasticitate și autocorelare; JAO: \emph{Joint Allocation Office}; MCMMP: metoda celor mai mici pătrate; MTU: interval de tranzacționare al pieței; PCCB-LE, PCCB-NC: piețele centralizate ale contractelor bilaterale (OPCOM); PC-OTC: piața centralizată cu negociere continuă (OPCOM); PPA: contract de achiziție de energie pe termen lung; PPS: standard al puterii de cumpărare; PZU: piața pentru ziua următoare; ROPEX\_FM: indicele de preț al piețelor la termen OPCOM; SRMC: costul marginal pe termen scurt; TTF: \emph{Title Transfer Facility}; TVA: taxa pe valoarea adăugată; VIF: factorul de inflație a varianței.}}
+\end{document}

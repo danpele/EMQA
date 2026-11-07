@@ -1,0 +1,45 @@
+/* EMQA: additions to the shared SFM / TSA / BA stylesheet (site.css) */
+
+/* course title in the header links back to the top of the home page */
+.header-title h1 a { color: inherit; text-decoration: none; }
+.header-title h1 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.section-intro { max-width: 60rem; margin-bottom: 1rem; }
+.tbd { color: var(--mid-gray); font-style: italic; }
+
+/* lecture cards: case-study links under the topics */
+.lecture-cases { margin: 0.2rem 0 0.8rem; font-size: 0.9rem; }
+.lecture-cases a { text-decoration: none; border-bottom: 1px dotted var(--main-blue); }
+.quantinar-box h4 { line-height: 1.35; }
+
+/* case studies */
+.case-card { scroll-margin-top: 80px; border-left: 4px solid var(--amber); }
+
+/* data table (same look as the BA session table) */
+.table-wrap { overflow-x: auto; }
+table.sessions { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--white); }
+table.sessions th { background: var(--main-blue); color: white; text-align: left; padding: 0.55rem 0.7rem; }
+table.sessions td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.sessions td.c { white-space: nowrap; color: var(--main-blue); }
+table.sessions tr:nth-child(even) td { background: var(--light-gray); }
+table.sessions code { font-size: 0.78rem; color: var(--mid-gray); overflow-wrap: anywhere; }
+.muted-note { font-size: 0.8rem; color: var(--mid-gray); }
+.data-licence { font-size: 0.85rem; color: var(--mid-gray); margin-top: 0.8rem; max-width: 60rem; }
+
+/* phones: each data row becomes a small card, no sideways scrolling */
+@media (max-width: 700px) {
+    table.data-table thead { display: none; }
+    table.data-table, table.data-table tbody, table.data-table tr, table.data-table td { display: block; width: 100%; }
+    table.data-table tr { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.7rem; overflow: hidden; }
+    table.data-table td { border-bottom: 0; padding: 0.3rem 0.7rem; }
+    table.data-table td:first-child { font-weight: 600; padding-top: 0.6rem; }
+    table.data-table td.c { white-space: normal; }
+    table.sessions tr:nth-child(even) td { background: transparent; }
+}
+
+/* abbreviations */
+.abbr-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.3rem 2rem; margin: 0.5rem 0 0; }
+.abbr-row { display: flex; gap: 0.7rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+.abbr-row dt { flex: 0 0 9.5rem; font-weight: 700; color: var(--main-blue); }
+.abbr-row dd { margin: 0; }
+@media (max-width: 480px) { .abbr-list { grid-template-columns: 1fr; } .abbr-row dt { flex-basis: 7.5rem; } }

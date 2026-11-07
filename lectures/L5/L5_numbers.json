@@ -1,0 +1,830 @@
+{
+ "charts": {
+  "fw_volume": {
+   "source_en": "OPCOM, PCCB-LE-flex results; ECB (EUR/RON)",
+   "source_ro": "OPCOM, rezultatele PCCB-LE-flex; BCE (EUR/RON)",
+   "period_en": "2,298 traded auctions, 2020-05-12 to 2026-10-31; *2026 to the cut-off",
+   "period_ro": "2\\,298 de licita\u021bii \u00eencheiate, 2020-05-12 - 2026-10-31; *2026 p\u00een\u0103 la data-limit\u0103"
+  },
+  "crisis_cal22": {
+   "source_en": "OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB",
+   "source_ro": "OPCOM (rezultatele PCCB-LE-flex; pre\u021buri PZU, prin energy-charts.info); BCE",
+   "period_en": "150 auctions for 2022 baseload; spot 2020-2022",
+   "period_ro": "150 de licita\u021bii pentru banda 2022; spot 2020-2022"
+  },
+  "cal_by_trade": {
+   "source_en": "OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB",
+   "source_ro": "OPCOM (rezultatele PCCB-LE-flex; pre\u021buri PZU, prin energy-charts.info); BCE",
+   "period_en": "calendar-year baseload auctions to 2026-10-31; thick line = realised mean",
+   "period_ro": "licita\u021bii pentru ani calendaristici, p\u00een\u0103 la 2026-10-31; linia groas\u0103 = media realizat\u0103"
+  },
+  "fwd_curve": {
+   "source_en": "OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB",
+   "source_ro": "OPCOM (rezultatele PCCB-LE-flex; pre\u021buri PZU, prin energy-charts.info); BCE",
+   "period_en": "85 auctions 2026-09-01 to 2026-10-31",
+   "period_ro": "85 de licita\u021bii, 2026-09-01 - 2026-10-31"
+  },
+  "premium": {
+   "source_en": "OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB",
+   "source_ro": "OPCOM (rezultatele PCCB-LE-flex; pre\u021buri PZU, prin energy-charts.info); BCE",
+   "period_en": "30 delivery months, 2020-08 to 2026-08",
+   "period_ro": "30 de luni de livrare, 2020-08 - 2026-08"
+  },
+  "spreads": {
+   "source_en": "energy-charts.info; World Bank (TTF, coal); EEX and SparkChange ETC (EUA); ECB",
+   "source_ro": "energy-charts.info; Banca Mondial\u0103 (TTF, c\u0103rbune); EEX \u0219i SparkChange ETC (EUA); BCE",
+   "period_en": "monthly, 2015-01 to 2026-10",
+   "period_ro": "lunar, 2015-01 - 2026-10"
+  },
+  "spark_hourly": {
+   "source_en": "energy-charts.info; World Bank (TTF, coal); EEX and SparkChange ETC (EUA); ECB",
+   "source_ro": "energy-charts.info; Banca Mondial\u0103 (TTF, c\u0103rbune); EEX \u0219i SparkChange ETC (EUA); BCE",
+   "period_en": "2025-11-01 to 2026-10-31, hourly",
+   "period_ro": "2025-11-01 - 2026-10-31, date orare"
+  },
+  "hedge_scatter": {
+   "source_en": "energy-charts.info: day-ahead prices of OPCOM, HUPX, EPEX SPOT",
+   "source_ro": "energy-charts.info: pre\u021burile PZU ale OPCOM, HUPX, EPEX SPOT",
+   "period_en": "monthly changes, 2015-02 to 2026-10",
+   "period_ro": "varia\u021bii lunare, 2015-02 - 2026-10"
+  },
+  "basis": {
+   "source_en": "energy-charts.info: day-ahead prices of OPCOM, HUPX, EPEX SPOT",
+   "source_ro": "energy-charts.info: pre\u021burile PZU ale OPCOM, HUPX, EPEX SPOT",
+   "period_en": "2015-01 to 2026-10; right: |difference| < 0.01 EUR/MWh",
+   "period_ro": "2015-01 - 2026-10; dreapta: diferen\u021b\u0103 sub 0,01 EUR/MWh"
+  },
+  "shape": {
+   "source_en": "energy-charts.info: OPCOM prices; ENTSO-E load and solar output",
+   "source_ro": "energy-charts.info: pre\u021buri OPCOM; consum \u0219i produc\u021bie solar\u0103 ENTSO-E",
+   "period_en": "hourly, 2015 to 2026-10-31; *to the cut-off",
+   "period_ro": "date orare, 2015 - 2026-10-31; *p\u00een\u0103 la data-limit\u0103"
+  },
+  "samuelson": {
+   "source_en": "Yahoo Finance, NYMEX TTF futures",
+   "source_ro": "Yahoo Finance, contracte futures NYMEX TTF",
+   "period_en": "daily closes to 2026-10-31, rolling 60 trading days",
+   "period_ro": "pre\u021buri zilnice p\u00een\u0103 la 2026-10-31, fereastr\u0103 mobil\u0103 de 60 de zile"
+  },
+  "collar": {
+   "source_en": "OPCOM PCCB-LE-flex; ECB (\u20acSTR); Black-76",
+   "source_ro": "OPCOM PCCB-LE-flex; BCE (\u20acSTR); Black-76",
+   "period_en": "F = Cal-27 baseload, auctions 2026-09-01 to 2026-10-31",
+   "period_ro": "F = banda pentru 2027, licita\u021bii 2026-09-01 - 2026-10-31"
+  },
+  "case2026": {
+   "source_en": "OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB",
+   "source_ro": "OPCOM (rezultatele PCCB-LE-flex; pre\u021buri PZU, prin energy-charts.info); BCE",
+   "period_en": "2026-01 to 2026-10; 1 MW baseload",
+   "period_ro": "2026-01 - 2026-10; 1 MW \u00een band\u0103"
+  }
+ },
+ "cutoff": {
+  "end": "2026-10-31",
+  "end_ym": "2026-10",
+  "download": "2026-11-06"
+ },
+ "data": {
+  "fw_first": "2020-05-12",
+  "fw_last": "2026-10-28",
+  "fw_n": 2298,
+  "fw_twh": 83.68,
+  "base_n": 1361,
+  "base_share": 94.0,
+  "spot_start": "2015-01-01",
+  "spot_end": "2026-10-31",
+  "eurron_end": 5.3447
+ },
+ "volume": {
+  "2020": 15.42,
+  "2021": 27.31,
+  "2022": 7.44,
+  "2023": 1.58,
+  "2024": 17.53,
+  "2025": 5.64,
+  "2026": 8.76,
+  "max_year": 2021,
+  "min_year": 2023,
+  "n_sessions": {
+   "2020": 433,
+   "2021": 677,
+   "2022": 218,
+   "2023": 79,
+   "2024": 502,
+   "2025": 167,
+   "2026": 222
+  },
+  "y_share_base": 80.1
+ },
+ "who": {
+  "sell_top3_share": 83.1,
+  "sell_oltenia": 32.5,
+  "sell_snn": 29.7,
+  "sell_hidro": 20.8,
+  "buy_top1_share": 14.0,
+  "n_buyers": 125,
+  "n_sellers": 79
+ },
+ "curve": {
+  "from": "2026-09-01",
+  "to": "2026-10-31",
+  "n_products": 7,
+  "n_sessions": 85,
+  "items": [
+   {
+    "start": "2026-11-01",
+    "end": "2026-11-30",
+    "kind": "M",
+    "F": 215.33,
+    "n": 4
+   },
+   {
+    "start": "2026-12-01",
+    "end": "2026-12-31",
+    "kind": "M",
+    "F": 214.27,
+    "n": 3
+   },
+   {
+    "start": "2027-01-01",
+    "end": "2027-01-31",
+    "kind": "M",
+    "F": 203.04,
+    "n": 7
+   },
+   {
+    "start": "2027-01-01",
+    "end": "2027-03-31",
+    "kind": "Q",
+    "F": 176.69,
+    "n": 13
+   },
+   {
+    "start": "2027-01-01",
+    "end": "2027-12-31",
+    "kind": "Y",
+    "F": 148.12,
+    "n": 50
+   },
+   {
+    "start": "2027-02-01",
+    "end": "2027-02-28",
+    "kind": "M",
+    "F": 201.14,
+    "n": 7
+   },
+   {
+    "start": "2027-03-01",
+    "end": "2027-03-31",
+    "kind": "M",
+    "F": 159.65,
+    "n": 1
+   }
+  ],
+  "cal_next": {
+   "year": 2027,
+   "F": 148.12,
+   "n": 50
+  },
+  "m_front": {
+   "ym": "2026-11",
+   "F": 215.33
+  },
+  "q_front": {
+   "start": "2027-01-01",
+   "F": 176.69
+  },
+  "spot_last3": 189.01,
+  "spot_lastm": 239.32
+ },
+ "cal": {
+  "2021": {
+   "n": 163,
+   "vwap": 51.32,
+   "min": 46.6,
+   "max": 54.14,
+   "first": "2020-05-12",
+   "last": "2020-12-18",
+   "realised": 111.41,
+   "argmax": "2020-12-18"
+  },
+  "2022": {
+   "n": 150,
+   "vwap": 77.39,
+   "min": 51.3,
+   "max": 266.97,
+   "first": "2020-06-15",
+   "last": "2021-12-21",
+   "realised": 265.3,
+   "argmax": "2021-12-21"
+  },
+  "2023": {
+   "n": 123,
+   "vwap": 172.54,
+   "min": 55.28,
+   "max": 509.18,
+   "first": "2020-12-10",
+   "last": "2022-08-17",
+   "realised": 103.74,
+   "argmax": "2022-08-17"
+  },
+  "2024": {
+   "n": 26,
+   "vwap": 141.32,
+   "min": 55.42,
+   "max": 172.18,
+   "first": "2021-02-16",
+   "last": "2023-12-21",
+   "realised": 103.51,
+   "argmax": "2023-04-03"
+  },
+  "2025": {
+   "n": 101,
+   "vwap": 102.13,
+   "min": 55.38,
+   "max": 118.63,
+   "first": "2021-02-17",
+   "last": "2024-12-19",
+   "realised": 108.16,
+   "argmax": "2024-08-28"
+  },
+  "2026": {
+   "n": 31,
+   "vwap": 111.7,
+   "min": 90.63,
+   "max": 125.66,
+   "first": "2024-04-15",
+   "last": "2025-12-05",
+   "realised": null,
+   "argmax": "2025-11-26"
+  },
+  "2027": {
+   "n": 68,
+   "vwap": 136.95,
+   "min": 98.65,
+   "max": 160.06,
+   "first": "2024-10-08",
+   "last": "2026-10-28",
+   "realised": null,
+   "argmax": "2026-10-28"
+  }
+ },
+ "prem": {
+  "m1": {
+   "n": 30,
+   "first": "2020-08",
+   "last": "2026-08",
+   "mean": 5.16,
+   "se": 12.39,
+   "t": 0.42,
+   "p": 0.677,
+   "median": -0.25,
+   "pos_share": 50.0
+  },
+  "all": {
+   "n": 78,
+   "n_sessions": 1194,
+   "w_mean": -46.36,
+   "pos_share": 43.6
+  },
+  "pre": {
+   "n": 20,
+   "mean": -28.95,
+   "w_mean": -55.79,
+   "pos_share": 20.0
+  },
+  "crisis": {
+   "n": 15,
+   "mean": 5.08,
+   "w_mean": -166.5,
+   "pos_share": 40.0
+  },
+  "post": {
+   "n": 43,
+   "mean": 23.05,
+   "w_mean": 29.74,
+   "pos_share": 55.8
+  },
+  "m1_post": {
+   "n": 14,
+   "mean": 24.47,
+   "t": 1.51,
+   "p": 0.131
+  }
+ },
+ "termvol": {
+  "n": 153,
+  "all": 0.6682,
+  "mean_T_days": 31.2,
+  "post": 0.926,
+  "n_post": 63
+ },
+ "crisis": {
+  "S22": 265.3,
+  "F22": 77.39,
+  "n": 150,
+  "twh": 7.97,
+  "gap": 187.91,
+  "ratio": 3.43,
+  "eur_per_mw": 1646058.0,
+  "eur_per_mw_m": 1.646,
+  "parts": {
+   "h20": {
+    "n": 23,
+    "vwap": 54.39,
+    "twh": 1.18
+   },
+   "h21a": {
+    "n": 95,
+    "vwap": 61.5,
+    "twh": 4.99
+   },
+   "h21b": {
+    "n": 32,
+    "vwap": 136.68,
+    "twh": 1.8
+   }
+  },
+  "S22_max_m": 490.43,
+  "S22_max_m_ym": "2022-08",
+  "c23_max": 509.18,
+  "c23_argmax": "2022-08-17",
+  "S21": 111.41
+ },
+ "s24": {
+  "S_jul": 145.14,
+  "S_q3": 127.37,
+  "max_day": 244.74,
+  "max_day_date": "2024-07-18",
+  "F_q3": 90.01,
+  "F_jul": null,
+  "max_h": 916.72,
+  "max_h_ts": "2024-07-18 20:00"
+ },
+ "spread": {
+  "eta_gas": 0.5,
+  "eta_coal": 0.38,
+  "ef_gas": 0.202,
+  "ef_coal": 0.341,
+  "cf_gas": 0.404,
+  "cf_coal": 0.897,
+  "coal_mwh_t": 6.978,
+  "eua_switch": "2026-01",
+  "first": "2015-01",
+  "last": "2026-10",
+  "css_ro": {
+   "2015": -10.83,
+   "2016": 2.79,
+   "2017": 12.79,
+   "2018": -4.59,
+   "2019": 11.15,
+   "2020": 10.39,
+   "2021": -4.75,
+   "2022": -32.22,
+   "2023": -12.49,
+   "2024": 8.03,
+   "2025": 5.83,
+   "2026": -0.46
+  },
+  "cds_ro": {
+   "2015": 8.99,
+   "2016": 6.55,
+   "2017": 15.7,
+   "2018": 0.93,
+   "2019": 4.02,
+   "2020": -4.21,
+   "2021": 24.92,
+   "2022": 105.96,
+   "2023": -12.24,
+   "2024": 8.4,
+   "2025": 10.46,
+   "2026": 38.16
+  },
+  "css_de": {
+   "2015": -13.31,
+   "2016": -1.37,
+   "2017": -2.63,
+   "2018": -6.4,
+   "2019": -1.51,
+   "2020": 1.35,
+   "2021": -19.18,
+   "2022": -62.25,
+   "2023": -21.01,
+   "2024": -16.91,
+   "2025": -13.06,
+   "2026": -23.67
+  },
+  "cds_de": {
+   "2015": 5.54,
+   "2016": 2.39,
+   "2017": 0.62,
+   "2018": -0.81,
+   "2019": -8.63,
+   "2020": -13.25,
+   "2021": 10.49,
+   "2022": 75.93,
+   "2023": -20.75,
+   "2024": -16.54,
+   "2025": -8.42,
+   "2026": 14.95
+  },
+  "css_ro_neg_m": 67,
+  "n_m": 138,
+  "css_de_neg_m": 121,
+  "css_ro_max": 53.01,
+  "css_ro_max_ym": "2024-07",
+  "css_ro_min": -92.93,
+  "css_ro_min_ym": "2022-10",
+  "gap_ro_de": 13.95,
+  "lastm": {
+   "p": 239.32,
+   "gas": 86.81,
+   "eua": 82.44,
+   "coal": 12.79,
+   "css": 32.38,
+   "ss": 65.69,
+   "cds": 131.67,
+   "ym": "2026-10",
+   "fuel": 173.63,
+   "co2": 33.3
+  },
+  "switch_eua": 283.69,
+  "switch_eua_ym": "2026-10",
+  "gas_cheaper_m": 48
+ },
+ "opt": {
+  "from": "2025-11-01",
+  "to": "2026-10-31",
+  "RO": {
+   "hours": 8760.0,
+   "itm_share": 58.2,
+   "flex_eur": 235494.0,
+   "base_eur": 38095.0,
+   "flex_per_mwh": 26.88,
+   "mean_css": 4.35,
+   "ratio": 6.18
+  },
+  "DE_LU": {
+   "hours": 8760.0,
+   "itm_share": 40.9,
+   "flex_eur": 112724.0,
+   "base_eur": -165206.0,
+   "flex_per_mwh": 12.87,
+   "mean_css": -18.86,
+   "ratio": null
+  }
+ },
+ "hedge": {
+  "first": "2015-02",
+  "last": "2026-10",
+  "HU": {
+   "h": 0.9661,
+   "se": 0.0228,
+   "lo": 0.9306,
+   "hi": 1.028,
+   "r2": 0.9793,
+   "rho": 0.9896,
+   "n": 133.0,
+   "h_in": 0.9158,
+   "h_in_lo": 0.8,
+   "h_in_hi": 1.018,
+   "r2_in": 0.916,
+   "vr_oos_h": 97.9,
+   "vr_oos_1": 98.1,
+   "h_oos": 0.968,
+   "h_oos_lo": 0.93,
+   "h_oos_hi": 1.032,
+   "n_in": 63,
+   "n_oos": 70,
+   "q20": 19.3
+  },
+  "DE_LU": {
+   "h": 0.8754,
+   "se": 0.0488,
+   "lo": 0.7324,
+   "hi": 1.0117,
+   "r2": 0.7964,
+   "rho": 0.8924,
+   "n": 133.0,
+   "h_in": 0.91,
+   "h_in_lo": 0.518,
+   "h_in_hi": 1.397,
+   "r2_in": 0.365,
+   "vr_oos_h": 81.1,
+   "vr_oos_1": 79.6,
+   "h_oos": 0.8745,
+   "h_oos_lo": 0.722,
+   "h_oos_hi": 0.973,
+   "n_in": 63,
+   "n_oos": 70
+  },
+  "sd_dro": 33.6,
+  "sd_dhu": 34.42,
+  "sd_dde": 34.26,
+  "B": 2000,
+  "block": 6
+ },
+ "basis": {
+  "HU": {
+   "mean": -2.08,
+   "sd": 4.55,
+   "max": 12.12,
+   "max_ym": "2022-10",
+   "min": -15.6,
+   "min_ym": "2021-12",
+   "sd_pre": 2.82,
+   "sd_post": 5.77,
+   "mean_post": -0.99
+  },
+  "DE_LU": {
+   "mean": 13.95,
+   "sd": 15.25,
+   "max": 77.44,
+   "max_ym": "2024-07",
+   "min": -10.49,
+   "min_ym": "2018-07",
+   "sd_pre": 7.61,
+   "sd_post": 18.23,
+   "mean_post": 18.7,
+   "max_ro": 145.14,
+   "max_de": 67.7
+  },
+  "conv_hu": {
+   "2015": 8.0,
+   "2016": 12.8,
+   "2017": 9.3,
+   "2018": 8.7,
+   "2019": 11.4,
+   "2020": 21.1,
+   "2021": 55.9,
+   "2022": 54.5,
+   "2023": 33.9,
+   "2024": 18.0,
+   "2025": 14.1,
+   "2026": 16.4
+  },
+  "conv_de": {
+   "2015": 0.1,
+   "2016": 0.2,
+   "2017": 0.1,
+   "2018": 0.1,
+   "2019": 0.2,
+   "2020": 0.1,
+   "2021": 18.2,
+   "2022": 28.3,
+   "2023": 27.4,
+   "2024": 12.7,
+   "2025": 9.5,
+   "2026": 12.0
+  }
+ },
+ "shape": {
+  "years": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "f_load": {
+   "2015": 1.034,
+   "2016": 1.039,
+   "2017": 1.052,
+   "2018": 1.036,
+   "2019": 1.039,
+   "2020": 1.056,
+   "2021": 1.034,
+   "2022": 1.024,
+   "2023": 1.046,
+   "2024": 1.069,
+   "2025": 1.066,
+   "2026": 1.055
+  },
+  "f_solar": {
+   "2015": 1.086,
+   "2016": 1.009,
+   "2017": 1.095,
+   "2018": 1.049,
+   "2019": 1.045,
+   "2020": 0.922,
+   "2021": 0.9,
+   "2022": 0.995,
+   "2023": 0.802,
+   "2024": 0.657,
+   "2025": 0.596,
+   "2026": 0.628
+  },
+  "load_prem": {
+   "2015": 1.24,
+   "2016": 1.29,
+   "2017": 2.49,
+   "2018": 1.67,
+   "2019": 1.96,
+   "2020": 2.21,
+   "2021": 3.83,
+   "2022": 6.28,
+   "2023": 4.73,
+   "2024": 7.17,
+   "2025": 7.13,
+   "2026": 7.61
+  },
+  "solar_disc": {
+   "2015": -3.12,
+   "2016": -0.3,
+   "2017": -4.55,
+   "2018": -2.25,
+   "2019": -2.26,
+   "2020": 3.09,
+   "2021": 11.14,
+   "2022": 1.32,
+   "2023": 20.57,
+   "2024": 35.53,
+   "2025": 43.74,
+   "2026": 51.09
+  },
+  "last_year": 2026,
+  "solar_min": 0.596,
+  "solar_min_y": 2025,
+  "n_hours": 103343
+ },
+ "ttfcurve": {
+  "2026-12": 103.94,
+  "2027-01": 103.52,
+  "2027-05": 78.11,
+  "date": "2026-10-30"
+ },
+ "sam": {
+  "w_from": "2025-11-01",
+  "w_to": "2026-10-31",
+  "2026-12": {
+   "v12": 63.0,
+   "v22": 66.1,
+   "n": 1485,
+   "first": "2020-12-01"
+  },
+  "2027-01": {
+   "v12": 61.2,
+   "v22": 67.8,
+   "n": 1307,
+   "first": "2021-08-17"
+  },
+  "2027-02": {
+   "v12": 67.7,
+   "v22": 69.2,
+   "n": 946,
+   "first": "2021-08-17"
+  },
+  "2027-05": {
+   "v12": 47.7,
+   "v22": 66.8,
+   "n": 1307,
+   "first": "2021-08-17"
+  }
+ },
+ "margin": {
+  "max_abs": 11.83,
+  "max_date": "2022-08-29",
+  "pos_mwh": 7440,
+  "call_eur": 88015.0,
+  "last": 103.94,
+  "last_date": "2026-10-30",
+  "n": 1487,
+  "first": "2020-11-30",
+  "min": 15.11,
+  "max": 103.94,
+  "max_date_p": "2026-10-30",
+  "q99_abs": 5.26
+ },
+ "calvol": {
+  "pooled": 0.2202,
+  "n": 49,
+  "by": {
+   "2025": {
+    "sig": 0.1998,
+    "n": 31
+   },
+   "2026": {
+    "sig": 0.2119,
+    "n": 8
+   },
+   "2027": {
+    "sig": 0.2676,
+    "n": 10
+   }
+  },
+  "max_gap": 30
+ },
+ "bs": {
+  "F": 148.12,
+  "r": 2.44,
+  "T": 0.1232,
+  "T_days": 45,
+  "expiry": "2026-12-15",
+  "sig_gas": 0.4987,
+  "sig_cal": 0.2202,
+  "sig_term": 0.6682,
+  "estr_date": "2026-10-30",
+  "g": {
+   "call": 10.3,
+   "put": 10.3,
+   "delta_c": 0.533,
+   "delta_p": -0.464,
+   "vega": 0.206,
+   "d1": 0.088,
+   "d2": -0.088,
+   "call110": 4.99,
+   "put90": 4.11,
+   "collar": 0.87,
+   "call_pct": 7.0,
+   "call110_pct": 3.4,
+   "delta_c110": 0.323,
+   "parity": 0.0
+  },
+  "c": {
+   "call": 4.55,
+   "put": 4.55,
+   "delta_c": 0.514,
+   "delta_p": -0.483,
+   "vega": 0.207,
+   "d1": 0.039,
+   "d2": -0.039,
+   "call110": 0.63,
+   "put90": 0.43,
+   "collar": 0.2,
+   "call_pct": 3.1,
+   "call110_pct": 0.4,
+   "delta_c110": 0.116,
+   "parity": -0.0
+  },
+  "K110": 162.93,
+  "K90": 133.31,
+  "mw_year": 5519.0
+ },
+ "case": {
+  "F26": 111.7,
+  "n26": 31,
+  "twh26": 1.371,
+  "first26": "2024-04-15",
+  "last26": "2025-12-05",
+  "Fref": 120.16,
+  "nref": 5,
+  "ref_from": "2025-10-22",
+  "months": 10,
+  "m_last": "2026-10",
+  "prem_mean": 20.35,
+  "r_buy": 1.93,
+  "spot": {
+   "mean": 137.47,
+   "sd": 44.39,
+   "max": 239.32,
+   "min": 95.55,
+   "eur_mw": 1002956.0
+  },
+  "fwd": {
+   "mean": 111.7,
+   "sd": 0.0,
+   "max": 111.7,
+   "min": 111.7,
+   "eur_mw": 814946.0
+  },
+  "half": {
+   "mean": 124.58,
+   "sd": 22.2,
+   "max": 175.51,
+   "min": 103.62,
+   "eur_mw": 908951.0
+  },
+  "cap": {
+   "mean": 133.64,
+   "sd": 13.94,
+   "max": 148.47,
+   "min": 112.86,
+   "eur_mw": 975020.0
+  },
+  "spot_max_ym": "2026-10",
+  "save_fwd": 188010.0,
+  "save_cap": 27936.0,
+  "n_cap_pay": 5,
+  "n_fwd_win": 6
+ },
+ "prod": {
+  "F25": 102.13,
+  "S25": 108.16,
+  "n25": 101,
+  "twh25": 5.72,
+  "gap": -6.03,
+  "eur_mw": -52797.0,
+  "share_top3": 77.4,
+  "gap22": -187.91,
+  "loss": 6.03,
+  "loss_mw": 52797.0,
+  "loss22": 187.91
+ }
+}

@@ -1,0 +1,248 @@
+{
+ "ecb_eurron_monthly.csv": {
+  "url": "https://data-api.ecb.europa.eu/service/data/EXR/M.RON.EUR.SP00.A?format=csvdata&startPeriod=2018-01",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "ECB monthly average reference rate, RON per EUR"
+ },
+ "opcom_ropex_fm.csv": {
+  "url": "https://www.opcom.ro/ropexfm/ro",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "ROPEX_FM monthly index and volume in delivery, lei/MWh, report date 2026-11-04"
+ },
+ "transelectrica_settlement_page.html": {
+  "url": "https://www.transelectrica.ro/web/tel/rezultate-decontare-piata-de-echilibrare",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "111 price files listed, 36 delivery months"
+ },
+ "jao_auctions_RO-HU": {
+  "url": "https://api.jao.eu/OWSMP/getauctions?corridor=RO-HU&fromdate=2025-01-01",
+  "http_status": 401,
+  "downloaded": "2026-11-05",
+  "note": "JAO auction API requires an API key (AUTH_API_KEY header); not downloaded"
+ },
+ "jao_auctions_RO-BG": {
+  "url": "https://api.jao.eu/OWSMP/getauctions?corridor=RO-BG&fromdate=2025-01-01",
+  "http_status": 401,
+  "downloaded": "2026-11-05",
+  "note": "JAO auction API requires an API key (AUTH_API_KEY header); not downloaded"
+ },
+ "imbalance_2023_10_69721e9d96.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/16739114/PRETURI+FINALE+UNICE+OCTOMBRIE+2023+CORECTAT/4e2006ed-da03-4b1d-94ff-65e0e698251f?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA Corectie, finalised 2024-02-26"
+ },
+ "imbalance_2023_11_ee09e46dde.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/17884047/Pret+final+unic/e6df0c22-1c00-4417-ae92-21470307d820?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corecţie, finalised 2024-10-23"
+ },
+ "imbalance_2023_12_818bf92f7d.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/17908308/Preturi+finale+unice/5693aefc-16c4-4658-8034-7a619a15a365?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA Corectie, finalised 2024-10-29"
+ },
+ "imbalance_2024_01_5e02e110c6.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/17934967/Preturi+finale+unice/a1b9c291-fd86-4321-98ff-05c15750ba7e?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2024-11-05"
+ },
+ "imbalance_2024_02_ec4b13ebd7.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/17973995/Preturi+finale+unice/e131ce47-fe8e-487b-9ca0-3581f32c009a?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA  corectie, finalised 2024-11-14"
+ },
+ "imbalance_2024_03_a8e2df2506.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/18026109/Preturi+finale+unice/4559739e-2626-49d9-980f-6d0df228c92b?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA  corectie, finalised 2024-11-26"
+ },
+ "imbalance_2024_04_602c74b4de.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/18271855/Preturi+finale+unice+de+dezechilibru/81eab298-cd81-4575-87fe-76de1b2d954d?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2025-01-21"
+ },
+ "imbalance_2024_05_c42ab465ef.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/18314546/Preturi+finale+unice+de+dezechilibru/62d12d76-c96d-4f5c-a8ab-e29184ac2b74?version=1.0",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2025-01-30"
+ },
+ "imbalance_2024_06_9f6a1d5b68.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22715116/Preturi+finale+unice+de+dezechilibru/f04aec28-938e-4f72-b42c-cf6d3febf1e7",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-06-04"
+ },
+ "imbalance_2024_07_85cacc7c1b.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23049475/Anexa_4-Pret+Final+Unic+03.07.2026/02f29c56-1686-47b1-a57c-06b78ad487fe",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-07-03"
+ },
+ "imbalance_2024_08_9ae76d04e0.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23380211/Anexa_4-Pret+Final+Unic/e41107c5-9b44-4317-a637-858f2cefacd2",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-08-06"
+ },
+ "imbalance_2024_09_d6225f1ded.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23833506/Anexa_4-Pret+Final+Unic/94f76339-2f50-4b2a-b1b3-a4a587029d30",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-09-09"
+ },
+ "imbalance_2024_10_b5e5d424a4.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/24254006/Anexa_4-Pret+Final+Unic/5b9b6441-acbc-4730-8240-300702ec0a73",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-10-06"
+ },
+ "imbalance_2024_11_de38f57707.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/20275716/Anexa_4-Pret+Final+Unic/4219715b-f1eb-46c6-a51b-90b829c9acde",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2025-11-17"
+ },
+ "imbalance_2024_12_1cd7f021eb.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/20489079/Anexa_4-Pret+Final+Unic/fabf426e-389c-4c50-bc34-5f66ff6070ce",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2025-12-11"
+ },
+ "imbalance_2025_01_2a19f01a48.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/20927729/Anexa_4-Pret+Final+Unic/00293f71-fd92-4abe-a2c7-f3e1a3f7f1dc",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA Corectie, finalised 2026-01-15"
+ },
+ "imbalance_2025_02_5cc3281c98.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/21221255/Anexa_4-Pret+Final+Unic/208dbb8b-c37b-4a93-94bf-37f3745ad374",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA Corectie, finalised 2026-02-12"
+ },
+ "imbalance_2025_03_47bc027772.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/21481053/Anexa_4-Pret+Final+Unic/3dc28c01-2ef8-487e-a717-ff6c74ac4575",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA corectie, finalised 2026-03-06"
+ },
+ "imbalance_2025_04_9294472170.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22268822/Anexa_4-Pret+Final+Unic/daa5b745-0269-4d9d-9bb3-d79e4886f733",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-04-29"
+ },
+ "imbalance_2025_05_6475ab8745.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22399804/Anexa_4-Pret+Final+Unic/3114a1ba-d68b-4d41-9f14-84de2179ea25",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-05-08"
+ },
+ "imbalance_2025_06_2c8fd92130.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22803959/Anexa_4-Pret+Final+Unic/81433140-acbb-4214-9d49-74de8dfb05d5",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-06-11"
+ },
+ "imbalance_2025_07_2bfb99e14c.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23156406/Anexa_4-Pret+Final+Unic/06962c42-d280-433e-a4ee-d1732f890626",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-07-14"
+ },
+ "imbalance_2025_08_dc0fabd2ac.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23702331/Anexa_4-Pret+Final+Unic/868a7d84-9dac-477c-845a-08793672aabe",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-08-28"
+ },
+ "imbalance_2025_09_b5c0e356be.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/24087073/Anexa_4-Pret+Final+Unic/aaa3351a-8577-40a4-ae0e-19b7e7196336",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-09-28"
+ },
+ "imbalance_2025_10_13f87ebbf8.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/20828714/Anexa_4-Pret+Final+Unic/f7c710f5-62a3-450d-a504-ecf44393f8d8",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA Corectie, finalised 2026-01-08"
+ },
+ "imbalance_2025_11_a287e67959.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/20977813/Anexa_4-Pret+Final+Unic/b6f7a0ce-45bb-4221-b219-0d996279a0c3",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-01-21"
+ },
+ "imbalance_2025_12_542d4b4344.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/21313461/Anexa_4-Pret+Final+Unic/5933c0fc-364f-4056-8de8-dd02d23ba129",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-02-17"
+ },
+ "imbalance_2026_01_dea292062f.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/21751034/Anexa_4-Pret+Final+Unic/98662fac-c4e6-4d4f-b192-0465c4aaeb87",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run CVMA, finalised 2026-03-27"
+ },
+ "imbalance_2026_02_e8895d849e.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22046588/Anexa_4-Pret+Final+Unic/5d5d0d3b-dc8a-4df9-baf2-bbef6779b157",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-04-15"
+ },
+ "imbalance_2026_03_e467bb765c.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22500331/Anexa_4-Pret+Final+Unic/6ca90709-8a4b-4d43-a255-e43c6a4b3f4c",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-05-18"
+ },
+ "imbalance_2026_04_9f7c268a14.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/22861173/Anexa_4-Pret+Final+Unic/e6a16fbb-d3ec-436b-9ccc-f96a80dc6cf3",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-06-16"
+ },
+ "imbalance_2026_05_c4662c2dd0.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23171412/Anexa_4-Pret+Final+Unic/2e9a77e9-4521-4be1-8a4b-4e58565762f2",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-07-16"
+ },
+ "imbalance_2026_06_d0960d48a2.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23458978/Anexa_4-Pret+Final+Unic/9e2dee19-8b6f-475d-9ad5-5e52750022d2",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-08-11"
+ },
+ "imbalance_2026_07_b0aa4430e7.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/23880119/Anexa_4-Pret+Final+Unic/c9ef2f32-b523-4f39-9ff6-92bfedfc285f",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-09-14"
+ },
+ "imbalance_2026_08_57362b03e2.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/24381781/Anexa_4-Pret+Final+Unic/4605fb22-21eb-4b75-a835-ce5ed2576e43",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VMA, finalised 2026-10-13"
+ },
+ "imbalance_2026_09_15b49d08e0.pdf": {
+  "url": "https://www.transelectrica.ro/documents/10179/24541198/Anexa_4-Pret+Final+Unic/9583a2ae-bdc7-4548-92d9-d1b9f5d4952c",
+  "http_status": 200,
+  "downloaded": "2026-11-05",
+  "note": "run VM, finalised 2026-10-21"
+ }
+}

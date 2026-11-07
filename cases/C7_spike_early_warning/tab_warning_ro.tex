@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Regula de avertizare (perioada de test) & Precizia & Sensibilitatea & F1 & Acuratețea & AUC \\
+\midrule
+Clasificator XGBoost (probabilitate) & \textbf{0,823} & 0,517 & 0,635 & 0,868 & 0,946 \\
+Prognoza XGBoost a prețului $>$ prag & 0,808 & 0,723 & 0,763 & \textbf{0,901} & \textbf{0,950} \\
+Scorul de avertizare cu indicatori & 0,682 & 0,443 & 0,537 & 0,831 & 0,861 \\
+Naiv: vîrf ieri, la aceeași oră & 0,770 & \textbf{0,765} & \textbf{0,767} & 0,897 & 0,931 \\
+XGBoost, valori fundamentale efective (previziune perfectă) & 0,763 & 0,374 & 0,502 & 0,836 & 0,890 \\
+\bottomrule
+\end{tabular}

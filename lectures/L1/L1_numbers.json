@@ -1,0 +1,1975 @@
+{
+ "charts": {
+  "cy_extremes": {
+   "source_en": "energy-charts.info (OPCOM prices); Yahoo Finance (BZ=F)",
+   "source_ro": "energy-charts.info (pre\u021buri OPCOM); Yahoo Finance (BZ=F)",
+   "period_en": "2026-01-01 to 2026-10-31, daily",
+   "period_ro": "2026-01-01 - 2026-10-31, zilnic"
+  },
+  "merit_opcom": {
+   "source_en": "OPCOM, PZU aggregated curves",
+   "source_ro": "OPCOM, curbele agregate PZU",
+   "period_en": "2026-10-21, Romanian time; quantities include blocks, hourly orders and net flows",
+   "period_ro": "2026-10-21, ora Rom\u00e2niei; cantit\u0103\u021bile includ blocurile, ordinele orare \u0219i fluxurile nete"
+  },
+  "day_load": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "Romania, load on 2026-10-28 (CET day, 24 hourly values)",
+   "period_ro": "Rom\u00e2nia, consumul din 2026-10-28 (zi CET, 24 de valori orare)"
+  },
+  "mix_ro_annual": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "2015-2025 full years (left); Jan-Oct 2025 and 2026, hours reported in both years (right); cut-off 2026-10-31",
+   "period_ro": "2015-2025 ani comple\u021bi (st\u00eenga); ian.-oct. 2025 \u0219i 2026, ore raportate \u00een ambii ani (dreapta); date p\u00een\u0103 la 2026-10-31"
+  },
+  "prices_daily_4zones": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2015-01-01 to 2026-10-31 (BG from 2016-10-31)",
+   "period_ro": "2015-01-01 - 2026-10-31 (BG din 2016-10-31)"
+  },
+  "profile_intraday": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "calendar years 2019 and 2025, hourly",
+   "period_ro": "anii 2019 \u0219i 2025, date orare"
+  },
+  "profile_annual": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "monthly means 2016-2025",
+   "period_ro": "medii lunare 2016-2025"
+  },
+  "spikes_ro_2024": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2024, hourly (CET/CEST)",
+   "period_ro": "2024, date orare (CET/CEST)"
+  },
+  "negative_prices": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2018 to 2026-10-31; a 15-min MTU counts 0.25 h",
+   "period_ro": "2018 - 2026-10-31; un interval de 15 min = 0,25 h"
+  },
+  "negative_solar": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "Jan 2023 to 2026-10-31 (left); 2018-2025 (right)",
+   "period_ro": "ian. 2023 - 2026-10-31 (st\u00eenga); 2018-2025 (dreapta)"
+  },
+  "asinh_ro": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "all 15-min MTUs, 2026-01-01 to 2026-10-31",
+   "period_ro": "toate intervalele de 15 min, 2026-01-01 - 2026-10-31"
+  },
+  "tails_brent": {
+   "source_en": "Yahoo Finance (BZ=F)",
+   "source_ro": "Yahoo Finance (BZ=F)",
+   "period_en": "2015-01-05 to 2026-10-30",
+   "period_ro": "2015-01-05 - 2026-10-30"
+  },
+  "volclust_brent": {
+   "source_en": "Yahoo Finance (BZ=F)",
+   "source_ro": "Yahoo Finance (BZ=F)",
+   "period_en": "2015-01-05 to 2026-10-30",
+   "period_ro": "2015-01-05 - 2026-10-30"
+  },
+  "sim_wn_ar_rw": {
+   "source_en": "simulation, numpy, seed 20261104",
+   "source_ro": "simulare, numpy, seed = 20261104",
+   "period_en": "T = 500, N(0,1) shocks",
+   "period_ro": "T = 500, \u0219ocuri N(0,1)"
+  },
+  "acf_pacf_ro_daily": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2023-01-01 to 2026-10-31, T = 1400",
+   "period_ro": "2023-01-01 - 2026-10-31, T = 1400"
+  },
+  "acf_ro_hourly": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2024, hourly, T = 8784",
+   "period_ro": "2024, date orare, T = 8784"
+  },
+  "decomp_load": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "2016-01 to 2025-12, monthly mean load",
+   "period_ro": "2016-01 - 2025-12, consum mediu lunar"
+  },
+  "smooth_brent": {
+   "source_en": "Yahoo Finance (BZ=F)",
+   "source_ro": "Yahoo Finance (BZ=F)",
+   "period_en": "2024-01-02 to 2026-10-30",
+   "period_ro": "2024-01-02 - 2026-10-30"
+  },
+  "hydro_case": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "monthly, 2015-01 to 2025-12",
+   "period_ro": "lunar, 2015-01 - 2025-12"
+  },
+  "iran_brent": {
+   "source_en": "Yahoo Finance (BZ=F)",
+   "source_ro": "Yahoo Finance (BZ=F)",
+   "period_en": "2025-06-02 to 2025-07-04, trading days",
+   "period_ro": "2025-06-02 - 2025-07-04, zile de tranzac\u021bionare"
+  },
+  "separation_2024": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right)",
+   "period_ro": "2024-06-01 - 2024-09-30 zilnic (st\u00eenga); 2024-07-16 orar (dreapta)"
+  },
+  "cy_prices": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2026-01-01 to 2026-10-31, daily; Brent: Yahoo Finance (BZ=F)",
+   "period_ro": "2026-01-01 - 2026-10-31, zilnic; Brent: Yahoo Finance (BZ=F)"
+  },
+  "cy_generation": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "monthly means of reported hours, 2025-01 to 2026-10",
+   "period_ro": "medii lunare pe orele raportate, 2025-01 - 2026-10"
+  },
+  "mix_shares": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "2015, 2025 full years; Jan-Oct 2026, hours reported in both 2025 and 2026",
+   "period_ro": "2015, 2025 ani comple\u021bi; ian.-oct. 2026, ore raportate \u0219i \u00een 2025, \u0219i \u00een 2026"
+  },
+  "naive_bar": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "hourly day-ahead prices, 2024-01 to 2026-10",
+   "period_ro": "pre\u021buri PZU orare, 2024-01 - 2026-10"
+  },
+  "bg_battery": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "period_en": "2023-01 to 2026-10, local time; BG battery series reported from 2026-09-10",
+   "period_ro": "2023-01 - 2026-10, ora local\u0103; seria bateriilor BG raportat\u0103 din 2026-09-10"
+  }
+ },
+ "cutoff": {
+  "end": "2026-10-31",
+  "raw_price_last": "2026-11-05",
+  "raw_gen_last": "2026-11-04",
+  "year": 2026,
+  "month": 10
+ },
+ "data": {
+  "price_first": "2015-01-01",
+  "bg_first": "2016-10-31",
+  "brent_first": "2015-01-02",
+  "download": "2026-11-04",
+  "n_mtu_15": 38020,
+  "n_mtu_60": 94222,
+  "ro_missing": [
+   "2015-09-21",
+   "2015-12-20",
+   "2015-12-21",
+   "2017-12-31",
+   "2018-08-17"
+  ],
+  "ro_missing_n": 5,
+  "bg_missing_n": 15,
+  "bg_missing_last": "2016-12-31"
+ },
+ "merit": {
+  "day": "2026-10-21",
+  "mid": {
+   "label": "Q45 12:00-12:15 RO (EEST) / 11:00-11:15 CET",
+   "price": 152.23,
+   "q": 2816.1,
+   "q_le0": 2333.0,
+   "p_plus100": 469.0,
+   "net_imp": -48.0,
+   "n_sup": 189,
+   "n_dem": 115
+  },
+  "eve": {
+   "label": "Q77 20:00-20:15 RO (EEST) / 19:00-19:15 CET",
+   "price": 244.0,
+   "q": 3423.2,
+   "q_le0": 3033.0,
+   "p_plus100": 282.0,
+   "net_imp": 1054.0,
+   "n_sup": 89,
+   "n_dem": 99
+  }
+ },
+ "dayload": {
+  "day": "2026-10-28",
+  "mwh": 159558,
+  "mean_mw": 6648,
+  "max_mw": 7719,
+  "min_mw": 5253,
+  "max_h": 17,
+  "min_h": 3
+ },
+ "mix": {
+  "first": 2015,
+  "last": 2025,
+  "min_cov_full": 98.1,
+  "2015": {
+   "Hydro": {
+    "twh": 16.8,
+    "share": 26.2,
+    "cov": 98.1
+   },
+   "Coal": {
+    "twh": 18.18,
+    "share": 28.3,
+    "cov": 98.9
+   },
+   "Nuclear": {
+    "twh": 11.49,
+    "share": 17.9,
+    "cov": 98.8
+   },
+   "Gas": {
+    "twh": 9.38,
+    "share": 14.6,
+    "cov": 98.8
+   },
+   "Wind": {
+    "twh": 6.59,
+    "share": 10.3,
+    "cov": 98.8
+   },
+   "Solar": {
+    "twh": 1.24,
+    "share": 1.9,
+    "cov": 98.8
+   },
+   "Biomass": {
+    "twh": 0.53,
+    "share": 0.8,
+    "cov": 98.8
+   },
+   "total_twh": 64.21,
+   "load_twh": 56.95,
+   "netimp_twh": -6.86
+  },
+  "2016": {
+   "Hydro": {
+    "twh": 18.19,
+    "share": 28.6,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 16.12,
+    "share": 25.3,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 11.29,
+    "share": 17.7,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 9.93,
+    "share": 15.6,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 6.4,
+    "share": 10.1,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 1.26,
+    "share": 2.0,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.45,
+    "share": 0.7,
+    "cov": 100.0
+   },
+   "total_twh": 63.64,
+   "load_twh": 58.5,
+   "netimp_twh": -5.03
+  },
+  "2017": {
+   "Hydro": {
+    "twh": 14.54,
+    "share": 23.1,
+    "cov": 99.7
+   },
+   "Coal": {
+    "twh": 17.17,
+    "share": 27.3,
+    "cov": 99.8
+   },
+   "Nuclear": {
+    "twh": 11.49,
+    "share": 18.3,
+    "cov": 99.9
+   },
+   "Gas": {
+    "twh": 10.67,
+    "share": 17.0,
+    "cov": 99.9
+   },
+   "Wind": {
+    "twh": 7.29,
+    "share": 11.6,
+    "cov": 99.9
+   },
+   "Solar": {
+    "twh": 1.36,
+    "share": 2.2,
+    "cov": 99.9
+   },
+   "Biomass": {
+    "twh": 0.42,
+    "share": 0.7,
+    "cov": 99.9
+   },
+   "total_twh": 62.94,
+   "load_twh": 59.97,
+   "netimp_twh": -3.36
+  },
+  "2018": {
+   "Hydro": {
+    "twh": 17.65,
+    "share": 27.9,
+    "cov": 99.6
+   },
+   "Coal": {
+    "twh": 15.77,
+    "share": 24.9,
+    "cov": 99.8
+   },
+   "Nuclear": {
+    "twh": 11.33,
+    "share": 17.9,
+    "cov": 99.6
+   },
+   "Gas": {
+    "twh": 10.66,
+    "share": 16.8,
+    "cov": 99.6
+   },
+   "Wind": {
+    "twh": 6.21,
+    "share": 9.8,
+    "cov": 99.6
+   },
+   "Solar": {
+    "twh": 1.34,
+    "share": 2.1,
+    "cov": 99.6
+   },
+   "Biomass": {
+    "twh": 0.35,
+    "share": 0.6,
+    "cov": 99.6
+   },
+   "total_twh": 63.31,
+   "load_twh": 60.7,
+   "netimp_twh": -2.59
+  },
+  "2019": {
+   "Hydro": {
+    "twh": 15.71,
+    "share": 26.8,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 13.86,
+    "share": 23.6,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 11.28,
+    "share": 19.2,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 9.32,
+    "share": 15.9,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 6.68,
+    "share": 11.4,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 1.37,
+    "share": 2.3,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.43,
+    "share": 0.7,
+    "cov": 100.0
+   },
+   "total_twh": 58.65,
+   "load_twh": 60.08,
+   "netimp_twh": 0.97
+  },
+  "2020": {
+   "Hydro": {
+    "twh": 15.41,
+    "share": 27.8,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 9.62,
+    "share": 17.4,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 11.49,
+    "share": 20.7,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 10.18,
+    "share": 18.4,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 6.89,
+    "share": 12.4,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 1.34,
+    "share": 2.4,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.48,
+    "share": 0.9,
+    "cov": 100.0
+   },
+   "total_twh": 55.4,
+   "load_twh": 58.06,
+   "netimp_twh": 1.92
+  },
+  "2021": {
+   "Hydro": {
+    "twh": 17.26,
+    "share": 29.6,
+    "cov": 99.1
+   },
+   "Coal": {
+    "twh": 10.85,
+    "share": 18.6,
+    "cov": 99.1
+   },
+   "Nuclear": {
+    "twh": 11.2,
+    "share": 19.2,
+    "cov": 99.1
+   },
+   "Gas": {
+    "twh": 10.61,
+    "share": 18.2,
+    "cov": 99.1
+   },
+   "Wind": {
+    "twh": 6.44,
+    "share": 11.1,
+    "cov": 99.1
+   },
+   "Solar": {
+    "twh": 1.29,
+    "share": 2.2,
+    "cov": 99.1
+   },
+   "Biomass": {
+    "twh": 0.58,
+    "share": 1.0,
+    "cov": 99.1
+   },
+   "total_twh": 58.24,
+   "load_twh": 60.32,
+   "netimp_twh": 1.43
+  },
+  "2022": {
+   "Hydro": {
+    "twh": 14.05,
+    "share": 25.5,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 10.55,
+    "share": 19.1,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 11.12,
+    "share": 20.1,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 10.62,
+    "share": 19.2,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 6.92,
+    "share": 12.5,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 1.37,
+    "share": 2.5,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.56,
+    "share": 1.0,
+    "cov": 100.0
+   },
+   "total_twh": 55.18,
+   "load_twh": 56.23,
+   "netimp_twh": 0.76
+  },
+  "2023": {
+   "Hydro": {
+    "twh": 18.34,
+    "share": 32.4,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 8.17,
+    "share": 14.4,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 11.21,
+    "share": 19.8,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 9.59,
+    "share": 16.9,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 7.45,
+    "share": 13.2,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 1.46,
+    "share": 2.6,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.39,
+    "share": 0.7,
+    "cov": 100.0
+   },
+   "total_twh": 56.63,
+   "load_twh": 53.37,
+   "netimp_twh": -3.06
+  },
+  "2024": {
+   "Hydro": {
+    "twh": 14.25,
+    "share": 27.9,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 6.97,
+    "share": 13.6,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 10.81,
+    "share": 21.1,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 10.27,
+    "share": 20.1,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 6.34,
+    "share": 12.4,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 2.09,
+    "share": 4.1,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.44,
+    "share": 0.9,
+    "cov": 100.0
+   },
+   "total_twh": 51.16,
+   "load_twh": 54.3,
+   "netimp_twh": 2.99
+  },
+  "2025": {
+   "Hydro": {
+    "twh": 12.15,
+    "share": 25.6,
+    "cov": 100.0
+   },
+   "Coal": {
+    "twh": 6.56,
+    "share": 13.8,
+    "cov": 100.0
+   },
+   "Nuclear": {
+    "twh": 10.11,
+    "share": 21.3,
+    "cov": 100.0
+   },
+   "Gas": {
+    "twh": 9.57,
+    "share": 20.2,
+    "cov": 100.0
+   },
+   "Wind": {
+    "twh": 5.88,
+    "share": 12.4,
+    "cov": 100.0
+   },
+   "Solar": {
+    "twh": 2.72,
+    "share": 5.7,
+    "cov": 100.0
+   },
+   "Biomass": {
+    "twh": 0.43,
+    "share": 0.9,
+    "cov": 100.0
+   },
+   "total_twh": 47.41,
+   "load_twh": 53.56,
+   "netimp_twh": 3.76
+  },
+  "coal_change_pct": -63.9,
+  "solar_x": 2.2,
+  "lfl": {
+   "Hydro": {
+    "ytd": 10.44,
+    "prev": 9.61,
+    "chg": 8.6,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 10.44,
+    "share_ytd": 27.6,
+    "share_prev": 25.7
+   },
+   "Coal": {
+    "ytd": 4.58,
+    "prev": 5.4,
+    "chg": -15.2,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 4.58,
+    "share_ytd": 12.1,
+    "share_prev": 14.4
+   },
+   "Nuclear": {
+    "ytd": 5.1,
+    "prev": 7.42,
+    "chg": -31.3,
+    "cov": 90.1,
+    "cov_own": 90.1,
+    "ytd_own": 5.1,
+    "share_ytd": 13.5,
+    "share_prev": 19.8
+   },
+   "Gas": {
+    "ytd": 7.77,
+    "prev": 7.4,
+    "chg": 5.1,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 7.77,
+    "share_ytd": 20.5,
+    "share_prev": 19.8
+   },
+   "Wind": {
+    "ytd": 5.27,
+    "prev": 4.7,
+    "chg": 12.2,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 5.27,
+    "share_ytd": 13.9,
+    "share_prev": 12.6
+   },
+   "Solar": {
+    "ytd": 4.33,
+    "prev": 2.53,
+    "chg": 71.2,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 4.33,
+    "share_ytd": 11.4,
+    "share_prev": 6.8
+   },
+   "Biomass": {
+    "ytd": 0.38,
+    "prev": 0.34,
+    "chg": 11.5,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 0.38,
+    "share_ytd": 1.0,
+    "share_prev": 0.9
+   },
+   "load": {
+    "ytd": 42.28,
+    "prev": 43.89,
+    "chg": -3.7,
+    "cov": 100.0,
+    "cov_own": 100.0,
+    "ytd_own": 42.28
+   }
+  },
+  "lfl_tot": {
+   "ytd": 37.87,
+   "prev": 37.4
+  },
+  "lfl_imp": {
+   "ytd": 2.51,
+   "prev": 3.67
+  }
+ },
+ "nuclear": {
+  "Jan": {
+   "mw": 1219.0,
+   "cov": 100.0
+  },
+  "Feb": {
+   "mw": 1219.0,
+   "cov": 100.0
+  },
+  "Mar": {
+   "mw": 1219.0,
+   "cov": 100.0
+  },
+  "Apr": {
+   "mw": 1219.0,
+   "cov": 100.0
+  },
+  "May": {
+   "mw": 265.0,
+   "cov": 100.0
+  },
+  "Jun": {
+   "mw": 629.0,
+   "cov": 100.0
+  },
+  "Jul": {
+   "mw": 1019.0,
+   "cov": 100.0
+  },
+  "Aug": {
+   "mw": 248.0,
+   "cov": 100.0
+  },
+  "Sep": {
+   "mw": 0.0,
+   "cov": 0.0
+  },
+  "Oct": {
+   "mw": 0.0,
+   "cov": 100.0
+  },
+  "missing_days": 29,
+  "first_missing": "2026-09-01",
+  "last_missing": "2026-09-29",
+  "first_zero": "2026-05-11",
+  "zero_days_aug": 18,
+  "zero_days_oct": 31,
+  "may_zero_days": 19,
+  "may_zero_first": "2026-05-11",
+  "may_zero_last": "2026-05-29",
+  "hydro_jul_up": true,
+  "hydro_below_from": "Aug",
+  "hydro_aug_oct_chg": -14.7
+ },
+ "stats": {
+  "RO": {
+   "n": 4317,
+   "mean": 89.66,
+   "median": 59.93,
+   "sd": 79.97,
+   "skew": 2.72,
+   "exkurt": 10.72,
+   "min": 3.01,
+   "max": 738.28,
+   "max_date": "2022-08-30",
+   "d_sd": 25.84,
+   "d_exkurt": 11.97,
+   "d_jb": 26488.0
+  },
+  "BG": {
+   "n": 3638,
+   "mean": 95.81,
+   "median": 71.18,
+   "sd": 78.55,
+   "skew": 2.26,
+   "exkurt": 7.36,
+   "min": 2.3,
+   "max": 697.25,
+   "max_date": "2022-08-29",
+   "d_sd": 27.28,
+   "d_exkurt": 11.0,
+   "d_jb": 18736.0
+  },
+  "HU": {
+   "n": 4322,
+   "mean": 91.74,
+   "median": 60.98,
+   "sd": 81.24,
+   "skew": 2.74,
+   "exkurt": 10.64,
+   "min": -19.9,
+   "max": 748.97,
+   "max_date": "2022-08-30",
+   "d_sd": 25.44,
+   "d_exkurt": 12.32,
+   "d_jb": 27950.0
+  },
+  "DE_LU": {
+   "n": 4322,
+   "mean": 75.84,
+   "median": 49.03,
+   "sd": 74.29,
+   "skew": 3.02,
+   "exkurt": 12.89,
+   "min": -53.87,
+   "max": 699.44,
+   "max_date": "2022-08-26",
+   "d_sd": 28.9,
+   "d_exkurt": 12.1,
+   "d_jb": 26482.0
+  }
+ },
+ "byyear": {
+  "RO": {
+   "2015": {
+    "mean": 36.4,
+    "sd_d": 8.3
+   },
+   "2016": {
+    "mean": 33.2,
+    "sd_d": 8.1
+   },
+   "2017": {
+    "mean": 48.1,
+    "sd_d": 12.9
+   },
+   "2018": {
+    "mean": 46.4,
+    "sd_d": 10.9
+   },
+   "2019": {
+    "mean": 50.4,
+    "sd_d": 11.5
+   },
+   "2020": {
+    "mean": 39.5,
+    "sd_d": 8.6
+   },
+   "2021": {
+    "mean": 111.4,
+    "sd_d": 25.2
+   },
+   "2022": {
+    "mean": 265.3,
+    "sd_d": 58.9
+   },
+   "2023": {
+    "mean": 103.7,
+    "sd_d": 26.3
+   },
+   "2024": {
+    "mean": 103.5,
+    "sd_d": 32.4
+   },
+   "2025": {
+    "mean": 108.2,
+    "sd_d": 24.4
+   },
+   "2026": {
+    "mean": 137.4,
+    "sd_d": 31.6
+   }
+  },
+  "BG": {
+   "2016": {
+    "mean": 40.8,
+    "sd_d": 13.4
+   },
+   "2017": {
+    "mean": 39.7,
+    "sd_d": 16.7
+   },
+   "2018": {
+    "mean": 39.9,
+    "sd_d": 13.6
+   },
+   "2019": {
+    "mean": 47.5,
+    "sd_d": 12.8
+   },
+   "2020": {
+    "mean": 39.3,
+    "sd_d": 9.8
+   },
+   "2021": {
+    "mean": 108.7,
+    "sd_d": 23.6
+   },
+   "2022": {
+    "mean": 252.8,
+    "sd_d": 56.6
+   },
+   "2023": {
+    "mean": 103.8,
+    "sd_d": 26.2
+   },
+   "2024": {
+    "mean": 102.5,
+    "sd_d": 31.5
+   },
+   "2025": {
+    "mean": 106.9,
+    "sd_d": 23.9
+   },
+   "2026": {
+    "mean": 129.9,
+    "sd_d": 28.2
+   }
+  },
+  "HU": {
+   "2015": {
+    "mean": 40.6,
+    "sd_d": 8.3
+   },
+   "2016": {
+    "mean": 35.4,
+    "sd_d": 6.7
+   },
+   "2017": {
+    "mean": 50.4,
+    "sd_d": 12.1
+   },
+   "2018": {
+    "mean": 51.0,
+    "sd_d": 9.2
+   },
+   "2019": {
+    "mean": 50.4,
+    "sd_d": 9.2
+   },
+   "2020": {
+    "mean": 39.0,
+    "sd_d": 8.5
+   },
+   "2021": {
+    "mean": 113.8,
+    "sd_d": 24.8
+   },
+   "2022": {
+    "mean": 271.7,
+    "sd_d": 56.6
+   },
+   "2023": {
+    "mean": 106.8,
+    "sd_d": 25.0
+   },
+   "2024": {
+    "mean": 100.8,
+    "sd_d": 34.7
+   },
+   "2025": {
+    "mean": 108.5,
+    "sd_d": 25.3
+   },
+   "2026": {
+    "mean": 141.0,
+    "sd_d": 32.6
+   }
+  },
+  "DE_LU": {
+   "2015": {
+    "mean": 31.6,
+    "sd_d": 8.3
+   },
+   "2016": {
+    "mean": 29.0,
+    "sd_d": 7.6
+   },
+   "2017": {
+    "mean": 34.2,
+    "sd_d": 12.0
+   },
+   "2018": {
+    "mean": 44.5,
+    "sd_d": 11.5
+   },
+   "2019": {
+    "mean": 37.7,
+    "sd_d": 11.9
+   },
+   "2020": {
+    "mean": 30.5,
+    "sd_d": 11.5
+   },
+   "2021": {
+    "mean": 96.8,
+    "sd_d": 34.4
+   },
+   "2022": {
+    "mean": 235.5,
+    "sd_d": 65.3
+   },
+   "2023": {
+    "mean": 95.2,
+    "sd_d": 30.3
+   },
+   "2024": {
+    "mean": 78.5,
+    "sd_d": 31.4
+   },
+   "2025": {
+    "mean": 89.3,
+    "sd_d": 28.3
+   },
+   "2026": {
+    "mean": 114.0,
+    "sd_d": 36.0
+   }
+  }
+ },
+ "season": {
+  "intraday": {
+   "RO_2019": {
+    "min_h": 3,
+    "min": 30.2,
+    "max_h": 19,
+    "max": 67.4,
+    "ratio_19_13": 1.3
+   },
+   "DE_LU_2019": {
+    "min_h": 3,
+    "min": 27.7,
+    "max_h": 19,
+    "max": 48.8,
+    "ratio_19_13": 1.4
+   },
+   "RO_2025": {
+    "min_h": 13,
+    "min": 58.8,
+    "max_h": 19,
+    "max": 182.5,
+    "ratio_19_13": 3.11
+   },
+   "DE_LU_2025": {
+    "min_h": 13,
+    "min": 46.0,
+    "max_h": 19,
+    "max": 136.2,
+    "ratio_19_13": 2.96
+   }
+  },
+  "weekly": {
+   "RO": {
+    "Mon": 9.1,
+    "Tue": 12.7,
+    "Wed": 12.6,
+    "Thu": 10.4,
+    "Fri": 3.4,
+    "Sat": -17.5,
+    "Sun": -30.7
+   },
+   "DE_LU": {
+    "Mon": 7.0,
+    "Tue": 11.0,
+    "Wed": 11.6,
+    "Thu": 7.9,
+    "Fri": 3.3,
+    "Sat": -15.8,
+    "Sun": -25.1
+   },
+   "start": "2023-01-02",
+   "end": "2026-10-25",
+   "n_weeks": 199
+  },
+  "annual": {
+   "load_max_m": 1,
+   "load_min_m": 5,
+   "hydro_max_m": 6,
+   "price_max_m": 1,
+   "price_max": 1.26,
+   "price_min_m": 4,
+   "price_min": 0.72
+  }
+ },
+ "neg": {
+  "hours": {
+   "RO": {
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 32.0,
+    "2024": 85.0,
+    "2025": 196.0,
+    "2026": 171.75
+   },
+   "BG": {
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 11.0,
+    "2024": 55.0,
+    "2025": 170.0,
+    "2026": 152.25
+   },
+   "HU": {
+    "2015": 0.0,
+    "2016": 6.0,
+    "2017": 0.0,
+    "2018": 2.0,
+    "2019": 0.0,
+    "2020": 4.0,
+    "2021": 8.0,
+    "2022": 0.0,
+    "2023": 74.0,
+    "2024": 262.0,
+    "2025": 281.0,
+    "2026": 223.5
+   },
+   "DE_LU": {
+    "2015": 126.0,
+    "2016": 97.0,
+    "2017": 146.0,
+    "2018": 134.0,
+    "2019": 211.0,
+    "2020": 298.0,
+    "2021": 139.0,
+    "2022": 69.0,
+    "2023": 301.0,
+    "2024": 457.0,
+    "2025": 574.75,
+    "2026": 465.0
+   }
+  },
+  "n_mtu": {
+   "RO": {
+    "2015": 0,
+    "2016": 0,
+    "2017": 0,
+    "2018": 0,
+    "2019": 0,
+    "2020": 0,
+    "2021": 0,
+    "2022": 0,
+    "2023": 32,
+    "2024": 85,
+    "2025": 196,
+    "2026": 687
+   },
+   "BG": {
+    "2015": 0,
+    "2016": 0,
+    "2017": 0,
+    "2018": 0,
+    "2019": 0,
+    "2020": 0,
+    "2021": 0,
+    "2022": 0,
+    "2023": 11,
+    "2024": 55,
+    "2025": 170,
+    "2026": 609
+   },
+   "HU": {
+    "2015": 0,
+    "2016": 6,
+    "2017": 0,
+    "2018": 2,
+    "2019": 0,
+    "2020": 4,
+    "2021": 8,
+    "2022": 0,
+    "2023": 74,
+    "2024": 262,
+    "2025": 281,
+    "2026": 894
+   },
+   "DE_LU": {
+    "2015": 126,
+    "2016": 97,
+    "2017": 146,
+    "2018": 134,
+    "2019": 211,
+    "2020": 298,
+    "2021": 139,
+    "2022": 69,
+    "2023": 301,
+    "2024": 457,
+    "2025": 724,
+    "2026": 1860
+   }
+  },
+  "lfl_prev": {
+   "RO": 196.0,
+   "BG": 170.0,
+   "HU": 281.0,
+   "DE_LU": 574.75
+  },
+  "ro_first": "2023-05-21",
+  "ro_share_10_16": 91.1,
+  "ro_share_weekend": 83.9,
+  "share_apr_may": 49.6,
+  "share_jun_aug": 34.0,
+  "solar_twh": {
+   "2015": 1.24,
+   "2016": 1.26,
+   "2017": 1.36,
+   "2018": 1.34,
+   "2019": 1.37,
+   "2020": 1.34,
+   "2021": 1.29,
+   "2022": 1.37,
+   "2023": 1.46,
+   "2024": 2.09,
+   "2025": 2.72
+  }
+ },
+ "logit": {
+  "n": 1035,
+  "start": "2024-01-01",
+  "end": "2026-10-31",
+  "n_neg": 108,
+  "pr2": 0.369,
+  "base_year": 2024,
+  "coef": {
+   "const": {
+    "b": -0.023,
+    "z": -0.02,
+    "p": 0.9803,
+    "or": 0.98
+   },
+   "resid": {
+    "b": -1.445,
+    "z": -7.67,
+    "p": 0.0,
+    "or": 0.24
+   },
+   "hydro": {
+    "b": 1.508,
+    "z": 4.37,
+    "p": 0.0,
+    "or": 4.52
+   },
+   "wkend": {
+    "b": 2.78,
+    "z": 9.24,
+    "p": 0.0,
+    "or": 16.13
+   },
+   "y2025": {
+    "b": 1.337,
+    "z": 3.98,
+    "p": 0.0001,
+    "or": 3.81
+   },
+   "y2026": {
+    "b": 0.534,
+    "z": 1.54,
+    "p": 0.1233,
+    "or": 1.71
+   }
+  }
+ },
+ "spikes": {
+  "tukey": {
+   "RO": {
+    "2015": {
+     "thr": 106.4,
+     "hours": 0.0
+    },
+    "2016": {
+     "thr": 92.5,
+     "hours": 0.0
+    },
+    "2017": {
+     "thr": 143.2,
+     "hours": 15.0
+    },
+    "2018": {
+     "thr": 145.5,
+     "hours": 0.0
+    },
+    "2019": {
+     "thr": 134.4,
+     "hours": 47.0
+    },
+    "2020": {
+     "thr": 108.6,
+     "hours": 54.0
+    },
+    "2021": {
+     "thr": 393.8,
+     "hours": 69.0
+    },
+    "2022": {
+     "thr": 872.6,
+     "hours": 4.0
+    },
+    "2023": {
+     "thr": 292.4,
+     "hours": 38.0
+    },
+    "2024": {
+     "thr": 274.1,
+     "hours": 276.0
+    },
+    "2025": {
+     "thr": 285.3,
+     "hours": 120.0
+    },
+    "2026": {
+     "thr": 427.1,
+     "hours": 39.25
+    }
+   },
+   "DE_LU": {
+    "2015": {
+     "thr": 84.9,
+     "hours": 3.0
+    },
+    "2016": {
+     "thr": 72.9,
+     "hours": 39.0
+    },
+    "2017": {
+     "thr": 78.9,
+     "hours": 177.0
+    },
+    "2018": {
+     "thr": 116.1,
+     "hours": 1.0
+    },
+    "2019": {
+     "thr": 91.9,
+     "hours": 17.0
+    },
+    "2020": {
+     "thr": 95.8,
+     "hours": 30.0
+    },
+    "2021": {
+     "thr": 289.1,
+     "hours": 280.0
+    },
+    "2022": {
+     "thr": 837.8,
+     "hours": 4.0
+    },
+    "2023": {
+     "thr": 260.9,
+     "hours": 13.0
+    },
+    "2024": {
+     "thr": 238.7,
+     "hours": 72.0
+    },
+    "2025": {
+     "thr": 244.9,
+     "hours": 88.75
+    },
+    "2026": {
+     "thr": 355.7,
+     "hours": 32.25
+    }
+   }
+  },
+  "ro_max": 1021.61,
+  "ro_max_ts": "2024-09-03 19:00"
+ },
+ "trans": {
+  "n": 29184,
+  "n_le0": 1189,
+  "n_eq0": 502,
+  "min": -99.75,
+  "share_le0": 4.07,
+  "median": 132.14,
+  "mad": 61.56,
+  "skew_level": 1.19,
+  "kurt_level": 6.73,
+  "skew_asinh": 0.13,
+  "kurt_asinh": -0.55
+ },
+ "tails": {
+  "n": 2834,
+  "start": "2015-01-05",
+  "end": "2026-10-30",
+  "sd": 2.562,
+  "skew": -0.94,
+  "exkurt": 13.98,
+  "jb": 23500.0,
+  "t_df": 3.21,
+  "n_4sd": 16,
+  "n_4sd_normal": 0.18,
+  "lb_r": 28.1,
+  "lb_r2": 506.9,
+  "ro_lb2": 2045.4,
+  "vol_max": 163.9,
+  "vol_max_date": "2020-04",
+  "vol_median": 30.9,
+  "n_roll": 141
+ },
+ "sim": {
+  "T": 500,
+  "seed": 20261104,
+  "wn": {
+   "acf1": -0.03,
+   "acf10": 0.07
+  },
+  "ar": {
+   "acf1": 0.9,
+   "acf10": 0.41
+  },
+  "rw": {
+   "acf1": 1.0,
+   "acf10": 0.96
+  },
+  "ar_theory_acf10": 0.35
+ },
+ "acf": {
+  "daily": {
+   "T": 1400,
+   "start": "2023-01-01",
+   "end": "2026-10-31",
+   "band": 0.052,
+   "r1": 0.789,
+   "r7": 0.672,
+   "r42": 0.364,
+   "p1": 0.789,
+   "p7": 0.257,
+   "p8": -0.324,
+   "d_r7": 0.487
+  },
+  "hourly": {
+   "T": 8784,
+   "r12": 0.2,
+   "r24": 0.776,
+   "r168": 0.681
+  }
+ },
+ "naive": {
+  "RO": {
+   "2019": {
+    "naive": 9.68,
+    "lag1": 10.69,
+    "lag7": 11.19,
+    "mean": 50.41
+   },
+   "2020": {
+    "naive": 7.39,
+    "lag1": 8.12,
+    "lag7": 8.55,
+    "mean": 39.49
+   },
+   "2021": {
+    "naive": 19.85,
+    "lag1": 22.22,
+    "lag7": 25.06,
+    "mean": 111.43
+   },
+   "2022": {
+    "naive": 59.74,
+    "lag1": 58.54,
+    "lag7": 75.42,
+    "mean": 265.31
+   },
+   "2023": {
+    "naive": 26.0,
+    "lag1": 27.29,
+    "lag7": 30.98,
+    "mean": 103.75
+   },
+   "2024": {
+    "naive": 27.71,
+    "lag1": 29.7,
+    "lag7": 33.9,
+    "mean": 103.52
+   },
+   "2025": {
+    "naive": 22.92,
+    "lag1": 24.88,
+    "lag7": 28.21,
+    "mean": 108.17
+   },
+   "2026": {
+    "naive": 29.43,
+    "lag1": 31.11,
+    "lag7": 36.61,
+    "mean": 137.45
+   },
+   "n_best": 7,
+   "n_years": 8
+  },
+  "DE_LU": {
+   "2019": {
+    "naive": 9.76,
+    "lag1": 9.47,
+    "lag7": 10.26,
+    "mean": 37.67
+   },
+   "2020": {
+    "naive": 9.31,
+    "lag1": 9.99,
+    "lag7": 10.31,
+    "mean": 30.47
+   },
+   "2021": {
+    "naive": 24.3,
+    "lag1": 25.29,
+    "lag7": 31.46,
+    "mean": 96.85
+   },
+   "2022": {
+    "naive": 66.16,
+    "lag1": 58.23,
+    "lag7": 87.09,
+    "mean": 235.46
+   },
+   "2023": {
+    "naive": 28.62,
+    "lag1": 27.2,
+    "lag7": 33.65,
+    "mean": 95.19
+   },
+   "2024": {
+    "naive": 27.29,
+    "lag1": 27.83,
+    "lag7": 32.8,
+    "mean": 78.51
+   },
+   "2025": {
+    "naive": 27.46,
+    "lag1": 25.97,
+    "lag7": 32.81,
+    "mean": 89.33
+   },
+   "2026": {
+    "naive": 36.07,
+    "lag1": 32.77,
+    "lag7": 42.17,
+    "mean": 114.02
+   },
+   "n_best": 3,
+   "n_years": 8
+  },
+  "years": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025",
+   "2026"
+  ]
+ },
+ "unit": {
+  "order": [
+   "ro_lvl",
+   "ro_d",
+   "de_lvl",
+   "br_lvl",
+   "br_r",
+   "hy_ds"
+  ],
+  "ro_lvl": {
+   "T": 4317,
+   "first": "2015-01-01",
+   "last": "2026-10-31",
+   "adf": -2.71,
+   "adf_p": 0.0729,
+   "adf_lags": 30,
+   "kpss": 3.645,
+   "kpss_p": 0.01,
+   "kpss_p_trunc": "lt",
+   "decision": "unit_root"
+  },
+  "ro_d": {
+   "T": 4312,
+   "first": "2015-01-02",
+   "last": "2026-10-31",
+   "adf": -14.81,
+   "adf_p": 0.0,
+   "adf_lags": 29,
+   "kpss": 0.045,
+   "kpss_p": 0.1,
+   "kpss_p_trunc": "gt",
+   "decision": "stationary"
+  },
+  "de_lvl": {
+   "T": 4322,
+   "first": "2015-01-01",
+   "last": "2026-10-31",
+   "adf": -3.54,
+   "adf_p": 0.0069,
+   "adf_lags": 30,
+   "kpss": 3.441,
+   "kpss_p": 0.01,
+   "kpss_p_trunc": "lt",
+   "decision": "conflict"
+  },
+  "br_lvl": {
+   "T": 2976,
+   "first": "2015-01-02",
+   "last": "2026-10-30",
+   "adf": -2.19,
+   "adf_p": 0.2116,
+   "adf_lags": 23,
+   "kpss": 3.82,
+   "kpss_p": 0.01,
+   "kpss_p_trunc": "lt",
+   "decision": "unit_root"
+  },
+  "br_r": {
+   "T": 2975,
+   "first": "2015-01-05",
+   "last": "2026-10-30",
+   "adf": -10.79,
+   "adf_p": 0.0,
+   "adf_lags": 22,
+   "kpss": 0.049,
+   "kpss_p": 0.1,
+   "kpss_p_trunc": "gt",
+   "decision": "stationary"
+  },
+  "hy_ds": {
+   "T": 132,
+   "first": "2015-01-01",
+   "last": "2025-12-01",
+   "adf": -4.19,
+   "adf_p": 0.0007,
+   "adf_lags": 10,
+   "kpss": 0.354,
+   "kpss_p": 0.097,
+   "kpss_p_trunc": "in",
+   "decision": "stationary"
+  },
+  "ro_2023": {
+   "adf_p": 0.3606,
+   "kpss": 1.039
+  }
+ },
+ "decomp": {
+  "start": "2016-01",
+  "end": "2025-12",
+  "T": 120,
+  "sidx": {
+   "Jan": 0.686,
+   "Feb": 0.694,
+   "Mar": 0.237,
+   "Apr": -0.381,
+   "May": -0.65,
+   "Jun": -0.442,
+   "Jul": -0.143,
+   "Aug": -0.302,
+   "Sep": -0.444,
+   "Oct": -0.194,
+   "Nov": 0.374,
+   "Dec": 0.565
+  },
+  "raw_mean": 0.0005,
+  "ex": {
+   "date": "2016-07",
+   "y_first": 7.424,
+   "y_last": 7.87,
+   "sum_mid": 72.503,
+   "cma": 6.679,
+   "y": 6.389,
+   "detr": -0.29
+  },
+  "cl_amp": 1.34,
+  "stl_amp_first": 1.52,
+  "stl_amp_last": 1.27,
+  "fs": 0.848
+ },
+ "smooth": {
+  "start": "2024-01-02",
+  "end": "2026-10-30",
+  "hl": 10,
+  "alpha_hl": 0.067,
+  "alpha_ses": 0.9484
+ },
+ "hydro": {
+  "y2023": 18.34,
+  "y2025": 12.15,
+  "chg_pct": -33.8,
+  "max_year": 2023,
+  "min_year": 2025,
+  "cov2023": 100.0,
+  "cov2025": 100.0,
+  "netimp2023": -3.06,
+  "netimp2025": 3.76,
+  "mean_1525": 15.85,
+  "vs_mean_pct": -23.3,
+  "reg": {
+   "n": 132,
+   "r2": 0.941,
+   "start": "2015-01",
+   "end": "2025-12",
+   "const": {
+    "b": 44.8,
+    "se": 10.21,
+    "t": 4.39
+   },
+   "hydro": {
+    "b": -19.55,
+    "se": 7.02,
+    "t": -2.78
+   },
+   "ttf": {
+    "b": 1.89,
+    "se": 0.06,
+    "t": 34.16
+   }
+  },
+  "spread_b": -20.85,
+  "spread_t": -5.52
+ },
+ "iran": {
+  "p12": 69.36,
+  "p13": 74.23,
+  "chg13": 7.0,
+  "z13": 4.3,
+  "peak": 77.01,
+  "peak_date": "2025-06-20",
+  "p23": 71.48,
+  "p24": 67.14,
+  "chg24_peak": -12.8,
+  "chg24_12": -3.2
+ },
+ "sep": {
+  "jul": {
+   "RO": 145.14,
+   "BG": 136.47,
+   "HU": 135.54,
+   "DE_LU": 67.7
+  },
+  "d16": {
+   "RO": 213.17,
+   "BG": 176.51,
+   "HU": 204.77,
+   "DE_LU": 50.3
+  },
+  "d16_gap": 162.87,
+  "eq_ro_bg": 86.8,
+  "eq_ro_hu": 6.3,
+  "eq_ro_de": 3.1,
+  "peak": 246.89,
+  "peak_date": "2024-09-03",
+  "de_on_peak": 158.39,
+  "peak_hour": 19,
+  "peak_hour_v": 1021.61,
+  "d16_ro_max": 801.62,
+  "d16_ro_max_h": 20,
+  "d16_de_min": -11.48,
+  "d16_de_min_h": 14,
+  "hydro_ja_2023": 2.67,
+  "imp_ja_2023": 66.0,
+  "hydro_ja_2024": 1.94,
+  "imp_ja_2024": 737.0
+ },
+ "cy": {
+  "mean": {
+   "RO": 137.45,
+   "BG": 129.89,
+   "HU": 140.99,
+   "DE_LU": 114.01
+  },
+  "mean_prev": {
+   "RO": 105.88,
+   "BG": 104.4,
+   "HU": 106.19,
+   "DE_LU": 87.66
+  },
+  "chg": {
+   "RO": 29.8,
+   "BG": 24.4,
+   "HU": 32.8,
+   "DE_LU": 30.1
+  },
+  "lm": {
+   "RO": 239.3,
+   "BG": 232.0,
+   "HU": 244.4,
+   "DE_LU": 169.5
+  },
+  "lm_prev": {
+   "RO": 121.9,
+   "BG": 121.8,
+   "HU": 122.1,
+   "DE_LU": 84.5
+  },
+  "spread_ytd": 23.4,
+  "spread_prev": 18.2,
+  "ro_max_day": 323.76,
+  "ro_max_day_date": "2026-10-29",
+  "ro_min_day": 29.63,
+  "ro_min_day_date": "2026-02-15",
+  "ro_max_mtu": 1015.65,
+  "ro_max_mtu_ts": "2026-06-30 18:45",
+  "ro_min_mtu": -99.75,
+  "ro_min_mtu_ts": "2026-04-26 13:00",
+  "de_min_mtu": -499.99,
+  "de_min_mtu_ts": "2026-05-01 13:15",
+  "brent": {
+   "jan_avg": 64.77,
+   "last_avg": 108.34,
+   "max": 118.35,
+   "max_date": "2026-03-31",
+   "mar_first": 77.74,
+   "mar_first_date": "2026-03-02",
+   "mar_end": 118.35,
+   "mar_end_date": "2026-03-31",
+   "mar_pct": 52.2,
+   "roll_apr": -14.5,
+   "max_move": -13.29,
+   "max_move_date": "2026-04-08",
+   "vol_ytd": 55.8,
+   "vol_prev": 28.9
+  }
+ },
+ "bat": {
+  "spread": {
+   "RO": {
+    "2024": 187.8,
+    "2025": 164.2,
+    "2026": 182.9
+   },
+   "BG": {
+    "2024": 183.9,
+    "2025": 165.8,
+    "2026": 157.2
+   },
+   "HU": {
+    "2024": 182.7,
+    "2025": 162.7,
+    "2026": 196.6
+   }
+  },
+  "evening": {
+   "2023": {
+    "RO": 150.6,
+    "BG": 150.1,
+    "HU": 148.6
+   },
+   "2024": {
+    "RO": 222.9,
+    "BG": 215.8,
+    "HU": 215.0
+   },
+   "2025": {
+    "RO": 171.1,
+    "BG": 169.7,
+    "HU": 168.9
+   },
+   "2026": {
+    "RO": 215.5,
+    "BG": 178.0,
+    "HU": 221.3
+   }
+  },
+  "midday": {
+   "2023": {
+    "RO": 66.1,
+    "BG": 65.3,
+    "HU": 70.9
+   },
+   "2024": {
+    "RO": 49.3,
+    "BG": 48.2,
+    "HU": 41.1
+   },
+   "2025": {
+    "RO": 29.2,
+    "BG": 25.0,
+    "HU": 30.2
+   },
+   "2026": {
+    "RO": 48.1,
+    "BG": 46.0,
+    "HU": 45.0
+   }
+  },
+  "bg_first": "2026-09-10",
+  "bg_dis": {
+   "2026-09": 504.0,
+   "2026-10": 577.0,
+   "2026-11": 2.0
+  },
+  "bg_ch": {
+   "2026-09": 622.0,
+   "2026-10": 714.0,
+   "2026-11": 306.0
+  },
+  "ro_bat": {
+   "2025": 23.0,
+   "2026": 60.0
+  },
+  "ro_bat_first": "2025-02-01",
+  "ev_gap": {
+   "2023": 0.5,
+   "2024": 7.1,
+   "2025": 1.4,
+   "2026": 37.5
+  },
+  "mid_gap": {
+   "2023": 0.8,
+   "2024": 1.1,
+   "2025": 4.2,
+   "2026": 2.1
+  },
+  "ev_sp_cy": {
+   "Jan": 0.2,
+   "Feb": 0.6,
+   "Mar": 6.0,
+   "Apr": 12.3,
+   "May": 27.4,
+   "Jun": 87.4,
+   "Jul": 29.1,
+   "Aug": 29.4,
+   "Sep": 40.6,
+   "Oct": 23.8
+  },
+  "gap_open": "2026-05"
+ }
+}

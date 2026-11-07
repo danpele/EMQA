@@ -1,0 +1,1190 @@
+{
+ "charts": {
+  "solar_growth": {
+   "source_en": "energy-charts.info (Fraunhofer ISE), installed capacity from ENTSO-E; ENTSO-E solar output (Transelectrica data)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE), puterea instalat\u0103 din ENTSO-E; produc\u021bia solar\u0103, ENTSO-E (date Transelectrica)",
+   "period_en": "installed capacity at year end 2019-2025; output 2019 to 2026-10-31",
+   "period_ro": "puterea instalat\u0103 la sf\u00eer\u0219itul anilor 2019-2025; produc\u021bia 2019 - 2026-10-31"
+  },
+  "merit_shift": {
+   "source_en": "OPCOM, PZU aggregated curves (XML), own computation",
+   "source_ro": "OPCOM, curbele agregate PZU (XML), calcule proprii",
+   "period_en": "delivery day 2026-10-21; cross-border flows, blocks and hourly orders held at their accepted values",
+   "period_ro": "ziua de livrare 2026-10-21; fluxurile transfrontaliere, blocurile \u0219i ordinele orare r\u0103m\u00een la valorile acceptate"
+  },
+  "resid_price": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar, wind and load (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bia solar\u0103 \u0219i eolian\u0103 \u0219i consumul, ENTSO-E (date Transelectrica)",
+   "period_en": "hourly, 2023-01-01 to 2026-10-31; bins of 0.5 GW with at least 20 hours",
+   "period_ro": "orar, 2023-01-01 - 2026-10-31; intervale de 0,5 GW cu cel pu\u021bin 20 de ore"
+  },
+  "capture_rates": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar, wind and load (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bia solar\u0103 \u0219i eolian\u0103 \u0219i consumul, ENTSO-E (date Transelectrica)",
+   "period_en": "2019 to 2026-10-31; hourly to Sep 2025, 15-min from Oct 2025",
+   "period_ro": "2019 - 2026-10-31; date orare p\u00een\u0103 \u00een sep. 2025, la 15 minute din oct. 2025"
+  },
+  "cannibal": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); day-ahead prices (OPCOM, IBEX, HUPX); ENTSO-E solar output and load",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri pentru ziua urm\u0103toare (OPCOM, IBEX, HUPX); produc\u021bia solar\u0103 \u0219i consumul, ENTSO-E",
+   "period_en": "monthly, 2019-01 to 2026-10; Hungary from Oct 2019",
+   "period_ro": "lunar, 2019-01 - 2026-10; Ungaria din oct. 2019"
+  },
+  "capture_region": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); day-ahead prices (OPCOM, IBEX, HUPX); ENTSO-E solar output and load",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri pentru ziua urm\u0103toare (OPCOM, IBEX, HUPX); produc\u021bia solar\u0103 \u0219i consumul, ENTSO-E",
+   "period_en": "2019 (Hungary 2020) to 2026-10-31; Bulgaria: hourly solar output",
+   "period_ro": "2019 (Ungaria 2020) - 2026-10-31; Bulgaria: produc\u021bie solar\u0103 orar\u0103"
+  },
+  "cheap_hours": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar, wind and load (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bia solar\u0103 \u0219i eolian\u0103 \u0219i consumul, ENTSO-E (date Transelectrica)",
+   "period_en": "each calendar year; 2026 to 2026-10-31",
+   "period_ro": "fiecare an calendaristic; 2026 p\u00een\u0103 la 2026-10-31"
+  },
+  "neg_hours": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); day-ahead prices of OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile pie\u021bei pentru ziua urm\u0103toare: OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "2022 to 2026-10-31; a 15-min interval counts 0.25 h",
+   "period_ro": "2022 - 2026-10-31; un interval de 15 minute conteaz\u0103 0,25 h"
+  },
+  "shape15": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "period_en": "last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET",
+   "period_ro": "ultimele 12 luni, 2025-11-01 - 2026-10-31, pre\u021buri pe 15 minute, ora CET"
+  },
+  "spreads": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); day-ahead prices of OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile pie\u021bei pentru ziua urm\u0103toare: OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "period_en": "daily, hourly prices (15-min averaged), monthly means, 2019 to 2026-10-31; log scale above 100",
+   "period_ro": "zilnic, pre\u021buri orare (media sferturilor), medii lunare, 2019 - 2026-10-31; scar\u0103 logaritmic\u0103 peste 100"
+  },
+  "bat_years": {
+   "source_en": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation",
+   "source_ro": "energy-charts.info; pre\u021buri PZU prin ENTSO-E; produc\u021bia bateriilor, ENTSO-E (BG, RO); optimizare proprie",
+   "period_en": "1 MW, round trip 85\\%, max one cycle a day; 2019-2025 and last 12 months 2025-11-01 to 2026-10-31",
+   "period_ro": "1 MW, randament 85\\%, cel mult un ciclu pe zi; 2019-2025 \u0219i ultimele 12 luni, 2025-11-01 - 2026-10-31"
+  },
+  "case_week": {
+   "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar, wind and load (Transelectrica data for Romania)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bia solar\u0103 \u0219i eolian\u0103 \u0219i consumul, ENTSO-E (date Transelectrica)",
+   "period_en": "week 2026-04-20 to 2026-04-26, 15-min, CET",
+   "period_ro": "s\u0103pt\u0103m\u00eena 2026-04-20 - 2026-04-26, 15 minute, ora CET"
+  },
+  "bat_region": {
+   "source_en": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation",
+   "source_ro": "energy-charts.info; pre\u021buri PZU prin ENTSO-E; produc\u021bia bateriilor, ENTSO-E (BG, RO); optimizare proprie",
+   "period_en": "2h battery, perfect foresight, 2024-01 to 2026-10; battery output as reported to ENTSO-E",
+   "period_ro": "baterie de 2 h, informa\u021bie perfect\u0103, 2024-01 - 2026-10; produc\u021bia bateriilor raportat\u0103 la ENTSO-E"
+  },
+  "bat_rules": {
+   "source_en": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation",
+   "source_ro": "energy-charts.info; pre\u021buri PZU prin ENTSO-E; produc\u021bia bateriilor, ENTSO-E (BG, RO); optimizare proprie",
+   "period_en": "last 12 months 2025-11-01 to 2026-10-31; 1 MW, round trip 85\\%; forecast rules on 361 common days, scaled to the full period",
+   "period_ro": "ultimele 12 luni, 2025-11-01 - 2026-10-31; 1 MW, randament 85\\%; regulile de prognoz\u0103 pe 361 de zile comune, scalate la \u00eentreaga perioad\u0103"
+  }
+ },
+ "cutoff": {
+  "end": "2026-10-31",
+  "year": 2026,
+  "month": 10,
+  "download": "2026-11-06",
+  "ltm_start": "2025-11-01",
+  "ltm_end": "2026-10-31"
+ },
+ "Y": 2026,
+ "YP": 2025,
+ "data": {
+  "first_year": 2019,
+  "n_mtu15": 38020,
+  "mtu15_start": "2025-10-01",
+  "ytd_label_en": "Jan--Oct 2026",
+  "ytd_label_ro": "ian.--oct. 2026"
+ },
+ "cap": {
+  "solar": {
+   "RO": {
+    "2014": 1.1,
+    "2015": 1.15,
+    "2016": 1.21,
+    "2017": 1.21,
+    "2018": 1.15,
+    "2019": 1.16,
+    "2020": 1.14,
+    "2021": 1.16,
+    "2022": 1.18,
+    "2023": 1.29,
+    "2024": 1.59,
+    "2025": 2.79
+   },
+   "BG": {
+    "2014": 0.28,
+    "2015": 1.04,
+    "2016": 1.05,
+    "2017": 1.05,
+    "2018": 1.06,
+    "2019": 1.08,
+    "2020": 1.25,
+    "2021": 1.73,
+    "2022": 3.09,
+    "2023": 4.57,
+    "2024": 6.1,
+    "2025": 7.16
+   },
+   "HU": {
+    "2014": 0.01,
+    "2015": 0.03,
+    "2016": 0.07,
+    "2017": 0.34,
+    "2018": 0.94,
+    "2019": 1.41,
+    "2020": 1.83,
+    "2021": 2.52,
+    "2022": 3.3,
+    "2023": 4.03,
+    "2024": 8.28,
+    "2025": 8.97
+   }
+  },
+  "wind": {
+   "RO": {
+    "2014": 2.9,
+    "2015": 2.94,
+    "2016": 2.98,
+    "2017": 2.99,
+    "2018": 2.97,
+    "2019": 2.97,
+    "2020": 2.96,
+    "2021": 2.96,
+    "2022": 2.96,
+    "2023": 2.96,
+    "2024": 3.03,
+    "2025": 3.07
+   },
+   "BG": {
+    "2014": 0.36,
+    "2015": 0.7,
+    "2016": 0.7,
+    "2017": 0.7,
+    "2018": 0.7,
+    "2019": 0.7,
+    "2020": 0.7,
+    "2021": 0.7,
+    "2022": 0.7,
+    "2023": 0.71,
+    "2024": 0.72,
+    "2025": 0.72
+   },
+   "HU": {
+    "2014": 0.33,
+    "2015": 0.33,
+    "2016": 0.32,
+    "2017": 0.32,
+    "2018": 0.33,
+    "2019": 0.32,
+    "2020": 0.32,
+    "2021": 0.32,
+    "2022": 0.32,
+    "2023": 0.33,
+    "2024": 0.33,
+    "2025": 0.33
+   }
+  },
+  "last_year": 2025,
+  "solar_ro_x": 2.4
+ },
+ "twh": {
+  "2019": {
+   "solar": 1.37,
+   "wind": 6.68,
+   "load": 60.08
+  },
+  "2020": {
+   "solar": 1.34,
+   "wind": 6.89,
+   "load": 58.06
+  },
+  "2021": {
+   "solar": 1.29,
+   "wind": 6.44,
+   "load": 60.32
+  },
+  "2022": {
+   "solar": 1.37,
+   "wind": 6.92,
+   "load": 56.23
+  },
+  "2023": {
+   "solar": 1.46,
+   "wind": 7.45,
+   "load": 53.37
+  },
+  "2024": {
+   "solar": 2.09,
+   "wind": 6.34,
+   "load": 54.3
+  },
+  "2025": {
+   "solar": 2.72,
+   "wind": 5.88,
+   "load": 53.56
+  },
+  "2026": {
+   "solar": 4.32,
+   "wind": 5.27,
+   "load": 42.29
+  },
+  "solar_max_mw": 3395.0,
+  "solar_max_ts": "2026-08-20 12:00",
+  "solar_share_load_ytd": 10.2,
+  "solar_share_load_2019": 2.3
+ },
+ "twh_lfl": {
+  "2025": {
+   "solar": 2.53,
+   "wind": 4.7
+  },
+  "2026": {
+   "solar": 4.32,
+   "wind": 5.27
+  },
+  "solar_chg": 70.8
+ },
+ "merit": {
+  "day": "2026-10-21",
+  "mid": {
+   "price": 152.23,
+   "q": 2816.1,
+   "p_curve_low": 152.16,
+   "depth_1_to_p": 34.0,
+   "q_le0": 2333.0,
+   "net_imp": -48.0,
+   "sup": {
+    "25": 131.4,
+    "50": 0.68,
+    "100": 0.68,
+    "200": 0.68,
+    "300": 0.02
+   },
+   "dem": {
+    "25": 164.8,
+    "50": 200.68,
+    "100": 234.65,
+    "200": 300.35,
+    "300": 375.44
+   },
+   "x_below50": 40
+  },
+  "eve": {
+   "price": 244.0,
+   "q": 3423.2,
+   "p_curve_low": 206.49,
+   "depth_1_to_p": 224.0,
+   "q_le0": 3033.0,
+   "net_imp": 1054.0,
+   "sup": {
+    "25": 187.53,
+    "50": 187.53,
+    "100": 187.53,
+    "200": 168.95,
+    "300": 0.0
+   },
+   "dem": {
+    "25": 247.79,
+    "50": 262.81,
+    "100": 281.6,
+    "200": 293.05,
+    "300": 395.2
+   },
+   "x_below50": 225
+  },
+  "spread0": 91.77,
+  "spread_bat50": -13.15,
+  "spread_bat100": -47.12,
+  "spread_bat200": -131.4
+ },
+ "reg": {
+  "start": "2023-01-01",
+  "end": "2026-10-31",
+  "n": 33600,
+  "r2": 0.647,
+  "r2_resid": 0.626,
+  "n_fe_months": 46,
+  "load": {
+   "b": 40.74,
+   "se": 1.59,
+   "t": 25.7
+  },
+  "wind": {
+   "b": -15.26,
+   "se": 1.04,
+   "t": -14.7
+  },
+  "solar": {
+   "b": -26.73,
+   "se": 2.17,
+   "t": -12.3
+  },
+  "resid": {
+   "b": 28.32,
+   "se": 0.88,
+   "t": 32.1
+  },
+  "solar_babs": 26.7,
+  "solar_mean_day_gw": 1.62,
+  "solar_effect_midday": -43.3,
+  "share_resid_below2_2023": 0.1,
+  "share_resid_below2_2025": 0.6,
+  "share_resid_below2_2026": 9.0,
+  "p_resid_low": {
+   "2023": 9.0,
+   "2025": -1.7,
+   "2026": 51.5
+  },
+  "p_resid_high": {
+   "2023": 152.8,
+   "2025": 170.3,
+   "2026": 191.8
+  }
+ },
+ "capt": {
+  "RO": {
+   "solar": {
+    "2019": {
+     "cp": 52.7,
+     "base": 50.4,
+     "cr": 1.045,
+     "crp": 104.5,
+     "disc": -2.3,
+     "twh": 1.37
+    },
+    "2020": {
+     "cp": 36.4,
+     "base": 39.5,
+     "cr": 0.922,
+     "crp": 92.2,
+     "disc": 3.1,
+     "twh": 1.34
+    },
+    "2021": {
+     "cp": 100.6,
+     "base": 111.4,
+     "cr": 0.903,
+     "crp": 90.3,
+     "disc": 10.8,
+     "twh": 1.29
+    },
+    "2022": {
+     "cp": 264.0,
+     "base": 265.3,
+     "cr": 0.995,
+     "crp": 99.5,
+     "disc": 1.3,
+     "twh": 1.37
+    },
+    "2023": {
+     "cp": 83.2,
+     "base": 103.7,
+     "cr": 0.802,
+     "crp": 80.2,
+     "disc": 20.6,
+     "twh": 1.46
+    },
+    "2024": {
+     "cp": 68.0,
+     "base": 103.5,
+     "cr": 0.657,
+     "crp": 65.7,
+     "disc": 35.5,
+     "twh": 2.09
+    },
+    "2025": {
+     "cp": 64.2,
+     "base": 108.2,
+     "cr": 0.594,
+     "crp": 59.4,
+     "disc": 43.9,
+     "twh": 2.72
+    },
+    "2026": {
+     "cp": 85.0,
+     "base": 137.5,
+     "cr": 0.619,
+     "crp": 61.9,
+     "disc": 52.4,
+     "twh": 4.32
+    }
+   },
+   "wind": {
+    "2019": {
+     "cp": 47.2,
+     "base": 50.4,
+     "cr": 0.936,
+     "crp": 93.6,
+     "disc": 3.2,
+     "twh": 6.68
+    },
+    "2020": {
+     "cp": 36.6,
+     "base": 39.5,
+     "cr": 0.926,
+     "crp": 92.6,
+     "disc": 2.9,
+     "twh": 6.89
+    },
+    "2021": {
+     "cp": 111.0,
+     "base": 111.4,
+     "cr": 0.996,
+     "crp": 99.6,
+     "disc": 0.4,
+     "twh": 6.44
+    },
+    "2022": {
+     "cp": 234.4,
+     "base": 265.3,
+     "cr": 0.884,
+     "crp": 88.4,
+     "disc": 30.9,
+     "twh": 6.92
+    },
+    "2023": {
+     "cp": 101.0,
+     "base": 103.7,
+     "cr": 0.974,
+     "crp": 97.4,
+     "disc": 2.7,
+     "twh": 7.45
+    },
+    "2024": {
+     "cp": 93.4,
+     "base": 103.5,
+     "cr": 0.902,
+     "crp": 90.2,
+     "disc": 10.2,
+     "twh": 6.34
+    },
+    "2025": {
+     "cp": 106.7,
+     "base": 108.2,
+     "cr": 0.987,
+     "crp": 98.7,
+     "disc": 1.4,
+     "twh": 5.88
+    },
+    "2026": {
+     "cp": 141.6,
+     "base": 137.5,
+     "cr": 1.03,
+     "crp": 103.0,
+     "disc": -4.1,
+     "twh": 5.27
+    }
+   },
+   "solar_first_below1": 2023,
+   "wind_min": 88.4,
+   "wind_max": 103.0,
+   "solar_min_year": "2025"
+  },
+  "BG": {
+   "solar": {
+    "2019": {
+     "cp": 49.3,
+     "base": 47.5,
+     "cr": 1.038,
+     "crp": 103.8,
+     "disc": -1.8,
+     "twh": 1.33
+    },
+    "2020": {
+     "cp": 37.0,
+     "base": 39.3,
+     "cr": 0.942,
+     "crp": 94.2,
+     "disc": 2.3,
+     "twh": 1.43
+    },
+    "2021": {
+     "cp": 100.9,
+     "base": 108.7,
+     "cr": 0.928,
+     "crp": 92.8,
+     "disc": 7.8,
+     "twh": 1.43
+    },
+    "2022": {
+     "cp": 241.1,
+     "base": 252.8,
+     "cr": 0.954,
+     "crp": 95.4,
+     "disc": 11.7,
+     "twh": 1.66
+    },
+    "2023": {
+     "cp": 82.6,
+     "base": 103.8,
+     "cr": 0.796,
+     "crp": 79.6,
+     "disc": 21.2,
+     "twh": 3.07
+    },
+    "2024": {
+     "cp": 72.6,
+     "base": 102.6,
+     "cr": 0.708,
+     "crp": 70.8,
+     "disc": 29.9,
+     "twh": 4.92
+    },
+    "2025": {
+     "cp": 73.3,
+     "base": 106.9,
+     "cr": 0.686,
+     "crp": 68.6,
+     "disc": 33.6,
+     "twh": 6.36
+    },
+    "2026": {
+     "cp": 100.1,
+     "base": 129.9,
+     "cr": 0.771,
+     "crp": 77.1,
+     "disc": 29.8,
+     "twh": 7.3
+    }
+   },
+   "wind": {
+    "2019": {
+     "cp": 43.1,
+     "base": 47.5,
+     "cr": 0.908,
+     "crp": 90.8,
+     "disc": 4.4,
+     "twh": 1.25
+    },
+    "2020": {
+     "cp": 36.7,
+     "base": 39.3,
+     "cr": 0.935,
+     "crp": 93.5,
+     "disc": 2.6,
+     "twh": 1.43
+    },
+    "2021": {
+     "cp": 109.2,
+     "base": 108.7,
+     "cr": 1.005,
+     "crp": 100.5,
+     "disc": -0.6,
+     "twh": 1.39
+    },
+    "2022": {
+     "cp": 224.2,
+     "base": 252.8,
+     "cr": 0.887,
+     "crp": 88.7,
+     "disc": 28.7,
+     "twh": 1.4
+    },
+    "2023": {
+     "cp": 99.5,
+     "base": 103.8,
+     "cr": 0.958,
+     "crp": 95.8,
+     "disc": 4.3,
+     "twh": 1.5
+    },
+    "2024": {
+     "cp": 92.7,
+     "base": 102.6,
+     "cr": 0.904,
+     "crp": 90.4,
+     "disc": 9.8,
+     "twh": 1.35
+    },
+    "2025": {
+     "cp": 110.9,
+     "base": 106.9,
+     "cr": 1.037,
+     "crp": 103.7,
+     "disc": -4.0,
+     "twh": 1.26
+    },
+    "2026": {
+     "cp": 134.0,
+     "base": 129.9,
+     "cr": 1.031,
+     "crp": 103.1,
+     "disc": -4.1,
+     "twh": 1.08
+    }
+   }
+  },
+  "HU": {
+   "solar": {
+    "2020": {
+     "cp": 34.8,
+     "base": 39.0,
+     "cr": 0.892,
+     "crp": 89.2,
+     "disc": 4.2,
+     "twh": 1.59
+    },
+    "2021": {
+     "cp": 103.1,
+     "base": 113.9,
+     "cr": 0.905,
+     "crp": 90.5,
+     "disc": 10.8,
+     "twh": 2.4
+    },
+    "2022": {
+     "cp": 277.5,
+     "base": 271.7,
+     "cr": 1.021,
+     "crp": 102.1,
+     "disc": -5.8,
+     "twh": 3.08
+    },
+    "2023": {
+     "cp": 86.2,
+     "base": 106.8,
+     "cr": 0.807,
+     "crp": 80.7,
+     "disc": 20.7,
+     "twh": 4.4
+    },
+    "2024": {
+     "cp": 63.9,
+     "base": 100.8,
+     "cr": 0.634,
+     "crp": 63.4,
+     "disc": 36.9,
+     "twh": 5.69
+    },
+    "2025": {
+     "cp": 62.4,
+     "base": 108.5,
+     "cr": 0.575,
+     "crp": 57.5,
+     "disc": 46.1,
+     "twh": 6.81
+    },
+    "2026": {
+     "cp": 80.9,
+     "base": 141.0,
+     "cr": 0.573,
+     "crp": 57.3,
+     "disc": 60.2,
+     "twh": 7.07
+    }
+   },
+   "wind": {
+    "2019": {
+     "cp": 49.0,
+     "base": 50.4,
+     "cr": 0.973,
+     "crp": 97.3,
+     "disc": 1.4,
+     "twh": 0.7
+    },
+    "2020": {
+     "cp": 36.3,
+     "base": 39.0,
+     "cr": 0.931,
+     "crp": 93.1,
+     "disc": 2.7,
+     "twh": 0.64
+    },
+    "2021": {
+     "cp": 110.8,
+     "base": 113.9,
+     "cr": 0.973,
+     "crp": 97.3,
+     "disc": 3.0,
+     "twh": 0.64
+    },
+    "2022": {
+     "cp": 244.0,
+     "base": 271.7,
+     "cr": 0.898,
+     "crp": 89.8,
+     "disc": 27.7,
+     "twh": 0.58
+    },
+    "2023": {
+     "cp": 105.0,
+     "base": 106.8,
+     "cr": 0.983,
+     "crp": 98.3,
+     "disc": 1.8,
+     "twh": 0.62
+    },
+    "2024": {
+     "cp": 89.4,
+     "base": 100.8,
+     "cr": 0.887,
+     "crp": 88.7,
+     "disc": 11.4,
+     "twh": 0.63
+    },
+    "2025": {
+     "cp": 108.5,
+     "base": 108.5,
+     "cr": 1.0,
+     "crp": 100.0,
+     "disc": 0.0,
+     "twh": 0.56
+    },
+    "2026": {
+     "cp": 142.9,
+     "base": 141.0,
+     "cr": 1.014,
+     "crp": 101.4,
+     "disc": -1.9,
+     "twh": 0.44
+    }
+   }
+  },
+  "cov": {
+   "mp": 137.4,
+   "mg": 593.0,
+   "cov": -31069.0,
+   "cr": 0.619,
+   "corr": -0.435
+  }
+ },
+ "cannib": {
+  "b": -4.2,
+  "se": 1.03,
+  "a": 103.5,
+  "r2": 0.53,
+  "n": 94,
+  "start": "2019-01-01",
+  "end": "2026-10-01",
+  "share_max": 17.8,
+  "share_max_month": "2026-08",
+  "cr_min": 44.3,
+  "cr_min_month": "2026-03",
+  "bneg": 4.2,
+  "BG": {
+   "b": -1.32,
+   "se": 0.29,
+   "n": 94
+  },
+  "HU": {
+   "b": -2.14,
+   "se": 0.13,
+   "n": 85
+  }
+ },
+ "cheap": {
+  "2019": {
+   "e_in_cheap10": 7.6,
+   "e_le0": 0.0,
+   "e_neg": 0.0,
+   "p10": 27.8
+  },
+  "2020": {
+   "e_in_cheap10": 12.9,
+   "e_le0": 0.0,
+   "e_neg": 0.0,
+   "p10": 20.0
+  },
+  "2021": {
+   "e_in_cheap10": 9.0,
+   "e_le0": 0.0,
+   "e_neg": 0.0,
+   "p10": 44.0
+  },
+  "2022": {
+   "e_in_cheap10": 9.5,
+   "e_le0": 0.0,
+   "e_neg": 0.0,
+   "p10": 117.3
+  },
+  "2023": {
+   "e_in_cheap10": 18.2,
+   "e_le0": 2.5,
+   "e_neg": 1.0,
+   "p10": 30.8
+  },
+  "2024": {
+   "e_in_cheap10": 26.8,
+   "e_le0": 6.5,
+   "e_neg": 3.2,
+   "p10": 33.9
+  },
+  "2025": {
+   "e_in_cheap10": 32.1,
+   "e_le0": 9.6,
+   "e_neg": 6.2,
+   "p10": 27.3
+  },
+  "2026": {
+   "e_in_cheap10": 23.4,
+   "e_le0": 8.2,
+   "e_neg": 4.0,
+   "p10": 12.8
+  }
+ },
+ "neg": {
+  "hours": {
+   "RO": {
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 32.0,
+    "2024": 85.0,
+    "2025": 196.0,
+    "2026": 171.75
+   },
+   "BG": {
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 11.0,
+    "2024": 55.0,
+    "2025": 170.0,
+    "2026": 152.25
+   },
+   "HU": {
+    "2019": 0.0,
+    "2020": 4.0,
+    "2021": 8.0,
+    "2022": 0.0,
+    "2023": 74.0,
+    "2024": 262.0,
+    "2025": 281.0,
+    "2026": 223.5
+   },
+   "DE_LU": {
+    "2019": 211.0,
+    "2020": 298.0,
+    "2021": 139.0,
+    "2022": 69.0,
+    "2023": 301.0,
+    "2024": 457.0,
+    "2025": 574.75,
+    "2026": 465.0
+   }
+  },
+  "depth": {
+   "RO": {
+    "2019": null,
+    "2020": null,
+    "2021": null,
+    "2022": null,
+    "2023": -5.1,
+    "2024": -13.9,
+    "2025": -10.5,
+    "2026": -9.7
+   },
+   "BG": {
+    "2019": null,
+    "2020": null,
+    "2021": null,
+    "2022": null,
+    "2023": -0.2,
+    "2024": -4.1,
+    "2025": -10.2,
+    "2026": -8.5
+   },
+   "HU": {
+    "2019": null,
+    "2020": -4.0,
+    "2021": -7.9,
+    "2022": null,
+    "2023": -13.0,
+    "2024": -15.7,
+    "2025": -16.1,
+    "2026": -33.7
+   },
+   "DE_LU": {
+    "2019": -17.3,
+    "2020": -15.5,
+    "2021": -16.4,
+    "2022": -2.1,
+    "2023": -12.9,
+    "2024": -11.5,
+    "2025": -10.9,
+    "2026": -16.8
+   }
+  },
+  "lfl": {
+   "RO": {
+    "2025": 196.0,
+    "2026": 171.75,
+    "x": 0.88
+   },
+   "BG": {
+    "2025": 170.0,
+    "2026": 152.25,
+    "x": 0.9
+   },
+   "HU": {
+    "2025": 281.0,
+    "2026": 223.5,
+    "x": 0.8
+   },
+   "DE_LU": {
+    "2025": 574.75,
+    "2026": 465.0,
+    "x": 0.81
+   }
+  },
+  "ro_min": -99.75,
+  "ro_min_ts": "2026-04-26 13:00",
+  "q15": {
+   "n_negq": 687,
+   "h_negq": 171.75,
+   "n_hidden": 26,
+   "n_neg_hours_avg": 195,
+   "start": "2025-10-01",
+   "end": "2026-10-31",
+   "hidden_pct": 3.8
+  },
+  "top_month": "2026-04",
+  "top_month_h": 67.0
+ },
+ "curt": {
+  "2023": {
+   "rev_mwh": 83.17,
+   "rev_curt_mwh": 84.07,
+   "gain_mwh_all": 0.06,
+   "e_neg_pct": 1.0,
+   "cost_neg_meur": 0.08
+  },
+  "2024": {
+   "rev_mwh": 68.0,
+   "rev_curt_mwh": 70.68,
+   "gain_mwh_all": 0.46,
+   "e_neg_pct": 3.2,
+   "cost_neg_meur": 0.95
+  },
+  "2025": {
+   "rev_mwh": 64.22,
+   "rev_curt_mwh": 69.16,
+   "gain_mwh_all": 0.63,
+   "e_neg_pct": 6.2,
+   "cost_neg_meur": 1.71
+  },
+  "2026": {
+   "rev_mwh": 85.03,
+   "rev_curt_mwh": 88.96,
+   "gain_mwh_all": 0.35,
+   "e_neg_pct": 4.0,
+   "cost_neg_meur": 1.52
+  }
+ },
+ "shape": {
+  "winter": {
+   "min": 88.6,
+   "min_t": "23:45",
+   "max": 186.5,
+   "max_t": "16:45",
+   "range": 97.8
+  },
+  "spring": {
+   "min": 23.0,
+   "min_t": "12:45",
+   "max": 208.3,
+   "max_t": "19:45",
+   "range": 185.3
+  },
+  "summer": {
+   "min": 44.9,
+   "min_t": "13:45",
+   "max": 270.5,
+   "max_t": "19:45",
+   "range": 225.6
+  },
+  "autumn": {
+   "min": 111.0,
+   "min_t": "12:45",
+   "max": 259.2,
+   "max_t": "19:30",
+   "range": 148.1
+  }
+ },
+ "spread": {
+  "RO": {
+   "2019": 44.8,
+   "2020": 33.2,
+   "2021": 90.3,
+   "2022": 218.8,
+   "2023": 117.1,
+   "2024": 171.6,
+   "2025": 151.1,
+   "2026": 173.9
+  },
+  "BG": {
+   "2019": 40.9,
+   "2020": 30.2,
+   "2021": 80.6,
+   "2022": 221.8,
+   "2023": 116.7,
+   "2024": 167.6,
+   "2025": 153.0,
+   "2026": 149.8
+  },
+  "HU": {
+   "2019": 39.5,
+   "2020": 32.3,
+   "2021": 82.8,
+   "2022": 190.2,
+   "2023": 103.9,
+   "2024": 167.0,
+   "2025": 149.6,
+   "2026": 186.8
+  },
+  "DE_LU": {
+   "2019": 28.3,
+   "2020": 30.0,
+   "2021": 75.6,
+   "2022": 177.2,
+   "2023": 91.7,
+   "2024": 103.8,
+   "2025": 116.1,
+   "2026": 151.5
+  }
+ },
+ "bat": {
+  "eta": 0.85,
+  "cycles": 1.0,
+  "r": 0.08,
+  "life": 15,
+  "pf": {
+   "1": {
+    "2019": 14.1,
+    "2020": 10.4,
+    "2021": 27.3,
+    "2022": 67.4,
+    "2023": 39.0,
+    "2024": 60.3,
+    "2025": 54.2
+   },
+   "2": {
+    "2019": 26.3,
+    "2020": 19.4,
+    "2021": 51.7,
+    "2022": 125.0,
+    "2023": 71.6,
+    "2024": 110.2,
+    "2025": 98.7
+   },
+   "4": {
+    "2019": 45.2,
+    "2020": 33.3,
+    "2021": 90.0,
+    "2022": 213.0,
+    "2023": 120.5,
+    "2024": 181.3,
+    "2025": 165.2
+   }
+  },
+  "ltm": {
+   "1": {
+    "pf": 61.0,
+    "n_days": 365,
+    "per_day": 167.0,
+    "hourly": 53.2,
+    "gain15": 14.5,
+    "yday_pct": 75.0,
+    "wk_pct": 82.0,
+    "wk": 49.5,
+    "yday": 45.2,
+    "n_common": 361,
+    "loss_days_wk": 4,
+    "per_mwh": 61.0,
+    "capex_pf_kw": 522.0,
+    "capex_wk_kw": 428.0,
+    "capex_wk_kwh": 428.0
+   },
+   "2": {
+    "pf": 111.2,
+    "n_days": 365,
+    "per_day": 305.0,
+    "hourly": 100.8,
+    "gain15": 10.3,
+    "yday_pct": 79.1,
+    "wk_pct": 84.9,
+    "wk": 93.4,
+    "yday": 87.0,
+    "n_common": 361,
+    "loss_days_wk": 4,
+    "per_mwh": 55.6,
+    "capex_pf_kw": 952.0,
+    "capex_wk_kw": 808.0,
+    "capex_wk_kwh": 404.0
+   },
+   "4": {
+    "pf": 190.9,
+    "n_days": 365,
+    "per_day": 523.0,
+    "hourly": 178.4,
+    "gain15": 7.0,
+    "yday_pct": 84.4,
+    "wk_pct": 89.2,
+    "wk": 168.6,
+    "yday": 159.5,
+    "n_common": 361,
+    "loss_days_wk": 5,
+    "per_mwh": 47.7,
+    "capex_pf_kw": 1634.0,
+    "capex_wk_kw": 1459.0,
+    "capex_wk_kwh": 365.0
+   }
+  },
+  "reg": {
+   "RO": 111.2,
+   "BG": 96.4,
+   "HU": 117.6,
+   "DE_LU": 90.6
+  },
+  "x_4v2": 1.72,
+  "x_ltm_vs_prev": 12.7,
+  "af": 8.56,
+  "pf_first": 2019,
+  "pf_last": 2025,
+  "corr_ro_bg": 0.8,
+  "corr_ro_hu": 0.87,
+  "fleet_RO_first": "2025-02-01",
+  "fleet_RO_max": 766.0,
+  "fleet_RO_mean_summer": 58.0,
+  "fleet_BG_first": "2026-09-09",
+  "fleet_BG_max": 2795.0,
+  "fleet_BG_mean_summer": null,
+  "fleet_BG_charge_max": 3606.0,
+  "m_RO_2025": 318.0,
+  "m_RO_2026": 392.0,
+  "m_BG_2025": 320.0,
+  "m_BG_2026": 309.0
+ },
+ "case": {
+  "month": "2026-04",
+  "cr_solar": 49.4,
+  "cp_solar": 47.2,
+  "base": 95.6,
+  "cr_wind": 97.8,
+  "neg_h": 67.0,
+  "bat2_day": 325.0,
+  "bat2_day_ltm": 305.0,
+  "solar_twh": 0.37,
+  "e_neg_pct": 17.9,
+  "week": "2026-04-20",
+  "week_end": "2026-04-26",
+  "week_neg_h": 24.0,
+  "week_min": -99.75,
+  "week_max": 328.0,
+  "week_bat2": 2736.0,
+  "week_bat2_mean_day": 391.0,
+  "week_solar_max": 2243.0,
+  "week_cr": 42.5,
+  "week_cp": 37.0,
+  "week_base": 87.0
+ }
+}

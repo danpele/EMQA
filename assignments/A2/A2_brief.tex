@@ -1,0 +1,442 @@
+% A2_brief.tex -- ONE source for the English and Romanian brief of Assignment 2.
+\renewcommand{\emqaassign}{\T{Assignment 2}{Tema 2}}
+\begin{document}
+\emqatitle{\T{Assignment 2: Risk, contracts and forecast-driven decisions for your role}%
+                {Tema 2: Risc, contracte și decizii bazate pe prognoze pentru rolul dumneavoastră}}%
+          {\T{Price--volume risk, hedging and PPAs, flexibility and storage, machine-learning forecasts --- lectures 4--7}%
+             {Riscul preț--volum, acoperirea riscului și PPA, flexibilitate și stocare, prognoze prin învățare automată --- cursurile 4--7}}
+
+\begin{todobox}\small
+\textbf{\T{Instructor to fill in}{De completat de profesor}:}
+\T{Deadline}{Termen}: \textbf{TODO} \quad\textbullet\quad
+\T{Weight in the final grade}{Pondere în nota finală}: \textbf{TODO} \quad\textbullet\quad
+\T{Individual or teams of 2}{Individual sau echipe de cîte 2}: \textbf{TODO} \quad\textbullet\quad
+\T{Oral defence slots}{Programarea susținerilor orale}: \textbf{TODO} \quad\textbullet\quad
+\T{Late policy}{Regula pentru întîrzieri}: \textbf{TODO}.
+\T{Submit on Moodle.}{Predarea se face pe Moodle.}
+\end{todobox}
+
+\begin{scenario}
+\T{You are the analyst who advises the head of trading of a Romanian energy company. Pick the role closest to your own job (Table~\ref{tab:roles}):
+a battery-storage operator, a hydro producer facing a dry year, a solar producer choosing between merchant sale, a power purchase agreement (PPA) and a contract for difference (CfD),
+or a supplier/industrial consumer buying on the day-ahead market (PZU).
+Every day you decide, before gate closure (12:00 CET on day $d-1$), what to bid or nominate for day $d$; every year you decide how much to lock in by contract.
+Your head of trading asks: (1) How much money do better forecasts actually make or save, compared with a simple rule and with perfect foresight?
+(2) Where does our cash-flow risk come from --- price, volume, profile, imbalances or the regional basis --- and how much can we lose in a bad month?
+(3) Which contract or hedge should we sign, and how much? You answer with a reproducible notebook, a decision ledger and a one-page recommendation.}%
+{Sînteți analistul care îl consiliază pe șeful departamentului de tranzacționare al unei companii energetice din România. Alegeți rolul cel mai apropiat de postul dumneavoastră (tabelul~\ref{tab:roles}):
+operator de stocare în baterii, producător hidro într-un an secetos, producător solar care alege între vînzarea pe piață, un contract de achiziție de energie (PPA, \emph{power purchase agreement}) și un contract pentru diferență (CfD, \emph{contract for difference}),
+sau furnizor/consumator industrial care cumpără pe piața pentru ziua următoare (PZU, \emph{day-ahead market}).
+În fiecare zi decideți, înainte de închiderea porții (12:00 CET în ziua $d-1$), ce ofertați sau ce notificați pentru ziua $d$; în fiecare an decideți cît blocați prin contract.
+Șeful vă întreabă: (1) Cîți bani aduc sau economisesc prognozele mai bune, față de o regulă simplă și față de cunoașterea perfectă a viitorului?
+(2) De unde vine riscul fluxului de numerar --- preț, volum, profil, dezechilibre sau baza regională --- și cît putem pierde într-o lună proastă?
+(3) Ce contract sau ce acoperire a riscului (\emph{hedging}) semnăm și în ce proporție? Răspundeți cu un notebook reproductibil, un registru al deciziilor și o pagină de recomandare.}
+\end{scenario}
+
+\section{\T{What you submit}{Ce predați}}
+\begin{enumerate}[label=\textbf{D\arabic*}]
+\item \T{\textbf{Notebook} \texttt{A2\_<ID>\_<ROLE>.ipynb} from the starter \texttt{A2\_starter\_EN.ipynb}; runs with \emph{Restart \& Run All} in at most 45 minutes.}%
+{\textbf{Notebook-ul} \texttt{A2\_<ID>\_<ROL>.ipynb}, pornind de la \texttt{A2\_starter\_RO.ipynb}; rulează cu \emph{Restart \& Run All} în cel mult 45 de minute.}
+\item \T{\textbf{Numbers file} \texttt{my\_numbers\_A2\_<ID>\_<ROLE>\_personal.json} and the \textbf{decision ledger} as CSV (\texttt{ledger\_<ID>.csv}), both written by the notebook.}%
+{\textbf{Fișierul de numere} \texttt{my\_numbers\_A2\_<ID>\_<ROL>\_personal.json} și \textbf{registrul deciziilor} în format CSV (\texttt{ledger\_<ID>.csv}), ambele scrise de notebook.}
+\item \T{\textbf{Memo} (PDF, 11 pt, at most 2 pages): page 1 = recommendation; page 2 = appendix (tables, ledger excerpt, hand reconciliation). Structure in Task 8.}%
+{\textbf{Memoriul} (PDF, 11 pt, cel mult 2 pagini): pagina 1 = recomandarea; pagina 2 = anexa (tabele, extras din registru, reconcilierea manuală). Structura este în sarcina 8.}
+\item \T{\textbf{Oral defence} (about 10 minutes) on one day of your ledger and one adverse scenario chosen by the instructor.}%
+{\textbf{Susținerea orală} (circa 10 minute) pe o zi din registrul dumneavoastră și pe un scenariu advers ales de profesor.}
+\end{enumerate}
+
+\section{\T{Choose your role; get your parameters}{Alegeți rolul; obțineți parametrii}}
+\T{Choose \textbf{one} role. Use public data only: the volumes are \emph{normalised public profiles} built from national ENTSO-E data (European Network of Transmission System Operators for Electricity) (via energy-charts.info),
+not the portfolio of any real company. Never use or disclose confidential company data. Then run}%
+{Alegeți \textbf{un singur} rol. Folosiți numai date publice: volumele sînt \emph{profiluri publice normalizate}, construite din datele naționale ENTSO-E (Rețeaua europeană a operatorilor de transport și sistem pentru energie electrică) (prin energy-charts.info),
+nu portofoliul vreunei companii reale. Nu folosiți și nu divulgați date confidențiale ale companiei. Apoi rulați}
+\texttt{python make\_assignment.py -{}-id <ID> -{}-assignment 2 -{}-role <B|H|R|S>}
+\T{(or the first cell of the starter). Your test window (365 days starting between January and November 2025), your role settings and your three \texttt{check\_days} depend on your ID.}%
+{(sau prima celulă a notebook-ului de pornire). Fereastra de test (365 de zile, cu începutul între ianuarie și noiembrie 2025), parametrii rolului și cele trei \texttt{check\_days} depind de numărul matricol.}
+
+\T{\textbf{Three periods, in this order} (all dates in your parameter block):
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item (1) \emph{estimation}: everything before \texttt{selection\_start}; the forecast models are recalibrated on a rolling \texttt{lear\_window}, as in Assignment 1, and \texttt{burn\_in\_days} = 112 forecast days before \texttt{selection\_start} feed the HS/CP errors;
+\item (2) \emph{selection}: \texttt{selection\_start}--\texttt{selection\_end}, the 120 days just before the test; choose here, and only here, your rule, $\alpha$, $w^*$, $K$, the PPA prices and the toll;
+\item (3) \emph{test}: \texttt{test\_start}--\texttt{test\_end} (365 days); all choices are frozen; report P\&L, VaR breaches and every other result on this period only;
+\item \texttt{ea.selection\_check(select\_fn, P, L, R, p)} must pass: it hides the test window and checks that your choices do not change.
+\end{itemize}
+Example (DEMO-0001): selection 3 June -- 30 September 2025, test 1 October 2025 -- 30 September 2026, forecasts from 11 February 2025.
+Common parameters: \texttt{test\_start}, \texttt{test\_end} (365 days); \texttt{selection\_start}, \texttt{selection\_end} (120 days); \texttt{burn\_in\_days} = 112; \texttt{lear\_window} (364/546/728) and \texttt{error\_window} $W$ (56/84/112) as in Assignment 1;
+\texttt{var\_window} = 250 and \texttt{alphas} = [0\ds95, 0\ds99] (Task 5); \texttt{risk\_knob} = $\alpha$ values of the quantile rule (Task 3); three \texttt{check\_days} for the hand reconciliation. Battery: \texttt{power\_mw} = 1, \texttt{cycles\_per\_day} = 1.
+Units: tables in kEUR (battery: EUR); the ledger always in EUR. Keep your notebook in \texttt{repo/assignments/A2/}.}%
+{\textbf{Trei perioade, în această ordine} (toate datele apar în blocul de parametri):
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item (1) \emph{estimarea}: tot ce precedă \texttt{selection\_start}; modelele de prognoză se recalibrează pe o fereastră glisantă \texttt{lear\_window}, ca la tema 1, iar cele \texttt{burn\_in\_days} = 112 zile de prognoză dinaintea lui \texttt{selection\_start} furnizează erorile pentru HS/CP;
+\item (2) \emph{selecția}: \texttt{selection\_start}--\texttt{selection\_end}, cele 120 de zile dinaintea testului; aici, și numai aici, alegeți regula, $\alpha$, $w^*$, $K$, prețurile PPA și taxa de tolling;
+\item (3) \emph{testul}: \texttt{test\_start}--\texttt{test\_end} (365 de zile); toate alegerile sînt înghețate; raportați P\&L, depășirile VaR și toate celelalte rezultate numai pe această perioadă;
+\item \texttt{ea.selection\_check(select\_fn, P, L, R, p)} trebuie să treacă: ascunde fereastra de test și verifică dacă alegerile rămîn aceleași.
+\end{itemize}
+Exemplu (DEMO-0001): selecția 3 iunie -- 30 septembrie 2025, testul 1 octombrie 2025 -- 30 septembrie 2026, prognoze începînd cu 11 februarie 2025.
+Parametri comuni: \texttt{test\_start}, \texttt{test\_end} (365 de zile); \texttt{selection\_start}, \texttt{selection\_end} (120 de zile); \texttt{burn\_in\_days} = 112; \texttt{lear\_window} (364/546/728) și \texttt{error\_window} $W$ (56/84/112) ca la tema 1;
+\texttt{var\_window} = 250 și \texttt{alphas} = [0\ds95, 0\ds99] (sarcina 5); \texttt{risk\_knob} = valorile $\alpha$ ale regulii pe cuantile (sarcina 3); trei \texttt{check\_days} pentru reconcilierea manuală. Baterie: \texttt{power\_mw} = 1, \texttt{cycles\_per\_day} = 1.
+Unități: tabelele în kEUR (baterie: EUR); registrul întotdeauna în EUR. Păstrați notebook-ul în \texttt{repo/assignments/A2/}.}
+
+\begin{table}[h]\centering\small\setlength{\tabcolsep}{4pt}
+\caption{\T{Roles, volumes (hour $h$ of day $d$, MWh per hour = mean MW) and personal settings}{Rolurile, volumele (ora $h$ a zilei $d$, MWh pe oră = MW medii) și parametrii personali}}\label{tab:roles}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.1cm}}
+\toprule
+\T{Role (who should pick it)}{Rolul (cine îl alege)} & \T{Volume and baseline exposure $X_d$}{Volumul și expunerea de bază $X_d$} & \T{Personal settings}{Parametri personali}\\
+\midrule
+\textbf{B} \T{Battery operator (storage and renewable developers, suppliers with storage)}{Operator de baterie (dezvoltatori de stocare și regenerabile, furnizori cu stocare)} &
+\T{1 MW battery, energy $E$ MWh, round-trip efficiency $\eta$, degradation cost $c$ EUR per MWh discharged; at most one cycle per day, empty at midnight.
+$X_d$ = daily profit of the \emph{naive-forecast} strategy (Task 3), EUR.}%
+{Baterie de 1 MW, energie $E$ MWh, randamentul ciclului complet (\emph{round-trip}) $\eta$, cost de degradare $c$ EUR pe MWh descărcat; cel mult un ciclu pe zi, goală la miezul nopții.
+$X_d$ = profitul zilnic al strategiei cu \emph{prognoză naivă} (sarcina 3), EUR.} &
+\texttt{energy\_mwh} $\in\{1,2\}$, \texttt{efficiency\_rt}, \texttt{degradation\_eur\_mwh}\\
+\textbf{H} \T{Hydro producer, dry year (hydro producers; gas-plant owners may also pick it)}{Producător hidro, an secetos (producători hidro; îl pot alege și proprietarii de centrale pe gaze)} &
+\T{$Q_{d,h}=\phi\,(\text{reservoir}_{d,h}+\text{run-of-river}_{d,h})$, national ENTSO-E hydro output times your fleet share $\phi$.
+$X_d=\sum_h Q_{d,h}P_{d,h}/1000$ (thousand EUR, kEUR).}%
+{$Q_{d,h}=\phi\,(\text{acumulare}_{d,h}+\text{fir de apă}_{d,h})$, producția hidro națională ENTSO-E înmulțită cu ponderea parcului de centrale $\phi$.
+$X_d=\sum_h Q_{d,h}P_{d,h}/1000$ (mii EUR, kEUR).} &
+\texttt{fleet\_share} $\phi$, \texttt{flex\_share}, \texttt{pmax\_factor}\\
+\textbf{R} \T{Solar producer (renewable developers, PPA/CfD desks)}{Producător solar (dezvoltatori de regenerabile, birouri PPA/CfD)} &
+\T{$Q_{d,h}=C\cdot S_{d,h}/\bar S_{d}$, national solar output $S$ divided by its trailing 365-day peak $\bar S_d$ up to day $d-2$, times your park size $C$ MWp. $X_d=\sum_h Q_{d,h}P_{d,h}/1000$ kEUR.}%
+{$Q_{d,h}=C\cdot S_{d,h}/\bar S_{d}$, producția solară națională $S$ împărțită la vîrful ei din ultimele 365 de zile pînă în $d-2$, $\bar S_d$, înmulțită cu mărimea parcului $C$ MWp. $X_d=\sum_h Q_{d,h}P_{d,h}/1000$ kEUR.} &
+\texttt{pv\_mwp}, \texttt{ppa\_hedge}, \texttt{curtail\_threshold\_eur}\\
+\textbf{S} \T{Supplier or industrial consumer (suppliers, industry; nuclear and grid staff buying replacement or loss energy)}{Furnizor sau consumator industrial (furnizori, industrie; personalul din nuclear și din rețea care cumpără energie de înlocuire sau pentru pierderi)} &
+\T{$Q_{d,h}=\bar Q\cdot L_{d,h}/\bar L_d$, national load divided by its trailing 365-day mean up to day $d-2$, times your average load $\bar Q$ MW.
+$X_d=-\sum_h Q_{d,h}P_{d,h}/1000$ kEUR (a cost is a negative cash flow).}%
+{$Q_{d,h}=\bar Q\cdot L_{d,h}/\bar L_d$, consumul național împărțit la media lui din ultimele 365 de zile pînă în $d-2$, înmulțit cu consumul mediu $\bar Q$ MW.
+$X_d=-\sum_h Q_{d,h}P_{d,h}/1000$ kEUR (un cost este un flux de numerar negativ).} &
+\texttt{avg\_load\_mw}, \texttt{flex\_share}, \texttt{max\_load\_factor}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\T{\textbf{Same data rules as Assignment 1}: CET hours \texttt{h00}--\texttt{h23}; hourly values (mean of the quarter-hours after 1 October 2025);
+and the gate-closure information set (12:00 CET on $d-1$), enforced by \texttt{ea.leakage\_check}:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item prices: every day up to $d-1$ (the $d-1$ auction cleared on $d-2$);
+\item realised quantities (load, wind, solar, hydro, your volumes and cash flows that depend on them): only up to day $d-2$, the last metered day; proxies for day $d$ come from $d-2$, $d-3$ and $d-7$;
+\item fuels and carbon: the last close before 12:00 on $d-1$, in practice the close of $d-2$;
+\item never data of day $d$, nor realised quantities of $d-1$, in a decision for day $d$.
+\end{itemize}
+Read Section 3 of the Assignment 1 brief again if needed.}%
+{\textbf{Aceleași reguli pentru date ca la tema 1}: ore CET \texttt{h00}--\texttt{h23}; valori orare (media sferturilor de oră după 1 octombrie 2025);
+și setul de informații de la închiderea porții (ora 12:00 CET în ziua $d-1$), verificat de \texttt{ea.leakage\_check}:
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item prețurile: toate zilele pînă în $d-1$ (licitația pentru ziua $d-1$ s-a încheiat în ziua $d-2$);
+\item cantitățile realizate (consum, producție eoliană, solară, hidro, volumele și fluxurile de numerar care depind de ele): numai pînă în ziua $d-2$, ultima zi măsurată; substitutele pentru ziua $d$ provin din zilele $d-2$, $d-3$ și $d-7$;
+\item combustibilii și certificatele de emisii: ultima cotație de închidere dinainte de ora 12:00 din ziua $d-1$, în practică cea din ziua $d-2$;
+\item niciodată date din ziua $d$ sau cantități realizate din ziua $d-1$ într-o decizie pentru ziua $d$.
+\end{itemize}
+Recitiți la nevoie secțiunea 3 din enunțul temei 1.}
+
+\section{\T{Tasks}{Sarcinile}}
+\task{1}{\T{Your exposure and the market context}{Expunerea și contextul pieței}}{8}
+\T{(a) Monthly table from January 2023 to the end of your test window: volume (MWh), cash flow (EUR), base price $\bar P_m$ (mean of all hours),
+capture price $\text{CP}_m=\sum Q_{d,h}P_{d,h}/\sum Q_{d,h}$ and capture rate $\text{CP}_m/\bar P_m$ (B: oracle and naive profit per month instead).
+(b) Role facts on the test window: H --- volume of the wet year 2023 vs the dry year 2025; R --- volume produced in negative-price hours;
+S --- the profile cost premium $\text{CP}-\bar P$; B --- mean daily max--min price spread.
+(c) \textbf{Clean spark spread} (CSS) of a gas plant for each month of your window, as context for the marginal price setter:}%
+{(a) Tabel lunar din ianuarie 2023 pînă la sfîrșitul ferestrei de test: volum (MWh), flux de numerar (EUR), preț de bază $\bar P_m$ (media tuturor orelor),
+prețul capturat $\text{CP}_m=\sum Q_{d,h}P_{d,h}/\sum Q_{d,h}$ și rata de captură $\text{CP}_m/\bar P_m$ (B: în schimb, profitul lunar al strategiei oracol și al celei naive).
+(b) Fapte ale rolului pe fereastra de test: H --- volumul anului ploios 2023 vs.\ al anului secetos 2025; R --- volumul produs în orele cu preț negativ;
+S --- prima de cost a profilului $\text{CP}-\bar P$; B --- diferența medie zilnică maxim--minim a prețului.
+(c) \textbf{Marja curată a centralei pe gaze} (CSS, \emph{clean spark spread}) pentru fiecare lună a ferestrei, ca reper pentru cine stabilește prețul marginal:}
+\begin{equation}
+\text{CSS}_m=\bar P^{\,\text{peak}}_m-\frac{\text{TTF}_m}{\eta_g}-\frac{e_g}{\eta_g}\,\text{EUA}_m,\qquad \eta_g=0\ds55,\quad e_g=0\ds202\ \text{tCO}_2/\text{MWh}_{\text{th}},
+\end{equation}
+\T{\where\ $\bar P^{\text{peak}}_m$ is the mean price of hours h08--h19 on weekdays (base CSS: use the base price $\bar P_m$ instead), TTF$_m$ the monthly gas price at the Dutch Title Transfer Facility hub (EUR/MWh, World Bank, \texttt{ea.ttf\_monthly()}),
+EUA$_m$ the monthly mean price of an EU emission allowance (EUA; auctions of the European Energy Exchange, EEX, until 2025; for 2026 the price of a physically backed exchange-traded commodity, ETC, as proxy, about 4\% below auction prices: mention the level break; \texttt{ea.eua\_daily()}, columns \texttt{eua\_eex\_auction\_eur\_t} then \texttt{eua\_etc\_co2l\_eur\_per\_unit}), $\eta_g$ the plant efficiency and $e_g$ the emission factor of gas.}%
+{\where\ $\bar P^{\text{peak}}_m$ este prețul mediu al orelor h08--h19 din zilele lucrătoare (CSS de bază: folosiți prețul de bază $\bar P_m$), TTF$_m$ prețul lunar al gazelor naturale pe hubul olandez TTF (\emph{Title Transfer Facility}; EUR/MWh, Banca Mondială, \texttt{ea.ttf\_monthly()}),
+EUA$_m$ prețul mediu lunar al certificatului de emisii al UE (EUA, \emph{EU Allowance}; licitațiile Bursei Europene de Energie, EEX, pînă în 2025; pentru 2026, ca substitut, prețul unui instrument tranzacționat la bursă garantat fizic, ETC, cu circa 4\% sub prețurile de licitație: menționați saltul de nivel; \texttt{ea.eua\_daily()}, coloanele \texttt{eua\_eex\_auction\_eur\_t}, apoi \texttt{eua\_etc\_co2l\_eur\_per\_unit}), $\eta_g$ randamentul centralei, iar $e_g$ factorul de emisie al gazelor.}
+\out{\T{monthly table; role-facts table; CSS table (base and peak); two sentences on what the numbers mean for your role.}{tabelul lunar; tabelul faptelor rolului; tabelul CSS (bază și vîrf); două propoziții despre ce înseamnă numerele pentru rolul dumneavoastră.}}
+
+\task{2}{\T{Probabilistic forecasts: LEAR vs a machine-learning model}{Prognoze probabilistice: LEAR vs un model de învățare automată}}{8}
+\T{Forecast every hour of burn-in + selection + test with: Naive and LEAR (exactly as in Assignment 1, your \texttt{lear\_window}), and \textbf{one} machine-learning (ML) model of your choice:
+a multi-output neural network (\texttt{MLPRegressor}, 24 outputs, the 247 LEAR inputs, at least 2 random seeds averaged) \cite{Lago2021},
+or gradient-boosted trees / a random forest (one model per hour). Rolling calibration on your \texttt{lear\_window}, recalibrated at least every 7 days, with the same 247 inputs; fix \texttt{random\_state} so that \texttt{ea.leakage\_check} is deterministic. Add the equal-weight average of LEAR and ML.
+If you use early stopping, validate on the \emph{last} days of the calibration window: \texttt{MLPRegressor(early\_stopping=True)} and \texttt{HistGradientBoostingRegressor} (by default above 10,000 rows) draw a \emph{random} validation subset, which mixes later days into the training data.
+Turn each into 99 quantiles with HS and CP (Assignment 1, Task 6; your \texttt{error\_window}).
+Report MAE, RMSE, APS, coverage of the 50\% and 90\% intervals, and DM tests (HAC) for Naive vs LEAR, LEAR vs ML, LEAR vs average.}%
+{Prognozați fiecare oră din rodaj + selecție + test cu: Naive și LEAR (exact ca la tema 1, cu \texttt{lear\_window}) și \textbf{un} model de învățare automată (ML, \emph{machine learning}) la alegere:
+o rețea neurală cu ieșiri multiple (\texttt{MLPRegressor}, 24 de ieșiri, cele 247 de intrări LEAR, cel puțin 2 semințe aleatoare mediate) \cite{Lago2021},
+sau arbori cu gradient boosting / o pădure aleatoare (cîte un model pe oră). Calibrare glisantă pe \texttt{lear\_window}, recalibrare cel puțin o dată la 7 zile, cu aceleași 247 de intrări; fixați \texttt{random\_state} pentru ca \texttt{ea.leakage\_check} să fie determinist. Adăugați media cu ponderi egale a LEAR și ML.
+Dacă folosiți oprirea timpurie (\emph{early stopping}), validați pe \emph{ultimele} zile ale ferestrei de calibrare: \texttt{MLPRegressor(early\_stopping=True)} și \texttt{HistGradientBoostingRegressor} (implicit, peste 10.000 de rînduri) aleg o submulțime de validare \emph{aleatoare}, care amestecă zile ulterioare în datele de antrenare.
+Transformați fiecare prognoză în 99 de cuantile cu HS și CP (tema 1, sarcina 6; \texttt{error\_window}).
+Raportați MAE, RMSE, APS, acoperirea intervalelor de 50\% și 90\% și testele DM (HAC) pentru Naive vs LEAR, LEAR vs ML, LEAR vs medie.}
+
+\T{\textbf{Optional bonus (+5, total capped at 100):} a zero-shot foundation model (e.g.\ Chronos-2 or TabPFN) \cite{WeronAIDA}. Record the exact model version and its pre-training cutoff date;
+discuss whether the pre-training data may already contain your test window (data contamination).}%
+{\textbf{Bonus opțional (+5, totalul plafonat la 100):} un model fundamental fără antrenare suplimentară (\emph{zero-shot}, de exemplu Chronos-2 sau TabPFN) \cite{WeronAIDA}. Notați versiunea exactă a modelului și data-limită a datelor de pre-antrenare;
+discutați dacă datele de pre-antrenare pot conține deja fereastra dumneavoastră de test (contaminarea datelor).}
+\out{\T{table T2 (rows = model + HS/CP; columns MAE, RMSE, APS, cov50, cov90); DM $p$-values; one sentence: does ML beat LEAR on your window, and is it significant?}{tabelul T2 (rînduri = model + HS/CP; coloane MAE, RMSE, APS, cov50, cov90); valorile $p$ DM; o propoziție: bate ML modelul LEAR pe fereastra dumneavoastră și este diferența semnificativă?}}
+
+\task{3}{\T{The daily decision, the decision ledger and its economic value}{Decizia zilnică, registrul deciziilor și valoarea economică}}{20}
+\T{Apply your role's rule every selection and every test day with these signals: \textbf{oracle} (actual prices --- an upper bound, never achievable), the \textbf{naive}, \textbf{LEAR} and \textbf{ML} point forecasts,
+and (B and R only) the \textbf{quantile rule} with the \textbf{LEAR + CP} quantiles for each $\alpha$ in \texttt{risk\_knob} $=\{0\ds5,\dots,0\ds9\}$ (prescribed).
+\textbf{Choose your recommended signal (and $\alpha$) by the highest total cash flow on the selection period}, freeze it, and report its test value next to the other signals; the instructor's \texttt{MODE="latest"} re-run is a second unseen check.
+Realised cash flows always use actual prices $P_{d,h}$. $\hat q^{\alpha}_{d,h}$ is the $\alpha$-quantile forecast.}%
+{Aplicați regula rolului în fiecare zi de selecție și în fiecare zi de test cu aceste semnale: \textbf{oracol} (prețurile realizate --- o limită superioară, niciodată realizabilă), prognozele punctuale \textbf{naive}, \textbf{LEAR} și \textbf{ML}
+și (numai B și R) \textbf{regula pe cuantile} cu cuantilele \textbf{LEAR + CP}, pentru fiecare $\alpha$ din \texttt{risk\_knob} $=\{0\ds5,\dots,0\ds9\}$ (impuse).
+\textbf{Alegeți semnalul recomandat (și $\alpha$) după cel mai mare flux de numerar total pe perioada de selecție}, înghețați-l și raportați valoarea lui pe test alături de celelalte semnale; rularea profesorului cu \texttt{MODE="latest"} este a doua verificare pe date nevăzute.
+Fluxurile de numerar realizate folosesc întotdeauna prețurile realizate $P_{d,h}$. $\hat q^{\alpha}_{d,h}$ este prognoza cuantilei de ordin $\alpha$.}
+\begin{itemize}
+\item[\textbf{B}] \T{Choose a charging block of $E$ consecutive hours starting at hour $t_c$ and a discharging block starting at $t_x\ge t_c+E$, with $t_x+E\le24$, that maximise the signal value
+$V=\eta\sum_{k=0}^{E-1}s^{\text{sell}}_{d,t_x+k}-\sum_{k=0}^{E-1}s^{\text{buy}}_{d,t_c+k}-c\,\eta E$; trade only if $V>0$ (price-taker orders, both legs executed).
+Point rule: $s^{\text{buy}}=s^{\text{sell}}=\hat P$. Quantile rule: $s^{\text{buy}}=\hat q^{\alpha}$ (pessimistic buy price), $s^{\text{sell}}=\hat q^{1-\alpha}$ (pessimistic sell price).
+Profit $\pi_d=\eta\sum_k P_{d,t_x+k}-\sum_k P_{d,t_c+k}-c\,\eta E$ (0 on days without trade). Baseline for B: no operation (cash flow 0). This simplifies \cite{Uniejewski2021,Serafin2024}.}%
+{Alegeți un bloc de încărcare de $E$ ore consecutive care începe la ora $t_c$ și un bloc de descărcare care începe la $t_x\ge t_c+E$, cu $t_x+E\le24$, care maximizează valoarea semnalului
+$V=\eta\sum_{k=0}^{E-1}s^{\text{vînz}}_{d,t_x+k}-\sum_{k=0}^{E-1}s^{\text{cump}}_{d,t_c+k}-c\,\eta E$; tranzacționați numai dacă $V>0$ (ordine fără limită de preț, ambele părți executate).
+Regula punctuală: $s^{\text{cump}}=s^{\text{vînz}}=\hat P$. Regula pe cuantile: $s^{\text{cump}}=\hat q^{\alpha}$ (preț de cumpărare pesimist), $s^{\text{vînz}}=\hat q^{1-\alpha}$ (preț de vînzare pesimist).
+Profitul $\pi_d=\eta\sum_k P_{d,t_x+k}-\sum_k P_{d,t_c+k}-c\,\eta E$ (0 în zilele fără tranzacție). Referința pentru B: fără funcționare (flux 0). Este o simplificare a abordării din \cite{Uniejewski2021,Serafin2024}.}
+\item[\textbf{H}] \T{The day's reservoir energy is planned at gate closure from the last metered day, $E_d=\phi\sum_h\text{reservoir}_{d-2,h}$ (persistence; water management fixes the release before gate closure). A share $1-f$ (\texttt{flex\_share} $=f$) runs flat (minimum flow);
+the flexible energy $fE_d$ goes to the hours with the highest signal, at most $(\texttt{pmax\_factor}\cdot E_d/24)$ MW per hour in total. Run-of-river is not dispatchable.
+Baseline: the whole $E_d$ flat. Value = revenue of the rule $-$ revenue of the baseline.}%
+{Energia zilei din lac se planifică la închiderea porții pe baza ultimei zile măsurate, $E_d=\phi\sum_h\text{acumulare}_{d-2,h}$ (persistență; gospodărirea apelor stabilește volumul uzinat înainte de închiderea porții). O parte $1-f$ (\texttt{flex\_share} $=f$) se produce uniform (debit minim);
+energia flexibilă $fE_d$ merge în orele cu semnalul cel mai mare, cel mult $(\texttt{pmax\_factor}\cdot E_d/24)$ MW pe oră în total. Firul de apă nu este dispecerizabil.
+Referința: tot $E_d$ uniform. Valoarea = venitul regulii $-$ venitul referinței.}
+\item[\textbf{R}] \T{Curtail hour $h$ if the signal is below your threshold $\theta$ (\texttt{curtail\_threshold\_eur}). Point rule: $\hat P_{d,h}<\theta$.
+Quantile rule: $\hat q^{\alpha}_{d,h}<\theta$, i.e.\ curtail only if the price is below $\theta$ with probability at least $\alpha$. Baseline: never curtail.}%
+{Reduceți producția (\emph{curtailment}) în ora $h$ dacă semnalul este sub pragul $\theta$ (\texttt{curtail\_threshold\_eur}). Regula punctuală: $\hat P_{d,h}<\theta$.
+Regula pe cuantile: $\hat q^{\alpha}_{d,h}<\theta$, adică reduceți numai dacă prețul este sub $\theta$ cu probabilitate de cel puțin $\alpha$. Referința: nu reduceți niciodată.}
+\item[\textbf{S}] \T{The shift is planned on the profile known at gate closure, $\tilde Q_{d,h}=Q_{d-2,h}$: every hour gives up $f\tilde Q_{d,h}$, and the flexible energy $f\sum_h\tilde Q_{d,h}$ is placed in the hours with the lowest signal, at most $\texttt{max\_load\_factor}\cdot\bar Q$ MW per hour in total (on the plan); the realised volume is $Q_{d,h}-f\tilde Q_{d,h}+\text{added}_h$.
+Baseline: no shifting. Value = baseline cost $-$ cost of the rule.}%
+{Mutarea se planifică pe profilul cunoscut la închiderea porții, $\tilde Q_{d,h}=Q_{d-2,h}$: fiecare oră cedează $f\tilde Q_{d,h}$, iar energia flexibilă $f\sum_h\tilde Q_{d,h}$ este mutată în orele cu semnalul cel mai mic, cel mult $\texttt{max\_load\_factor}\cdot\bar Q$ MW pe oră în total (pe plan); volumul realizat este $Q_{d,h}-f\tilde Q_{d,h}+\text{adăugat}_h$.
+Referința: fără mutare. Valoarea = costul referinței $-$ costul regulii.}
+\end{itemize}
+\T{\textbf{Capture of the oracle} $=$ value of the rule / value of the oracle (B: profit / oracle profit).
+\textbf{ES95 and daily CFaR95 in T3, T4 and T6}: $\text{CFaR}^{95}=\overline X-Q_{0\ds05}(X)$ and $\text{ES}^{95}=\overline X-\text{mean of the worst 5\% of }X$, positive numbers, over the days of the test window.
+\textbf{Decision ledger} (your chosen rule only; amounts in EUR): one row per test day with the columns \texttt{date, info\_cutoff, forecast\_used, decision, volume\_MWh, settlement\_price\_summary, cash\_flow\_EUR, baseline\_cash\_flow\_EUR, difference\_EUR}.}%
+{\textbf{Captura față de oracol} $=$ valoarea regulii / valoarea oracolului (B: profitul / profitul oracolului).
+\textbf{ES95 și CFaR95 zilnic în T3, T4 și T6}: $\text{CFaR}^{95}=\overline X-Q_{0\ds05}(X)$ și $\text{ES}^{95}=\overline X-\text{media celor mai proaste 5\% valori ale lui }X$, numere pozitive, pe zilele ferestrei de test.
+\textbf{Registrul deciziilor} (numai regula aleasă; sume în EUR): un rînd pe zi de test, cu coloanele \texttt{date, info\_cutoff, forecast\_used, decision, volume\_MWh, settlement\_price\_summary, cash\_flow\_EUR, baseline\_cash\_flow\_EUR, difference\_EUR}.}
+\out{\T{table T3 (rows = signals; columns total cash flow, value vs baseline, days traded/changed, worst day, ES95 of the daily cash flow (Expected Shortfall, defined in Task 5), capture of oracle in \%); the ledger CSV; your choice of rule in one sentence.}%
+{tabelul T3 (rînduri = semnale; coloane flux total, valoare față de referință, zile cu tranzacții/modificări, cea mai proastă zi, deficitul așteptat ES95 al fluxului zilnic (definit în sarcina 5), captura față de oracol în \%); registrul CSV; regula aleasă, într-o propoziție.}}
+
+\task{4}{\T{Energy risk: price, volume, profile, imbalance and basis}{Riscul energetic: preț, volum, profil, dezechilibru și bază}}{12}
+\T{Energy cash flows are price $\times$ volume, and the two move together. Measure the risks that matter for your role, on real data:}%
+{Fluxurile de numerar din energie sînt preț $\times$ volum, iar cele două se mișcă împreună. Măsurați riscurile care contează pentru rolul dumneavoastră, pe date reale:}
+\begin{enumerate}[label=(\alph*)]
+\item \T{\textbf{Price--volume decomposition} (H, R, S). For each month $m$ of your window compare with the same month one year earlier ($m-12$), with $Q_m$ the monthly volume and $\text{CP}_m$ the capture price:}%
+{\textbf{Descompunerea preț--volum} (H, R, S). Pentru fiecare lună $m$ din fereastră comparați cu aceeași lună de anul trecut ($m-12$), cu $Q_m$ volumul lunar și $\text{CP}_m$ prețul capturat:}
+\begin{equation}
+\underbrace{Q_m\text{CP}_m-Q_{m-12}\text{CP}_{m-12}}_{\Delta\text{CF}_m}=\underbrace{\Delta Q_m\,\text{CP}_{m-12}}_{\text{\T{volume effect}{efectul de volum}}}+\underbrace{Q_{m-12}\,\Delta\text{CP}_m}_{\text{\T{price effect}{efectul de preț}}}+\underbrace{\Delta Q_m\,\Delta\text{CP}_m}_{\text{\T{joint effect}{efectul comun}}},
+\end{equation}
+\T{\where\ $\Delta Q_m=Q_m-Q_{m-12}$ and $\Delta\text{CP}_m=\text{CP}_m-\text{CP}_{m-12}$. Also report the correlation between daily volume and the daily base price on the test window.
+A negative correlation for a producer is a \emph{natural hedge} (dry year: less water, higher prices); a positive one for a buyer means you consume more when power is expensive.}%
+{\where\ $\Delta Q_m=Q_m-Q_{m-12}$ și $\Delta\text{CP}_m=\text{CP}_m-\text{CP}_{m-12}$. Raportați și corelația dintre volumul zilnic și prețul zilnic de bază pe fereastra de test.
+O corelație negativă la un producător este o \emph{acoperire naturală} (an secetos: mai puțină apă, prețuri mai mari); una pozitivă la un cumpărător înseamnă că consumați mai mult cînd energia este scumpă.}
+\item \T{\textbf{Role risk.} H: volume and revenue of the wet year 2023 vs the dry year 2025 (the dry-year shortfall). R: capture rate per year 2023--2026 (solar cannibalisation) and the share of your volume produced at negative prices.
+S: the profile cost premium $\text{CP}-\bar P$ in EUR/MWh (what a flat base-load contract does not cover). B: mean and 5\% quantile of the daily max--min spread, and the number of days your chosen rule lost money.}%
+{\textbf{Riscul rolului.} H: volumul și venitul anului ploios 2023 vs.\ al anului secetos 2025 (deficitul din anul secetos). R: rata de captură pe ani 2023--2026 (canibalizarea solară) și ponderea volumului produs la prețuri negative.
+S: prima de cost a profilului $\text{CP}-\bar P$ în EUR/MWh (ce nu acoperă un contract pe bandă). B: media și cuantila de 5\% a diferenței zilnice maxim--minim și numărul zilelor în care regula aleasă a pierdut bani.}
+\item \T{\textbf{Imbalance exposure} (H: run-of-river; R; S). Any difference between the volume you nominate day-ahead and the volume you deliver is settled on the balancing market (\emph{piața de echilibrare}) at the imbalance price.
+Our public data contain no imbalance prices, so measure the \emph{volume}: with the persistence forecast $\tilde Q_{d,h}=Q_{d-2,h}$ (the last metered day at gate closure), the imbalance volume is $\sum_{d,h}|Q_{d,h}-\tilde Q_{d,h}|$ MWh per year;
+report the cost per 10 EUR/MWh of average imbalance-price spread. Do not invent imbalance prices.}%
+{\textbf{Expunerea la dezechilibre} (H: fir de apă; R; S). Orice diferență între volumul notificat pentru ziua următoare și cel livrat se decontează pe piața de echilibrare (\emph{balancing market}) la prețul dezechilibrului.
+Datele noastre publice nu conțin prețuri de dezechilibru, deci măsurați \emph{volumul}: cu prognoza de persistență $\tilde Q_{d,h}=Q_{d-2,h}$ (ultima zi măsurată la închiderea porții), volumul dezechilibrelor este $\sum_{d,h}|Q_{d,h}-\tilde Q_{d,h}|$ MWh pe an;
+raportați costul pentru fiecare 10 EUR/MWh de diferență medie a prețului de dezechilibru. Nu inventați prețuri de dezechilibru.}
+\item \T{\textbf{Regional basis RO--HU.} On the test window: mean of $P^{\text{RO}}_{d,h}-P^{\text{HU}}_{d,h}$, its 5\% and 95\% quantiles, and the share of hours with $|P^{\text{RO}}-P^{\text{HU}}|>1$ EUR/MWh (market decoupling, e.g.\ summer 2024).
+This is the basis risk of hedging Romanian exposure with a contract settled on a neighbouring price (Task 6).}%
+{\textbf{Baza regională RO--HU.} Pe fereastra de test: media lui $P^{\text{RO}}_{d,h}-P^{\text{HU}}_{d,h}$, cuantilele ei de 5\% și 95\% și ponderea orelor cu $|P^{\text{RO}}-P^{\text{HU}}|>1$ EUR/MWh (decuplarea piețelor, de exemplu vara 2024).
+Acesta este riscul de bază al acoperirii unei expuneri românești cu un contract decontat pe prețul unei piețe vecine (sarcina 6).}
+\item \T{\textbf{One summary of the cash-flow distribution}: monthly Cash-Flow-at-Risk from January 2023, $\text{CFaR}^{95}=\overline{X}_m-Q_{0\ds05}(X_m)$ ($X_m$ = monthly sum of $X_d$),
+and on the test window the daily $\text{CFaR}^{95}$ and the mean of the worst 5\% of days below the mean (an Expected-Shortfall-type number). The formal VaR/ES module with backtests is Task 5.}%
+{\textbf{Un singur rezumat al repartiției fluxului de numerar}: fluxul de numerar la risc lunar (CFaR, \emph{Cash-Flow-at-Risk}) din ianuarie 2023, $\text{CFaR}^{95}=\overline{X}_m-Q_{0\ds05}(X_m)$ ($X_m$ = suma lunară a lui $X_d$),
+și, pe fereastra de test, $\text{CFaR}^{95}$ zilnic și media celor mai proaste 5\% zile sub medie (un număr de tip deficit așteptat, ES). Modulul formal VaR/ES cu testare retrospectivă este sarcina 5.}
+\end{enumerate}
+\out{\T{decomposition table (monthly, kEUR); a role-risk table; imbalance volume and cost per 10 EUR/MWh; RO--HU basis table and a figure of the daily mean spread; CFaR numbers; two sentences: which risk dominates for you?}%
+{tabelul descompunerii (lunar, kEUR); un tabel al riscului rolului; volumul dezechilibrelor și costul pentru 10 EUR/MWh; tabelul bazei RO--HU și figura diferenței medii zilnice; cifrele CFaR; două propoziții: ce risc domină pentru dumneavoastră?}}
+
+\task{5}{\T{VaR and ES of your cash flow, with backtests}{VaR și ES ale fluxului de numerar, cu testare retrospectivă}}{16}
+\T{One module, applied to \emph{your role's} daily cash flow $X_d$ (Table~\ref{tab:roles}; a procurement cost for S), not to share prices. Use $X_d$ from 2022 to the end of your window. For each test day $d$ and $\alpha\in\{0\ds95,0\ds99\}$,
+forecast the lower tail of $X_d$ with the information available at gate closure only, i.e.\ cash flows up to day $d-2$ (a two-day-ahead forecast):}%
+{Un singur modul, aplicat fluxului zilnic de numerar $X_d$ al \emph{rolului dumneavoastră} (tabelul~\ref{tab:roles}; un cost de achiziție pentru S), nu prețurilor acțiunilor. Folosiți $X_d$ din 2022 pînă la sfîrșitul ferestrei. Pentru fiecare zi de test $d$ și $\alpha\in\{0\ds95,0\ds99\}$,
+prognozați coada inferioară a lui $X_d$ numai cu informația disponibilă la închiderea porții, adică fluxurile de numerar pînă în ziua $d-2$ (o prognoză pentru două zile înainte):}
+\begin{equation}
+q^{\alpha}_d=Q_{1-\alpha}\big(X_d\mid\mathcal F_{d-2}\big),\qquad \text{VaR}^{\alpha}_d=\mu_d-q^{\alpha}_d\ (\ge 0),\qquad
+\text{ES}^{\alpha}_d=\mu_d-\E\big[X_d\mid X_d<q^{\alpha}_d,\mathcal F_{d-2}\big],
+\end{equation}
+\T{\where\ $\mathcal F_{d-2}$ is the information up to day $d-2$, $Q_{1-\alpha}$ the $(1-\alpha)$-quantile and $\mu_d$ the forecast mean (HS and Normal: mean of the 250 days up to $d-2$; MC: the two-step-ahead conditional mean of the AR--GARCH model, \texttt{arch\_model(X, mean="AR", lags=[1,7], vol="GARCH", dist="t")}). VaR (Value-at-Risk) and ES (Expected Shortfall) are \emph{positive} amounts of money below the expected cash flow, as in Cash-Flow-at-Risk (lecture 4).
+A \textbf{breach} is $I_d=\1\{X_d<q^{\alpha}_d\}$. Three methods: (i) historical simulation (HS) on the last 250 days;
+(ii) Normal with the mean and standard deviation of the last 250 days; (iii) Monte Carlo (MC) from an AR(1,7)--GARCH(1,1) model with Student-$t$ errors (AR lags 1 and 7 in the mean), re-estimated every 21 days on the last 750 days, 20\,000 draws.
+Backtest with the Kupiec test (Assignment 1, LR$_{\text{UC}}$, now with $p_0=1-\alpha$) and the Christoffersen independence test \cite{Christoffersen1998}:}%
+{\where\ $\mathcal F_{d-2}$ este informația pînă în ziua $d-2$, $Q_{1-\alpha}$ cuantila de ordin $1-\alpha$, iar $\mu_d$ media prognozată (HS și normală: media celor 250 de zile pînă în $d-2$; MC: media condiționată a modelului AR--GARCH, cu doi pași înainte, \texttt{arch\_model(X, mean="AR", lags=[1,7], vol="GARCH", dist="t")}). VaR (valoarea la risc, \emph{Value-at-Risk}) și ES (deficitul așteptat, \emph{Expected Shortfall}) sînt sume \emph{pozitive} de bani sub fluxul așteptat, ca la fluxul de numerar la risc (cursul 4).
+O \textbf{depășire} este $I_d=\1\{X_d<q^{\alpha}_d\}$. Trei metode: (i) simularea istorică (HS) pe ultimele 250 de zile;
+(ii) repartiția normală cu media și abaterea standard din ultimele 250 de zile; (iii) Monte Carlo (MC) dintr-un model AR(1,7)--GARCH(1,1) cu erori Student-$t$ (decalajele 1 și 7 în medie), reestimat la fiecare 21 de zile pe ultimele 750 de zile, 20\,000 de extrageri.
+Testați retrospectiv cu testul Kupiec (tema 1, LR$_{\text{UC}}$, acum cu $p_0=1-\alpha$) și cu testul de independență Christoffersen \cite{Christoffersen1998}:}
+\begin{equation}
+\text{LR}_{\text{ind}}=-2\ln\frac{(1-\hat\pi)^{n_{00}+n_{10}}\hat\pi^{\,n_{01}+n_{11}}}{(1-\hat\pi_{01})^{n_{00}}\hat\pi_{01}^{\,n_{01}}(1-\hat\pi_{11})^{n_{10}}\hat\pi_{11}^{\,n_{11}}}\sim\chi^2_1,
+\end{equation}
+\T{\where\ $n_{ij}$ counts days with $I_{d-1}=i$ and $I_d=j$, $\hat\pi_{01}=n_{01}/(n_{00}+n_{01})$, $\hat\pi_{11}=n_{11}/(n_{10}+n_{11})$, $\hat\pi=(n_{01}+n_{11})/(n_{00}+n_{01}+n_{10}+n_{11})$.
+\textbf{ES check with its uncertainty}: on the breach days compare the realised shortfall $\mu_d-X_d$ with the forecast $\text{ES}^{\alpha}_d$; report the mean gap and a 90\% bootstrap interval (resample the breach days 2\,000 times).
+With 365 days and $\alpha=0\ds99$ you expect only 3--4 breaches: the tests have little power and ES comparisons are very imprecise \cite{PeleES2026}. Say so; do not rank methods on two or three tail days.}%
+{\where\ $n_{ij}$ numără zilele cu $I_{d-1}=i$ și $I_d=j$, $\hat\pi_{01}=n_{01}/(n_{00}+n_{01})$, $\hat\pi_{11}=n_{11}/(n_{10}+n_{11})$, $\hat\pi=(n_{01}+n_{11})/(n_{00}+n_{01}+n_{10}+n_{11})$.
+\textbf{Verificarea ES și incertitudinea ei}: în zilele cu depășiri comparați deficitul realizat $\mu_d-X_d$ cu prognoza $\text{ES}^{\alpha}_d$; raportați diferența medie și un interval bootstrap de 90\% (reeșantionați zilele cu depășiri de 2\,000 de ori).
+Cu 365 de zile și $\alpha=0\ds99$ vă așteptați la doar 3--4 depășiri: testele au putere mică, iar comparațiile ES sînt foarte imprecise \cite{PeleES2026}. Spuneți acest lucru; nu ierarhizați metodele pe două-trei zile extreme.}
+\out{\T{table T5 (rows = 3 methods $\times$ 2 levels; columns breaches, expected, Kupiec $p$, Christoffersen $p$, mean VaR, mean ES, ES gap with 90\% interval); figure of $X_d$ with the three 99\% quantiles; the method you would use and why.}%
+{tabelul T5 (rînduri = 3 metode $\times$ 2 niveluri; coloane depășiri, așteptate, $p$ Kupiec, $p$ Christoffersen, VaR mediu, ES mediu, diferența ES cu interval de 90\%); figura lui $X_d$ cu cele trei cuantile de 99\%; metoda pe care ați folosi-o și de ce.}}
+
+\task{6}{\T{Contract or hedge design}{Proiectarea contractului sau a acoperirii riscului}}{12}
+\T{\textbf{No invented forward prices.} Our free data contain no executable forward or futures history. EEX lists Romanian base and peak futures and OPCOM runs bilateral contract markets,
+but liquidity and price history are not public in our data set. Therefore you compare structures at \textbf{equal mean}: the contract price $K$ is set to the value that gives the same average
+cash flow as the unhedged position over the \emph{selection} period, and is then frozen for the test. $K$ is a comparison device, not a forecast and not a market quote. Then only the risk differs.
+Plan volume $\hat Q_d$ = mean daily volume of the same calendar month one year earlier (known when the contract is signed).}%
+{\textbf{Fără prețuri forward inventate.} Datele noastre gratuite nu conțin istoric de contracte forward sau futures tranzacționabile. EEX listează contracte futures românești de bază și de vîrf, iar OPCOM organizează piețe de contracte bilaterale,
+dar lichiditatea și istoricul de prețuri nu sînt publice în setul nostru de date. De aceea comparați structurile la \textbf{medie egală}: prețul contractului $K$ este valoarea care dă același flux mediu
+ca poziția neacoperită pe perioada de \emph{selecție} și apoi rămîne fix pe test. $K$ este un instrument de comparație, nu o prognoză și nu o cotație de piață. Astfel diferă doar riscul.
+Volumul planificat $\hat Q_d$ = volumul zilnic mediu din aceeași lună calendaristică a anului anterior (cunoscut la semnarea contractului).}
+\begin{itemize}
+\item[\textbf{H, S}] \T{Base-load swap on a share $w\in\{0,0\ds25,0\ds5,0\ds75,1\}$ of the plan, all amounts in EUR: $X^{(w)}_d=X_d+s\,w\,\hat Q_d(K-\bar P_d)$ with $s=+1$ (H sells) or $s=-1$ (S buys),
+$\bar P_d$ the daily base price and $\hat Q_d$ in MWh per day. Minimum-variance ratio $w^*=s\,\text{Cov}(X_d,\hat Q_d\bar P_d)/\text{Var}(\hat Q_d\bar P_d)$ (lecture 5), estimated on the selection period and capped at 1. Report on the test period the mean, standard deviation, daily CFaR$^{95}$, ES$^{95}$ and worst day for each $w$ and for $w^*$,
+the correlation between volume and price (the ``natural hedge'' of a hydro producer), and the basis that a base-load contract leaves open (profile and volume).
+Repeat the table with the swap settled on the \emph{Hungarian} daily base price (a cross-hedge): the extra risk is the RO--HU basis of Task 4(d).}%
+{Swap pe bandă (bază) pentru o parte $w\in\{0,0\ds25,0\ds5,0\ds75,1\}$ din plan, toate sumele în EUR: $X^{(w)}_d=X_d+s\,w\,\hat Q_d(K-\bar P_d)$ cu $s=+1$ (H vinde) sau $s=-1$ (S cumpără),
+$\bar P_d$ fiind prețul zilnic de bază, iar $\hat Q_d$ în MWh pe zi. Raportul de acoperire cu varianță minimă $w^*=s\,\text{Cov}(X_d,\hat Q_d\bar P_d)/\text{Var}(\hat Q_d\bar P_d)$ (cursul 5), estimat pe perioada de selecție și limitat la 1. Raportați pe perioada de test media, abaterea standard, CFaR$^{95}$ zilnic, ES$^{95}$ și cea mai proastă zi pentru fiecare $w$ și pentru $w^*$,
+corelația dintre volum și preț („acoperirea naturală'' a producătorului hidro) și riscul de bază lăsat deschis de un contract pe bandă (profil și volum).
+Repetați tabelul cu swap-ul decontat pe prețul zilnic de bază \emph{maghiar} (acoperire încrucișată): riscul suplimentar este baza RO--HU din sarcina 4(d).}
+\item[\textbf{R}] \T{Compare on the test period, for a share $s$ (\texttt{ppa\_hedge}): merchant; pay-as-produced PPA $(1-s)\sum_hQP+sK_1\sum_hQ$ with $K_1$ = capture price of the selection period;
+base-load PPA $\sum_hQP+s\bar Q\sum_h(K_2-P_{d,h})$ with $\bar Q$ the mean hourly output over all hours of the selection period (night included, no curtailment) and $K_2$ the mean base price of the selection period; two-sided CfD with hourly reference price and no payment in negative hours,
+$\sum_hQP+s\sum_{h:P\ge0}Q(K_3-P)$, with $K_3$ the capture price over non-negative hours of the selection period (all prices and volumes of the contracts are fixed on the selection period). Discuss capture-price risk, profile/volume basis and negative-price clauses (Romania's 2024--2025 CfD scheme; check its official reference-price definition).}%
+{Comparați pe perioada de test, pentru o parte $s$ (\texttt{ppa\_hedge}): vînzarea pe piață; PPA „cît se produce'' $(1-s)\sum_hQP+sK_1\sum_hQ$ cu $K_1$ = prețul capturat în perioada de selecție;
+PPA pe bandă $\sum_hQP+s\bar Q\sum_h(K_2-P_{d,h})$ cu $\bar Q$ producția orară medie pe toate orele perioadei de selecție (inclusiv noaptea, fără reducere) și $K_2$ prețul de bază mediu al perioadei de selecție; CfD bidirecțional cu preț de referință orar și fără plată în orele negative,
+$\sum_hQP+s\sum_{h:P\ge0}Q(K_3-P)$, cu $K_3$ prețul capturat în orele nenegative ale perioadei de selecție (toate prețurile și volumele contractelor se fixează pe perioada de selecție). Discutați riscul prețului capturat, riscul de bază de profil/volum și clauzele pentru prețuri negative (schema CfD a României 2024--2025; verificați definiția oficială a prețului de referință).}
+\item[\textbf{B}] \T{The risk--return frontier of the quantile rule: total profit, ES$^{95}$ of the daily profit, worst day and days traded for each $\alpha$, on the selection period (choose $\alpha$ there) and on the test period (report).
+Then price a fixed \textbf{tolling} contract (an offtaker pays a fixed EUR/MW/year and takes the merchant risk): the toll is the annualised profit of your chosen rule on the selection period; report the offtaker's result on the test period.}%
+{Frontiera risc--cîștig a regulii pe cuantile: profitul total, ES$^{95}$ al profitului zilnic, cea mai proastă zi și zilele cu tranzacții pentru fiecare $\alpha$, pe perioada de selecție (unde alegeți $\alpha$) și pe perioada de test (unde raportați).
+Apoi evaluați un contract fix de tip \textbf{tolling} (un cumpărător plătește o sumă fixă EUR/MW/an și preia riscul de piață): taxa este profitul anualizat al regulii alese pe perioada de selecție; raportați rezultatul cumpărătorului pe perioada de test.}
+\end{itemize}
+\out{\T{table T6 for your role; your recommended share or structure in one sentence, with its risk reduction in EUR.}{tabelul T6 pentru rolul dumneavoastră; proporția sau structura recomandată, într-o propoziție, cu reducerea riscului în EUR.}}
+
+\task{7}{\T{Robustness and an adverse scenario}{Robustețe și un scenariu advers}}{8}
+\T{(a) Value of your chosen rule per quarter: is it stable or earned in one quarter? (b) Role-specific adverse scenario (a stress test, not a forecast):
+B --- efficiency $-5$ percentage points and degradation cost doubled, applied to the LEAR point rule; H --- 30\% less water (all hydro volume $\times0\ds7$, prices unchanged) on the baseline exposure, compared with the real 2023 vs 2025 volumes;
+R --- every negative hour clears at the new floor $-600$ EUR/MWh (from 29 May 2026), merchant revenue with and without curtailment of those hours;
+S --- the 10 days with the highest daily base price get all 24 hourly prices $\times1\ds5$, baseline cost. Report the effect in EUR and on the daily CFaR$^{95}$.}%
+{(a) Valoarea regulii alese pe trimestre: este stabilă sau provine dintr-un singur trimestru? (b) Scenariu advers specific rolului (test de stres, nu prognoză):
+B --- randament $-5$ puncte procentuale și cost de degradare dublat, aplicate regulii punctuale LEAR; H --- cu 30\% mai puțină apă (tot volumul hidro $\times0\ds7$, prețuri neschimbate) pe expunerea de bază, comparat cu diferența reală de volum dintre 2023 și 2025;
+R --- fiecare oră cu preț negativ se închide la noul preț minim de $-600$ EUR/MWh (din 29 mai 2026), venitul de piață cu și fără reducerea producției în acele ore;
+S --- cele 10 zile cu cel mai mare preț zilnic de bază primesc toate cele 24 de prețuri orare $\times1\ds5$, costul de referință. Raportați efectul în EUR și asupra CFaR$^{95}$ zilnic.}
+
+\task{8}{\T{The memo: recommendation, reconciliation, your company}{Memoriul: recomandare, reconciliere, compania dumneavoastră}}{16}
+\T{\textbf{Page 1 (at most 450 words)}: (a) the decision in the first two lines --- which daily rule and which contract/hedge share, from when;
+(b) the money: value vs baseline and capture of oracle, the dominant energy risk and CFaR before and after the hedge; (c) what failed (backtest, quarter, scenario) and what you would change;
+(d) \textbf{How this applies in my company} (at most 150 words, public information only: e.g.\ PZU bidding, imbalance-cost exposure on the balancing market, bilateral or PPA pricing, battery dispatch).
+\textbf{Page 2 (appendix)}: parameter block; excerpts of T2--T6; ten ledger rows; and the \textbf{hand reconciliation} of your three \texttt{check\_days}: recompute the cash flow of each day by hand
+from the hourly prices and volumes (B: buy and sell prices of the chosen hours; H, S: the three largest hourly changes vs baseline; R: the curtailed hours, or ``no curtailment'').}%
+{\textbf{Pagina 1 (cel mult 450 de cuvinte)}: (a) decizia în primele două rînduri --- ce regulă zilnică și ce proporție de contract/acoperire, de cînd;
+(b) banii: valoarea față de referință și captura față de oracol, riscul energetic dominant și CFaR înainte și după acoperire; (c) ce nu a funcționat (testare retrospectivă, trimestru, scenariu) și ce ați schimba;
+(d) \textbf{Cum se aplică în compania mea} (cel mult 150 de cuvinte, numai informații publice: de exemplu ofertarea pe PZU, expunerea la costul dezechilibrelor (\emph{imbalance}) pe piața de echilibrare (\emph{balancing market}), prețul contractelor bilaterale sau PPA, dispecerizarea bateriilor).
+\textbf{Pagina 2 (anexa)}: blocul de parametri; extrase din T2--T6; zece rînduri din registru; și \textbf{reconcilierea manuală} a celor trei \texttt{check\_days}: recalculați de mînă fluxul de numerar al fiecărei zile
+din prețurile și volumele orare (B: prețurile de cumpărare și vînzare ale orelor alese; H, S: cele mai mari trei modificări orare față de referință; R: orele reduse sau „fără reducere'').}
+
+\section{\T{Worked examples (real data)}{Exemple rezolvate (date reale)}}
+\T{\textbf{(1) One battery day in the ledger} (1 MW / 1 MWh, $\eta=0\ds90$, $c=5$ EUR/MWh). Day 23 April 2026, information cut-off 22 April 12:00 CET.
+The LEAR forecast puts the cheapest hour at h13 and the most expensive later hour at h20; signal value $V=118\ds2>0$, so the battery trades.
+Actual prices: $P_{h13}=-0\ds39$, $P_{h20}=186\ds31$ EUR/MWh. Profit $=0\ds9\times186\ds31-(-0\ds39)-5\times0\ds9\times1=167\ds68+0\ds39-4\ds50=163\ds57$ EUR.
+Buying at a negative price \emph{earns} 0\ds39 EUR.}%
+{\textbf{(1) O zi de baterie în registru} (1 MW / 1 MWh, $\eta=0\ds90$, $c=5$ EUR/MWh). Ziua 23 aprilie 2026, momentul-limită 22 aprilie, ora 12:00 CET.
+Prognoza LEAR indică ora cea mai ieftină h13 și ora mai tîrzie cea mai scumpă h20; valoarea semnalului $V=118\ds2>0$, deci bateria tranzacționează.
+Prețuri realizate: $P_{h13}=-0\ds39$, $P_{h20}=186\ds31$ EUR/MWh. Profit $=0\ds9\times186\ds31-(-0\ds39)-5\times0\ds9\times1=167\ds68+0\ds39-4\ds50=163\ds57$ EUR.
+Cumpărarea la preț negativ \emph{aduce} 0\ds39 EUR.}
+
+\T{\textbf{(2) Price--volume decomposition, one month} (illustrative round numbers). Last year: $Q=100\,000$ MWh at $\text{CP}=100$ EUR/MWh; this year $Q=80\,000$ MWh at $\text{CP}=130$.
+$\Delta\text{CF}=10\ds4-10\ds0=+0\ds4$ million EUR $=$ volume effect $(-20\,000\times100=-2\ds0)$ $+$ price effect $(100\,000\times30=+3\ds0)$ $+$ joint effect $(-20\,000\times30=-0\ds6)$ million EUR.
+A dry month cost 2 million EUR of volume, but higher prices more than compensated: the natural hedge at work.}%
+{\textbf{(2) Descompunerea preț--volum pentru o lună} (numere rotunde, ilustrative). Anul trecut: $Q=100\,000$ MWh la $\text{CP}=100$ EUR/MWh; anul acesta $Q=80\,000$ MWh la $\text{CP}=130$.
+$\Delta\text{CF}=10\ds4-10\ds0=+0\ds4$ milioane EUR $=$ efectul de volum $(-20\,000\times100=-2\ds0)$ $+$ efectul de preț $(100\,000\times30=+3\ds0)$ $+$ efectul comun $(-20\,000\times30=-0\ds6)$ milioane EUR.
+O lună secetoasă a costat 2 milioane EUR din volum, dar prețurile mai mari au compensat mai mult decît atît: acoperirea naturală în acțiune.}
+
+\T{\textbf{(3) One hedged day (H, seller; illustrative numbers).} Plan $\hat Q_d=10\,000$ MWh, $K=124\ds49$ EUR/MWh, base price $\bar P_d=150$, $w=0\ds5$:
+hedge payoff $=0\ds5\times10\,000\times(124\ds49-150)=-127\,550$ EUR. The swap loses when prices are high, exactly when the unhedged revenue is high: that is the point of a hedge.}%
+{\textbf{(3) O zi acoperită (H, vînzător; numere ilustrative).} Planul $\hat Q_d=10\,000$ MWh, $K=124\ds49$ EUR/MWh, prețul de bază $\bar P_d=150$, $w=0\ds5$:
+rezultatul acoperirii $=0\ds5\times10\,000\times(124\ds49-150)=-127\,550$ EUR. Swap-ul pierde cînd prețurile sînt mari, exact cînd venitul neacoperit este mare: acesta este rostul acoperirii.}
+
+\section{\T{Rules, pitfalls, checklist}{Reguli, greșeli frecvente, lista de verificare}}
+\T{Rules R1--R6 of Assignment 1 apply unchanged (end-to-end run, no hard-coded dates and \texttt{MODE="latest"}, data version, no look-ahead, every memo number in \texttt{MY\_NUMBERS},
+artificial-intelligence (AI) tools for code only, with disclosure). The perfect-foresight (oracle) result must be labelled ``upper bound''; presenting it as achievable costs 5 points.}%
+{Regulile R1--R6 de la tema 1 se aplică neschimbate (rulare completă, fără date introduse direct în cod și \texttt{MODE="latest"}, versiunea datelor, fără informații din viitor, fiecare număr din memoriu în \texttt{MY\_NUMBERS},
+instrumente de inteligență artificială (AI) numai pentru cod, cu declarare). Rezultatul cu cunoașterea perfectă a viitorului (oracol) trebuie etichetat „limită superioară''; prezentarea lui ca realizabil costă 5 puncte.}
+\begin{warnbox}\small
+\begin{itemize}
+\item \T{\textbf{Sign conventions}: $X_d$ is a cash flow (a cost is negative); CFaR is a positive amount below the mean. For a buyer, the bad tail is a \emph{higher} cost. Write the convention once and keep it.}%
+{\textbf{Convențiile de semn}: $X_d$ este un flux de numerar (un cost este negativ); CFaR este o sumă pozitivă sub medie. Pentru un cumpărător, coada nefavorabilă este un cost \emph{mai mare}. Scrieți convenția o dată și păstrați-o.}
+\item \T{\textbf{Price risk only}: ignoring volume, profile and imbalance risk, or treating price and volume as independent.}{\textbf{Numai riscul de preț}: ignorarea riscului de volum, de profil și de dezechilibru sau tratarea prețului și volumului ca independente.}
+\item \T{\textbf{Look-ahead}: using day $d$ prices to choose battery hours, using the realised monthly volume as ``plan'', using the realised volume of day $d$ as its own forecast; choosing the rule, $\alpha$, $w^*$ or $K$ on the test window.}%
+{\textbf{Informații din viitor}: folosirea prețurilor din ziua $d$ pentru a alege orele bateriei, folosirea volumului lunar realizat ca „plan'', folosirea volumului realizat din ziua $d$ ca propria lui prognoză; alegerea regulii, a lui $\alpha$, $w^*$ sau $K$ pe fereastra de test.}
+\item \T{\textbf{Infeasible schedules}: discharging before charging, more than one cycle per day, ignoring efficiency or degradation, exceeding the power limit.}%
+{\textbf{Programe imposibile}: descărcare înainte de încărcare, mai mult de un ciclu pe zi, ignorarea randamentului sau a degradării, depășirea limitei de putere.}
+\item \T{\textbf{Double counting}: adding balancing-reserve revenue (aFRR/mFRR, automatic/manual frequency restoration reserves) on top of arbitrage with the same MW. Reserves are an optional discussion only.}%
+{\textbf{Dubla contabilizare}: adunarea veniturilor din rezerve de echilibrare (aFRR/mFRR, rezerve de restabilire a frecvenței cu activare automată/manuală) peste arbitraj cu aceeași capacitate (MW). Rezervele sînt doar o discuție opțională.}
+\item \T{\textbf{Log-returns of cash flows or prices} that can be zero or negative; 15-minute vs hourly mixing; UTC vs CET.}{\textbf{Randamente logaritmice ale fluxurilor sau prețurilor} care pot fi zero sau negative; amestecarea datelor de 15 minute cu cele orare; UTC vs CET.}
+\item \T{\textbf{Invented hedge prices} or forward curves; ``the hedge earned X'' without saying that $K$ is the equal-mean device.}{\textbf{Prețuri de acoperire inventate} sau curbe forward; „acoperirea a cîștigat X'' fără să spuneți că $K$ este instrumentul de medie egală.}
+\end{itemize}
+\end{warnbox}
+\begin{itemize}[label=$\square$]
+\item \T{Role chosen and justified in one line; parameter block in notebook and memo.}{Rol ales și justificat într-un rînd; blocul de parametri în notebook și în memoriu.}
+\item \T{\emph{Restart \& Run All} and \texttt{MODE="latest"} both run; data version printed; leakage check passed for LEAR and ML.}{\emph{Restart \& Run All} și \texttt{MODE="latest"} rulează amîndouă; versiunea datelor afișată; verificarea scurgerii trecută pentru LEAR și ML.}
+\item \T{T1--T6, ledger CSV, energy-risk tables, VaR/ES backtests, adverse scenario, figures with units.}{T1--T6, registrul CSV, tabelele riscului energetic, testarea VaR/ES, scenariul advers, figuri cu unități.}
+\item \T{Memo $\le$ 2 pages, decision first, oracle labelled, hand reconciliation of 3 days, ``AI use'' cell, no confidential data.}{Memoriul $\le$ 2 pagini, decizia la început, oracolul etichetat, reconcilierea manuală a 3 zile, celula „Folosirea AI'', fără date confidențiale.}
+\end{itemize}
+
+\section{\T{Frequently asked questions}{Întrebări frecvente}}
+\small
+\begin{description}[style=nextline, leftmargin=0pt, itemsep=2pt]
+\item[\T{My company is not in the list (nuclear, gas, grid operator, trader).}{Compania mea nu este în listă (nuclear, gaze, operator de rețea, trader).}] \T{Pick the closest mechanism: a nuclear producer buying replacement energy during an outage, or a grid operator buying losses, is an S buyer;
+a gas-plant owner with limited fuel or a flexible plant is close to H; a trader with storage or spread positions is close to B. Explain the mapping in your company section.}%
+{Alegeți mecanismul cel mai apropiat: un producător nuclear care cumpără energie de înlocuire în timpul unei opriri sau un operator de rețea care cumpără energie pentru acoperirea pierderilor din rețea este un cumpărător S;
+proprietarul unei centrale pe gaze cu combustibil limitat sau al unei centrale flexibile este aproape de H; un trader cu stocare sau poziții pe diferențe de preț este aproape de B. Explicați corespondența în secțiunea despre companie.}
+\item[\T{Can I use the intraday market or imbalance prices?}{Pot folosi piața intrazilnică sau prețurile de dezechilibru?}] \T{Not in the graded part: Romanian intraday (ID1-type indices) and imbalance prices are not in our public data set. You may discuss them qualitatively in the company section.}{Nu în partea notată: prețurile intrazilnice românești (indici de tip ID1) și prețurile de dezechilibru nu sînt în setul nostru de date publice. Le puteți discuta calitativ în secțiunea despre companie.}
+\item[\T{The battery works on 15-minute prices in reality.}{În realitate bateria lucrează pe prețuri de 15 minute.}] \T{True since October 2025. The graded version is hourly; a 15-minute variant is a welcome extra figure (no extra points).}{Adevărat din octombrie 2025. Versiunea notată este orară; o variantă pe 15 minute este o figură suplimentară binevenită (fără puncte în plus).}
+\item[\T{Why is the hydro energy budget taken from actual data?}{De ce este luat bugetul de energie hidro din datele realizate?}] \T{Daily water release is decided by water management and is outside the price decision. Treat $E_d$ as given; your decision is \emph{when} to use it. Say this limitation in the memo.}{Debitul zilnic este decis de gospodărirea apelor și este în afara deciziei de preț. Considerați $E_d$ dat; decizia dumneavoastră este \emph{cînd} îl folosiți. Menționați această limită în memoriu.}
+\item[\T{Why no imbalance prices?}{De ce nu avem prețuri de dezechilibru?}] \T{They are not in our free data set. Measure the imbalance volume and give the cost per 10 EUR/MWh of spread; if your company publishes typical imbalance costs, quote the public figure with its source.}{Nu sînt în setul nostru de date gratuite. Măsurați volumul dezechilibrelor și dați costul pentru 10 EUR/MWh de diferență; dacă firma publică costuri tipice de dezechilibru, citați cifra publică și sursa.}
+\item[\T{Why do I need data from 2022 for VaR when my test window is 2025--2026?}{De ce am nevoie de date din 2022 pentru VaR cînd fereastra de test este 2025--2026?}] \T{HS uses the 250 days before each test day and the GARCH model 750 days. All of them are before the forecast day, so there is no leakage.}{HS folosește cele 250 de zile dinaintea fiecărei zile de test, iar modelul GARCH 750 de zile. Toate sînt înaintea zilei prognozate, deci nu există scurgere de informație.}
+\item[\T{Only 3 breaches at 99\%. Which method is best?}{Doar 3 depășiri la 99\%. Care metodă este cea mai bună?}] \T{You cannot tell reliably from so few tail days. Report the tests, the ES gap with its interval, and base the choice on the 95\% level and on the economics of your role.}{Nu se poate spune sigur din atît de puține zile extreme. Raportați testele, diferența ES cu intervalul ei și alegeți pe baza nivelului de 95\% și a economiei rolului.}
+\item[\T{$w^*$ is larger than 1. Should I hedge more than 100\%?}{$w^*$ este mai mare decît 1. Să acopăr peste 100\%?}] \T{No: over-hedging creates a speculative position when volume falls. Cap at 1 and explain why $w^*>1$ (plan volume below actual, volume--price correlation).}{Nu: acoperirea peste 100\% creează o poziție speculativă cînd volumul scade. Plafonați la 1 și explicați de ce $w^*>1$ (volumul planificat sub cel realizat, corelația volum--preț).}
+\item[\T{The ML model loses to LEAR. Is that a bad result?}{Modelul ML pierde în fața LEAR. Este un rezultat prost?}] \T{No. It is a common finding with short samples \cite{Lago2021,WeronAIDA}. Report it honestly and check whether the average of the two helps.}{Nu. Este un rezultat frecvent pe eșantioane scurte \cite{Lago2021,WeronAIDA}. Raportați-l onest și verificați dacă media celor două ajută.}
+\item[\T{Which numbers will the instructor check?}{Ce numere verifică profesorul?}] \T{The instructor has a reference implementation and recomputes T1, T3, T4, T5 and T6 for your ID and role. Small differences from legitimate choices (e.g.\ another ML model) are fine if explained.}{Profesorul are o implementare de referință și recalculează T1, T3, T4, T5 și T6 pentru numărul matricol și rolul dumneavoastră. Diferențele mici datorate unor alegeri legitime (de exemplu alt model ML) sînt acceptate dacă sînt explicate.}
+\end{description}
+\normalsize
+
+\section{\T{Grading rubric (100 points)}{Grila de notare (100 de puncte)}}
+\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{0.8cm} >{\raggedright\arraybackslash}p{4.4cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{3.6cm}}
+\toprule
+\T{Task}{Sarcina} & \T{Pts}{Pct.} & \T{Excellent (90--100\%)}{Excelent (90--100\%)} & \T{Adequate (50--70\%)}{Adecvat (50--70\%)} & \T{Poor (0--30\%)}{Slab (0--30\%)}\\
+\midrule\endhead
+\T{1 Exposure}{1 Expunerea} & 8 & \T{correct profile, capture price, role facts and CSS, interpreted for the role}{profil corect, preț capturat, fapte ale rolului și CSS, interpretate pentru rol} & \T{tables right, interpretation generic}{tabele corecte, interpretare generică} & \T{wrong profile or units}{profil sau unități greșite}\\
+\T{2 Forecasts}{2 Prognoze} & 8 & \T{LEAR + one ML, rolling, HS/CP, APS, coverage, HAC DM, honest comparison}{LEAR + un ML, glisant, HS/CP, APS, acoperire, DM HAC, comparație onestă} & \T{point metrics only or no DM}{numai măsuri punctuale sau fără DM} & \T{in-sample or leakage}{în eșantion sau cu scurgere}\\
+\T{3 Decision, ledger}{3 Decizie, registru} & 20 & \T{feasible rule, all signals, oracle as upper bound, quantile frontier (B, R), choice frozen on the selection period, \texttt{selection\_check} passed, complete ledger, value in EUR}{regulă fezabilă, toate semnalele, oracolul ca limită superioară, frontiera pe cuantile (B, R), alegere înghețată pe perioada de selecție, \texttt{selection\_check} trecut, registru complet, valoarea în EUR} & \T{one signal missing or ledger incomplete}{un semnal lipsă sau registru incomplet} & \T{infeasible schedule, oracle as result, choice made on the test window}{program imposibil, oracolul ca rezultat, alegere făcută pe fereastra de test}\\
+\T{4 Energy risk}{4 Risc energetic} & 12 & \T{decomposition, role risk, imbalance volume, RO--HU basis, CFaR; dominant risk identified with numbers}{descompunere, riscul rolului, volumul dezechilibrelor, baza RO--HU, CFaR; riscul dominant identificat cu cifre} & \T{two or three items, little interpretation}{două sau trei elemente, interpretare slabă} & \T{price risk only, invented imbalance prices}{numai riscul de preț, prețuri de dezechilibru inventate}\\
+\T{5 VaR/ES}{5 VaR/ES} & 16 & \T{3 methods $\times$ 2 levels on the role's cash flow, correct signs, Kupiec + Christoffersen, ES gap with interval, small-sample caveat}{3 metode $\times$ 2 niveluri pe fluxul rolului, semne corecte, Kupiec + Christoffersen, diferența ES cu interval, avertisment despre eșantionul mic} & \T{2 methods or one test, no uncertainty}{2 metode sau un singur test, fără incertitudine} & \T{wrong sign, in-sample VaR, equity returns}{semn greșit, VaR în eșantion, randamente de acțiuni}\\
+\T{6 Contract}{6 Contract} & 12 & \T{equal-mean device stated, all structures/ratios, $w^*$ or frontier, RO and HU settlement, basis discussed, clear choice}{instrumentul de medie egală explicat, toate structurile/proporțiile, $w^*$ sau frontiera, decontare RO și HU, riscul de bază discutat, alegere clară} & \T{table without basis discussion}{tabel fără discuția riscului de bază} & \T{invented forward prices}{prețuri forward inventate}\\
+\T{7 Robustness}{7 Robustețe} & 8 & \T{quarters + adverse scenario quantified and used in the decision}{trimestre + scenariu advers cuantificat și folosit în decizie} & \T{computed, not discussed}{calculat, nediscutat} & \T{absent}{lipsă}\\
+\T{8a Decision}{8a Decizia} & 8 & \T{decision first, money and risk numbers, limits}{decizia la început, cifre de bani și de risc, limite} & \T{vague decision}{decizie vagă} & \T{generic text}{text generic}\\
+\T{8b Reconciliation}{8b Reconciliere} & 4 & \T{3 days by hand, matches ledger}{3 zile de mînă, coincid cu registrul} & \T{1--2 days}{1--2 zile} & \T{missing}{lipsă}\\
+\T{8c My company}{8c Compania mea} & 4 & \T{concrete, public data only}{concret, numai date publice} & \T{generic}{generic} & \T{absent or confidential}{lipsă sau confidențial}\\
+\bottomrule
+\end{longtable}
+\normalsize
+\T{Gates and penalties as in Assignment 1 (R1 caps Tasks 1--7 at 50\%; 2 points per untraceable number, up to 10; oracle presented as achievable: $-5$; bonus for a foundation model: up to $+5$, total capped at 100).}%
+{Condiții și penalizări ca la tema 1 (R1 plafonează sarcinile 1--7 la 50\%; 2 puncte pentru fiecare număr care nu se regăsește, pînă la 10; oracol prezentat ca realizabil: $-5$; bonus pentru model fundamental: pînă la $+5$, totalul plafonat la 100).}
+
+\section{\T{Further reading (papers of the course instructor and co-authors)}{Lecturi suplimentare (articole ale titularului de curs și ale coautorilor)}}
+\small
+\begin{itemize}
+\item \emph{Joint Probabilistic Forecasting for Battery Arbitrage in Day-Ahead Power Markets}, SSRN working paper 6872381 (2026) --- \T{role B}{rolul B}.
+\item \emph{Explainable AI-Based Early Warning System for Electricity Price Spikes: Evidence from the Romanian Market}, PICBE 2026, doi:10.2478/picbe-2026-0352 --- \T{spikes and risk}{salturi de preț și risc}.
+\item \emph{Can Foundation Models Manage Risk? Zero-Shot VaR and ES Forecasting with Conformal Calibration in CEE Markets}, doi:10.24818/18423264/60.2.26.14 --- \T{Task 5 and the bonus}{sarcina 5 și bonusul}.
+\item \emph{Finite-Sample Precision Limits for Expected Shortfall Forecast Comparisons}, \emph{Mathematics} (2026), doi:10.3390/math14132316 --- \T{why tail-risk comparisons need many tail observations}{de ce comparațiile riscului din coadă au nevoie de multe observații extreme}.
+\item \emph{Evaluating Intervention Effectiveness during Extreme Price Events: Romania's 2024 Energy Crisis}, PICBE 2026, doi:10.2478/picbe-2026-0013.
+\item \emph{Energy Financial Risk Meter: Systemic Risk in the EU Energy Sector}, SSRN working paper 6985301.
+\item \emph{Day-ahead Forecasting for Redispatch Measures using Machine Learning Models}, SSRN working paper 7511080 --- \T{grid operators}{operatori de rețea}.
+\item A.-V.~Andrei, G.~Velev, F.-M.~Toma, D.T.~Pele, S.~Lessmann (2024). \emph{Energy Price Modelling: A Comparative Evaluation of four Generations of Forecasting Methods}, arXiv:2411.03372.
+\end{itemize}
+
+\begin{thebibliography}{99}\small
+\bibitem{Christoffersen1998} P.F.~Christoffersen (1998). Evaluating interval forecasts. \emph{International Economic Review} 39(4), 841--862.
+\bibitem{PeleES2026} \emph{Finite-Sample Precision Limits for Expected Shortfall Forecast Comparisons}. \emph{Mathematics} 14(13), 2316 (2026), doi:10.3390/math14132316.
+\bibitem{Lago2021} J.~Lago, G.~Marcjasz, B.~De Schutter, R.~Weron (2021). Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark. \emph{Applied Energy} 293, 116983.
+\bibitem{Serafin2024} T.~Serafin, R.~Weron (2024). Loss functions in regression models and point-forecast-based BESS trading with a profit threshold; as presented in R.~Weron, IIF Distinguished Lectures on EPF, part II, ISEA 2025, slides 64--66.
+\bibitem{Uniejewski2021} B.~Uniejewski, R.~Weron (2021). Regularized quantile regression averaging for probabilistic electricity price forecasting. \emph{Energy Economics} 95, 105121.
+\bibitem{WeronAIDA} R.~Weron (2026). \emph{Machine learning for electricity price forecasting}. Keynote, AIDA 2026, Bucharest, 3--5 June 2026; and IIF Distinguished Lectures on EPF, parts I--II, ISEA 2025.
+\end{thebibliography}
+\end{document}

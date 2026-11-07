@@ -1,0 +1,27 @@
+{
+ "nrg_pc_204_EUR.json": {
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204?format=JSON&lang=EN&geo=RO&geo=HU&geo=BG&geo=PL&geo=DE&geo=EU27_2020&currency=EUR",
+  "downloaded": "2026-11-05",
+  "eurostat_updated": "2026-10-19T23:00:00+0200"
+ },
+ "nrg_pc_204_PPS.json": {
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204?format=JSON&lang=EN&geo=RO&geo=HU&geo=BG&geo=PL&geo=DE&geo=EU27_2020&currency=PPS",
+  "downloaded": "2026-11-05",
+  "eurostat_updated": "2026-10-19T23:00:00+0200"
+ },
+ "nrg_pc_205_EUR.json": {
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_205?format=JSON&lang=EN&geo=RO&geo=HU&geo=BG&geo=PL&geo=DE&geo=EU27_2020&currency=EUR",
+  "downloaded": "2026-11-05",
+  "eurostat_updated": "2026-10-19T11:00:00+0200"
+ },
+ "nrg_pc_204_c_EUR.json": {
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204_c?format=JSON&lang=EN&geo=RO&geo=HU&geo=BG&geo=PL&geo=DE&geo=EU27_2020&currency=EUR",
+  "downloaded": "2026-11-05",
+  "eurostat_updated": "2026-10-19T23:00:00+0200"
+ },
+ "nrg_pc_205_c_EUR.json": {
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_205_c?format=JSON&lang=EN&geo=RO&geo=HU&geo=BG&geo=PL&geo=DE&geo=EU27_2020&currency=EUR",
+  "downloaded": "2026-11-05",
+  "eurostat_updated": "2026-10-16T11:00:00+0200"
+ }
+}

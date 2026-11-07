@@ -1,0 +1,132 @@
+{
+ "source": "OPCOM S.A., PZU (Day-Ahead Market) - Rapoarte / Curbe agregate, https://www.opcom.ro/rapoarte-pzu-curbe-agregate/ro",
+ "delivery_date": "2026-10-21 (Wednesday); SDAC delivery day 2026-10-20T22:00Z/2026-10-21T22:00Z = 00:00-24:00 CET = 01:00-01:00 Romanian time (EEST, UTC+3)",
+ "raw_files": {
+  "curbe_agregate_RO_20261021.xml": {
+   "url": "https://www.opcom.ro/order_book/curbe_agregate_RO_20261021.xml",
+   "downloaded_utc": "2026-11-05T13:05:29Z",
+   "bytes": 3940765,
+   "sha256": "0d93986c2b4a306ef01d2c963c445bc08e3302a1e93c7f90d09b04977b392154"
+  },
+  "curbe_agregate_RO_20261021.pdf": {
+   "url": "https://www.opcom.ro/pdf_curbe/curbe_agregate_RO_20261021.pdf",
+   "downloaded_utc": "2026-11-05T13:05:29Z",
+   "bytes": 2030834,
+   "sha256": "cf25a36316edc80b0eafe4b989f02c182fa36e542852538a4dec1ef458bd2599"
+  },
+  "pzu_market_results_20261021.csv": {
+   "url": "https://www.opcom.ro/rapoarte-pzu-raportMarketResults-export-csv/21/10/2026/ro",
+   "downloaded_utc": "2026-11-05T13:05:30Z",
+   "bytes": 4683,
+   "sha256": "f0814e4e624e5962db337a1da2948c88682aff2fca9f4fa9844aa661f26246c1"
+  },
+  "pzu_pip_volum_PT15_20261021.csv": {
+   "url": "https://www.opcom.ro/rapoarte-pzu-raportPIP-export-csv/21/10/2026/ro?resolution=15",
+   "downloaded_utc": "2026-11-05T13:05:30Z",
+   "bytes": 6412,
+   "sha256": "f8e5c38181e9d2bb6ec1a0d704efe96282039aa7e70430ed55d883a6dc936a37"
+  },
+  "pzu_pip_volum_PT60_20261021.csv": {
+   "url": "https://www.opcom.ro/rapoarte-pzu-raportPIP-export-csv/21/10/2026/ro?resolution=60",
+   "downloaded_utc": "2026-11-05T13:05:30Z",
+   "bytes": 612,
+   "sha256": "b3e23f3c82a68d4459c673228487d10dd7bd5ad12e4fdf560ba7516be6bddd8f"
+  }
+ },
+ "units": {
+  "price": "EUR/MWh",
+  "quantity_mw": "MW (as published, MeasureUnitQuantity=MAW)",
+  "quantity_mwh": "quantity_mw x 0.25 h (energy over one 15-minute interval)"
+ },
+ "construction": [
+  "Price-elastic part = OPCOM aggregated curve of 15-minute (MTU) orders for that interval (XML SupplyCurve/DemandCurve, Resolution PT15M, Pos = OPCOM interval number). Points kept exactly as published (price, cumulative quantity), piecewise linear.",
+  "30-minute curves are empty (0 MW) on this day.",
+  "Price-inelastic offset, added as a horizontal segment at the price limit (supply at -600, demand at +4000), exactly as in OPCOM's own chart (PDF file): accepted block orders (XML BlockOrder, quantity x ActualAcceptanceRatio) + accepted 60-minute (period) orders + net cross-border flow (net import added to supply, net export added to demand).",
+  "Accepted 60-minute orders = 60-minute aggregated curve (PT60M) evaluated at the hourly average of the four official quarter-hour prices; this rule reproduces the official cross-border balance exactly for 61 of 96 intervals on this day, including both intervals chosen here (residual 0.0 MW).",
+  "Check: at the official clearing price, supply = demand (see supply_at_P_mw / demand_at_P_mw)."
+ ],
+ "caveats": [
+  "The OPCOM 'PIP si volum tranzactionat' report gives lower traded volumes (Q45: 1723.0 MW buy / 1380.0 MW sell) than the quantity at which the aggregated curves cross (Q45: 2816.1 MW). OPCOM does not document the difference; both figures are stored. Use opcom_pip_* as the official traded volume and curve_cleared_quantity_* as the crossing point of the published curves.",
+  "Price range -600 to +4000 EUR/MWh is the SDAC harmonised min/max; most of the curve shape lies between about -150 and 1000 EUR/MWh."
+ ],
+ "intervals": [
+  {
+   "interval_label": "Q45 12:00-12:15 RO (EEST) / 11:00-11:15 CET",
+   "opcom_interval": 45,
+   "utc_start": "2026-10-21T09:00Z",
+   "official_clearing_price_eur_mwh": 152.23,
+   "official_clearing_price_lei_mwh": 810.94,
+   "opcom_pip_traded_volume_mw": 1723.0,
+   "opcom_pip_buy_volume_mw": 1723.0,
+   "opcom_pip_sell_volume_mw": 1380.0,
+   "opcom_pip_traded_volume_mwh": 430.75,
+   "crossborder_flow_mw": {
+    "RO_HU": 0.0,
+    "HU_RO": 731.3,
+    "RO_BG": 779.6,
+    "BG_RO": 0.0
+   },
+   "net_export_mw": 48.3,
+   "fixed_supply_mw": {
+    "accepted_sell_blocks": 281.6,
+    "accepted_sell_60min_orders": 850.3,
+    "net_import": 0
+   },
+   "fixed_demand_mw": {
+    "accepted_buy_blocks": 501.9,
+    "accepted_buy_60min_orders": 1439.1,
+    "net_export": 48.3
+   },
+   "hourly_avg_price_used_for_60min_orders_eur": 156.2425,
+   "curve_cleared_quantity_mw": 2816.1,
+   "curve_cleared_quantity_mwh": 704.03,
+   "supply_at_P_mw": [
+    2816.1,
+    2816.1
+   ],
+   "demand_at_P_mw": [
+    2816.1,
+    2816.1
+   ]
+  },
+  {
+   "interval_label": "Q77 20:00-20:15 RO (EEST) / 19:00-19:15 CET",
+   "opcom_interval": 77,
+   "utc_start": "2026-10-21T17:00Z",
+   "official_clearing_price_eur_mwh": 244.0,
+   "official_clearing_price_lei_mwh": 1299.84,
+   "opcom_pip_traded_volume_mw": 1782.5,
+   "opcom_pip_buy_volume_mw": 1782.5,
+   "opcom_pip_sell_volume_mw": 1767.5,
+   "opcom_pip_traded_volume_mwh": 445.625,
+   "crossborder_flow_mw": {
+    "RO_HU": 0.0,
+    "HU_RO": 226.3,
+    "RO_BG": 0.0,
+    "BG_RO": 827.7
+   },
+   "net_export_mw": -1054.0,
+   "fixed_supply_mw": {
+    "accepted_sell_blocks": 147.0,
+    "accepted_sell_60min_orders": 828.0,
+    "net_import": 1054.0
+   },
+   "fixed_demand_mw": {
+    "accepted_buy_blocks": 582.3,
+    "accepted_buy_60min_orders": 570.0,
+    "net_export": 0
+   },
+   "hourly_avg_price_used_for_60min_orders_eur": 264.0475,
+   "curve_cleared_quantity_mw": 3423.2,
+   "curve_cleared_quantity_mwh": 855.8,
+   "supply_at_P_mw": [
+    3423.2,
+    3423.2
+   ],
+   "demand_at_P_mw": [
+    3423.2,
+    3423.2
+   ]
+  }
+ ]
+}

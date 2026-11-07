@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Early-warning rule (test period) & Precision & Recall & F1 & Accuracy & AUC \\
+\midrule
+XGBoost classifier (probability) & \textbf{0.823} & 0.517 & 0.635 & 0.868 & 0.946 \\
+XGBoost price forecast $>$ threshold & 0.808 & 0.723 & 0.763 & \textbf{0.901} & \textbf{0.950} \\
+Indicator warning score & 0.682 & 0.443 & 0.537 & 0.831 & 0.861 \\
+Naive: spike yesterday, same hour & 0.770 & \textbf{0.765} & \textbf{0.767} & 0.897 & 0.931 \\
+XGBoost, actual fundamentals (perfect foresight) & 0.763 & 0.374 & 0.502 & 0.836 & 0.890 \\
+\bottomrule
+\end{tabular}

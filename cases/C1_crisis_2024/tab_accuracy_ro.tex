@@ -1,0 +1,10 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Model & $R^2$ & MAE & MAE 200--500 & MAE $>$500 & Subestimare $>$500, \% \\
+\midrule
+Naiv (prețul cu 24 de ore înainte) & 0,584 & 41,6 & 110,7 & \textbf{180,1} & \textbf{15,8} \\
+RF, informația de la închiderea porții & 0,468 & 35,4 & 116,6 & 441,4 & 64,4 \\
+Ridge, previziune perfectă & \textbf{0,639} & 45,8 & \textbf{80,4} & 214,2 & 28,8 \\
+RF, previziune perfectă & 0,553 & \textbf{32,4} & 98,0 & 406,8 & 59,1 \\
+\bottomrule
+\end{tabular}

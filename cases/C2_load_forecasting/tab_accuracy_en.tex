@@ -1,0 +1,13 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Model & MAE, MW & RMSE, MW & MAPE, \% & $R^2$ & Bias, MW \\
+\midrule
+Gradient boosting (trees) & \textbf{250} & \textbf{339} & \textbf{4.09} & \textbf{0.879} & 32 \\
+Chronos-Bolt (zero-shot) & 254 & 360 & 4.16 & 0.863 & 43 \\
+Neural network (MLP) & 284 & 393 & 4.58 & 0.837 & 80 \\
+Linear regression (calendar + lags) & 292 & 383 & 4.85 & 0.845 & 19 \\
+Naive: same hour last week & 335 & 474 & 5.44 & 0.762 & \textbf{17} \\
+SARIMA & 483 & 634 & 8.03 & 0.575 & 34 \\
+Naive: same hour two days earlier & 610 & 825 & 10.17 & 0.280 & 18 \\
+\bottomrule
+\end{tabular}

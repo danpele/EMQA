@@ -1,0 +1,170 @@
+% C5_brief.tex -- ONE source for the English and Romanian case brief of Case 5 (Lecture 5).
+\input{numbers_\lang}
+\renewcommand{\emqacase}{\T{Research case 5 (Lecture 5)}{Studiul de caz 5 (cursul 5)}}
+\begin{document}
+\emqatitle{\T{Case 5: Does demand react to price? Elasticity, causality and the supplier's hedge ratio}%
+                {Studiul de caz 5: Reacționează cererea la preț? Elasticitatea, cauzalitatea și raportul de acoperire al furnizorului}}%
+          {\T{Based on}{Studiu bazat pe lucrarea} Proșcanu, Proșcanu \& Pele (2025), \emph{The price elasticity of electricity demand in Romania},
+           Journal of Social and Economic Statistics 14(2), 131--141, \href{https://doi.org/10.2478/jses-2025-0009}{doi:10.2478/jses-2025-0009}}
+
+\begin{scenario}
+\T{A Romanian supplier signs one-year fixed-price contracts with households and small businesses for next year.
+To lock in its margin it buys the expected volume forward (or through a PPA, a power purchase agreement) and buys or sells the difference on the day-ahead market.
+The head of portfolio management must decide the \textbf{hedge ratio}: what share of the expected volume to buy forward.
+If customers consumed less when prices spike, a partial hedge would be enough (the volume would hedge itself); if they do not, the supplier must hedge almost everything.
+\textbf{So: does Romanian demand react to price?}}%
+{Un furnizor din România încheie, pentru anul următor, contracte cu preț fix pe un an cu consumatori casnici și cu firme mici.
+Pentru a-și asigura marja, cumpără la termen volumul așteptat (direct sau printr-un PPA, contract de achiziție de energie electrică pe termen lung) și cumpără sau vinde diferența pe piața pentru ziua următoare (PZU).
+Responsabilul cu administrarea portofoliului trebuie să stabilească \textbf{raportul de acoperire}, adică ce parte din volumul așteptat se cumpără la termen.
+Dacă clienții și-ar reduce consumul atunci cînd prețurile cresc brusc, o acoperire parțială ar fi suficientă (riscul de volum s-ar compensa parțial de la sine); în caz contrar, furnizorul trebuie să acopere aproape tot volumul.
+\textbf{Așadar: reacționează cererea din România la preț?}}
+\end{scenario}
+
+{\small\T{\textbf{Why this paper for Lecture 5.} The elasticity is an input to the hedge ratio and to the volume clauses of supply contracts and PPAs. Complementary research of our group, Shahar, Lessmann \& Pele (2025, arXiv 2507.12331), finds that US retail liberalisation lowered residential prices by about 7\,\% in the short term --- a market-design perspective based on US state data; this case focuses on Romanian procurement.}%
+{\textbf{De ce această lucrare la cursul 5.} Elasticitatea este o mărime de intrare pentru stabilirea raportului de acoperire și a clauzelor de volum din contractele de furnizare și din PPA-uri. Cercetarea complementară a grupului nostru, Shahar, Lessmann și Pele (2025, arXiv 2507.12331), arată că liberalizarea pieței cu amănuntul din SUA a redus prețurile pentru consumatorii casnici cu aproximativ 7\,\% pe termen scurt --- o perspectivă asupra organizării pieței, pe date din statele americane; acest studiu de caz se concentrează pe achizițiile de energie din România.}}
+
+\section{\T{What the paper did}{Lucrarea de referință}}
+\textbf{\T{Question.}{Întrebarea de cercetare.}} \T{What is the causal relationship between electricity consumption and price in Romania, and how elastic is consumption to price (Abstract; p.~134)?}%
+{Care este relația de cauzalitate dintre consumul de energie electrică și preț în România și cît de elastic este consumul în raport cu prețul (rezumat; p.~134)?}
+
+\textbf{\T{Data.}{Datele.}} \T{Monthly price (EUR/MWh) and consumption for Romania, January 2019 -- December 2024, 72 observations, from Ember and Statista (p.~133); mean price 112.13, maximum 490.80 (Table~1).}%
+{Prețul (EUR/MWh) și consumul lunar din România, ianuarie 2019 -- decembrie 2024, 72 de observații, din sursele Ember și Statista (p.~133); prețul mediu 112,13, maximul 490,80 (Tabelul~1).}
+
+\textbf{\T{Method.}{Metoda.}} \T{Augmented Dickey--Fuller (ADF) unit-root tests; a regression of log consumption on log price with seasonal ARMA errors (SARIMA: AR(1), SAR(12), MA(1), SMA(12)); Granger causality tests from a vector autoregression, lags 1 to 12.}%
+{Teste de rădăcină unitară Dickey--Fuller augmentate (ADF); o regresie a logaritmului consumului în funcție de logaritmul prețului, cu erori ARMA sezoniere (SARIMA: AR(1), SAR(12), MA(1), SMA(12)); teste de cauzalitate Granger într-un model vectorial autoregresiv (VAR), cu decalaje de la 1 la 12 luni.}
+
+\textbf{\T{Main findings of the paper.}{Principalele rezultate ale lucrării.}}
+\begin{itemize}
+\item \T{Price is integrated of order 1 and consumption of order 2 (Tables~2--3, p.~135--136).}{Prețul este integrat de ordinul 1, iar consumul de ordinul 2 (Tabelele~2--3, p.~135--136).}
+\item \T{``The estimated price elasticity of consumption is positive but notably small in magnitude (0.056), statistically significant at the 1\,\% level'' (p.~137); coefficient 0.055866, standard error 0.017736 (Table~7, p.~138).}%
+{Elasticitatea estimată a consumului în raport cu prețul este pozitivă, dar foarte mică (0,056) și semnificativă la pragul de 1\,\% (p.~137); coeficientul este 0,055866, iar eroarea standard 0,017736 (Tabelul~7, p.~138).}
+\item \T{``A unidirectional Granger causality relationship from electricity consumption to energy price'' (p.~137): no lag is significant from price to consumption; from consumption to price, lags 7--12 are significant (Tables~4--6, p.~136--137).}%
+{Cauzalitatea Granger este unidirecțională, de la consumul de energie electrică la preț (p.~137): de la preț la consum, niciun decalaj nu este semnificativ; de la consum la preț, sînt semnificative decalajele 7--12 (Tabelele~4--6, p.~136--137).}
+\item \T{Tariffs and long-term contracts ``shield end consumers from immediate fluctuations in spot prices'' (p.~137); ``pricing mechanisms alone may not be effective in managing electricity demand'' (p.~139).}%
+{Tarifele reglementate și contractele pe termen lung îi protejează pe consumatorii finali de fluctuațiile imediate ale prețului spot (p.~137); prin urmare, mecanismele de preț, luate singure, s-ar putea dovedi ineficiente în gestionarea cererii de energie electrică (p.~139).}
+\end{itemize}
+
+\section{\T{The method, step by step}{Metoda, pas cu pas}}
+\begin{intuition}
+\T{Elasticity answers: ``if the price rises by 1\,\%, by how many \% does consumption change?''. For a good people cannot do without, the answer is close to zero.
+Granger causality answers a different question: ``do past values of $X$ help forecast $Y$?''. It is about forecasting, not about cause in the everyday sense.}%
+{Elasticitatea răspunde la întrebarea: „Dacă prețul crește cu 1\,\%, cu cîte procente se modifică consumul?” Pentru un bun la care consumatorii nu pot renunța, răspunsul este aproape zero.
+Cauzalitatea Granger răspunde la o altă întrebare: „Îmbunătățesc valorile trecute ale lui $X$ prognoza lui $Y$?” Ea privește capacitatea de prognoză, nu cauzalitatea în sensul obișnuit al termenului.}
+\end{intuition}
+\T{Let $C_t$ be consumption (GWh) and $P_t$ the average day-ahead price (EUR/MWh) in month $t$. The paper estimates}%
+{Fie $C_t$ consumul (GWh) și $P_t$ prețul mediu de pe piața pentru ziua următoare (EUR/MWh) în luna $t$. Lucrarea estimează}
+\[
+\ln C_t = c + \beta\,\ln P_t + u_t,\qquad (1-\phi L)(1-\Phi L^{12})\,u_t=(1+\theta L)(1+\Theta L^{12})\,\varepsilon_t ,
+\]
+\T{where $\beta$ is the elasticity, $L$ is the lag operator ($L u_t=u_{t-1}$), $\phi,\Phi$ are the regular and seasonal autoregressive coefficients, $\theta,\Theta$ the moving-average ones and $\varepsilon_t$ white noise.
+\textbf{Identification:} price and consumption are set \emph{together} by supply and demand; in a cold month both demand and prices are high.
+Our extension adds two-stage least squares (2SLS): the gas price $G_t$ moves the cost of the marginal power plant (supply) and is assumed to affect consumption only through price, so stage 1 predicts $\ln P_t$ from $\ln G_t$ and month dummies, and stage 2 regresses $\ln C_t$ on the predicted price.
+For the hedge, the supplier's cost per expected MWh is $Q_tP_t-h\,(P_t-F)$, with $Q_t$ the volume relative to plan and $F$ the forward price; its variance is minimised at $h^*=\mathrm{Cov}(Q_tP_t,P_t)/\mathrm{Var}(P_t)$. With $Q_t\equiv1$ (perfectly inelastic demand and a perfect plan) $h^*=1$.}%
+{unde $\beta$ este elasticitatea, $L$ este operatorul de decalaj ($L u_t=u_{t-1}$), $\phi,\Phi$ sînt coeficienții autoregresivi nesezonier și sezonier, $\theta,\Theta$ coeficienții de medie mobilă corespunzători, iar $\varepsilon_t$ este un zgomot alb.
+\textbf{Problema identificării:} prețul și consumul se determină \emph{simultan}, prin interacțiunea cererii cu oferta; într-o lună friguroasă, atît cererea, cît și prețurile sînt ridicate.
+Extensia noastră folosește metoda celor mai mici pătrate în două etape (2SLS, \emph{two-stage least squares}): prețul gazelor $G_t$ modifică costul centralei marginale (oferta) și presupunem că influențează consumul numai prin intermediul prețului; prin urmare, în prima etapă estimăm $\ln P_t$ în funcție de $\ln G_t$ și de variabile indicatoare pentru lunile anului, iar în a doua etapă estimăm regresia lui $\ln C_t$ în funcție de valorile ajustate ale logaritmului prețului, obținute în prima etapă.
+Pentru acoperirea riscului, costul furnizorului pe MWh așteptat este $Q_tP_t-h\,(P_t-F)$, unde $Q_t$ este volumul raportat la plan, iar $F$ prețul la termen; varianța acestuia este minimă pentru $h^*=\mathrm{Cov}(Q_tP_t,P_t)/\mathrm{Var}(P_t)$. Pentru $Q_t\equiv1$ (cerere perfect inelastică și plan perfect), $h^*=1$.}
+\begin{decision}
+\T{With near-zero elasticity, volume does not fall when price spikes: there is no natural hedge, and a supplier with fixed-price contracts should buy forward close to 100\,\% of its expected volume.}%
+{La o elasticitate apropiată de zero, volumul nu scade atunci cînd prețul crește brusc: nu există o acoperire naturală, iar un furnizor cu contracte la preț fix ar trebui să cumpere la termen aproape 100\,\% din volumul așteptat.}
+\end{decision}
+
+\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\T{Notebook \texttt{C5\_notebook\_EN.ipynb}: hourly ENTSO-E load summed to GWh per month and hourly day-ahead prices averaged per month (energy-charts.info), January 2019 -- December 2024, \NnMonths\ months --- the paper's sample;
+monthly TTF gas (World Bank) as instrument. Our mean price is \NmeanPrice\ EUR/MWh (paper: 112.13), maximum \NmaxPrice\ (paper: 490.80).}%
+{Notebook-ul \texttt{C5\_notebook\_RO.ipynb} folosește consumul orar ENTSO-E, însumat lunar în GWh, și media lunară a prețurilor orare de pe piața pentru ziua următoare (energy-charts.info), ianuarie 2019 -- decembrie 2024, adică \NnMonths\ de luni --- eșantionul lucrării;
+prețul TTF lunar (Banca Mondială) servește drept variabilă instrumentală. Prețul mediu din datele noastre este de \NmeanPrice\ EUR/MWh (în lucrare: 112,13), iar maximul de \NmaxPrice\ EUR/MWh (în lucrare: 490,80).}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.56\linewidth}\centering
+\includegraphics[width=\linewidth]{f1_monthly_data}
+\caption{\T{Monthly price and consumption; 2022 shaded.}{Prețul și consumul lunar; anul 2022 este evidențiat.}}
+\src{energy-charts.info; 01.2019--12.2024.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\centering
+\includegraphics[width=\linewidth]{f2_scatter}
+\caption{\T{log consumption vs log price, by season.}{logaritmul consumului în funcție de logaritmul prețului, pe anotimpuri.}}
+\src{energy-charts.info; 01.2019--12.2024.}
+\end{minipage}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\begin{minipage}[t]{0.47\linewidth}\centering
+\caption{\T{ADF unit-root tests.}{Teste ADF de rădăcină unitară.}}
+\tabin{adf}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\linewidth}\centering
+\caption{\T{Price elasticity of consumption.}{Elasticitatea consumului în raport cu prețul.}}
+\tabin{elasticity}
+\end{minipage}
+\src{\T{our computation; paper values from Tables~2, 3 and 7. ``0.0000'' means below 0.00005.}{calcule proprii; valorile din lucrare provin din Tabelele~2, 3 și 7. „0,0000” înseamnă o valoare sub 0,00005.}}
+\end{table}
+
+\T{\textbf{What our data show.} The unit-root tests agree with the paper (price: $p$ = \NadfPriceLev\ in levels; consumption still non-stationary after one difference, $p$ = \NadfConsDiff).
+With the paper's specification we obtain an elasticity of \Nbeta\ (s.e.\ \Nse), close to the paper's 0.0559 --- positive and small.
+Our extensions give \NbetaOLS\ (s.e.\ \NseOLS) with month dummies instead of seasonal ARMA errors, and \NbetaIV\ (s.e.\ \NseIV) with gas as an instrument (first-stage $F$ = \NFfirst).
+All versions say the same thing for a manager: \textbf{demand barely reacts to price} (a 10\,\% price rise changes consumption by less than 1\,\%).
+Granger tests: price does not help forecast consumption at any lag (smallest $p$ = \NpPCmin); consumption helps forecast price at \NnSigCP\ of 12 lags (smallest $p$ = \NpCPmin\ at lag \NlagCPmin) --- the same direction as in the paper, which finds lags 7--12.}%
+{\textbf{Ce arată datele.} Testele de rădăcină unitară confirmă rezultatele lucrării (prețul: $p = \NadfPriceLev$ în nivel; consumul rămîne nestaționar după prima diferențiere, $p = \NadfConsDiff$).
+Cu specificația din lucrare obținem o elasticitate de \Nbeta\ (eroarea standard \Nse), apropiată de valoarea de 0,0559 din lucrare --- pozitivă și mică.
+Extensiile noastre conduc la \NbetaOLS\ (eroarea standard \NseOLS) cu variabile indicatoare pentru lunile anului în locul erorilor ARMA sezoniere și la \NbetaIV\ (eroarea standard \NseIV) cu prețul gazelor ca variabilă instrumentală (statistica $F$ din prima etapă: \NFfirst).
+Toate variantele transmit managerului același mesaj: \textbf{cererea aproape nu reacționează la preț} (o creștere a prețului cu 10\,\% modifică consumul cu mai puțin de 1\,\%).
+Testele Granger: prețul nu îmbunătățește prognoza consumului pentru niciun decalaj (cea mai mică valoare $p = \NpPCmin$); consumul îmbunătățește prognoza prețului pentru \NnSigCP\ din cele 12 decalaje (cea mai mică valoare $p = \NpCPmin$, la decalajul \NlagCPmin) --- aceeași direcție ca în lucrare, unde sînt semnificative decalajele 7--12.}
+
+\begin{figure}[H]
+\begin{minipage}[t]{0.56\linewidth}\centering
+\includegraphics[width=\linewidth]{f3_granger}
+\caption{\T{Granger causality $p$-values by lag, ours vs the paper; dotted line: 5\,\%.}{Valorile $p$ ale testelor Granger, pe decalaje, în replicarea noastră și în lucrare; linia punctată: 5\,\%.}}
+\src{\T{our VAR on energy-charts.info data; paper Tables~4--5.}{modelul nostru VAR pe date energy-charts.info; lucrarea, Tabelele~4--5.}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\centering
+\includegraphics[width=\linewidth]{f4_hedge_ratio}
+\caption{\T{Risk of the procurement cost vs hedge ratio.}{Riscul costului de achiziție în funcție de raportul de acoperire.}}
+\src{\T{our computation, monthly 2016--2025.}{calcule proprii, date lunare 2016--2025.}}
+\end{minipage}
+\end{figure}
+
+\T{\textbf{Decision number.} Using last year's volume of the same month as the plan, the volume surprise and the price are correlated at \NcorrQP\ over \NnHedge\ months; the minimum-variance hedge ratio is $h^*$ = \NhStar, and hedging at $h^*$ removes \NriskRed\,\% of the standard deviation of the procurement cost (in sample: $h^*$ is estimated and evaluated on the same months).
+Out of sample, $h^*$ estimated on \NinStart--\NinEnd\ (\NhIn) and applied to \NoutStart--\NoutEnd\ removes \NriskRedOOS\,\%.
+Buy forward about \NhStar\ of the expected volume; an elastic customer base would justify a lower ratio, ours does not.}%
+{\textbf{Cifra relevantă pentru decizie.} Dacă planul de volum este consumul din aceeași lună a anului precedent, abaterea neanticipată a volumului și prețul au o corelație de \NcorrQP\ pe \NnHedge\ de luni; raportul de acoperire cu varianță minimă este $h^* = \NhStar$, iar acoperirea la nivelul $h^*$ elimină \NriskRed\,\% din abaterea standard a costului de achiziție (în eșantion: $h^*$ este estimat și evaluat pe aceleași luni).
+În afara eșantionului, $h^*$ estimat pe perioada \NinStart--\NinEnd\ (\NhIn) și aplicat perioadei \NoutStart--\NoutEnd\ elimină \NriskRedOOS\,\%.
+Cumpărați la termen aproximativ \NhStar\ din volumul așteptat; un portofoliu de clienți cu cerere elastică în raport cu prețul ar justifica un raport mai mic, dar nu acesta este cazul în datele noastre.}
+
+\section{\T{Discussion questions for managers}{Întrebări pentru discuție}}
+\begin{enumerate}
+\item \T{How would you distinguish an aggregate price--consumption estimate from the response of one customer facing a tariff change? What extra data would support contract design for flexible customers?}%
+{Cum ați face distincția între o estimare agregată a relației preț--consum și reacția unui client individual la modificarea tarifului? Ce date suplimentare ar sprijini proiectarea contractelor pentru clienții cu consum flexibil?}
+\item \T{Households were under price caps from 2022 to mid-2025. How do caps change the price a household actually sees, and what does that do to measured elasticity?}%
+{Prețurile pentru consumatorii casnici au fost plafonate din 2022 pînă la jumătatea anului 2025. Cum modifică plafonarea prețul resimțit efectiv de consumator și ce efect are asupra elasticității măsurate?}
+\item \T{Which of your customers \emph{are} price-elastic (industry with flexible processes, electric heating, EV charging)? How would you price that flexibility in a contract?}%
+{Care dintre clienții dumneavoastră au o cerere \emph{elastică} în raport cu prețul (industria cu procese flexibile, încălzirea electrică, încărcarea vehiculelor electrice)? Cum ați evalua această flexibilitate într-un contract?}
+\item \T{Your hedge ratio is \NhStar. What happens to the supplier if it hedges only 70\,\% and a 2022-type year comes?}%
+{Raportul dumneavoastră de acoperire este \NhStar. Ce se întîmplă cu furnizorul dacă acoperă numai 70\,\% din volum și urmează un an asemănător cu 2022?}
+\item \T{``Consumption Granger-causes price'' --- how would you use this in a forecasting model for the trading desk (see Case~2)?}%
+{„Consumul este cauză Granger pentru preț” --- cum ați folosi acest rezultat într-un model de prognoză pentru departamentul de tranzacționare (vedeți studiul de caz~2)?}
+\end{enumerate}
+
+\section{\T{Limitations of the classroom replication}{Limitele replicării}}
+\T{(i) \NnMonths\ monthly observations and one regressor; no temperature control. (ii) Wholesale price, not the retail tariff that consumers pay (often capped or fixed).
+(iii) Identification: aggregate price and consumption are set jointly; our instrument must affect consumption only through price (gas may also affect industrial activity).
+(iv) The hedge ratio assumes a forward at a fixed price for the whole year and ignores the shape (profile) risk of Case~4.}%
+{(i) Folosim \NnMonths\ de observații lunare și un singur regresor, fără a include temperatura ca variabilă de control. (ii) Prețul este cel angro, nu tariful cu amănuntul plătit de consumatori (adesea plafonat sau fix).
+(iii) Identificarea: prețul și consumul agregat se determină simultan; instrumentul ales trebuie să influențeze consumul numai prin intermediul prețului (prețul gazelor poate afecta însă și activitatea industrială).
+(iv) Raportul de acoperire presupune un contract la termen cu preț fix pentru întregul an și ignoră riscul de profil analizat în studiul de caz~4.}
+
+\newpage
+\section*{\T{Case 5 at a glance}{Studiul de caz 5 pe scurt}}
+\glance{\T{Does demand fall when price rises, and how much of the volume should a supplier hedge?}{Scade cererea atunci cînd crește prețul și ce parte din volum ar trebui să acopere un furnizor?}}%
+{\T{Monthly RO consumption (GWh) and day-ahead price, 2019--2024 (\NnMonths\ months); TTF gas.}{Consumul lunar din România (GWh) și prețul PZU, 2019--2024 (\NnMonths\ de luni); prețul gazelor TTF.}}%
+{\T{ADF; log--log regression with SARIMA errors; 2SLS with gas; Granger; minimum-variance hedge.}{ADF; regresie log--log cu erori SARIMA; 2SLS cu prețul gazelor ca instrument; Granger; acoperire cu varianță minimă.}}%
+{\T{Elasticity \Nbeta\ (paper 0.056); with gas instrument \NbetaIV. $h^*$ = \NhStar.}{Elasticitatea: \Nbeta\ (lucrarea: 0,056); cu prețul gazelor ca instrument: \NbetaIV. $h^* = \NhStar$.}}%
+{\T{No natural hedge: buy forward close to the full expected volume.}{Nu există o acoperire naturală: cumpărați la termen aproape tot volumul așteptat.}}
+\begin{center}
+\includegraphics[width=0.62\linewidth]{fig_headline_\lang}
+\src{\T{our computation on energy-charts.info data, monthly 2016--2025.}{calcule proprii pe date energy-charts.info, date lunare 2016--2025.}}
+\end{center}
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \Nbeta}\\ \small \T{elasticity, paper's specification (paper: 0.056)}{elasticitatea, specificația lucrării (lucrarea: 0,056)}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{MainBlue}\Huge\bfseries \NbetaIV}\\ \small \T{elasticity with gas as instrument}{elasticitatea cu prețul gazelor ca instrument}\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering{\color{IDAred}\Huge\bfseries \NhStar}\\ \small \T{minimum-variance hedge ratio}{raportul de acoperire cu varianță minimă}\end{minipage}
+\end{document}
