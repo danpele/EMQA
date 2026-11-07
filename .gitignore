@@ -3,8 +3,10 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .env
-**/cache/
+lectures/*/cache/*
 *.pkl
+!lectures/L2/cache/forecasts.pkl
+!lectures/L7/cache/ml.pkl
 *.aux
 *.log
 *.nav

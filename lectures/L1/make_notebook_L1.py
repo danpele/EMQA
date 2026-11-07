@@ -14,6 +14,8 @@ import sys
 
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "common"))
+from colab_cell import add_colab_cell  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 NBDIR = os.path.abspath(os.path.join(HERE, "..", "..", "notebooks"))
@@ -304,6 +306,7 @@ def build(lang):
     nb.cells = cells(lang)
     nb.metadata["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
     name = "L1_notebook.ipynb" if lang == "en" else "L1_notebook_ro.ipynb"
+    add_colab_cell(nb, lang)
     ExecutePreprocessor(timeout=900, kernel_name="python3").preprocess(nb, {"metadata": {"path": NBDIR}})
     os.makedirs(NBDIR, exist_ok=True)
     with open(os.path.join(NBDIR, name), "w", encoding="utf-8") as f:
