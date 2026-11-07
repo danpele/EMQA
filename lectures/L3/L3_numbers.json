@@ -2,25 +2,25 @@
  "charts": {
   "returns_ro": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "daily, 2019-01-01 to 2026-10-31, CET delivery days",
    "period_ro": "date zilnice, 2019-01-01 - 2026-10-31, zile de livrare CET"
   },
   "dow_effect": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "daily, 2019-01-01 to 2026-10-31",
    "period_ro": "date zilnice, 2019-01-01 - 2026-10-31"
   },
   "vol_units": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "residuals of the mean equation, 2019-01-01 to 2026-10-31",
    "period_ro": "reziduurile ecua\u021biei mediei, 2019-01-01 - 2026-10-31"
   },
   "acf_clust": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "residuals of the mean equation, 2019-01-01 to 2026-10-31",
    "period_ro": "reziduurile ecua\u021biei mediei, 2019-01-01 - 2026-10-31"
   },
@@ -50,7 +50,7 @@
   },
   "vol_level": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "monthly, 2019-01-01 to 2026-10-31",
    "period_ro": "date lunare, 2019-01-01 - 2026-10-31"
   },
@@ -68,7 +68,7 @@
   },
   "har_fc": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU (OPCOM), prin ENTSO-E",
    "period_en": "test year 2025-11-01 to 2026-10-31; HAR re-estimated daily",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31; HAR reestimat zilnic"
   },

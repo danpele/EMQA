@@ -25,44 +25,44 @@
    "period_ro": "2015-2025 ani comple\u021bi (st\u00eenga); ian.-oct. 2025 \u0219i 2026, ore raportate \u00een ambii ani (dreapta); date p\u00een\u0103 la 2026-10-31"
   },
   "prices_daily_4zones": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2015-01-01 to 2026-10-31 (BG from 2016-10-31)",
    "period_ro": "2015-01-01 - 2026-10-31 (BG din 2016-10-31)"
   },
   "profile_intraday": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "calendar years 2019 and 2025, hourly",
    "period_ro": "anii 2019 \u0219i 2025, date orare"
   },
   "profile_annual": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "monthly means 2016-2025",
    "period_ro": "medii lunare 2016-2025"
   },
   "spikes_ro_2024": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2024, hourly (CET/CEST)",
    "period_ro": "2024, date orare (CET/CEST)"
   },
   "negative_prices": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2018 to 2026-10-31; a 15-min MTU counts 0.25 h",
    "period_ro": "2018 - 2026-10-31; un interval de 15 min = 0,25 h"
   },
   "negative_solar": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "Jan 2023 to 2026-10-31 (left); 2018-2025 (right)",
    "period_ro": "ian. 2023 - 2026-10-31 (st\u00eenga); 2018-2025 (dreapta)"
   },
   "asinh_ro": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "all 15-min MTUs, 2026-01-01 to 2026-10-31",
    "period_ro": "toate intervalele de 15 min, 2026-01-01 - 2026-10-31"
   },
@@ -85,14 +85,14 @@
    "period_ro": "T = 500, \u0219ocuri N(0,1)"
   },
   "acf_pacf_ro_daily": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2023-01-01 to 2026-10-31, T = 1400",
    "period_ro": "2023-01-01 - 2026-10-31, T = 1400"
   },
   "acf_ro_hourly": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2024, hourly, T = 8784",
    "period_ro": "2024, date orare, T = 8784"
   },
@@ -121,16 +121,16 @@
    "period_ro": "2025-06-02 - 2025-07-04, zile de tranzac\u021bionare"
   },
   "separation_2024": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right)",
    "period_ro": "2024-06-01 - 2024-09-30 zilnic (st\u00eenga); 2024-07-16 orar (dreapta)"
   },
   "cy_prices": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
-   "period_en": "2026-01-01 to 2026-10-31, daily; Brent: Yahoo Finance (BZ=F)",
-   "period_ro": "2026-01-01 - 2026-10-31, zilnic; Brent: Yahoo Finance (BZ=F)"
+   "source_en": "energy-charts.info (exchange prices via ENTSO-E); Yahoo Finance (BZ=F)",
+   "source_ro": "energy-charts.info (pre\u021burile burselor, prin ENTSO-E); Yahoo Finance (BZ=F)",
+   "period_en": "2026-01-01 to 2026-10-31, daily",
+   "period_ro": "2026-01-01 - 2026-10-31, zilnic"
   },
   "cy_generation": {
    "source_en": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)",
@@ -145,8 +145,8 @@
    "period_ro": "2015, 2025 ani comple\u021bi; ian.-oct. 2026, ore raportate \u0219i \u00een 2025, \u0219i \u00een 2026"
   },
   "naive_bar": {
-   "source_en": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+   "source_en": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
    "period_en": "hourly day-ahead prices, 2024-01 to 2026-10",
    "period_ro": "pre\u021buri PZU orare, 2024-01 - 2026-10"
   },

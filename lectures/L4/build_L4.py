@@ -51,6 +51,7 @@ ABBR = {
     "AUC": ("area under the curve (0.5 = no skill, 1 = perfect)", "aria de sub curbă (0,5 = fără putere de discriminare, 1 = perfect)"),
     "BCBS": ("Basel Committee on Banking Supervision", "Comitetul de la Basel pentru Supraveghere Bancară"),
     "BCE": (None, "Banca Centrală Europeană"),
+    "CARDI": ("carbon risk dynamic indicator", "indicatorul dinamic al riscului de carbon"),
     "CCP": ("central counterparty (clearing house)", "contraparte centrală (casă de compensare)"),
     "CEE": ("Central and Eastern Europe", "Europa Centrală și de Est"),
     "CET": ("Central European Time", "ora Europei Centrale"),
@@ -69,6 +70,7 @@ ABBR = {
     "EVT": ("extreme value theory", "teoria valorilor extreme"),
     "FHS": ("filtered historical simulation", "simularea istorică filtrată"),
     "FRTB": ("Fundamental Review of the Trading Book (Basel market-risk rules)", "revizuirea fundamentală a portofoliului de tranzacționare (regulile Basel pentru riscul de piață)"),
+    "FRM": ("Financial Risk Meter", "indicatorul de risc financiar (Financial Risk Meter)"),
     "GARCH": ("generalised autoregressive conditional heteroskedasticity", "model autoregresiv generalizat cu heteroscedasticitate condiționată"),
     "GPD": ("generalised Pareto distribution", "repartiția Pareto generalizată"),
     "HS": ("historical simulation", "simularea istorică"),
@@ -93,7 +95,7 @@ ABBR = {
 }
 UNITS = {"EUR", "MW", "MWh", "USD"}
 # journal codes and tickers inside citations only; everything else must be in the Abbreviations list and spelled out
-IGNORE = {"OMV", "RSER", "EMQA", "IJF", "JBF", "JEF", "JASA", "IER", "SSRN", "ECECSR", "BZ", "SPOT", "CO", "II", "III", "IEEE", "AOS", "EJ", "ASE", "IPE"}
+IGNORE = {"AI", "ReP", "OMV", "RSER", "EMQA", "IJF", "JBF", "JEF", "JASA", "IER", "SSRN", "ECECSR", "BZ", "SPOT", "CO", "II", "III", "IEEE", "AOS", "EJ", "ASE", "IPE", "AIDA"}
 
 
 def build(lang, H=None):
@@ -122,6 +124,9 @@ def build(lang, H=None):
         return x.replace(".", "{,}") if ro else x
 
     BT = N["bt"]
+    AIDA = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/"
+    TALK_TOMA, TALK_PELE = AIDA + "toma_energy_financial_risk_meter.pdf", AIDA + "pele_conformal_tail_risk.pdf"
+    TALK_WANG, DOI_WANG = AIDA + "wang_carbon_risk_dynamics.pdf", "https://doi.org/10.2139/ssrn.5757742"
     MN = {"hs": "HS", "normal": t("Normal", "Normală"), "t": "Student-$t$", "fhs": "FHS", "evt": "EVT"}
     METHODS = ["hs", "normal", "t", "fhs", "evt"]
     BTP = t("backtest @{data.t0|date} -- @{data.end|date}", "testare retrospectivă @{data.t0|date} -- @{data.end|date}")
@@ -185,14 +190,14 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 1 price risk, VaR and ES
     D.section(t("Price risk: losses, quantiles, VaR and ES", "Riscul de preț: pierderi, cuantile, VaR și ES"))
     D.chart(t("The risk sits in the daily price change: small until 2021, violent since",
-              "Riscul se află în variația zilnică a prețului: mică pînă în 2021, foarte mare după"), "price_changes", [
+              "Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după"), "price_changes", [
         t(("$X_t=P_t-P_{t-1}$ = change of the daily base price, EUR/MWh", "prices can be negative, so we use changes, not log returns",
            "largest rise @{dist.RO.max|.2f} (@{dist.RO.max_date|date}), largest fall @{dist.RO.min|.2f} EUR/MWh (@{dist.RO.min_date|date})"),
-          ("$X_t=P_t-P_{t-1}$ = variația prețului zilnic de bază de la o zi la alta, în EUR/MWh", "prețul poate fi negativ, deci lucrăm cu variații, nu cu randamente logaritmice",
-           "cea mai mare creștere: @{dist.RO.max|.2f} EUR/MWh (@{dist.RO.max_date|date}); cea mai mare scădere: @{dist.RO.min|.2f} EUR/MWh (@{dist.RO.min_date|date})"))],
+          ("$X_t=P_t-P_{t-1}$ = variația zilnică a prețului de bază, EUR/MWh", "prețul poate fi negativ: folosim variații, nu randamente logaritmice",
+           "creșterea maximă: @{dist.RO.max|.2f} (@{dist.RO.max_date|date}); scăderea maximă: @{dist.RO.min|.2f} EUR/MWh (@{dist.RO.min_date|date})"))],
         height="0.56\\textheight",
         job=t("a supplier that buys 100 MW flat on the PZU and budgets at yesterday's price loses 2,400 EUR for every EUR/MWh of rise.",
-              "un furnizor care cumpără zilnic 100 MW în bandă pe PZU și își bugetează costul la prețul de ieri pierde 2.400 EUR pentru fiecare creștere de 1 EUR/MWh."),
+              "un furnizor care cumpără 100 MW în bandă pe PZU, la bugetul de ieri, pierde 2.400 EUR la fiecare creștere de 1 EUR/MWh."),
         tryit=NB + " \\S1", cite=t("(OPCOM; EPEX SPOT; own computation)", "(OPCOM; EPEX SPOT; calcule proprii)"))
 
     D.concept(t("Value-at-risk is a quantile of tomorrow's loss", "Valoarea la risc este o cuantilă a pierderii de mîine"),
@@ -351,7 +356,7 @@ def build(lang, H=None):
                 "folosiți EVT pentru ziua care apare o dată la zece ani și nu se află în nicio fereastră."),
               tryit=NB + " \\S3", cite="(Pickands, 1975; McNeil \\& Frey, 2000; Chan \\& Gray, 2006, IJF)", wl="0.55", wr="0.42")
 
-    D.chart(t("Above the threshold the Pareto curve follows the data; the normal curve does not",
+    D.chart(t("Above the threshold the Pareto curve fits the data; the normal curve does not",
               "Peste prag, curba Pareto urmează datele, iar curba normală nu"), "gpd_tail", [
         t(("Last refit (@{evt.refit_last|date}): $\\hat\\xi$ = @{evt.xi_last|.3f}, $\\hat\\beta$ = @{evt.beta_last|.3f}",
            "$\\hat\\xi>0$ in @{evt.share_xi_pos|.0f}\\% of the refits: the standardised tail is sometimes heavy, sometimes not"),
@@ -395,13 +400,13 @@ def build(lang, H=None):
 
     D.chart(t("The square-root-of-time rule overstates the 10-day risk",
               "Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile"), "horizon", [
-        t(("10-day 99\\% quantile = @{horizon.ro10|.2f} times the 1-day one in Romania (@{horizon.de10|.2f} in Germany--Luxembourg), not $\\sqrt{10}$ = @{horizon.sqrt10|.2f}",
+        t(("10-day 99\\% quantile = @{horizon.ro10|.2f} $\\times$ the 1-day one (RO; @{horizon.de10|.2f} in DE-LU), not $\\sqrt{10}$ = @{horizon.sqrt10|.2f}",
            "variance ratio at 10 days @{horizon.vr10_ro|.2f} (1 = random walk); autocorrelation of $X_t$: @{horizon.ac1_ro|.3f} at lag 1, @{horizon.ac7_ro|.3f} at lag 7"),
-          ("Cuantila de 99\\% pe 10 zile = @{horizon.ro10|.2f} $\\times$ cuantila pe o zi în România (@{horizon.de10|.2f} în Germania--Luxemburg), nu $\\sqrt{10}$ = @{horizon.sqrt10|.2f}",
-           "raportul varianțelor la 10 zile: @{horizon.vr10_ro|.2f} (1 pentru un mers aleator); autocorelația lui $X_t$: @{horizon.ac1_ro|.3f} la decalajul 1, @{horizon.ac7_ro|.3f} la decalajul 7"))],
+          ("Cuantila de 99\\% pe 10 zile = @{horizon.ro10|.2f} $\\times$ cea pe o zi (RO; @{horizon.de10|.2f} în DE-LU), nu $\\sqrt{10}$ = @{horizon.sqrt10|.2f}",
+           "raportul varianțelor la 10 zile: @{horizon.vr10_ro|.2f} (1 = mers aleator); autocorelația lui $X_t$: @{horizon.ac1_ro|.3f} (decalaj 1), @{horizon.ac7_ro|.3f} (decalaj 7)"))],
         height="0.52\\textheight",
         job=t("for a 10-day horizon, measure 10-day changes directly; multiplying by $\\sqrt{10}$ wastes capital.",
-              "pentru un orizont de 10 zile, măsurați direct variațiile pe 10 zile; înmulțirea cu $\\sqrt{10}$ blochează capital inutil."),
+              "măsurați direct variațiile pe 10 zile; înmulțirea cu $\\sqrt{10}$ blochează capital inutil."),
         tryit=NB + " \\S3", cite=t("(own computation; Weron, 2014, IJF)", "(calcule proprii; Weron, 2014, IJF)"))
 
     # ------------------------------------------------------------------ 3 backtesting
@@ -512,6 +517,29 @@ def build(lang, H=None):
               t("judge ES on several years, never on one quarter (about 9 tail days a year).",
                 "evaluați ES pe mai mulți ani, niciodată pe un trimestru (circa 9 zile extreme pe an)."),
               tryit=NB + " \\S4", cite="(Acerbi \\& Székely, 2014; Pele \\& Mazurencu-Marinescu-Pele, 2026)", wl="0.45", wr="0.52")
+
+    # ------------------------------------------------------------------ AIDA 2026: conformal diagnosis of VaR forecasts
+    D.frame(t("AIDA 2026: one conformal shift measures how far a VaR misses, and repairs it",
+              "AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează"), it(
+        (t("\\textbf{What the work did} (D.\\,T.\\ Pele, AIDA (AI and Digital Assets in Energy and Finance) conference, 4 June 2026)", "\\textbf{Ce a făcut lucrarea} (D.\\,T.\\ Pele, conferința AIDA (AI and Digital Assets in Energy and Finance), 4 iunie 2026)"),
+         t("score $s_t=\\hat q_t-r_t$ ($>0$ on an exceedance day); $\\hat q_V$ = 99\\% quantile of past scores; corrected VaR = VaR + $\\hat q_V$, fixed (audit) or rolling over 250 days",
+           "scorul $s_t=\\hat q_t-r_t$ ($>0$ în ziua unei depășiri); $\\hat q_V$ = cuantila de 99\\% a scorurilor trecute; VaR corectată = VaR + $\\hat q_V$, fixă (audit) sau glisantă pe 250 de zile"),
+         t("1\\% VaR of 10 models (foundation models, GARCH-type, HS) on 24 assets, incl.\\ oil and gas: 240 pairs; Kupiec, Christoffersen, traffic light",
+           "VaR de 1\\% a 10 modele (fundaționale, de tip GARCH, HS) pe 24 de active, inclusiv petrol și gaze: 240 de perechi; Kupiec, Christoffersen, semaforul Basel")),
+        (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+         t("$\\hat q_V$ from $-$0.007 (too prudent) to +0.102 (no tail signal); it explains 53.4\\% (partial $R^2$) of the gain in quantile score",
+           "$\\hat q_V$ între $-$0{,}007 (prea prudent) și +0{,}102 (fără informație despre coadă); explică 53{,}4\\% ($R^2$ parțial) din cîștigul la scorul cuantilic"),
+         t("green-zone pairs: 63/240 (26.2\\%) raw, 203/240 (84.6\\%) fixed, 234/240 (97.5\\%) rolling",
+           "perechi în zona verde: 63/240 (26{,}2\\%) inițial, 203/240 (84{,}6\\%) fix, 234/240 (97{,}5\\%) glisant"),
+         t("the exceedance rate is restored, their clustering is not", "rata depășirilor este refăcută, gruparea lor nu")),
+        (t("\\textbf{Link to this lecture}", "\\textbf{Legătura cu acest curs}"),
+         t("Kupiec says whether VaR fails, $\\hat q_V$ by how much; our guarantee widening $\\hat c_t$ (Section 4) is the same shift",
+           "testul Kupiec arată dacă VaR eșuează, $\\hat q_V$ cu cît; lărgirea garanției $\\hat c_t$ (secțiunea 4) este aceeași deplasare")),
+        sep="1pt") + note(t("Findings as stated by the authors; talk: \\href{" + TALK_PELE + "}{slides}; paper submitted.",
+                            "Rezultatele sînt cele raportate de autori; prezentarea: \\href{" + TALK_PELE + "}{diapozitive}; lucrare trimisă spre publicare.")) +
+        D.bottom(t("after a failed backtest, widen VaR by the conformal shift and keep testing for clusters.",
+                   "după un test eșuat, lărgiți VaR cu deplasarea conformală și testați în continuare gruparea depășirilor.")),
+        "footnotesize", cite=t("(Pele, Bolovăneanu, Ginavar, Lessmann \\& Härdle, AIDA, ASE, 4 June 2026)", "(Pele, Bolovăneanu, Ginavar, Lessmann \\& Härdle, AIDA, ASE, 4 iunie 2026)"))
 
     # ------------------------------------------------------------------ 4 collateral and limits
     D.section(t("From quantiles to margins, guarantees and limits", "De la cuantile la marje, garanții și limite"))
@@ -681,6 +709,55 @@ def build(lang, H=None):
                    "includeți indicatorul sistemic, prima preț--volum și costul anului secetos în același tablou de bord.")),
         "footnotesize", cite="(Toma, Dima, Grecu, Pele \\& Lessmann, 2026, SSRN; " + t("case study C4", "studiul de caz C4") + ")")
 
+    D.frame(t("AIDA 2026: systemic tail risk in EU energy broke upward in July 2021",
+              "AIDA 2026: riscul sistemic din energia UE a crescut brusc din iulie 2021"), it(
+        (t("\\textbf{What the work did} (F.-M.\\ Toma, AIDA conference, 3 June 2026; paper of case study C4)",
+           "\\textbf{Ce a făcut lucrarea} (F.-M.\\ Toma, conferința AIDA, 3 iunie 2026; lucrarea din studiul de caz C4)"),
+         t("100 European energy firms, April 2016 -- March 2026: each firm's 5\\% return quantile regressed by LASSO on the other 99 firms, oil, gas and stock indices",
+           "100 de companii energetice europene, aprilie 2016 -- martie 2026: cuantila de 5\\% a randamentului fiecărei firme, regresată prin LASSO pe celelalte 99 de firme, petrol, gaze și indici bursieri"),
+         t("EFRM = mean LASSO penalty: more links needed to explain the tail = more systemic exposure",
+           "EFRM = penalizarea LASSO medie: mai multe legături necesare pentru a explica coada = expunere sistemică mai mare")),
+        (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+         t("EFRM breaks: February 2020 (pandemic) and July 2021 (gas run-up), seven months before the invasion",
+           "rupturi ale EFRM: februarie 2020 (pandemia) și iulie 2021 (creșterea gazelor), cu șapte luni înaintea invaziei"),
+         t("geopolitical risk moved the EFRM only after the invasion: +1.52 percentage points (time-varying model)",
+           "riscul geopolitic a influențat EFRM abia după invazie: +1{,}52 puncte procentuale (model cu parametri variabili)"),
+         t("effect on Stoxx 600 stocks about 60\\% weaker since, on 5-year credit default swaps still positive",
+           "efectul asupra acțiunilor din Stoxx 600 s-a atenuat cu circa 60\\%, cel asupra swapurilor pe riscul de credit pe 5 ani a rămas pozitiv"),
+         t("volatile months: AUC 0.731 for EFRM + CISS, 0.708 EFRM alone, 0.673 CISS alone",
+           "lunile volatile: AUC 0{,}731 pentru EFRM + CISS, 0{,}708 doar EFRM, 0{,}673 doar CISS")),
+        sep="1pt") + note(t("Findings as stated by the authors; talk: \\href{" + TALK_TOMA + "}{slides}; paper: \\href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}.",
+                            "Rezultatele sînt cele raportate de autori; prezentarea: \\href{" + TALK_TOMA + "}{diapozitive}; lucrarea: \\href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}.")) +
+        D.bottom(t("a firm's own VaR cannot see contagion; read a sector meter next to it.",
+                   "VaR proprie a unei firme nu vede contagiunea; urmăriți alături de ea un indicator sectorial.")),
+        "footnotesize", cite=t("(Toma, AIDA, ASE, 3 June 2026; Toma, Dima, Grecu, Pele \\& Lessmann, 2026, SSRN)", "(Toma, AIDA, ASE, 3 iunie 2026; Toma, Dima, Grecu, Pele \\& Lessmann, 2026, SSRN)"))
+
+    # ------------------------------------------------------------------ AIDA 2026: carbon risk dynamics (same LASSO meter, high- vs low-carbon firms)
+    D.frame(t("AIDA 2026: the tail risk of carbon-heavy firms predicts the low-carbon premium",
+              "AIDA 2026: riscul extrem al firmelor poluante anticipă prima de carbon"), it(
+        (t("\\textbf{What the work did} (Prof.\\ Wolfgang Karl Härdle, AIDA, 5 June 2026; with R.\\ Wang and L.\\ Zhang)",
+           "\\textbf{Ce a făcut lucrarea} (prof.\\ Wolfgang Karl Härdle, AIDA, 5 iunie 2026; cu R.\\ Wang și L.\\ Zhang)"),
+         t("carbon premium puzzle: do high-carbon firms earn more (risk compensation) or low-carbon firms (green preference)?",
+           "puzzle-ul primei de carbon: cîștigă mai mult firmele poluante (risc) sau cele cu emisii reduse (preferințe verzi)?"),
+         t("China, July 2014 -- February 2025: 50 high-carbon and 50 low-carbon firms; LASSO regressions as for the EFRM, 63 days, 5\\% quantile",
+           "China, iul.\\ 2014 -- feb.\\ 2025: cîte 50 de firme poluante și cu emisii reduse; LASSO ca la EFRM, 63 de zile, cuantila de 5\\%"),
+         t("carbon risk dynamic indicator (CARDI) = Financial Risk Meter (FRM, mean penalty $\\lambda$), high-carbon / low-carbon firms",
+           "indicatorul dinamic al riscului de carbon (CARDI) = indicatorul de risc financiar (FRM, $\\lambda$ mediu), firme poluante / cu emisii reduse")),
+        (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+         t("high-risk regimes of CARDI coincide with unexpected or early-stage climate-policy events",
+           "regimurile de risc ridicat ale CARDI coincid cu evenimente neașteptate sau incipiente ale politicii climatice"),
+         t("a rising CARDI predicts a higher factor-adjusted low-carbon premium next month (0.022, 118 months); the conditional VaR ratio does not",
+           "creșterea CARDI anticipă o primă ajustată mai mare a firmelor cu emisii reduse luna următoare (0{,}022, 118 luni); raportul VaR condiționate nu"),
+         t("long low-carbon, short high-carbon only when CARDI rises (2015--2024): 115.84\\%, Sharpe 0.72 (always on: 89.03\\%, 0.49)",
+           "long pe firmele cu emisii reduse, short pe cele poluante doar cînd CARDI crește (2015--2024): 115{,}84\\%, Sharpe 0{,}72 (permanent: 89{,}03\\%, 0{,}49)")),
+        t("\\textbf{Link to this lecture}: the EFRM of the previous frame, split by carbon intensity",
+          "\\textbf{Legătura cu acest curs}: EFRM din cadrul anterior, separat după intensitatea emisiilor"),
+        sep="1pt") + note(t("Findings as stated by the authors; talk: \\href{" + TALK_WANG + "}{slides}; paper: \\href{" + DOI_WANG + "}{doi:10.2139/ssrn.5757742}.",
+                            "Rezultatele sînt cele raportate de autori; prezentarea: \\href{" + TALK_WANG + "}{diapozitive}; lucrarea: \\href{" + DOI_WANG + "}{doi:10.2139/ssrn.5757742}.")) +
+        D.bottom(t("in an oil and gas firm, watch CARDI: when it rises, investors favour low-carbon peers.",
+                   "într-o firmă de petrol și gaze, urmăriți CARDI: cînd crește, investitorii preferă firmele cu emisii reduse.")),
+        "footnotesize", cite=t("(Wang, Härdle \\& Zhang, AIDA, ASE, 5 June 2026; 2025, SSRN)", "(Wang, Härdle \\& Zhang, AIDA, ASE, 5 iunie 2026; 2025, SSRN)"))
+
     # ------------------------------------------------------------------ 6 case study autumn 2026
     D.section(t("Case study: the price rise of autumn 2026", "Studiu de caz: creșterea prețurilor din toamna anului 2026"))
     D.chart(t("Case study: in 2026 the price doubled gradually, without jumps",
@@ -810,7 +887,8 @@ def build(lang, H=None):
            "\\href{\\emqarepo/\\emqanb}{notebooks/}.", sep="4pt"), "0.52", "0.45"))
 
     REFS = [
-        "Acerbi, C.\\ \\& Székely, B.\\ (2014). Backtesting expected shortfall. \\textit{Risk}, 27(11), 76--81.",
+        "Acerbi, C.\\ \\& Székely, B.\\ (2014). Backtesting expected shortfall. \\textit{Risk}, 27(11), 76--81. "
+        "\\href{https://www.risk.net/risk-magazine/technical-paper/2381658/back-testing-expected-shortfall}{risk.net}",
         "Acerbi, C.\\ \\& Tasche, D.\\ (2002). On the coherence of expected shortfall. \\textit{Journal of Banking \\& Finance}, 26(7), 1487--1503. "
         "\\href{https://doi.org/10.1016/S0378-4266(02)00283-2}{doi:10.1016/S0378-4266(02)00283-2}",
         "Artzner, P., Delbaen, F., Eber, J.-M.\\ \\& Heath, D.\\ (1999). Coherent measures of risk. \\textit{Mathematical Finance}, 9(3), 203--228. "
@@ -818,53 +896,68 @@ def build(lang, H=None):
         "Balkema, A.\\,A.\\ \\& de Haan, L.\\ (1974). Residual life time at great age. \\textit{Annals of Probability}, 2(5), 792--804. "
         "\\href{https://doi.org/10.1214/aop/1176996548}{doi:10.1214/aop/1176996548}",
         "Barone-Adesi, G., Giannopoulos, K.\\ \\& Vosper, L.\\ (1999). VaR without correlations for portfolios of derivative securities. "
-        "\\textit{Journal of Futures Markets}, 19(5), 583--602.",
+        "\\textit{Journal of Futures Markets}, 19(5), 583--602. "
+        "\\href{https://doi.org/10.1002/(SICI)1096-9934(199908)19:5\\%3C583::AID-FUT5\\%3E3.0.CO;2-S}{doi.org (Wiley)}",
         "BCBS (1996). Supervisory framework for the use of ``backtesting'' in conjunction with the internal models approach to market risk "
-        "capital requirements. Basel Committee on Banking Supervision, January 1996.",
-        "BCBS (2019). Minimum capital requirements for market risk. Basel Committee on Banking Supervision, January 2019.",
+        "capital requirements. Basel Committee on Banking Supervision, January 1996. \\href{https://www.bis.org/publ/bcbs22.htm}{bis.org/publ/bcbs22.htm}",
+        "BCBS (2019). Minimum capital requirements for market risk. Basel Committee on Banking Supervision, January 2019. "
+        "\\href{https://www.bis.org/bcbs/publ/d457.htm}{bis.org/bcbs/publ/d457.htm}",
         "Bollerslev, T.\\ (1986). Generalized autoregressive conditional heteroskedasticity. \\textit{Journal of Econometrics}, 31(3), 307--327. "
         "\\href{https://doi.org/10.1016/0304-4076(86)90063-1}{doi:10.1016/0304-4076(86)90063-1}",
         "Chan, K.\\,F.\\ \\& Gray, P.\\ (2006). Using extreme value theory to measure value-at-risk for daily electricity spot prices. "
         "\\textit{International Journal of Forecasting}, 22(2), 283--300. \\href{https://doi.org/10.1016/j.ijforecast.2005.10.002}{doi:10.1016/j.ijforecast.2005.10.002}",
         "Christoffersen, P.\\,F.\\ (1998). Evaluating interval forecasts. \\textit{International Economic Review}, 39(4), 841--862. "
         "\\href{https://doi.org/10.2307/2527341}{doi:10.2307/2527341}",
-        "Christoffersen, P.\\,F.\\ (2012). \\textit{Elements of Financial Risk Management}, 2nd ed. Academic Press.",
+        "Christoffersen, P.\\,F.\\ (2012). \\textit{Elements of Financial Risk Management}, 2nd ed. Academic Press. "
+        "\\href{https://shop.elsevier.com/books/elements-of-financial-risk-management/christoffersen/978-0-12-374448-7}{elsevier.com}",
         "Commission Delegated Regulation (EU) No 153/2013 of 19 December 2012 on requirements for central counterparties (RTS under EMIR), "
-        "\\textit{Official Journal of the EU}, L 52, 23.2.2013, Art.~24--28.",
+        "\\textit{Official Journal of the EU}, L 52, 23.2.2013, Art.~24--28. \\href{https://eur-lex.europa.eu/eli/reg_del/2013/153/oj}{eur-lex.europa.eu/eli/reg\\_del/2013/153/oj}",
         "Commission Delegated Regulation (EU) 2022/2311 of 21 October 2022 as regards temporary emergency measures on collateral requirements. "
-        "\\textit{Official Journal of the EU}, L 307, 28.11.2022.",
+        "\\textit{Official Journal of the EU}, L 307, 28.11.2022. \\href{https://eur-lex.europa.eu/eli/reg_del/2022/2311/oj}{eur-lex.europa.eu/eli/reg\\_del/2022/2311/oj}",
         "ECB --- Furtuna, O., Grassi, A., Ianiro, A., Kallage, K., Koci, R., Lenoci, F., Sowiński, A.\\ \\& Vacirca, F.\\ (2022). Financial stability "
-        "risks from energy derivatives markets. \\textit{Financial Stability Review}, European Central Bank, November 2022.",
+        "risks from energy derivatives markets. \\textit{Financial Stability Review}, European Central Bank, November 2022. "
+        "\\href{https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202211_01~173476301a.en.html}{ecb.europa.eu}",
         "Gneiting, T.\\ (2011). Making and evaluating point forecasts. \\textit{Journal of the American Statistical Association}, 106(494), 746--762. "
         "\\href{https://doi.org/10.1198/jasa.2011.r10138}{doi:10.1198/jasa.2011.r10138}",
         "Jheng, S.-L., Tak, R., Găman, Ș., Mazurencu-Marinescu-Pele, M.\\ \\& Pele, D.\\,T.\\ (2026). Can foundation models manage risk? Zero-shot VaR "
         "and ES forecasting with conformal calibration in CEE markets. \\textit{Economic Computation and Economic Cybernetics Studies and Research}, "
         "60(2), 267--290. \\href{https://doi.org/10.24818/18423264/60.2.26.14}{doi:10.24818/18423264/60.2.26.14}",
-        "Jorion, P.\\ (2007). \\textit{Value at Risk: The New Benchmark for Managing Financial Risk}, 3rd ed. McGraw-Hill.",
+        "Jorion, P.\\ (2007). \\textit{Value at Risk: The New Benchmark for Managing Financial Risk}, 3rd ed. McGraw-Hill. "
+        "\\href{https://www.mheducation.com.au/ebook-value-at-risk-the-new-benchmark-for-managing-financial-risk-3e-9781307199963-aus}{mheducation.com.au}",
         "Koenker, R.\\ \\& Bassett, G.\\ (1978). Regression quantiles. \\textit{Econometrica}, 46(1), 33--50. "
         "\\href{https://doi.org/10.2307/1913643}{doi:10.2307/1913643}",
         "Kupiec, P.\\,H.\\ (1995). Techniques for verifying the accuracy of risk measurement models. \\textit{Journal of Derivatives}, 3(2), 73--84. "
         "\\href{https://doi.org/10.3905/jod.1995.407942}{doi:10.3905/jod.1995.407942}",
         "McNeil, A.\\,J.\\ \\& Frey, R.\\ (2000). Estimation of tail-related risk measures for heteroscedastic financial time series: An extreme value "
         "approach. \\textit{Journal of Empirical Finance}, 7(3--4), 271--300. \\href{https://doi.org/10.1016/S0927-5398(00)00012-8}{doi:10.1016/S0927-5398(00)00012-8}",
-        "McNeil, A.\\,J., Frey, R.\\ \\& Embrechts, P.\\ (2015). \\textit{Quantitative Risk Management: Concepts, Techniques and Tools}, revised ed. Princeton University Press.",
+        "McNeil, A.\\,J., Frey, R.\\ \\& Embrechts, P.\\ (2015). \\textit{Quantitative Risk Management: Concepts, Techniques and Tools}, revised ed. Princeton University Press. "
+        "\\href{https://press.princeton.edu/books/hardcover/9780691166278/quantitative-risk-management}{press.princeton.edu}",
         "Nowotarski, J.\\ \\& Weron, R.\\ (2018). Recent advances in electricity price forecasting: A review of probabilistic forecasting. "
         "\\textit{Renewable and Sustainable Energy Reviews}, 81, 1548--1568. \\href{https://doi.org/10.1016/j.rser.2017.05.234}{doi:10.1016/j.rser.2017.05.234}",
         "OPCOM (2025). Procedura privind constituirea, verificarea și utilizarea garanțiilor financiare pentru participarea la Piața pentru Ziua "
         "Următoare, rev.\\ 10, May 2025. \\href{https://www.opcom.ro}{opcom.ro}",
         "Pele, D.\\,T.\\ \\& Mazurencu-Marinescu-Pele, M.\\ (2026). Finite-sample precision limits for expected shortfall forecast comparisons. "
         "\\textit{Mathematics}, 14(13), 2316. \\href{https://doi.org/10.3390/math14132316}{doi:10.3390/math14132316}",
+        "Pele, D.\\,T., Bolovăneanu, V., Ginavar, A.\\,T., Lessmann, S.\\ \\& Härdle, W.\\,K.\\ (2026). Recalibrating tail risk forecasts under temporal "
+        "dependence: conformal audit of foundation models for VaR forecasting. AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. "
+        "\\href{" + TALK_PELE + "}{github.com/danpele/EMQA/resources/aida2026}",
         "Pickands, J.\\ (1975). Statistical inference using extreme order statistics. \\textit{Annals of Statistics}, 3(1), 119--131. "
         "\\href{https://doi.org/10.1214/aos/1176343003}{doi:10.1214/aos/1176343003}",
         "Romano, Y., Patterson, E.\\ \\& Candès, E.\\ (2019). Conformalized quantile regression. \\textit{Advances in Neural Information Processing "
-        "Systems}, 32, 3543--3553.",
+        "Systems}, 32, 3543--3553. \\href{https://proceedings.neurips.cc/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html}{proceedings.neurips.cc}",
         "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D.\\,T.\\ \\& Lessmann, S.\\ (2026). Energy Financial Risk Meter: Systemic risk in the EU energy "
         "sector. SSRN Working Paper 6985301. \\href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}",
+        "Toma, F.-M.\\ (2026). Energy Financial Risk Meter: systemic risk in the EU energy sector (with D.-M.\\ Dima, R.\\ Grecu, D.\\,T.\\ Pele and S.\\ Lessmann). "
+        "AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \\href{" + TALK_TOMA + "}{github.com/danpele/EMQA/resources/aida2026}",
+        "Wang, R., Härdle, W.\\,K.\\ \\& Zhang, L.\\ (2025). Measuring carbon risk dynamics. SSRN Working Paper 5757742. "
+        "\\href{" + DOI_WANG + "}{doi:10.2139/ssrn.5757742}",
+        "Wang, R., Härdle, W.\\,K.\\ \\& Zhang, L.\\ (2026). Measuring carbon risk dynamics. "
+        "AIDA Conference, Bucharest University of Economic Studies, 5 June 2026. \\href{" + TALK_WANG + "}{github.com/danpele/EMQA/resources/aida2026}",
         "Weron, R.\\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. "
         "\\textit{International Journal of Forecasting}, 30(4), 1030--1081. \\href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}",
     ]
-    for part, (a_, b_) in enumerate([(0, 10), (10, 19), (19, len(REFS))]):
-        D.frame(t("References", "Bibliografie") + f" ({part + 1}/3)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
+    for part, (a_, b_) in enumerate([(0, 9), (9, 17), (17, 25), (25, len(REFS))]):
+        D.frame(t("References", "Bibliografie") + f" ({part + 1}/4)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
                 "\n".join("\\item " + r for r in REFS[a_:b_]) + "\n\\end{itemize}", "scriptsize")
 
     # ------------------------------------------------------------------ appendix

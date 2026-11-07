@@ -56,7 +56,7 @@
                 caseQuantlet: 'Quantlet (code and chart)',
                 usedIn: 'Used in',
                 casesShort: 'Case studies',
-                further: 'Go deeper: Rafał Weron on electricity price forecasting',
+                further: 'Go deeper',
                 casesTitle: 'Case Studies',
                 casesIntro: 'Real episodes from the course data, used across the lectures.',
                 dataTitle: 'Data',
@@ -127,7 +127,7 @@
                 caseQuantlet: 'Quantlet (cod și grafic)',
                 usedIn: 'Folosit în',
                 casesShort: 'Studii de caz',
-                further: 'Aprofundare: Rafał Weron despre prognoza prețului energiei electrice',
+                further: 'Aprofundare',
                 casesTitle: 'Studii de caz',
                 casesIntro: 'Episoade reale din datele cursului, folosite de-a lungul cursurilor.',
                 dataTitle: 'Date',
@@ -227,6 +227,11 @@
             },
             {
                 id: 'l2', num: 2, status: 'prep', files: files(2),
+                further: [
+                    { url: 'resources/aida2026/weron_ml_electricity_price_forecasting.pdf', en: 'Rafał Weron (Wrocław Tech), “Machine learning for electricity price forecasting”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Rafał Weron (Wrocław Tech), „Machine learning for electricity price forecasting”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
+                    { url: 'resources/aida2026/ghelasi_probabilistic_merit_order.pdf', en: 'Paul Ghelasi (University of Duisburg-Essen), “A probabilistic merit order for electricity price forecasting”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Paul Ghelasi (University of Duisburg-Essen), „A probabilistic merit order for electricity price forecasting”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
+                    { url: 'resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf', en: 'Alla Petukhina (HTW Berlin; AI4EFin), “Multivariate probabilistic day-ahead electricity price forecasting and cross-auction trading in the UK market”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Alla Petukhina (HTW Berlin; AI4EFin), „Multivariate probabilistic day-ahead electricity price forecasting and cross-auction trading in the UK market”, Conferința AIDA 2026, ASE, 3 iunie 2026' }
+                ],
                 title: { en: 'Forecasting day-ahead electricity prices', ro: 'Prognoza prețurilor pentru ziua următoare' },
                 topics: {
                     en: ['The forecasting problem: what is known at 12:00 CET on day d−1, when the day-ahead auction fixes the 96 prices of day d; naive benchmarks', 'Expert models: ARX (autoregressive with exogenous variables) and LEAR (Lasso-Estimated AutoRegressive)', 'Calibration windows, forecast combinations, evaluation with MAE (Mean Absolute Error), RMSE (Root Mean Squared Error) and the Diebold–Mariano (DM) test', 'Probabilistic forecasts by quantile regression averaging (QRA); cointegration'],
@@ -235,6 +240,10 @@
             },
             {
                 id: 'l3', num: 3, status: 'prep', files: files(3),
+                further: [
+                    { url: 'resources/aida2026/cramer_energy_stock_markets.pdf', en: 'Alexandru Adrian Cramer (ASE, AI4EFin), “The link between energy prices and stock markets in European Union countries”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Alexandru Adrian Cramer (ASE, AI4EFin), „The link between energy prices and stock markets in European Union countries”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
+                    { url: 'resources/aida2026/benamor_energy_tokens_spillovers.pdf', en: 'Souhir Ben Amor (ASE) and Matúš Horváth (Masaryk University), “Transitory and persistent cross-market spillovers of energy tokens”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Souhir Ben Amor (ASE) și Matúš Horváth (Universitatea Masaryk), „Transitory and persistent cross-market spillovers of energy tokens”, Conferința AIDA 2026, ASE, 4 iunie 2026' }
+                ],
                 title: { en: 'Volatility', ro: 'Volatilitate' },
                 topics: {
                     en: ['Measuring volatility in energy markets; intraday volatility from hourly prices', 'The GARCH (Generalised AutoRegressive Conditional Heteroskedasticity) family, including asymmetric EGARCH and GJR models, estimated by maximum likelihood', 'Volatility regimes and the 2021–2022 energy crisis; forecasting and evaluating volatility'],
@@ -243,6 +252,11 @@
             },
             {
                 id: 'l4', num: 4, status: 'prep', files: files(4),
+                further: [
+                    { url: 'resources/aida2026/toma_energy_financial_risk_meter.pdf', en: 'Mihai Filip Toma (ASE, AI4EFin), “Energy Financial Risk Meter”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Mihai Filip Toma (ASE, AI4EFin), „Energy Financial Risk Meter”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
+                    { url: 'resources/aida2026/pele_conformal_tail_risk.pdf', en: 'Daniel Traian Pele (ASE; IPE, Romanian Academy), “Conformal diagnosis and recalibration of tail risk forecasts”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Daniel Traian Pele (ASE; IPE, Academia Română), „Conformal diagnosis and recalibration of tail risk forecasts”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
+                    { url: 'resources/aida2026/wang_carbon_risk_dynamics.pdf', en: 'Ruting Wang, Wolfgang Karl Härdle and Lin Zhang, “Measuring carbon risk dynamics”, AIDA Conference 2026, ASE, 5 June 2026', ro: 'Ruting Wang, Wolfgang Karl Härdle și Lin Zhang, „Measuring carbon risk dynamics”, Conferința AIDA 2026, ASE, 5 iunie 2026' }
+                ],
                 title: { en: 'Risk for energy companies', ro: 'Riscul companiilor din energie' },
                 topics: {
                     en: ['Value-at-Risk (VaR) and Expected Shortfall (ES) by four methods: historical simulation, filtered historical simulation, parametric models and extreme value theory (EVT)', 'Backtesting: the Kupiec and Christoffersen tests for VaR, the Acerbi–Székely test for ES', 'From quantiles to margins, guarantees and limits; Cash-Flow-at-Risk (CFaR) for a supplier and a producer'],
@@ -259,6 +273,10 @@
             },
             {
                 id: 'l6', num: 6, status: 'prep', files: files(6),
+                further: [
+                    { url: 'resources/aida2026/cepoi_battery_arbitrage.pdf', en: 'Cosmin Octavian Cepoi (ASE, AI4EFin), “Uncertainty meets opportunity: joint probabilistic forecasting for battery arbitrage in CEE day-ahead power markets”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Cosmin Octavian Cepoi (ASE, AI4EFin), „Uncertainty meets opportunity: joint probabilistic forecasting for battery arbitrage in CEE day-ahead power markets”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
+                    { url: 'resources/aida2026/bolovaneanu_redispatch_forecasting.pdf', en: 'Vlad Bolovăneanu (ASE, AI4EFin), “Day-ahead forecasting for redispatch measures using machine learning models”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Vlad Bolovăneanu (ASE, AI4EFin), „Day-ahead forecasting for redispatch measures using machine learning models”, Conferința AIDA 2026, ASE, 3 iunie 2026' }
+                ],
                 title: { en: 'Renewables, negative prices and batteries', ro: 'Surse regenerabile, prețuri negative și baterii' },
                 topics: {
                     en: ['Renewables and the merit order', 'Capture prices and cannibalisation; negative prices', 'The intraday price shape and the economics of a battery'],
@@ -274,6 +292,10 @@
                     ro: ['Prognoza prețului energiei electrice (EPF, electricity price forecasting) după lucrările lui Rafał Weron: LEAR ca reper, rețele neuronale profunde (DNN) și gradient boosting', 'Modelul fundație Chronos pentru serii de timp, fără antrenare; combinarea prognozelor și explicarea lor cu SHAP (SHapley Additive exPlanations)', 'Vîrfuri de preț și prețuri negative; capcanele care fac un model să pară mai bun decît este']
                 },
                 further: [
+                    { url: 'resources/aida2026/weron_ml_electricity_price_forecasting.pdf', en: 'Rafał Weron (Wrocław Tech), “Machine learning for electricity price forecasting”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Rafał Weron (Wrocław Tech), „Machine learning for electricity price forecasting”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
+                    { url: 'resources/aida2026/kuan_multiple_inequality_testing.pdf', en: 'Chung-Ming Kuan (National Taiwan University), “Large-scale multiple inequality testing without data snooping bias”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Chung-Ming Kuan (National Taiwan University), „Large-scale multiple inequality testing without data snooping bias”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
+                    { url: 'resources/aida2026/clodnitchi_ai_energy_finance_review.pdf', en: 'Roxana Clodnitchi (ASE, AI4EFin), “The role of AI in (re)shaping energy finance: a systematic literature review”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Roxana Clodnitchi (ASE, AI4EFin), „The role of AI in (re)shaping energy finance: a systematic literature review”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
+                    { url: 'resources/aida2026/andrei_ai4efin_benchmarking.pdf', en: 'Alexandru-Victor Andrei (ASE, AI4EFin), “Energy price modelling: a comparative evaluation of four generations of forecasting methods”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Alexandru-Victor Andrei (ASE, AI4EFin), „Energy price modelling: a comparative evaluation of four generations of forecasting methods”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
                     { url: 'https://www.ai4efin.ase.ro/?p=3464', en: 'Keynote “Machine learning for electricity price forecasting”, AIDA (AI and Digital Assets in Energy and Finance) Conference, ASE Bucharest, 3–5 June 2026', ro: 'Prelegerea „Machine learning for electricity price forecasting”, Conferința AIDA (AI and Digital Assets in Energy and Finance), ASE București, 3–5 iunie 2026' },
                     { url: 'https://p.wz.pwr.edu.pl/~weron.rafal/Conf/IIF24', en: 'International Institute of Forecasters (IIF) Distinguished Lectures on electricity price forecasting: slides and videos', ro: 'Prelegerile IIF (International Institute of Forecasters) Distinguished Lectures despre prognoza prețului energiei electrice: slide-uri și înregistrări' }
                 ]

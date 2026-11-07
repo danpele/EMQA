@@ -231,7 +231,8 @@ slide('days with |r_t| > 50%', 'ret.n_abs50', int((rr.abs() > 50).sum()))'''),
      ("md", "### Chart"),
      ("code", YFMT + "\nfrom matplotlib.patches import Patch\n" + CRISIS + r'''
 
-fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.9), sharex=True, gridspec_kw={'height_ratios': [1, 1.2]})
+from matplotlib.ticker import MaxNLocator
+fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={'height_ratios': [1, 1.2]})
 axs[0].plot(P.index, P.values, color=PAL['RO'], lw=0.6)
 axs[0].set_ylabel('EUR/MWh', fontsize=9.5)
 axs[1].plot(rr.index, rr.values, color=C_PCT, lw=0.35)
@@ -241,7 +242,9 @@ for ax in axs:
 yfmt(axs[1])
 legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL['RO'], lw=1.2), plt.Line2D([], [], color=C_PCT, lw=0.6),
                             Patch(color=PAL['c8'], alpha=0.15)],
-              labels=['daily base price', 'daily change $r_t$ (log, %)', 'energy crisis, Sep 2021 -- Dec 2022'], ncol=3)
+              labels=['daily base price', 'change $r_t$ (log, %)', 'crisis: Sep 2021–Dec 2022'], ncol=3)
+for ax in axs:
+    ax.yaxis.set_major_locator(MaxNLocator(3))
 fig.tight_layout(rect=(0, 0.12, 1, 1))
 plt.savefig('returns_ro.png', dpi=150, bbox_inches='tight', transparent=True)
 plt.show()''')])
@@ -267,7 +270,7 @@ slide('R^2 of the mean equation', 'mean.r2_pct', M_PCT.rsquared, 3)
 slide('std. dev. of the raw change, %', 'mean.sd_raw', sd_raw, 2)
 slide('std. dev. after the mean equation, %', 'mean.sd_res', sd_res, 2)'''),
      ("md", "### Chart"),
-     ("code", r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0))
+     ("code", r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0), gridspec_kw={'width_ratios': [1.5, 1]})
 axs[0].bar(range(7), dow.values, color=[PAL['c8'] if v < 0 else PAL['RO'] for v in dow.values], width=0.65)
 axs[0].axhline(0, color='#222222', lw=0.6)
 axs[0].set_xticks(range(7))
@@ -380,7 +383,7 @@ fig, ax = plt.subplots(figsize=(6.4, 2.0))
 bins = np.linspace(-8, 8, 65)
 hcount, edges = np.histogram(np.clip(zz, -8, 8), bins=bins, density=True)
 ax.bar(0.5 * (edges[1:] + edges[:-1]), hcount, width=edges[1] - edges[0], color=C_PCT, alpha=0.55, lw=0,
-       label='GARCH-standardised shocks, Romania')
+       label='standardised shocks, Romania')
 xs = np.linspace(-8, 8, 400)
 ax.plot(xs, stats.norm.pdf(xs), color='#222222', lw=1.0, ls='--', label='normal')
 sc = np.sqrt((nu - 2) / nu)          # unit-variance Student-t
@@ -416,16 +419,19 @@ slide('sigma at the cut-off, EUR/MWh', 'garch.cv.eur_last', CV['eur'].iloc[-1], 
      ("md", "### Chart"),
      ("code", YFMT + "\nfrom matplotlib.patches import Patch\n" + CRISIS + r'''
 
-fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True)
+from matplotlib.ticker import MaxNLocator
+fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True)
 axs[0].plot(CV['pct'].index, CV['pct'].values, color=C_PCT, lw=0.6)
-axs[0].set_ylabel(r'$\hat\sigma_t$, %', fontsize=9.5)
+axs[0].set_ylabel('%', fontsize=9.5)
 axs[1].plot(CV['eur'].index, CV['eur'].values, color=C_EUR, lw=0.6)
-axs[1].set_ylabel(r'$\hat\sigma_t$, EUR/MWh', fontsize=9.5)
+axs[1].set_ylabel('EUR/MWh', fontsize=9.5)
 for ax in axs:
     ax.axvspan(*CRISIS, color=PAL['c8'], alpha=0.08, lw=0)
 yfmt(axs[1])
 legend_bottom(fig, handles=[plt.Line2D([], [], color=C_PCT), plt.Line2D([], [], color=C_EUR), Patch(color=PAL['c8'], alpha=0.15)],
-              labels=['GARCH-t on % changes', 'GARCH-t on EUR/MWh changes', 'energy crisis'], ncol=3)
+              labels=[r'GARCH-t $\hat\sigma_t$, %', r'GARCH-t $\hat\sigma_t$, EUR/MWh', 'energy crisis'], ncol=3)
+for ax in axs:
+    ax.yaxis.set_major_locator(MaxNLocator(3))
 fig.tight_layout(rect=(0, 0.12, 1, 1))
 plt.savefig('cond_vol.png', dpi=150, bbox_inches='tight', transparent=True)
 plt.show()''')])
@@ -462,10 +468,10 @@ slide('EUA half-life, weeks (5 trading days)', 'xm.EUA.hl_weeks', HL['EUA'] / 5,
      ("code", r'''fig, ax = plt.subplots(figsize=(6.4, 2.1))
 hh = np.arange(0, 121)
 for k, lab, c in [('RO_pct', 'Romania, %', C_PCT), ('RO_eur', 'Romania, EUR/MWh', C_EUR), ('BRENT', 'Brent', PAL['c8']),
-                  ('EUA', 'EUA', PAL['c6']), ('SNP', 'OMV Petrom (SNP)', '#8c6d31')]:
+                  ('EUA', 'EUA', PAL['c6']), ('SNP', 'OMV Petrom', '#8c6d31')]:
     ax.plot(hh, 100 * PERS[k] ** hh, color=c, lw=1.3, label=f'{lab} ({HL[k]})')
 ax.axhline(50, color='#222222', lw=0.6, ls=':')
-ax.set_xlabel('days after the shock (trading days for markets, calendar days for power)', fontsize=8.5)
+ax.set_xlabel('days after the shock (trading days for markets, calendar days for power)', fontsize=9)
 ax.set_ylabel('% left', fontsize=9)
 ax.set_xlim(0, 120)
 legend_bottom(fig, ncol=3)
@@ -532,12 +538,12 @@ slide('slope, percent volatility on price level', 'level.slope_pct', lp.params.i
 slide('  R^2', 'level.r2_pct', lp.rsquared, 2)'''),
      ("md", "### Chart"),
      ("code", r'''SERIES = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6', '#e34948']
-fig, ax = plt.subplots(figsize=(6.4, 2.4))
+fig, ax = plt.subplots(figsize=(6.4, 2.3))
 yrs = m.index.year
 for y in range(START.year, END.year + 1):
     ax.scatter(m['lvl'][yrs == y], m['sd'][yrs == y], s=14, color=SERIES[(y - START.year) % 8], label=str(y), lw=0)
 xx = np.linspace(m['lvl'].min(), m['lvl'].max(), 50)
-ax.plot(xx, np.exp(ll.params.iloc[0]) * xx ** ll.params.iloc[1], color='#222222', lw=0.9, ls='--', label='fit, log-log')
+ax.plot(xx, np.exp(ll.params.iloc[0]) * xx ** ll.params.iloc[1], color='#222222', lw=0.9, ls='--', label='log-log fit')
 ax.set_xscale('log')
 ax.set_yscale('log')
 ax.set_xticks([30, 50, 100, 200, 400])
@@ -548,8 +554,8 @@ ax.minorticks_off()
 ax.set_xlabel('monthly mean price, EUR/MWh (log scale)', fontsize=9)
 ax.set_ylabel('monthly $\\hat\\sigma(u)$,\nEUR/MWh', fontsize=9)
 fig.legend(*ax.get_legend_handles_labels(), loc='lower center', ncol=9, bbox_to_anchor=(0.5, 0.0), frameon=False,
-           fontsize=8.5, handlelength=1.0, columnspacing=0.8, handletextpad=0.3)
-fig.tight_layout(rect=(0, 0.13, 1, 1))
+           fontsize=9.5, handlelength=1.0, columnspacing=0.8, handletextpad=0.2, markerscale=1.3)
+fig.tight_layout(rect=(0, 0.12, 1, 1))
 plt.savefig('vol_level.png', dpi=150, bbox_inches='tight', transparent=True)
 plt.show()''')])
 
@@ -588,12 +594,15 @@ slide('probability at the cut-off', 'ms.eur.last_prob', ph.iloc[-1], 2)'''),
      ("md", "### Chart"),
      ("code", YFMT + r'''
 from matplotlib.patches import Patch
-fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True, gridspec_kw={'height_ratios': [1, 1]})
+from matplotlib.ticker import MaxNLocator
+fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={'height_ratios': [1, 1]})
 axs[0].plot(P.index, P.values, color=PAL['RO'], lw=0.6)
 axs[0].set_ylabel('EUR/MWh', fontsize=9.5)
 axs[1].fill_between(ph.index, 0, ph.values, color=C_EUR, alpha=0.6, lw=0)
-axs[1].set_ylabel('prob. turbulent', fontsize=9)
+axs[1].set_ylabel('prob.', fontsize=9.5)
 axs[1].set_ylim(0, 1)
+axs[1].set_yticks([0, 0.5, 1])
+axs[0].yaxis.set_major_locator(MaxNLocator(3))
 yfmt(axs[1])
 legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL['RO']), Patch(color=C_EUR, alpha=0.6)],
               labels=['daily base price', 'probability of the turbulent regime (smoothed)'], ncol=2)
@@ -627,7 +636,8 @@ mm = pd.DataFrame({'rel': RV['rel'].resample('MS').median(), 'sol': SOL.resample
 slide('monthly correlation', 'rv.corr_rel_solar_m', np.corrcoef(mm['rel'], mm['sol'])[0, 1], 2)'''),
      ("md", "### Chart"),
      ("code", YFMT + r'''
-fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True)
+from matplotlib.ticker import MaxNLocator
+fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True)
 rm = RV['rel'].resample('MS').median()
 axs[0].plot(rm.index, rm.values, color=PAL['RO'], lw=1.2)
 axs[0].set_ylabel('RV / price', fontsize=9.5)
@@ -636,7 +646,9 @@ axs[1].plot(sm_.index, sm_.values, color=PAL['BG'], lw=1.2)
 axs[1].set_ylabel('solar, MW', fontsize=9.5)
 yfmt(axs[1])
 legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL['RO'], lw=1.2), plt.Line2D([], [], color=PAL['BG'], lw=1.2)],
-              labels=['intraday variation / daily price (monthly median)', 'solar generation (monthly mean)'], ncol=2)
+              labels=['RV / daily price (monthly median)', 'solar output (monthly mean)'], ncol=2)
+for ax in axs:
+    ax.yaxis.set_major_locator(MaxNLocator(3))
 fig.tight_layout(rect=(0, 0.12, 1, 1))
 plt.savefig('rv_solar.png', dpi=150, bbox_inches='tight', transparent=True)
 plt.show()''')])
@@ -716,8 +728,8 @@ slide('30-day historical sigma 31 days later', 'ghost.hist_31', np.sqrt(R['hist3
      ("md", "### Chart"),
      ("code", YFMT + r'''
 fig, ax = plt.subplots(figsize=(6.4, 2.0))
-ax.bar(R.index, R['e'].abs(), color='#b5b5b5', width=1.0, label='absolute shock $|u_t|$ (realised)')
-ax.plot(R.index, np.sqrt(R['garch']), color=C_EUR, lw=1.2, label=r'GARCH-t forecast $\hat\sigma_t$, made on $t-1$')
+ax.bar(R.index, R['e'].abs(), color='#b5b5b5', width=1.0, label='realised $|u_t|$')
+ax.plot(R.index, np.sqrt(R['garch']), color=C_EUR, lw=1.2, label=r'GARCH-t $\hat\sigma_t$, forecast on $t-1$')
 ax.plot(R.index, np.sqrt(R['hist30']), color=PAL['BG'], lw=1.0, ls='--', label='30-day historical')
 ax.set_ylabel('EUR/MWh', fontsize=9.5)
 mfmt(ax, 2)
@@ -752,8 +764,8 @@ slide('mean half-width, September to October, EUR/MWh', 'case.band_w_last', w.lo
      ("code", YFMT + r'''
 pm = P.shift(1).loc[TDAYS] + R['yhat']
 fig, ax = plt.subplots(figsize=(6.4, 2.1))
-ax.fill_between(TDAYS, pm - w, pm + w, color=C_EUR, alpha=0.25, lw=0, label='90% band, GARCH-t, set on $t-1$')
-ax.plot(TDAYS, P.loc[TDAYS], color=PAL['RO'], lw=0.8, label='daily base price')
+ax.fill_between(TDAYS, pm - w, pm + w, color=C_EUR, alpha=0.25, lw=0, label='90% GARCH-t band (set on $t-1$)')
+ax.plot(TDAYS, P.loc[TDAYS], color=PAL['RO'], lw=0.8, label='base price')
 oo = out[out]
 ax.scatter(oo.index, P.loc[oo.index], s=9, color=PAL['c8'], zorder=3, label='outside the band')
 ax.set_ylabel('EUR/MWh', fontsize=9.5)
@@ -821,7 +833,7 @@ axs[1].set_xlabel('horizon $h$ (trading days)', fontsize=9)
 axs[1].set_ylabel(r'$\pm$%', fontsize=9)
 axs[1].set_title(f'Brent, {MON[BPEAK.month - 1]} {BPEAK.day}: 90% band over $h$ days', fontsize=9.5)
 legend_bottom(fig, ncol=2)
-fig.tight_layout(rect=(0, 0.2, 1, 1))
+fig.tight_layout(rect=(0, 0.27, 1, 1))
 plt.savefig('term_structure.png', dpi=150, bbox_inches='tight', transparent=True)
 plt.show()''')])
 

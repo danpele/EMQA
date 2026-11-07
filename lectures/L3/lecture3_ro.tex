@@ -156,13 +156,13 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 
 \begin{frame}{Variațiile zilnice alternează perioade calme și perioade agitate}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.439\textheight,keepaspectratio]{charts/ro/returns_ro.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: date zilnice, 2019-01-01 - 2026-10-31, zile de livrare CET.}
+\begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/ro/returns_ro.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: date zilnice, 2019-01-01 - 2026-10-31, zile de livrare CET.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Zilele extreme
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Cea mai mare creștere: \ensuremath{+}194\%, la 2 ianuarie 2023; cea mai mare scădere: \ensuremath{-}227\%, la 25 decembrie 2023 (Crăciunul)
+      \item Creșterea maximă: \ensuremath{+}194\%, la 2 ianuarie 2023; scăderea maximă: \ensuremath{-}227\%, la 25 decembrie 2023 (Crăciunul)
       \item 189 de zile cu $|r_t|>50\%$, din 2\,860
     \end{itemize}
 \end{itemize}
@@ -209,8 +209,8 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 \begin{frame}{Jumătate din variația zilnică vine din calendarul săptămînal}
 \small
 \vspace{-1mm}\[ r_t=c+\textstyle\sum_{k=1}^{7}\phi_k r_{t-k}+\sum_{j=2}^{7}\delta_j D_{j,t}+\varepsilon_t \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.392\textheight,keepaspectratio]{charts/ro/dow_effect.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: date zilnice, 2019-01-01 - 2026-10-31.}
+\begin{center}\includegraphics[width=\textwidth,height=0.423\textheight,keepaspectratio]{charts/ro/dow_effect.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: date zilnice, 2019-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Ecuația mediei: $\phi_k$ = ponderea variației de acum $k$ zile; $D_{j,t}=1$ în ziua $j$ a săptămînii; $R^2$ = 0{,}50
@@ -227,7 +227,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 \begin{frame}{Sensul unui șoc nu poate fi anticipat, mărimea lui da}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.410\textheight,keepaspectratio]{charts/ro/acf_clust.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Testul Ljung--Box $Q(10)=T(T+2)\sum_{k\le10}\hat\rho_k^2/(T-k)$, $\hat\rho_k$ = autocorelația de ordin $k$: 13{,}8 pentru $\varepsilon_t$ ($p$ = 0{,}18), 120{,}0 pentru $\varepsilon_t^2$ (valoarea critică: 18{,}31)
@@ -257,7 +257,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 \begin{frame}{Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.430\textheight,keepaspectratio]{charts/ro/vol_units.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Abaterea standard a șocurilor, 2019 față de 2022
@@ -429,17 +429,17 @@ OMV Petrom & 0{,}934 & 10{,}2 & zile lucrătoare \\
 
 \begin{frame}{Petrolul și carbonul: șocurile de volatilitate durează săptămîni}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.384\textheight,keepaspectratio]{charts/ro/halflife.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.467\textheight,keepaspectratio]{charts/ro/halflife.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); Yahoo Finance (Brent BZ=F, titlul SparkChange EUA ETC); EODHD (acțiuni BVB). Date: GARCH(1,1)-t, fiecare serie pe propriul eșantion (tabelul de pe diapozitiv).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Curbele: $100(\hat\alpha+\hat\beta)^h$ = procentul din varianța suplimentară rămas după $h$ zile; timpii de înjumătățire, în paranteze
+  \item Curbele: $100(\hat\alpha+\hat\beta)^h$ = varianța suplimentară rămasă (\%) după $h$ zile; în paranteze: $h_{1/2}$
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Brent: 26 de zile lucrătoare, circa 5 săptămîni; EUA: 83, circa 17 săptămîni
       \item România: 2{,}4 zile în procente, dar 114 de zile în EUR/MWh, unde volatilitatea urmează nivelul prețului
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{după un șoc, departamentul de risc menține limite mai largi săptămîni întregi, nu doar cîteva zile, cum anunța cursul 1.}\par\vspace{0.5mm}
+\par\vfill\manager{după un șoc, limitele rămîn mai largi săptămîni, nu zile, cum anunța cursul 1.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie)}\hfill\qlink{EMQA\_L3\_halflife}{Quantlets/L3/EMQA_L3_halflife}\par\vspace{0.5mm}
 \end{frame}
 
@@ -497,7 +497,7 @@ OMV Petrom & 0{,}934 & 10{,}2 & zile lucrătoare \\
 \begin{frame}{Volatilitatea în EUR/MWh crește odată cu nivelul prețului}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/ro/vol_level.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: date lunare, 2019-01-01 - 2026-10-31.}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: date lunare, 2019-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Explicația: la prețuri mari, curba ofertei (ordinea de merit) este mai abruptă, deci același șoc al cererii mută mai mult prețul
@@ -582,7 +582,7 @@ EGARCH, Student & 0{,}831 & \cellcolor{Forest!54}24\,219{,}2 & 0{,}532 & 0{,}995
       \item Ponderea pe ani: 2022 86\%, 2025 6\%, 2026 33\% (48\% din iulie)
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{Transelectrica și furnizorii pot folosi probabilitatea regimului agitat ca avertizare timpurie pentru costurile de echilibrare.}\par\vspace{0.5mm}
+\par\vfill\manager{Transelectrica și furnizorii pot folosi această probabilitate ca avertizare timpurie pentru costurile de echilibrare.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie; Hamilton, 1989)}\hfill\qlink{EMQA\_L3\_ms\_regime}{Quantlets/L3/EMQA_L3_ms_regime}\par\vspace{0.5mm}
 \end{frame}
 
@@ -652,7 +652,7 @@ GARCH(1,1)-t pe & $\hat\alpha+\hat\beta$ (\%) & $h_{1/2}$ (\%) & $\hat\alpha+\ha
 
 \begin{frame}{Producția solară a mărit variația prețului în cursul zilei}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.439\textheight,keepaspectratio]{charts/ro/rv_solar.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.479\textheight,keepaspectratio]{charts/ro/rv_solar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri OPCOM; producția solară ENTSO-E (date Transelectrica pentru România). Date: prețuri orare, valori lunare, 2019-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -662,7 +662,7 @@ GARCH(1,1)-t pe & $\hat\alpha+\hat\beta$ (\%) & $h_{1/2}$ (\%) & $\hat\alpha+\ha
       \item Producția solară medie: 157 MW în 2019, 593 MW în ianuarie -- octombrie 2026; corelația lunară: 0{,}46
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{mai multă producție solară înseamnă prețuri mici la prînz și mari seara: argumentul economic pentru stocare.}\par\vspace{0.5mm}
+\par\vfill\manager{mai multă energie solară înseamnă prețuri mici la prînz și mari seara, deci valoare pentru stocare.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie; producția solară ENTSO-E)}\hfill\qlink{EMQA\_L3\_rv\_solar}{Quantlets/L3/EMQA_L3_rv_solar}\par\vspace{0.5mm}
 \end{frame}
 
@@ -700,7 +700,7 @@ GARCH(1,1)-t pe & $\hat\alpha+\hat\beta$ (\%) & $h_{1/2}$ (\%) & $\hat\alpha+\ha
 \begin{frame}{Prognozele HAR urmăresc variația, dar nu și salturile izolate}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.520\textheight,keepaspectratio]{charts/ro/har_fc.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: anul de test 2025-11-01 - 2026-10-31; HAR reestimat zilnic.}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: anul de test 2025-11-01 - 2026-10-31; HAR reestimat zilnic.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Anul de test, prognoză făcută în ziua $d-1$
@@ -779,7 +779,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 
 \begin{frame}{GARCH reacționează imediat; varianța istorică întîrzie și uită brusc}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.436\textheight,keepaspectratio]{charts/ro/fc_test.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.444\textheight,keepaspectratio]{charts/ro/fc_test.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii. Date: anul de test 2025-11-01 - 2026-10-31; modele reestimate zilnic.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -854,7 +854,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 
 \begin{frame}{Studiu de caz: banda GARCH-t de o zi a fost corectă în anul de test}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.419\textheight,keepaspectratio]{charts/ro/case_band.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.416\textheight,keepaspectratio]{charts/ro/case_band.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii. Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1044,13 +1044,62 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)}\par\vspace{0.5mm}
 \end{frame}
 
+\begin{frame}{AIDA 2026: crizele geopolitice fac negativă legătura burselor din UE cu energia}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce a făcut lucrarea} (A.-A.\ Cramer, conferința AIDA (AI and Digital Assets in Energy and Finance), 3 iunie 2026)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Date: indicii bursieri ai țărilor din UE, pe regiuni și după industrializare; futures pe Brent și TTF, 2010--2026
+      \item Modele: GARCH, apoi corelația DCC zilnică (ca în studiul de caz C3); regimuri Markov; răspunsul la șocuri
+    \end{itemize}
+  \item \textbf{Ce a găsit}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Corelația cu petrolul: în general pozitivă, de cele mai multe ori între 0 și 0{,}4; cu gazele, mai mică
+      \item Petrolul contează mai ales în sudul și vestul Europei, gazele în nord și vest; țările industrializate urmează mai mult petrolul
+      \item Crizele fac corelația negativă: Crimeea, 2014 (gaze), Ucraina, 2022 (gaze: cel mai puternic în ECE), Orientul Mijlociu, 2026
+      \item După un șoc, bursele țărilor celor mai industrializate sînt mai afectate în primele luni, apoi efectul se estompează
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Rezultatele sînt cele raportate de autori. Prezentarea: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf}{diapozitive}; articolul: \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}.
+\end{itemize}}
+\par\vfill\manager{cine acoperă acțiuni din UE cu futures pe petrol sau gaze trebuie să se aștepte ca, în criză, corelația să își schimbe semnul.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cramer, conferința AIDA, București, 3 iunie 2026; Grecu, Cramer, Pele \& Lessmann, 2025, NAJEF)}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: șocurile tokenurilor energetice se transmit mai ales pe termen scurt}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce a făcut lucrarea} (S.\ Ben Amor și M.\ Horváth, conferința AIDA, 4 iunie 2026)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Date: tokenuri energetice (Power Ledger, SunContract, Energy Web), criptomonede, acțiuni de energie curată, petrol, gaze, certificate de emisii, obligațiuni verzi; dec.\ 2020 -- ian.\ 2026
+      \item Metodă: model vectorial autoregresiv cu parametri variabili în timp; transmiterea șocurilor, separată pe termen scurt (tranzitorie) și lung (persistentă)
+    \end{itemize}
+  \item \textbf{Ce a găsit}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Interconectarea: circa 60\% din total pe termen scurt, circa 5\% pe termen lung
+      \item Crizele (criptomonede, 2021; energie, 2022) amplifică șocurile pe termen scurt; pe termen lung, structura rămîne stabilă
+      \item Power Ledger și SunContract transmit cel mai mult pe termen scurt; Energy Web contează mai ales în crize
+      \item Diversificarea depinde de token: portofoliul de varianță minimă, raport Sharpe 0{,}127 fără tokenuri, 0{,}143 cu SunContract
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Rezultatele sînt cele raportate de autori. Prezentarea: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf}{diapozitive}.
+\end{itemize}}
+\par\vfill\manager{șocurile se transmit în cîteva zile
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Valoarea pentru diversificare se judecă pentru fiecare token în parte.
+    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ben Amor și Horváth, conferința AIDA, București, 4 iunie 2026)}\par\vspace{0.5mm}
+\end{frame}
+
 \begin{frame}{Lecturi și resurse suplimentare}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{R.\,F.\ Engle, GARCH 101} (2001): cea mai clară introducere scurtă, scrisă de laureatul Nobel care a propus modelul ARCH --- \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}.
-  \item \textbf{R.\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice.
+  \item \textbf{R.\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice --- \href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}.
   \item \textbf{Pachetul Python \texttt{arch}} (K.\ Sheppard), folosit pentru toate modelele din acest curs: \href{https://arch.readthedocs.io}{arch.readthedocs.io}.
 \end{itemize}
 \end{column}
@@ -1068,37 +1117,39 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
 \item Andersen, T.\,G.\ \& Bollerslev, T.\ (1998). Answering the skeptics: Yes, standard volatility models do provide accurate forecasts. \textit{International Economic Review}, 39(4), 885--905. \href{https://doi.org/10.2307/2527343}{doi:10.2307/2527343}
+\item Ben Amor, S.\ \& Horváth, M.\ (2026). Transitory and persistent cross-market spillovers of energy tokens. AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Bollerslev, T.\ (1986). Generalized autoregressive conditional heteroskedasticity. \textit{Journal of Econometrics}, 31(3), 307--327. \href{https://doi.org/10.1016/0304-4076(86)90063-1}{doi:10.1016/0304-4076(86)90063-1}
 \item Bollerslev, T.\ (1987). A conditionally heteroskedastic time series model for speculative prices and rates of return. \textit{Review of Economics and Statistics}, 69(3), 542--547. \href{https://doi.org/10.2307/1925546}{doi:10.2307/1925546}
 \item Corsi, F.\ (2009). A simple approximate long-memory model of realized volatility. \textit{Journal of Financial Econometrics}, 7(2), 174--196. \href{https://doi.org/10.1093/jjfinec/nbp001}{doi:10.1093/jjfinec/nbp001}
+\item Cramer, A.-A.\ (2026). The link between energy prices and stock markets in European Union countries (with R.-A.\ Grecu, D.\,T.\ Pele and S.\ Lessmann). AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Diebold, F.\,X.\ \& Mariano, R.\,S.\ (1995). Comparing predictive accuracy. \textit{Journal of Business \& Economic Statistics}, 13(3), 253--263. \href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}
 \item Engle, R.\,F.\ (1982). Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation. \textit{Econometrica}, 50(4), 987--1007. \href{https://doi.org/10.2307/1912773}{doi:10.2307/1912773}
-\item Engle, R.\,F.\ (2001). GARCH 101: The use of ARCH/GARCH models in applied econometrics. \textit{Journal of Economic Perspectives}, 15(4), 157--168. \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}
-\item Engle, R.\,F.\ \& Ng, V.\,K.\ (1993). Measuring and testing the impact of news on volatility. \textit{Journal of Finance}, 48(5), 1749--1778. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05127.x}{doi:10.1111/j.1540-6261.1993.tb05127.x}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Bibliografie (2/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Engle, R.\,F.\ (2001). GARCH 101: The use of ARCH/GARCH models in applied econometrics. \textit{Journal of Economic Perspectives}, 15(4), 157--168. \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}
+\item Engle, R.\,F.\ \& Ng, V.\,K.\ (1993). Measuring and testing the impact of news on volatility. \textit{Journal of Finance}, 48(5), 1749--1778. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05127.x}{doi:10.1111/j.1540-6261.1993.tb05127.x}
 \item Glosten, L.\,R., Jagannathan, R.\ \& Runkle, D.\,E.\ (1993). On the relation between the expected value and the volatility of the nominal excess return on stocks. \textit{Journal of Finance}, 48(5), 1779--1801. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05128.x}{doi:10.1111/j.1540-6261.1993.tb05128.x}
 \item Grecu, R.\,A., Cramer, A.\,A., Pele, D.\,T.\ \& Lessmann, S.\ (2025). The link between energy prices and stock markets in European Union countries. \textit{North American Journal of Economics and Finance}, 78, 102420. \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}
 \item Hamilton, J.\,D.\ (1989). A new approach to the economic analysis of nonstationary time series and the business cycle. \textit{Econometrica}, 57(2), 357--384. \href{https://doi.org/10.2307/1912559}{doi:10.2307/1912559}
 \item Hansen, P.\,R.\ \& Lunde, A.\ (2005). A forecast comparison of volatility models: Does anything beat a GARCH(1,1)? \textit{Journal of Applied Econometrics}, 20(7), 873--889. \href{https://doi.org/10.1002/jae.800}{doi:10.1002/jae.800}
 \item Knittel, C.\,R.\ \& Roberts, M.\,R.\ (2005). An empirical examination of restructured electricity prices. \textit{Energy Economics}, 27(5), 791--817. \href{https://doi.org/10.1016/j.eneco.2004.11.005}{doi:10.1016/j.eneco.2004.11.005}
 \item Lamoureux, C.\,G.\ \& Lastrapes, W.\,D.\ (1990). Persistence in variance, structural change, and the GARCH model. \textit{Journal of Business \& Economic Statistics}, 8(2), 225--234. \href{https://doi.org/10.1080/07350015.1990.10509794}{doi:10.1080/07350015.1990.10509794}
-\item Ljung, G.\,M.\ \& Box, G.\,E.\,P.\ (1978). On a measure of lack of fit in time series models. \textit{Biometrika}, 65(2), 297--303. \href{https://doi.org/10.1093/biomet/65.2.297}{doi:10.1093/biomet/65.2.297}
-\item Nelson, D.\,B.\ (1991). Conditional heteroskedasticity in asset returns: A new approach. \textit{Econometrica}, 59(2), 347--370. \href{https://doi.org/10.2307/2938260}{doi:10.2307/2938260}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Bibliografie (3/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Ljung, G.\,M.\ \& Box, G.\,E.\,P.\ (1978). On a measure of lack of fit in time series models. \textit{Biometrika}, 65(2), 297--303. \href{https://doi.org/10.1093/biomet/65.2.297}{doi:10.1093/biomet/65.2.297}
+\item Nelson, D.\,B.\ (1991). Conditional heteroskedasticity in asset returns: A new approach. \textit{Econometrica}, 59(2), 347--370. \href{https://doi.org/10.2307/2938260}{doi:10.2307/2938260}
 \item Patton, A.\,J.\ (2011). Volatility forecast comparison using imperfect volatility proxies. \textit{Journal of Econometrics}, 160(1), 246--256. \href{https://doi.org/10.1016/j.jeconom.2010.03.034}{doi:10.1016/j.jeconom.2010.03.034}
 \item Pele, D.\,T., Lazar, E.\ \& Dufour, A.\ (2017). Information entropy and measures of market risk. \textit{Entropy}, 19(5), 226. \href{https://doi.org/10.3390/e19050226}{doi:10.3390/e19050226}
 \item Pele, D.\,T.\ \& Mazurencu-Marinescu-Pele, M.\ (2019). Using high-frequency entropy to forecast Bitcoin's daily value at risk. \textit{Entropy}, 21(2), 102. \href{https://doi.org/10.3390/e21020102}{doi:10.3390/e21020102}
-\item RiskMetrics (1996). \textit{RiskMetrics --- Technical Document}, 4th ed. J.\,P.\ Morgan / Reuters, New York.
+\item RiskMetrics (1996). \textit{RiskMetrics --- Technical Document}, 4th ed. J.\,P.\ Morgan / Reuters, New York. \href{https://www.msci.com/documents/10199/5915b101-4206-4ba0-aee2-3449d5c7e95a}{msci.com}
 \item Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D.\,T.\ \& Lessmann, S.\ (2026). Energy Financial Risk Meter: Systemic risk in the EU energy sector. SSRN Working Paper 6985301. \href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}
 \item Uniejewski, B., Weron, R.\ \& Ziel, F.\ (2018). Variance stabilizing transformations for electricity spot price forecasting. \textit{IEEE Transactions on Power Systems}, 33(2), 2219--2229. \href{https://doi.org/10.1109/TPWRS.2017.2734563}{doi:10.1109/TPWRS.2017.2734563}
 \item Weron, R.\ (2006). \textit{Modeling and Forecasting Electricity Loads and Prices: A Statistical Approach}. Wiley, Chichester. \href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}

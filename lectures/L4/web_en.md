@@ -66,7 +66,7 @@ On the last 365 days, VaR$_{0.975}$ is 61.96 EUR/MWh and ES$_{0.975}$ is 86.91 E
 
 @practice size the cash buffer with ES, not with VaR.
 
-## Large price rises are far more frequent than the normal curve allows {h=17a72e12}
+## Large price rises are far more frequent than the normal curve allows {h=45610e07}
 
 If price changes followed a normal curve, extreme days would be extremely rare. They are not. The excess kurtosis of $X_t$ is 12.0 in Romania and 12.1 in Germany–Luxembourg, against 0 for a normal curve: the distribution has a narrow centre and long tails.
 
@@ -147,7 +147,7 @@ On raw changes, with the threshold at the 95% quantile, $\hat\xi$ = 0.164: a hea
 
 @practice use EVT for the one-in-ten-years day that no window contains.
 
-## Above the threshold the Pareto curve follows the data; the normal curve does not {h=7efce33a}
+## Above the threshold the Pareto curve fits the data; the normal curve does not {h=7fccae5f}
 
 The chart shows the tail of the GARCH-filtered changes over the 730 days before 31 Oct 2026 together with the fitted Pareto curve and the normal curve. At the last refit, on 11 Oct 2026, the estimates are $\hat\xi$ = 0.182 and $\hat\beta$ = 0.569. Above the threshold the Pareto curve follows the observed points, while the normal curve falls off far too quickly.
 
@@ -183,7 +183,7 @@ The difference between methods matters most in a crisis. Between 1 Jul 2021 and 
 @chart var_paths
 Daily price changes in Romania and the 99% VaR forecasts of the five methods, 1 Jul 2021 to 30 Jun 2023, with the exceedances marked.
 
-## The square-root-of-time rule overstates the 10-day risk {h=741abfa3}
+## The square-root-of-time rule overstates the 10-day risk {h=f54b9c24}
 
 Regulators and many companies scale a one-day VaR to ten days by multiplying it by $\sqrt{10}$ = 3.16. The rule assumes that daily changes are independent, like a random walk. Power prices are not: they revert to a level set by fuel costs and the weekly calendar.
 
@@ -288,6 +288,14 @@ where $T$ is the number of days, $\alpha$ = 0.975, $I_t$ the exceedance of VaR$_
 Every ES was too small in the crisis, the normal one by the widest margin. Since 2023, FHS, EVT and HS pass. Because a 97.5% ES rests on only about 9 tail days a year, its comparison needs several years of data (Pele and Mazurencu-Marinescu-Pele, 2026).
 
 @practice judge ES on several years, never on one quarter (about 9 tail days a year).
+
+## AIDA 2026: one conformal shift measures how far a VaR misses, and repairs it {h=dc1b80ab}
+
+At the AIDA conference (Bucharest University of Economic Studies, 4 June 2026), D. T. Pele presented joint work with V. Bolovăneanu, A. T. Ginavar, S. Lessmann and W. K. Härdle on recalibrating VaR forecasts ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf); the paper is submitted). The method needs a single number. Each day the score $s_t=\hat q_t-r_t$ compares the forecast quantile with the realised return and is positive on an exceedance day; $\hat q_V$ is the 99% quantile of past scores, and the corrected VaR is the VaR plus $\hat q_V$. The shift is either fixed on a calibration sample (an audit) or rolled over the last 250 days (for daily use). The work applies it to the 1% VaR of 10 models, foundation models, GARCH-type models and HS, on 24 assets including oil and gas, 240 pairs in all, and judges the result with the Kupiec and Christoffersen tests and the traffic light of this section.
+
+As a diagnosis, $\hat q_V$ ranges from −0.007, for a model that is too prudent, to +0.102, for a model with no usable tail signal, and it explains 53.4% (partial $R^2$) of the gain in quantile score. As a repair, the green-zone pairs rise from 63/240 (26.2%) raw to 203/240 (84.6%) with the fixed shift and 234/240 (97.5%) with the rolling shift. The exceedance rate is restored, but their clustering is not, so the Christoffersen test keeps its role. The link to this lecture is direct: Kupiec says whether VaR fails, $\hat q_V$ says by how much, and the widening $\hat c_t$ of the day-ahead guarantee in the next section is the same one-parameter shift.
+
+@practice after a failed backtest, widen VaR by the conformal shift and keep testing for clusters.
 
 # From quantiles to margins, guarantees and limits
 
@@ -403,6 +411,22 @@ Case study C4 builds on a paper from our group (Toma, Dima, Grecu, Pele and Less
 Our replication on three Romanian companies, OMV Petrom, Romgaz and Nuclearelectrica, gives an AUC of 0.38, against 0.61 for past volatility: a systemic meter needs many firms, as in the paper. The case study adds two risks specific to energy companies. The price–volume premium of the household profile, the extra cost of buying more power in the expensive hours, was 5.2% of the base price in 2025. A hydro fleet that sold its median output forward would have had to buy back the missing volume in the dry year 2022 at a cost of 394 million EUR.
 
 @practice put the systemic meter, the price–volume premium and the dry-year cost on one dashboard.
+
+## AIDA 2026: systemic tail risk in EU energy broke upward in July 2021 {h=0bdfd8d7}
+
+At the AIDA conference (3 June 2026), F.-M. Toma presented the paper behind case study C4 ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/toma_energy_financial_risk_meter.pdf); paper: [doi:10.2139/ssrn.6985301](https://doi.org/10.2139/ssrn.6985301)). The work uses 100 European energy firms from April 2016 to March 2026. For each firm the 5% quantile of the return is regressed by LASSO on the returns of the other 99 firms, oil and gas futures and stock indices; the EFRM is the mean LASSO penalty, so a higher value means that more links are needed to explain the tail, i.e. more systemic exposure.
+
+The monthly EFRM has two breaks: February 2020, at the start of the pandemic, and July 2021, during the run-up of gas prices, seven months before the invasion of Ukraine. Geopolitical risk moved the EFRM only after the invasion, by +1.52 percentage points in a time-varying model. The effect of the EFRM on Stoxx 600 stocks has since become about 60% weaker, while its effect on 5-year credit default swaps stayed positive. Out of sample, the EFRM together with the CISS predicts volatile months with an AUC of 0.731, against 0.708 for the EFRM alone and 0.673 for the CISS alone.
+
+@practice a firm's own VaR cannot see contagion; read a sector meter next to it.
+
+## AIDA 2026: the tail risk of carbon-heavy firms predicts the low-carbon premium {h=67a4b6e0}
+
+At the AIDA conference (5 June 2026), Prof. Wolfgang Karl Härdle presented joint work with R. Wang and L. Zhang ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/wang_carbon_risk_dynamics.pdf); paper: [doi:10.2139/ssrn.5757742](https://doi.org/10.2139/ssrn.5757742)). The starting point is the carbon premium puzzle. Risk compensation says that high-carbon firms should earn more, because investors demand a higher return for their transition risk; a preference for green assets says that low-carbon firms should earn more. The work uses Chinese stocks from July 2014 to February 2025: the 50 largest high-carbon and the 50 largest low-carbon firms, chosen from the top and bottom 30% by CO$_2$ emissions per unit of revenue. For each firm the 5% quantile of the return is regressed by LASSO on the other firms and on macroeconomic factors, including the volatility of carbon prices, over a 63-day window, exactly as for the EFRM of the previous section. The carbon risk dynamic indicator (CARDI) is the Financial Risk Meter (FRM), the mean LASSO penalty $\lambda$, of the high-carbon firms divided by that of the low-carbon firms.
+
+The high-risk regimes of CARDI coincide with unexpected or early-stage climate-policy events. Both hypotheses of the puzzle hold, depending on CARDI: a rising CARDI predicts a higher factor-adjusted low-carbon premium in the next month, with a coefficient of 0.022 at the 5% quantile over 118 months, while ratios built from connectedness, extreme downside co-movement or conditional VaR do not predict it. A strategy that is long low-carbon and short high-carbon only when CARDI rises earned 115.84% cumulatively over 2015–2024, with a Sharpe ratio of 0.72, against 89.03% and 0.49 for holding the same position all the time. For an energy company, the ratio says which side of the sector carries the tail risk.
+
+@practice in an oil and gas firm, watch CARDI: when it rises, investors favour low-carbon peers.
 
 # Case study: the price rise of autumn 2026
 

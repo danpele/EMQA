@@ -427,7 +427,7 @@ At the 5% level, in EUR/MWh all GARCH-type models and the EWMA beat the history 
 
 @practice Use GARCH-t as the default: asymmetric models add little out of sample.
 
-## GARCH reacts at once; the 30-day history lags, then forgets abruptly {h=b2f7bf1d}
+## GARCH reacts at once; the 30-day history lags, then forgets abruptly {h=1784334a}
 
 The chart shows why GARCH wins. It plots, over the test year, the absolute shock of each day in EUR/MWh with the GARCH-t forecast and the 30-day historical forecast, both made the day before. The largest shock of the test year was +124 EUR/MWh on 22 January 2026. The next day the GARCH $\hat\sigma$ jumped from 25 to 47 EUR/MWh, while the historical forecast rose only to 33, because one day weighs one thirtieth in its window.
 
@@ -533,10 +533,26 @@ Several papers of our group, at the Bucharest University of Economic Studies and
 - **High-frequency entropy for daily risk** (Pele & Mazurencu-Marinescu-Pele, 2019). The paper uses the entropy of intraday Bitcoin returns to forecast the daily VaR and compares it with classical GARCH models. The entropy-based VaR forecast performs best in the backtests, showing that intraday data carry information on daily risk.
 - **Energy Financial Risk Meter** (Toma, Dima, Grecu, Pele & Lessmann, 2026). The paper builds a systemic-risk indicator for the EU energy sector, a preview of Lecture 4.
 
-## Want to learn more? {h=40c8cdc5}
+## AIDA 2026: geopolitical crises turn the energy link of EU stocks negative {h=e61e6438}
+
+At the AIDA conference of the Bucharest University of Economic Studies, on 3 June 2026, Alexandru-Adrian Cramer presented the work of Grecu, Cramer, Pele & Lessmann on energy prices and European stock markets, the paper behind case study C3, with the data extended to 2026. The work takes the main stock index of each European Union country, also grouped into regional indices and by the level of industrial production, and the generic Brent and Dutch TTF futures, from 2010 to 2026. It first models the volatility of each series with GARCH, then estimates a daily dynamic conditional correlation (DCC) between each index and oil or gas, the model of case study C3; a Markov-switching model separates regimes of high and low correlation, and a structural vector autoregression on monthly data traces the response of the indices to an oil or gas shock.
+
+The correlation of stock indices with oil is generally positive, in most cases between 0 and 0.4, and the correlation with gas is generally lower than with oil. Oil is most strongly correlated with the indices of Southern and Western Europe, gas with those of Northern and Western Europe, and the most industrialised countries follow oil more closely. Geopolitical crises turn the correlation negative: after the annexation of Crimea in 2014 (gas, mainly in Northern and Western Europe), after the Russian invasion of Ukraine in 2022 (for gas, most strongly in Central and Eastern Europe) and during the Middle East tensions of 2026. After an oil or gas shock, the indices of the most industrialised countries are affected more in the first months, and the effect fades over the medium term. The findings are as stated by the authors: [slides of the talk](https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf); paper: [doi:10.1016/j.najef.2025.102420](https://doi.org/10.1016/j.najef.2025.102420).
+
+@practice Whoever hedges EU shares with oil or gas futures must expect the correlation to change sign in a geopolitical crisis.
+
+## AIDA 2026: spillovers of energy tokens are mostly short-run {h=514708ee}
+
+At the same AIDA conference, on 4 June 2026, Souhir Ben Amor and Matúš Horváth presented their work on the transitory and persistent spillovers between energy tokens and other markets. Energy tokens are digital assets on a blockchain that represent renewable energy, for example one token for one kilowatt-hour. The work studies energy tokens (Power Ledger, SunContract, Energy Web), cryptocurrencies, clean-energy stocks and funds, commodities (oil, gas, copper, gold, European Union carbon allowances) and sustainable-investment funds and green bonds, from 7 December 2020 to 31 January 2026. A time-varying vector autoregression measures how much of the forecast variance of each asset comes from shocks to the others (connectedness), and splits this into a short-run, transitory part and a long-run, persistent part.
+
+Spillovers are strongly time-varying and mainly short-run: the short-run band is about 60% of total connectedness and the long-run band about 5%. The crises of the sample, the cryptocurrency turmoil of 2021 and the energy crisis of 2022, amplify short-run shocks, while the long-run structure stays flat. Power Ledger and SunContract are the most central transmitters of shocks in the short run; Energy Web becomes relevant mainly in stress episodes. The value for diversification depends on the token: in the minimum-variance portfolio the Sharpe ratio is 0.127 without tokens and 0.143 with SunContract, the only token with a consistently positive Sharpe-ratio gain; Power Ledger is neutral and Energy Web, a persistent net receiver of shocks, lowers the long-run Sharpe ratio. The findings are as stated by the authors: [slides of the talk](https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf).
+
+@practice Shocks between energy tokens and other markets pass within days; judge the diversification value of each token separately.
+
+## Want to learn more? {h=df06a6cc}
 
 - **R. F. Engle, GARCH 101** (2001): the clearest short introduction, by the Nobel laureate who invented ARCH, [doi:10.1257/jep.15.4.157](https://doi.org/10.1257/jep.15.4.157).
-- **R. Weron, Modeling and Forecasting Electricity Loads and Prices** (Wiley, 2006): stylised facts and volatility of power prices.
+- **R. Weron, Modeling and Forecasting Electricity Loads and Prices** (Wiley, 2006): stylised facts and volatility of power prices, [doi:10.1002/9781118673362](https://doi.org/10.1002/9781118673362).
 - **The arch Python package** (K. Sheppard), used for every model of this lecture: [arch.readthedocs.io](https://arch.readthedocs.io).
 - **This course**: code, data and notebooks at [github.com/danpele/EMQA](https://github.com/danpele/EMQA).
 - **Case study C3**: the DCC model and the Brent hedge for Romanian energy shares, step by step.

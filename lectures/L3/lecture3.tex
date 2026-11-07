@@ -780,7 +780,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 
 \begin{frame}{GARCH reacts at once; the 30-day history lags, then forgets abruptly}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.443\textheight,keepaspectratio]{charts/en/fc_test.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.451\textheight,keepaspectratio]{charts/en/fc_test.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (OPCOM, via ENTSO-E); own estimates. Data: test year 2025-11-01 to 2026-10-31; models re-estimated daily.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1045,13 +1045,62 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}\par\vspace{0.5mm}
 \end{frame}
 
+\begin{frame}{AIDA 2026: geopolitical crises turn the energy link of EU stocks negative}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{What the work did} (A.-A.\ Cramer, AIDA (AI and Digital Assets in Energy and Finance) conference, 3 June 2026)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Data: main stock index of each EU country, by region and by industrialisation; Brent and TTF futures, 2010--2026
+      \item Models: GARCH, then a daily DCC correlation (as in case study C3); Markov regimes; responses to shocks
+    \end{itemize}
+  \item \textbf{What it found}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Correlation with oil mostly positive, in most cases between 0 and 0.4; with gas generally lower than with oil
+      \item Oil matters most in Southern and Western Europe, gas in the North and West; industrialised countries follow oil more
+      \item Crises turn the correlation negative: Crimea 2014 (gas), Ukraine 2022 (gas: strongest in CEE), the Middle East 2026
+      \item After a shock, the most industrialised countries are hit more in the first months, then the effect fades
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Findings as stated by the authors. Talk: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf}{slides}; paper: \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}.
+\end{itemize}}
+\par\vfill\manager{whoever hedges EU shares with oil or gas futures must expect the correlation to flip sign in a crisis.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cramer, AIDA conference, Bucharest, 3 June 2026; Grecu, Cramer, Pele \& Lessmann, 2025, NAJEF)}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: spillovers of energy tokens are mostly short-run}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{What the work did} (S.\ Ben Amor \& M.\ Horváth, AIDA conference, 4 June 2026)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Data: energy tokens (Power Ledger, SunContract, Energy Web), cryptocurrencies, clean-energy stocks, oil, gas, carbon allowances, green bonds; Dec 2020 -- Jan 2026
+      \item Model: a time-varying vector autoregression; spillovers split into short-run (transitory) and long-run (persistent) parts
+    \end{itemize}
+  \item \textbf{What it found}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Connectedness: about 60\% of the total in the short run, about 5\% in the long run
+      \item Crises (crypto turmoil 2021, energy crisis 2022) amplify short-run shocks; the long-run structure stays flat
+      \item Power Ledger and SunContract are the main short-run transmitters; Energy Web matters mainly in stress episodes
+      \item Diversification is token-specific: minimum-variance portfolio, Sharpe ratio 0.127 without tokens, 0.143 with SunContract
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Findings as stated by the authors. Talk: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf}{slides}.
+\end{itemize}}
+\par\vfill\manager{shocks pass within days
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Judge the diversification value token by token.
+    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ben Amor \& Horváth, AIDA conference, Bucharest, 4 June 2026)}\par\vspace{0.5mm}
+\end{frame}
+
 \begin{frame}{Want to learn more?}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{R.\,F.\ Engle, GARCH 101} (2001): the clearest short introduction, by the Nobel laureate who invented ARCH --- \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}.
-  \item \textbf{R.\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): stylised facts and volatility of power prices.
+  \item \textbf{R.\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): stylised facts and volatility of power prices --- \href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}.
   \item \textbf{The \texttt{arch} Python package} (K.\ Sheppard), used for every model of this lecture: \href{https://arch.readthedocs.io}{arch.readthedocs.io}.
 \end{itemize}
 \end{column}
@@ -1069,37 +1118,39 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
 \item Andersen, T.\,G.\ \& Bollerslev, T.\ (1998). Answering the skeptics: Yes, standard volatility models do provide accurate forecasts. \textit{International Economic Review}, 39(4), 885--905. \href{https://doi.org/10.2307/2527343}{doi:10.2307/2527343}
+\item Ben Amor, S.\ \& Horváth, M.\ (2026). Transitory and persistent cross-market spillovers of energy tokens. AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Bollerslev, T.\ (1986). Generalized autoregressive conditional heteroskedasticity. \textit{Journal of Econometrics}, 31(3), 307--327. \href{https://doi.org/10.1016/0304-4076(86)90063-1}{doi:10.1016/0304-4076(86)90063-1}
 \item Bollerslev, T.\ (1987). A conditionally heteroskedastic time series model for speculative prices and rates of return. \textit{Review of Economics and Statistics}, 69(3), 542--547. \href{https://doi.org/10.2307/1925546}{doi:10.2307/1925546}
 \item Corsi, F.\ (2009). A simple approximate long-memory model of realized volatility. \textit{Journal of Financial Econometrics}, 7(2), 174--196. \href{https://doi.org/10.1093/jjfinec/nbp001}{doi:10.1093/jjfinec/nbp001}
+\item Cramer, A.-A.\ (2026). The link between energy prices and stock markets in European Union countries (with R.-A.\ Grecu, D.\,T.\ Pele and S.\ Lessmann). AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Diebold, F.\,X.\ \& Mariano, R.\,S.\ (1995). Comparing predictive accuracy. \textit{Journal of Business \& Economic Statistics}, 13(3), 253--263. \href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}
 \item Engle, R.\,F.\ (1982). Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation. \textit{Econometrica}, 50(4), 987--1007. \href{https://doi.org/10.2307/1912773}{doi:10.2307/1912773}
-\item Engle, R.\,F.\ (2001). GARCH 101: The use of ARCH/GARCH models in applied econometrics. \textit{Journal of Economic Perspectives}, 15(4), 157--168. \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}
-\item Engle, R.\,F.\ \& Ng, V.\,K.\ (1993). Measuring and testing the impact of news on volatility. \textit{Journal of Finance}, 48(5), 1749--1778. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05127.x}{doi:10.1111/j.1540-6261.1993.tb05127.x}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{References (2/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Engle, R.\,F.\ (2001). GARCH 101: The use of ARCH/GARCH models in applied econometrics. \textit{Journal of Economic Perspectives}, 15(4), 157--168. \href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}
+\item Engle, R.\,F.\ \& Ng, V.\,K.\ (1993). Measuring and testing the impact of news on volatility. \textit{Journal of Finance}, 48(5), 1749--1778. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05127.x}{doi:10.1111/j.1540-6261.1993.tb05127.x}
 \item Glosten, L.\,R., Jagannathan, R.\ \& Runkle, D.\,E.\ (1993). On the relation between the expected value and the volatility of the nominal excess return on stocks. \textit{Journal of Finance}, 48(5), 1779--1801. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05128.x}{doi:10.1111/j.1540-6261.1993.tb05128.x}
 \item Grecu, R.\,A., Cramer, A.\,A., Pele, D.\,T.\ \& Lessmann, S.\ (2025). The link between energy prices and stock markets in European Union countries. \textit{North American Journal of Economics and Finance}, 78, 102420. \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}
 \item Hamilton, J.\,D.\ (1989). A new approach to the economic analysis of nonstationary time series and the business cycle. \textit{Econometrica}, 57(2), 357--384. \href{https://doi.org/10.2307/1912559}{doi:10.2307/1912559}
 \item Hansen, P.\,R.\ \& Lunde, A.\ (2005). A forecast comparison of volatility models: Does anything beat a GARCH(1,1)? \textit{Journal of Applied Econometrics}, 20(7), 873--889. \href{https://doi.org/10.1002/jae.800}{doi:10.1002/jae.800}
 \item Knittel, C.\,R.\ \& Roberts, M.\,R.\ (2005). An empirical examination of restructured electricity prices. \textit{Energy Economics}, 27(5), 791--817. \href{https://doi.org/10.1016/j.eneco.2004.11.005}{doi:10.1016/j.eneco.2004.11.005}
 \item Lamoureux, C.\,G.\ \& Lastrapes, W.\,D.\ (1990). Persistence in variance, structural change, and the GARCH model. \textit{Journal of Business \& Economic Statistics}, 8(2), 225--234. \href{https://doi.org/10.1080/07350015.1990.10509794}{doi:10.1080/07350015.1990.10509794}
-\item Ljung, G.\,M.\ \& Box, G.\,E.\,P.\ (1978). On a measure of lack of fit in time series models. \textit{Biometrika}, 65(2), 297--303. \href{https://doi.org/10.1093/biomet/65.2.297}{doi:10.1093/biomet/65.2.297}
-\item Nelson, D.\,B.\ (1991). Conditional heteroskedasticity in asset returns: A new approach. \textit{Econometrica}, 59(2), 347--370. \href{https://doi.org/10.2307/2938260}{doi:10.2307/2938260}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{References (3/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Ljung, G.\,M.\ \& Box, G.\,E.\,P.\ (1978). On a measure of lack of fit in time series models. \textit{Biometrika}, 65(2), 297--303. \href{https://doi.org/10.1093/biomet/65.2.297}{doi:10.1093/biomet/65.2.297}
+\item Nelson, D.\,B.\ (1991). Conditional heteroskedasticity in asset returns: A new approach. \textit{Econometrica}, 59(2), 347--370. \href{https://doi.org/10.2307/2938260}{doi:10.2307/2938260}
 \item Patton, A.\,J.\ (2011). Volatility forecast comparison using imperfect volatility proxies. \textit{Journal of Econometrics}, 160(1), 246--256. \href{https://doi.org/10.1016/j.jeconom.2010.03.034}{doi:10.1016/j.jeconom.2010.03.034}
 \item Pele, D.\,T., Lazar, E.\ \& Dufour, A.\ (2017). Information entropy and measures of market risk. \textit{Entropy}, 19(5), 226. \href{https://doi.org/10.3390/e19050226}{doi:10.3390/e19050226}
 \item Pele, D.\,T.\ \& Mazurencu-Marinescu-Pele, M.\ (2019). Using high-frequency entropy to forecast Bitcoin's daily value at risk. \textit{Entropy}, 21(2), 102. \href{https://doi.org/10.3390/e21020102}{doi:10.3390/e21020102}
-\item RiskMetrics (1996). \textit{RiskMetrics --- Technical Document}, 4th ed. J.\,P.\ Morgan / Reuters, New York.
+\item RiskMetrics (1996). \textit{RiskMetrics --- Technical Document}, 4th ed. J.\,P.\ Morgan / Reuters, New York. \href{https://www.msci.com/documents/10199/5915b101-4206-4ba0-aee2-3449d5c7e95a}{msci.com}
 \item Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D.\,T.\ \& Lessmann, S.\ (2026). Energy Financial Risk Meter: Systemic risk in the EU energy sector. SSRN Working Paper 6985301. \href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}
 \item Uniejewski, B., Weron, R.\ \& Ziel, F.\ (2018). Variance stabilizing transformations for electricity spot price forecasting. \textit{IEEE Transactions on Power Systems}, 33(2), 2219--2229. \href{https://doi.org/10.1109/TPWRS.2017.2734563}{doi:10.1109/TPWRS.2017.2734563}
 \item Weron, R.\ (2006). \textit{Modeling and Forecasting Electricity Loads and Prices: A Statistical Approach}. Wiley, Chichester. \href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}

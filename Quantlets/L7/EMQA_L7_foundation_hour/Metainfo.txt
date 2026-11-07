@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_foundation_hour'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Mean absolute error by hour of the day (CET) of the naive model, AW-LEAR and two pretrained time-series foundation models used zero-shot (Chronos-Bolt small and Chronos-2; context = the last 2048 hourly prices up to the end of d-1). Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; zero-shot, context = last 2048 hourly prices. Source: energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania.'
+Description: 'Mean absolute error by hour of the day (CET) of the naive model, AW-LEAR and two pretrained time-series foundation models used zero-shot (Chronos-Bolt small and Chronos-2; context = the last 2048 hourly prices up to the end of d-1). Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; zero-shot, context = last 2048 hourly prices. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices.'
 
 Keywords: 'foundation model, Chronos, Chronos-2, zero-shot forecasting, time series, LEAR, electricity price forecasting, MAE by hour'
 

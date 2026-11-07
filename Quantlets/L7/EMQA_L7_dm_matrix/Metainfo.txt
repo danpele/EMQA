@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_dm_matrix'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Matrix of one-sided Diebold-Mariano (DM) p-values (H1: the column model is more accurate than the row model; loss = daily mean absolute error; Newey-West variance, 7 lags) for 11 forecasts of the Romanian day-ahead price: naive, AW-LEAR, the Lecture 2 ensemble, XGBoost, DNN, Chronos-Bolt, Chronos-2 and four combinations; test year 2025-11-01 to 2026-10-31, 365 days. Data: test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Matrix of one-sided Diebold-Mariano (DM) p-values (H1: the column model is more accurate than the row model; loss = daily mean absolute error; Newey-West variance, 7 lags) for 11 forecasts of the Romanian day-ahead price: naive, AW-LEAR, the Lecture 2 ensemble, XGBoost, DNN, Chronos-Bolt, Chronos-2 and four combinations; test year 2025-11-01 to 2026-10-31, 365 days. Data: test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'Diebold-Mariano test, forecast evaluation, forecast combination, LEAR, XGBoost, neural network, Chronos, foundation model, electricity price'
 

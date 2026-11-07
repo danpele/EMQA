@@ -47,6 +47,7 @@ def note(*xs):
 # =============================================================================
 ABBR = {
     "AI": ("artificial intelligence", "inteligență artificială"),
+    "ARIMA": ("autoregressive integrated moving average", "model autoregresiv integrat cu medie mobilă"),
     "ARX": ("autoregressive model with exogenous variables", "model autoregresiv cu variabile exogene"),
     "AUC": ("area under the ROC curve", "aria de sub curba ROC"),
     "AW": ("averaging across calibration windows", "medierea prognozelor obținute pe mai multe ferestre de calibrare"),
@@ -66,6 +67,7 @@ ABBR = {
     "GBM": ("gradient boosting machine (boosted trees)", "gradient boosting (ansamblu de arbori de decizie construiți secvențial)"),
     "ISE": ("Fraunhofer Institute for Solar Energy Systems", "Institutul Fraunhofer pentru Sisteme de Energie Solară"),
     "LASSO": ("least absolute shrinkage and selection operator", "operatorul de contracție și selecție în normă absolută"),
+    "LLM": ("large language model", "model mare de limbaj"),
     "LEAR": ("LASSO-estimated autoregression", "autoregresie estimată cu LASSO"),
     "MAD": ("median absolute deviation", "abaterea absolută mediană"),
     "MAE": ("mean absolute error", "eroarea absolută medie"),
@@ -73,12 +75,16 @@ ABBR = {
     "MLP": ("multilayer perceptron (feed-forward neural network)", "perceptron multistrat (rețea neuronală directă)"),
     "OPCOM": ("Romanian electricity and gas market operator", "operatorul pieței de energie electrică și de gaze naturale din România"),
     "PZU": ("Piața pentru Ziua Următoare (day-ahead market)", "piața pentru ziua următoare"),
+    "RC": ("Reality Check (data-snooping test of White, 2000)", "testul Reality Check (testul de selecție abuzivă al lui White, 2000)"),
     "RES": ("renewable energy sources (here: wind + solar)", "surse regenerabile de energie (aici: eolian + solar)"),
     "ReLU": ("rectified linear unit", "unitate liniară rectificată (rectified linear unit)"),
     "RMSE": ("root mean squared error", "rădăcina erorii pătratice medii"),
     "RO": ("Romania (bidding zone)", "România (zonă de ofertare)"),
     "ROC": ("receiver operating characteristic", "caracteristica de operare a receptorului (receiver operating characteristic)"),
     "rMAE": ("relative MAE (model MAE / naive MAE)", "MAE relativă (MAE a modelului / MAE a modelului naiv)"),
+    "SMAPE": ("symmetric mean absolute percentage error", "eroarea procentuală absolută medie simetrică"),
+    "SPA": ("superior predictive ability (test of Hansen, 2005)", "abilitate predictivă superioară (testul lui Hansen, 2005)"),
+    "FWER": ("familywise error rate", "rata erorii la nivelul familiei de ipoteze"),
     "SHAP": ("SHapley Additive exPlanations", "explicații aditive bazate pe valorile Shapley (SHapley Additive exPlanations)"),
     "TSO": ("transmission system operator", "operator de transport și de sistem"),
     "XGBoost": ("eXtreme Gradient Boosting (library)", "eXtreme Gradient Boosting (bibliotecă de programe)"),
@@ -87,7 +93,7 @@ ABBR = {
 }
 UNITS = {"EUR", "MW", "MWh", "GW"}
 # journal codes inside citations only; everything else must be in the Abbreviations list and spelled out
-IGNORE = {"EMQA", "IJF", "ENEECO", "APEN", "JASA", "TPWRS", "IEEE", "JBES", "PICBE", "RJEF", "IIF", "SPOT", "CO", "II",
+IGNORE = {"AI", "PatchTST", "TimesFM", "TS", "ReP", "AIDA", "TabPFN", "NBEATSx", "NBEAT", "JEF", "ESR", "EMQA", "IJF", "ENEECO", "APEN", "JASA", "TPWRS", "IEEE", "JBES", "PICBE", "RJEF", "IIF", "SPOT", "CO", "II",
           "XG", "JMLR", "ICLR", "KDD", "ACM", "SIGKDD", "TMLR", "NMI", "ECECSR", "MWR", "PRL", "CSDA", "ESL", "NIPS", "AM",
           "ECO", "ES", "VaR", "CEE", "SSRN", "IPE", "ASE", "TVOCCA", "VOFEIT"}
 
@@ -226,8 +232,8 @@ def build(lang, H=None):
            "\\textbf{Anul de test}: modelele sînt reestimate la începutul fiecărei luni, pe toate zilele anterioare"),
          t("never used to choose anything; the same year as in Lecture 2, so the errors are directly comparable",
            "nu se folosește pentru nicio alegere; este același an ca în cursul 2, deci erorile se pot compara direct"))],
-        height="0.42\\textheight", job=t("treat the test year like a sealed envelope: it is opened once, after every choice is made.",
-                                         "tratați anul de test ca pe un plic sigilat: se deschide o singură dată, după ce toate alegerile au fost făcute."),
+        height="0.58\\textheight", job=t("treat the test year like a sealed envelope, opened once, after every choice is made.",
+                                         "tratați anul de test ca pe un plic sigilat, deschis o singură dată, după toate alegerile."),
         tryit=NB + " \\S1", cite="(Bergmeir \\& Benítez, 2012, Inf.\\ Sci.; Lago et al., 2021, APEN)")
 
     D.concept(t("Hyperparameters are chosen by random search on the validation year", "Hiperparametrii se aleg prin căutare aleatoare pe anul de validare"),
@@ -298,12 +304,14 @@ def build(lang, H=None):
 
     D.chart(t("Early stopping: stop when the error on recent days stops falling", "Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade"),
             "learning_curve", [
-                t("Refit for @{curve.month|ym}: the error on the last 15\\% of days is lowest at epoch @{curve.best_ep} (@{curve.v_best|.2f} EUR/MWh); training stops at epoch @{curve.n_ep}.",
-                  "Reestimarea pentru @{curve.month|ym}: eroarea pe ultimele 15\\% din zile este minimă la epoca @{curve.best_ep} (@{curve.v_best|.2f} EUR/MWh); antrenarea se oprește la epoca @{curve.n_ep}"),
+                (t("Refit for @{curve.month|ym}: the error on the last 15\\% of days is lowest at epoch @{curve.best_ep}",
+                   "Reestimarea pentru @{curve.month|ym}: eroarea pe ultimele 15\\% din zile este minimă la epoca @{curve.best_ep}"),
+                 t("@{curve.v_best|.2f} EUR/MWh; training stops at epoch @{curve.n_ep}",
+                   "@{curve.v_best|.2f} EUR/MWh; antrenarea se oprește la epoca @{curve.n_ep}")),
                 t("After that point the network fits the past better and the recent days worse: it starts to memorise.",
-                  "După acest punct, rețeaua reproduce tot mai bine trecutul și tot mai slab zilele recente; începe să memoreze")],
-            height="0.46\\textheight", job=t("if a vendor cannot show you this curve, the network was probably trained until it fitted the past.",
-                                             "dacă un furnizor nu vă poate arăta această curbă, rețeaua a fost probabil antrenată pînă a reprodus trecutul."),
+                  "După acest punct, rețeaua reproduce mai bine trecutul, dar mai slab zilele recente: începe să memoreze")],
+            height="0.58\\textheight", job=t("ask the vendor for this curve: without it, the network may simply have memorised the past.",
+                                             "cereți furnizorului această curbă: fără ea, rețeaua poate să fi memorat trecutul."),
             tryit=NB + " \\S2", cite=t("(own computation; chosen DNN, seed 1)", "(calcule proprii; rețeaua DNN aleasă, inițializarea 1)"))
 
     D.chart(t("Random search cuts the validation error of both models", "Căutarea aleatoare reduce eroarea de validare a ambelor modele"),
@@ -313,9 +321,9 @@ def build(lang, H=None):
                  t("\\textbf{eXtreme Gradient Boosting (XGBoost)}: @{search.xgb.val_best|.2f} against @{search.xgb.val_l2|.2f} (rank @{search.xgb.rank_l2})",
                    "\\textbf{eXtreme Gradient Boosting (XGBoost)}: @{search.xgb.val_best|.2f} față de @{search.xgb.val_l2|.2f} (locul @{search.xgb.rank_l2})")),
                 t("All @{search.n_cfg} settings of both models beat the naive model on the validation year (@{search.naive_val|.2f} EUR/MWh).",
-                  "Toate cele @{search.n_cfg} " + de("search.n_cfg") + "setări ale ambelor modele sînt mai precise decît modelul naiv în anul de validare (@{search.naive_val|.2f} EUR/MWh)")],
-            height="0.46\\textheight", job=t("budget one validation year for tuning before you trust any machine-learning forecast.",
-                                             "prevedeți un an de validare pentru calibrare înainte de a avea încredere într-o prognoză de învățare automată."),
+                  "Toate cele @{search.n_cfg} " + de("search.n_cfg") + "setări, la ambele modele, sînt mai precise decît modelul naiv (@{search.naive_val|.2f} EUR/MWh)")],
+            height="0.58\\textheight", job=t("budget one validation year for tuning any machine-learning model.",
+                                             "prevedeți un an de validare pentru calibrarea oricărui model de învățare automată."),
             tryit=NB + " \\S2", cite=t("(own computation; validation year @{design.val_start|date} -- @{design.val_end|date})",
                                        "(calcule proprii; anul de validare @{design.val_start|date} -- @{design.val_end|date})"))
 
@@ -385,9 +393,81 @@ def build(lang, H=None):
           "Chronos-Bolt, mai mic și mai vechi, este la egalitate cu AW-LEAR (DM: " + pv("dm.aw_lear__bolt.p") + ")"),
         t("The 10\\%--90\\% band of Chronos-2 holds @{found.cov80|.1f}\\% of the prices, not 80\\%: too narrow.",
           "Intervalul 10\\%--90\\% al modelului Chronos-2 conține @{found.cov80|.1f}\\% din prețuri, nu 80\\%: este prea îngust")],
-        height="0.46\\textheight", job=t("use the median; recalibrate the bands (Lecture 2) before sizing risk with them.",
+        height="0.58\\textheight", job=t("use the median; recalibrate the bands (Lecture 2) before sizing risk with them.",
                                          "folosiți mediana; recalibrați intervalele (cursul 2) înainte de a dimensiona riscul cu ele."),
         tryit=NB + " \\S4", cite=OWN)
+
+
+    # ------------------------------------------------------------------ AIDA 2026: what the field found (Weron keynote)
+    WER = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf"
+    KUA = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf"
+    CLO = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf"
+    # (no subsection: the section outline of this lecture has no room for an extra line)
+    D.frame(t("AIDA 2026 keynote: deep networks beat LEAR, zero-shot models compete",
+              "AIDA 2026: DNN întrece LEAR, modelele preantrenate concurează"), cols(
+        it((t("\\textbf{R.\\ Weron, keynote} (4 June 2026, \\href{" + WER + "}{slides})",
+              "\\textbf{R.\\ Weron, conferință invitată} (4 iunie 2026, \\href{" + WER + "}{diapozitive})"),
+            t("model evolution: ARX, averaging across windows, LEAR, deep and interpretable networks",
+              "evoluția modelelor: ARX, medierea pe ferestre, LEAR, rețele profunde și interpretabile"),
+            t("pretrained zero-shot models against LEAR and distributional DNN models, test 2021--2025",
+              "modele preantrenate, fără reantrenare (zero-shot), față de LEAR și de rețele DNN distribuționale, test 2021--2025")),
+           (t("\\textbf{Deep and interpretable networks}", "\\textbf{Rețele profunde și interpretabile}"),
+            t("open epftoolbox benchmark: the DNN had a lower rMAE than LEAR in all five markets (Lago et al., 2021)",
+              "evaluarea deschisă epftoolbox: rețeaua DNN are rMAE mai mică decît LEAR pe toate cele cinci piețe (Lago et al., 2021)"),
+            t("NBEATSx: trend, seasonality and exogenous blocks make the network readable (Olivares et al., 2023)",
+              "NBEATSx: blocurile de trend, sezonalitate și variabile exogene fac rețeaua interpretabilă (Olivares et al., 2023)")), sep="3pt"),
+        it((t("\\textbf{Zero-shot results} (RMSE, as printed)", "\\textbf{Rezultate zero-shot} (RMSE, conform diapozitivelor)"),
+            t("2022: LEAR + conformal prediction " + n(45.71, ".2f") + ", Chronos 2 " + n(41.07, ".2f") + ", TabPFN 3.0 ts " + n(34.39, ".2f"),
+              "2022: LEAR + predicție conformală " + n(45.71, ".2f") + ", Chronos 2 " + n(41.07, ".2f") + ", TabPFN 3.0 ts " + n(34.39, ".2f")),
+            t("2025: " + n(20.38, ".2f") + ", " + n(20.58, ".2f") + ", " + n(17.66, ".2f") + "; a TabPFN version was the best in every year",
+              "2025: " + n(20.38, ".2f") + ", " + n(20.58, ".2f") + " și " + n(17.66, ".2f") + "; o versiune TabPFN a fost cea mai bună în fiecare an")),
+           (t("\\textbf{Link with our test year}", "\\textbf{Legătura cu anul nostru de test}"),
+            t("Chronos-2, zero-shot, is our most accurate single model (MAE @{acc.chr2.mae|.2f} vs @{acc.aw_lear.mae|.2f} for AW-LEAR)",
+              "Chronos-2, fără reantrenare, este cel mai precis model individual (MAE @{acc.chr2.mae|.2f}, față de @{acc.aw_lear.mae|.2f} la AW-LEAR)"),
+            t("rankings move: TabPFN 2.0 had RMSE " + n(68.85, ".2f") + " in 2022, " + n(17.52, ".2f") + " in 2025",
+              "clasamentele se schimbă: TabPFN 2.0 a avut RMSE " + n(68.85, ".2f") + " în 2022 și " + n(17.52, ".2f") + " în 2025")), sep="3pt"),
+        "0.50", "0.47") +
+        D.bottom(t("keep LEAR as the benchmark and test zero-shot models next to it, over several years.",
+                   "păstrați LEAR ca reper și testați modelele zero-shot alături de el, pe mai mulți ani.")),
+        "footnotesize", cite=t("(AIDA 2026 slides, Bucharest; papers: ", "(diapozitivele AIDA 2026, București; lucrări: ") +
+        "\\href{https://doi.org/10.1016/j.apenergy.2021.116983}{Lago et al., 2021, APEN}; "
+        "\\href{https://doi.org/10.1016/j.ijforecast.2022.03.001}{Olivares et al., 2023, IJF})")
+
+    # ------------------------------------------------------------------ AIDA 2026: four generations of forecasting methods (Andrei et al.)
+    AND = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/andrei_ai4efin_benchmarking.pdf"
+    D.frame(t("AIDA 2026: four generations of models on 27 European price series",
+              "AIDA 2026: patru generații de modele pe 27 de serii europene de prețuri"), cols(
+        it((t("\\textbf{A.-V.\\ Andrei et al., talk} (3 June 2026, \\href{" + AND + "}{slides})",
+              "\\textbf{A.-V.\\ Andrei et al., prezentare} (3 iunie 2026, \\href{" + AND + "}{diapozitive})"),
+            t("11 models, four generations: econometric, e.g.\\ autoregressive integrated moving average (ARIMA); deep learning; transformers; "
+              "pretrained large language models (LLM): Chronos, TimesFM",
+              "11 modele, patru generații: econometrie, de ex.\\ modelul autoregresiv integrat cu medie mobilă (ARIMA); învățare profundă; "
+              "transformere; modele mari de limbaj (LLM) preantrenate: Chronos, TimesFM"),
+            ),
+           (t("\\textbf{Data and walk-forward validation}", "\\textbf{Date și validare walk-forward}"),
+            t("wholesale prices of 27 European Union (EU) countries, Ember (from ENTSO-E)",
+              "prețuri angro din 27 de țări ale Uniunii Europene (UE), Ember (ENTSO-E)"),
+            t("96 steps in, 96 out; training 2000 hours (83 days), test 500 hours (20 days)",
+              "96 de pași la intrare și 96 la ieșire; antrenare 2000 de ore (83 de zile), test 500 de ore (20 de zile)"),
+            t("symmetric mean absolute percentage error (SMAPE); score (100 $\\times$ SMAPE + RMSE)/2",
+              "eroarea procentuală absolută medie simetrică (SMAPE); scor (100 $\\times$ SMAPE + RMSE)/2")), sep="3pt"),
+        it((t("\\textbf{Results} (rank among the 11 models)", "\\textbf{Rezultate} (locul între cele 11 modele)"),
+            t("PatchTST (a transformer) is first or second in all 27 countries",
+              "PatchTST (un transformer) este pe primul sau al doilea loc în toate cele 27 de țări"),
+            t("Romania: PatchTST 1, TimesFM 2, Chronos 8, ARIMA 9",
+              "România: PatchTST 1, TimesFM 2, Chronos 8, ARIMA 9"),
+            t("Germany: PatchTST 1, TimesFM 5, Chronos 10",
+              "Germania: PatchTST 1, TimesFM 5, Chronos 10"),
+            t("gains are model-specific, not uniform across the 4th generation",
+              "cîștigurile depind de model, nu sînt uniforme în generația a patra")),
+           (t("\\textbf{Link with this lecture}", "\\textbf{Legătura cu acest curs}"),
+            t("on Romanian prices, Chronos-2 (2025) is our best single model (MAE @{acc.chr2.mae|.2f})",
+              "pe prețurile din România, Chronos-2 (2025) este cel mai bun model individual (MAE @{acc.chr2.mae|.2f})")), sep="3pt"),
+        "0.52", "0.45") +
+        D.bottom(t("compare model generations with walk-forward validation on several markets before choosing one.",
+                   "comparați generațiile de modele prin validare walk-forward, pe mai multe piețe, înainte de a alege.")),
+        "footnotesize", cite=t("(AIDA 2026 slides, Bucharest; paper: ", "(diapozitivele AIDA 2026, București; lucrare: ") +
+        "\\href{https://arxiv.org/abs/2411.03372}{Andrei et al., 2024, arXiv})")
 
     # ------------------------------------------------------------------ 4 comparison, combination, cost
     D.section(t("Honest comparison, combination and cost", "Comparație corectă, combinare și cost"))
@@ -420,14 +500,14 @@ def build(lang, H=None):
           "AW-LEAR + DNN + XGBoost este mai precis decît AW-LEAR (" + pv("dm.aw_lear__ens_ldx.p") + "); cu AW-ARX adăugat, MAE scade la @{acc.ens_t4.mae|.2f}, sub ansamblul din cursul 2 (" + pv("dm.ens4__ens_t4.p") + ")"),
         t("Adding AW-LEAR to Chronos-2 changes nothing (" + pv("dm.chr2__ens_lc.p") + "): on the hard days the two models make similar errors.",
           "Adăugarea AW-LEAR la Chronos-2 nu schimbă nimic (" + pv("dm.chr2__ens_lc.p") + "): în zilele dificile, cele două modele greșesc asemănător")],
-        height="0.55\\textheight", tryit=NB + " \\S5", cite=t("(own computation; one-sided DM tests)", "(calcule proprii; teste DM unilaterale)"))
+        height="0.58\\textheight", tryit=NB + " \\S5", cite=t("(own computation; one-sided DM tests)", "(calcule proprii; teste DM unilaterale)"))
 
     D.chart(t("Averaging works because the errors are not identical", "Media funcționează pentru că erorile nu sînt identice"), "combo_weight", [
         t("$\\Var\\big(\\tfrac{e_1+e_2}{2}\\big)=\\tfrac14(\\sigma_1^2+\\sigma_2^2+2\\rho\\sigma_1\\sigma_2)$: with correlation $\\rho<1$, the average errs less ($e$ = error, $\\sigma$ = its standard deviation).",
           "$\\Var\\big(\\tfrac{e_1+e_2}{2}\\big)=\\tfrac14(\\sigma_1^2+\\sigma_2^2+2\\rho\\sigma_1\\sigma_2)$: dacă $\\rho<1$, media greșește mai puțin ($e$ = eroarea, $\\sigma$ = abaterea ei standard, $\\rho$ = corelația)"),
         t("Error correlation with AW-LEAR: @{combo.corr.dnn|.2f} (DNN), @{combo.corr.xgb|.2f} (XGBoost); equal weights do almost as well as the best weight seen afterwards (@{combo.w_best_xgb|.2f}).",
           "Corelația erorilor cu AW-LEAR: @{combo.corr.dnn|.2f} (DNN), @{combo.corr.xgb|.2f} (XGBoost); ponderile egale sînt aproape la fel de bune ca ponderea optimă văzută ulterior (@{combo.w_best_xgb|.2f})")],
-        height="0.46\\textheight", job=t("average with equal weights before estimating clever weights.", "faceți media cu ponderi egale înainte de a estima ponderi „inteligente”."),
+        height="0.58\\textheight", job=t("average with equal weights before estimating clever weights.", "faceți media cu ponderi egale înainte de a estima ponderi „inteligente”."),
         tryit=NB + " \\S5", cite="(Bates \\& Granger, 1969; " + t("own computation", "calcule proprii") + ")")
 
     D.chart(t("Month by month, the combination beats AW-LEAR in @{bymonth.n_ldx_beats_lear} of 12 months",
@@ -439,17 +519,19 @@ def build(lang, H=None):
            "Luate separat, XGBoost depășește AW-LEAR în @{bymonth.n_xgb_beats_lear} luni, iar DNN în @{bymonth.n_dnn_beats_lear}; în medie cu acesta, combinația îl depășește în @{bymonth.n_ldx_beats_lear} luni")),
         t("All models err more in the same months (January, June, October): the hard days are hard for everyone.",
           "Toate modelele greșesc mai mult în aceleași luni (ianuarie, iunie, octombrie): zilele dificile sînt dificile pentru toate")],
-        height="0.46\\textheight", job=t("report accuracy month by month to the risk committee, not only the annual average.",
+        height="0.58\\textheight", job=t("report accuracy month by month to the risk committee, not only the annual average.",
                                          "raportați comitetului de risc acuratețea lună de lună, nu doar media anuală."),
         tryit=NB + " \\S5", cite=OWN)
 
     D.chart(t("Compute cost: daily LEAR is the expensive model, ML costs minutes",
               "Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute"), "cost_gain", [
-        t("Test year, one core: AW-LEAR @{cost.aw_lear|.1f} min (365 days $\\times$ 3 windows $\\times$ 24 h); XGBoost @{cost.xgb|.1f}; DNN @{cost.dnn|.1f}; Chronos-2 @{cost.chr2|.1f}.",
-          "Anul de test, pe un nucleu: AW-LEAR @{cost.aw_lear|.1f} min (365 de zile $\\times$ 3 ferestre $\\times$ 24 de ore); XGBoost @{cost.xgb|.1f}; DNN @{cost.dnn|.1f}; Chronos-2 @{cost.chr2|.1f}"),
-        t("Hidden costs: the search (@{cost.search|.1f} min), the pretraining of Chronos (by others), the people who run the pipeline.",
-          "Costuri ascunse: căutarea setărilor (@{cost.search|.1f} min), preantrenarea Chronos (făcută de alții), oamenii care întrețin fluxul de date")],
-        height="0.46\\textheight", job=t("compare models on error per euro of total cost of ownership, not on error alone.",
+        (t("Test year, one core: AW-LEAR @{cost.aw_lear|.1f} min (365 days $\\times$ 3 windows $\\times$ 24 h)",
+           "Anul de test, pe un nucleu: AW-LEAR @{cost.aw_lear|.1f} min (365 de zile $\\times$ 3 ferestre $\\times$ 24 de ore)"),
+         t("XGBoost @{cost.xgb|.1f} min, DNN @{cost.dnn|.1f} min, Chronos-2 @{cost.chr2|.1f} min",
+           "XGBoost @{cost.xgb|.1f} min, DNN @{cost.dnn|.1f} min, Chronos-2 @{cost.chr2|.1f} min")),
+        t("Hidden costs: the search (@{cost.search|.1f} min), the pretraining of Chronos, the people who run the pipeline.",
+          "Costuri ascunse: căutarea setărilor (@{cost.search|.1f} min), preantrenarea Chronos, oamenii care operează fluxul")],
+        height="0.58\\textheight", job=t("compare models on error per euro of total cost of ownership, not on error alone.",
                                          "comparați modelele după eroare raportată la costul total de utilizare, nu doar după eroare."),
         tryit=NB + " \\S5", cite=t("(own computation; times measured on one core of an 18-core laptop)", "(calcule proprii; timpi măsurați pe un nucleu al unui laptop cu 18 nuclee)"))
 
@@ -477,30 +559,64 @@ def build(lang, H=None):
 
     D.chart(t("What drives the trees: yesterday's price at the same hour", "Ce determină prognoza arborilor: prețul de ieri, la aceeași oră"), "shap_global", [
         t("Top inputs: price $d-1$ same hour @{shap.top_share.0|.1f}\\%, price $d-7$ same hour @{shap.top_share.1|.1f}\\%, day of week @{shap.top_share.2|.1f}\\% of the mean $|\\phi|$.",
-          "Primele variabile: prețul din $d-1$, aceeași oră (@{shap.top_share.0|.1f}\\%), prețul din $d-7$, aceeași oră (@{shap.top_share.1|.1f}\\%), ziua săptămînii (@{shap.top_share.2|.1f}\\%) din media $|\\phi|$"),
+          "Ponderi în media $|\\phi|$: prețul din $d-1$, aceeași oră (@{shap.top_share.0|.1f}\\%), din $d-7$ (@{shap.top_share.1|.1f}\\%), ziua săptămînii (@{shap.top_share.2|.1f}\\%)"),
         t("Load @{shap.groups.load|.1f}\\%, wind + solar @{shap.groups.res|.1f}\\%: known only up to $d-2$, they are old news at gate closure.",
-          "Consumul are @{shap.groups.load|.1f}\\%, iar producția eoliană și solară @{shap.groups.res|.1f}\\%: fiind cunoscute doar pînă în $d-2$, sînt informații vechi la închiderea licitației")],
-        height="0.52\\textheight", job=t("buy better inputs first: the load and wind forecasts of the transmission system operator (TSO).",
+          "Consum @{shap.groups.load|.1f}\\%, eolian și solar @{shap.groups.res|.1f}\\%: cunoscute doar pînă în $d-2$, deci informații vechi")],
+        height="0.58\\textheight", job=t("buy better inputs first: the load and wind forecasts of the transmission system operator (TSO).",
                                          "cumpărați întîi intrări mai bune: prognozele operatorului de transport și de sistem (TSO)."),
         tryit=NB + " \\S6", cite=OWN)
 
     D.chart(t("Wind and solar lower the price only in the hours when they are large", "Producția eoliană și solară scade prețul doar în orele în care este mare"), "shap_res", [
-        t("Each point is one test hour: the more wind + solar on $d-2$ at that hour, the more negative its contribution (correlation @{shap.res_corr|.2f}).",
-          "Fiecare punct este o oră din anul de test: cu cît producția eoliană și solară din $d-2$ la acea oră este mai mare, cu atît contribuția ei este mai negativă (corelație @{shap.res_corr|.2f})"),
-        t("The effect appears above about 2 gigawatts (GW), mostly at midday: a threshold that a linear model cannot express.",
-          "Efectul apare peste aproximativ 2 gigawați (GW), mai ales la prînz: un prag pe care un model liniar nu îl poate exprima")],
-        height="0.46\\textheight", job=t("a solar developer can read here the price discount that its own output helps to create.",
-                                         "un dezvoltator de parcuri solare poate citi aici reducerea de preț la care contribuie chiar producția sa."),
+        (t("Each point is one test hour", "Fiecare punct este o oră din anul de test"),
+         t("the more wind + solar on $d-2$ at that hour, the more negative its contribution (correlation @{shap.res_corr|.2f})",
+           "mai multă producție eoliană și solară în $d-2$ înseamnă o contribuție mai negativă (corelație @{shap.res_corr|.2f})")),
+        t("The effect appears above about 2 gigawatts (GW): a threshold that a linear model cannot express.",
+          "Efectul apare peste circa 2 gigawați (GW): un prag pe care un model liniar nu îl poate exprima")],
+        height="0.58\\textheight", job=t("a solar developer can read here the price discount that its own output helps to create.",
+                                         "un dezvoltator solar vede aici reducerea de preț la care contribuie propria producție."),
         tryit=NB + " \\S6", cite=OWN)
 
     D.chart(t("The neural network relies even more on yesterday's prices", "Rețeaua neuronală se bazează și mai mult pe prețurile de ieri"), "perm_dnn", [
-        t("Permutation importance $I_b$ = MAE with block $b$ shuffled across test days minus the MAE without shuffling (5 permutations); it works for any model.",
-          "Importanța prin permutare: $I_b$ = MAE cu blocul $b$ amestecat între zilele de test minus MAE fără amestecare (5 permutări); se aplică oricărui model"),
-        t("Prices of $d-1$: +@{perm.price_d1|.2f} EUR/MWh; day of week +@{perm.day_of_week|.2f}; load +@{perm.load|.2f}; wind + solar @{perm.wind_solar|+.2f}.",
-          "Prețurile din $d-1$: +@{perm.price_d1|.2f} EUR/MWh; ziua săptămînii +@{perm.day_of_week|.2f}; consumul +@{perm.load|.2f}; producția eoliană și solară @{perm.wind_solar|+.2f}")],
-        height="0.46\\textheight", job=t("monitor the price feed of $d-1$ first: the network fails without it.",
+        (t("Permutation importance $I_b$ = rise in MAE when block $b$ is shuffled across test days",
+           "Importanța prin permutare $I_b$ = creșterea MAE cînd blocul $b$ este amestecat între zilele de test"),
+         t("5 permutations, valid for any model", "5 permutări, metodă valabilă pentru orice model")),
+        (t("Prices of $d-1$: +@{perm.price_d1|.2f} EUR/MWh", "Prețurile din $d-1$: +@{perm.price_d1|.2f} EUR/MWh"),
+         t("day of week +@{perm.day_of_week|.2f}, load +@{perm.load|.2f}, wind + solar @{perm.wind_solar|+.2f}",
+           "ziua săptămînii +@{perm.day_of_week|.2f}, consumul +@{perm.load|.2f}, producția eoliană și solară @{perm.wind_solar|+.2f}"))],
+        height="0.58\\textheight", job=t("monitor the price feed of $d-1$ first: the network fails without it.",
                                          "monitorizați întîi fluxul prețurilor din $d-1$: fără el, rețeaua cedează."),
         tryit=NB + " \\S6", cite="(Breiman, 2001, Mach.\\ Learn.; " + t("own computation", "calcule proprii") + ")")
+
+
+    # (no subsection: the section outline of this lecture has no room for an extra line)
+    D.frame(t("Energy finance uses machine learning widely but rarely explains it",
+              "Finanțele energiei folosesc învățarea automată, dar rar o explică"), cols(
+        it((t("\\textbf{R.\\ Clodnitchi, talk} (3 June 2026, \\href{" + CLO + "}{slides})",
+              "\\textbf{R.\\ Clodnitchi, prezentare} (3 iunie 2026, \\href{" + CLO + "}{diapozitive})"),
+            t("systematic review of artificial intelligence (AI) in energy finance (Anagnoste et al., 2025, \\textit{Energy Strategy Reviews})",
+              "analiză sistematică a literaturii despre inteligența artificială (AI) în finanțele energiei (Anagnoste et al., 2025, \\textit{Energy Strategy Reviews})"),
+            t("about 700 Web of Science articles screened, 232 peer-reviewed kept (2020--2025), on six pillars of energy finance",
+              "circa 700 de articole din Web of Science, 232 reținute (evaluate colegial, 2020--2025), pe șase piloni ai finanțelor energiei")),
+           (t("\\textbf{Where AI is used} (share of papers using AI/ML)", "\\textbf{Unde se folosește AI} (ponderea lucrărilor cu AI/ML)"),
+            t("pricing mechanisms 100\\%, energy derivatives 100\\%, energy and financial markets " + n(97.5, ".1f") + "\\%, risk management " + n(93.0, ".1f") + "\\%",
+              "mecanisme de preț 100\\%, derivate pe energie 100\\%, piețe energetice și financiare " + n(97.5, ".1f") + "\\%, gestiunea riscului " + n(93.0, ".1f") + "\\%"),
+            t("green finance " + n(60.4, ".1f") + "\\%; corporate finance of energy firms 0\\% (panel econometrics only)",
+              "finanțe verzi " + n(60.4, ".1f") + "\\%; finanțele corporative ale firmelor de energie 0\\% (numai econometrie pe date panel)")), sep="3pt"),
+        it((t("\\textbf{What is missing}", "\\textbf{Ce lipsește}"),
+            t("explainable AI: " + n(19.6, ".1f") + "\\% of the derivatives papers, 0--5\\% in the other pillars",
+              "AI explicabilă: " + n(19.6, ".1f") + "\\% din lucrările despre derivate, 0--5\\% în ceilalți piloni"),
+            t("neural networks dominate: " + n(88.2, ".1f") + "\\% of the derivatives papers, " + n(72.1, ".1f") + "\\% in risk management",
+              "domină rețelele neuronale: " + n(88.2, ".1f") + "\\% din lucrările despre derivate, " + n(72.1, ".1f") + "\\% în gestiunea riscului"),
+            t("proposed next step: explainable AI and causal machine learning for regulators and policy evaluation",
+              "direcția propusă: AI explicabilă și învățare automată cauzală, pentru autoritățile de reglementare și evaluarea politicilor")),
+           (t("\\textbf{Link with this lecture}", "\\textbf{Legătura cu acest curs}"),
+            t("the SHAP and permutation charts of this section are the kind of explanation the review finds rare",
+              "graficele SHAP și de permutare din această secțiune sînt tipul de explicație pe care analiza îl găsește rar")), sep="3pt"),
+        "0.52", "0.45") +
+        D.bottom(t("ask for the explanation together with the forecast: regulators and boards will ask for it.",
+                   "cereți explicația odată cu prognoza: autoritățile și consiliile de administrație o vor cere.")),
+        "footnotesize", cite=t("(AIDA 2026 slides, Bucharest; paper: ", "(diapozitivele AIDA 2026, București; lucrare: ") +
+        "\\href{https://doi.org/10.1016/j.esr.2025.101833}{Anagnoste et al., 2025, ESR})")
 
     # ------------------------------------------------------------------ 6 spikes, negative prices, case study
     D.section(t("Spikes, negative prices and a case study", "Vîrfuri de preț, prețuri negative și un studiu de caz"))
@@ -511,7 +627,7 @@ def build(lang, H=None):
            "$\\theta$ între @{spike.theta_min|.1f} și @{spike.theta_max|.1f} EUR/MWh; @{spike.share_test|.1f}\\% din orele de test sînt vîrfuri, cele mai multe la ora @{spike.peak_h} (@{spike.peak_h_share|.1f}\\% din zile)")),
         t("\\textbf{Price $\\leq$ 0}: @{neg.n_test} hours on @{neg.n_days} days of the test year, mostly around @{neg.peak_h}:00.",
           "\\textbf{Preț $\\leq$ 0}: @{neg.n_test} " + de("neg.n_test") + "ore, în @{neg.n_days} " + de("neg.n_days") + "zile din anul de test, mai ales în jurul orei @{neg.peak_h}")],
-        height="0.46\\textheight", job=t("a battery charges at midday and discharges at 19:00--20:00: the two events are its business model.",
+        height="0.58\\textheight", job=t("a battery charges at midday and discharges at 19:00--20:00: the two events are its business model.",
                                          "o baterie se încarcă la prînz și se descarcă la orele 19--20: cele două evenimente sînt chiar modelul ei de afaceri."),
         tryit=NB + " \\S7", cite=OWN)
 
@@ -560,28 +676,30 @@ def build(lang, H=None):
           "Curbele caracteristice de operare (ROC); vîrfuri: AUC între @{spike.persist.auc|.3f} (persistență) și @{spike.lear.auc|.3f} (AW-LEAR), deoarece vîrful de seară se repetă de la o zi la alta"),
         t("Negative prices: persistence @{neg.persist.auc|.3f} against @{neg.xgb.auc|.3f} for XGBoost; they depend on tomorrow's sun and wind, not on yesterday.",
           "Prețuri negative: persistența are AUC @{neg.persist.auc|.3f}, față de @{neg.xgb.auc|.3f} pentru XGBoost; ele depind de soarele și vîntul de mîine, nu de ziua de ieri")],
-        height="0.48\\textheight", tryit=NB + " \\S7", cite=OWN)
+        height="0.58\\textheight", tryit=NB + " \\S7", cite=OWN)
 
     D.chart(t("Cost--loss rule: act when the spike probability exceeds C/L", "Regula cost--pierdere: reacționați cînd probabilitatea depășește C/L"), "decision", [
-        (t("\\textbf{Rule}: act if $\\hat\\pi_{d,h}>C/\\bar L$ = 30/@{decision.Lbar|.1f} = @{decision.cut|.3f}; C = cost of acting, $\\bar L$ = cost of a missed spike",
-           "\\textbf{Regula}: reacție dacă $\\hat\\pi_{d,h}>C/\\bar L$ = 30/@{decision.Lbar|.1f} = @{decision.cut|.3f}; C = costul reacției, $\\bar L$ = costul unui vîrf ratat"),
-         t("moving 1 MWh out of an alerted hour earns $P_{d,h}-\\theta_d-C$; C = 30 EUR/MWh (assumed); $\\bar L$ = mean excess over $\\theta$ in the validation year",
-           "mutarea a 1 MWh dintr-o oră cu alertă aduce $P_{d,h}-\\theta_d-C$; C = 30 EUR/MWh (ipoteză); $\\bar L$ = depășirea medie a pragului în anul de validare")),
+        (t("\\textbf{Rule}: act if $\\hat\\pi_{d,h}>C/\\bar L$ = 30/@{decision.Lbar|.1f} = @{decision.cut|.3f}",
+           "\\textbf{Regula}: reacție dacă $\\hat\\pi_{d,h}>C/\\bar L$ = 30/@{decision.Lbar|.1f} = @{decision.cut|.3f}"),
+         t("C = cost of acting = 30 EUR/MWh (assumed): moving 1 MWh out of an alerted hour earns $P_{d,h}-\\theta_d-C$",
+           "C = costul reacției = 30 EUR/MWh (ipoteză): mutarea a 1 MWh dintr-o oră cu alertă aduce $P_{d,h}-\\theta_d-C$"),
+         t("$\\bar L$ = cost of a missed spike = mean excess over $\\theta$ in the validation year",
+           "$\\bar L$ = costul unui vîrf ratat = depășirea medie a pragului în anul de validare")),
         t("Value per MW and year: @{decision.v_cut|.1f} thousand EUR at C/L, @{decision.v_persist|.1f} with persistence, @{decision.v_perfect|.1f} with perfect foresight.",
           "Valoarea pe MW și an: @{decision.v_cut|.1f} mii EUR la pragul C/L, @{decision.v_persist|.1f} cu persistența, @{decision.v_perfect|.1f} cu informație perfectă")],
-        height="0.40\\textheight", job=t("set the threshold from your costs; the best one seen afterwards (@{decision.best_cut|.2f}) is hindsight.",
-                                         "stabiliți pragul din propriile costuri; cel mai bun prag văzut ulterior (@{decision.best_cut|.2f}) este înțelepciune retrospectivă."),
+        height="0.58\\textheight", job=t("set the threshold from your costs, not from hindsight (best threshold ex post: @{decision.best_cut|.2f}).",
+                                         "stabiliți pragul din propriile costuri, nu retrospectiv (cel mai bun prag ulterior: @{decision.best_cut|.2f})."),
         tryit=NB + " \\S7", cite="(Murphy, 1977, MWR; " + t("own computation", "calcule proprii") + ")")
 
     D.chart(t("Case study, @{case.day|date}: every model saw the spike, none its size",
-              "Studiu de caz, @{case.day|date}: vîrful a fost anticipat, amploarea lui nu"), "case_week", [
+              "Studiu de caz, @{case.day|date}: vîrf anticipat, amploare subestimată"), "case_week", [
         (t("\\textbf{Hour @{case.hour}:00 CET}: @{case.price|.2f} EUR/MWh, the highest price of the test year",
            "\\textbf{Ora @{case.hour}:00 CET}: @{case.price|.2f} EUR/MWh, cel mai mare preț din anul de test"),
          t("forecasts: AW-LEAR @{case.aw_lear|.0f}, XGBoost @{case.xgb|.0f}, DNN @{case.dnn|.0f}, Chronos-2 @{case.chr2|.0f}; spike probability @{case.p_xgb|.3f}",
            "prognoze: AW-LEAR @{case.aw_lear|.0f}, XGBoost @{case.xgb|.0f}, DNN @{case.dnn|.0f}, Chronos-2 @{case.chr2|.0f}; probabilitatea vîrfului @{case.p_xgb|.3f}")),
-        t("Week @{case.week_start|date} -- @{case.week_end|date}: @{case.w_spike_h} spike hours, @{case.w_alerts} alerts at C/L, @{case.w_hits} of them correct.",
-          "Săptămîna @{case.week_start|date} -- @{case.week_end|date}: @{case.w_spike_h} " + de("case.w_spike_h") + "ore cu vîrfuri, @{case.w_alerts} " + de("case.w_alerts") + "alerte la pragul C/L, iar @{case.w_hits} " + de("case.w_hits") + "alerte au fost corecte")],
-        height="0.52\\textheight", job=t("the probability says whether to act, the point forecast how much.",
+        t("In that week: @{case.w_spike_h} spike hours, @{case.w_alerts} alerts at C/L, @{case.w_hits} of them correct.",
+          "În acea săptămînă: @{case.w_spike_h} " + de("case.w_spike_h") + "ore cu vîrf, @{case.w_alerts} " + de("case.w_alerts") + "alerte la pragul C/L, dintre care @{case.w_hits} corecte")],
+        height="0.58\\textheight", job=t("the probability says whether to act, the point forecast how much.",
                                          "probabilitatea arată dacă reacționați, prognoza punctuală arată cît."),
         tryit=NB + " \\S8", cite=t("(own computation; Romanian day-ahead prices)", "(calcule proprii; prețurile PZU din România)"))
 
@@ -591,7 +709,7 @@ def build(lang, H=None):
           "De la @{case.base_eur|.0f} (prognoza medie) la @{case.xgb_eur|.0f} EUR/MWh: prețul din $d-1$, aceeași oră, @{case.top_eur.0|+.0f}; prețul din $d-7$ @{case.top_eur.1|+.0f}"),
         t("Trees cannot go above the prices stored in their leaves: extremes are capped.",
           "Arborii nu pot depăși prețurile memorate în frunze: valorile extreme sînt plafonate")],
-        height="0.52\\textheight", job=t("show the board this breakdown for every large alert.",
+        height="0.58\\textheight", job=t("show the board this breakdown for every large alert.",
                                          "prezentați consiliului de administrație această descompunere pentru fiecare alertă importantă."),
         tryit=NB + " \\S8", cite=t("(own computation; SHAP values in EUR/MWh, Appendix C)", "(calcule proprii; valori SHAP în EUR/MWh, anexa C)"))
 
@@ -619,24 +737,52 @@ def build(lang, H=None):
     D.section(t("Pitfalls that flatter a model", "Capcane care fac un model să pară mai bun"))
     D.chart(t("Look-ahead: two invalid evaluations flatter XGBoost", "Informația din viitor: două evaluări invalide avantajează XGBoost"), "pit_leak", [
         (t("\\textbf{Shuffled 5-fold cross-validation}: future days end up in the training sample",
-           "\\textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor ajung în eșantionul de antrenare"),
+           "\\textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor intră în antrenare"),
          t("MAE @{pit.shuffled|.2f} instead of @{pit.honest|.2f}: @{pit.shuf_gain|.1f}\\% better, on paper only", "MAE @{pit.shuffled|.2f} în loc de @{pit.honest|.2f}: cu @{pit.shuf_gain|.1f}\\% mai bine, doar pe hîrtie")),
-        (t("\\textbf{Load and wind + solar of day $d$ as inputs}: not known at 12:00 on $d-1$; in the chart, renewable energy sources (RES)",
-           "\\textbf{Consumul și producția eoliană și solară din ziua $d$ ca intrări}: nu sînt cunoscute la ora 12:00 în ziua $d-1$; în grafic, surse regenerabile de energie (RES)"),
-         t("MAE @{pit.leak|.2f}; an apparent gain of @{pit.leak_gain|.1f}\\%, the most that perfect forecasts of these inputs could add",
-           "MAE @{pit.leak|.2f}; un cîștig aparent de @{pit.leak_gain|.1f}\\%, cel mult cît ar putea aduce prognoze perfecte ale acestor variabile"))],
-        height="0.40\\textheight", job=t("ask every vendor for a walk-forward test with each input time-stamped at gate closure.",
-                                         "cereți oricărui furnizor o testare cronologică, cu fiecare intrare datată la momentul închiderii licitației."),
+        (t("\\textbf{Load and renewable energy sources (RES) of day $d$ as inputs}: unknown at 12:00 on $d-1$",
+           "\\textbf{Consum și surse regenerabile de energie (RES) din ziua $d$}: necunoscute la 12:00 în $d-1$"),
+         t("MAE @{pit.leak|.2f}, an apparent gain of @{pit.leak_gain|.1f}\\%: the most that perfect forecasts of these inputs could add",
+           "MAE @{pit.leak|.2f}, un cîștig aparent de @{pit.leak_gain|.1f}\\%: cel mult cît ar aduce prognoze perfecte ale acestor variabile"))],
+        height="0.58\\textheight", job=t("ask every vendor for a walk-forward test with each input time-stamped at gate closure.",
+                                         "cereți oricărui furnizor o testare cronologică, cu intrările datate la închiderea licitației."),
         tryit=NB + " \\S9", cite="(Bergmeir \\& Benítez, 2012, Inf.\\ Sci.; " + t("own computation", "calcule proprii") + ")")
 
     D.chart(t("Data snooping: choosing on the test year fakes a win over LEAR", "Alegerea pe anul de test simulează o victorie asupra LEAR"), "snooping", [
         t("Honest DNN (chosen on validation, 1 seed): MAE @{search.dnn.test_chosen|.2f}; best of @{search.n_cfg} settings on the test year: @{search.dnn.test_best|.2f}, just below AW-LEAR (@{acc.aw_lear.mae|.2f}).",
           "Rețeaua DNN aleasă corect (la validare, o inițializare): MAE @{search.dnn.test_chosen|.2f}; cea mai bună dintre cele @{search.n_cfg} " + de("search.n_cfg") + "setări pe anul de test: @{search.dnn.test_best|.2f}, chiar sub AW-LEAR (@{acc.aw_lear.mae|.2f})"),
-        t("Validation and test ranks agree (Spearman correlation @{search.dnn.spearman|.2f} for the DNN, @{search.xgb.spearman|.2f} for XGBoost): validation works, but it is not perfect.",
-          "Clasamentele de validare și de test sînt apropiate (corelația Spearman @{search.dnn.spearman|.2f} pentru DNN, @{search.xgb.spearman|.2f} pentru XGBoost): validarea funcționează, dar nu este perfectă")],
-        height="0.44\\textheight", job=t("ask how many models were tried before the one presented; the more trials, the more the best one flatters.",
-                                         "întrebați cîte modele au fost încercate înaintea celui prezentat; cu cît sînt mai multe încercări, cu atît cel mai bun pare mai bun decît este."),
+        t("Validation works, but not perfectly: Spearman rank correlation @{search.dnn.spearman|.2f} (DNN), @{search.xgb.spearman|.2f} (XGBoost).",
+          "Validarea funcționează, dar imperfect: corelația Spearman a rangurilor, @{search.dnn.spearman|.2f} (DNN), @{search.xgb.spearman|.2f} (XGBoost)")],
+        height="0.58\\textheight", job=t("ask how many models were tried: the more trials, the more the best one flatters.",
+                                         "întrebați cîte modele au fost încercate: cu cît mai multe, cu atît cel mai bun pare mai bun."),
         tryit=NB + " \\S9", cite="(White, 2000, Econometrica; " + t("own computation", "calcule proprii") + ")")
+
+    # (no subsection: the section outline of this lecture has no room for an extra line)
+    D.frame(t("The best of many models must be tested against the benchmark",
+              "Cel mai bun dintre multe modele trebuie testat față de reper"), cols(
+        "\\vspace{-2mm}\\[ \\mathrm{RC}_n=\\max_{k=1,\\dots,m}\\sqrt{n}\\,\\bar d_k,\\qquad \\bar d_k=\\frac1n\\sum_{t=1}^{n}d_{k,t} \\]" +
+        "\\where{" + t("$d_{k,t}$ = benchmark loss minus loss of model $k$ on day $t$; $H_0$: $E(d_{k,t})\\le 0$ for all $k$; "
+                       "critical value: joint bootstrap of $(d_{1,t},\\dots,d_{m,t})$, which keeps the correlation between models.",
+                       "$d_{k,t}$ = pierderea reperului minus cea a modelului $k$ în ziua $t$; $H_0$: $E(d_{k,t})\\le 0$ pentru orice $k$; "
+                       "valoarea critică: bootstrap comun pe $(d_{1,t},\\dots,d_{m,t})$, cu corelația dintre modele păstrată.") + "}" +
+        it(t("\\textbf{Why}: for $m$ independent 5\\% tests, P(at least one false win) = $1-" + n(0.95, ".2f") + "^m$: " + n(0.401, ".3f") + " ($m$ = 10), " + n(0.994, ".3f") + " ($m$ = 100).",
+             "\\textbf{De ce}: pentru $m$ teste independente la 5\\%, P(cel puțin o victorie falsă) = $1-" + n(0.95, ".2f") + "^m$: " + n(0.401, ".3f") + " ($m$ = 10), " + n(0.994, ".3f") + " ($m$ = 100)"), sep="2pt"),
+        it((t("\\textbf{C.-M.\\ Kuan, 4 June 2026} (\\href{" + KUA + "}{slides})",
+              "\\textbf{C.-M.\\ Kuan, 4 iunie 2026} (\\href{" + KUA + "}{diapozitive})"),
+            t("Reality Check (RC), White (2000): conservative, poor models added to the set reduce its power (Hansen, 2005)",
+              "testul Reality Check (RC), White (2000): conservator, modelele slabe adăugate îi reduc puterea (Hansen, 2005)"),
+            t("superior predictive ability (SPA) test, Hansen (2005): recentres the poor models, more powerful",
+              "testul abilității predictive superioare (SPA), Hansen (2005): recentrează modelele slabe, mai puternic"),
+            t("Step-RC (Romano \\& Wolf, 2005), Step-SPA (Hsu, Hsu \\& Kuan, 2010): name the winners, familywise error rate (FWER) under control",
+              "Step-RC (Romano \\& Wolf, 2005), Step-SPA (Hsu, Hsu \\& Kuan, 2010): identifică modelele mai bune, controlînd rata erorii la nivelul familiei de ipoteze (FWER)")),
+           (t("\\textbf{On our data}", "\\textbf{Pe datele noastre}"),
+            t("the best of @{search.n_cfg} DNN settings on the test year is just below AW-LEAR: the selection RC and SPA correct for",
+              "cea mai bună dintre cele @{search.n_cfg} " + de("search.n_cfg") + "setări DNN pe anul de test trece sub AW-LEAR: cazul corectat de RC și SPA")), sep="3pt"),
+        "0.44", "0.53") +
+        D.bottom(t("when shown the best of many models, ask for an RC or SPA p-value against your benchmark.",
+                   "cînd vi se arată cel mai bun dintre multe modele, cereți valoarea p a testului RC sau SPA.")),
+        "footnotesize", cite=t("(AIDA 2026 slides; papers: ", "(diapozitivele AIDA 2026; lucrări: ") +
+        "\\href{https://doi.org/10.1111/1468-0262.00152}{White, 2000}; \\href{https://doi.org/10.1198/073500105000000063}{Hansen, 2005}; "
+        "\\href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{Romano \\& Wolf, 2005}; \\href{https://doi.org/10.1016/j.jempfin.2010.01.001}{Hsu et al., 2010})")
 
     D.chart(t("Retraining: a model frozen for a year loses @{pit.once_loss|.1f}\\%",
               "Reestimarea: un model neactualizat un an pierde @{pit.once_loss|.1f}\\%"), "pit_retrain", [
@@ -644,7 +790,7 @@ def build(lang, H=None):
           "Estimat o singură dată, înaintea anului de test: MAE @{pit.once|.2f}; pierderea crește în timp (+@{pit.once_first_q|.2f} EUR/MWh în primele 3 luni, +@{pit.once_last_q|.2f} în ultimele 3)"),
         t("A short rolling window (365 days, MAE @{pit.roll365|.2f}) is worse than the whole history: the trees need many past spikes to learn from.",
           "O fereastră glisantă scurtă (365 de zile, MAE @{pit.roll365|.2f}) este mai slabă decît întregul istoric: arborii au nevoie de multe vîrfuri din trecut pentru a învăța")],
-        height="0.42\\textheight", job=t("put the monthly refit in the operating calendar, with an owner, like any other control.",
+        height="0.58\\textheight", job=t("put the monthly refit in the operating calendar, with an owner, like any other control.",
                                          "includeți reestimarea lunară în calendarul operațional, cu un responsabil, ca pe orice alt control."),
         tryit=NB + " \\S9", cite=OWN)
 
@@ -744,6 +890,9 @@ def build(lang, H=None):
            "\\href{\\emqarepo/\\emqanb}{notebooks/}.", sep="4pt"), "0.52", "0.45"))
 
     REFS = [
+        "Anagnoste, S., Andrei, A.-V., Bolovăneanu, V., Cepoi, C.-O., Clodnitchi, R., Cramer, A.-A., Grecu, R.-A., Lessmann, S., Pele, D.\\,T., "
+        "Petukhina, A.\\ \\& Strat, V.\\,A.\\ (2025). The role of AI in (re)shaping energy finance: A systematic literature review. "
+        "\\textit{Energy Strategy Reviews}, 61, 101833. \\href{https://doi.org/10.1016/j.esr.2025.101833}{doi:10.1016/j.esr.2025.101833}",
         "Andrei, A.-V., Pele, D.-T.\\ \\& Cramer, A.-A.\\ (2026). Multi-horizon explainability in energy price forecasting: Disentangling "
         "market dynamics and renewable intermittency in Romania's liberalized electricity market. \\textit{Proceedings of the "
         "International Conference on Business Excellence}, 20(1), 104--117. \\href{https://doi.org/10.2478/picbe-2026-0014}{doi:10.2478/picbe-2026-0014}",
@@ -751,32 +900,45 @@ def build(lang, H=None):
         "price spikes: Evidence from the Romanian market. \\textit{Proceedings of the International Conference on Business Excellence}, 20(1), "
         "4820--4836. \\href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}",
         "Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\\,T.\\ \\& Lessmann, S.\\ (2024). Energy price modelling: A comparative evaluation of "
-        "four generations of forecasting methods. arXiv:2411.03372.",
+        "four generations of forecasting methods. \\href{https://arxiv.org/abs/2411.03372}{arXiv:2411.03372}",
+        "Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\\,T.\\ \\& Lessmann, S.\\ (2026). Energy price modelling: A comparative evaluation of "
+        "four generations of forecasting methods. Talk, AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. "
+        "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/andrei_ai4efin_benchmarking.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Ansari, A.\\,F., Stella, L., Turkmen, C.\\ et al.\\ (2024). Chronos: Learning the language of time series. \\textit{Transactions on Machine "
-        "Learning Research}. arXiv:2403.07815.",
-        "Ansari, A.\\,F., Shchur, O., Küken, J.\\ et al.\\ (2025). Chronos-2: From univariate to universal forecasting. arXiv:2510.15821.",
+        "Learning Research}. \\href{https://arxiv.org/abs/2403.07815}{arXiv:2403.07815}",
+        "Ansari, A.\\,F., Shchur, O., Küken, J.\\ et al.\\ (2025). Chronos-2: From univariate to universal forecasting. \\href{https://arxiv.org/abs/2510.15821}{arXiv:2510.15821}",
         "Bates, J.\\,M.\\ \\& Granger, C.\\,W.\\,J.\\ (1969). The combination of forecasts. \\textit{Journal of the Operational Research Society}, 20(4), 451--468. "
         "\\href{https://doi.org/10.1057/jors.1969.103}{doi:10.1057/jors.1969.103}",
         "Bergmeir, C.\\ \\& Benítez, J.\\,M.\\ (2012). On the use of cross-validation for time series predictor evaluation. \\textit{Information Sciences}, 191, 192--213. "
         "\\href{https://doi.org/10.1016/j.ins.2011.12.028}{doi:10.1016/j.ins.2011.12.028}",
-        "Bergstra, J.\\ \\& Bengio, Y.\\ (2012). Random search for hyper-parameter optimization. \\textit{Journal of Machine Learning Research}, 13, 281--305.",
+        "Bergstra, J.\\ \\& Bengio, Y.\\ (2012). Random search for hyper-parameter optimization. \\textit{Journal of Machine Learning Research}, 13, 281--305. "
+        "\\href{https://jmlr.org/papers/v13/bergstra12a.html}{jmlr.org/papers/v13/bergstra12a.html}",
         "Breiman, L.\\ (2001). Random forests. \\textit{Machine Learning}, 45(1), 5--32. \\href{https://doi.org/10.1023/A:1010933404324}{doi:10.1023/A:1010933404324}",
         "Brier, G.\\,W.\\ (1950). Verification of forecasts expressed in terms of probability. \\textit{Monthly Weather Review}, 78(1), 1--3. "
         "\\href{https://doi.org/10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2}{doi:10.1175/1520-0493(1950)078\\allowbreak<0001:VOFEIT>2.0.CO;2}",
         "Chen, T.\\ \\& Guestrin, C.\\ (2016). XGBoost: A scalable tree boosting system. \\textit{Proceedings of the 22nd ACM SIGKDD Conference}, 785--794. "
         "\\href{https://doi.org/10.1145/2939672.2939785}{doi:10.1145/2939672.2939785}",
+        "Clodnitchi, R.\\ (2026). The role of AI in (re)shaping energy finance: A systematic literature review. Talk, AIDA Conference, Bucharest "
+        "University of Economic Studies, 3 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Diebold, F.\\,X.\\ \\& Mariano, R.\\,S.\\ (1995). Comparing predictive accuracy. \\textit{Journal of Business \\& Economic Statistics}, "
         "13(3), 253--263. \\href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}",
         "Fawcett, T.\\ (2006). An introduction to ROC analysis. \\textit{Pattern Recognition Letters}, 27(8), 861--874. "
         "\\href{https://doi.org/10.1016/j.patrec.2005.10.010}{doi:10.1016/j.patrec.2005.10.010}",
         "Friedman, J.\\,H.\\ (2001). Greedy function approximation: A gradient boosting machine. \\textit{Annals of Statistics}, 29(5), "
         "1189--1232. \\href{https://doi.org/10.1214/aos/1013203451}{doi:10.1214/aos/1013203451}",
+        "Hansen, P.\\,R.\\ (2005). A test for superior predictive ability. \\textit{Journal of Business \\& Economic Statistics}, 23(4), 365--380. "
+        "\\href{https://doi.org/10.1198/073500105000000063}{doi:10.1198/073500105000000063}",
         "Hastie, T., Tibshirani, R.\\ \\& Friedman, J.\\ (2009). \\textit{The Elements of Statistical Learning}, 2nd ed. Springer. "
         "\\href{https://doi.org/10.1007/978-0-387-84858-7}{doi:10.1007/978-0-387-84858-7}",
+        "Hsu, P.-H., Hsu, Y.-C.\\ \\& Kuan, C.-M.\\ (2010). Testing the predictive ability of technical analysis using a new stepwise test without data "
+        "snooping bias. \\textit{Journal of Empirical Finance}, 17(3), 471--484. \\href{https://doi.org/10.1016/j.jempfin.2010.01.001}{doi:10.1016/j.jempfin.2010.01.001}",
         "Jheng, S., Tak, R., Găman, Ș., Mazurencu-Marinescu-Pele, M.\\ \\& Pele, D.\\,T.\\ (2026). Can foundation models manage risk? Zero-shot VaR and ES "
         "forecasting with conformal calibration in CEE markets. \\textit{Economic Computation and Economic Cybernetics Studies and Research}, 60(2), 267--290. "
         "\\href{https://doi.org/10.24818/18423264/60.2.26.14}{doi:10.24818/18423264/60.2.26.14}",
-        "Kingma, D.\\,P.\\ \\& Ba, J.\\ (2015). Adam: A method for stochastic optimization. \\textit{International Conference on Learning Representations}. arXiv:1412.6980.",
+        "Kingma, D.\\,P.\\ \\& Ba, J.\\ (2015). Adam: A method for stochastic optimization. \\textit{International Conference on Learning Representations}. "
+        "\\href{https://arxiv.org/abs/1412.6980}{arXiv:1412.6980}",
+        "Kuan, C.-M.\\ (2026). Large-scale multiple inequality testing without data snooping bias. Keynote, AIDA Conference, Bucharest University of "
+        "Economic Studies, 4 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Lago, J., De Ridder, F.\\ \\& De Schutter, B.\\ (2018). Forecasting spot electricity prices: Deep learning approaches and empirical comparison of "
         "traditional algorithms. \\textit{Applied Energy}, 221, 386--405. \\href{https://doi.org/10.1016/j.apenergy.2018.02.069}{doi:10.1016/j.apenergy.2018.02.069}",
         "Lago, J., Marcjasz, G., De Schutter, B.\\ \\& Weron, R.\\ (2021). Forecasting day-ahead electricity prices: A review of "
@@ -788,17 +950,24 @@ def build(lang, H=None):
         "\\textit{Energy Economics}, 125, 106843. \\href{https://doi.org/10.1016/j.eneco.2023.106843}{doi:10.1016/j.eneco.2023.106843}",
         "Murphy, A.\\,H.\\ (1977). The value of climatological, categorical and probabilistic forecasts in the cost-loss ratio situation. "
         "\\textit{Monthly Weather Review}, 105(7), 803--816. \\href{https://doi.org/10.1175/1520-0493(1977)105<0803:TVOCCA>2.0.CO;2}{doi:10.1175/1520-0493(1977)105\\allowbreak<0803:TVOCCA>2.0.CO;2}",
+        "Olivares, K.\\,G., Challu, C., Marcjasz, G., Weron, R.\\ \\& Dubrawski, A.\\ (2023). Neural basis expansion analysis with exogenous variables: "
+        "Forecasting electricity prices with NBEATSx. \\textit{International Journal of Forecasting}, 39(2), 884--900. "
+        "\\href{https://doi.org/10.1016/j.ijforecast.2022.03.001}{doi:10.1016/j.ijforecast.2022.03.001}",
+        "Romano, J.\\,P.\\ \\& Wolf, M.\\ (2005). Stepwise multiple testing as formalized data snooping. \\textit{Econometrica}, 73(4), 1237--1282. "
+        "\\href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{doi:10.1111/j.1468-0262.2005.00615.x}",
         "Shapley, L.\\,S.\\ (1953). A value for n-person games. In \\textit{Contributions to the Theory of Games II}, 307--317. Princeton University Press. "
         "\\href{https://doi.org/10.1515/9781400881970-018}{doi:10.1515/9781400881970-018}",
         "Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I.\\ \\& Salakhutdinov, R.\\ (2014). Dropout: A simple way to prevent neural networks "
-        "from overfitting. \\textit{Journal of Machine Learning Research}, 15, 1929--1958.",
+        "from overfitting. \\textit{Journal of Machine Learning Research}, 15, 1929--1958. \\href{https://jmlr.org/papers/v15/srivastava14a.html}{jmlr.org/papers/v15/srivastava14a.html}",
         "Weron, R.\\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. "
         "\\textit{International Journal of Forecasting}, 30(4), 1030--1081. \\href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}",
+        "Weron, R.\\ (2026). Machine learning for electricity price forecasting. Keynote, AIDA Conference, Bucharest University of Economic "
+        "Studies, 4 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "White, H.\\ (2000). A reality check for data snooping. \\textit{Econometrica}, 68(5), 1097--1126. "
         "\\href{https://doi.org/10.1111/1468-0262.00152}{doi:10.1111/1468-0262.00152}",
     ]
-    for part, (a_, b_) in enumerate([(0, 9), (9, 18), (18, len(REFS))]):
-        D.frame(t("References", "Bibliografie") + f" ({part + 1}/3)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
+    for part, (a_, b_) in enumerate([(0, 9), (9, 18), (18, 27), (27, len(REFS))]):
+        D.frame(t("References", "Bibliografie") + f" ({part + 1}/4)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
                 "\n".join("\\item " + r for r in REFS[a_:b_]) + "\n\\end{itemize}", "scriptsize")
 
     # ------------------------------------------------------------------ appendix

@@ -45,7 +45,7 @@ from emqa_plot import PAL, legend_bottom, save  # noqa: E402
 
 import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.ticker import FuncFormatter  # noqa: E402
+from matplotlib.ticker import FuncFormatter, MaxNLocator  # noqa: E402
 
 warnings.filterwarnings("ignore")
 ep.style()
@@ -588,7 +588,7 @@ SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices
               "ecs": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar generation (Transelectrica data for Romania)",
               "x": "energy-charts.info (OPCOM, via ENTSO-E); Yahoo Finance (Brent BZ=F, SparkChange EUA ETC); EODHD (BVB shares)",
               "own": "energy-charts.info (OPCOM, via ENTSO-E); own estimates"},
-       "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E",
+       "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E",
               "ecs": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; producția solară ENTSO-E (date Transelectrica pentru România)",
               "x": "energy-charts.info (OPCOM, prin ENTSO-E); Yahoo Finance (Brent BZ=F, titlul SparkChange EUA ETC); EODHD (acțiuni BVB)",
               "own": "energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii"}}
@@ -635,7 +635,7 @@ lab_m = {"hist30": ("30-day hist.", "istoric 30 zile"), "ewma": ("EWMA 0.94", "E
 for lang in ["en", "ro"]:
     T = (lambda en, ro: en) if lang == "en" else (lambda en, ro: ro)
     # 1 price and daily change
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.9), sharex=True, gridspec_kw={"height_ratios": [1, 1.2]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={"height_ratios": [1, 1.2]})
     axs[0].plot(PR["RO"].index, PR["RO"].values, color=PAL["RO"], lw=0.6)
     axs[0].set_ylabel("EUR/MWh", fontsize=9.5)
     axs[1].plot(rr.index, rr.values, color=C_PCT, lw=0.35)
@@ -646,11 +646,13 @@ for lang in ["en", "ro"]:
     from matplotlib.patches import Patch
     legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL["RO"], lw=1.2), plt.Line2D([], [], color=C_PCT, lw=0.6),
                                 Patch(color=PAL["c8"], alpha=0.15)],
-                  labels=[T("daily base price", "prețul zilnic de bază"), T("daily change $r_t$ (log, %)", "variația zilnică $r_t$ (logaritmică, %)"),
-                          T("energy crisis, Sep 2021 -- Dec 2022", "criza energetică, sep. 2021 -- dec. 2022")], ncol=3)
+                  labels=[T("daily base price", "prețul de bază"), T("change $r_t$ (log, %)", "variația $r_t$ (log., %)"),
+                          T("crisis: Sep 2021–Dec 2022", "criza: sep. 2021–dec. 2022")], ncol=3)
+    for ax in axs:
+        ax.yaxis.set_major_locator(MaxNLocator(3))
     out(fig, lang, "returns_ro", bottom=0.12)
     # 2 weekday calendar
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0))
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0), gridspec_kw={"width_ratios": [1.5, 1]})
     axs[0].bar(range(7), _dow.values, color=[PAL["c8"] if v < 0 else PAL["RO"] for v in _dow.values], width=0.65)
     axs[0].axhline(0, color="#222222", lw=0.6)
     axs[0].set_xticks(range(7))
@@ -671,8 +673,8 @@ for lang in ["en", "ro"]:
     for ax in axs:
         ax.set_xticks(x)
         ax.set_xticklabels([f"'{str(y)[2:]}" for y in YEARS], fontsize=9)
-    axs[0].set_title(T("std. dev. of the % shocks $\\varepsilon_t$", "abaterea standard a șocurilor $\\varepsilon_t$ (%)"), fontsize=9.5)
-    axs[1].set_title(T("std. dev. of the EUR/MWh shocks $u_t$", "abaterea standard a șocurilor $u_t$ (EUR/MWh)"), fontsize=9.5)
+    axs[0].set_title(T("std. dev. of the % shocks $\\varepsilon_t$", "abaterea standard, $\\varepsilon_t$ (%)"), fontsize=9.5)
+    axs[1].set_title(T("std. dev. of the EUR/MWh shocks $u_t$", "abaterea standard, $u_t$ (EUR/MWh)"), fontsize=9.5)
     out(fig, lang, "vol_units", bottom=0.02)
     # 4 ACF of shocks and squared shocks
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0), sharey=True)
@@ -696,7 +698,7 @@ for lang in ["en", "ro"]:
     bins = np.linspace(-8, 8, 65)
     hcount, edges = np.histogram(np.clip(zz, -8, 8), bins=bins, density=True)
     ax.bar(0.5 * (edges[1:] + edges[:-1]), hcount, width=edges[1] - edges[0], color=C_PCT, alpha=0.55, lw=0,
-           label=T("GARCH-standardised shocks, Romania", "șocuri standardizate cu GARCH, România"))
+           label=T("standardised shocks, Romania", "șocuri standardizate, România"))
     xs = np.linspace(-8, 8, 400)
     ax.plot(xs, stats.norm.pdf(xs), color="#222222", lw=1.0, ls="--", label=T("normal", "normală"))
     sc = np.sqrt((nu_ - 2) / nu_)
@@ -709,28 +711,30 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=3)
     out(fig, lang, "tails", bottom=0.17, also_x=[ax])
     # 6 GARCH conditional volatility, two units
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True)
     axs[0].plot(CV["pct"].index, CV["pct"].values, color=C_PCT, lw=0.6)
-    axs[0].set_ylabel("$\\hat\\sigma_t$, %", fontsize=9.5)
+    axs[0].set_ylabel("%", fontsize=9.5)
     axs[1].plot(CV["eur"].index, CV["eur"].values, color=C_EUR, lw=0.6)
-    axs[1].set_ylabel("$\\hat\\sigma_t$, EUR/MWh", fontsize=9.5)
+    axs[1].set_ylabel("EUR/MWh", fontsize=9.5)
     for ax in axs:
         ax.axvspan(*CRISIS, color=PAL["c8"], alpha=0.08, lw=0)
     yfmt(axs[1])
     legend_bottom(fig, handles=[plt.Line2D([], [], color=C_PCT), plt.Line2D([], [], color=C_EUR), Patch(color=PAL["c8"], alpha=0.15)],
-                  labels=[T("GARCH-t on % changes", "GARCH-t pe variațiile în %"), T("GARCH-t on EUR/MWh changes", "GARCH-t pe variațiile în EUR/MWh"),
+                  labels=["GARCH-t $\\hat\\sigma_t$, %", "GARCH-t $\\hat\\sigma_t$, EUR/MWh",
                           T("energy crisis", "criza energetică")], ncol=3)
+    for ax in axs:
+        ax.yaxis.set_major_locator(MaxNLocator(3))
     out(fig, lang, "cond_vol", bottom=0.12)
     # 7 decay of a volatility shock (half-life)
     fig, ax = plt.subplots(figsize=(6.4, 2.1))
     hh = np.arange(0, 121)
     for k, lab_, c_ in [("RO_pct", T("Romania, %", "România, %"), C_PCT), ("RO_eur", T("Romania, EUR/MWh", "România, EUR/MWh"), C_EUR),
-                        ("BRENT", "Brent", C_MKT["BRENT"]), ("EUA", "EUA", C_MKT["EUA"]), ("SNP", T("OMV Petrom (SNP)", "OMV Petrom (SNP)"), C_MKT["SNP"])]:
+                        ("BRENT", "Brent", C_MKT["BRENT"]), ("EUA", "EUA", C_MKT["EUA"]), ("SNP", "OMV Petrom", C_MKT["SNP"])]:
         ph = N["xm"][k]["pers"]
         ax.plot(hh, 100 * ph ** hh, color=c_, lw=1.3, label=lab_ + f" ({fl(N['xm'][k]['hl'], 1)})".replace(".", "," if lang == "ro" else "."))
     ax.axhline(50, color="#222222", lw=0.6, ls=":")
     ax.set_xlabel(T("days after the shock (trading days for markets, calendar days for power)",
-                    "zile după șoc (zile de tranzacționare pentru piețe, zile calendaristice pentru energie)"), fontsize=8.5)
+                    "zile după șoc (zile de tranzacționare pentru piețe, zile calendaristice pentru energie)"), fontsize=9)
     ax.set_ylabel(T("% left", "% rămas"), fontsize=9)
     ax.set_xlim(0, 120)
     legend_bottom(fig, ncol=3)
@@ -750,14 +754,14 @@ for lang in ["en", "ro"]:
                   labels=[T("price fell yesterday", "prețul a scăzut ieri"), T("price rose yesterday", "prețul a crescut ieri")], ncol=2)
     out(fig, lang, "nic", bottom=0.15, also_x=list(axs))
     # 9 volatility vs price level (monthly)
-    fig, ax = plt.subplots(figsize=(6.4, 2.4))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     yrs = _m.index.year
     for y in YEARS:
         msk = yrs == y
         ax.scatter(_m["lvl"][msk], _m["sd"][msk], s=14, color=ep.SERIES[(y - START.year) % 8], label=str(y), lw=0)
     xx = np.linspace(_m["lvl"].min(), _m["lvl"].max(), 50)
     ax.plot(xx, np.exp(_ll.params.iloc[0]) * xx ** _ll.params.iloc[1], color="#222222", lw=0.9, ls="--",
-            label=T("fit, log-log", "dreapta de regresie, log-log"))
+            label=T("log-log fit", "dreapta log-log"))
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xticks([30, 50, 100, 200, 400])
@@ -768,21 +772,23 @@ for lang in ["en", "ro"]:
     ax.set_xlabel(T("monthly mean price, EUR/MWh (log scale)", "prețul mediu lunar, EUR/MWh (scară log.)"), fontsize=9)
     ax.set_ylabel(T("monthly $\\hat\\sigma(u)$,\nEUR/MWh", "$\\hat\\sigma(u)$ lunar,\nEUR/MWh"), fontsize=9)
     fig.legend(*ax.get_legend_handles_labels(), loc="lower center", ncol=9, bbox_to_anchor=(0.5, 0.0), frameon=False,
-               fontsize=8.5, handlelength=1.0, columnspacing=0.8, handletextpad=0.3)
-    out(fig, lang, "vol_level", bottom=0.13)
+               fontsize=9.5, handlelength=1.0, columnspacing=0.8, handletextpad=0.2, markerscale=1.3)
+    out(fig, lang, "vol_level", bottom=0.12)
     # 10 Markov-switching regime probability
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True, gridspec_kw={"height_ratios": [1, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={"height_ratios": [1, 1]})
     axs[0].plot(PR["RO"].index, PR["RO"].values, color=PAL["RO"], lw=0.6)
     axs[0].set_ylabel("EUR/MWh", fontsize=9.5)
     axs[1].fill_between(_ph.index, 0, _ph.values, color=C_EUR, alpha=0.6, lw=0)
-    axs[1].set_ylabel(T("prob. turbulent", "prob. regim agitat"), fontsize=9)
+    axs[1].set_ylabel(T("prob.", "prob."), fontsize=9.5)
     axs[1].set_ylim(0, 1)
+    axs[1].set_yticks([0, 0.5, 1])
+    axs[0].yaxis.set_major_locator(MaxNLocator(3))
     yfmt(axs[1])
     legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL["RO"]), Patch(color=C_EUR, alpha=0.6)],
                   labels=[T("daily base price", "prețul zilnic de bază"), T("probability of the turbulent regime (smoothed)", "probabilitatea regimului agitat (netezită)")], ncol=2)
     out(fig, lang, "ms_regime", bottom=0.12)
     # 11 intraday variation vs solar
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.8), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True)
     rm = RV["rel"].resample("MS").median()
     axs[0].plot(rm.index, rm.values, color=PAL["RO"], lw=1.2)
     axs[0].set_ylabel(T("RV / price", "RV / preț"), fontsize=9.5)
@@ -791,8 +797,10 @@ for lang in ["en", "ro"]:
     axs[1].set_ylabel(T("solar, MW", "solar, MW"), fontsize=9.5)
     yfmt(axs[1])
     legend_bottom(fig, handles=[plt.Line2D([], [], color=PAL["RO"], lw=1.2), plt.Line2D([], [], color=PAL["BG"], lw=1.2)],
-                  labels=[T("intraday variation / daily price (monthly median)", "variația intrazilnică / prețul zilei (mediana lunară)"),
-                          T("solar generation (monthly mean)", "producția solară (media lunară)")], ncol=2)
+                  labels=[T("RV / daily price (monthly median)", "RV / prețul zilei (mediana lunară)"),
+                          T("solar output (monthly mean)", "producția solară (media lunară)")], ncol=2)
+    for ax in axs:
+        ax.yaxis.set_major_locator(MaxNLocator(3))
     out(fig, lang, "rv_solar", bottom=0.12)
     # 12 HAR forecast on the test year
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
@@ -805,9 +813,9 @@ for lang in ["en", "ro"]:
     # 13 test-year forecast vs realised absolute shock (EUR)
     R = ROLL["eur"]
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
-    ax.bar(R.index, R["e"].abs(), color="#b5b5b5", width=1.0, label=T("absolute shock $|u_t|$ (realised)", "șocul absolut $|u_t|$ (realizat)"))
-    ax.plot(R.index, np.sqrt(R["garch"]), color=C_EUR, lw=1.2, label=T("GARCH-t forecast $\\hat\\sigma_t$, made on $t-1$", "prognoza GARCH-t $\\hat\\sigma_t$, făcută în $t-1$"))
-    ax.plot(R.index, np.sqrt(R["hist30"]), color=PAL["BG"], lw=1.0, ls="--", label=T("30-day historical", "istoric pe 30 de zile"))
+    ax.bar(R.index, R["e"].abs(), color="#b5b5b5", width=1.0, label=T("realised $|u_t|$", "$|u_t|$ realizat"))
+    ax.plot(R.index, np.sqrt(R["garch"]), color=C_EUR, lw=1.2, label=T("GARCH-t $\\hat\\sigma_t$, forecast on $t-1$", "GARCH-t $\\hat\\sigma_t$, prognoză din $t-1$"))
+    ax.plot(R.index, np.sqrt(R["hist30"]), color=PAL["BG"], lw=1.0, ls="--", label=T("30-day historical", "istoric 30 de zile"))
     ax.set_ylabel("EUR/MWh", fontsize=9.5)
     mfmt(ax, lang, 2)
     legend_bottom(fig, ncol=3)
@@ -816,8 +824,8 @@ for lang in ["en", "ro"]:
     fig, ax = plt.subplots(figsize=(6.4, 2.1))
     pm_ = PR["RO"].shift(1).loc[TDAYS] + R["yhat"]
     w_ = _q * np.sqrt(R["garch"])
-    ax.fill_between(TDAYS, pm_ - w_, pm_ + w_, color=C_EUR, alpha=0.25, lw=0, label=T("90% band, GARCH-t, set on $t-1$", "banda de 90%, GARCH-t, stabilită în $t-1$"))
-    ax.plot(TDAYS, PR["RO"].loc[TDAYS], color=PAL["RO"], lw=0.8, label=T("daily base price", "prețul zilnic de bază"))
+    ax.fill_between(TDAYS, pm_ - w_, pm_ + w_, color=C_EUR, alpha=0.25, lw=0, label=T("90% GARCH-t band (set on $t-1$)", "banda GARCH-t de 90% (din $t-1$)"))
+    ax.plot(TDAYS, PR["RO"].loc[TDAYS], color=PAL["RO"], lw=0.8, label=T("base price", "prețul de bază"))
     oo = _out[_out]
     ax.scatter(oo.index, PR["RO"].loc[oo.index], s=9, color=PAL["c8"], zorder=3, label=T("outside the band", "în afara benzii"))
     ax.set_ylabel("EUR/MWh", fontsize=9.5)
@@ -845,7 +853,7 @@ for lang in ["en", "ro"]:
     axs[1].set_title(T(f"Brent, {MON_EN[BPEAK.month - 1]} {BPEAK.day}: 90% band over $h$ days",
                        f"Brent, {BPEAK.day} {MON_RO[BPEAK.month - 1]}: banda de 90% pe $h$ zile"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "term_structure", bottom=0.2)
+    out(fig, lang, "term_structure", bottom=0.27)
 
 ped, prd = f"{d(TEST0)} to {d(END)}", f"{d(TEST0)} - {d(END)}"
 pe, pr_ = f"{d(START)} to {d(END)}", f"{d(START)} - {d(END)}"

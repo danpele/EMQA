@@ -362,8 +362,8 @@ def q_horizon_naive():
            "fig, ax = plt.subplots(figsize=(6.4, 1.9))\nks = list(range(1, 15))\n"
            'ax.bar(ks, [hz[k] for k in ks], color=[PAL["DE_LU"] if k % 7 == 0 else PAL["RO"] for k in ks], width=0.7)\n'
            'hnd = [Patch(color=PAL["RO"], label="same hour, k days earlier"), Patch(color=PAL["DE_LU"], label="k = 7, 14 (same weekday)")]\n'
-           'ax.set_xticks(ks)\nax.set_xlabel("age of the information k (days)")\nax.set_ylabel("MAE\\n(EUR/MWh)", fontsize=8)\n'
-           "legend_bottom(fig, handles=hnd, labels=[h.get_label() for h in hnd], ncol=2)\n" + save(n, 0.2))
+           'ax.set_xticks(ks)\nax.set_xlabel("age of the information k (days)")\nax.set_ylabel("MAE,\\nEUR/MWh")\n'
+           "legend_bottom(fig, handles=hnd, labels=[h.get_label() for h in hnd], ncol=2)\n" + save(n, 0.16))
     ck = [(f"MAE k = {k}", f"hz[{k}]", f"horizon.{k}", ".2f") for k in range(1, 15)]
     q.code(checks_cell(ck))
     return q, ck
@@ -403,14 +403,15 @@ def q_mape_fail():
            "MAPE = np.nanmean(_ape) * 100\nMAPE_EXCL5 = np.nanmean(_ape[~small]) * 100\n"
            "SHARE_SMALL = np.nansum(_ape[small]) / np.nansum(_ape) * 100\nN_SMALL = int(small.sum())")
     q.md("## The chart")
-    q.code("fig, ax = plt.subplots(figsize=(6.4, 2.1))\n"
+    q.code("fig, ax = plt.subplots(figsize=(6.4, 2.2))\n"
            "x_, y_ = A.ravel(), (_ape.ravel() * 100)\nok = np.isfinite(y_) & (y_ > 0)\n"
            'ax.axvspan(-5, 5, color=PAL["c8"], alpha=0.15, lw=0, label="|price| < 5 EUR/MWh")\n'
-           'ax.scatter(np.clip(x_[ok], -120, 620), y_[ok], s=1.5, color=PAL["RO"], alpha=0.35, lw=0, label="one hour of the test year, AW-LEAR")\n'
-           'ax.axhline(100, color="#222222", lw=0.7, ls="--", label="error = 100% of the price")\n'
+           'ax.scatter(np.clip(x_[ok], -120, 620), y_[ok], s=1.5, color=PAL["RO"], alpha=0.35, lw=0, label="one hour, AW-LEAR")\n'
+           'ax.axhline(100, color="#222222", lw=0.7, ls="--", label="error = 100%")\n'
            'ax.set_yscale("log")\nax.set_yticks([1e-2, 1, 1e2, 1e4, 1e6])\nax.set_yticklabels(["0.01", "1", "100", "10$^4$", "10$^6$"])\n'
-           'ax.set_xlabel("actual price, EUR/MWh")\nax.set_ylabel("absolute % error")\n'
-           "legend_bottom(fig, ncol=3)\n" + save(n, 0.22))
+           'ax.set_xlabel("actual price, EUR/MWh")\nax.set_ylabel("absolute\\n% error", fontsize=10)\n'
+           "legend_bottom(fig, ncol=3)\n"
+           "for h_ in fig.legends[-1].legend_handles:\n    if hasattr(h_, 'set_sizes'):\n        h_.set_sizes([30]); h_.set_alpha(1)\n" + save(n, 0.15))
     ck = [("MAPE of AW-LEAR, %", "MAPE", "mape.aw_lear", ".1f"),
           ("MAPE without |price| < 5, %", "MAPE_EXCL5", "mape.aw_lear_excl5", ".1f"),
           ("hours with |price| < 5 EUR/MWh", "N_SMALL", "mape.n_small", "d"),
@@ -462,14 +463,17 @@ def q_dm_matrix():
            'LAB = {"naive": "Naive", "snaive": "Seasonal naive", "arx728": "ARX(728)", "aw_arx": "AW-ARX", "lear728": "LEAR(728)",\n'
            '       "aw_lear": "AW-LEAR", "gbm": "GBM", "mlp": "MLP", "ens_lm": "Ens. LEAR+MLP", "ens_all": "Ens. 4 models"}\n'
            'cmap = LinearSegmentedColormap.from_list("dm", ["#0b6e2e", "#7fc97f", "#ffe08a", "#f4a259", "#d7301f", "#5a0000"])\n'
-           "fig, ax = plt.subplots(figsize=(6.4, 2.7))\n"
+           "fig, ax = plt.subplots(figsize=(6.4, 2.3))\n"
            "Z = np.where(np.isnan(DMP), np.nan, np.minimum(DMP, 0.10))\n"
            'im = ax.imshow(np.ma.masked_invalid(Z), cmap=cmap, vmin=0, vmax=0.10, aspect="auto")\n'
-           'ax.set_xticks(range(len(DM_MODELS)))\nax.set_xticklabels([LAB[k] for k in DM_MODELS], rotation=40, ha="right", fontsize=9)\n'
-           "ax.set_yticks(range(len(DM_MODELS)))\nax.set_yticklabels([LAB[k] for k in DM_MODELS], fontsize=9)\n"
-           'ax.set_xlabel("is the column model more accurate than the row model?", fontsize=9.5)\n'
+           'ax.set_xticks(range(len(DM_MODELS)))\nax.set_xticklabels([str(i + 1) for i in range(len(DM_MODELS))], fontsize=10)\n'
+           "ax.set_yticks(range(len(DM_MODELS)))\nax.set_yticklabels([f'{LAB[k]} ({i + 1})' for i, k in enumerate(DM_MODELS)], fontsize=10)\n"
+           "ax.tick_params(length=0)\n"
+           'ax.set_xlabel("column j: is model (j) more accurate than the row model?", fontsize=10)\n'
            'for a_ in range(len(DM_MODELS)):\n    ax.add_patch(plt.Rectangle((a_ - 0.5, a_ - 0.5), 1, 1, color="#ffffff"))\n'
-           'cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)\ncb.set_label("p-value, capped at 0.10", fontsize=9)\n'
+           'cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)\ncb.set_label("p-value", fontsize=9.5)\n'
+           "cb.set_ticks([0, 0.02, 0.04, 0.06, 0.08, 0.10])\n"
+           "cb.set_ticklabels(['0.00', '0.02', '0.04', '0.06', '0.08', '$\\\\geq$0.10'])\ncb.ax.tick_params(labelsize=9.5)\n"
            "ax.spines[:].set_visible(False)\n" + save(n, 0.0))
     ck = [("models beating the naive at 5%", "N_SIG", "dm.n_sig_vs_naive", "d"),
           ("other models", "len(DM_MODELS) - 1", "dm.n_others", "d"),
@@ -506,7 +510,7 @@ def q_arx_coef():
            '                      (7, "#222222", "load $\\\\tilde L_{d,h}$", "-"), (8, PAL["BG"], "wind+solar $\\\\tilde R_{d,h}$", "-")]:\n'
            '    ax.plot(hh, coef_mean[:23, j], color=c, ls=ls, marker="o", ms=3, label=lab)\n'
            'ax.axhline(0, color="#222222", lw=0.5)\nax.set_xticks(range(0, 23, 2))\nax.set_xlabel("hour h (CET)")\n'
-           'ax.set_ylabel("mean coefficient")\nlegend_bottom(fig, ncol=5)\n' + save(n, 0.2))
+           'ax.set_ylabel("mean\\ncoefficient")\nlegend_bottom(fig, ncol=5)\n' + save(n, 0.16))
     ck = [("hour of the largest Y(d-1,h) coefficient", "int(np.argmax(coef_mean[:23, 1]))", "arxcoef.Y1.argmax", "d"),
           ("largest Y(d-1,h) coefficient", "coef_mean[:23, 1].max()", "arxcoef.Y1.max", ".3f"),
           ("hour of the smallest Y(d-1,h) coefficient", "int(np.argmin(coef_mean[:23, 1]))", "arxcoef.Y1.argmin", "d"),
@@ -534,10 +538,10 @@ def q_per_hour_single():
     q.md("## The chart")
     q.code("fig, ax = plt.subplots(figsize=(6.4, 1.9))\nh24 = np.arange(24)\n"
            'ax.plot(h24, BYHOUR["naive"], color="#9a9a9a", ls=":", marker="o", ms=3, label="Naive")\n'
-           'ax.plot(h24, BYHOUR["single"], color=PAL["DE_LU"], marker="s", ms=3, label="ARX(728), one model for all hours")\n'
-           'ax.plot(h24, BYHOUR["arx728"], color=PAL["HU"], marker="o", ms=3, label="ARX(728), one model per hour")\n'
-           'ax.set_xticks(range(0, 24, 2))\nax.set_xlabel("hour h (CET)")\nax.set_ylabel("MAE, EUR/MWh")\n'
-           "legend_bottom(fig, ncol=3)\n" + save(n, 0.2))
+           'ax.plot(h24, BYHOUR["single"], color=PAL["DE_LU"], marker="s", ms=3, label="one ARX(728) for all hours")\n'
+           'ax.plot(h24, BYHOUR["arx728"], color=PAL["HU"], marker="o", ms=3, label="one ARX(728) per hour")\n'
+           'ax.set_xticks(range(0, 24, 2))\nax.set_xlabel("hour h (CET)")\nax.set_ylabel("MAE,\\nEUR/MWh")\n'
+           "legend_bottom(fig, ncol=3)\n" + save(n, 0.16))
     ck = [("MAE, one model per hour", "np.mean(np.abs(A - ARX728))", "acc.arx728.mae", ".2f"),
           ("MAE, one pooled model", "np.mean(np.abs(A - ARX728_SINGLE))", "acc.arx728_single.mae", ".2f"),
           ("hours where the pooled model is worse", "SINGLE_WORSE", "byhour.single_worse_h", "d")]
@@ -579,10 +583,10 @@ def q_vst():
            "pg = np.linspace(-150, 650, 400)\n"
            'axs[0].plot(pg, (pg - m_last) / s_last, color="#9a9a9a", ls="--", label="z-score (no transform)")\n'
            'axs[0].plot(pg, np.arcsinh((pg - m_last) / s_last), color=PAL["RO"], label="asinh")\n'
-           'axs[0].set_xlabel("price, EUR/MWh")\naxs[0].set_ylabel("model scale")\n'
+           'axs[0].set_xlabel("price, EUR/MWh")\naxs[0].set_ylabel("model\\nscale")\n'
            'axs[1].plot(xm, bymonth(ARX728_RAW), color="#9a9a9a", ls="--", marker="s", ms=3, label="ARX(728) on raw prices")\n'
            'axs[1].plot(xm, bymonth(ARX728), color=PAL["RO"], marker="o", ms=3, label="ARX(728) on asinh prices")\n'
-           'axs[1].set_ylabel("MAE, EUR/MWh")\nmfmt(axs[1], 2)\nlegend_bottom(fig, ncol=2)\n' + save(n, 0.26))
+           'axs[1].set_ylabel("MAE,\\nEUR/MWh")\nmfmt(axs[1], 2)\nlegend_bottom(fig, ncol=2)\n' + save(n, 0.26))
     ck = [("MAE, raw prices", "mae(ARX728_RAW)", "acc.arx728_raw.mae", ".2f"),
           ("MAE, asinh", "mae(ARX728)", "acc.arx728.mae", ".2f"),
           ("RMSE, raw prices", "rmse(ARX728_RAW)", "acc.arx728_raw.rmse", ".2f"),
@@ -623,9 +627,9 @@ def q_lear_sel():
     q.code('GLAB = ["P(d-1), same hour", "P(d-1), other hours", "P(d-2)", "P(d-3)", "P(d-7)", "Load (d-2,d-3,d-7)",\n'
            '        "Wind+solar (d-2,d-3,d-7)", "Day of week"]\n'
            'fig, ax = plt.subplots(figsize=(6.4, 2.3))\nim = ax.imshow(SEL * 100, aspect="auto", cmap="Blues", vmin=0, vmax=100)\n'
-           'ax.set_yticks(range(len(GLAB)))\nax.set_yticklabels(GLAB, fontsize=8.5)\nax.set_xticks(range(0, 24, 2))\n'
+           'ax.set_yticks(range(len(GLAB)))\nax.set_yticklabels(GLAB, fontsize=10)\nax.set_xticks(range(0, 24, 2))\n'
            'ax.set_xlabel("hour h (CET)")\ncb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02)\n'
-           'cb.set_label("% of regressors kept", fontsize=9)\nax.spines[:].set_visible(False)\n' + save(n, 0.02))
+           'cb.set_label("% of regressors kept", fontsize=10)\nax.spines[:].set_visible(False)\n' + save(n, 0.02))
     ck = [("kept, P(d-1) same hour, %", "SEL[0].mean() * 100", "lear.p1_same", ".1f"),
           ("kept, day of week, %", "SEL[7].mean() * 100", "lear.dow", ".1f"),
           ("kept, load, %", "SEL[5].mean() * 100", "lear.load", ".1f"),
@@ -668,8 +672,8 @@ def q_windows():
            'axs[1].set_xticks(range(4))\naxs[1].set_xticklabels([str(T) for T in LEAR_W] + ["AW"])\naxs[1].set_title("LEAR", fontsize=10)\n'
            'for ax in axs:\n    ax.axhline(MAE["naive"], color="#9a9a9a", ls=":", lw=1.2)\n'
            'axs[0].plot([], [], color="#9a9a9a", ls=":", label="naive benchmark")\n'
-           'axs[0].bar([], [], color=PAL["DE_LU"], label="average across windows (AW)")\n'
-           'axs[0].set_ylabel("MAE, EUR/MWh")\naxs[0].set_ylim(0, MAE["naive"] * 1.12)\n'
+           'axs[0].add_patch(plt.Rectangle((0, 0), 0, 0, color=PAL["DE_LU"], label="average across windows (AW)"))\n'
+           'axs[0].set_ylabel("MAE,\\nEUR/MWh")\naxs[0].set_ylim(0, MAE["naive"] * 1.12)\n'
            'fig.text(0.5, 0.17, "calibration window T (days)", ha="center", fontsize=10)\n'
            "legend_bottom(fig, ncol=2)\n" + save(n, 0.22))
     ck = ([(f"MAE ARX({T})", f'MAE["arx{T}"]', f"acc.arx{T}.mae", ".2f") for T in (56, 84, 112, 714, 721, 728)] +
@@ -714,8 +718,8 @@ def q_ml_hour():
            "fig, ax = plt.subplots(figsize=(6.4, 1.9))\nh24 = np.arange(24)\n"
            'for k, ls in [("aw_lear", "-"), ("gbm", "--"), ("mlp", "-."), ("ens_all", "-")]:\n'
            '    ax.plot(h24, BYHOUR[k], color=COL[k], ls=ls, marker="o", ms=3, lw=1.6 if k == "ens_all" else 1.2, label=LAB[k])\n'
-           'ax.set_xticks(range(0, 24, 2))\nax.set_xlabel("hour h (CET)")\nax.set_ylabel("MAE, EUR/MWh")\n'
-           "legend_bottom(fig, ncol=4)\n" + save(n, 0.2))
+           'ax.set_xticks(range(0, 24, 2))\nax.set_xlabel("hour h (CET)")\nax.set_ylabel("MAE,\\nEUR/MWh")\n'
+           "legend_bottom(fig, ncol=4)\n" + save(n, 0.16))
     ck = [("hours GBM beats AW-LEAR", 'int((BYHOUR["gbm"] < BYHOUR["aw_lear"]).sum())', "byhour.gbm_beats_lear_h", "d"),
           ("hours MLP beats AW-LEAR", 'int((BYHOUR["mlp"] < BYHOUR["aw_lear"]).sum())', "byhour.mlp_beats_lear_h", "d"),
           ("hours the ensemble beats AW-LEAR", 'int((BYHOUR["ens_all"] < BYHOUR["aw_lear"]).sum())', "byhour.ens_beats_lear_h", "d"),
@@ -773,7 +777,7 @@ def q_qra_week():
            'ax.plot(xt, A[pw].ravel(), color="#222222", lw=1.0, label="actual price")\n'
            'ax.set_ylabel("EUR/MWh")\nax.xaxis.set_major_locator(mdates.DayLocator())\n'
            'ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))\n'
-           "legend_bottom(fig, ncol=4)\n" + save(n, 0.2))
+           "legend_bottom(fig, ncol=4)\n" + save(n, 0.17))
     ck = [("first day of the week", "str(PW.date())", "weeks.prob", "s"),
           ("last day of the week", "str((PW + pd.Timedelta(days=6)).date())", "weeks.prob_end", "s"),
           ("MAE of the QRA median, test year", "np.mean(np.abs(A - QMED))", "prob.mae_median_qra", ".2f")]
@@ -821,11 +825,11 @@ def q_prob_rel():
            'PROB = {"qra": prob_scores(QRA), "cp": prob_scores(CPQ), "hs": prob_scores(HSQ)}\n'
            'print(pd.DataFrame({k: {kk: v for kk, v in r.items() if kk != "rel"} for k, r in PROB.items()}).round(4).to_string())')
     q.md("## The chart")
-    q.code("fig, ax = plt.subplots(figsize=(6.4, 1.9))\n"
+    q.code("fig, ax = plt.subplots(figsize=(6.4, 2.0))\n"
            'for k, c, lab in [("qra", PAL["RO"], "QRA"), ("cp", PAL["DE_LU"], "conformal (CP)"), ("hs", PAL["HU"], "historical simulation (HS)")]:\n'
            '    ax.plot(TAUS * 100, (np.array(PROB[k]["rel"]) - TAUS) * 100, color=c, label=lab)\n'
            'ax.axhline(0, color="#222222", lw=0.7)\nax.set_xlabel("quantile level $\\\\tau$, %")\n'
-           'ax.set_ylabel("actual share below\\nminus $\\\\tau$, pp")\nlegend_bottom(fig, ncol=3)\n' + save(n, 0.2))
+           'ax.set_ylabel("coverage\\nerror, pp")\nlegend_bottom(fig, ncol=3)\n' + save(n, 0.15))
     ck = []
     for k, lab in [("qra", "QRA"), ("cp", "CP"), ("hs", "HS")]:
         ck += [(f"Kupiec statistic, {lab}", f'PROB["{k}"]["kupiec"]', f"prob.{k}.kupiec", ".2f"),
@@ -868,12 +872,14 @@ def q_coint_daily():
            "hpt = HP.loc[str(TEST0.date()):str(END.date())]\n"
            'EQ_HU = (np.abs(hpt["RO"] - hpt["HU"]) < 0.01).mean() * 100')
     q.md("## The chart")
-    q.code('fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.4), sharex=True, gridspec_kw={"height_ratios": [1.5, 1]})\n'
+    q.code('import matplotlib.dates as mdates\n'
+           'fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.5), sharex=True, gridspec_kw={"height_ratios": [1.2, 1]})\n'
            'axs[0].plot(DLY.index, DLY["HU"], color=PAL["HU"], lw=0.7, label="Hungary (HUPX)")\n'
            'axs[0].plot(DLY.index, DLY["RO"], color=PAL["RO"], lw=0.7, label="Romania (OPCOM PZU)")\n'
            'axs[0].set_ylabel("EUR/MWh")\n'
            'axs[1].plot(DLY.index, DLY["RO"] - DLY["HU"], color=PAL["c8"], lw=0.6, label="spread RO - HU")\n'
            'axs[1].axhline(0, color="#222222", lw=0.5)\naxs[1].set_ylabel("EUR/MWh")\naxs[1].set_xlim(DLY.index[0], DLY.index[-1])\n'
+           'axs[1].xaxis.set_major_locator(mdates.YearLocator())\naxs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))\n'
            "legend_bottom(fig, ncol=3)\n" + save(n, 0.15))
     ck = [("first day", "str(DLY.index.min().date())", "coint.start", "s"),
           ("mean spread RO - HU", 'co["HU"]["mean_spread"]', "coint.HU.mean_spread", ".2f"),
@@ -926,15 +932,17 @@ def q_coint_monthly():
            'ecm = sm.OLS(ecm_df["dp"], sm.add_constant(ecm_df[["u1", "dttf", "hyd"]])).fit(cov_type="HAC", cov_kwds={"maxlags": 6})\n'
            'al = ecm.params["u1"]\nprint(ecm.summary().tables[1])')
     q.md("## The chart")
-    q.code('fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1), gridspec_kw={"width_ratios": [1.5, 1]})\n'
+    q.code('import matplotlib.dates as mdates\n'
+           'fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1), gridspec_kw={"width_ratios": [1.5, 1]})\n'
            'axs[0].plot(MD.index, MD["price"], color=PAL["RO"], lw=1.0, label="Romania, monthly price")\n'
            'axs[0].plot(MD.index, lr_.fittedvalues, color=PAL["DE_LU"], lw=1.0, ls="--", label="long-run level from TTF gas")\n'
            'axs[0].set_ylabel("EUR/MWh")\n'
+           'axs[0].xaxis.set_major_locator(mdates.YearLocator(3))\naxs[0].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))\n'
            'axs[1].scatter(MD["hydro_ds"], u_, s=8, color=PAL["RO"], alpha=0.7, label="one month")\n'
            'bb = np.polyfit(MD["hydro_ds"], u_, 1)\nxx = np.linspace(MD["hydro_ds"].min(), MD["hydro_ds"].max(), 10)\n'
            'axs[1].plot(xx, np.polyval(bb, xx), color="#222222", lw=1.0)\naxs[1].axhline(0, color="#222222", lw=0.4)\n'
-           'axs[1].set_xlabel("hydro vs its monthly mean, TWh", fontsize=9.5)\naxs[1].set_ylabel("price minus long-run", fontsize=9)\n'
-           "legend_bottom(fig, ncol=3)\n" + save(n, 0.2))
+           'axs[1].set_xlabel("hydro vs its monthly mean, TWh", fontsize=9.5)\naxs[1].set_ylabel("price minus\\nlong-run level", fontsize=9.5)\n'
+           "legend_bottom(fig, ncol=3)\n" + save(n, 0.13))
     ck = [("first month", 'MD.index.min().strftime("%Y-%m")', "coint_m.start", "s"),
           ("last month", 'MD.index.max().strftime("%Y-%m")', "coint_m.end", "s"),
           ("Engle-Granger statistic, price on TTF", "eg1[0]", "coint_m.eg1", ".2f"),
@@ -966,7 +974,7 @@ def q_monthly_mae():
            "fig, ax = plt.subplots(figsize=(6.4, 1.9))\n"
            'for k, ls, mk in [("naive", ":", "o"), ("aw_arx", "--", "s"), ("aw_lear", "-", "o"), ("ens_all", "-", "D")]:\n'
            "    ax.plot(xm, BYMONTH[k], color=COL[k], ls=ls, marker=mk, ms=3.5, label=LAB[k])\n"
-           'ax.set_ylabel("MAE, EUR/MWh")\nmfmt(ax, 1)\nlegend_bottom(fig, ncol=4)\n' + save(n, 0.2))
+           'ax.set_ylabel("MAE,\\nEUR/MWh")\nmfmt(ax, 1)\nlegend_bottom(fig, ncol=4)\n' + save(n, 0.2))
     ck = [("months AW-LEAR beats naive", 'int((BYMONTH["aw_lear"] < BYMONTH["naive"]).sum())', "bymonth.n_months_lear_beats_naive", "d"),
           ("best month", 'str(MONTHS_T[int(np.argmin(BYMONTH["aw_lear"]))])', "bymonth.best_month", "s"),
           ("AW-LEAR MAE in the best month", 'BYMONTH["aw_lear"].min()', "bymonth.best_mae", ".2f"),
@@ -1000,7 +1008,7 @@ def q_stress_week():
            "    ax.plot(xs_, M[k][sw].ravel(), color=COL[k], ls=ls, lw=1.0, label=LAB[k])\n"
            'ax.set_ylabel("EUR/MWh")\nax.xaxis.set_major_locator(mdates.DayLocator())\n'
            'ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))\n'
-           "legend_bottom(fig, ncol=4)\n" + save(n, 0.2))
+           "legend_bottom(fig, ncol=4)\n" + save(n, 0.17))
     ck = ([("first day of the week", "str(SW.date())", "weeks.stress", "s"),
            ("mean price of the week", "A[sw].mean()", "weeks.stress_mean", ".2f"),
            ("highest hourly price of the week", "A[sw].max()", "weeks.stress_max", ".2f")] +
@@ -1049,9 +1057,9 @@ def q_mtu15():
     q.code("qk = QDAYS.index(QDAY)\nxq = np.arange(96) / 4\nfig, ax = plt.subplots(figsize=(6.4, 2.0))\n"
            'ax.step(xq, Q[qk], where="post", color="#222222", lw=1.1, label="actual 15-min price")\n'
            'ax.step(xq, flat[qk], where="post", color=PAL["RO"], lw=1.0, ls="--", label="hourly AW-LEAR, flat")\n'
-           'ax.step(xq, shaped[qk], where="post", color=PAL["DE_LU"], lw=1.0, label="+ intra-hour shape (28 past days)")\n'
+           'ax.step(xq, shaped[qk], where="post", color=PAL["DE_LU"], lw=1.0, label="+ intra-hour shape")\n'
            'ax.set_xticks(range(0, 25, 2))\nax.set_xlabel("hour (CET)")\nax.set_ylabel("EUR/MWh")\n'
-           "legend_bottom(fig, ncol=3)\n" + save(n, 0.2))
+           "legend_bottom(fig, ncol=3)\n" + save(n, 0.16))
     ck = [("test days with 96 quarter-hours, without DST", "len(QDAYS)", "mtu15.n_days", "d"),
           ("quarter-hour MAE, flat", "MAE_FLAT", "mtu15.mae_flat", ".2f"),
           ("quarter-hour MAE, shaped", "MAE_SHAPED", "mtu15.mae_shaped", ".2f"),
@@ -1085,12 +1093,12 @@ def q_battery():
            "fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1))\n"
            'kb = ["perfect", "ens_all", "aw_lear", "gbm", "aw_arx", "naive"]\n'
            "axs[0].barh(range(len(kb)), [BAT[k].sum() / 1000 for k in kb], color=[COL[k] for k in kb], height=0.65)\n"
-           "axs[0].set_yticks(range(len(kb)))\naxs[0].set_yticklabels([LAB[k] for k in kb], fontsize=9)\naxs[0].invert_yaxis()\n"
-           'axs[0].set_xlabel("battery profit, thousand EUR per MW", fontsize=9.5)\n'
+           "axs[0].set_yticks(range(len(kb)))\naxs[0].set_yticklabels([LAB[k] for k in kb], fontsize=10)\naxs[0].invert_yaxis()\n"
+           'axs[0].set_xlabel("battery profit,\\nthousand EUR per MW", fontsize=10)\n'
            "vf = [FLX[k].sum() / (4 * len(FLX[k])) for k in kb] + [FLX_BASE.sum() / (4 * len(FLX_BASE))]\n"
            'axs[1].barh(range(len(vf)), vf, color=[COL[k] for k in kb] + ["#5b4a3a"], height=0.65)\n'
-           'axs[1].set_yticks(range(len(vf)))\naxs[1].set_yticklabels([LAB[k] for k in kb] + ["fixed 8-12 h"], fontsize=9)\naxs[1].invert_yaxis()\n'
-           'axs[1].set_xlabel("flexible buyer, EUR/MWh paid", fontsize=9.5)\n' + save(n, 0.02))
+           'axs[1].set_yticks(range(len(vf)))\naxs[1].set_yticklabels([LAB[k] for k in kb] + ["fixed 8-12 h"], fontsize=10)\naxs[1].invert_yaxis()\n'
+           'axs[1].set_xlabel("flexible buyer:\\nmean price paid, EUR/MWh", fontsize=10)\n' + save(n, 0.02))
     ck = [("days without a clock change", "int(NODST.sum())", "battery.n_days", "d"),
           ("battery profit with the ensemble, EUR per MW", 'BAT["ens_all"].sum()', "battery.ens_all.eur", ".0f"),
           ("share of perfect foresight, %", 'BAT["ens_all"].sum() / BAT["perfect"].sum() * 100', "battery.ens_all.pct", ".1f"),

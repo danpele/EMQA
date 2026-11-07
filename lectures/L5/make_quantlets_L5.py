@@ -61,6 +61,24 @@ def legend_bottom(fig, handles=None, labels=None, ncol=4):
                frameon=False, handlelength=2.0, columnspacing=1.2)
 
 
+def legend_compact(fig, ncol):
+    """Bottom legend with shorter handles and column gaps, for many short entries."""
+    legend_bottom(fig, ncol=ncol)
+    h, l = fig.legends[-1].legend_handles, [t.get_text() for t in fig.legends[-1].get_texts()]
+    fig.legends[-1].remove()
+    fig.legend(h, l, loc='lower center', ncol=ncol, bbox_to_anchor=(0.5, 0.0), frameon=False,
+               handlelength=1.0, handletextpad=0.4, columnspacing=0.9)
+
+
+def save_chart(fig, name):
+    """Keep under the axes exactly the height of the bottom legend, then save the PNG."""
+    fig.canvas.draw()
+    bottom = max([lg.get_window_extent().height / fig.bbox.height + 0.035 for lg in fig.legends] or [0.0])
+    fig.tight_layout(rect=(0, bottom, 1, 1))
+    plt.savefig(name + '.png', dpi=150, bbox_inches='tight', transparent=True)
+    plt.show()
+
+
 def show(label, value, key=None, fmt='.2f'):
     """Print one number of the slide; [key] = its name in lectures/L5/L5_numbers.json."""
     s = value if isinstance(value, str) else format(value, fmt)
@@ -223,10 +241,8 @@ def black76(F, K, T, r, sigma, kind='call'):
 RATES = pd.read_csv(DATA + 'ecb_ron_estr_daily.csv', parse_dates=['date']).set_index('date')'''
 
 
-def save_cell(chart, bottom):
-    return (f"fig.tight_layout(rect=(0, {bottom}, 1, 1))\n"
-            f"plt.savefig('{chart}.png', dpi=150, bbox_inches='tight', transparent=True)\n"
-            "plt.show()")
+def save_cell(chart, bottom=None):
+    return f"save_chart(fig, '{chart}')"
 
 
 C = N["charts"]
@@ -275,10 +291,10 @@ for k in ['Y', 'H', 'Q', 'M', 'other']:
     if k in vol:
         ax.bar(vol.index, vol[k].values, bottom=bot, color=KCOL[k], width=0.7, label=KL[k])
         bot += vol[k].values
-ax.set_ylabel('TWh contracted')
+ax.set_ylabel('TWh')
 ax.set_xticks(vol.index)
 ax.set_xticklabels([str(y) + ('*' if y == END.year else '') for y in vol.index])   # * = to the cut-off
-legend_bottom(fig, ncol=5)
+legend_compact(fig, ncol=5)
 ''' + save_cell("fw_volume", 0.2))
     return q
 
@@ -307,14 +323,14 @@ for lab, a0, a1, key in [('bought in 2020', '2020-01-01', '2020-12-31', 'h20'),
     g = c22[(c22['auction_date'] >= a0) & (c22['auction_date'] <= a1)]
     show(f'VWAP {lab}, EUR/MWh', vwap(g), f'crisis.parts.{key}.vwap', '.1f')''')
     q.code(r'''SPOT_M = PD['RO'].loc[:END].resample('MS').mean()
-fig, ax = plt.subplots(figsize=(6.4, 2.2))
+fig, ax = plt.subplots(figsize=(6.4, 2.1))
 sm_ = SPOT_M.loc['2020-01-01':'2022-12-01']
-ax.plot(sm_.index + pd.Timedelta(days=14), sm_.values, color=PAL['RO'], lw=1.4, label='Romania, monthly mean day-ahead price')
+ax.plot(sm_.index + pd.Timedelta(days=14), sm_.values, color=PAL['RO'], lw=1.4, label='Romania, monthly mean day-ahead')
 ax.scatter(c22['auction_date'], c22['price_eur_mwh'], s=9, color=PAL['DE_LU'], zorder=3,
-           label='forward for calendar 2022 (baseload), one auction')
+           label='forward for Cal-22 baseload, one auction')
 ax.hlines(S22, pd.Timestamp('2022-01-01'), pd.Timestamp('2022-12-31'), color='#222222', lw=1.2, ls='--', label='realised 2022 average')
 ax.hlines(F22, pd.Timestamp('2022-01-01'), pd.Timestamp('2022-12-31'), color=PAL['DE_LU'], lw=1.2, ls='--',
-          label='volume-weighted forward price')
+          label='volume-weighted forward')
 ax.set_ylabel('EUR/MWh')
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
@@ -341,7 +357,7 @@ for y, g in CY.groupby('dy'):
     show(f'Cal-{y}: VWAP, EUR/MWh', calt[y]['vwap'], f'cal.{y}.vwap', '.1f')
     if not np.isnan(calt[y]['realised']):
         show(f'Cal-{y}: realised mean spot, EUR/MWh', calt[y]['realised'], f'cal.{y}.realised', '.1f')''')
-    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.25))
+    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.05))
 cols_ = [PAL['RO'], PAL['HU'], PAL['DE_LU'], PAL['c7'], PAL['BG'], PAL['c5'], PAL['c6']]
 for i, y in enumerate([y for y in sorted(calt) if y <= END.year + 1]):
     g = CY[CY['dy'] == y]
@@ -351,7 +367,7 @@ for i, y in enumerate([y for y in sorted(calt) if y <= END.year + 1]):
 ax.set_ylabel('EUR/MWh')
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-legend_bottom(fig, ncol=7)
+legend_compact(fig, ncol=7)
 ''' + save_cell("cal_by_trade", 0.2))
     return q
 
@@ -405,7 +421,7 @@ ax.axvline(END + pd.Timedelta(days=1), color='#222222', lw=0.8, ls=':')     # cu
 ax.set_ylabel('EUR/MWh')
 ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 7]))
 ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] + f'\n{mdates.num2date(v).year}'))
-legend_bottom(fig, handles=hnd, labels=lab, ncol=3)
+legend_bottom(fig, handles=hnd, labels=lab, ncol=2)
 ''' + save_cell("fwd_curve", 0.26))
     return q
 
@@ -449,9 +465,9 @@ show('from 2023: t statistic', c, 'prem.m1_post.t', '.2f')''')
 fig, ax = plt.subplots(figsize=(6.4, 2.0))
 ax.bar(MP.index, MP['prem'], width=25, color=[PAL['DE_LU'] if v > 0 else PAL['RO'] for v in MP['prem']])
 ax.axhline(0, color='#222222', lw=0.6)
-hnd = [Patch(color=PAL['DE_LU'], label='forward above realised spot (buyer paid a premium)'),
-       Patch(color=PAL['RO'], label='forward below realised spot')]
-ax.set_ylabel('F minus realised,\nEUR/MWh', fontsize=9)
+hnd = [Patch(color=PAL['DE_LU'], label='F above realised spot (premium paid)'),
+       Patch(color=PAL['RO'], label='F below realised spot')]
+ax.set_ylabel('F minus realised,\nEUR/MWh', fontsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 legend_bottom(fig, handles=hnd, labels=[h.get_label() for h in hnd], ncol=2)
@@ -500,14 +516,14 @@ yrs = SPR['RO'].groupby(SPR['RO'].index.year).mean()
 for y in yrs.index:
     show(f'{y}: mean clean spark / clean dark spread, Romania', f"{yrs.loc[y, 'css']:.2f} / {yrs.loc[y, 'cds']:.2f}")''')
     q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.2))
-ax.plot(SPR['RO'].index, SPR['RO']['css'], color=PAL['RO'], lw=1.3, label='clean spark spread, Romania')
-ax.plot(SPR['DE_LU'].index, SPR['DE_LU']['css'], color=PAL['DE_LU'], lw=1.1, ls=':', label='clean spark spread, Germany')
-ax.plot(SPR['RO'].index, SPR['RO']['cds'], color=PAL['c7'], lw=1.1, ls='--', label='clean dark spread, Romania')
+ax.plot(SPR['RO'].index, SPR['RO']['css'], color=PAL['RO'], lw=1.3, label='clean spark, Romania')
+ax.plot(SPR['DE_LU'].index, SPR['DE_LU']['css'], color=PAL['DE_LU'], lw=1.1, ls=':', label='clean spark, Germany')
+ax.plot(SPR['RO'].index, SPR['RO']['cds'], color=PAL['c7'], lw=1.1, ls='--', label='clean dark, Romania')
 ax.axhline(0, color='#222222', lw=0.6)
-ax.set_ylabel('EUR per MWh\nof electricity', fontsize=9)
+ax.set_ylabel('EUR per MWh\nof electricity', fontsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator(2))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-legend_bottom(fig, ncol=3)
+legend_compact(fig, ncol=3)
 ''' + save_cell("spreads", 0.2))
     return q
 
@@ -543,7 +559,7 @@ for z, nm in [('RO', 'Romania'), ('DE_LU', 'Germany')]:
     show(f'{nm}: share of hours with a positive spread, %', 100 * w[s > 0].sum() / w.sum(), f'opt.{z}.itm_share', '.1f')
     show(f'{nm}: must-run margin, EUR per MW', (s * w).sum(), f'opt.{z}.base_eur', ',.0f')
     show(f'{nm}: flexible margin (only positive hours), EUR per MW', (np.maximum(s, 0) * w).sum(), f'opt.{z}.flex_eur', ',.0f')''')
-    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.3))
 for z, col, ls, nm in [('RO', PAL['RO'], '-', 'Romania'), ('DE_LU', PAL['DE_LU'], ':', 'Germany')]:
     s = (HH[z] - HH['c']).dropna()
     w = HH.loc[s.index, 'w']
@@ -552,7 +568,7 @@ for z, col, ls, nm in [('RO', PAL['RO'], '-', 'Romania'), ('DE_LU', PAL['DE_LU']
 ax.axhline(0, color='#222222', lw=0.6)
 ax.set_ylim(-250, 400)
 ax.set_xlabel('hours of the last 12 months, sorted from the highest spread')
-ax.set_ylabel('clean spark,\nEUR/MWh', fontsize=9)
+ax.set_ylabel('clean spark,\nEUR/MWh', fontsize=10)
 legend_bottom(fig, ncol=2)
 ''' + save_cell("spark_hourly", 0.24))
     return q
@@ -568,14 +584,14 @@ def q_hedge_scatter():
                  DPD, title="Minimum-variance hedge ratio, Romania versus Hungary and Germany")
     q.md("Monthly changes of the Romanian price regressed on those of Hungary and Germany: the slope is the hedge ratio h*.")
     q.code(STYLE).code(LOAD_PD).code(MONTHLY_PM).code(hedge_code())
-    q.code(r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.25), sharey=True)
+    q.code(r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95), sharey=True)
 for ax, z, col, nm in [(axs[0], 'HU', PAL['HU'], 'Hungary'), (axs[1], 'DE_LU', PAL['DE_LU'], 'Germany')]:
     ax.scatter(dP[z], dP['RO'], s=8, color=col, alpha=0.8)
     xx = np.linspace(dP[z].min(), dP[z].max(), 10)
     ax.plot(xx, HR[z]['h'] * xx, color='#222222', lw=1.0)
-    ax.set_xlabel(f'monthly change, {nm}, EUR/MWh', fontsize=9)
-    ax.text(0.03, 0.92, f"h* = {HR[z]['h']:.2f},  R² = {HR[z]['r2']:.2f}", transform=ax.transAxes, fontsize=9)
-axs[0].set_ylabel('monthly change,\nRomania, EUR/MWh', fontsize=9)
+    ax.set_xlabel(f'Δ {nm}, EUR/MWh', fontsize=10)
+    ax.text(0.03, 0.92, f"h* = {HR[z]['h']:.2f},  R² = {HR[z]['r2']:.2f}", transform=ax.transAxes, fontsize=10)
+axs[0].set_ylabel('Δ Romania,\nEUR/MWh', fontsize=10)  # Δ = monthly change
 ''' + save_cell("hedge_scatter", 0.02))
     return q
 
@@ -613,18 +629,18 @@ for y in conv.index:
     show(f'{y}: % of hours RO = HU', conv[y], f'basis.conv_hu.{y}', '.1f')
 for y in convd.index:
     show(f'{y}: % of hours RO = DE', convd[y], f'basis.conv_de.{y}', '.1f')''')
-    q.code(r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), gridspec_kw={'width_ratios': [1.6, 1]})
+    q.code(r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.05), gridspec_kw={'width_ratios': [1.6, 1]})
 axs[0].plot(BAS.index, BAS['HU'], color=PAL['HU'], lw=1.2, label='Romania minus Hungary')
 axs[0].plot(BAS.index, BAS['DE_LU'], color=PAL['DE_LU'], lw=1.0, ls=':', label='Romania minus Germany')
 axs[0].axhline(0, color='#222222', lw=0.6)
-axs[0].set_ylabel('monthly basis,\nEUR/MWh', fontsize=9)
+axs[0].set_ylabel('monthly basis,\nEUR/MWh', fontsize=10)
 axs[0].xaxis.set_major_locator(mdates.YearLocator(3))
 axs[0].xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 yy = [int(y) for y in conv.index]
 axs[1].bar([y - 0.2 for y in yy], conv.values, width=0.4, color=PAL['HU'])
 axs[1].bar([y + 0.2 for y in yy], convd.values, width=0.4, color=PAL['DE_LU'])
-axs[1].set_ylabel('% of hours with\nthe same price', fontsize=9)
-axs[1].set_xticks([2015, 2018, 2021, 2024])
+axs[1].set_ylabel('% of hours with\nthe same price', fontsize=10)
+axs[1].set_xticks([2015, 2020, 2025])
 legend_bottom(fig, ncol=2)
 ''' + save_cell("basis", 0.22))
     return q
@@ -666,8 +682,8 @@ show('lowest solar factor', PF['f_solar'].min(), 'shape.solar_min', '.3f')
 show('  year', str(PF['f_solar'].idxmin()), 'shape.solar_min_y')
 show('2025: load-weighted minus baseload price, EUR/MWh', PF.loc[2025, 'load_w'] - PF.loc[2025, 'base'], 'shape.load_prem.2025', '.2f')''')
     q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.0))
-ax.plot(PF.index, PF['f_load'], marker='o', ms=3.5, color=PAL['RO'], lw=1.3, label='load-weighted price / baseload price')
-ax.plot(PF.index, PF['f_solar'], marker='s', ms=3.5, color=PAL['BG'], lw=1.3, label='solar capture price / baseload price')
+ax.plot(PF.index, PF['f_load'], marker='o', ms=3.5, color=PAL['RO'], lw=1.3, label='load-weighted / baseload price')
+ax.plot(PF.index, PF['f_solar'], marker='s', ms=3.5, color=PAL['BG'], lw=1.3, label='solar capture / baseload price')
 ax.axhline(1, color='#222222', lw=0.6)
 ax.set_xticks(PF.index)
 ax.set_xticklabels([str(y)[2:] + ('*' if y == END.year else '') for y in PF.index])    # * = to the cut-off
@@ -712,7 +728,7 @@ fig, ax = plt.subplots(figsize=(6.4, 2.0))
 for c, cc, ls in [('2026-12', PAL['RO'], '-'), ('2027-05', PAL['DE_LU'], ':')]:
     v = ROLLV[c].dropna() * 100
     ax.plot(v.index, v.values, color=cc, ls=ls, lw=1.3, label='TTF contract for ' + MON[int(c[5:]) - 1] + ' ' + c[:4])
-ax.set_ylabel('60-day volatility,\n% per year', fontsize=9)
+ax.set_ylabel('volatility,\n% per year', fontsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 legend_bottom(fig, ncol=2)
@@ -769,16 +785,16 @@ show('call at 1.1 F, EUR/MWh', c110, 'bs.c.call110', '.2f')
 show('put at 0.9 F, EUR/MWh', p90, 'bs.c.put90', '.2f')
 show('collar = call 1.1 F - put 0.9 F, EUR/MWh', c110 - p90, 'bs.c.collar', '.2f')
 show('cap premium per MW of baseload for a year, EUR', round(c110, 2) * 8760, 'bs.mw_year', ',.0f')   # premium as quoted (2 decimals) x 8760 h''')
-    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.15))
+    q.code(r'''fig, ax = plt.subplots(figsize=(6.4, 2.05))
 FT = np.linspace(0.75 * F0, 1.3 * F0, 200)                      # forward price at expiry
 cT, pT = round(c110, 2) * np.exp(r0 * T0), round(p90, 2) * np.exp(r0 * T0)    # premia carried to expiry
-ax.plot(FT, FT, color='#9a9a9a', lw=1.2, label='unhedged: pay the market')
+ax.plot(FT, FT, color='#9a9a9a', lw=1.2, label='unhedged')
 ax.plot(FT, np.full_like(FT, F0), color=PAL['HU'], lw=1.4, label='forward at F')
-ax.plot(FT, np.minimum(FT, 1.1 * F0) + cT, color=PAL['DE_LU'], lw=1.4, ls='--', label='cap K = 1.1 F (call bought)')
-ax.plot(FT, np.clip(FT, 0.9 * F0, 1.1 * F0) + cT - pT, color=PAL['c7'], lw=1.4, ls='-.', label='collar 0.9 F - 1.1 F')
+ax.plot(FT, np.minimum(FT, 1.1 * F0) + cT, color=PAL['DE_LU'], lw=1.4, ls='--', label='cap at 1.1 F')
+ax.plot(FT, np.clip(FT, 0.9 * F0, 1.1 * F0) + cT - pT, color=PAL['c7'], lw=1.4, ls='-.', label='collar 0.9 F to 1.1 F')
 ax.set_xlabel('forward price at expiry $F_T$, EUR/MWh')
-ax.set_ylabel('effective price,\nEUR/MWh', fontsize=9)
-legend_bottom(fig, ncol=2)
+ax.set_ylabel('effective price,\nEUR/MWh', fontsize=10)
+legend_compact(fig, ncol=4)
 ''' + save_cell("collar", 0.3))
     return q
 
@@ -840,7 +856,7 @@ ax.plot(xm, STRAT['cap'], color=PAL['DE_LU'], lw=1.3, ls='--', marker='s', ms=3,
 ax.set_ylabel('cost, EUR/MWh')
 ax.set_xticks(xm)
 ax.set_xticklabels([MON[m.month - 1] for m in STRAT.index])
-legend_bottom(fig, ncol=4)
+legend_bottom(fig, ncol=2)
 ''' + save_cell("case2026", 0.2))
     return q
 

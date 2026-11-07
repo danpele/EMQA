@@ -92,8 +92,8 @@ ABBR = {
 }
 UNITS = {"EUR", "MW", "MWh", "USD", "RON"}
 # journal codes and proper names inside citations or tickers only; everything else must be in the Abbreviations list
-IGNORE = {"EMQA", "IJF", "ENEECO", "JBES", "JOE", "JFEC", "JFIN", "IER", "OBES", "JAE", "JEP", "NAJEF", "SSRN", "IIF", "SPOT", "CO",
-          "II", "OMV", "BZ", "IEEE", "TPWRS", "RESTAT", "EPEX"}
+IGNORE = {"AI", "ReP", "EMQA", "IJF", "ENEECO", "JBES", "JOE", "JFEC", "JFIN", "IER", "OBES", "JAE", "JEP", "NAJEF", "SSRN", "IIF", "SPOT", "CO",
+          "II", "OMV", "BZ", "IEEE", "TPWRS", "RESTAT", "EPEX", "AIDA"}
 
 
 def build(lang, H=None):
@@ -227,7 +227,7 @@ def build(lang, H=None):
             "returns_ro", [
                 t(("Extreme days", "largest rise @{ret.max|+.0f}\\% on @{ret.max_date|date}, largest fall @{ret.min|.0f}\\% on @{ret.min_date|date} (Christmas)",
                    "@{ret.n_abs50} days with $|r_t|>50\\%$ out of @{ret.n|,d}"),
-                  ("Zilele extreme", "cea mai mare creștere: @{ret.max|+.0f}\\%, la @{ret.max_date|date}; cea mai mare scădere: @{ret.min|.0f}\\%, la @{ret.min_date|date} (Crăciunul)",
+                  ("Zilele extreme", "creșterea maximă: @{ret.max|+.0f}\\%, la @{ret.max_date|date}; scăderea maximă: @{ret.min|.0f}\\%, la @{ret.min_date|date} (Crăciunul)",
                    "@{ret.n_abs50} " + de("ret.n_abs50") + "zile cu $|r_t|>50\\%$, din @{ret.n|,d}"))],
             height="0.62\\textheight",
             job=t("a calm month says little about next month: risk comes in clusters.", "o lună calmă spune puțin despre luna următoare: riscul apare grupat."),
@@ -414,10 +414,10 @@ def build(lang, H=None):
                None, None, "halflife", [
                    t(("Curves: $100(\\hat\\alpha+\\hat\\beta)^h$ = percent of the extra variance left after $h$ days; half-lives in brackets", "Brent @{xm.BRENT.hl|.0f} trading days, about @{xm.BRENT.hl_weeks|.0f} weeks; EUA @{xm.EUA.hl|.0f}, about @{xm.EUA.hl_weeks|.0f} weeks",
                       "Romania: @{xm.RO_pct.hl|.1f} days in percent, but @{xm.RO_eur.hl|.0f} days in EUR/MWh, because volatility in money follows the price level"),
-                     ("Curbele: $100(\\hat\\alpha+\\hat\\beta)^h$ = procentul din varianța suplimentară rămas după $h$ zile; timpii de înjumătățire, în paranteze", "Brent: @{xm.BRENT.hl|.0f} " + de("xm.BRENT.hl") + "zile lucrătoare, circa @{xm.BRENT.hl_weeks|.0f} săptămîni; EUA: @{xm.EUA.hl|.0f}, circa @{xm.EUA.hl_weeks|.0f} săptămîni",
+                     ("Curbele: $100(\\hat\\alpha+\\hat\\beta)^h$ = varianța suplimentară rămasă (\\%) după $h$ zile; în paranteze: $h_{1/2}$", "Brent: @{xm.BRENT.hl|.0f} " + de("xm.BRENT.hl") + "zile lucrătoare, circa @{xm.BRENT.hl_weeks|.0f} săptămîni; EUA: @{xm.EUA.hl|.0f}, circa @{xm.EUA.hl_weeks|.0f} săptămîni",
                       "România: @{xm.RO_pct.hl|.1f} zile în procente, dar @{xm.RO_eur.hl|.0f} de zile în EUR/MWh, unde volatilitatea urmează nivelul prețului"))],
                job=t("after a shock, a risk desk keeps wider limits for weeks, not days, as announced in Lecture 1.",
-                     "după un șoc, departamentul de risc menține limite mai largi săptămîni întregi, nu doar cîteva zile, cum anunța cursul 1."),
+                     "după un șoc, limitele rămîn mai largi săptămîni, nu zile, cum anunța cursul 1."),
                tryit=NB + " \\S3", height="0.50\\textheight", cite=t("(" + OWN + ")", "(" + OWN + ")"))
 
     D.subsection(t("Asymmetry", "Asimetria"))
@@ -522,7 +522,7 @@ def build(lang, H=None):
                    "ponderea pe ani: 2022 @{" + M + ".by_year.2022|.0f}\\%, 2025 @{" + M + ".by_year.2025|.0f}\\%, 2026 @{" + M + ".by_year.2026|.0f}\\% (@{" + M + ".share_2026_q3q4|.0f}\\% din iulie)"))],
             height="0.60\\textheight",
             job=t("Transelectrica and suppliers can use the regime probability as an early warning for balancing costs.",
-                  "Transelectrica și furnizorii pot folosi probabilitatea regimului agitat ca avertizare timpurie pentru costurile de echilibrare."),
+                  "Transelectrica și furnizorii pot folosi această probabilitate ca avertizare timpurie pentru costurile de echilibrare."),
             tryit=NB + " \\S5", cite=t("(" + OWN + "; Hamilton, 1989)", "(" + OWN + "; Hamilton, 1989)"))
 
     S = N["sub"]
@@ -581,7 +581,7 @@ def build(lang, H=None):
                    "producția solară medie: @{rv.sol_2019|.0f} MW în 2019, @{rv.sol_last|.0f} MW în ianuarie -- @{data.end|ym}; corelația lunară: @{rv.corr_rel_solar_m|.2f}"))],
             height="0.60\\textheight",
             job=t("more solar means cheaper middays and dearer evenings: the business case of storage.",
-                  "mai multă producție solară înseamnă prețuri mici la prînz și mari seara: argumentul economic pentru stocare."),
+                  "mai multă energie solară înseamnă prețuri mici la prînz și mari seara, deci valoare pentru stocare."),
             tryit=NB + " \\S6", cite=t("(" + OWN + "; ENTSO-E solar generation)", "(" + OWN + "; producția solară ENTSO-E)"))
 
     D.concept(t("Intraday variation has a long memory: day, week and month",
@@ -839,12 +839,60 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
+    TALK = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf"
+    D.frame(t("AIDA 2026: geopolitical crises turn the energy link of EU stocks negative",
+              "AIDA 2026: crizele geopolitice fac negativă legătura burselor din UE cu energia"), it(
+        (t("\\textbf{What the work did} (A.-A.\\ Cramer, AIDA (AI and Digital Assets in Energy and Finance) conference, 3 June 2026)",
+           "\\textbf{Ce a făcut lucrarea} (A.-A.\\ Cramer, conferința AIDA (AI and Digital Assets in Energy and Finance), 3 iunie 2026)"),
+         t("data: main stock index of each EU country, by region and by industrialisation; Brent and TTF futures, 2010--2026",
+           "date: indicii bursieri ai țărilor din UE, pe regiuni și după industrializare; futures pe Brent și TTF, 2010--2026"),
+         t("models: GARCH, then a daily DCC correlation (as in case study C3); Markov regimes; responses to shocks",
+           "modele: GARCH, apoi corelația DCC zilnică (ca în studiul de caz C3); regimuri Markov; răspunsul la șocuri")),
+        (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+         t("correlation with oil mostly positive, in most cases between 0 and 0.4; with gas generally lower than with oil",
+           "corelația cu petrolul: în general pozitivă, de cele mai multe ori între 0 și 0{,}4; cu gazele, mai mică"),
+         t("oil matters most in Southern and Western Europe, gas in the North and West; industrialised countries follow oil more",
+           "petrolul contează mai ales în sudul și vestul Europei, gazele în nord și vest; țările industrializate urmează mai mult petrolul"),
+         t("crises turn the correlation negative: Crimea 2014 (gas), Ukraine 2022 (gas: strongest in CEE), the Middle East 2026",
+           "crizele fac corelația negativă: Crimeea, 2014 (gaze), Ucraina, 2022 (gaze: cel mai puternic în ECE), Orientul Mijlociu, 2026"),
+         t("after a shock, the most industrialised countries are hit more in the first months, then the effect fades",
+           "după un șoc, bursele țărilor celor mai industrializate sînt mai afectate în primele luni, apoi efectul se estompează")),
+        sep="2pt") + note(t("Findings as stated by the authors. Talk: \\href{" + TALK + "}{slides}; paper: \\href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}.",
+                            "Rezultatele sînt cele raportate de autori. Prezentarea: \\href{" + TALK + "}{diapozitive}; articolul: \\href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}.")) +
+        D.bottom(t("whoever hedges EU shares with oil or gas futures must expect the correlation to flip sign in a crisis.",
+                   "cine acoperă acțiuni din UE cu futures pe petrol sau gaze trebuie să se aștepte ca, în criză, corelația să își schimbe semnul.")),
+        "footnotesize", cite=t("(Cramer, AIDA conference, Bucharest, 3 June 2026; Grecu, Cramer, Pele \\& Lessmann, 2025, NAJEF)", "(Cramer, conferința AIDA, București, 3 iunie 2026; Grecu, Cramer, Pele \\& Lessmann, 2025, NAJEF)"))
+
+    TALK2 = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf"
+    D.frame(t("AIDA 2026: spillovers of energy tokens are mostly short-run",
+              "AIDA 2026: șocurile tokenurilor energetice se transmit mai ales pe termen scurt"), it(
+        (t("\\textbf{What the work did} (S.\\ Ben Amor \\& M.\\ Horváth, AIDA conference, 4 June 2026)",
+           "\\textbf{Ce a făcut lucrarea} (S.\\ Ben Amor și M.\\ Horváth, conferința AIDA, 4 iunie 2026)"),
+         t("data: energy tokens (Power Ledger, SunContract, Energy Web), cryptocurrencies, clean-energy stocks, oil, gas, carbon allowances, green bonds; Dec 2020 -- Jan 2026",
+           "date: tokenuri energetice (Power Ledger, SunContract, Energy Web), criptomonede, acțiuni de energie curată, petrol, gaze, certificate de emisii, obligațiuni verzi; dec.\\ 2020 -- ian.\\ 2026"),
+         t("model: a time-varying vector autoregression; spillovers split into short-run (transitory) and long-run (persistent) parts",
+           "metodă: model vectorial autoregresiv cu parametri variabili în timp; transmiterea șocurilor, separată pe termen scurt (tranzitorie) și lung (persistentă)")),
+        (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+         t("connectedness: about 60\\% of the total in the short run, about 5\\% in the long run",
+           "interconectarea: circa 60\\% din total pe termen scurt, circa 5\\% pe termen lung"),
+         t("crises (crypto turmoil 2021, energy crisis 2022) amplify short-run shocks; the long-run structure stays flat",
+           "crizele (criptomonede, 2021; energie, 2022) amplifică șocurile pe termen scurt; pe termen lung, structura rămîne stabilă"),
+         t("Power Ledger and SunContract are the main short-run transmitters; Energy Web matters mainly in stress episodes",
+           "Power Ledger și SunContract transmit cel mai mult pe termen scurt; Energy Web contează mai ales în crize"),
+         t("diversification is token-specific: minimum-variance portfolio, Sharpe ratio 0.127 without tokens, 0.143 with SunContract",
+           "diversificarea depinde de token: portofoliul de varianță minimă, raport Sharpe 0{,}127 fără tokenuri, 0{,}143 cu SunContract")),
+        sep="2pt") + note(t("Findings as stated by the authors. Talk: \\href{" + TALK2 + "}{slides}.",
+                            "Rezultatele sînt cele raportate de autori. Prezentarea: \\href{" + TALK2 + "}{diapozitive}.")) +
+        D.bottom(t("shocks pass within days; judge the diversification value token by token.",
+                   "șocurile se transmit în cîteva zile; valoarea pentru diversificare se judecă pentru fiecare token în parte.")),
+        "footnotesize", cite=t("(Ben Amor \\& Horváth, AIDA conference, Bucharest, 4 June 2026)", "(Ben Amor și Horváth, conferința AIDA, București, 4 iunie 2026)"))
+
     D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{R.\\,F.\\ Engle, GARCH 101} (2001): the clearest short introduction, by the Nobel laureate who invented ARCH --- ",
           "\\textbf{R.\\,F.\\ Engle, GARCH 101} (2001): cea mai clară introducere scurtă, scrisă de laureatul Nobel care a propus modelul ARCH --- ") +
         "\\href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}.",
-        t("\\textbf{R.\\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): stylised facts and volatility of power prices.",
-          "\\textbf{R.\\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice."),
+        t("\\textbf{R.\\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): stylised facts and volatility of power prices --- \\href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}.",
+          "\\textbf{R.\\ Weron, Modeling and Forecasting Electricity Loads and Prices} (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice --- \\href{https://doi.org/10.1002/9781118673362}{doi:10.1002/9781118673362}."),
         t("\\textbf{The \\texttt{arch} Python package} (K.\\ Sheppard), used for every model of this lecture: ",
           "\\textbf{Pachetul Python \\texttt{arch}} (K.\\ Sheppard), folosit pentru toate modelele din acest curs: ") +
         "\\href{https://arch.readthedocs.io}{arch.readthedocs.io}.", sep="4pt"),
@@ -859,12 +907,16 @@ def build(lang, H=None):
     REFS = [
         "Andersen, T.\\,G.\\ \\& Bollerslev, T.\\ (1998). Answering the skeptics: Yes, standard volatility models do provide accurate forecasts. "
         "\\textit{International Economic Review}, 39(4), 885--905. \\href{https://doi.org/10.2307/2527343}{doi:10.2307/2527343}",
+        "Ben Amor, S.\\ \\& Horváth, M.\\ (2026). Transitory and persistent cross-market spillovers of energy tokens. "
+        "AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Bollerslev, T.\\ (1986). Generalized autoregressive conditional heteroskedasticity. \\textit{Journal of Econometrics}, 31(3), 307--327. "
         "\\href{https://doi.org/10.1016/0304-4076(86)90063-1}{doi:10.1016/0304-4076(86)90063-1}",
         "Bollerslev, T.\\ (1987). A conditionally heteroskedastic time series model for speculative prices and rates of return. "
         "\\textit{Review of Economics and Statistics}, 69(3), 542--547. \\href{https://doi.org/10.2307/1925546}{doi:10.2307/1925546}",
         "Corsi, F.\\ (2009). A simple approximate long-memory model of realized volatility. \\textit{Journal of Financial Econometrics}, 7(2), 174--196. "
         "\\href{https://doi.org/10.1093/jjfinec/nbp001}{doi:10.1093/jjfinec/nbp001}",
+        "Cramer, A.-A.\\ (2026). The link between energy prices and stock markets in European Union countries (with R.-A.\\ Grecu, D.\\,T.\\ Pele and S.\\ Lessmann). "
+        "AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Diebold, F.\\,X.\\ \\& Mariano, R.\\,S.\\ (1995). Comparing predictive accuracy. \\textit{Journal of Business \\& Economic Statistics}, 13(3), 253--263. "
         "\\href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}",
         "Engle, R.\\,F.\\ (1982). Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation. "
@@ -895,7 +947,8 @@ def build(lang, H=None):
         "\\href{https://doi.org/10.3390/e19050226}{doi:10.3390/e19050226}",
         "Pele, D.\\,T.\\ \\& Mazurencu-Marinescu-Pele, M.\\ (2019). Using high-frequency entropy to forecast Bitcoin's daily value at risk. \\textit{Entropy}, 21(2), 102. "
         "\\href{https://doi.org/10.3390/e21020102}{doi:10.3390/e21020102}",
-        "RiskMetrics (1996). \\textit{RiskMetrics --- Technical Document}, 4th ed. J.\\,P.\\ Morgan / Reuters, New York.",
+        "RiskMetrics (1996). \\textit{RiskMetrics --- Technical Document}, 4th ed. J.\\,P.\\ Morgan / Reuters, New York. "
+        "\\href{https://www.msci.com/documents/10199/5915b101-4206-4ba0-aee2-3449d5c7e95a}{msci.com}",
         "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D.\\,T.\\ \\& Lessmann, S.\\ (2026). Energy Financial Risk Meter: Systemic risk in the EU energy sector. "
         "SSRN Working Paper 6985301. \\href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}",
         "Uniejewski, B., Weron, R.\\ \\& Ziel, F.\\ (2018). Variance stabilizing transformations for electricity spot price forecasting. \\textit{IEEE Transactions on "

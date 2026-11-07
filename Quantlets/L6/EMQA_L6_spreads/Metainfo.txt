@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L6_spreads'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Daily price spread: monthly mean of the daily difference between the 2 most expensive and the 2 cheapest hours of the day-ahead price (hourly prices, 15-min averaged to the hour) in Romania, Bulgaria, Hungary and Germany-Luxembourg, 2019 to 2026-10-31; symmetric log scale above 100 EUR/MWh. Prints the mean daily spread of 2026 by zone.'
+Description: 'Daily price spread: monthly mean of the daily difference between the 2 most expensive and the 2 cheapest hours of the day-ahead price (hourly prices, 15-min averaged to the hour) in Romania, Bulgaria, Hungary and Germany-Luxembourg, 2019 to 2026-10-31. Prints the mean daily spread of 2026 by zone.'
 
 Keywords: 'price spread, daily spread, top-bottom spread, battery, arbitrage, volatility, day-ahead, Romania, Bulgaria, Hungary, Germany'
 

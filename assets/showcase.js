@@ -166,7 +166,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_cy_generation",
    "q": "EMQA_L1_cy_generation",
    "en": "Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025",
-   "ro": "Studiul de caz (e): două opriri ale centralei nucleare de la Cernavodă, hidro sub nivelul din 2025"
+   "ro": "Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_cy_extremes/cy_extremes.png",
@@ -294,7 +294,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_stress_week",
    "q": "EMQA_L2_stress_week",
    "en": "Case study (b): the stress week of 19 Oct 2026",
-   "ro": "Studiul de caz (b): în săptămîna de criză (19 octombrie 2026) modelele întîrzie o zi"
+   "ro": "Studiul de caz (b): în săptămîna de criză, modelele întîrzie o zi"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_mtu15/mtu15.png",
@@ -424,7 +424,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_price_changes",
    "q": "EMQA_L4_price_changes",
    "en": "The risk sits in the daily price change: small until 2021, violent since",
-   "ro": "Riscul se află în variația zilnică a prețului: mică pînă în 2021, foarte mare după"
+   "ro": "Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după"
   },
   {
    "src": "Quantlets/L4/EMQA_L4_tails/tails.png",
@@ -437,7 +437,7 @@
    "src": "Quantlets/L4/EMQA_L4_gpd_tail/gpd_tail.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_gpd_tail",
    "q": "EMQA_L4_gpd_tail",
-   "en": "Above the threshold the Pareto curve follows the data; the normal curve does not",
+   "en": "Above the threshold the Pareto curve fits the data; the normal curve does not",
    "ro": "Peste prag, curba Pareto urmează datele, iar curba normală nu"
   },
   {
@@ -596,7 +596,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_merit_shift",
    "q": "EMQA_L6_merit_shift",
    "en": "On the Romanian order book alone, 40 MW more at zero price pushes midday below 50 EUR/MWh",
-   "ro": "Pe ofertele din România, 40 MW în plus la preț zero coboară prețul de la amiază sub 50 EUR/MWh"
+   "ro": "Ofertele din România: +40 MW la preț zero coboară amiaza sub 50 EUR/MWh"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_resid_price/resid_price.png",
@@ -624,14 +624,14 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_capture_region",
    "q": "EMQA_L6_capture_region",
    "en": "The region cannibalises together: Romanian, Bulgarian and Hungarian capture rates fell in step",
-   "ro": "Regiunea se canibalizează împreună: ratele de captare din România, Bulgaria și Ungaria au scăzut simultan"
+   "ro": "Rata de captare solară a scăzut simultan în România, Bulgaria și Ungaria"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_cheap_hours/cheap_hours.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_cheap_hours",
    "q": "EMQA_L6_cheap_hours",
    "en": "In 2025, 32.1% of Romanian solar output was sold in the cheapest 10% of hours",
-   "ro": "În 2025, 32,1% din producția solară a României s-a vîndut în cele mai ieftine 10% dintre ore"
+   "ro": "În 2025, 32,1% din energia solară s-a vîndut în cele mai ieftine 10% dintre ore"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_neg_hours/neg_hours.png",
@@ -644,8 +644,8 @@
    "src": "Quantlets/L6/EMQA_L6_shape15/shape15.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_shape15",
    "q": "EMQA_L6_shape15",
-   "en": "In spring, midday quarter-hours averaged 23.0 EUR/MWh and evening ones 208.3",
-   "ro": "Primăvara, sferturile de oră de la amiază au costat în medie 23,0 EUR/MWh, iar cele de seară 208,3"
+   "en": "Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening",
+   "ro": "Primăvara, prețul mediu: 23,0 EUR/MWh la amiază, 208,3 seara"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_spreads/spreads.png",
@@ -665,8 +665,8 @@
    "src": "Quantlets/L6/EMQA_L6_bat_rules/bat_rules.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_bat_rules",
    "q": "EMQA_L6_bat_rules",
-   "en": "A simple forecast rule captures 85% of the perfect-foresight revenue of a 2-hour battery",
-   "ro": "O regulă simplă de prognoză obține 85% din venitul cu informație perfectă al unei baterii de 2 ore"
+   "en": "A simple 7-day rule earns 85% of the 2-hour perfect-foresight revenue",
+   "ro": "O regulă simplă obține 85% din venitul cu informație perfectă (2 ore)"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_bat_region/bat_region.png",
@@ -686,8 +686,8 @@
    "src": "Quantlets/L6/EMQA_L6_rogb_summer/rogb_summer.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_rogb_summer",
    "q": "EMQA_L6_rogb_summer",
-   "en": "Summer 2026: Romania exported at midday and bought from Bulgaria in the evening",
-   "ro": "Vara 2026: România a exportat la prînz și a cumpărat seara din Bulgaria"
+   "en": "Summer 2026: midday exports, evening imports from Bulgaria",
+   "ro": "Vara 2026: export la prînz, import seara din Bulgaria"
   }
  ],
  "l7": [
@@ -794,7 +794,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_case_week",
    "q": "EMQA_L7_case_week",
    "en": "Case study, 30 Jun 2026: every model saw the spike, none its size",
-   "ro": "Studiu de caz, 30 iunie 2026: vîrful a fost anticipat, amploarea lui nu"
+   "ro": "Studiu de caz, 30 iunie 2026: vîrf anticipat, amploare subestimată"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_shap_local/shap_local.png",

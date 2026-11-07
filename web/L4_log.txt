@@ -1,3 +1,3 @@
 EMQA web lecture L4
-[en] 8 sections, 41 blocks, 27 numbered equations, 10 charts of 10
-[ro] 8 sections, 41 blocks, 27 numbered equations, 10 charts of 10
+[en] 8 sections, 44 blocks, 27 numbered equations, 10 charts of 10
+[ro] 8 sections, 44 blocks, 27 numbered equations, 10 charts of 10

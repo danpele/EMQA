@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_shap_local'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Local SHAP explanation of the XGBoost forecast for the highest price of the test year (2026-06-30, hour 20:00 CET): waterfall from the average forecast of the model to the forecast, with the seven largest contributions and the sum of the other 13, rescaled to EUR/MWh (proportional allocation), and the actual price. Romanian day-ahead market. Data: 2026-06-30, hour 20:00 CET; contributions rescaled to EUR/MWh (Appendix C). Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Local SHAP explanation of the XGBoost forecast for the highest price of the test year (2026-06-30, hour 20:00 CET): waterfall from the average forecast of the model to the forecast, with the seven largest contributions and the sum of the other 13, rescaled to EUR/MWh (proportional allocation), and the actual price. Romanian day-ahead market. Data: 2026-06-30, hour 20:00 CET; contributions rescaled to EUR/MWh (Appendix C). Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'SHAP, local explanation, waterfall chart, explainable AI, XGBoost, price spike, case study, electricity price, Romania'
 

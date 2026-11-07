@@ -29,7 +29,7 @@ Solar, wind and battery output and electricity consumption (load) come from the 
 
 The period runs from 2019 to 31 Oct 2026, the last complete month. On this page "2026" means Jan–Oct 2026, and "the last 12 months" means Nov 2025 – Oct 2026. Delivery days are defined in Central European Time (CET). Energy is always the mean power in megawatts (MW) multiplied by the duration, so a 15-minute market time unit (MTU) counts 0.25 h.
 
-## Installed solar in Romania grew 2.4 times from 2019 to 2025 {h=df4b8ed1}
+## Installed solar in Romania grew 2.4 times from 2019 to 2025 {h=bafc4c8f}
 
 Installed solar capacity in Romania rose from 1.16 gigawatts (GW) at the end of 2019 to 2.79 GW at the end of 2025, 2.4 times more. Output followed: from January to October, Romanian solar plants produced 2.53 terawatt-hours (TWh) in 2025 and 4.32 TWh in 2026. Measured against consumption, solar covered 2.3% of load in 2019 and 10.2% in 2026.
 
@@ -89,6 +89,16 @@ The chart groups hours by residual load in bins of 0.5 GW and shows the mean pri
 
 @chart resid_price
 Mean hourly price by residual load (bins of 0.5 GW with at least 20 hours), 2023 to Oct 2026, by year.
+
+## Research from our group: machine learning forecasts German redispatch one day ahead {h=75de84e9}
+
+Renewables also strain the grid. In Germany the wind blows mostly in the north, while the heaviest demand is in the industrial south. After the day-ahead market has cleared, the four transmission system operators check where lines would be overloaded and order some plants to raise and others to lower their output. This redispatch keeps the grid within its limits; its cost is reimbursed after the fact and does not appear in the day-ahead price.
+
+A study of our group, presented by Vlad Bolovăneanu at the AIDA 2026 conference (Basangova, Bolovăneanu, Conda, Erlwein-Sayer, Melzer, Pele, Petukhina & Phan, 2026, [slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf)), forecast the hourly redispatch volume in MW, upwards and downwards, of each of the four German operators, 24 hours ahead and with only the information available on the afternoon of the day before: wind, solar, load, price spreads and scheduled cross-border exchanges. The data run from October 2021 to February 2026, and the models were tested on 11 monthly windows from March 2025 to February 2026, comparing statistical, tree-based and deep neural forecasters.
+
+Deep neural networks were most often among the best models: the best of them is in the model confidence set for the mean absolute error in 6 of the 8 series (4 operators × 2 directions). The explanatory variables help only when they are correctly aligned in time: with all covariates, the forecasts are significantly better in 40–60% of the dense series than without them or with the covariates shifted in time.
+
+@practice for Transelectrica: forecast where wind and solar will meet the limits of the grid, a day ahead.
 
 ## @end
 
@@ -168,7 +178,7 @@ In 2026 the Bulgarian rate rose to 77.1%, at the same time as the Bulgarian batt
 @chart capture_region
 Yearly solar capture rates in Romania, Bulgaria and Hungary, 2019 (Hungary 2020) to Oct 2026.
 
-## In 2025, 32.1% of Romanian solar output was sold in the cheapest 10% of hours {h=12099ebb}
+## In 2025, 32.1% of Romanian solar output was sold in the cheapest 10% of hours {h=78b350f5}
 
 Another way to see cannibalisation is to rank the hours of each year from the cheapest to the dearest and ask how much of the year's solar energy was produced up to each rank. The chart draws this curve for every year. If solar were spread evenly over the year, the cheapest 10% of hours would carry 10% of its output.
 
@@ -242,7 +252,7 @@ Producers bid below zero when support or restart costs make stopping expensive. 
 
 Low midday prices and high evening prices create a daily price shape. This section reads that shape on 15-minute prices, defines the daily spread that a battery earns, and compares it across Romania and its neighbours.
 
-## In spring, midday quarter-hours averaged 23.0 EUR/MWh and evening ones 208.3 {h=bb5af70e}
+## Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening {h=593a9e2f}
 
 The chart shows the mean price of each quarter-hour of the day in the last 12 months, separately for each season. In spring the profile forms a deep "solar valley": the minimum, 23.0 EUR/MWh, falls at 12:45 CET and the maximum, 208.3 EUR/MWh, at 19:45 CET, when the sun has set and demand is still high.
 
@@ -267,7 +277,7 @@ For Romania and $k=2$, the mean daily spread was 45 EUR/MWh in 2019, 151 in 2025
 
 @practice a battery developer reads the business case from the daily spread, before any model.
 
-## The daily spread is about four times its 2019 level and similar in Romania, Bulgaria and Hungary {h=1c9729fa}
+## The daily spread is about four times its 2019 level and similar in Romania, Bulgaria and Hungary {h=bc54a16d}
 
 The chart follows the monthly mean of the daily 2-hour spread @eq:spread in the four markets since 2019. The spread rose with the energy crisis of 2022, did not return to its old level afterwards, and is now about four times its 2019 level. In 2026 the mean spread between the dearest 2 and the cheapest 2 hours was 174 EUR/MWh in Romania, 150 in Bulgaria, 187 in Hungary and 152 in Germany.
 
@@ -276,7 +286,7 @@ The three neighbouring markets have very similar spreads because they are couple
 @practice treat the spread as a regional resource, shared with every new battery next door.
 
 @chart spreads
-Monthly mean of the daily spread between the 2 dearest and the 2 cheapest hours, Romania, Bulgaria, Hungary and Germany–Luxembourg, 2019 to Oct 2026 (log scale above 100).
+Monthly mean of the daily spread between the 2 dearest and the 2 cheapest hours, Romania, Bulgaria, Hungary and Germany–Luxembourg, 2019 to Oct 2026.
 
 ## @end
 
@@ -313,7 +323,7 @@ Longer batteries earn more, but not proportionally. A 4-hour battery earns 1.72 
 @chart bat_years
 Yearly arbitrage revenue of 1-, 2- and 4-hour batteries with perfect foresight, thousand EUR per MW, 2019–2025 and the last 12 months.
 
-## A simple forecast rule captures 85% of the perfect-foresight revenue of a 2-hour battery {h=45324a53}
+## A simple 7-day rule earns 85% of the 2-hour perfect-foresight revenue {h=e9fa70c8}
 
 A real battery does not know tomorrow's prices. The lecture tests two rules that use only information available at 12:00 CET on the day before delivery, $d-1$, when bids are due. The first uses the mean price profile of the last 7 days; the second uses yesterday's prices. The schedule is optimised on the forecast and paid at real prices.
 
@@ -323,6 +333,14 @@ The 7-day rule earns 82%, 85% and 89% of the perfect-foresight revenue for 1-, 2
 
 @chart bat_rules
 Revenue in thousand EUR per MW of 1-, 2- and 4-hour batteries in the last 12 months: perfect foresight on 15-minute prices and on hourly averages, the 7-day rule and yesterday's prices.
+
+## Forecasting the whole price distribution helps a battery bid {h=b4f0c3cf}
+
+The rules above use a single forecast price per hour. A study of our group (Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele & Petukhina, 2026, [doi:10.2139/ssrn.6872381](https://doi.org/10.2139/ssrn.6872381)), presented by Cosmin Octavian Cepoi at the AIDA 2026 conference ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf)), forecasts instead the whole joint distribution of the next day's 96 hourly prices: 24 hours in Romania, Bulgaria, Hungary and Czechia. It uses a distributional random forest with 37 predictors on data from January 2018 to September 2024, re-estimated on 70 rolling windows (365 days to train, the next 30 days to test). The median of the forecast picks the charge hour and the later discharge hour; quantiles of the forecast set the buy and sell limit prices.
+
+Forecast errors are highest at 17:00–18:00, usually the discharge hours, which is where a single point forecast is weakest. For a 1 MW / 1 MWh battery in Romania, the cumulative profit is 143.0 thousand EUR with the quantile rule, against 133.2 with fixed hours and 188.2 with perfect foresight; the quantile rule beats the fixed-hour rule in all four markets, and trading across markets adds value (150.3 thousand EUR). With an upfront investment of 500,000 EUR, 90% efficiency, 15 years and a 7% discount rate, day-ahead arbitrage alone does not cover the investment, the same message as the break-even investment computed later in this section.
+
+@practice bid from forecast quantiles, not from a single price forecast: the hours that pay are in the tails.
 
 ## 15-minute prices raised a 1-hour battery's revenue by 14.5% on the same days {h=1d996d83}
 
@@ -402,7 +420,7 @@ April 2026 had 67 negative hours, the most of any month. The same month meant di
 - **Supplier and industrial consumer**: 67 negative hours. Moving consumption to spring middays is paid.
 - **Transelectrica**: after sunset, the evening ramp and the interconnectors set the price.
 
-## Summer 2026: Romania exported at midday and bought from Bulgaria in the evening {h=2ea33c91}
+## Summer 2026: midday exports, evening imports from Bulgaria {h=123a3cd2}
 
 The chart shows the mean hourly cross-border flows of Romania and the prices of Romania and Bulgaria between 1 Jun and 31 Aug 2026; positive flows are imports into Romania. At midday Romania exports: 960 MW net at 12:00 across all borders, mostly to Hungary (857 MW) and Serbia (367 MW). It exported to Bulgaria between 12:00 and 15:00 on only 43 of the 92 days.
 

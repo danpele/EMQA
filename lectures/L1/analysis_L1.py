@@ -572,76 +572,79 @@ N["bat"] = {"spread": spread, "evening": ev, "midday": mid, "bg_first": bat_firs
 # Charts: one set per language
 # =============================================================================
 TXT = {
-    "en": {"load": "Load (consumption)", "twh": "TWh per year (full years)", "gen_title": "Generation by source, TWh",
-           "share": "% of Romania's generation", "ytd_title": "Jan-{m} {y0} vs {y1} (hours reported in both)",
+    "en": {"load": "Load (consumption)", "twh": "TWh per year", "gen_title": "Generation by source, TWh",
+           "share": "% of generation", "ytd_title": "Jan-{m}, same hours in both years",
            "src": {"Hydro": "Hydro", "Nuclear": "Nuclear", "Coal": "Coal", "Gas": "Gas", "Wind": "Wind", "Solar": "Solar", "Biomass": "Biomass"},
            "zone": {"RO": "Romania (OPCOM PZU)", "BG": "Bulgaria (IBEX)", "HU": "Hungary (HUPX)", "DE_LU": "Germany-Luxembourg"},
-           "eurmwh7": "EUR/MWh, 7-day mean", "hour_cet": "Hour of day (CET/CEST)", "mean_price": "Mean price, EUR/MWh",
-           "gw": "Mean power, GW", "ro_month": "Romania: load and generation by month", "hydro": "Hydro (run-of-river + reservoir)",
-           "solar": "Solar", "price_month": "RO day-ahead price by month", "pratio": "RO price / annual mean (median over years)",
-           "neg_title": "Negative day-ahead prices per year", "neg_h": "Hours < 0 (hour-equivalents)", "neg_when": "RO, by hour of day (2024 to date)",
-           "neg_hro": "Hours < 0", "ytd": "YTD", "neg_month": "RO negative-price hours by month",
-           "neg_mh": "Negative hours, RO", "solar_y": "RO solar generation, TWh (metered)", "rohourly": "RO hourly price, 2024",
-           "thr": "Spike threshold Q3 + 3 IQR = {v} EUR/MWh", "level": "Level $p_t$, EUR/MWh", "mtus": "Number of MTUs",
+           "eurmwh7": "EUR/MWh\n(7-day mean)", "hour_cet": "Hour of day (CET/CEST)", "mean_price": "EUR/MWh",
+           "gw": "Mean power, GW", "ro_month": "Load and generation, RO", "hydro": "Hydro (river + reservoir)",
+           "solar": "Solar", "price_month": "RO day-ahead price by month", "pratio": "Price / annual mean (median of years)",
+           "neg_title": "Negative day-ahead prices per year", "neg_h": "Hours < 0", "neg_when": "RO, by hour of day (2024 to date)",
+           "neg_hro": "Hours < 0", "ytd": "YTD", "neg_month": "Negative-price hours, RO",
+           "neg_mh": "Hours", "solar_y": "Solar, RO, TWh (metered)", "rohourly": "RO hourly price, 2024",
+           "thr": "Spike threshold Q3 + 3 IQR = {v} EUR/MWh", "level": "Level $p_t$, EUR/MWh", "mtus": "Count",
            "asinh": "Variance-stabilised: asinh", "tv": "transformed value", "allmtu": "RO 15-min prices, Jan-{m} {y}",
-           "qq": "Q-Q plot", "nq": "Normal quantile", "eq": "Empirical quantile", "brent_r": "Brent daily log return (standardised)",
-           "normal": "Normal distribution", "studt": "Student-t, fitted df = {v}", "dens": "Density (log scale)", "stdr": "standardised return",
+           "qq": "Q-Q plot", "nq": "Normal quantile", "eq": "Empirical", "brent_r": "Brent returns (standardised)",
+           "normal": "Normal", "studt": "Student-t, df = {v}", "dens": "Density (log scale)", "stdr": "standardised return",
            "ret": "Brent daily log return, %", "vol": "21-day volatility, % a year", "pa": "% a year",
            "wn": "White noise", "ar": "AR(1), $\\phi=0.9$", "rw": "Random walk", "lag": "lag $k$", "sacf": "sample ACF",
            "acf_t": "ACF, RO daily price (level)", "pacf_t": "PACF, RO daily price (level)", "lagd": "lag (days)", "lagh": "lag (hours)",
            "bartlett": "Bartlett band", "wnband": "white-noise band $\\pm1.96/\\sqrt{T}$", "sacfpacf": "sample ACF / PACF",
            "acfh": "sample ACF, RO hourly price 2024", "loadm": "RO load, GW", "tr_cl": "Trend, classical",
            "tr_stl": "Trend, STL", "se_cl": "Season, classical", "se_stl": "Season, STL", "re_cl": "Remainder, classical",
-           "re_stl": "Remainder, STL", "brent": "Brent front-month, USD/bbl", "sma": "simple moving average, 20 trading days",
-           "ewma": "EWMA, half-life {h} days ($\\alpha$ = {a})", "h23": "Hydro 2023 (wet)", "h25": "Hydro 2025 (dry)",
-           "hmean": "Hydro mean 2015-2025", "twhm": "TWh per month", "hro": "RO hydro generation", "hvp": "Hydro vs PZU, monthly",
-           "hx": "Hydro, TWh per month", "hy": "RO price, EUR/MWh", "month_pt": "one month", "bclose": "Brent close, USD/bbl",
+           "re_stl": "Remainder, STL", "brent": "Brent front-month, USD/bbl", "sma": "20-day moving average",
+           "ewma": "EWMA, half-life {h} days", "h23": "2023 (wet)", "h25": "2025 (dry)",
+           "hmean": "Mean 2015-2025", "twhm": "TWh per month", "hro": "Hydro generation, RO", "hvp": "Hydro vs RO price, monthly",
+           "hx": "Hydro, TWh per month", "hy": "EUR/MWh", "month_pt": "one month", "bclose": "Brent close, USD/bbl",
            "a13": "13 Jun: Israel strikes Iran", "apk": "peak close", "a24": "24 Jun: ceasefire in effect",
            "sum24": "Summer 2024, daily base", "d16": "16 July 2024, hourly", "hcest": "Hour (CEST)",
-           "dailyb": "Daily base, EUR/MWh", "evsp": "RO - BG, 19-22 h EET, EUR/MWh",
-           "bdis": "BG battery discharge, MW", "bch": "BG battery charging, MW", "mw": "MW",
-           "upto": "{y} (to {m})", "nucl": "Nuclear", "naive": "naive", "mae": "MAE, EUR/MWh", "noreport": "Sep: not reported"},
-    "ro": {"load": "Consum", "twh": "TWh pe an (ani compleți)", "gen_title": "Producție pe surse, TWh",
-           "share": "% din producția României", "ytd_title": "ian.-{m} {y0} vs {y1} (ore raportate în ambii ani)",
+           "dailyb": "EUR/MWh", "evsp": "RO − BG, 19-22 h EET",
+           "bdis": "BG battery discharge", "bch": "BG battery charging", "mw": "MW",
+           "upto": "{y} (to {m})", "nucl": "Nuclear", "naive": "naive", "mae": "MAE\n(EUR/MWh)", "noreport": "no data", "brent_s": "Brent, USD/bbl", "dec_l": "Load and trend, GW", "dec_s": "Seasonal component, GW",
+           "zs": {"RO": "RO (OPCOM PZU)", "BG": "BG (IBEX)", "HU": "HU (HUPX)", "DE_LU": "DE-LU (EPEX SPOT)"}},
+    "ro": {"load": "Consum", "twh": "TWh pe an", "gen_title": "Producție pe surse, TWh",
+           "share": "% din producție", "ytd_title": "ian.-{m}, aceleași ore în ambii ani",
            "src": {"Hydro": "Hidro", "Nuclear": "Nuclear", "Coal": "Cărbune", "Gas": "Gaze", "Wind": "Eolian", "Solar": "Solar", "Biomass": "Biomasă"},
            "zone": {"RO": "România (OPCOM PZU)", "BG": "Bulgaria (IBEX)", "HU": "Ungaria (HUPX)", "DE_LU": "Germania-Luxemburg"},
-           "eurmwh7": "EUR/MWh, medie pe 7 zile", "hour_cet": "Ora din zi (CET/CEST)", "mean_price": "Preț mediu, EUR/MWh",
-           "gw": "Putere medie, GW", "ro_month": "România: consum și producție pe luni", "hydro": "Hidro (pe firul apei + lacuri)",
-           "solar": "Solar", "price_month": "Prețul PZU pe luni", "pratio": "Preț RO / media anuală (mediana pe ani)",
-           "neg_title": "Prețuri negative pe an", "neg_h": "Ore < 0 (echivalent-ore)", "neg_when": "RO, pe ore (din 2024)",
-           "neg_hro": "Ore < 0", "ytd": "parțial", "neg_month": "Ore cu preț negativ în RO, pe luni",
-           "neg_mh": "Ore negative, RO", "solar_y": "Producție solară RO, TWh (măsurată)", "rohourly": "Preț orar RO, 2024",
-           "thr": "Prag de vîrf Q3 + 3 IQR = {v} EUR/MWh", "level": "Nivel $p_t$, EUR/MWh", "mtus": "Număr de intervale",
+           "eurmwh7": "EUR/MWh\n(medie pe 7 zile)", "hour_cet": "Ora din zi (CET/CEST)", "mean_price": "EUR/MWh",
+           "gw": "Putere medie, GW", "ro_month": "Consum și producție, RO", "hydro": "Hidro (firul apei + lacuri)",
+           "solar": "Solar", "price_month": "Prețul PZU pe luni", "pratio": "Preț / media anuală (mediana pe ani)",
+           "neg_title": "Prețuri negative pe an", "neg_h": "Ore < 0", "neg_when": "RO, pe ore (din 2024)",
+           "neg_hro": "Ore < 0", "ytd": "parțial", "neg_month": "Ore cu preț negativ, RO",
+           "neg_mh": "Ore", "solar_y": "Solar, RO, TWh (măsurat)", "rohourly": "Preț orar RO, 2024",
+           "thr": "Prag de vîrf Q3 + 3 IQR = {v} EUR/MWh", "level": "Nivel $p_t$, EUR/MWh", "mtus": "Număr",
            "asinh": "Varianță stabilizată: asinh", "tv": "valoare transformată", "allmtu": "Prețuri RO de 15 min, ian.-{m} {y}",
-           "qq": "Grafic Q-Q", "nq": "Cuantilă normală", "eq": "Cuantilă empirică", "brent_r": "Randament logaritmic zilnic Brent (standardizat)",
-           "normal": "Distribuția normală", "studt": "Student-t, grade de libertate = {v}", "dens": "Densitate (scară logaritmică)",
-           "stdr": "randament standardizat", "ret": "Randament logaritmic zilnic Brent, %", "vol": "Volatilitate pe 21 de zile, % pe an",
+           "qq": "Grafic Q-Q", "nq": "Cuantilă normală", "eq": "Empirică", "brent_r": "Brent (standardizat)",
+           "normal": "Normală", "studt": "Student-t, {v} grade de libertate", "dens": "Densitate (scară logaritmică)",
+           "stdr": "randament standardizat", "ret": "Randament logaritmic zilnic Brent, %", "vol": "Volatilitate 21 de zile, % pe an",
            "pa": "% pe an", "wn": "Zgomot alb", "ar": "AR(1), $\\phi=0{,}9$", "rw": "Mers aleator", "lag": "decalaj $k$",
            "sacf": "ACF de selecție", "acf_t": "ACF, preț zilnic RO (nivel)", "pacf_t": "PACF, preț zilnic RO (nivel)",
            "lagd": "decalaj (zile)", "lagh": "decalaj (ore)", "bartlett": "Banda Bartlett", "wnband": "banda de zgomot alb $\\pm1{,}96/\\sqrt{T}$",
            "sacfpacf": "ACF / PACF de selecție", "acfh": "ACF de selecție, preț orar RO 2024", "loadm": "Consum RO, GW",
            "tr_cl": "Trend, clasic", "tr_stl": "Trend, STL", "se_cl": "Sezon, clasic",
            "se_stl": "Sezon, STL", "re_cl": "Rest, clasic", "re_stl": "Rest, STL", "brent": "Brent (primul contract futures), USD/bbl",
-           "sma": "medie mobilă simplă, 20 de zile de tranzacționare", "ewma": "EWMA, timp de înjumătățire {h} zile ($\\alpha$ = {a})",
-           "h23": "Hidro 2023 (an ploios)", "h25": "Hidro 2025 (an secetos)", "hmean": "Medie hidro 2015-2025", "twhm": "TWh pe lună",
-           "hro": "Producția hidro în România", "hvp": "Hidro vs PZU, lunar", "hx": "Hidro, TWh pe lună", "hy": "Preț RO, EUR/MWh",
+           "sma": "medie mobilă, 20 de zile", "ewma": "EWMA, înjumătățire în {h} zile",
+           "h23": "2023 (an ploios)", "h25": "2025 (an secetos)", "hmean": "Media 2015-2025", "twhm": "TWh pe lună",
+           "hro": "Producția hidro, RO", "hvp": "Hidro vs preț RO, lunar", "hx": "Hidro, TWh pe lună", "hy": "EUR/MWh",
            "month_pt": "o lună", "bclose": "Brent, preț de închidere, USD/bbl", "a13": "13 iun.: Israelul atacă Iranul",
            "apk": "maximul", "a24": "24 iun.: armistițiul intră în vigoare", "sum24": "Vara 2024, preț de bază zilnic",
-           "d16": "16 iulie 2024, orar", "hcest": "Ora (CEST)", "dailyb": "Preț de bază zilnic, EUR/MWh",
-           "evsp": "RO - BG, 19-22 EET, EUR/MWh", "bdis": "Descărcare baterii BG, MW",
-           "bch": "Încărcare baterii BG, MW", "mw": "MW", "upto": "{y} (pînă în {m})", "nucl": "Nuclear", "naive": "naiv", "mae": "MAE, EUR/MWh",
-           "noreport": "sep.: neraportat"},
+           "d16": "16 iulie 2024, orar", "hcest": "Ora (CEST)", "dailyb": "EUR/MWh",
+           "evsp": "RO − BG, 19-22 EET", "bdis": "Descărcare baterii BG",
+           "bch": "Încărcare baterii BG", "mw": "MW", "upto": "{y} (pînă în {m})", "nucl": "Nuclear", "naive": "naiv", "mae": "MAE\n(EUR/MWh)",
+           "noreport": "fără date", "brent_s": "Brent, USD/bbl", "dec_l": "Consum și trend, GW", "dec_s": "Componenta sezonieră, GW",
+           "zs": {"RO": "RO (OPCOM PZU)", "BG": "BG (IBEX)", "HU": "HU (HUPX)", "DE_LU": "DE-LU (EPEX SPOT)"}},
 }
-MON1 = {"en": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"], "ro": ["I", "F", "M", "A", "M", "I", "I", "A", "S", "O", "N", "D"]}
-SRC_TXT = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
+SRC_TXT = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E",
                   "ecg": "energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania)", "yf": "Yahoo Finance (BZ=F)",
                   "opc": "OPCOM, PZU aggregated curves",
                   "ecyf": "energy-charts.info (OPCOM prices); Yahoo Finance (BZ=F)",
+                  "ec4yf": "energy-charts.info (exchange prices via ENTSO-E); Yahoo Finance (BZ=F)",
                   "sim": "simulation, numpy, seed 20261104"},
-           "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
+           "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețurile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E",
                   "ecg": "energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România)", "yf": "Yahoo Finance (BZ=F)",
                   "opc": "OPCOM, curbele agregate PZU",
                   "ecyf": "energy-charts.info (prețuri OPCOM); Yahoo Finance (BZ=F)",
+                  "ec4yf": "energy-charts.info (prețurile burselor, prin ENTSO-E); Yahoo Finance (BZ=F)",
                   "sim": "simulare, numpy, seed = 20261104"}}
 
 
@@ -682,6 +685,13 @@ def month_fmt(ax, lang):
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%b"))
 
 
+def month_ticks(ax, lang, step=1, fontsize=9):
+    """Month axis 1..12: every month named (the instructor wants Sep, Oct ... visible), written vertically so it fits."""
+    mm = MON_EN if lang == "en" else MON_RO
+    ax.set_xticks(range(1, 13))
+    ax.set_xticklabels([mm[m - 1] if (m - 1) % step == 0 else "" for m in range(1, 13)], fontsize=fontsize, rotation=90)
+
+
 ORDER = ["Hydro", "Nuclear", "Coal", "Gas", "Wind", "Solar", "Biomass"]
 SCOL = {"Hydro": PAL["RO"], "Nuclear": PAL["c7"], "Coal": "#5b4a3a", "Gas": PAL["DE_LU"], "Wind": PAL["HU"],
         "Solar": PAL["BG"], "Biomass": PAL["c6"]}
@@ -712,16 +722,16 @@ for lang in ["en", "ro"]:
     axs[1].set_xticks([0, 1])
     axs[1].set_xticklabels([str(Y - 1), str(Y)])
     axs[1].set_ylabel(T["share"])
-    axs[1].set_title(T["ytd_title"].format(m=mlast, y0=Y - 1, y1=Y), fontsize=10)
+    axs[1].set_title(T["ytd_title"].format(m=mlast, y0=Y - 1, y1=Y), fontsize=9.5)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "mix_ro_annual", bottom=0.22)
     # prices
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
     for z in ["DE_LU", "HU", "BG", "RO"]:
         s = P[z].dropna().rolling(7, min_periods=7).mean()
-        ax.plot(s.index, s, color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=T["zone"][z])
+        ax.plot(s.index, s, color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=T["zs"][z])
     ax.set_ylabel(T["eurmwh7"])
-    legend_bottom(fig, ncol=2)
+    legend_bottom(fig, ncol=4)
     out(fig, lang, "prices_daily_4zones")
     # intraday
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2))
@@ -745,10 +755,9 @@ for lang in ["en", "ro"]:
     axs[1].set_ylim(0.6, 1.4)
     axs[1].set_title(T["price_month"])
     for ax in axs:
-        ax.set_xticks(range(1, 13))
-        ax.set_xticklabels(MON1[lang])
-    legend_bottom(fig, ncol=4)
-    out(fig, lang, "profile_annual")
+        month_ticks(ax, lang)
+    legend_bottom(fig, ncol=2)
+    out(fig, lang, "profile_annual", bottom=0.22)
     # spikes
     fig, ax = plt.subplots(figsize=(6.4, 2.52))
     s24h = H.loc["2024", "RO"].copy()
@@ -766,17 +775,17 @@ for lang in ["en", "ro"]:
     yrs = list(range(2018, Y + 1))
     for i, z in enumerate(ZONES):
         axs[0].bar(np.array(yrs) + (i - 1.5) * 0.2, [N["neg"]["hours"][z][str(y)] for y in yrs], width=0.2, color=PAL[z],
-                   label=T["zone"][z])
+                   label=T["zs"][z])
     axs[0].set_ylabel(T["neg_h"])
     axs[0].set_xticks(yrs)
-    axs[0].set_xticklabels([(str(y)[2:] if y % 2 == 0 else "") if y < Y else f"{str(y)[2:]}\n{T['ytd']}" for y in yrs])
+    axs[0].set_xticklabels([(str(y) if y % 2 == 0 else "") if y < Y else f"{y}\n{T['ytd']}" for y in yrs])
     axs[1].bar(hneg.index, hneg.values, color=PAL["RO"], width=0.75)
     axs[1].set_xlabel(T["hour_cet"])
     axs[1].set_ylabel(T["neg_hro"])
     axs[1].set_title(T["neg_when"])
     axs[1].set_xticks(range(0, 24, 6))
-    legend_bottom(fig, ncol=2)
-    out(fig, lang, "negative_prices", bottom=0.3)
+    legend_bottom(fig, ncol=4)
+    out(fig, lang, "negative_prices", bottom=0.12)
     # negative by month + solar
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2))
     bot_ = np.zeros(12)
@@ -785,31 +794,30 @@ for lang in ["en", "ro"]:
         axs[0].bar(range(1, 13), v_, bottom=bot_, color=ep.SERIES[i_], width=0.7, edgecolor="white", lw=0.6,
                    label=f"{y_}" + (f" ({T['ytd']})" if y_ == Y else ""))
         bot_ += v_
-    axs[0].set_xticks(range(1, 13))
-    axs[0].set_xticklabels(MON1[lang])
+    month_ticks(axs[0], lang)
     axs[0].set_ylabel(T["neg_mh"])
-    axs[0].set_title(T["neg_month"])
+    axs[0].set_title(T["neg_month"], fontsize=10.5)
     sy = [y for y in full_years if y >= 2018]
     axs[1].bar(sy, [mix.loc[y, "Solar"] for y in sy], color=PAL["BG"], width=0.6)
     axs[1].set_xticks(sy)
     axs[1].set_xticklabels([str(y)[2:] for y in sy])
-    axs[1].set_title(T["solar_y"])
+    axs[1].set_title(T["solar_y"], fontsize=10.5)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "negative_solar")
     # asinh
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.8))
-    axs[0].hist(y26.clip(upper=450), bins=np.arange(-150, 455, 5), color=PAL["RO"], label=T["allmtu"].format(m=mlast, y=Y))
+    axs[0].hist(y26.clip(upper=450), bins=np.arange(-150, 455, 5), color=PAL["RO"])
+    axs[0].set_title(T["allmtu"].format(m=mlast, y=Y), fontsize=10.5)
     axs[0].axvline(0, color="#222222", lw=0.8)
     axs[0].set_xlim(-150, 450)
     axs[0].set_xlabel(T["level"])
     axs[0].set_ylabel(T["mtus"])
     axs[1].hist(z26, bins=120, color=PAL["HU"])
     axs[1].set_xlabel(T["tv"])
-    axs[1].set_title(T["asinh"])
-    legend_bottom(fig, ncol=1)
-    out(fig, lang, "asinh_ro", also_x=[axs[1]])
+    axs[1].set_title(T["asinh"], fontsize=10.5)
+    out(fig, lang, "asinh_ro", bottom=0.0, also_x=[axs[1]])
     # tails
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0))
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.85))
     zz = (rb - rb.mean()) / rb.std()
     osm, osr = stats.probplot(zz, dist="norm", fit=False)
     axs[0].plot(osm, osr, "o", ms=2.5, color=PAL["RO"], label=T["brent_r"])
@@ -830,28 +838,30 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=3)
     out(fig, lang, "tails_brent")
     # volatility clustering
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.3), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 1.75), sharex=True)
     axs[0].plot(rb.index, rb, color=PAL["RO"], lw=0.6, label=T["ret"])
     axs[1].plot(vol.index, vol, color=PAL["DE_LU"], lw=1.0, label=T["vol"])
     axs[0].set_ylabel("%")
     axs[1].set_ylabel(T["pa"])
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "volclust_brent")
+    out(fig, lang, "volclust_brent", bottom=0.13)
     # simulation (teaching only)
-    fig, axs = plt.subplots(2, 3, figsize=(6.4, 2.4), gridspec_kw={"height_ratios": [1.3, 1]})
+    fig, axs = plt.subplots(2, 3, figsize=(6.4, 2.2), gridspec_kw={"height_ratios": [1, 1]})
     for j, (k_, col) in enumerate([("wn", PAL["RO"]), ("ar", PAL["HU"]), ("rw", PAL["DE_LU"])]):
         axs[0, j].plot(SIM[k_], color=col, lw=0.8)
         axs[0, j].set_title(T[k_], fontsize=10.5)
+        axs[0, j].yaxis.set_major_locator(plt.MaxNLocator(2))
         r_ = acf(SIM[k_], nlags=30, fft=True)
         axs[1, j].bar(range(31), r_, color=col, width=0.5)
         for sgn in (1, -1):
             axs[1, j].axhline(sgn * 1.96 / np.sqrt(TS), color="#222222", ls="--", lw=0.8)
         axs[1, j].set_ylim(-0.3, 1.05)
+        axs[1, j].set_yticks([0, 1])
         axs[1, j].set_xlabel(T["lag"])
     axs[1, 0].set_ylabel(T["sacf"])
     out(fig, lang, "sim_wn_ar_rw", bottom=0.0)
     # ACF / PACF daily
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.9))
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.7))
     axs[0].bar(range(1, K + 1), rA[1:], color=PAL["RO"], width=0.55, label=T["sacfpacf"])
     axs[0].plot(range(1, K + 1), bart, color=PAL["c8"], ls="--", lw=1.1, label=T["bartlett"])
     axs[0].plot(range(1, K + 1), -bart, color=PAL["c8"], ls="--", lw=1.1)
@@ -868,7 +878,7 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=3)
     out(fig, lang, "acf_pacf_ro_daily")
     # ACF hourly
-    fig, ax = plt.subplots(figsize=(6.4, 1.5))
+    fig, ax = plt.subplots(figsize=(6.4, 1.3))
     ax.bar(range(1, Kh + 1), rh[1:], color=PAL["RO"], width=0.8, label=T["acfh"])
     for sgn in (1, -1):
         ax.axhline(sgn * 1.96 / np.sqrt(len(hs)), color=PAL["c7"], ls=":", lw=1.3, label=T["wnband"] if sgn == 1 else None)
@@ -877,22 +887,27 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=2)
     out(fig, lang, "acf_ro_hourly")
     # decomposition (remainder panel left to the notebook)
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.6), sharex=True)
-    axs[0].plot(lm.index, lm, color="#222222", lw=1.1, label=T["loadm"])
-    axs[0].plot(cma.index, cma, color=PAL["RO"], lw=1.8, label=T["tr_cl"])
-    axs[0].plot(stl.trend.index, stl.trend, color=PAL["DE_LU"], lw=1.4, ls="--", label=T["tr_stl"])
-    axs[1].plot(sd_.seasonal.index, sd_.seasonal, color=PAL["RO"], lw=1.4, label=T["se_cl"])
-    axs[1].plot(stl.seasonal.index, stl.seasonal, color=PAL["DE_LU"], lw=1.2, ls="--", label=T["se_stl"])
+    # side by side, one colour per method: classical = blue solid, STL = orange dashed
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.75))
+    _cl, _stl = ("Classical method", "STL") if lang == "en" else ("Metoda clasică", "STL")
+    axs[0].plot(lm.index, lm, color="#222222", lw=1.0, label=T["loadm"])
+    axs[0].plot(cma.index, cma, color=PAL["RO"], lw=1.8, label=_cl)
+    axs[0].plot(stl.trend.index, stl.trend, color=PAL["DE_LU"], lw=1.4, ls="--", label=_stl)
+    axs[1].plot(sd_.seasonal.index, sd_.seasonal, color=PAL["RO"], lw=1.4, label=_cl)
+    axs[1].plot(stl.seasonal.index, stl.seasonal, color=PAL["DE_LU"], lw=1.2, ls="--", label=_stl)
+    axs[0].set_title(T["dec_l"], fontsize=10.5)
+    axs[1].set_title(T["dec_s"], fontsize=10.5)
     for ax in axs:
-        ax.set_ylabel("GW")
+        ax.xaxis.set_major_locator(mdates.YearLocator(3))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "decomp_load", bottom=0.2)
+    out(fig, lang, "decomp_load", bottom=0.13)
     # smoothing
     fig, ax = plt.subplots(figsize=(6.4, 1.9))
-    ax.plot(bs.index, bs, color="#222222", lw=0.9, label=T["brent"])
+    ax.plot(bs.index, bs, color="#222222", lw=0.9, label="Brent (BZ=F)")
     ax.plot(bs.index, bs.rolling(20).mean(), color=PAL["RO"], lw=1.6, label=T["sma"])
     ax.plot(bs.index, bs.ewm(alpha=alpha_hl, adjust=False).mean(), color=PAL["DE_LU"], lw=1.6, ls="--",
-            label=T["ewma"].format(h=HL, a=num(alpha_hl, lang, 3)))
+            label=T["ewma"].format(h=HL))
     ax.set_ylabel("USD/bbl")
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 7]))
     if lang == "ro":
@@ -900,15 +915,14 @@ for lang in ["en", "ro"]:
     else:
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "smooth_brent")
+    out(fig, lang, "smooth_brent", bottom=0.14)
     # hydro case
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), gridspec_kw={"width_ratios": [1.5, 1]})
     hy_avg = hydro_m.loc["2015":"2025"].groupby(hydro_m.loc["2015":"2025"].index.month).mean()
     axs[0].plot(range(1, 13), hydro_m.loc["2023"].values, color=PAL["RO"], marker="o", ms=4, label=T["h23"])
     axs[0].plot(range(1, 13), hydro_m.loc["2025"].values, color=PAL["DE_LU"], marker="s", ms=4, ls="--", label=T["h25"])
     axs[0].plot(range(1, 13), hy_avg.values, color="#222222", lw=1.0, ls=":", label=T["hmean"])
-    axs[0].set_xticks(range(1, 13))
-    axs[0].set_xticklabels(MON1[lang])
+    month_ticks(axs[0], lang)
     axs[0].set_ylabel(T["twhm"])
     axs[0].set_title(T["hro"])
     axs[1].scatter(dfm["hydro"], dfm["price"], s=14, color=PAL["RO"], label=T["month_pt"])
@@ -916,27 +930,30 @@ for lang in ["en", "ro"]:
     axs[1].set_ylabel(T["hy"])
     axs[1].set_title(T["hvp"])
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "hydro_case", also_x=[axs[1]])
+    out(fig, lang, "hydro_case", bottom=0.13, also_x=[axs[1]])
     # June 2025
     bw = b.loc["2025-06-02":"2025-07-04"]
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
     ax.plot(bw.index, bw, color=PAL["RO"], marker="o", ms=4, label=T["bclose"])
-    for dt_, txt, dx, dy, ha in [("2025-06-13", T["a13"], -12, 6, "right"), (str(win.idxmax().date()), T["apk"], 10, 4, "left"),
-                                 ("2025-06-24", T["a24"], 10, -16, "left")]:
-        ax.annotate(txt, (pd.Timestamp(dt_), b.loc[dt_]), xytext=(dx, dy), textcoords="offset points",
-                    ha=ha, fontsize=9.5, arrowprops=dict(arrowstyle="-", lw=0.6))
+    # labels sit in free corners of the axes (axes fraction), with a thin leader line to their point
+    for dt_, txt, xy_txt, ha in [("2025-06-13", T["a13"], (0.02, 0.90), "left"), (str(win.idxmax().date()), T["apk"], (0.68, 0.93), "left"),
+                                 ("2025-06-24", T["a24"], (0.99, 0.10), "right")]:
+        ax.annotate(txt, (pd.Timestamp(dt_), b.loc[dt_]), xytext=xy_txt, textcoords="axes fraction",
+                    ha=ha, va="center", fontsize=9.5, arrowprops=dict(arrowstyle="-", lw=0.6, color="#555555"))
+    ax.set_ylim(bw.min() - 5.5, bw.max() + 3)
     ax.set_ylabel("USD/bbl")
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=mdates.MO))
     if lang == "ro":
         ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{mdates.num2date(v).day} {MON_RO[mdates.num2date(v).month - 1]}"))
     else:
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%-d %b"))
     legend_bottom(fig, ncol=1)
-    out(fig, lang, "iran_brent")
+    out(fig, lang, "iran_brent", bottom=0.13)
     # separation 2024
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), gridspec_kw={"width_ratios": [1.6, 1]})
     ss = P.loc["2024-06-01":"2024-09-30", ZONES]
     for z in ["DE_LU", "HU", "BG", "RO"]:
-        axs[0].plot(ss.index, ss[z], color=PAL[z], ls=ZONE_LS[z], lw=1.2, label=T["zone"][z])
+        axs[0].plot(ss.index, ss[z], color=PAL[z], ls=ZONE_LS[z], lw=1.2, label=T["zs"][z])
         axs[1].plot(hd16.index.hour, hd16[z], color=PAL[z], ls=ZONE_LS[z], lw=1.4)
     axs[0].set_ylabel(T["dailyb"])
     month_fmt(axs[0], lang)
@@ -947,34 +964,46 @@ for lang in ["en", "ro"]:
     axs[1].set_xticks(range(0, 24, 4))
     axs[1].set_title(T["d16"])
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "separation_2024")
+    out(fig, lang, "separation_2024", bottom=0.13)
     # current year: prices
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.5), sharex=True, gridspec_kw={"height_ratios": [1.6, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.3), sharex=True, gridspec_kw={"height_ratios": [1.4, 1]})
     for z in ["DE_LU", "HU", "BG", "RO"]:
-        axs[0].plot(pY.index, pY[z], color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=T["zone"][z])
-    axs[0].set_ylabel(T["dailyb"])
-    axs[1].plot(bY.index, bY, color=PAL["c7"], lw=1.3, label=T["brent"])
-    axs[1].set_ylabel("USD/bbl")
+        axs[0].plot(pY.index, pY[z], color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=ZL[z])
+    axs[0].set_ylabel("EUR/MWh", fontsize=9.5)
+    axs[1].plot(bY.index, bY, color=PAL["c7"], lw=1.3, label="Brent")
+    axs[1].set_ylabel("USD/bbl", fontsize=9.5)
     month_fmt(axs[1], lang)
-    legend_bottom(fig, ncol=3)
-    out(fig, lang, "cy_prices", bottom=0.24)
+    fig.align_ylabels(axs)
+    legend_bottom(fig, ncol=5)
+    out(fig, lang, "cy_prices", bottom=0.12)
     # current year: generation (months without reported data stay empty)
     fig, axs = plt.subplots(1, 3, figsize=(6.4, 2.1))
+
+    def month_mean(s_):
+        """Monthly mean in GW; a month with fewer than half of its hours reported stays empty."""
+        g_ = s_.groupby(s_.index.month)
+        m_ = g_.mean() / 1000
+        return m_.where(g_.count() >= 0.5 * g_.size())
+
     for ax, (ttl, cols_) in zip(axs, [(T["src"]["Hydro"], ["hydro_run_of_river", "hydro_water_reservoir"]), (T["nucl"], ["nuclear"]),
                                       (T["solar"], ["solar"])]):
         a_ = GH.loc[str(Y - 1), cols_].sum(axis=1, min_count=len(cols_))
         c_ = GH.loc[str(Y), cols_].sum(axis=1, min_count=len(cols_))
-        ma, mc = a_.groupby(a_.index.month).mean() / 1000, c_.groupby(c_.index.month).mean() / 1000
-        ax.plot(ma.index, ma.values, color="#222222", ls="--", marker="o", ms=3.5, label=str(Y - 1))
-        ax.plot(mc.index, mc.values, color=PAL["RO"], marker="s", ms=3.5, label=T["upto"].format(y=Y, m=mlast))
-        ax.set_title(ttl, fontsize=10.5)
-        ax.set_xticks(range(1, 13))
-        ax.set_xticklabels(MON1[lang])
+        ma, mc = month_mean(a_), month_mean(c_)
+        for m_ in mc.index[mc.isna()]:
+            if m_ <= END.month:
+                ax.axvspan(m_ - 0.5, m_ + 0.5, color="#d9d9d9", alpha=0.7, lw=0)
+                ax.text(m_, 1.02, T["noreport"], transform=ax.get_xaxis_transform(), ha="center", va="bottom", fontsize=9, color="#555555")
+        ax.plot(ma.index, ma.values, color="#222222", ls="--", marker="o", ms=3, lw=1.2, label=str(Y - 1))
+        ax.plot(mc.index, mc.values, color=PAL["RO"], marker="s", ms=3.5, lw=1.6, label=T["upto"].format(y=Y, m=mlast))
+        ax.set_title(ttl, fontsize=11, pad=14)
+        ax.set_xlim(0.5, 12.5)
+        month_ticks(ax, lang)
         ax.set_ylim(bottom=0)
-    axs[1].annotate(T["noreport"], (9, 0.12), ha="center", fontsize=8.5, rotation=90, va="bottom")
+        ax.yaxis.set_major_locator(plt.MaxNLocator(4))
     axs[0].set_ylabel(T["gw"])
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "cy_generation")
+    out(fig, lang, "cy_generation", bottom=0.13)
     # share of generation: 2015, 2025, and Jan..cut-off of the current year (hours reported in both years)
     fig, ax = plt.subplots(figsize=(6.4, 2.3))
     yy = np.arange(len(ORDER))
@@ -1019,16 +1048,17 @@ for lang in ["en", "ro"]:
         ttl_ = {"mid": {"ro": "12:00-12:15 (amiază)", "en": "12:00-12:15 (midday)"},
                 "eve": {"ro": "20:00-20:15 (seară)", "en": "20:00-20:15 (evening)"}}[k_][lang]
         ax.set_title(ttl_, fontsize=10)
-        ax.set_ylim(-220, 720)
+        ax.set_ylim(-330, 760)
         ax.set_xlim(0, 4)
-        ax.text(0.05, -175, ("ofertă la orice preț (-600)" if lang == "ro" else "sell at any price (-600)").replace("-", "−"),
-                fontsize=7.5, color=PAL["RO"], va="bottom")
-        ax.text(0.05, 675, "cerere la orice preț (+4000)" if lang == "ro" else "buy at any price (+4000)", fontsize=7.5, color="#222222",
+        # the curves are clipped at -190 and 660 EUR/MWh: the labels sit just outside the clipped lines, clear of the curves
+        ax.text(0.05, -215, ("ofertă la orice preț (-600)" if lang == "ro" else "sell at any price (-600)").replace("-", "−"),
+                fontsize=8.5, color=PAL["RO"], va="top")
+        ax.text(0.05, 685, "cerere la orice preț (+4000)" if lang == "ro" else "buy at any price (+4000)", fontsize=8.5, color="#222222",
                 va="bottom")
         ax.set_xlabel("cantitate cumulată (GW)" if lang == "ro" else "cumulative quantity (GW)")
     axs[0].set_ylabel("EUR/MWh")
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "merit_opcom", bottom=0.27)
+    out(fig, lang, "merit_opcom", bottom=0.12)
     # extremes of the current year: RO daily base price and Brent, with the highest and lowest days marked
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.3))
     ro_ = pY["RO"].dropna()
@@ -1046,11 +1076,11 @@ for lang in ["en", "ro"]:
     axs[1].set_title("Țiței Brent, închidere (USD/bbl)" if lang == "ro" else "Brent close (USD/bbl)", fontsize=10)
     for ax in axs:
         ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 4, 7, 10]))
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%m.%Y" if lang == "ro" else "%b %Y"))
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{(MON_RO if lang == 'ro' else MON_EN)[mdates.num2date(v).month - 1]} {mdates.num2date(v).year}"))
         ax.tick_params(axis="x", labelsize=8)
     out(fig, lang, "cy_extremes", bottom=0.14)
     # naive benchmark: RO, last three years
-    fig, ax = plt.subplots(figsize=(6.4, 1.8))
+    fig, ax = plt.subplots(figsize=(6.4, 1.3))
     yrs_ = [str(y) for y in range(Y - 2, Y + 1)]
     for i_, (k_, lab_, col_) in enumerate([("naive", T["naive"], PAL["RO"]), ("lag1", "d-1", PAL["HU"]), ("lag7", "d-7", PAL["DE_LU"])]):
         ax.bar(np.arange(3) + (i_ - 1) * 0.26, [nv["RO"][y][k_] for y in yrs_], width=0.25, color=col_, label=lab_)
@@ -1060,7 +1090,7 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=3)
     out(fig, lang, "naive_bar", bottom=0.12)
     # RO-BG evening spread and BG batteries
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.3), sharex=True, gridspec_kw={"height_ratios": [1.4, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.0), sharex=True, gridspec_kw={"height_ratios": [1.4, 1]})
     xi = ev_sp.index.to_timestamp()
     axs[0].bar(xi, ev_sp.values, width=20, color=[PAL["RO"] if v >= 0 else PAL["c8"] for v in ev_sp.values], label=T["evsp"])
     axs[0].axhline(0, color="#222222", lw=0.6)
@@ -1106,7 +1136,7 @@ chart("hydro_case", "ecg", f"monthly, 2015-01 to {fy1}-12", f"lunar, 2015-01 - {
 chart("iran_brent", "yf", "2025-06-02 to 2025-07-04, trading days", "2025-06-02 - 2025-07-04, zile de tranzacționare")
 chart("separation_2024", "ec", "2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right)",
       "2024-06-01 - 2024-09-30 zilnic (stînga); 2024-07-16 orar (dreapta)")
-chart("cy_prices", "ec", f"{Y}-01-01 to {d(END)}, daily; Brent: Yahoo Finance (BZ=F)", f"{Y}-01-01 - {d(END)}, zilnic; Brent: Yahoo Finance (BZ=F)")
+chart("cy_prices", "ec4yf", f"{Y}-01-01 to {d(END)}, daily", f"{Y}-01-01 - {d(END)}, zilnic")
 chart("cy_generation", "ecg", f"monthly means of reported hours, {Y - 1}-01 to {END:%Y-%m}",
       f"medii lunare pe orele raportate, {Y - 1}-01 - {END:%Y-%m}")
 chart("mix_shares", "ecg", f"2015, {fy1} full years; Jan-{mE} {Y}, hours reported in both {Y - 1} and {Y}",

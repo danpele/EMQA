@@ -46,7 +46,7 @@ Pe datele din România pentru 2019–2026, abaterea standard a lui $r_t$ este de
 
 @practice Un furnizor care cumpără zilnic energie de pe PZU este expus exact acestei surprize zilnice.
 
-## Variațiile zilnice alternează perioade calme și perioade agitate {h=578929f0}
+## Variațiile zilnice alternează perioade calme și perioade agitate {h=c7b89fbb}
 
 Graficul arată prețul de bază din România și variația lui procentuală zilnică pe întreaga perioadă. Se remarcă două trăsături. Mai întîi, mărimea variațiilor nu este constantă: lunile liniștite, în care prețul se mișcă cu cîteva procente pe zi, alternează cu perioade agitate, în care variațiile de 50% sau mai mari se succed. Apoi, perioadele agitate nu coincid numai cu criza energetică, cînd nivelul prețului a fost cel mai ridicat; unele dintre cele mai mari variații procentuale apar după criză, în 2023 și 2024.
 
@@ -69,7 +69,7 @@ Pe datele noastre, prețul de bază din România a fost mereu pozitiv, cu un min
 
 @practice O poziție se măsoară în MWh, deci riscul ei este în EUR/MWh. Procentele au sens doar departe de zero.
 
-## Jumătate din variația zilnică vine din calendarul săptămînal {h=b4268495}
+## Jumătate din variația zilnică vine din calendarul săptămînal {h=a75f1690}
 
 O parte importantă a variației zilnice nu este deloc o surpriză. Cererea este mai mică la sfîrșit de săptămînă, astfel că prețul scade sîmbăta și duminica și crește din nou luni. Înainte de a măsura volatilitatea, eliminăm această parte previzibilă cu o ecuație a mediei:
 
@@ -84,7 +84,7 @@ Panoul din stînga al graficului arată variația medie pentru fiecare zi a săp
 @chart dow_effect
 Stînga: variația procentuală zilnică medie a prețului de bază din România, pe zile ale săptămînii; dreapta: abaterea standard a variației brute și a șocului rămas după ecuația mediei.
 
-## Sensul unui șoc nu poate fi anticipat, mărimea lui da {h=0b8047b1}
+## Sensul unui șoc nu poate fi anticipat, mărimea lui da {h=6d97aeaa}
 
 După eliminarea calendarului, șocurile $\varepsilon_t$ se comportă ca o monedă corectă în privința semnului, dar nu și a mărimii. Graficul arată autocorelația șocurilor (stînga) și a pătratelor lor (dreapta), pentru decalaje de pînă la o lună. Primele sînt aproape toate în interiorul benzii așteptate în lipsa autocorelației; celelalte sînt pozitive și ies clar din bandă la multe decalaje. Două teste confirmă imaginea. Statistica Ljung–Box,
 
@@ -110,7 +110,7 @@ Graficul arată, pe scară logaritmică, densitatea șocurilor standardizate cu 
 @chart tails
 Densitatea șocurilor standardizate cu GARCH, $z_t$, ale prețului din România (bare, scară logaritmică), împreună cu densitatea normală (linie întreruptă) și densitatea Student cu $\nu$ = 4,3.
 
-## Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh {h=147b27dd}
+## Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh {h=ad13068f}
 
 Alegerea unității de măsură nu este un detaliu tehnic. Graficul arată, an cu an, abaterea standard a șocurilor în procente și în EUR/MWh. În procente, anul 2022, anul crizei energetice, nu a fost mai volatil decît 2019: 18,5% față de 18,7%, un raport de 0,99. În EUR/MWh, aceiași ani dau 11,2 față de 45,8, un raport de 4,1, deoarece prețul mediu a crescut de la 50 la 265 EUR/MWh.
 
@@ -219,7 +219,7 @@ Eșantioanele încep în 2019 pentru energia electrică, Brent și OMV Petrom ș
 
 @practice După un șoc pe piața petrolului, mențineți limite mai largi circa 5 săptămîni; după un șoc procentual al prețului energiei electrice, doar cîteva zile.
 
-## Petrolul și carbonul: șocurile de volatilitate durează săptămîni {h=0cb41009}
+## Petrolul și carbonul: șocurile de volatilitate durează săptămîni {h=dc39e795}
 
 În cursul 1 ne-am întrebat cît timp trebuie să mențină departamentul de risc limite mai largi după un șoc. Graficul răspunde, reprezentînd $100(\hat\alpha+\hat\beta)^h$, procentul din varianța suplimentară care mai rămîne la $h$ zile după un șoc, pentru fiecare serie; timpii de înjumătățire apar în paranteze, în legendă.
 
@@ -257,7 +257,7 @@ Pentru un șoc de 61 EUR/MWh, adică de circa două abateri standard de lungă d
 @chart nic
 Curbele de impact ale șocurilor pentru modelul GJR(1,1)-t: $\sigma_t$ din ziua următoare în funcție de șocul de ieri, în procente (stînga) și în EUR/MWh (dreapta), separat după o scădere și după o creștere.
 
-## Volatilitatea în EUR/MWh crește odată cu nivelul prețului {h=18c6115b}
+## Volatilitatea în EUR/MWh crește odată cu nivelul prețului {h=8da9e58a}
 
 De ce urmează volatilitatea în bani nivelul prețului? La prețuri mari, curba ofertei, adică ordinea de merit a centralelor, este mai abruptă, așa că același șoc al cererii mută mai mult prețul. Graficul reprezintă, pentru fiecare lună, abaterea standard a șocurilor în EUR/MWh în funcție de prețul mediu, ambele pe scară logaritmică, cu culori diferite pentru fiecare an.
 
@@ -307,7 +307,7 @@ Pentru fiecare zi, modelul dă probabilitatea regimului agitat. Pe șocurile în
 
 @practice O probabilitate a regimului agitat peste 0,5 cere revizuirea acoperirii riscului și a garanțiilor.
 
-## Criza a fost un regim agitat lung; 2026 alternează între regimuri {h=f653a9d2}
+## Criza a fost un regim agitat lung; 2026 alternează între regimuri {h=b4a50786}
 
 Graficul pune prețul de bază zilnic deasupra probabilității netezite a regimului agitat. Criza energetică apare ca un singur bloc lung: cel mai lung episod agitat a durat de la 15 iunie 2022 pînă la 31 ianuarie 2023, adică 231 de zile. Înainte de criză, regimul calm a dominat aproape complet, iar după ea modelul intră și iese din regimul agitat pentru perioade mai scurte.
 
@@ -353,7 +353,7 @@ Media anuală a RV a fost de 36 EUR/MWh în 2019, 186 în 2022 și 135 în 2026.
 
 @practice Venitul unui investitor în baterii depinde de variația intrazilnică, nu de prețul mediu zilnic.
 
-## Producția solară a mărit variația prețului în cursul zilei {h=f15475c3}
+## Producția solară a mărit variația prețului în cursul zilei {h=8090209b}
 
 Graficul compară mediana lunară a variației intrazilnice relative cu producția solară medie din România. Variația relativă a fost de 0,64 în 2019, a atins maximul de 1,24 în 2024 și a fost de 1,01 în 2026. În aceeași perioadă, producția solară medie a crescut de la 157 MW în 2019 la 593 MW în ianuarie–octombrie 2026, iar corelația lunară dintre cele două serii este 0,46.
 
@@ -376,7 +376,7 @@ Estimate pe datele de dinaintea anului de test, ponderile sînt $\hat b_D$ = 0,4
 
 @practice O baterie își programează mentenanța în zilele cu variație prognozată mică.
 
-## Prognozele HAR urmăresc variația, dar nu și salturile izolate {h=5081f056}
+## Prognozele HAR urmăresc variația, dar nu și salturile izolate {h=6f419835}
 
 Graficul arată, pentru anul de test 1 noiembrie 2025 – 31 octombrie 2026, variația intrazilnică realizată în fiecare zi și prognoza HAR făcută în ziua precedentă. Modelul se reestimează zilnic pe datele disponibile în ziua $d-1$, deci prognoza nu folosește nicio informație din viitor. Eroarea absolută medie este de 35,6 EUR/MWh.
 
@@ -427,7 +427,7 @@ La pragul de 5%, în EUR/MWh toate modelele de tip GARCH, ca și EWMA, sînt sem
 
 @practice Folosiți GARCH-t ca model implicit: modelele asimetrice aduc puțin în afara eșantionului.
 
-## GARCH reacționează imediat; varianța istorică întîrzie și uită brusc {h=0d07eed1}
+## GARCH reacționează imediat; varianța istorică întîrzie și uită brusc {h=43b5c229}
 
 Graficul arată de ce cîștigă GARCH. El reprezintă, pentru anul de test, șocul absolut din fiecare zi, în EUR/MWh, împreună cu prognoza GARCH-t și cu prognoza istorică pe 30 de zile, ambele făcute în ziua precedentă. Cel mai mare șoc din anul de test a fost de +124 EUR/MWh, la 22 ianuarie 2026. A doua zi, $\hat\sigma$ GARCH a crescut de la 25 la 47 EUR/MWh, în timp ce prognoza istorică a urcat doar la 33, deoarece o singură zi are o pondere de o treizecime în fereastra ei.
 
@@ -472,7 +472,7 @@ Concluzia: 2026 este un șoc al nivelului prețului, cu un regim agitat în circ
 
 @practice Un furnizor care reînnoiește contractele în noiembrie 2026 trebuie să includă în preț riscul asociat nivelului mai ridicat, nu unui nou regim de volatilitate.
 
-## Studiu de caz: banda GARCH-t de o zi a fost corectă în anul de test {h=b60fdb2c}
+## Studiu de caz: banda GARCH-t de o zi a fost corectă în anul de test {h=a2f03264}
 
 Un departament de risc transformă prognoza volatilității într-o bandă: prețul prognozat plus sau minus cuantila distribuției Student înmulțită cu $\hat\sigma_t$, totul stabilit în ziua $t-1$. Pentru o bandă de 90%, cam o zi din zece ar trebui să cadă în afara ei. Graficul arată banda și prețul efectiv în anul de test.
 
@@ -533,10 +533,26 @@ Mai multe lucrări ale grupului nostru, de la Academia de Studii Economice din B
 - **Entropia datelor de înaltă frecvență și riscul zilnic** (Pele & Mazurencu-Marinescu-Pele, 2019). Lucrarea folosește entropia randamentelor intrazilnice ale Bitcoin pentru prognoza VaR zilnic și o compară cu modelele GARCH clasice. Prognoza VaR bazată pe entropie dă cele mai bune rezultate la testare, ceea ce arată că datele intrazilnice conțin informație despre riscul zilnic.
 - **Energy Financial Risk Meter** (Toma, Dima, Grecu, Pele & Lessmann, 2026). Lucrarea construiește un indicator al riscului sistemic pentru sectorul energetic din UE, tema cursului 4.
 
-## Lecturi și resurse suplimentare {h=d9512966}
+## AIDA 2026: crizele geopolitice fac negativă legătura burselor din UE cu energia {h=bed1f3de}
+
+La conferința AIDA a Academiei de Studii Economice din București, pe 3 iunie 2026, Alexandru-Adrian Cramer a prezentat lucrarea lui Grecu, Cramer, Pele și Lessmann despre prețurile energiei și bursele europene, articolul pe care se sprijină studiul de caz C3, cu datele extinse pînă în 2026. Lucrarea folosește indicele bursier principal al fiecărei țări din Uniunea Europeană, grupat și în indici regionali și după nivelul producției industriale, precum și contractele futures generice pe petrolul Brent și pe gazele TTF olandeze, din 2010 pînă în 2026. Mai întîi modelează volatilitatea fiecărei serii cu GARCH, apoi estimează o corelație condiționată dinamică (DCC) zilnică între fiecare indice și petrol sau gaze, modelul din studiul de caz C3; un model Markov cu schimbare de regim separă perioadele de corelație ridicată și scăzută, iar un model vectorial autoregresiv structural, pe date lunare, urmărește răspunsul indicilor la un șoc al petrolului sau al gazelor.
+
+Corelația indicilor bursieri cu petrolul este în general pozitivă, în cele mai multe cazuri între 0 și 0,4, iar corelația cu gazele este, în general, mai mică decît cea cu petrolul. Petrolul este cel mai puternic corelat cu indicii din sudul și vestul Europei, gazele cu cei din nordul și vestul Europei, iar țările cele mai industrializate urmează mai îndeaproape petrolul. Crizele geopolitice fac corelația negativă: după anexarea Crimeii, în 2014 (gaze, mai ales în nordul și vestul Europei), după invazia Ucrainei de către Rusia, în 2022 (pentru gaze, cel mai puternic în Europa Centrală și de Est), și în timpul tensiunilor din Orientul Mijlociu din 2026. După un șoc al petrolului sau al gazelor, indicii țărilor celor mai industrializate sînt mai afectați în primele luni, iar efectul se estompează pe termen mediu. Rezultatele sînt cele raportate de autori: [diapozitivele prezentării](https://github.com/danpele/EMQA/blob/main/resources/aida2026/cramer_energy_stock_markets.pdf); articolul: [doi:10.1016/j.najef.2025.102420](https://doi.org/10.1016/j.najef.2025.102420).
+
+@practice Cine acoperă acțiuni din UE cu futures pe petrol sau gaze trebuie să se aștepte ca, într-o criză geopolitică, corelația să își schimbe semnul.
+
+## AIDA 2026: șocurile tokenurilor energetice se transmit mai ales pe termen scurt {h=432e5954}
+
+La aceeași conferință AIDA, pe 4 iunie 2026, Souhir Ben Amor și Matúš Horváth au prezentat lucrarea lor despre transmiterea tranzitorie și persistentă a șocurilor între tokenurile energetice și alte piețe. Tokenurile energetice sînt active digitale pe un blockchain care reprezintă energie regenerabilă, de exemplu un token pentru un kilowatt-oră. Lucrarea studiază tokenuri energetice (Power Ledger, SunContract, Energy Web), criptomonede, acțiuni și fonduri de energie curată, mărfuri (petrol, gaze, cupru, aur, certificate de emisii ale Uniunii Europene), fonduri de investiții sustenabile și obligațiuni verzi, din 7 decembrie 2020 pînă la 31 ianuarie 2026. Un model vectorial autoregresiv cu parametri variabili în timp măsoară cît din varianța prognozei fiecărui activ provine din șocurile celorlalte (interconectarea) și o împarte într-o componentă pe termen scurt, tranzitorie, și una pe termen lung, persistentă.
+
+Transmiterea șocurilor variază puternic în timp și are loc mai ales pe termen scurt: banda pe termen scurt reprezintă circa 60% din interconectarea totală, iar cea pe termen lung circa 5%. Crizele din eșantion, turbulențele criptomonedelor din 2021 și criza energetică din 2022, amplifică șocurile pe termen scurt, în timp ce structura pe termen lung rămîne stabilă. Power Ledger și SunContract sînt cei mai importanți transmițători de șocuri pe termen scurt; Energy Web devine relevant mai ales în episoadele de criză. Valoarea pentru diversificare depinde de token: în portofoliul de varianță minimă, raportul Sharpe este 0,127 fără tokenuri și 0,143 cu SunContract, singurul token cu un cîștig constant pozitiv al raportului Sharpe; Power Ledger este neutru, iar Energy Web, receptor net persistent de șocuri, reduce raportul Sharpe pe termen lung. Rezultatele sînt cele raportate de autori: [diapozitivele prezentării](https://github.com/danpele/EMQA/blob/main/resources/aida2026/benamor_energy_tokens_spillovers.pdf).
+
+@practice Șocurile dintre tokenurile energetice și celelalte piețe se transmit în cîteva zile; valoarea pentru diversificare se judecă pentru fiecare token în parte.
+
+## Lecturi și resurse suplimentare {h=7bd33022}
 
 - **R. F. Engle, GARCH 101** (2001): cea mai clară introducere scurtă, scrisă de laureatul Nobel care a propus modelul ARCH, [doi:10.1257/jep.15.4.157](https://doi.org/10.1257/jep.15.4.157).
-- **R. Weron, Modeling and Forecasting Electricity Loads and Prices** (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice.
+- **R. Weron, Modeling and Forecasting Electricity Loads and Prices** (Wiley, 2006): faptele stilizate și volatilitatea prețurilor energiei electrice, [doi:10.1002/9781118673362](https://doi.org/10.1002/9781118673362).
 - **Pachetul Python arch** (K. Sheppard), folosit pentru toate modelele din acest curs: [arch.readthedocs.io](https://arch.readthedocs.io).
 - **Acest curs**: cod, date și notebook-uri Jupyter la [github.com/danpele/EMQA](https://github.com/danpele/EMQA).
 - **Studiul de caz C3**: modelul DCC și acoperirea cu Brent pentru acțiunile energetice românești, pas cu pas.

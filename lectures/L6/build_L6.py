@@ -75,7 +75,8 @@ ABBR = {
 }
 UNITS = {"EUR", "MW", "MWh", "TWh", "GW", "kW", "kWh"}
 # journal codes inside citations only; everything else must be in the Abbreviations list and spelled out
-IGNORE = {"EMQA", "IJF", "ENEECO", "ENPOL", "APEN", "JSES", "PICBE", "SPOT", "CO", "II", "NEMO", "TP", "IV", "III", "PJM", "SHAP", "HiGHS", "SOURCES"}
+IGNORE = {"AI", "ReP", "EMQA", "IJF", "ENEECO", "ENPOL", "APEN", "JSES", "PICBE", "SPOT", "CO", "II", "NEMO", "TP", "IV", "III", "PJM", "SHAP", "HiGHS", "SOURCES",
+          "AIDA", "SSRN", "CEE"}   # conference, repository and a word of a talk title, in citations and references only
 
 
 def build(lang, H=None):
@@ -195,7 +196,7 @@ def build(lang, H=None):
               tryit=NB + " \\S2", cite="(Sensfuß, Ragwitz \\& Genoese, 2008, ENPOL)", wl="0.50", wr="0.47")
 
     D.figframe(t("On the Romanian order book alone, @{merit.mid.x_below50} MW more at zero price pushes midday below 50 EUR/MWh",
-                 "Pe ofertele din România, @{merit.mid.x_below50} MW în plus la preț zero coboară prețul de la amiază sub 50 EUR/MWh"),
+                 "Ofertele din România: +@{merit.mid.x_below50} MW la preț zero coboară amiaza sub 50 EUR/MWh"),
                None, None, "merit_shift", [
                    t(("\\textbf{Midday}: +25 MW at zero price, @{merit.mid.price|.2f} $\\to$ @{merit.mid.sup.25|.2f} EUR/MWh",
                       "evening: @{merit.eve.net_imp|,.0f} MW of net imports deepen the curve; @{merit.eve.x_below50} MW are needed for the same fall",
@@ -240,6 +241,32 @@ def build(lang, H=None):
         job=t("a hydro producer saves water for high residual load, where each GW is worth most.",
               "un producător hidro păstrează apa pentru orele cu consum rezidual mare, cînd fiecare GW valorează cel mai mult."),
         tryit=NB + " \\S3", cite=t("(" + OWN + ")", "(" + OWN + ")"))
+
+    D.subsection(t("Renewables and the grid: redispatch", "Sursele regenerabile și rețeaua: redispecerizarea"))
+    D.frame(t("Research from our group: machine learning forecasts German redispatch one day ahead",
+              "Cercetarea grupului nostru: învățarea automată prognozează redispecerizarea din Germania cu o zi înainte"), it(
+        t(("\\textbf{Why redispatch}: wind in the north, demand in the industrial south of Germany",
+           "after the day-ahead market, transmission system operators order plants up or down to keep lines within limits"),
+          ("\\textbf{De ce redispecerizare}: vîntul este în nordul Germaniei, consumul în sudul industrializat",
+           "după piața pentru ziua următoare, operatorii de transport și de sistem cer centralelor să crească sau să reducă producția")),
+        t(("\\textbf{What the work did}: forecast the hourly redispatch volume (MW), up and down, of the four German operators",
+           "24 h ahead, with what is known on the afternoon of $d-1$: wind, solar, load, price spreads, scheduled exchanges",
+           "data Oct 2021 -- Feb 2026; 11 monthly test windows, Mar 2025 -- Feb 2026"),
+          ("\\textbf{Ce a făcut lucrarea}: a prognozat volumul orar al redispecerizării (MW), în sus și în jos, la cei patru operatori germani",
+           "cu 24 h înainte, cu ce se știe în după-amiaza zilei $d-1$: vînt, solar, consum, diferențe de preț, schimburi programate",
+           "date oct.\\ 2021 -- feb.\\ 2026; 11 ferestre lunare de test, mar.\\ 2025 -- feb.\\ 2026")),
+        t(("\\textbf{What it found}: deep neural networks are most often among the best models",
+           "the best of them is in the model confidence set (mean absolute error) for 6 of the 8 series",
+           "covariates help only when aligned in time: significantly better forecasts in 40--60\\% of the dense series"),
+          ("\\textbf{Ce a găsit}: rețelele neuronale adînci sînt cel mai des printre cele mai bune modele",
+           "cea mai bună dintre ele intră în mulțimea de încredere a modelelor (eroarea absolută medie) pentru 6 din cele 8 serii",
+           "variabilele explicative ajută doar aliniate în timp: prognoze semnificativ mai bune în 40--60\\% dintre seriile dense")),
+        sep="2pt") + D.bottom(t("for Transelectrica: forecast where wind and solar will meet the limits of the grid, a day ahead.",
+                                "pentru Transelectrica: prognozați cu o zi înainte unde vor atinge eolianul și solarul limitele rețelei.")),
+        "footnotesize", cite=t("(Basangova, Bolovăneanu, Conda, Erlwein-Sayer, Melzer, Pele, Petukhina \\& Phan, 2026, talk at AIDA 2026 (AI and Digital Assets in Energy and Finance), Bucharest, 3 June 2026: "
+                               "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf}{slides})",
+                               "(Basangova, Bolovăneanu, Conda, Erlwein-Sayer, Melzer, Pele, Petukhina \\& Phan, 2026, prezentare la AIDA 2026 (AI and Digital Assets in Energy and Finance), București, 3 iunie 2026: "
+                               "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf}{diapozitive})"))
 
     # ------------------------------------------------------------------ 2 capture prices
     D.section(t("Capture prices and cannibalisation", "Prețul capturat și canibalizarea"))
@@ -309,30 +336,30 @@ def build(lang, H=None):
                       "România: $\\hat b$ = @{cannib.b|.2f} (SE @{cannib.se|.2f}), $R^2$ = @{cannib.r2|.2f}, @{cannib.n} " + de("cannib.n") + "luni",
                       "Ungaria @{cannib.HU.b|.2f}, Bulgaria @{cannib.BG.b|.2f}; prețul din România scade și cu producția solară a vecinilor"))],
                job=t("forecast regional solar, not only Romanian solar, to forecast a park's revenue.",
-                     "pentru a prognoza venitul unui parc, prognozați producția solară a regiunii, nu doar pe cea a României."),
+                     "pentru venitul unui parc, prognozați producția solară regională, nu doar pe cea a României."),
                tryit=NB + " \\S4", height="0.56\\textheight", size="footnotesize",
                cite="(López Prol, Steininger \\& Zilberman, 2020, ENEECO)")
 
     D.chart(t("The region cannibalises together: Romanian, Bulgarian and Hungarian capture rates fell in step",
-              "Regiunea se canibalizează împreună: ratele de captare din România, Bulgaria și Ungaria au scăzut simultan"), "capture_region", [
+              "Rata de captare solară a scăzut simultan în România, Bulgaria și Ungaria"), "capture_region", [
         t(("\\textbf{2025}: Romania @{capt.RO.solar.2025.crp|.1f}\\%, Bulgaria @{capt.BG.solar.2025.crp|.1f}\\%, Hungary @{capt.HU.solar.2025.crp|.1f}\\%",
            "@{Y}: Bulgaria rises to @{capt.BG.solar.2026.crp|.1f}\\% as its battery fleet grows, an association, not a proof"),
           ("\\textbf{2025}: România @{capt.RO.solar.2025.crp|.1f}\\%, Bulgaria @{capt.BG.solar.2025.crp|.1f}\\%, Ungaria @{capt.HU.solar.2025.crp|.1f}\\%",
            "@{Y}: Bulgaria urcă la @{capt.BG.solar.2026.crp|.1f}\\%, odată cu extinderea bateriilor; este o asociere, nu o dovadă"))],
         height="0.62\\textheight", size="footnotesize",
         job=t("batteries charging at midday raise the price solar sells at: solar gains from other people's batteries.",
-              "bateriile care se încarcă la amiază cresc prețul obținut de solar; un parc solar cîștigă și din bateriile altora."),
+              "un parc solar cîștigă și din bateriile altora, care se încarcă la amiază și îi cresc prețul."),
         tryit=NB + " \\S4", cite=t("(" + OWN + "; Bulgarian output is hourly)", "(" + OWN + "; producția din Bulgaria este orară)"))
 
     D.chart(t("In 2025, @{cheap.2025.e_in_cheap10|.1f}\\% of Romanian solar output was sold in the cheapest 10\\% of hours",
-              "În 2025, @{cheap.2025.e_in_cheap10|.1f}\\% din producția solară a României s-a vîndut în cele mai ieftine 10\\% dintre ore"), "cheap_hours", [
+              "În 2025, @{cheap.2025.e_in_cheap10|.1f}\\% din energia solară s-a vîndut în cele mai ieftine 10\\% dintre ore"), "cheap_hours", [
         t(("\\textbf{Reading}: hours ranked from the cheapest; the curve = share of the year's solar energy produced up to that rank",
            "2019: @{cheap.2019.e_in_cheap10|.1f}\\%; 2025: @{cheap.2025.e_in_cheap10|.1f}\\%; @{Y}: @{cheap.2026.e_in_cheap10|.1f}\\%; at zero or negative prices: @{cheap.2025.e_le0|.1f}\\% of 2025 output"),
           ("\\textbf{Citire}: orele sînt ordonate de la cea mai ieftină; curba = partea din energia solară a anului produsă pînă la acel rang",
            "2019: @{cheap.2019.e_in_cheap10|.1f}\\%; 2025: @{cheap.2025.e_in_cheap10|.1f}\\%; @{Y}: @{cheap.2026.e_in_cheap10|.1f}\\%; la prețuri nule sau negative: @{cheap.2025.e_le0|.1f}\\% din producția anului 2025"))],
         height="0.60\\textheight", size="footnotesize",
         job=t("as announced in Lecture 1: a solar park without storage sells much of its output in the cheapest hours of the year.",
-              "cum am anunțat în cursul 1: un parc solar fără stocare își vinde o mare parte din producție în cele mai ieftine ore ale anului."),
+              "cum am anunțat în cursul 1: un parc solar fără stocare vinde mult în cele mai ieftine ore ale anului."),
         tryit=NB + " \\S4", cite=t("(" + OWN + ")", "(" + OWN + ")"))
 
     # ------------------------------------------------------------------ 3 negative prices
@@ -404,15 +431,15 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 4 intraday shape and spreads
     D.section(t("Intraday shape and price spreads", "Profilul zilnic și diferențele de preț"))
-    D.chart(t("In spring, midday quarter-hours averaged @{shape.spring.min|.1f} EUR/MWh and evening ones @{shape.spring.max|.1f}",
-              "Primăvara, sferturile de oră de la amiază au costat în medie @{shape.spring.min|.1f} EUR/MWh, iar cele de seară @{shape.spring.max|.1f}"), "shape15", [
+    D.chart(t("Spring quarter-hours: @{shape.spring.min|.1f} EUR/MWh at midday, @{shape.spring.max|.1f} in the evening",
+              "Primăvara, prețul mediu: @{shape.spring.min|.1f} EUR/MWh la amiază, @{shape.spring.max|.1f} seara"), "shape15", [
         t(("\\textbf{The solar valley}: spring minimum at @{shape.spring.min_t}, maximum at @{shape.spring.max_t} CET",
            "maximum minus minimum: spring @{shape.spring.range|.0f}, summer @{shape.summer.range|.0f}, winter only @{shape.winter.range|.0f} EUR/MWh"),
           ("\\textbf{„Valea” solară}: primăvara, minimul este la @{shape.spring.min_t}, iar maximul la @{shape.spring.max_t} CET",
            "maximul minus minimul: primăvara @{shape.spring.range|.0f}, vara @{shape.summer.range|.0f}, iarna doar @{shape.winter.range|.0f} EUR/MWh"))],
         height="0.62\\textheight", size="footnotesize",
-        job=t("a battery charges in the valley and discharges on the evening ramp; the gap is its gross margin.",
-              "o baterie se încarcă în „vale” și se descarcă seara; diferența este marja ei brută."),
+        job=t("a battery charges in the valley and discharges on the evening ramp: the gap is its gross margin.",
+              "o baterie se încarcă în „vale” și se descarcă seara: diferența este marja ei brută."),
         tryit=NB + " \\S6", cite=t("(" + OWN + ", " + LTM + ")", "(" + OWN + ", " + LTM + ")"))
 
     D.concept(t("A battery earns the spread between dear and cheap hours, minus its losses",
@@ -480,16 +507,40 @@ def build(lang, H=None):
               "dimensionați bateria după venitul adus de fiecare MWh suplimentar de stocare, nu după venitul total."),
         tryit=NB + " \\S7", cite=t("(" + OWN + "; day-ahead prices only)", "(" + OWN + "; doar prețurile pentru ziua următoare)"))
 
-    D.chart(t("A simple forecast rule captures @{bat.ltm.2.wk_pct|.0f}\\% of the perfect-foresight revenue of a 2-hour battery",
-              "O regulă simplă de prognoză obține @{bat.ltm.2.wk_pct|.0f}\\% din venitul cu informație perfectă al unei baterii de 2 ore"), "bat_rules", [
+    D.chart(t("A simple 7-day rule earns @{bat.ltm.2.wk_pct|.0f}\\% of the 2-hour perfect-foresight revenue",
+              "O regulă simplă obține @{bat.ltm.2.wk_pct|.0f}\\% din venitul cu informație perfectă (2 ore)"), "bat_rules", [
         t(("\\textbf{Rules known at 12:00 CET on $d-1$}: mean profile of the last 7 days, @{bat.ltm.1.wk_pct|.0f}\\%, @{bat.ltm.2.wk_pct|.0f}\\%, @{bat.ltm.4.wk_pct|.0f}\\% (1, 2, 4 h)",
            "yesterday's prices: @{bat.ltm.1.yday_pct|.0f}\\%, @{bat.ltm.2.yday_pct|.0f}\\%, @{bat.ltm.4.yday_pct|.0f}\\%; longer batteries forgive timing errors"),
           ("\\textbf{Reguli cunoscute la 12:00 CET în ziua $d-1$}: profilul mediu al ultimelor 7 zile, @{bat.ltm.1.wk_pct|.0f}\\%, @{bat.ltm.2.wk_pct|.0f}\\%, @{bat.ltm.4.wk_pct|.0f}\\% (1, 2, 4 ore)",
            "prețurile de ieri: @{bat.ltm.1.yday_pct|.0f}\\%, @{bat.ltm.2.yday_pct|.0f}\\%, @{bat.ltm.4.yday_pct|.0f}\\%; bateriile mai lungi tolerează erorile de sincronizare"))],
         height="0.62\\textheight", size="footnotesize",
-        job=t("budget on a rule you can actually run; a better forecast (Lecture 2) closes part of the gap.",
-              "bugetați pe baza unei reguli aplicabile; o prognoză mai bună (cursul 2) reduce o parte din diferență."),
+        job=t("budget on a rule you can actually run: a better forecast (Lecture 2) closes part of the gap.",
+              "bugetați pe baza unei reguli aplicabile: o prognoză mai bună (cursul 2) reduce o parte din diferență."),
         tryit=NB + " \\S7", cite=t("(" + OWN + ", " + LTM + ")", "(" + OWN + ", " + LTM + ")"))
+
+    D.subsection(t("Probabilistic forecasts for trading", "Prognoze probabilistice pentru tranzacționare"))
+    D.frame(t("Forecasting the whole price distribution helps a battery bid",
+              "Prognoza întregii distribuții a prețului ajută o baterie să liciteze"), it(
+        t(("\\textbf{What the work did}: forecast the joint next-day distribution of 96 hourly prices (24 h $\\times$ Romania, Bulgaria, Hungary, Czechia)",
+           "distributional random forest, 37 predictors, Jan 2018 -- Sep 2024; 70 rolling windows: 365 days to train, the next 30 to test",
+           "the median picks the charge hour and the later discharge hour; quantiles set the buy and sell limit prices"),
+          ("\\textbf{Ce a făcut lucrarea}: a prognozat distribuția comună a celor 96 de prețuri orare de a doua zi (24 h $\\times$ România, Bulgaria, Ungaria, Cehia)",
+           "pădure aleatoare distribuțională, 37 de predictori, ian.\\ 2018 -- sep.\\ 2024; 70 de ferestre mobile: 365 de zile de estimare, 30 de test",
+           "mediana alege ora de încărcare și ora ulterioară de descărcare; cuantilele fixează prețurile-limită de cumpărare și de vînzare")),
+        t(("\\textbf{What it found}: forecast errors peak at 17:00--18:00, usually the discharge hours",
+           "Romania, cumulative profit of a 1 MW / 1 MWh battery: 143.0 thousand EUR with the quantile rule, 133.2 with fixed hours, 188.2 with perfect foresight",
+           "the quantile rule beats the fixed-hour rule in all four markets; trading across markets adds value (150.3 thousand EUR)"),
+          ("\\textbf{Ce a găsit}: erorile de prognoză sînt maxime la 17:00--18:00, de obicei orele de descărcare",
+           "România, profitul cumulat al unei baterii de 1 MW / 1 MWh: 143,0 mii EUR cu regula cuantilelor, 133,2 cu ore fixe, 188,2 cu informație perfectă",
+           "regula cuantilelor depășește regula cu ore fixe în toate cele patru piețe; tranzacționarea între piețe adaugă valoare (150,3 mii EUR)")),
+        t("\\textbf{Investment}: with 500\\,000 EUR upfront, 90\\% efficiency, 15 years and 7\\%, day-ahead arbitrage alone does not cover it",
+          "\\textbf{Investiția}: la 500\\,000 EUR, randament 90\\%, 15 ani și 7\\%, arbitrajul pe piața pentru ziua următoare nu o acoperă singur"),
+        sep="2pt") + D.bottom(t("bid from forecast quantiles, not from a single price forecast: the hours that pay are in the tails.",
+                                "licitați pe baza cuantilelor prognozei, nu a unei singure valori: orele profitabile sînt în cozile distribuției.")),
+        "footnotesize", cite=t("(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \\& Petukhina, 2026, \\href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; talk by C.\\,O.\\ Cepoi at AIDA 2026, Bucharest, 3 June 2026: "
+                               "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{slides})",
+                               "(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \\& Petukhina, 2026, \\href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; prezentarea lui C.\\,O.\\ Cepoi la AIDA 2026, București, 3 iunie 2026: "
+                               "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{diapozitive})"))
 
     D.subsection(t("15 minutes, self-cannibalisation, the region", "15 minute, autocanibalizare, regiunea"))
     D.concept(t("15-minute prices raised a 1-hour battery's revenue by @{bat.ltm.1.gain15|.1f}\\% on the same days",
@@ -590,8 +641,8 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 6b case study: summer, Romania and Bulgaria
     D.subsection(t("Summer @{rogb.year}: Romania and Bulgaria", "Vara @{rogb.year}: România și Bulgaria"))
-    D.chart(t("Summer @{rogb.year}: Romania exported at midday and bought from Bulgaria in the evening",
-              "Vara @{rogb.year}: România a exportat la prînz și a cumpărat seara din Bulgaria"), "rogb_summer", [
+    D.chart(t("Summer @{rogb.year}: midday exports, evening imports from Bulgaria",
+              "Vara @{rogb.year}: export la prînz, import seara din Bulgaria"), "rogb_summer", [
         t(("\\textbf{Midday: Romania exports}, @{rogb.exp_mw|,.0f} MW net at 12:00 on all borders",
            "mostly to Hungary (@{rogb.hu_mid_mw|,.0f} MW) and Serbia (@{rogb.rs_mid_mw|,.0f} MW); to Bulgaria on only @{rogb.n_days_mid} of @{rogb.n_days} days (12:00--15:00)"),
           ("\\textbf{La prînz România exportă}: @{rogb.exp_mw|,.0f} MW net la ora 12, pe toate granițele",
@@ -601,8 +652,8 @@ def build(lang, H=None):
           ("\\textbf{Seara România importă din Bulgaria}: @{rogb.bg_eve_mw|,.0f} MW la ora 21, în toate cele @{rogb.n_days} de zile",
            "prețul la ora 21: România @{rogb.p_ro_eve|.1f}, Bulgaria @{rogb.p_bg_eve|.1f} EUR/MWh; granița plină separă cele două prețuri"))],
         height="0.50\\textheight", size="footnotesize",
-        job=t("the evening gap of @{rogb.p_gap_eve|.1f} EUR/MWh is what evening storage and more interconnection capacity are worth in Romania.",
-              "diferența de seară, de @{rogb.p_gap_eve|.1f} EUR/MWh, arată cît valorează în România stocarea pentru seară și o capacitate mai mare de interconexiune."),
+        job=t("the evening gap of @{rogb.p_gap_eve|.1f} EUR/MWh is the value of evening storage and interconnection.",
+              "diferența de seară, de @{rogb.p_gap_eve|.1f} EUR/MWh, este valoarea stocării de seară și a interconexiunii."),
         cite=t("(" + OWN + "; + = import into Romania)", "(" + OWN + "; + = import în România)"))
 
     # ------------------------------------------------------------------ wrap-up
@@ -677,17 +728,25 @@ def build(lang, H=None):
     REFS = [
         "Andrei, A.-V.\\ \\& Pele, D.\\,T.\\ (2025). Explainable AI for electricity price anomaly detection: A SHAP-driven approach in Romania's "
         "energy market. \\textit{Preprints}. \\href{https://doi.org/10.20944/preprints202508.0410.v1}{doi:10.20944/preprints202508.0410.v1}",
+        "Andrei, A.-V., Cepoi, C., Dumitrescu, B.-A., Lessmann, S., Luchian, A., Pele, D.-T.\\ \\& Petukhina, A.\\ (2026). Joint probabilistic "
+        "forecasting for battery arbitrage in day-ahead power markets. SSRN Working Paper 6872381. \\href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}",
         "Andrei, A.-V., Pele, D.-T.\\ \\& Cramer, A.-A.\\ (2026). Multi-horizon explainability in energy price forecasting: Disentangling "
         "market dynamics and renewable intermittency in Romania's liberalized electricity market. \\textit{Proceedings of the "
         "International Conference on Business Excellence}, 20(1), 104--117. \\href{https://doi.org/10.2478/picbe-2026-0014}{doi:10.2478/picbe-2026-0014}",
         "Andrei, A.-V., Pele, D.-T., Cramer, A.-A., Amza, A.\\ \\& Diaconu, D.\\ (2026). Explainable AI-based early warning system for electricity "
         "price spikes: Evidence from the Romanian market. \\textit{Proceedings of the International Conference on Business Excellence}, 20(1), "
         "4820--4836. \\href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}",
+        "Basangova, M., Bolovăneanu, V., Conda, A., Erlwein-Sayer, C., Melzer, A., Pele, D.\\,T., Petukhina, A.\\ \\& Phan, M.\\ (2026). Day-ahead "
+        "forecasting for redispatch measures using machine learning models. Talk at the AIDA Conference, Bucharest University of Economic Studies, "
+        "3 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf}{github.com/danpele/EMQA}",
         "Bradbury, K., Pratson, L.\\ \\& Patiño-Echeverri, D.\\ (2014). Economic viability of energy storage systems based on price arbitrage "
         "potential in real-time U.S.\\ electricity markets. \\textit{Applied Energy}, 114, 512--519. \\href{https://doi.org/10.1016/j.apenergy.2013.10.010}{doi:10.1016/j.apenergy.2013.10.010}",
         "Cludius, J., Hermann, H., Matthes, F.\\,C.\\ \\& Graichen, V.\\ (2014). The merit order effect of wind and photovoltaic electricity "
         "generation in Germany 2008--2016: Estimation and distributional implications. \\textit{Energy Economics}, 44, 302--313. "
         "\\href{https://doi.org/10.1016/j.eneco.2014.04.020}{doi:10.1016/j.eneco.2014.04.020}",
+        "Cepoi, C.\\,O.\\ (2026). Uncertainty meets opportunity: Joint probabilistic forecasting for battery arbitrage in CEE day-ahead power "
+        "markets. Talk at the AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. "
+        "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{github.com/danpele/EMQA}",
         "Cole, W.\\ \\& Karmakar, A.\\ (2023). Cost projections for utility-scale battery storage: 2023 update. NREL/TP-6A40-85332, National "
         "Renewable Energy Laboratory. \\href{https://doi.org/10.2172/1984976}{doi:10.2172/1984976}",
         "Fanone, E., Gamba, A.\\ \\& Prokopczuk, M.\\ (2013). The case of negative day-ahead electricity prices. \\textit{Energy Economics}, 35, "
@@ -713,8 +772,8 @@ def build(lang, H=None):
         "Würzburg, K., Labandeira, X.\\ \\& Linares, P.\\ (2013). Renewable generation and electricity prices: Taking stock and new evidence "
         "for Germany and Austria. \\textit{Energy Economics}, 40, S159--S171. \\href{https://doi.org/10.1016/j.eneco.2013.09.011}{doi:10.1016/j.eneco.2013.09.011}",
     ]
-    for part, (a_, b_) in enumerate([(0, 9), (9, len(REFS))]):
-        D.frame(t("References", "Bibliografie") + f" ({part + 1}/2)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
+    for part, (a_, b_) in enumerate([(0, 7), (7, 14), (14, len(REFS))]):
+        D.frame(t("References", "Bibliografie") + f" ({part + 1}/3)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
                 "\n".join("\\item " + r for r in REFS[a_:b_]) + "\n\\end{itemize}", "scriptsize")
 
     # ------------------------------------------------------------------ appendix

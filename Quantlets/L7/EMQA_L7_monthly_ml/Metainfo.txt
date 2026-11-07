@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_monthly_ml'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Monthly mean absolute error (MAE, EUR/MWh) of AW-LEAR (Lecture 2 benchmark), the tuned XGBoost, the tuned deep neural network (DNN) and their equal-weight combination LEAR+DNN+XGBoost on the Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31, monthly refits. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Monthly mean absolute error (MAE, EUR/MWh) of AW-LEAR (Lecture 2 benchmark), the tuned XGBoost, the tuned deep neural network (DNN) and their equal-weight combination LEAR+DNN+XGBoost on the Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31, monthly refits. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'forecast combination, ensemble, LEAR, XGBoost, neural network, MAE by month, electricity price forecasting, Romania'
 

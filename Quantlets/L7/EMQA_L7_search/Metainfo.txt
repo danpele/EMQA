@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_search'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Validation-year mean absolute error (MAE) of the 25 hyperparameter configurations (24 random + the Lecture 2 setting) of the deep neural network (DNN) and of XGBoost, sorted, with the chosen configuration, the Lecture 2 setting and the naive benchmark. Romanian day-ahead prices, validation year 2024-11-01 to 2025-10-31, quarterly refits. Data: validation year 2024-11-01 to 2025-10-31; 25 configurations per model, quarterly refits. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Validation-year mean absolute error (MAE) of the 25 hyperparameter configurations (24 random + the Lecture 2 setting) of the deep neural network (DNN) and of XGBoost, sorted, with the chosen configuration, the Lecture 2 setting and the naive benchmark. Romanian day-ahead prices, validation year 2024-11-01 to 2025-10-31, quarterly refits. Data: validation year 2024-11-01 to 2025-10-31, quarterly refits. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'random search, hyperparameter tuning, validation, neural network, XGBoost, gradient boosting, electricity price forecasting, MAE'
 

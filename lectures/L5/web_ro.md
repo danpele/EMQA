@@ -42,7 +42,7 @@ Firmele diferă prin semnul expunerii. Furnizorul cu prețuri fixe și consumato
 
 @practice stabiliți întîi semnul expunerii: o firmă cu poziție lungă care mai cumpără forward își dublează riscul.
 
-## În 2022, prețul spot a fost de 3,4 ori mai mare decît prețul forward {h=7a219a1d}
+## În 2022, prețul spot a fost de 3,4 ori mai mare decît prețul forward {h=a024f812}
 
 Banda pentru 2022 s-a tranzacționat în 150 de licitații OPCOM. Prețul ei mediu ponderat cu volumul (VWAP) a fost 77,4 EUR/MWh, în timp ce prețul PZU din România a avut în 2022 o medie de 265,3 EUR/MWh, de 3,4 ori mai mult. Un furnizor care își cumpărase forward energia pentru 2022 a economisit 1,65 milioane EUR pentru fiecare MW de consum constant.
 
@@ -139,7 +139,7 @@ Graficul pune curba alături de spotul lunar realizat în ultimii doi ani, ceea 
 @chart fwd_curve
 Media lunară realizată a prețului PZU în România (linie în trepte) și prețurile forward pentru fiecare perioadă de livrare (segmente orizontale: lună, trimestru, semestru, an); linia verticală punctată marchează data-limită.
 
-## Curba se mișcă: prețurile anuale, după data tranzacției {h=d2fee407}
+## Curba se mișcă: prețurile anuale, după data tranzacției {h=68918147}
 
 Prețul forward este prețul certitudinii, nu o prognoză care nimerește prețul realizat. Graficul arată fiecare licitație a produselor anuale la data tranzacției, iar media realizată a anului ca linie groasă. Pentru 2021, VWAP-ul a fost 51,3 EUR/MWh, iar spotul realizat 111,4; pentru 2023, forward-ul a avut media 172,5 față de 103,7 realizat, pentru că a fost cumpărat în plină criză; pentru 2025, cele două au fost apropiate: 102,1 față de 108,2 EUR/MWh.
 
@@ -162,7 +162,7 @@ Pentru 30 de luni de livrare cumpărate cu o lună înainte, prima medie este +5
 
 @practice acoperirea este, în medie, ieftină; costul ei real este cîștigul la care renunțați.
 
-## Lună de lună, diferența forward minus spot are ambele semne {h=7931aaf7}
+## Lună de lună, diferența forward minus spot are ambele semne {h=c9fe9529}
 
 Graficul arată prima din @eq:premium pentru fiecare dintre cele 30 de luni de livrare. Mediana ei este −0,2 EUR/MWh, aproape de zero. Valorile negative mari reflectă creșterile neașteptate de preț din 2021–2022, cînd spotul a urcat mult peste ce evaluase forward-ul cu o lună înainte; ele nu sînt o primă negativă sistematică pe care un cumpărător să se poată baza.
 
@@ -205,7 +205,7 @@ unde $C$ este prețul cărbunelui, în EUR pe MWh termic (prețul în USD pe ton
 
 @practice producătorul pe cărbune care vinde energie forward trebuie să cumpere și EUA forward.
 
-## Clean spark spread și clean dark spread, lunar {h=5bcbb173}
+## Clean spark spread și clean dark spread, lunar {h=4fe429cd}
 
 Graficul urmărește marjele lunare din ianuarie 2015 pînă în octombrie 2026. Clean spark spread a fost negativ în 67 din 138 de luni în România și în 121 în Germania; în medie, a fost cu 13,9 EUR/MWh mai mare în România, pentru că, la aceleași prețuri ale gazelor și carbonului, prețul energiei a fost mai ridicat.
 
@@ -228,7 +228,7 @@ unde $CSS_h$ este clean spark spread al orei $h$, pentru 1 MW, cu gazele și EUA
 
 @practice evaluați o centrală pe gaze sau o baterie ca opțiuni, nu ca marjă medie înmulțită cu 8 760 h.
 
-## Marjele orare ordonate: valoarea stă în orele cele mai bune {h=3b88b3e6}
+## Marjele orare ordonate: valoarea stă în orele cele mai bune {h=a651d103}
 
 Dacă ordonăm descrescător marjele orare din ultimele 12 luni, obținem o curbă de durată. Aria de deasupra lui zero este valoarea opțiunii de a funcționa: ea se cîștigă într-o minoritate de ore foarte profitabile. La aceleași prețuri ale gazelor și carbonului, România are mai multe ore profitabile decît Germania.
 
@@ -261,7 +261,7 @@ Ca instrumente folosim mediile lunare ale prețurilor din Ungaria și din DE-LU,
 
 @practice un raport de acoperire fără interval de încredere este o simplă presupunere.
 
-## Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime {h=397cac35}
+## Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime {h=8b6676ce}
 
 Prețul din România urmează îndeaproape prețul din Ungaria: $h^{*}$ este 0,966, iar regresia explică 98% din varianța variațiilor lunare din România. Prețul german acoperă mai slab riscul: $h^{*}$ = 0,875, cu $R^2$ = 0,80, deci rămîne descoperită aproximativ o cincime din varianță.
 
@@ -312,7 +312,7 @@ Un furnizor care deservește profilul consumului național a avut un factor de 1
 
 @practice evaluați un contract de achiziție pe termen lung (PPA) pentru un parc solar la raportul de captare ($f^{\text{solar}}$), nu la prețul benzii.
 
-## Energia solară valorează tot mai puțin decît banda {h=5707aa98}
+## Energia solară valorează tot mai puțin decît banda {h=a1c59c26}
 
 Graficul urmărește an de an cei doi factori din @eq:shape. Raportul de captare solar a scăzut la 0,596 în 2025, pe măsură ce prețurile de la prînz au coborît odată cu creșterea capacității solare; prețul ponderat cu consumul a ajuns, în 2025, cu 7,1 EUR/MWh peste bandă. Forward-ul în bandă acoperă deci prost riscul atît pentru un furnizor, cît și pentru un producător solar: primul rămîne subacoperit în orele scumpe, al doilea supraacoperit în cele ieftine.
 
@@ -428,7 +428,7 @@ Pentru fiecare strategie, studiul de caz raportează costul mediu, abaterea lui 
 
 @practice comitetul de risc al unui furnizor ar trebui să vadă lunar exact acest calcul.
 
-## Studiul de caz: în 2026, forward-ul a fost mai ieftin în 6 din 10 luni {h=59a49106}
+## Studiul de caz: în 2026, forward-ul a fost mai ieftin în 6 din 10 luni {h=20ac1702}
 
 Graficul arată costul lunar al fiecărei strategii. Prețurile au crescut în cursul anului, iar spotul a atins maximul de 239,3 EUR/MWh în octombrie 2026; în 6 din cele 10 luni, forward-ul a fost mai ieftin decît spotul. Plafoanele s-au exercitat în 5 din 10 luni, cînd spotul lunar a depășit prețul de exercitare, dar prima lor s-a plătit în fiecare lună.
 

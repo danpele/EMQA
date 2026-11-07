@@ -41,6 +41,7 @@
 \small
 \vspace{-1mm}\begin{columns}[T,onlytextwidth]
 \begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}AI & inteligență artificială\\
+ARIMA & model autoregresiv integrat cu medie mobilă\\
 ARX & model autoregresiv cu variabile exogene\\
 AUC & aria de sub curba ROC\\
 AW & medierea prognozelor obținute pe mai multe ferestre de calibrare\\
@@ -55,17 +56,19 @@ ENTSO-E & Rețeaua europeană a operatorilor de transport și de sistem pentru e
 ETC & titlu tranzacționat la bursă, garantat cu mărfuri (exchange-traded commodity)\\
 EUA & certificat de emisii al UE (1 t CO$_2$)\\
 EUR & euro\\
+FWER & rata erorii la nivelul familiei de ipoteze\\
 GBM & gradient boosting (ansamblu de arbori de decizie construiți secvențial)\\
 GW & gigawatt\\
 ISE & Institutul Fraunhofer pentru Sisteme de Energie Solară\\
-LASSO & operatorul de contracție și selecție în normă absolută\\\end{tabular}}\end{column}
+LASSO & operatorul de contracție și selecție în normă absolută\\
+LEAR & autoregresie estimată cu LASSO\\\end{tabular}}\end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{Abrevieri (2/2)}
 \small
 \vspace{-1mm}\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}LEAR & autoregresie estimată cu LASSO\\
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}LLM & model mare de limbaj\\
 MAD & abaterea absolută mediană\\
 MAE & eroarea absolută medie\\
 ML & învățare automată\\
@@ -74,6 +77,7 @@ MW & megawatt\\
 MWh & megawatt-oră\\
 OPCOM & operatorul pieței de energie electrică și de gaze naturale din România\\
 PZU & piața pentru ziua următoare\\
+RC & testul Reality Check (testul de selecție abuzivă al lui White, 2000)\\
 ReLU & unitate liniară rectificată (rectified linear unit)\\\end{tabular}}\end{column}
 \begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}RES & surse regenerabile de energie (aici: eolian + solar)\\
 rMAE & MAE relativă (MAE a modelului / MAE a modelului naiv)\\
@@ -81,6 +85,8 @@ RMSE & rădăcina erorii pătratice medii\\
 RO & România (zonă de ofertare)\\
 ROC & caracteristica de operare a receptorului (receiver operating characteristic)\\
 SHAP & explicații aditive bazate pe valorile Shapley (SHapley Additive exPlanations)\\
+SMAPE & eroarea procentuală absolută medie simetrică\\
+SPA & abilitate predictivă superioară (testul lui Hansen, 2005)\\
 TSO & operator de transport și de sistem\\
 UE & Uniunea Europeană\\
 XGBoost & eXtreme Gradient Boosting (bibliotecă de programe)\\\end{tabular}}\end{column}
@@ -154,8 +160,8 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 
 \begin{frame}{Trei eșantioane în ordine cronologică: antrenare, validare, test}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.383\textheight,keepaspectratio]{charts/ro/split_ml.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețurile PZU ale OPCOM pentru România. Date: preț zilnic de bază, 2022-01-01 - 2026-10-31, zile de livrare CET.}
+\begin{center}\includegraphics[width=\textwidth,height=0.466\textheight,keepaspectratio]{charts/ro/split_ml.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM. Date: preț zilnic de bază, 2022-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{Anul de validare}: se compară 25 de setări pentru fiecare model, reestimate la fiecare 3 luni
@@ -167,7 +173,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
       \item Nu se folosește pentru nicio alegere; este același an ca în cursul 2, deci erorile se pot compara direct
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{tratați anul de test ca pe un plic sigilat: se deschide o singură dată, după ce toate alegerile au fost făcute.}\par\vspace{0.5mm}
+\par\vfill\manager{tratați anul de test ca pe un plic sigilat, deschis o singură dată, după toate alegerile.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L7\_split\_ml}{Quantlets/L7/EMQA_L7_split_ml}\par\vspace{0.5mm}
 \end{frame}
 
@@ -279,36 +285,33 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 
 \begin{frame}{Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.350\textheight,keepaspectratio]{charts/ro/learning_curve.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: rețeaua DNN aleasă, reestimarea pentru 2026-10, inițializarea 1.}
+\begin{center}\includegraphics[width=\textwidth,height=0.470\textheight,keepaspectratio]{charts/ro/learning_curve.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: rețeaua DNN aleasă, reestimarea pentru 2026-10, inițializarea 1.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Reestimarea pentru octombrie 2026: eroarea pe ultimele 15\% din zile este minimă la epoca 51 (24{,}50 EUR/MWh)
+  \item Reestimarea pentru octombrie 2026: eroarea pe ultimele 15\% din zile este minimă la epoca 51
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Antrenarea se oprește la epoca 76
+      \item 24{,}50 EUR/MWh; antrenarea se oprește la epoca 76
     \end{itemize}
-  \item După acest punct, rețeaua reproduce tot mai bine trecutul și tot mai slab zilele recente
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Începe să memoreze
-    \end{itemize}
+  \item După acest punct, rețeaua reproduce mai bine trecutul, dar mai slab zilele recente: începe să memoreze
 \end{itemize}
-\par\vfill\manager{dacă un furnizor nu vă poate arăta această curbă, rețeaua a fost probabil antrenată pînă a reprodus trecutul.}\par\vspace{0.5mm}
+\par\vfill\manager{cereți furnizorului această curbă: fără ea, rețeaua poate să fi memorat trecutul.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; rețeaua DNN aleasă, inițializarea 1)}\hfill\qlink{EMQA\_L7\_learning\_curve}{Quantlets/L7/EMQA_L7_learning_curve}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Căutarea aleatoare reduce eroarea de validare a ambelor modele}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.369\textheight,keepaspectratio]{charts/ro/search.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de validare 2024-11-01 - 2025-10-31; 25 de configurații pe model, reestimare trimestrială.}
+\begin{center}\includegraphics[width=\textwidth,height=0.460\textheight,keepaspectratio]{charts/ro/search.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de validare 2024-11-01 - 2025-10-31, reestimare trimestrială.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{DNN}: cea mai bună setare are MAE 22{,}59 EUR/MWh; setarea din cursul 2, 24{,}24, locul 14 din 25
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item \textbf{eXtreme Gradient Boosting (XGBoost)}: 22{,}76 față de 23{,}83 (locul 14)
     \end{itemize}
-  \item Toate cele 25 de setări ale ambelor modele sînt mai precise decît modelul naiv în anul de validare (26{,}90 EUR/MWh)
+  \item Toate cele 25 de setări, la ambele modele, sînt mai precise decît modelul naiv (26{,}90 EUR/MWh)
 \end{itemize}
-\par\vfill\manager{prevedeți un an de validare pentru calibrare înainte de a avea încredere într-o prognoză de învățare automată.}\par\vspace{0.5mm}
+\par\vfill\manager{prevedeți un an de validare pentru calibrarea oricărui model de învățare automată.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; anul de validare 1 noiembrie 2024 -- 31 octombrie 2025)}\hfill\qlink{EMQA\_L7\_search}{Quantlets/L7/EMQA_L7_search}\par\vspace{0.5mm}
 \end{frame}
 
@@ -414,8 +417,8 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 
 \begin{frame}{Chronos-2 este mai precis decît AW-LEAR în fiecare oră a zilei}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.427\textheight,keepaspectratio]{charts/ro/foundation_hour.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețurile PZU ale OPCOM pentru România. Date: anul de test 2025-11-01 - 2026-10-31; fără reantrenare, context = ultimele 2048 de prețuri orare.}
+\begin{center}\includegraphics[width=\textwidth,height=0.429\textheight,keepaspectratio]{charts/ro/foundation_hour.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM. Date: anul de test 2025-11-01 - 2026-10-31; fără reantrenare, context = ultimele 2048 de prețuri orare.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Chronos-Bolt, mai mic și mai vechi, este la egalitate cu AW-LEAR (DM: $p$ = 0{,}220)
@@ -426,6 +429,79 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
       \item Recalibrați intervalele (cursul 2) înainte de a dimensiona riscul cu ele.
     \end{itemize}}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_foundation\_hour}{Quantlets/L7/EMQA_L7_foundation_hour}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: DNN întrece LEAR, modelele preantrenate concurează}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.50\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{R.\ Weron, conferință invitată} (4 iunie 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{diapozitive})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Evoluția modelelor: ARX, medierea pe ferestre, LEAR, rețele profunde și interpretabile
+      \item Modele preantrenate, fără reantrenare (zero-shot), față de LEAR și de rețele DNN distribuționale, test 2021--2025
+    \end{itemize}
+  \item \textbf{Rețele profunde și interpretabile}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Evaluarea deschisă epftoolbox: rețeaua DNN are rMAE mai mică decît LEAR pe toate cele cinci piețe (Lago et al., 2021)
+      \item NBEATSx: blocurile de trend, sezonalitate și variabile exogene fac rețeaua interpretabilă (Olivares et al., 2023)
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Rezultate zero-shot} (RMSE, conform diapozitivelor)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item 2022: LEAR + predicție conformală 45{,}71, Chronos 2 41{,}07, TabPFN 3.0 ts 34{,}39
+      \item 2025: 20{,}38, 20{,}58 și 17{,}66; o versiune TabPFN a fost cea mai bună în fiecare an
+    \end{itemize}
+  \item \textbf{Legătura cu anul nostru de test}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Chronos-2, fără reantrenare, este cel mai precis model individual (MAE 20{,}82, față de 22{,}53 la AW-LEAR)
+      \item Clasamentele se schimbă: TabPFN 2.0 a avut RMSE 68{,}85 în 2022 și 17{,}52 în 2025
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{păstrați LEAR ca reper și testați modelele zero-shot alături de el, pe mai mulți ani.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(diapozitivele AIDA 2026, București; lucrări: \href{https://doi.org/10.1016/j.apenergy.2021.116983}{Lago et al., 2021, APEN}; \href{https://doi.org/10.1016/j.ijforecast.2022.03.001}{Olivares et al., 2023, IJF})}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: patru generații de modele pe 27 de serii europene de prețuri}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.52\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{A.-V.\ Andrei et al., prezentare} (3 iunie 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/andrei_ai4efin_benchmarking.pdf}{diapozitive})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item 11 modele, patru generații: econometrie, de ex.\ modelul autoregresiv integrat cu medie mobilă (ARIMA); învățare profundă; transformere; modele mari de limbaj (LLM) preantrenate: Chronos, TimesFM
+    \end{itemize}
+  \item \textbf{Date și validare walk-forward}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Prețuri angro din 27 de țări ale Uniunii Europene (UE), Ember (ENTSO-E)
+      \item 96 de pași la intrare și 96 la ieșire; antrenare 2000 de ore (83 de zile), test 500 de ore (20 de zile)
+      \item Eroarea procentuală absolută medie simetrică (SMAPE); scor (100 $\times$ SMAPE + RMSE)/2
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Rezultate} (locul între cele 11 modele)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item PatchTST (un transformer) este pe primul sau al doilea loc în toate cele 27 de țări
+      \item România: PatchTST 1, TimesFM 2, Chronos 8, ARIMA 9
+      \item Germania: PatchTST 1, TimesFM 5, Chronos 10
+      \item Cîștigurile depind de model, nu sînt uniforme în generația a patra
+    \end{itemize}
+  \item \textbf{Legătura cu acest curs}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Pe prețurile din România, Chronos-2 (2025) este cel mai bun model individual (MAE 20{,}82)
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{comparați generațiile de modele prin validare walk-forward, pe mai multe piețe, înainte de a alege.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(diapozitivele AIDA 2026, București; lucrare: \href{https://arxiv.org/abs/2411.03372}{Andrei et al., 2024, arXiv})}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -460,8 +536,8 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/ro/dm_matrix.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale.}
+\begin{center}\includegraphics[width=\textwidth,height=0.502\textheight,keepaspectratio]{charts/ro/dm_matrix.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item AW-LEAR + DNN + XGBoost este mai precis decît AW-LEAR ($p$ = 0{,}001)
@@ -476,7 +552,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \begin{frame}{Media funcționează pentru că erorile nu sînt identice}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.408\textheight,keepaspectratio]{charts/ro/combo_weight.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; ilustrare, ponderea nu se alege pe anul de test.}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31; ilustrare, ponderea nu se alege pe anul de test.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item $\Var\big(\tfrac{e_1+e_2}{2}\big)=\tfrac14(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)$: dacă $\rho<1$, media greșește mai puțin ($e$ = eroarea, $\sigma$ = abaterea ei standard, $\rho$ = corelația)
@@ -491,8 +567,8 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.405\textheight,keepaspectratio]{charts/ro/monthly_ml.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31.}
+\begin{center}\includegraphics[width=\textwidth,height=0.443\textheight,keepaspectratio]{charts/ro/monthly_ml.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Luate separat, XGBoost și DNN depășesc AW-LEAR fiecare doar în 3 luni
@@ -507,17 +583,15 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.322\textheight,keepaspectratio]{charts/ro/cost_gain.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; timp măsurat pe un nucleu al calculatorului autorului.}
+\begin{center}\includegraphics[width=\textwidth,height=0.460\textheight,keepaspectratio]{charts/ro/cost_gain.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31; un nucleu de procesor.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Anul de test, pe un nucleu: AW-LEAR 87{,}6 min (365 de zile $\times$ 3 ferestre $\times$ 24 de ore)
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item XGBoost 2{,}6
-      \item DNN 2{,}7
-      \item Chronos-2 0{,}3
+      \item XGBoost 2{,}6 min, DNN 2{,}7 min, Chronos-2 0{,}3 min
     \end{itemize}
-  \item Costuri ascunse: căutarea setărilor (7{,}3 min), preantrenarea Chronos (făcută de alții), oamenii care întrețin fluxul de date
+  \item Costuri ascunse: căutarea setărilor (7{,}3 min), preantrenarea Chronos, oamenii care operează fluxul
 \end{itemize}
 \par\vfill\manager{comparați modelele după eroare raportată la costul total de utilizare, nu doar după eroare.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; timpi măsurați pe un nucleu al unui laptop cu 18 nuclee)}\hfill\qlink{EMQA\_L7\_cost\_gain}{Quantlets/L7/EMQA_L7_cost_gain}\par\vspace{0.5mm}
@@ -562,12 +636,12 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Ce determină prognoza arborilor: prețul de ieri, la aceeași oră}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.394\textheight,keepaspectratio]{charts/ro/shap_global.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore; XGBoost reestimat lunar.}
+\begin{center}\includegraphics[width=\textwidth,height=0.529\textheight,keepaspectratio]{charts/ro/shap_global.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Primele variabile: prețul din $d-1$, aceeași oră (32{,}9\%), prețul din $d-7$, aceeași oră (15{,}6\%), ziua săptămînii (9{,}3\%) din media $|\phi|$
-  \item Consumul are 8{,}5\%, iar producția eoliană și solară 2{,}5\%: fiind cunoscute doar pînă în $d-2$, sînt informații vechi la închiderea licitației
+  \item Ponderi în media $|\phi|$: prețul din $d-1$, aceeași oră (32{,}9\%), din $d-7$ (15{,}6\%), ziua săptămînii (9{,}3\%)
+  \item Consum 8{,}5\%, eolian și solar 2{,}5\%: cunoscute doar pînă în $d-2$, deci informații vechi
 \end{itemize}
 \par\vfill\manager{cumpărați întîi intrări mai bune: prognozele operatorului de transport și de sistem (TSO).}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_shap\_global}{Quantlets/L7/EMQA_L7_shap_global}\par\vspace{0.5mm}
@@ -575,36 +649,73 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Producția eoliană și solară scade prețul doar în orele în care este mare}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.357\textheight,keepaspectratio]{charts/ro/shap_res.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
+\begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/ro/shap_res.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Fiecare punct este o oră din anul de test: cu cît producția eoliană și solară din $d-2$ la acea oră este mai mare, cu atît contribuția ei este mai negativă (corelație \ensuremath{-}0{,}64)
-  \item Efectul apare peste aproximativ 2 gigawați (GW), mai ales la prînz: un prag pe care un model liniar nu îl poate exprima
+  \item Fiecare punct este o oră din anul de test
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Mai multă producție eoliană și solară în $d-2$ înseamnă o contribuție mai negativă (corelație \ensuremath{-}0{,}64)
+    \end{itemize}
+  \item Efectul apare peste circa 2 gigawați (GW): un prag pe care un model liniar nu îl poate exprima
 \end{itemize}
-\par\vfill\manager{un dezvoltator de parcuri solare poate citi aici reducerea de preț la care contribuie chiar producția sa.}\par\vspace{0.5mm}
+\par\vfill\manager{un dezvoltator solar vede aici reducerea de preț la care contribuie propria producție.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_shap\_res}{Quantlets/L7/EMQA_L7_shap_res}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Rețeaua neuronală se bazează și mai mult pe prețurile de ieri}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.300\textheight,keepaspectratio]{charts/ro/perm_dnn.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; 5 permutări aleatoare ale zilelor de test.}
+\begin{center}\includegraphics[width=\textwidth,height=0.461\textheight,keepaspectratio]{charts/ro/perm_dnn.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Importanța prin permutare: $I_b$ = MAE cu blocul $b$ amestecat între zilele de test minus MAE fără amestecare (5 permutări)
+  \item Importanța prin permutare $I_b$ = creșterea MAE cînd blocul $b$ este amestecat între zilele de test
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Se aplică oricărui model
+      \item 5 permutări, metodă valabilă pentru orice model
     \end{itemize}
   \item Prețurile din $d-1$: +22{,}82 EUR/MWh
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Ziua săptămînii +3{,}66
-      \item Consumul +2{,}12
-      \item Producția eoliană și solară \ensuremath{-}0{,}08
+      \item Ziua săptămînii +3{,}66, consumul +2{,}12, producția eoliană și solară \ensuremath{-}0{,}08
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{monitorizați întîi fluxul prețurilor din $d-1$: fără el, rețeaua cedează.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; calcule proprii)}\hfill\qlink{EMQA\_L7\_perm\_dnn}{Quantlets/L7/EMQA_L7_perm_dnn}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{Finanțele energiei folosesc învățarea automată, dar rar o explică}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.52\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{R.\ Clodnitchi, prezentare} (3 iunie 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf}{diapozitive})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Analiză sistematică a literaturii despre inteligența artificială (AI) în finanțele energiei (Anagnoste et al., 2025, \textit{Energy Strategy Reviews})
+      \item Circa 700 de articole din Web of Science, 232 reținute (evaluate colegial, 2020--2025), pe șase piloni ai finanțelor energiei
+    \end{itemize}
+  \item \textbf{Unde se folosește AI} (ponderea lucrărilor cu AI/ML)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Mecanisme de preț 100\%, derivate pe energie 100\%, piețe energetice și financiare 97{,}5\%, gestiunea riscului 93{,}0\%
+      \item Finanțe verzi 60{,}4\%; finanțele corporative ale firmelor de energie 0\% (numai econometrie pe date panel)
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce lipsește}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item AI explicabilă: 19{,}6\% din lucrările despre derivate, 0--5\% în ceilalți piloni
+      \item Domină rețelele neuronale: 88{,}2\% din lucrările despre derivate, 72{,}1\% în gestiunea riscului
+      \item Direcția propusă: AI explicabilă și învățare automată cauzală, pentru autoritățile de reglementare și evaluarea politicilor
+    \end{itemize}
+  \item \textbf{Legătura cu acest curs}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Graficele SHAP și de permutare din această secțiune sînt tipul de explicație pe care analiza îl găsește rar
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{cereți explicația odată cu prognoza: autoritățile și consiliile de administrație o vor cere.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(diapozitivele AIDA 2026, București; lucrare: \href{https://doi.org/10.1016/j.esr.2025.101833}{Anagnoste et al., 2025, ESR})}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -612,8 +723,8 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 
 \begin{frame}{Vîrfurile de preț apar seara, prețurile negative la prînz}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.460\textheight,keepaspectratio]{charts/ro/events_hour.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețurile PZU ale OPCOM pentru România. Date: anul de test 2025-11-01 - 2026-10-31.}
+\begin{center}\includegraphics[width=\textwidth,height=0.457\textheight,keepaspectratio]{charts/ro/events_hour.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM. Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{Vîrf de preț}: preț peste $\theta$, percentila 90 a prețurilor orare din cele 12 luni dinaintea lunii de livrare
@@ -681,8 +792,8 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 
 \begin{frame}{Persistența detectează vîrfurile, dar nu și prețurile negative}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/ro/roc.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
+\begin{center}\includegraphics[width=\textwidth,height=0.556\textheight,keepaspectratio]{charts/ro/roc.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Curbele caracteristice de operare (ROC)
@@ -699,34 +810,32 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 
 \begin{frame}{Regula cost--pierdere: reacționați cînd probabilitatea depășește C/L}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.340\textheight,keepaspectratio]{charts/ro/decision.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; 1 MW de consum flexibil, C = 30 EUR/MWh (ipoteză).}
+\begin{center}\includegraphics[width=\textwidth,height=0.407\textheight,keepaspectratio]{charts/ro/decision.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31; 1 MW de consum flexibil.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item \textbf{Regula}: reacție dacă $\hat\pi_{d,h}>C/\bar L$ = 30/72{,}5 = 0{,}414; C = costul reacției, $\bar L$ = costul unui vîrf ratat
+  \item \textbf{Regula}: reacție dacă $\hat\pi_{d,h}>C/\bar L$ = 30/72{,}5 = 0{,}414
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Mutarea a 1 MWh dintr-o oră cu alertă aduce $P_{d,h}-\theta_d-C$; C = 30 EUR/MWh (ipoteză); $\bar L$ = depășirea medie a pragului în anul de validare
+      \item C = costul reacției = 30 EUR/MWh (ipoteză): mutarea a 1 MWh dintr-o oră cu alertă aduce $P_{d,h}-\theta_d-C$
+      \item $\bar L$ = costul unui vîrf ratat = depășirea medie a pragului în anul de validare
     \end{itemize}
   \item Valoarea pe MW și an: 33{,}0 mii EUR la pragul C/L, 11{,}8 cu persistența, 62{,}4 cu informație perfectă
 \end{itemize}
-\par\vfill\manager{stabiliți pragul din propriile costuri
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Cel mai bun prag văzut ulterior (0{,}64) este înțelepciune retrospectivă.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{stabiliți pragul din propriile costuri, nu retrospectiv (cel mai bun prag ulterior: 0{,}64).}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; calcule proprii)}\hfill\qlink{EMQA\_L7\_decision}{Quantlets/L7/EMQA_L7_decision}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiu de caz, 30 iunie 2026: vîrful a fost anticipat, amploarea lui nu}
+\begin{frame}{Studiu de caz, 30 iunie 2026: vîrf anticipat, amploare subestimată}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.417\textheight,keepaspectratio]{charts/ro/case_week.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: 2026-06-27 - 2026-07-03, date orare.}
+\begin{center}\includegraphics[width=\textwidth,height=0.495\textheight,keepaspectratio]{charts/ro/case_week.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: 2026-06-27 - 2026-07-03, date orare.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{Ora 20:00 CET}: 954{,}59 EUR/MWh, cel mai mare preț din anul de test
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Prognoze: AW-LEAR 520, XGBoost 499, DNN 614, Chronos-2 607; probabilitatea vîrfului 0{,}992
     \end{itemize}
-  \item Săptămîna 27 iunie 2026 -- 3 iulie 2026: 47 de ore cu vîrfuri, 45 de alerte la pragul C/L, iar 39 de alerte au fost corecte
+  \item În acea săptămînă: 47 de ore cu vîrf, 45 de alerte la pragul C/L, dintre care 39 corecte
 \end{itemize}
 \par\vfill\manager{probabilitatea arată dacă reacționați, prognoza punctuală arată cît.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; prețurile PZU din România)}\hfill\qlink{EMQA\_L7\_case\_week}{Quantlets/L7/EMQA_L7_case_week}\par\vspace{0.5mm}
@@ -734,8 +843,8 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 
 \begin{frame}{Studiu de caz: arborii au urmat seara extremă din ziua precedentă}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.457\textheight,keepaspectratio]{charts/ro/shap_local.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: 2026-06-30, ora 20:00 CET; contribuții exprimate în EUR/MWh (anexa C).}
+\begin{center}\includegraphics[width=\textwidth,height=0.462\textheight,keepaspectratio]{charts/ro/shap_local.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: 2026-06-30, ora 20:00 CET; contribuții exprimate în EUR/MWh (anexa C).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item De la 125 (prognoza medie) la 499 EUR/MWh: prețul din $d-1$, aceeași oră, \ensuremath{+}213
@@ -775,46 +884,77 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 
 \begin{frame}{Informația din viitor: două evaluări invalide avantajează XGBoost}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.337\textheight,keepaspectratio]{charts/ro/pit_leak.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; XGBoost, configurația aleasă.}
+\begin{center}\includegraphics[width=\textwidth,height=0.580\textheight,keepaspectratio]{charts/ro/pit_leak.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item \textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor ajung în eșantionul de antrenare
+  \item \textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor intră în antrenare
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item MAE 22{,}01 în loc de 23{,}26: cu 5{,}4\% mai bine, doar pe hîrtie
     \end{itemize}
-  \item \textbf{Consumul și producția eoliană și solară din ziua $d$ ca intrări}: nu sînt cunoscute la ora 12:00 în ziua $d-1$; în grafic, surse regenerabile de energie (RES)
+  \item \textbf{Consum și surse regenerabile de energie (RES) din ziua $d$}: necunoscute la 12:00 în $d-1$
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item MAE 22{,}55; un cîștig aparent de 3{,}1\%, cel mult cît ar putea aduce prognoze perfecte ale acestor variabile
+      \item MAE 22{,}55, un cîștig aparent de 3{,}1\%: cel mult cît ar aduce prognoze perfecte ale acestor variabile
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{cereți oricărui furnizor o testare cronologică, cu fiecare intrare datată la momentul închiderii licitației.}\par\vspace{0.5mm}
+\par\vfill\manager{cereți oricărui furnizor o testare cronologică, cu intrările datate la închiderea licitației.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; calcule proprii)}\hfill\qlink{EMQA\_L7\_pit\_leak}{Quantlets/L7/EMQA_L7_pit_leak}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Alegerea pe anul de test simulează o victorie asupra LEAR}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.345\textheight,keepaspectratio]{charts/ro/snooping.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de validare și anul de test 2025-11-01 - 2026-10-31; o inițializare pe configurație.}
+\begin{center}\includegraphics[width=\textwidth,height=0.495\textheight,keepaspectratio]{charts/ro/snooping.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de validare și anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Rețeaua DNN aleasă corect (la validare, o inițializare): MAE 23{,}34
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Cea mai bună dintre cele 25 de setări pe anul de test: 22{,}52, chiar sub AW-LEAR (22{,}53)
     \end{itemize}
-  \item Clasamentele de validare și de test sînt apropiate (corelația Spearman 0{,}86 pentru DNN, 0{,}94 pentru XGBoost): validarea funcționează, dar nu este perfectă
+  \item Validarea funcționează, dar imperfect: corelația Spearman a rangurilor, 0{,}86 (DNN), 0{,}94 (XGBoost)
 \end{itemize}
-\par\vfill\manager{întrebați cîte modele au fost încercate înaintea celui prezentat
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Cu cît sînt mai multe încercări, cu atît cel mai bun pare mai bun decît este.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{întrebați cîte modele au fost încercate: cu cît mai multe, cu atît cel mai bun pare mai bun.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(White, 2000, Econometrica; calcule proprii)}\hfill\qlink{EMQA\_L7\_snooping}{Quantlets/L7/EMQA_L7_snooping}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{Cel mai bun dintre multe modele trebuie testat față de reper}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.44\textwidth}
+\vspace{-2mm}\[ \mathrm{RC}_n=\max_{k=1,\dots,m}\sqrt{n}\,\bar d_k,\qquad \bar d_k=\frac1n\sum_{t=1}^{n}d_{k,t} \]{\footnotesize\begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{\txtwhere}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item $d_{k,t}$ = pierderea reperului minus cea a modelului $k$ în ziua $t$
+      \item $H_0$: $E(d_{k,t})\le 0$ pentru orice $k$
+      \item Valoarea critică: bootstrap comun pe $(d_{1,t},\dots,d_{m,t})$, cu corelația dintre modele păstrată.
+    \end{itemize}
+\end{itemize}\par}\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{De ce}: pentru $m$ teste independente la 5\%, P(cel puțin o victorie falsă) = $1-0{,}95^m$: 0{,}401 ($m$ = 10), 0{,}994 ($m$ = 100)
+\end{itemize}
+\end{column}
+\begin{column}{0.53\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{C.-M.\ Kuan, 4 iunie 2026} (\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf}{diapozitive})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Testul Reality Check (RC), White (2000): conservator, modelele slabe adăugate îi reduc puterea (Hansen, 2005)
+      \item Testul abilității predictive superioare (SPA), Hansen (2005): recentrează modelele slabe, mai puternic
+      \item Step-RC (Romano \& Wolf, 2005), Step-SPA (Hsu, Hsu \& Kuan, 2010): identifică modelele mai bune, controlînd rata erorii la nivelul familiei de ipoteze (FWER)
+    \end{itemize}
+  \item \textbf{Pe datele noastre}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Cea mai bună dintre cele 25 de setări DNN pe anul de test trece sub AW-LEAR: cazul corectat de RC și SPA
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{cînd vi se arată cel mai bun dintre multe modele, cereți valoarea p a testului RC sau SPA.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(diapozitivele AIDA 2026; lucrări: \href{https://doi.org/10.1111/1468-0262.00152}{White, 2000}; \href{https://doi.org/10.1198/073500105000000063}{Hansen, 2005}; \href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{Romano \& Wolf, 2005}; \href{https://doi.org/10.1016/j.jempfin.2010.01.001}{Hsu et al., 2010})}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Reestimarea: un model neactualizat un an pierde 4{,}2\%}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.401\textheight,keepaspectratio]{charts/ro/pit_retrain.pdf}\end{center}\vspace{-3mm}
-\chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; XGBoost, configurația aleasă.}
+\begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/pit_retrain.pdf}\end{center}\vspace{-3mm}
+\chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Estimat o singură dată, înaintea anului de test: MAE 24{,}25
@@ -1014,46 +1154,61 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \end{columns}
 \end{frame}
 
-\begin{frame}{Bibliografie (1/3)}
+\begin{frame}{Bibliografie (1/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Anagnoste, S., Andrei, A.-V., Bolovăneanu, V., Cepoi, C.-O., Clodnitchi, R., Cramer, A.-A., Grecu, R.-A., Lessmann, S., Pele, D.\,T., Petukhina, A.\ \& Strat, V.\,A.\ (2025). The role of AI in (re)shaping energy finance: A systematic literature review. \textit{Energy Strategy Reviews}, 61, 101833. \href{https://doi.org/10.1016/j.esr.2025.101833}{doi:10.1016/j.esr.2025.101833}
 \item Andrei, A.-V., Pele, D.-T.\ \& Cramer, A.-A.\ (2026). Multi-horizon explainability in energy price forecasting: Disentangling market dynamics and renewable intermittency in Romania's liberalized electricity market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 104--117. \href{https://doi.org/10.2478/picbe-2026-0014}{doi:10.2478/picbe-2026-0014}
 \item Andrei, A.-V., Pele, D.-T., Cramer, A.-A., Amza, A.\ \& Diaconu, D.\ (2026). Explainable AI-based early warning system for electricity price spikes: Evidence from the Romanian market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 4820--4836. \href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}
-\item Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\,T.\ \& Lessmann, S.\ (2024). Energy price modelling: A comparative evaluation of four generations of forecasting methods. arXiv:2411.03372.
-\item Ansari, A.\,F., Stella, L., Turkmen, C.\ et al.\ (2024). Chronos: Learning the language of time series. \textit{Transactions on Machine Learning Research}. arXiv:2403.07815.
-\item Ansari, A.\,F., Shchur, O., Küken, J.\ et al.\ (2025). Chronos-2: From univariate to universal forecasting. arXiv:2510.15821.
+\item Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\,T.\ \& Lessmann, S.\ (2024). Energy price modelling: A comparative evaluation of four generations of forecasting methods. \href{https://arxiv.org/abs/2411.03372}{arXiv:2411.03372}
+\item Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\,T.\ \& Lessmann, S.\ (2026). Energy price modelling: A comparative evaluation of four generations of forecasting methods. Talk, AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/andrei_ai4efin_benchmarking.pdf}{github.com/danpele/EMQA/resources/aida2026}
+\item Ansari, A.\,F., Stella, L., Turkmen, C.\ et al.\ (2024). Chronos: Learning the language of time series. \textit{Transactions on Machine Learning Research}. \href{https://arxiv.org/abs/2403.07815}{arXiv:2403.07815}
+\item Ansari, A.\,F., Shchur, O., Küken, J.\ et al.\ (2025). Chronos-2: From univariate to universal forecasting. \href{https://arxiv.org/abs/2510.15821}{arXiv:2510.15821}
 \item Bates, J.\,M.\ \& Granger, C.\,W.\,J.\ (1969). The combination of forecasts. \textit{Journal of the Operational Research Society}, 20(4), 451--468. \href{https://doi.org/10.1057/jors.1969.103}{doi:10.1057/jors.1969.103}
 \item Bergmeir, C.\ \& Benítez, J.\,M.\ (2012). On the use of cross-validation for time series predictor evaluation. \textit{Information Sciences}, 191, 192--213. \href{https://doi.org/10.1016/j.ins.2011.12.028}{doi:10.1016/j.ins.2011.12.028}
-\item Bergstra, J.\ \& Bengio, Y.\ (2012). Random search for hyper-parameter optimization. \textit{Journal of Machine Learning Research}, 13, 281--305.
-\item Breiman, L.\ (2001). Random forests. \textit{Machine Learning}, 45(1), 5--32. \href{https://doi.org/10.1023/A:1010933404324}{doi:10.1023/A:1010933404324}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliografie (2/3)}
+\begin{frame}{Bibliografie (2/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Bergstra, J.\ \& Bengio, Y.\ (2012). Random search for hyper-parameter optimization. \textit{Journal of Machine Learning Research}, 13, 281--305. \href{https://jmlr.org/papers/v13/bergstra12a.html}{jmlr.org/papers/v13/bergstra12a.html}
+\item Breiman, L.\ (2001). Random forests. \textit{Machine Learning}, 45(1), 5--32. \href{https://doi.org/10.1023/A:1010933404324}{doi:10.1023/A:1010933404324}
 \item Brier, G.\,W.\ (1950). Verification of forecasts expressed in terms of probability. \textit{Monthly Weather Review}, 78(1), 1--3. \href{https://doi.org/10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2}{doi:10.1175/1520-0493(1950)078\allowbreak<0001:VOFEIT>2.0.CO;2}
 \item Chen, T.\ \& Guestrin, C.\ (2016). XGBoost: A scalable tree boosting system. \textit{Proceedings of the 22nd ACM SIGKDD Conference}, 785--794. \href{https://doi.org/10.1145/2939672.2939785}{doi:10.1145/2939672.2939785}
+\item Clodnitchi, R.\ (2026). The role of AI in (re)shaping energy finance: A systematic literature review. Talk, AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Diebold, F.\,X.\ \& Mariano, R.\,S.\ (1995). Comparing predictive accuracy. \textit{Journal of Business \& Economic Statistics}, 13(3), 253--263. \href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}
 \item Fawcett, T.\ (2006). An introduction to ROC analysis. \textit{Pattern Recognition Letters}, 27(8), 861--874. \href{https://doi.org/10.1016/j.patrec.2005.10.010}{doi:10.1016/j.patrec.2005.10.010}
 \item Friedman, J.\,H.\ (2001). Greedy function approximation: A gradient boosting machine. \textit{Annals of Statistics}, 29(5), 1189--1232. \href{https://doi.org/10.1214/aos/1013203451}{doi:10.1214/aos/1013203451}
-\item Hastie, T., Tibshirani, R.\ \& Friedman, J.\ (2009). \textit{The Elements of Statistical Learning}, 2nd ed. Springer. \href{https://doi.org/10.1007/978-0-387-84858-7}{doi:10.1007/978-0-387-84858-7}
-\item Jheng, S., Tak, R., Găman, Ș., Mazurencu-Marinescu-Pele, M.\ \& Pele, D.\,T.\ (2026). Can foundation models manage risk? Zero-shot VaR and ES forecasting with conformal calibration in CEE markets. \textit{Economic Computation and Economic Cybernetics Studies and Research}, 60(2), 267--290. \href{https://doi.org/10.24818/18423264/60.2.26.14}{doi:10.24818/18423264/60.2.26.14}
-\item Kingma, D.\,P.\ \& Ba, J.\ (2015). Adam: A method for stochastic optimization. \textit{International Conference on Learning Representations}. arXiv:1412.6980.
-\item Lago, J., De Ridder, F.\ \& De Schutter, B.\ (2018). Forecasting spot electricity prices: Deep learning approaches and empirical comparison of traditional algorithms. \textit{Applied Energy}, 221, 386--405. \href{https://doi.org/10.1016/j.apenergy.2018.02.069}{doi:10.1016/j.apenergy.2018.02.069}
+\item Hansen, P.\,R.\ (2005). A test for superior predictive ability. \textit{Journal of Business \& Economic Statistics}, 23(4), 365--380. \href{https://doi.org/10.1198/073500105000000063}{doi:10.1198/073500105000000063}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliografie (3/3)}
+\begin{frame}{Bibliografie (3/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Hastie, T., Tibshirani, R.\ \& Friedman, J.\ (2009). \textit{The Elements of Statistical Learning}, 2nd ed. Springer. \href{https://doi.org/10.1007/978-0-387-84858-7}{doi:10.1007/978-0-387-84858-7}
+\item Hsu, P.-H., Hsu, Y.-C.\ \& Kuan, C.-M.\ (2010). Testing the predictive ability of technical analysis using a new stepwise test without data snooping bias. \textit{Journal of Empirical Finance}, 17(3), 471--484. \href{https://doi.org/10.1016/j.jempfin.2010.01.001}{doi:10.1016/j.jempfin.2010.01.001}
+\item Jheng, S., Tak, R., Găman, Ș., Mazurencu-Marinescu-Pele, M.\ \& Pele, D.\,T.\ (2026). Can foundation models manage risk? Zero-shot VaR and ES forecasting with conformal calibration in CEE markets. \textit{Economic Computation and Economic Cybernetics Studies and Research}, 60(2), 267--290. \href{https://doi.org/10.24818/18423264/60.2.26.14}{doi:10.24818/18423264/60.2.26.14}
+\item Kingma, D.\,P.\ \& Ba, J.\ (2015). Adam: A method for stochastic optimization. \textit{International Conference on Learning Representations}. \href{https://arxiv.org/abs/1412.6980}{arXiv:1412.6980}
+\item Kuan, C.-M.\ (2026). Large-scale multiple inequality testing without data snooping bias. Keynote, AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf}{github.com/danpele/EMQA/resources/aida2026}
+\item Lago, J., De Ridder, F.\ \& De Schutter, B.\ (2018). Forecasting spot electricity prices: Deep learning approaches and empirical comparison of traditional algorithms. \textit{Applied Energy}, 221, 386--405. \href{https://doi.org/10.1016/j.apenergy.2018.02.069}{doi:10.1016/j.apenergy.2018.02.069}
 \item Lago, J., Marcjasz, G., De Schutter, B.\ \& Weron, R.\ (2021). Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark. \textit{Applied Energy}, 293, 116983. \href{https://doi.org/10.1016/j.apenergy.2021.116983}{doi:10.1016/j.apenergy.2021.116983}
 \item Lundberg, S.\,M., Erion, G., Chen, H.\ et al.\ (2020). From local explanations to global understanding with explainable AI for trees. \textit{Nature Machine Intelligence}, 2(1), 56--67. \href{https://doi.org/10.1038/s42256-019-0138-9}{doi:10.1038/s42256-019-0138-9}
 \item Marcjasz, G., Narajewski, M., Weron, R.\ \& Ziel, F.\ (2023). Distributional neural networks for electricity price forecasting. \textit{Energy Economics}, 125, 106843. \href{https://doi.org/10.1016/j.eneco.2023.106843}{doi:10.1016/j.eneco.2023.106843}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bibliografie (4/4)}
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
 \item Murphy, A.\,H.\ (1977). The value of climatological, categorical and probabilistic forecasts in the cost-loss ratio situation. \textit{Monthly Weather Review}, 105(7), 803--816. \href{https://doi.org/10.1175/1520-0493(1977)105<0803:TVOCCA>2.0.CO;2}{doi:10.1175/1520-0493(1977)105\allowbreak<0803:TVOCCA>2.0.CO;2}
+\item Olivares, K.\,G., Challu, C., Marcjasz, G., Weron, R.\ \& Dubrawski, A.\ (2023). Neural basis expansion analysis with exogenous variables: Forecasting electricity prices with NBEATSx. \textit{International Journal of Forecasting}, 39(2), 884--900. \href{https://doi.org/10.1016/j.ijforecast.2022.03.001}{doi:10.1016/j.ijforecast.2022.03.001}
+\item Romano, J.\,P.\ \& Wolf, M.\ (2005). Stepwise multiple testing as formalized data snooping. \textit{Econometrica}, 73(4), 1237--1282. \href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{doi:10.1111/j.1468-0262.2005.00615.x}
 \item Shapley, L.\,S.\ (1953). A value for n-person games. In \textit{Contributions to the Theory of Games II}, 307--317. Princeton University Press. \href{https://doi.org/10.1515/9781400881970-018}{doi:10.1515/9781400881970-018}
-\item Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I.\ \& Salakhutdinov, R.\ (2014). Dropout: A simple way to prevent neural networks from overfitting. \textit{Journal of Machine Learning Research}, 15, 1929--1958.
+\item Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I.\ \& Salakhutdinov, R.\ (2014). Dropout: A simple way to prevent neural networks from overfitting. \textit{Journal of Machine Learning Research}, 15, 1929--1958. \href{https://jmlr.org/papers/v15/srivastava14a.html}{jmlr.org/papers/v15/srivastava14a.html}
 \item Weron, R.\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. \textit{International Journal of Forecasting}, 30(4), 1030--1081. \href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}
+\item Weron, R.\ (2026). Machine learning for electricity price forecasting. Keynote, AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item White, H.\ (2000). A reality check for data snooping. \textit{Econometrica}, 68(5), 1097--1126. \href{https://doi.org/10.1111/1468-0262.00152}{doi:10.1111/1468-0262.00152}
 \end{itemize}
 \end{frame}

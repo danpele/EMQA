@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_combo_weight'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Mean absolute error of the combination w x (machine-learning forecast) + (1 - w) x AW-LEAR for w from 0 to 1, with XGBoost and with the DNN, and the equal-weight point actually used. Illustration only: the weight is not chosen on the test year. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; illustration, the weight is not chosen on the test year. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Mean absolute error of the combination w x (machine-learning forecast) + (1 - w) x AW-LEAR for w from 0 to 1, with XGBoost and with the DNN, and the equal-weight point actually used. Illustration only: the weight is not chosen on the test year. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; illustration, the weight is not chosen on the test year. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'forecast combination, combination weight, error correlation, Bates and Granger, LEAR, XGBoost, neural network, electricity price'
 

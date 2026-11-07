@@ -38,7 +38,7 @@ import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import FuncFormatter, NullFormatter
 
 # course chart style: transparent background, no gridlines, legend at the bottom outside the axes
 plt.rcParams.update({
@@ -212,7 +212,8 @@ MONTHS = r"""MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep
 
 
 def month_axis(ax, step=1):
-    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
+    # quarterly ticks fall on Jan/Apr/Jul/Oct, so every January (with its year) gets a label
+    ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=range(1, 13, step)) if step > 1 else mdates.MonthLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +
                                                (f'\n{mdates.num2date(v).year}' if mdates.num2date(v).month == 1 else '')))"""
 
@@ -223,8 +224,11 @@ SRC_EC = "energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romani
 KW_RISK = "value at risk, VaR, expected shortfall, risk management, electricity prices, day-ahead market, Romania, OPCOM"
 
 
-def save_cell(name, bottom):
-    return (f"fig.tight_layout(rect=(0, {bottom}, 1, 1))\n"
+def save_cell(name):
+    # bottom margin = top of the legend minus the tight_layout pad: no empty band between the axis labels and the legend
+    return ("fig.canvas.draw()\n"
+            "legend_top = max(lg.get_window_extent().y1 for lg in fig.legends) / fig.dpi\n"
+            "fig.tight_layout(rect=(0, max(legend_top - 0.08, 0.05) / fig.get_figheight(), 1, 1))\n"
             f"plt.savefig('{name}.png', dpi=150, bbox_inches='tight', transparent=True)\n"
             "plt.show()")
 
@@ -248,14 +252,14 @@ show('dist.RO.min', round(x.min(), 2))
 show('dist.RO.min_date', d(x.idxmin()))""")
     q.code(r"""fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.2), sharex=True)
 axs[0].plot(P.index, P['RO'], color=PAL['RO'], lw=0.6, label='Romania, daily base price $P_t$')
-axs[0].set_ylabel('EUR/MWh', fontsize=9)
+axs[0].set_ylabel('EUR/MWh', fontsize=10)
 axs[1].plot(X.index, X['RO'], color=PAL['DE_LU'], lw=0.5, label='daily change $X_t = P_t - P_{t-1}$')
-axs[1].set_ylabel('EUR/MWh', fontsize=9)
+axs[1].set_ylabel('EUR/MWh', fontsize=10)
 axs[1].xaxis.set_major_locator(mdates.YearLocator())
 axs[1].xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-axs[1].tick_params(axis='x', labelsize=9)
+axs[1].tick_params(axis='x', labelsize=10)
 legend_bottom(fig, ncol=2)
-""" + save_cell("price_changes", 0.12))
+""" + save_cell("price_changes"))
     return q
 
 
@@ -281,9 +285,9 @@ show('dist.RO.n_3sd_up', int((x > m + 3 * s).sum()))
 show('dist.RO.exp_3sd', round(len(x) * stats.norm.sf(3), 2))
 show('dist.RO.max_z', round(zmax, 1))
 show('dist.RO.max_logyears', int(np.floor(-lp - np.log10(365.25))))""")
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.3))
 zz = np.linspace(0, 10, 200)
-for z, ls, lab in [('RO', '-', 'Romania, price rises'), ('DE_LU', '--', 'Germany-Luxembourg, price rises')]:
+for z, ls, lab in [('RO', '-', 'Romania'), ('DE_LU', '--', 'Germany-Luxembourg')]:
     s_ = X[z].dropna()
     zs = np.sort(((s_ - s_.mean()) / s_.std()).values)
     surv = 1 - np.arange(1, len(zs) + 1) / (len(zs) + 1)
@@ -294,11 +298,13 @@ ax.set_yscale('log')
 ax.set_ylim(1e-4, 1)
 ax.set_xlim(0, 10)
 ax.set_xlabel('size of the daily rise, in standard deviations')
-ax.set_ylabel('share of days', fontsize=9.5)
-ax.set_yticks([1e-4, 1e-3, 1e-2, 1e-1, 1])
-ax.set_yticklabels(['0.0001', '0.001', '0.01', '0.1', '1'])
+ax.set_ylabel('share of days')
+ax.set_yticks([1e-4, 1e-2, 1])
+ax.set_yticks([1e-3, 1e-1], minor=True)
+ax.yaxis.set_minor_formatter(NullFormatter())
+ax.set_yticklabels(['0.0001', '0.01', '1'])
 legend_bottom(fig, ncol=3)
-""" + save_cell("tails", 0.2))
+""" + save_cell("tails"))
     return q
 
 
@@ -351,19 +357,21 @@ print('number of refits:', len(refits))""")
 z = np.sort(standardised(X['RO'][:END - pd.Timedelta(days=1)].dropna()))
 u, xi, beta, n_u, n = gpd_tail(z)
 print(f'chart fit: u = {u:.3f}, xi = {xi:.3f}, beta = {beta:.3f}, {n_u} exceedances of {n}')
-fig, ax = plt.subplots(figsize=(6.4, 2.2))
+fig, ax = plt.subplots(figsize=(6.4, 2.4))
 zt = z[z > u]
 sv = 1 - np.searchsorted(z, zt, side='left') / len(z)
-ax.scatter(zt, sv, s=7, color=PAL['RO'], label='standardised residuals above u (empirical)', zorder=3)
+ax.scatter(zt, sv, s=7, color=PAL['RO'], label='residuals above $u$ (data)', zorder=3)
 gx = np.linspace(u, zt.max() * 1.15, 200)
 ax.plot(gx, (n_u / n) * stats.genpareto.sf(gx - u, xi, scale=beta), color=PAL['DE_LU'], lw=1.4,
         label='generalised Pareto fit')
-ax.plot(gx, stats.norm.sf(gx), color='#222222', ls=':', lw=1.0, label='normal')
+ax.plot(gx, stats.norm.sf(gx), color='#222222', ls=':', lw=1.0, label='normal curve')
 ax.set_yscale('log')
-ax.set_xlabel('standardised residual z')
-ax.set_ylabel('P(Z > z)')
+ax.set_xlim(u - 0.1, gx[-1] + 0.1)
+ax.set_ylim(stats.norm.sf(gx[-1]) / 3, 0.3)
+ax.set_xlabel('standardised residual $z$')
+ax.set_ylabel('$P(Z > z)$')
 legend_bottom(fig, ncol=3)
-""" + save_cell("gpd_tail", 0.2))
+""" + save_cell("gpd_tail"))
     return q
 
 
@@ -391,7 +399,7 @@ n = int(HITS['hs'][a0:a1].notna().sum())
 show('vp.n', n)
 show('vp.exp', round(0.01 * n, 1))""")
     q.code(COLM + "\n" + MONTHS)
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.4))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.6))
 xs = X['RO'][a0:a1]
 ax.plot(xs.index, xs.values, color='#bbbbbb', lw=0.5, label='daily change $X_t$')
 for m in ['hs', 'normal', 'fhs']:
@@ -404,7 +412,7 @@ ax.set_ylabel('EUR/MWh')
 ax.set_ylim(-180, 280)
 month_axis(ax, 3)
 legend_bottom(fig, ncol=3)
-""" + save_cell("var_paths", 0.25))
+""" + save_cell("var_paths"))
     return q
 
 
@@ -434,17 +442,18 @@ show('horizon.sqrt10', round(np.sqrt(10), 2))
 show('horizon.vr10_ro', round(VR['RO'][10], 2))
 show('horizon.ac1_ro', round(X['RO'].autocorr(1), 3))
 show('horizon.ac7_ro', round(X['RO'].autocorr(7), 3))""")
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 1.8))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.3))
 hs = list(range(1, 21))
-ax.plot(hs, np.sqrt(hs), color='#222222', ls=':', lw=1.2, label='square-root-of-time rule, sqrt(h)')
-ax.plot(hs, [HOR['RO'][h] for h in hs], color=PAL['RO'], marker='o', ms=3, lw=1.2, label='Romania, empirical')
+ax.plot(hs, np.sqrt(hs), color='#222222', ls=':', lw=1.2, label='square-root-of-time rule')
+ax.plot(hs, [HOR['RO'][h] for h in hs], color=PAL['RO'], marker='o', ms=3, lw=1.2, label='Romania (data)')
 ax.plot(hs, [HOR['DE_LU'][h] for h in hs], color=PAL['DE_LU'], marker='s', ms=3, lw=1.2, ls='--',
-        label='Germany-Luxembourg, empirical')
+        label='Germany-Luxembourg (data)')
 ax.set_xticks([1, 5, 10, 15, 20])
-ax.set_xlabel('horizon h (days)')
-ax.set_ylabel('ratio of 99%\nquantiles', fontsize=9)
+ax.set_xlabel('horizon $h$ (days)')
+ax.set_ylabel('$h$-day / 1-day\n99% quantile', fontsize=10)
+ax.set_ylim(0.8, 4.8)
 legend_bottom(fig, ncol=3)
-""" + save_cell("horizon", 0.22))
+""" + save_cell("horizon"))
     return q
 
 
@@ -476,21 +485,23 @@ for m in METHODS:
     c = C250[m].iloc[249:]
     show(f'bt.RO.{m}.a99.share_red', round(100 * (c >= 10).mean(), 1))""")
     q.code(COLM)
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.3))
 for m in METHODS:
     ax.plot(C250[m].index, C250[m].values, color=COL[m], lw=1.0, label=LAB[m])
 ax.axhspan(-0.5, 4.5, color=PAL['c6'], alpha=0.10, lw=0)
 ax.axhspan(4.5, 9.5, color=PAL['BG'], alpha=0.15, lw=0)
 ax.axhspan(9.5, 40, color=PAL['c8'], alpha=0.10, lw=0)
-ax.text(DAYS[3], 2, 'green', fontsize=8, color=PAL['c6'])
-ax.text(DAYS[3], 6.5, 'yellow', fontsize=8, color='#9a6a00')
-ax.text(DAYS[3], 12, 'red', fontsize=8, color=PAL['c8'])
-ax.set_ylim(0, max(25, max(C250[m].max() for m in METHODS) + 2))
-ax.set_ylabel('exceedances in the\nlast 250 days', fontsize=9)
+ytop = max(25, max(C250[m].max() for m in METHODS) + 2)
+tr = ax.get_yaxis_transform()           # x in axes units, y in data units: zone names in the right margin
+for y, lab, c in [(2, 'green', PAL['c6']), (7, 'yellow', '#9a6a00'), ((9.5 + ytop) / 2, 'red', PAL['c8'])]:
+    ax.text(1.01, y, lab, transform=tr, fontsize=9.5, color=c, va='center', ha='left', clip_on=False)
+ax.set_xlim(DAYS[249] - pd.Timedelta(days=30), DAYS[-1] + pd.Timedelta(days=30))
+ax.set_ylim(0, ytop)
+ax.set_ylabel('exceedances,\nlast 250 days', fontsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 legend_bottom(fig, ncol=5)
-""" + save_cell("traffic", 0.18))
+""" + save_cell("traffic"))
     return q
 
 
@@ -539,14 +550,14 @@ show('brent.ratio26', round(s26['im1'].max() / pre26['im1'], 2))
 show('brent.ratio26_apc', round(s26['ima'].max() / pre26['ima'], 2))
 show('brent.exc1', round(100 * (cov['l'] > cov['im1']).mean(), 2))
 show('brent.exca', round(100 * (cov['l'] > cov['ima']).mean(), 2))""")
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.2))
 ax.plot(im.index, im['im1'] / 1000, color=PAL['RO'], lw=1.0, label='99% 2-day HS, 12-month lookback')
 ax.plot(im.index, im['ima'] / 1000, color=PAL['DE_LU'], lw=1.0, ls='--', label='floor: lookback since 2015 (anti-procyclical)')
-ax.set_ylabel('IM, thousand\nUSD per lot', fontsize=9)
+ax.set_ylabel('IM, thousand\nUSD per lot', fontsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 legend_bottom(fig, ncol=2)
-""" + save_cell("brent_im", 0.18))
+""" + save_cell("brent_im"))
     return q
 
 
@@ -595,18 +606,18 @@ for k in ['qr', 'cqr', 'fhs']:
 for k in ['qr', 'cqr', 'fhs']:
     show(f'guar.a99.{k}.kupiec_p', round(GUAR['a99'][k]['kupiec_p'], 4))
 show('guar.a95.cqr.kupiec_p', round(GUAR['a95']['cqr']['kupiec_p'], 4))""")
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.3))
 ww = 0.26
 for j, (k, lab, c) in enumerate([('qr', 'quantile regression', PAL['BG']), ('cqr', '+ conformal widening', PAL['RO']),
-                                  ('fhs', 'FHS: P(t-1) + VaR', PAL['DE_LU'])]):
+                                  ('fhs', 'FHS', PAL['DE_LU'])]):
     ax.bar(np.arange(3) + (j - 1) * ww, [GUAR['a99'][k]['cov_' + p[0]] for p in PERIODS], width=ww, color=c, label=lab)
 ax.axhline(99, color='#222222', lw=0.9, ls=':', label='target 99%')
 ax.set_xticks(range(3))
 ax.set_xticklabels(['2017-2020', '2021-2022', '2023-' + str(END.year)])
 ax.set_ylim(90, 100.5)
-ax.set_ylabel('days with price\nbelow the quantile, %', fontsize=9)
+ax.set_ylabel('coverage, % of days', fontsize=10)
 legend_bottom(fig, ncol=4)
-""" + save_cell("coverage", 0.2))
+""" + save_cell("coverage"))
     return q
 
 
@@ -647,14 +658,17 @@ show('supplier.exp99_post', round(0.01 * len(post), 2))
 show('supplier.worst', str(mon['o'].idxmax()))
 show('supplier.worst_pct', round(100 * mon['o'].max(), 1))""")
     q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.2))
-ax.bar(mon.index.to_timestamp(), 100 * mon['o'], width=22, color=np.where(mon['o'] > lim_o, PAL['c8'], PAL['RO']),
-       label='monthly change of the load-weighted price (cost overrun)')
+xm = mon.index.to_timestamp()
+above = (mon['o'] > lim_o).values
+ax.bar(xm[~above], 100 * mon['o'][~above], width=22, color=PAL['RO'], label='cost overrun: monthly change of the load-weighted price')
+ax.bar(xm[above], 100 * mon['o'][above], width=22, color=PAL['c8'], label='above the limit')
 ax.axhline(100 * lim_o, color='#222222', lw=0.9, ls='--', label='normal 99% limit, 2015-2020 data')
 ax.set_ylabel('%')
+ax.tick_params(axis='x', labelsize=10)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-legend_bottom(fig, ncol=1)
-""" + save_cell("supplier_month", 0.22))
+legend_bottom(fig, ncol=2)
+""" + save_cell("supplier_month"))
     return q
 
 
@@ -691,7 +705,7 @@ show('case.exp99', round(0.01 * n, 2))
 for m in METHODS:
     show(f'case.{m}.x99', int(HITS[m][C0:END].dropna().sum()))""")
     q.code(COLM + "\n" + MONTHS)
-    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    q.code(r"""fig, ax = plt.subplots(figsize=(6.4, 2.3))
 cc = pd.date_range(C0, END, freq='D')
 ax.plot(cc, PR.reindex(cc), color='#222222', lw=1.2, label='base price $P_t$')
 for m, ls in [('hs', '--'), ('fhs', '-')]:
@@ -704,7 +718,7 @@ ax.scatter(hd, PR.reindex(hd), s=14, color=PAL['c8'], zorder=4, label='FHS excee
 ax.set_ylabel('EUR/MWh')
 month_axis(ax)
 legend_bottom(fig, ncol=3)
-""" + save_cell("case2026", 0.25))
+""" + save_cell("case2026"))
     return q
 
 

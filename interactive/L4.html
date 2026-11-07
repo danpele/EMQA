@@ -76,9 +76,9 @@
   <details><summary>Answer</summary><p>The normal model is exceeded on 45 days, historical simulation (HS) on 28, FHS on 19 and EVT on 17 (expected 7.3). All methods were too low in the crisis, but FHS, which scales the residuals by a GARCH (generalised autoregressive conditional heteroskedasticity) volatility, reacts within days to a volatility jump, while HS and the normal model, with a 365-day window, adapt only slowly. The Kupiec test in the readout compares the exceedance rate of the window with 1 − α.</p></details>
 </section>
 <section class="blk" id="gpd-tail">
-  <h3>Above the threshold the Pareto curve follows the data; the normal curve does not</h3>
+  <h3>Above the threshold the Pareto curve fits the data; the normal curve does not</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L4_gpd_tail_en.jpg" alt="Slide 17: Above the threshold the Pareto curve follows the data; the normal curve does not" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L4_gpd_tail_en.jpg" alt="Slide 17: Above the threshold the Pareto curve fits the data; the normal curve does not" loading="lazy"></a>
       <figcaption>Slide 17</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="gp-u">Threshold u: quantile of the standardised residuals (%): <b id="gp-u-v"></b></label><input type="range" id="gp-u" min="80" max="97" step="1" value="90"></div><button class="btn play" id="gp-play" type="button"></button></div><div class="charts "><div class="chart" id="gp-chart"></div><div class="chart" id="gp-q"></div></div><ul class="out" id="gp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_gpd_tail" target="_blank" rel="noopener">EMQA_L4_gpd_tail</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_gpd_tail/EMQA_L4_gpd_tail.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>
@@ -108,8 +108,8 @@
 <section class="blk" id="supplier">
   <h3>Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L4_supplier_month_en.jpg" alt="Slide 37: Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)" loading="lazy"></a>
-      <figcaption>Slide 37</figcaption></figure>
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=38" target="_blank" rel="noopener"><img src="slides/L4_supplier_month_en.jpg" alt="Slide 38: Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)" loading="lazy"></a>
+      <figcaption>Slide 38</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="sm-e">Limit estimated on data to the end of: <b id="sm-e-v"></b></label><input type="range" id="sm-e" min="2017" max="2025" step="1" value="2020"></div><div class="ctl"><label for="sm-a">Level of the limit (%): <b id="sm-a-v"></b></label><input type="range" id="sm-a" min="90" max="99.5" step="0.5" value="99"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_supplier_month" target="_blank" rel="noopener">EMQA_L4_supplier_month</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_supplier_month/EMQA_L4_supplier_month.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> A supplier budgets each month at the load-weighted price of the previous month. A normal 99% limit estimated on 2015–2020 puts the monthly cost overrun at 50.5%. How many months exceed it in 2021–2026?</div>

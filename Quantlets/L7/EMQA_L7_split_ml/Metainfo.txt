@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_split_ml'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Daily base price of the Romanian day-ahead market with the three chronological samples of Lecture 7: training days from 2022-01-08 (grows each month), the validation year 2024-11-01 to 2025-10-31 used only to choose hyperparameters, and the test year 2025-11-01 to 2026-10-31 (as in Lecture 2), never used to choose anything. Data: daily base price, 2022-01-01 to 2026-10-31, CET delivery days. Source: energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania.'
+Description: 'Daily base price of the Romanian day-ahead market with the three chronological samples of Lecture 7: training days from 2022-01-08 (grows each month), the validation year 2024-11-01 to 2025-10-31 used only to choose hyperparameters, and the test year 2025-11-01 to 2026-10-31 (as in Lecture 2), never used to choose anything. Data: daily base price, 2022-01-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices.'
 
 Keywords: 'electricity price, day-ahead market, Romania, OPCOM, train validation test split, chronological split, machine learning, time series'
 

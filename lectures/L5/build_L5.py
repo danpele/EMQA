@@ -212,7 +212,7 @@ def build(lang, H=None):
         t(("2022 baseload: @{crisis.n} auctions, volume-weighted average price (VWAP) @{crisis.F22|.1f} EUR/MWh; spot @{crisis.S22|.1f}",
            "2020: @{crisis.parts.h20.vwap|.1f}; first half of 2021: @{crisis.parts.h21a.vwap|.1f}; second half: @{crisis.parts.h21b.vwap|.1f}; saving @{crisis.eur_per_mw_m|.2f} million EUR per MW"),
           ("Banda pentru 2022: @{crisis.n} " + de("crisis.n") + "licitații, preț mediu ponderat cu volumul (VWAP) @{crisis.F22|.1f} EUR/MWh; spot @{crisis.S22|.1f}",
-           "VWAP după data tranzacției: 2020 -- @{crisis.parts.h20.vwap|.1f}; semestrul I 2021 -- @{crisis.parts.h21a.vwap|.1f}; semestrul II 2021 -- @{crisis.parts.h21b.vwap|.1f} EUR/MWh; economia unui furnizor acoperit: @{crisis.eur_per_mw_m|.2f} milioane EUR/MW"))],
+           "VWAP: 2020 -- @{crisis.parts.h20.vwap|.1f}; sem.\\ I 2021 -- @{crisis.parts.h21a.vwap|.1f}; sem.\\ II 2021 -- @{crisis.parts.h21b.vwap|.1f}; economie: @{crisis.eur_per_mw_m|.2f} mil.\\ EUR/MW"))],
         height="0.55\\textheight", job=t("when you hedge matters: contracts bought late in 2021 cost twice as much.",
                                          "contează și momentul: contractele cumpărate la sfîrșitul lui 2021 au costat dublu."),
         tryit=NB + " \\S2", cite=t("(own computation; OPCOM)", "(calcule proprii; OPCOM)"))
@@ -446,14 +446,14 @@ def build(lang, H=None):
         return [lab, fmt(h_["h"], ".3f", lang), fmt(h_["se"], ".3f", lang), "[" + fmt(h_["lo"], ".2f", lang) + "; " + fmt(h_["hi"], ".2f", lang) + "]",
                 fmt(h_["r2"], ".2f", lang), fmt(h_["h_in"], ".2f", lang), fmt(h_["vr_oos_h"], ".1f", lang) + "\\%"]
     D.frame(t("Hungary hedges Romania almost fully; Germany leaves a fifth", "Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime"),
-            D.fig("hedge_scatter", "0.42\\textheight") + "\n\\vspace{0.3mm}\n" +
+            D.fig("hedge_scatter", "0.47\\textheight") + "\n\\vspace{0.3mm}\n" +
             "\\begin{center}" + table("@{}lrrrrrr@{}",
                                       [t("Hedge", "Instrument"), "$h^{*}$", t("HAC s.e.", "eroare std.\\ HAC"), t("bootstrap 95\\%", "bootstrap 95\\%"), "$R^2$",
                                        t("$h^{*}$ 2015--20", "$h^{*}$ 2015--20"), t("variance cut from 2021", "varianță eliminată, din 2021")],
                                       [hrow("HU", t("Hungary", "Ungaria")), hrow("DE_LU", t("Germany", "Germania"))], size="scriptsize", stretch="1.05") + "\\end{center}" +
             D.bottom(t("hedge with Hungarian futures before German ones.",
                        "folosiți contractele din Ungaria înaintea celor din Germania."), NB + " \\S5"),
-            "footnotesize", cite=t("(own computation; out of sample: $h^{*}$ of 2015--2020 applied from 2021)", "(calcule proprii; $h^{*}$ estimat pe 2015--2020, testat din 2021)"))
+            "footnotesize", cite=t("(own computation; out of sample: $h^{*}$ of 2015--2020 applied from 2021)", "(calcule proprii; $h^{*}$ din 2015--2020, testat din 2021)"))
 
     D.concept(t("Basis risk: what a foreign hedge leaves behind", "Riscul de bază: ce lasă descoperit un contract din altă zonă"),
               t("Hedged with a German future, a Romanian supplier pays the German forward plus the Romania--Germany gap at delivery.",
@@ -756,11 +756,14 @@ def build(lang, H=None):
         "\\href{https://doi.org/10.1111/j.1540-6261.1979.tb02077.x}{doi:10.1111/j.1540-6261.1979.tb02077.x}",
         "ENTSO-E (2021). Successful go-live of Interim Coupling, reaching the SDAC enduring phase. Press release, 18 June 2021. "
         "\\href{https://www.entsoe.eu/news/2021/06/18/successful-go-live-of-interim-coupling-reaching-the-sdac-enduring-phase/}{entsoe.eu}",
-        "Eydeland, A.\\ \\& Wolyniec, K.\\ (2003). \\textit{Energy and Power Risk Management}. Wiley.",
+        "Eydeland, A.\\ \\& Wolyniec, K.\\ (2003). \\textit{Energy and Power Risk Management: New Developments in Modeling, Pricing, and Hedging}. Wiley. "
+        "\\href{https://www.wiley.com/en-us/Energy+and+Power+Risk+Management-p-9780471104001}{wiley.com}",
         "Fama, E.\\,F.\\ \\& French, K.\\,R.\\ (1987). Commodity futures prices: Some evidence on forecast power, premiums, and the theory of storage. "
         "\\textit{Journal of Business}, 60(1), 55--73. \\href{https://doi.org/10.1086/296385}{doi:10.1086/296385}",
-        "Hull, J.\\,C.\\ (2022). \\textit{Options, Futures, and Other Derivatives}, 11th ed. Pearson.",
-        "IPCC (2006). \\textit{2006 IPCC Guidelines for National Greenhouse Gas Inventories}, Vol.\\ 2 Energy, ch.\\ 2, Table 2.2 (default emission factors).",
+        "Hull, J.\\,C.\\ (2022). \\textit{Options, Futures, and Other Derivatives}, 11th ed. Pearson. "
+        "\\href{https://www.pearson.com/en-us/subject-catalog/p/options-futures-and-other-derivatives/P200000005938}{pearson.com}",
+        "IPCC (2006). \\textit{2006 IPCC Guidelines for National Greenhouse Gas Inventories}, Vol.\\ 2 Energy, ch.\\ 2, Table 2.2 (default emission factors). "
+        "\\href{https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf}{ipcc-nggip.iges.or.jp}",
         "Johnson, L.\\,L.\\ (1960). The theory of hedging and speculation in commodity futures. \\textit{Review of Economic Studies}, 27(3), 139--151. "
         "\\href{https://doi.org/10.2307/2296076}{doi:10.2307/2296076}",
         "Kroner, K.\\,F.\\ \\& Sultan, J.\\ (1993). Time-varying distributions and dynamic hedging with foreign currency futures. "

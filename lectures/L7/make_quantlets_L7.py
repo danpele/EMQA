@@ -107,8 +107,8 @@ PAL = {"RO": "#2a78d6", "DE_LU": "#eb6834", "HU": "#1baf7a", "BG": "#eda100",
        "c5": "#e87ba4", "c6": "#008300", "c7": "#6250d6", "c8": "#e34948"}
 
 
-def legend_bottom(fig, handles=None, labels=None, ncol=4, y=0.0):
-    """Legend centred under the axes, outside the plotting area."""
+def legend_bottom(fig, handles=None, labels=None, ncol=4):
+    """Legend centred under the axes, outside the plotting area (save_chart moves it just below the lowest axis label)."""
     if handles is None:
         handles, labels = [], []
         for ax in fig.axes:
@@ -117,13 +117,20 @@ def legend_bottom(fig, handles=None, labels=None, ncol=4, y=0.0):
                     handles.append(hh)
                     labels.append(ll)
     if handles:
-        fig.legend(handles, labels, loc="lower center", ncol=ncol, bbox_to_anchor=(0.5, y), frameon=False,
-                   handlelength=2.0, columnspacing=1.2)
+        fig.legend(handles, labels, loc="upper center", ncol=ncol, frameon=False, handlelength=1.6, handletextpad=0.5,
+                   columnspacing=1.0, borderaxespad=0.1)
 
 
-def save_chart(fig, name, bottom=0.17):
-    fig.tight_layout(rect=(0, bottom, 1, 1))
-    plt.savefig(name + ".png", dpi=150, bbox_inches="tight", transparent=True)
+def save_chart(fig, name, bottom=None):
+    """The axes use the whole figure height; the legend (if any) goes just below the lowest axis label."""
+    fig.tight_layout(pad=0.3)
+    if fig.legends:
+        fig.canvas.draw()
+        r = fig.canvas.get_renderer()
+        y0 = min(ax.get_tightbbox(r).y0 for ax in fig.axes) / fig.bbox.height
+        fig.legends[0].set_loc("upper center")
+        fig.legends[0].set_bbox_to_anchor((0.5, y0 - 0.01), transform=fig.transFigure)
+    plt.savefig(name + ".png", dpi=150, bbox_inches="tight", pad_inches=0.03, transparent=True)
     plt.show()
 
 
@@ -356,7 +363,7 @@ def build(ns):
         kw="electricity price, day-ahead market, Romania, OPCOM, train validation test split, chronological split, machine learning, time series",
         data=PRICES, saved=None, needs_data=True,
         code=[("## Daily base price and the three samples", r'''DAILY = pd.Series(PM.mean(1).values, index=CAL)       # daily base price = mean of the 24 hourly prices
-fig, ax = plt.subplots(figsize=(6.4, 2.1))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0, label="training (grows each month)")
 ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color=PAL["BG"], alpha=0.28, lw=0, label="validation year: choose hyperparameters")
 ax.axvspan(TEST0, END, color=PAL["DE_LU"], alpha=0.2, lw=0, label="test year (as in Lecture 2)")
@@ -393,7 +400,7 @@ AV = P_[vr]
 naive_val = np.mean(np.abs(AV - np.where(np.isin(DOW[vr], [0, 5, 6])[:, None], P_[vr - 7], P_[vr - 1])))''',
         code=[("## Validation MAE of every configuration", r'''VAL_DNN, VAL_XGB = FC["val_dnn"], FC["val_xgb"]
 BEST_DNN, BEST_XGB = int(np.argmin(VAL_DNN)), int(np.argmin(VAL_XGB))     # chosen: lowest validation MAE
-fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), sharey=True)
+fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.75), sharey=True)
 for ax, V, best_, nm in [(axs[0], VAL_DNN, BEST_DNN, "DNN"), (axs[1], VAL_XGB, BEST_XGB, "XGBoost")]:
     o = np.argsort(V)
     ax.plot(range(1, len(V) + 1), V[o], "o", color="#9a9a9a", ms=4, label="one configuration")
@@ -434,13 +441,13 @@ save_chart(fig, "search", bottom=0.27)''')],
 FC["curve_train"], FC["curve_val"] = np.array(_r["curves"][0][0]), np.array(_r["curves"][0][1])''',
         code=[("## Training and early-stopping error by epoch", r'''ctr, cvl = FC["curve_train"], FC["curve_val"]
 best_ep = int(np.argmin(cvl) + 1)
-fig, ax = plt.subplots(figsize=(6.4, 1.95))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 ee = np.arange(1, len(ctr) + 1)
 ax.plot(ee, ctr, color=PAL["RO"], label="training days (first 85%)")
 ax.plot(ee, cvl, color=PAL["DE_LU"], label="early-stopping block (last 15%)")
 ax.axvline(best_ep, color="#222222", ls="--", lw=0.9, label="epoch kept")
 ax.set_xlabel("epoch (one pass over the training days)")
-ax.set_ylabel("MAE, EUR/MWh")
+ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 legend_bottom(fig, ncol=3)
 save_chart(fig, "learning_curve", bottom=0.22)''')],
         checks=[("Refit for month", "curve.month", "", "str(TDAYS[-1].to_period('M'))"),
@@ -471,10 +478,10 @@ MONTHS_T = sorted(set(TM))
 BYMONTH = {k: np.array([np.mean(np.abs(A[TM == mm] - M[k][TM == mm])) for mm in MONTHS_T]) for k in M}
 MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 xm = [pd.Timestamp(str(mm)) for mm in MONTHS_T]
-fig, ax = plt.subplots(figsize=(6.4, 1.95))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 for k, ls, mk in [("aw_lear", "-", "o"), ("xgb", "--", "s"), ("dnn", "-.", "^"), ("ens_ldx", "-", "D")]:
     ax.plot(xm, BYMONTH[k], color=COL[k], ls=ls, marker=mk, ms=3.5, lw=1.6 if k == "ens_ldx" else 1.1, label=LAB[k])
-ax.set_ylabel("MAE, EUR/MWh")
+ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
 ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +
                                                (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
@@ -519,18 +526,20 @@ for a_, ka in enumerate(DM_MODELS):
         if a_ != b_:
             DMP[a_, b_] = dm(E[ka], E[kb])[1]''' + "\n\n" + r'''from matplotlib.colors import LinearSegmentedColormap
 cmap = LinearSegmentedColormap.from_list("dm", ["#0b6e2e", "#7fc97f", "#ffe08a", "#f4a259", "#d7301f", "#5a0000"])
-fig, ax = plt.subplots(figsize=(6.4, 2.75))
+fig, ax = plt.subplots(figsize=(6.4, 2.2))
 Z = np.where(np.isnan(DMP), np.nan, np.minimum(DMP, 0.10))
 im = ax.imshow(np.ma.masked_invalid(Z), cmap=cmap, vmin=0, vmax=0.10, aspect="auto")
 ax.set_xticks(range(len(DM_MODELS)))
-ax.set_xticklabels([LAB[k] for k in DM_MODELS], rotation=35, ha="right", fontsize=8.5)
+ax.set_xticklabels([str(i + 1) for i in range(len(DM_MODELS))], fontsize=9.5)   # columns numbered as the rows
 ax.set_yticks(range(len(DM_MODELS)))
-ax.set_yticklabels([LAB[k] for k in DM_MODELS], fontsize=8.5)
-ax.set_xlabel("is the column model more accurate than the row model?", fontsize=9.5)
+ax.set_yticklabels([f"{LAB[k]} ({i + 1})" for i, k in enumerate(DM_MODELS)], fontsize=9)
+ax.set_xlabel("column model (numbered as the rows): is it more accurate than the row model?", fontsize=9.5)
 for a_ in range(len(DM_MODELS)):
     ax.add_patch(plt.Rectangle((a_ - 0.5, a_ - 0.5), 1, 1, color="#ffffff"))
 cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
-cb.set_label("p-value, capped at 0.10", fontsize=9)
+cb.set_label("p-value,\ncapped at 0.10", fontsize=9.5)
+cb.set_ticks([0, 0.05, 0.10])
+cb.ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: f"{v:.2f}"))
 ax.spines[:].set_visible(False)
 save_chart(fig, "dm_matrix", bottom=0.0)''')],
         checks=[("DM p-value, AW-LEAR vs LEAR+DNN+XGBoost", "dm.aw_lear__ens_ldx.p", ".4f", "dm(E['aw_lear'], E['ens_ldx'])[1]"),
@@ -556,12 +565,12 @@ E = {k: A - v for k, v in M.items()}
 corr = {k: np.corrcoef(E["aw_lear"].ravel(), E[k].ravel())[0, 1] for k in ["dnn", "xgb"]}
 WGRID = np.linspace(0, 1, 21)
 WCURVE = {k: np.array([np.mean(np.abs(A - (w * M[k] + (1 - w) * M["aw_lear"]))) for w in WGRID]) for k in ["dnn", "xgb"]}
-fig, ax = plt.subplots(figsize=(6.4, 1.95))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 for k, ls in [("xgb", "-"), ("dnn", "--")]:
     ax.plot(WGRID, WCURVE[k], color=COL[k], ls=ls, label=f"AW-LEAR and {LAB[k]}")
 ax.plot([0.5, 0.5], [WCURVE["xgb"][10], WCURVE["dnn"][10]], "o", color="#222222", ms=4, label="equal weights (used)")
 ax.set_xlabel("weight w of the machine-learning model")
-ax.set_ylabel("MAE, EUR/MWh")
+ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 legend_bottom(fig, ncol=3)
 save_chart(fig, "combo_weight", bottom=0.22)''')],
         checks=[("Error correlation AW-LEAR vs DNN", "combo.corr.dnn", ".2f", "corr['dnn']"),
@@ -595,16 +604,16 @@ M["ens_lc"] = 0.5 * (M["aw_lear"] + M["chr2"])
 sec = {k: float(FC["sec_" + k]) for k in ["aw_lear", "xgb", "dnn", "bolt", "chr2", "search"]}
 sec["ens_ldx"] = sec["aw_lear"] + sec["xgb"] + sec["dnn"]
 sec["ens_lc"] = sec["aw_lear"] + sec["chr2"]
-fig, ax = plt.subplots(figsize=(6.4, 2.2))
+fig, ax = plt.subplots(figsize=(6.4, 1.6))
 for k in ["aw_lear", "xgb", "dnn", "bolt", "chr2", "ens_ldx", "ens_lc"]:
     ax.plot(max(sec[k], 1) / 60, mae(M[k]), "o", color=COL[k], ms=6)
-    off = {"aw_lear": (6, 4), "ens_ldx": (6, -2), "ens_lc": (6, -9), "xgb": (6, 2), "dnn": (6, -9), "bolt": (6, 2), "chr2": (6, -9)}[k]
-    ax.annotate(LAB[k], (max(sec[k], 1) / 60, mae(M[k])), textcoords="offset points", xytext=off, fontsize=8)
+    ax.annotate(LAB[k], (max(sec[k], 1) / 60, mae(M[k])), textcoords="offset points", xytext=(7, 0), fontsize=9.5, va="center")
 ax.set_xscale("log")
 ax.set_xlabel("compute time for the test year, minutes on one core (log scale)", fontsize=9.5)
-ax.set_ylabel("MAE, EUR/MWh")
-xl = ax.get_xlim()
-ax.set_xlim(xl[0], xl[1] * 4)
+ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
+xl, yl = ax.get_xlim(), ax.get_ylim()
+ax.set_xlim(xl[0], xl[1] * 12)
+ax.set_ylim(yl[0] - 0.25, yl[1] + 0.15)
 save_chart(fig, "cost_gain", bottom=0.02)''')],
         checks=[("AW-LEAR, minutes", "cost.aw_lear", ".1f", "sec['aw_lear'] / 60"),
                 ("XGBoost, minutes", "cost.xgb", ".1f", "sec['xgb'] / 60"),
@@ -640,12 +649,12 @@ share = mabs / mabs.sum() * 100
 GROUPS = {"price": [0, 1, 2, 3, 4, 5, 6, 7], "load": [8, 9, 12], "res": [10, 11, 13], "fund": [14, 15, 16, 17], "cal": [18, 19]}
 GCOL = {"price": PAL["RO"], "load": "#222222", "res": PAL["BG"], "fund": PAL["HU"], "cal": "#9a9a9a"}
 top = np.argsort(-share)
-fig, ax = plt.subplots(figsize=(6.4, 2.2))
+fig, ax = plt.subplots(figsize=(6.4, 2.0))
 o = top[:10][::-1]
 gof = {j: g for g, ix in GROUPS.items() for j in ix}
 ax.barh(range(len(o)), share[o], color=[GCOL[gof[j]] for j in o], height=0.7)
 ax.set_yticks(range(len(o)))
-ax.set_yticklabels([FNAME[XGB_NAMES[j]] for j in o], fontsize=8.5)
+ax.set_yticklabels([FNAME[XGB_NAMES[j]] for j in o], fontsize=9)
 ax.set_xlabel("share of the mean |SHAP value|, %", fontsize=9.5)
 from matplotlib.patches import Patch
 hnd = [Patch(color=GCOL[g], label=lb) for g, lb in [("price", "prices"), ("load", "load"), ("res", "wind+solar"),
@@ -676,7 +685,7 @@ save_chart(fig, "shap_global", bottom=0.12)''')],
         engine=(["xgb"], ()), parts=["xgb"],
         runall_extra=xgb_runall + '\n_j = XGB_NAMES.index("RES(d-2,h)")\nFC["x_res"], FC["shap_res"] = XS[:, :, _j], SH[:, :, _j]',
         code=[("## SHAP value of wind+solar d-2 against its level", r'''xr, sr = FC["x_res"], FC["shap_res"]
-fig, ax = plt.subplots(figsize=(6.4, 2.0))
+fig, ax = plt.subplots(figsize=(6.4, 1.5))
 day_h = np.zeros_like(xr, bool)
 day_h[:, 9:17] = True
 for msk, c, lb in [(~day_h, "#5b6fa8", "hours 17-08"), (day_h, PAL["BG"], "hours 09-16 (sun)")]:
@@ -727,13 +736,13 @@ FC["increase"] = np.array([np.mean([perm_mae(b, pm) for pm in perms]) - _base fo
 BNAME = {"price d-1": "prices d-1", "price d-2": "prices d-2", "price d-3": "prices d-3", "price d-7": "prices d-7",
          "load": "load d-2, d-3, d-7", "wind+solar": "wind+solar d-2, d-3, d-7", "fund": "hydro, nuclear, imports, carbon",
          "day of week": "day of week"}
-fig, ax = plt.subplots(figsize=(6.4, 2.0))
+fig, ax = plt.subplots(figsize=(6.4, 1.7))
 bl = sorted(PI, key=PI.get)
 ax.barh(range(len(bl)), [PI[b] for b in bl], height=0.65,
         color=[PAL["RO"] if b.startswith("price") else (PAL["BG"] if b == "wind+solar" else ("#222222" if b == "load" else
                (PAL["HU"] if b == "fund" else "#9a9a9a"))) for b in bl])
 ax.set_yticks(range(len(bl)))
-ax.set_yticklabels([BNAME[b] for b in bl], fontsize=8.5)
+ax.set_yticklabels([BNAME[b] for b in bl], fontsize=9.5)
 ax.set_xlabel("increase in MAE when the block is shuffled, EUR/MWh", fontsize=9.5)
 save_chart(fig, "perm_dnn", bottom=0.02)''')],
         checks=[("Prices d-1, EUR/MWh", "perm.price_d1", ".2f", "PI['price d-1']"),
@@ -755,13 +764,13 @@ save_chart(fig, "perm_dnn", bottom=0.02)''')],
 
 
 h24 = np.arange(24)
-fig, ax = plt.subplots(figsize=(6.4, 1.9))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 ax.bar(h24 - 0.2, Y_SP.mean(0) * 100, width=0.4, color=PAL["c8"], label="spike: price above the 90th percentile of the last 12 months")
 ax.bar(h24 + 0.2, Y_NG.mean(0) * 100, width=0.4, color=PAL["HU"], label="price $\\leq$ 0")
 ax.set_xticks(range(0, 24, 2))
 ax.set_xlabel("hour h (CET)")
-ax.set_ylabel("% of test days")
-legend_bottom(fig, ncol=1)
+ax.set_ylabel("% of\ntest days", fontsize=10)
+legend_bottom(fig, ncol=2)
 save_chart(fig, "events_hour", bottom=0.26)''')],
         checks=[("Lowest monthly threshold, EUR/MWh", "spike.theta_min", ".1f", "TH_T.min()"),
                 ("Highest monthly threshold, EUR/MWh", "spike.theta_max", ".1f", "TH_T.max()"),
@@ -791,7 +800,7 @@ CS = {"xgb": FC["spike_xgb"], "logit": FC["spike_logit"], "persist": (past > TH_
         code=[("## Scores and ROC curves", THRESH + "\n\n\n" + PERSIST + r'''
 CN = {"xgb": FC["neg_xgb"], "logit": FC["neg_logit"], "persist": (past <= 0).mean(0), "lear": -FC["aw_lear"]}
 from sklearn.metrics import roc_auc_score, roc_curve
-fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.35), sharey=True)
+fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.85), sharey=True)
 for ax, Y_, CC, ttl in [(axs[0], Y_SP, CS, "spikes"), (axs[1], Y_NG, CN, "prices $\\leq$ 0")]:
     for k, c, ls, lb in [("xgb", PAL["BG"], "-", "XGBoost"), ("logit", PAL["c7"], "--", "logistic regression"),
                          ("persist", "#9a9a9a", ":", "persistence (last 7 days)"), ("lear", PAL["RO"], "-.", "AW-LEAR point forecast")]:
@@ -800,6 +809,9 @@ for ax, Y_, CC, ttl in [(axs[0], Y_SP, CS, "spikes"), (axs[1], Y_NG, CN, "prices
     ax.plot([0, 1], [0, 1], color="#222222", lw=0.5)
     ax.set_title(ttl, fontsize=10)
     ax.set_xlabel("false alarm rate", fontsize=9.5)
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1])
+    ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: f"{v:g}"))
+    ax.set_yticks([0, 0.5, 1])
 axs[0].set_ylabel("share of events\ncaught", fontsize=9.5)
 legend_bottom(fig, ncol=2)
 save_chart(fig, "roc", bottom=0.26)
@@ -830,15 +842,15 @@ past = np.stack([P_[rows_all - k] for k in range(1, 8)], 0)
 persist = (past > TH_T[None, :, None]).mean(0)
 CUTS = np.linspace(0.02, 0.98, 49)
 VCURVE = np.array([act_value(FC["spike_xgb"], c) for c in CUTS]) / 1000
-fig, ax = plt.subplots(figsize=(6.4, 1.95))
-ax.plot(CUTS, VCURVE, color=PAL["BG"], label="act when XGBoost probability > threshold")
-ax.axvline(CUT, color=PAL["DE_LU"], ls="--", lw=1.0, label="cost-loss threshold C/L")
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
+ax.plot(CUTS, VCURVE, color=PAL["BG"], label="act if XGBoost probability > threshold")
+ax.axvline(CUT, color=PAL["DE_LU"], ls="--", lw=1.0, label="threshold C/L")
 ax.axvline(0.5, color="#9a9a9a", ls=":", lw=1.0, label="threshold 0.5")
 ax.set_xlim(0.1, 1.0)
 ax.set_ylim(min(0, VCURVE[CUTS >= 0.1].min()) - 3, VCURVE.max() * 1.25)
 ax.axhline(0, color="#222222", lw=0.5)
 ax.set_xlabel("action threshold (probability of a spike)")
-ax.set_ylabel("value, thousand\nEUR per MW", fontsize=9.5)
+ax.set_ylabel("value\n(10$^3$ EUR/MW)", fontsize=10)
 legend_bottom(fig, ncol=3)
 save_chart(fig, "decision", bottom=0.22)''')],
         checks=[("Mean loss of a missed spike L, EUR/MWh", "decision.Lbar", ".1f", "LBAR"),
@@ -866,13 +878,14 @@ save_chart(fig, "decision", bottom=0.22)''')],
 VAL_DNN, VAL_XGB, TEST_DNN, TEST_XGB = FC["val_dnn"], FC["val_xgb"], FC["test_dnn"], FC["test_xgb"]
 BEST_DNN, BEST_XGB = int(np.argmin(VAL_DNN)), int(np.argmin(VAL_XGB))
 LEAR_MAE = np.mean(np.abs(A - FC["aw_lear"]))
-fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.3))
+fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.65))
 for ax, V, Tt, best_, nm in [(axs[0], VAL_DNN, TEST_DNN, BEST_DNN, "DNN"), (axs[1], VAL_XGB, TEST_XGB, BEST_XGB, "XGBoost")]:
     ax.plot(V, Tt, "o", color="#9a9a9a", ms=4, label="one configuration")
     ax.plot(V[best_], Tt[best_], "o", color=PAL["DE_LU"], ms=7, label="chosen on validation (honest)")
     jb = int(np.argmin(Tt))
-    ax.plot(V[jb], Tt[jb], "*", color=PAL["c8"], ms=10, label="best on the test year (snooping)")
+    ax.plot(V[jb], Tt[jb], "*", color=PAL["c8"], ms=11, zorder=5, label="best on the test year (snooping)")
     ax.axhline(LEAR_MAE, color=PAL["RO"], ls="--", lw=1.0, label="AW-LEAR, test year")
+    ax.set_ylim(min(LEAR_MAE, Tt.min()) - 0.4, Tt.max() + 0.3)
     ax.set_title(nm, fontsize=10)
     ax.set_xlabel("MAE, validation year", fontsize=9.5)
 axs[0].set_ylabel("MAE, test year", fontsize=9.5)
@@ -907,12 +920,12 @@ FC["shuffled"] = xgb_cv_shuffled(P_, L_, R_, F_, CFG_XGB)[rows_all]''',
 
 pit = {k: mae(FC[k]) for k in ["honest", "shuffled", "leak"]}
 LEAR_MAE = mae(FC["aw_lear"])
-fig, ax = plt.subplots(figsize=(6.4, 1.6))
+fig, ax = plt.subplots(figsize=(6.4, 1.25))
 kk = [("honest", "honest, monthly refits", PAL["BG"]), ("shuffled", "shuffled 5-fold validation", PAL["c8"]),
       ("leak", "+ load, RES of day d", PAL["c8"])]
 ax.barh(range(3), [pit[k] for k, _, _ in kk], color=[c for _, _, c in kk], height=0.6)
 ax.set_yticks(range(3))
-ax.set_yticklabels([lb for _, lb, _ in kk], fontsize=8.5)
+ax.set_yticklabels([lb for _, lb, _ in kk], fontsize=9.5)
 ax.invert_yaxis()
 ax.axvline(LEAR_MAE, color=PAL["RO"], ls="--", lw=0.9, label="AW-LEAR, honest")
 ax.set_xlim(20, max(pit.values()) + 0.8)
@@ -948,12 +961,12 @@ LEAR_MAE = mae(FC["aw_lear"])
 TM = TDAYS.to_period("M")
 MONTHS_T = sorted(set(TM))
 loss_m = [np.mean(np.abs(A[TM == mm] - FC["once"][TM == mm])) - np.mean(np.abs(A[TM == mm] - FC["honest"][TM == mm])) for mm in MONTHS_T]
-fig, ax = plt.subplots(figsize=(6.4, 1.8))
+fig, ax = plt.subplots(figsize=(6.4, 1.5))
 kk2 = [("honest", "monthly, all past days"), ("quarterly", "quarterly, all past days"), ("once", "once, before the test year"),
        ("roll730", "monthly, last 730 days"), ("roll365", "monthly, last 365 days")]
 ax.barh(range(len(kk2)), [pit[k] for k, _ in kk2], color=[PAL["BG"]] + [PAL["c7"]] * 4, height=0.6)
 ax.set_yticks(range(len(kk2)))
-ax.set_yticklabels([lb for _, lb in kk2], fontsize=8.5)
+ax.set_yticklabels([lb for _, lb in kk2], fontsize=9.5)
 ax.invert_yaxis()
 ax.axvline(LEAR_MAE, color=PAL["RO"], ls="--", lw=0.9, label="AW-LEAR")
 ax.set_xlim(min(min(pit.values()), LEAR_MAE) - 1.5, max(pit.values()) + 0.8)
@@ -990,17 +1003,17 @@ alerts = FC["spike_xgb"][CWS] > CUT
 DAYN = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 nd = CWS.stop - CWS.start
 xs_ = pd.date_range(TDAYS[CWS.start], periods=24 * nd, freq="h")
-fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.75), sharex=True, gridspec_kw={"height_ratios": [1.7, 1]})
+fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.05), sharex=True, gridspec_kw={"height_ratios": [1.6, 1]})
 axs[0].plot(xs_, A[CWS].ravel(), color="#222222", lw=1.4, label="actual price")
 for k, ls in [("aw_lear", "-"), ("xgb", "--"), ("chr2", "-.")]:
     axs[0].plot(xs_, FC[k][CWS].ravel(), color=COL[k], ls=ls, lw=1.0, label=LAB[k])
 axs[0].plot(xs_, np.repeat(TH_T[CWS], 24), color="#6b6b6b", lw=0.9, ls=":", label="spike threshold")
 axs[0].set_ylabel("EUR/MWh")
 axs[1].fill_between(xs_, 0, Y_SP[CWS].ravel(), step="mid", color=PAL["c8"], alpha=0.18, lw=0, label="actual spike hour")
-axs[1].plot(xs_, FC["spike_xgb"][CWS].ravel(), color=PAL["BG"], lw=1.1, label="spike probability, XGBoost")
+axs[1].plot(xs_, FC["spike_xgb"][CWS].ravel(), color=PAL["BG"], lw=1.1, label="spike probability")
 axs[1].axhline(CUT, color=PAL["DE_LU"], ls="--", lw=0.8, label="C/L")
 axs[1].set_ylim(0, 1)
-axs[1].set_ylabel("probability", fontsize=9.5)
+axs[1].set_ylabel("XGBoost\nprobability", fontsize=9.5)
 axs[1].xaxis.set_major_locator(mdates.DayLocator())
 axs[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: f"{DAYN[mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
 legend_bottom(fig, ncol=4)
@@ -1046,7 +1059,7 @@ P0, PH = m_ + s_ * np.sinh(y0), m_ + s_ * np.sinh(yhat)            # average for
 phi_eur = phi * (PH - P0) / (yhat - y0)                             # proportional allocation (Appendix C of the lecture)
 ordr = np.argsort(-np.abs(phi_eur))
 DAYN = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-fig, ax = plt.subplots(figsize=(6.4, 2.3))
+fig, ax = plt.subplots(figsize=(6.4, 1.95))
 top = list(ordr[:7])
 rest = phi_eur.sum() - phi_eur[top].sum()
 vals = [phi_eur[j] for j in top] + [rest]
@@ -1056,12 +1069,12 @@ cum = P0
 for i_, v in enumerate(vals):
     ax.barh(i_, v, left=cum, color=PAL["c8"] if v > 0 else PAL["HU"], height=0.6)
     cum += v
-ax.axvline(P0, color="#9a9a9a", ls=":", lw=1.0, label=f"average forecast of the model ({P0:.0f})")
+ax.axvline(P0, color="#9a9a9a", ls=":", lw=1.0, label=f"model average ({P0:.0f})")
 ax.axvline(PH, color=PAL["BG"], ls="--", lw=1.0, label=f"XGBoost forecast ({PH:.0f})")
 ax.axvline(A[kd, kh], color="#222222", lw=1.2, label=f"actual price ({A[kd, kh]:.0f})")
 ax.set_xlim(0, max(A[kd, kh], PH) * 1.04)
 ax.set_yticks(range(len(vals)))
-ax.set_yticklabels(labs, fontsize=8)
+ax.set_yticklabels(labs, fontsize=9)
 ax.invert_yaxis()
 ax.set_xlabel("EUR/MWh")
 legend_bottom(fig, ncol=3)
@@ -1093,12 +1106,12 @@ E = {k: A - FC[k] for k in ["naive", "bolt", "chr2", "aw_lear"]}
 BYHOUR = {k: np.mean(np.abs(e), 0) for k, e in E.items()}
 cov80 = ((A >= FC["chr2_q10"]) & (A <= FC["chr2_q90"])).mean() * 100      # coverage of the 10%-90% band
 h24 = np.arange(24)
-fig, ax = plt.subplots(figsize=(6.4, 1.9))
+fig, ax = plt.subplots(figsize=(6.4, 1.45))
 for k, ls, mk in [("naive", ":", "o"), ("bolt", "--", "s"), ("chr2", "-", "^"), ("aw_lear", "-", "o")]:
     ax.plot(h24, BYHOUR[k], color=COL[k], ls=ls, marker=mk, ms=3, label=LAB[k])
 ax.set_xticks(range(0, 24, 2))
 ax.set_xlabel("hour h (CET)")
-ax.set_ylabel("MAE, EUR/MWh")
+ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 legend_bottom(fig, ncol=4)
 save_chart(fig, "foundation_hour", bottom=0.22)''')],
         checks=[("MAE Chronos-2, EUR/MWh", "acc.chr2.mae", ".2f", "mae(FC['chr2'])"),

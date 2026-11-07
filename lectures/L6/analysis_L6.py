@@ -643,10 +643,18 @@ def comma_axes(fig, lang, also_x=()):
         ax.xaxis.set_major_formatter(f_)
 
 
-def out(fig, lang, name, bottom=0.17, also_x=()):
+def legend_space(fig, pad=0.035):
+    """Fraction of the figure height taken by the bottom legend, plus a small gap: the axes (and their x-label) start
+    just above the legend, so no empty band is left between the x-label and the legend."""
+    fig.canvas.draw()
+    h = max([lg.get_window_extent().height for lg in fig.legends] or [0.0]) / fig.bbox.height
+    return h + pad
+
+
+def out(fig, lang, name, bottom=None, also_x=()):
     comma_axes(fig, lang, also_x)
     os.makedirs(os.path.join(HERE, "charts", lang), exist_ok=True)
-    save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=bottom)
+    save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=legend_space(fig))
 
 
 def yfmt(ax, lang):
@@ -710,12 +718,13 @@ for lang in ["en", "ro"]:
     ax.bar(xs + 0.2, [N["capt"]["RO"]["wind"][str(y)]["crp"] for y in YEARS], width=0.38, color=PAL["HU"], label=T("wind", "eolian"))
     ax.axhline(100, color="#222222", lw=0.8, ls="--", label=T("100% = baseload price", "100% = prețul de bază"))
     for i, y in enumerate(YEARS):
-        ax.text(i - 0.2, N["capt"]["RO"]["solar"][str(y)]["crp"] + 2, f"{N['capt']['RO']['solar'][str(y)]['crp']:.0f}", ha="center", fontsize=8)
+        ax.text(i - 0.2, N["capt"]["RO"]["solar"][str(y)]["crp"] - 4, f"{N['capt']['RO']['solar'][str(y)]['crp']:.0f}", ha="center", va="top",
+                fontsize=8, color="white")
     ax.set_xticks(xs)
     ax.set_xticklabels([YL[y] for y in YEARS])
     ax.set_ylim(0, 125)
     ax.set_ylabel(T("capture rate (%)", "rata de captare (%)"), fontsize=9)
-    ax.text(0.0, 1.02, ytd, transform=ax.transAxes, fontsize=8, ha="left")
+    ax.text(1.0, 1.02, ytd, transform=ax.transAxes, fontsize=8, ha="right")
     legend_bottom(fig, ncol=3)
     out(fig, lang, "capture_rates", bottom=0.2)
 
@@ -740,7 +749,7 @@ for lang in ["en", "ro"]:
                 label=ZN[lang][z])
     ax.axhline(100, color="#222222", lw=0.6, ls="--")
     ax.set_ylabel(T("solar capture\nrate (%)", "rata de captare\nsolară (%)"), fontsize=9)
-    ax.text(0.99, 0.9, ytd, transform=ax.transAxes, fontsize=8, ha="right")
+    ax.text(1.0, 1.02, ytd, transform=ax.transAxes, fontsize=8, ha="right")
     legend_bottom(fig, ncol=3)
     out(fig, lang, "capture_region", bottom=0.2)
 
@@ -752,7 +761,8 @@ for lang in ["en", "ro"]:
     ax.plot([0, 100], [0, 100], color="#222222", lw=0.6)
     ax.axvline(10, color=PAL["c8"], lw=0.8, ls="--")
     ax.set_xlabel(T("hours of the year ranked from the cheapest, cumulative %", "orele anului ordonate de la cea mai ieftină, % cumulat"))
-    ax.set_ylabel(T("solar energy\n(cumulative %)", "energia solară\n(% cumulat)"), fontsize=9)
+    ax.set_ylabel(T("solar energy,\ncum. %", "energie solară,\n% cumulat"), fontsize=9)
+    ax.set_yticks([0, 50, 100])
     legend_bottom(fig, ncol=4)
     out(fig, lang, "cheap_hours", bottom=0.23, also_x=[ax])
 
@@ -763,15 +773,15 @@ for lang in ["en", "ro"]:
         ax.bar(np.arange(len(yy)) + (i - 1.5) * 0.2, [N["neg"]["hours"][z][str(y)] for y in yy], width=0.2, color=PAL[z], label=ZN[lang][z])
     ax.set_xticks(range(len(yy)))
     ax.set_xticklabels([YL[y] for y in yy])
-    ax.set_ylabel(T("negative hours\n(hour-equiv.)", "ore cu preț\nnegativ (ore ech.)"), fontsize=9)
+    ax.set_ylabel(T("negative hours\n(hour-equiv.)", "ore negative\n(ore echiv.)"), fontsize=9)
     ax.text(0.01, 0.9, ytd, transform=ax.transAxes, fontsize=8)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "neg_hours", bottom=0.2)
 
     # 9 intraday shape, 15-min, last 12 months, by season
     fig, ax = plt.subplots(figsize=(6.4, 1.85))
-    SL = {"winter": T("winter (Dec-Feb)", "iarna (dec.-feb.)"), "spring": T("spring (Mar-May)", "primăvara (mar.-mai)"),
-          "summer": T("summer (Jun-Aug)", "vara (iun.-aug.)"), "autumn": T("autumn (Sep-Nov)", "toamna (sep.-nov.)")}
+    SL = {"winter": T("winter", "iarna"), "spring": T("spring", "primăvara"),
+          "summer": T("summer", "vara"), "autumn": T("autumn", "toamna")}      # months: in the chart caption
     SC = {"winter": PAL["c7"], "spring": PAL["HU"], "summer": PAL["DE_LU"], "autumn": PAL["BG"]}
     for s_, pr in PROF.items():
         ax.step(np.arange(96) / 4, pr.values, where="post", color=SC[s_], lw=1.3, label=SL[s_])
@@ -780,17 +790,16 @@ for lang in ["en", "ro"]:
     ax.set_xlabel(T("time of day (CET), 96 quarter-hours", "ora din zi (CET), 96 de sferturi de oră"))
     ax.set_ylabel(T("mean price\n(EUR/MWh)", "prețul mediu\n(EUR/MWh)"), fontsize=9)
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "shape15", bottom=0.22)
+    out(fig, lang, "shape15")
 
     # 10 monthly mean of the daily top-2 minus bottom-2 spread
     fig, ax = plt.subplots(figsize=(6.4, 1.8))
     for z in ZONES:
         s = SPRM[z]
         ax.plot(s.index.to_timestamp(), s.values, color=PAL[z], ls=ep.ZONE_LS[z], lw=1.2, label=ZN[lang][z])
-    ax.set_ylabel(T("top-2 minus bottom-2\nhours (EUR/MWh)", "diferența 2 ore scumpe\n- 2 ieftine (EUR/MWh)"), fontsize=8.5)
-    ax.set_yscale("symlog", linthresh=100)
-    ax.set_yticks([0, 50, 100, 200, 500])
-    ax.set_yticklabels(["0", "50", "100", "200", "500"])
+    ax.set_ylabel(T("daily spread\n(EUR/MWh)", "diferența zilnică\n(EUR/MWh)"), fontsize=9)
+    ax.set_ylim(0, 400)
+    ax.set_yticks([0, 100, 200, 300, 400])
     yfmt(ax, lang)
     ax.set_xlim(pd.Timestamp("2019-01-01"), pd.Timestamp(END))
     legend_bottom(fig, ncol=4)
@@ -880,9 +889,10 @@ chart("capture_region", "regg", f"2019 (Hungary 2020) to {d(END)}; Bulgaria: hou
       f"2019 (Ungaria 2020) - {d(END)}; Bulgaria: producție solară orară")
 chart("cheap_hours", "ecg", f"each calendar year; {Y} to {d(END)}", f"fiecare an calendaristic; {Y} pînă la {d(END)}")
 chart("neg_hours", "reg", f"2022 to {d(END)}; a 15-min interval counts 0.25 h", f"2022 - {d(END)}; un interval de 15 minute contează 0,25 h")
-chart("shape15", "ec", f"{ltm_en}, 15-min prices, CET", f"{ltm_ro}, prețuri pe 15 minute, ora CET")
-chart("spreads", "reg", f"daily, hourly prices (15-min averaged), monthly means, 2019 to {d(END)}; log scale above 100",
-      f"zilnic, prețuri orare (media sferturilor), medii lunare, 2019 - {d(END)}; scară logaritmică peste 100")
+chart("shape15", "ec", f"{ltm_en}, 15-min prices, CET; winter = Dec-Feb, spring = Mar-May, summer = Jun-Aug, autumn = Sep-Nov",
+      f"{ltm_ro}, prețuri pe 15 minute, ora CET; iarna = dec.-feb., primăvara = mar.-mai, vara = iun.-aug., toamna = sep.-nov.")
+chart("spreads", "reg", f"daily, hourly prices (15-min averaged), monthly means, 2019 to {d(END)}",
+      f"zilnic, prețuri orare (media sferturilor), medii lunare, 2019 - {d(END)}")
 chart("bat_years", "bat", f"1 MW, round trip 85\\%, max one cycle a day; 2019-{Y - 1} and {ltm_en}",
       f"1 MW, randament 85\\%, cel mult un ciclu pe zi; 2019-{Y - 1} și {ltm_ro}")
 chart("case_week", "ecg", f"week {N['case']['week']} to {N['case']['week_end']}, 15-min, CET", f"săptămîna {N['case']['week']} - {N['case']['week_end']}, 15 minute, ora CET")
@@ -925,8 +935,8 @@ for lang in ["en", "ro"]:
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95))
     hh = ROGB_H.index.values
     axs[0].axhline(0, color="#222222", lw=0.6)
-    axs[0].plot(hh, ROGB_H["sum"] / 1000, color=PAL["RO"], lw=1.8, label=T("Romania: net flow on all borders; RO price", "România: flux net pe toate granițele; prețul RO"))
-    axs[0].plot(hh, ROGB_H["bulgaria"] / 1000, color=PAL["BG"], lw=1.6, ls="--", label=T("Bulgaria: flow on the RO-BG border; BG price", "Bulgaria: flux pe granița RO-BG; prețul BG"))
+    axs[0].plot(hh, ROGB_H["sum"] / 1000, color=PAL["RO"], lw=1.8, label=T("Romania (all borders; RO price)", "România (toate granițele; preț RO)"))
+    axs[0].plot(hh, ROGB_H["bulgaria"] / 1000, color=PAL["BG"], lw=1.6, ls="--", label=T("Bulgaria (RO-BG border; BG price)", "Bulgaria (granița RO-BG; preț BG)"))
     axs[0].set_ylabel(T("net import, GW\n(< 0: export)", "import net, GW\n(< 0: export)"), fontsize=8.5)
     axs[0].set_title(T("cross-border flows", "fluxuri transfrontaliere"), fontsize=9.5)
     axs[1].plot(hh, ROGB_H["RO"], color=PAL["RO"], lw=1.8)

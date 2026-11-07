@@ -139,7 +139,7 @@ The chart places the curve next to the realised monthly spot of the previous two
 @chart fwd_curve
 The realised monthly mean day-ahead price in Romania (step line) and the forward prices for each delivery period (horizontal segments: month, quarter, half-year, year); the dotted vertical line marks the cut-off.
 
-## The curve moves: yearly forwards by trade date vs realised {h=8acfde22}
+## The curve moves: yearly forwards by trade date vs realised {h=5fd5e256}
 
 A forward is the price of certainty, not a forecast that reliably hits the realised price. The chart shows every auction of each calendar-year product on its trade date, and the realised mean of the year as a thick line. For 2021 the VWAP was 51.3 EUR/MWh and the realised spot 111.4; for 2023 the forward averaged 172.5 against a realised 103.7, because it was bought at the height of the crisis; for 2025 the two were close, 102.1 against 108.2 EUR/MWh.
 
@@ -162,7 +162,7 @@ Over 30 delivery months bought one month ahead, the mean premium is +5.2 EUR/MWh
 
 @practice hedging is cheap on average; its real cost is the upside you give up.
 
-## Month by month, forward minus spot swings both ways {h=68cc0f01}
+## Month by month, forward minus spot swings both ways {h=be963982}
 
 The chart shows the premium of @eq:premium for each of the 30 delivery months. Its median is −0.2 EUR/MWh, close to zero. The deep negative bars are the surprises of 2021–2022, when the spot rose far above what the forward had priced a month earlier; they are not a stable discount that a buyer could count on.
 
@@ -205,7 +205,7 @@ In October 2026 coal cost 12.8 EUR per MWh thermal and the clean dark spread in 
 
 @practice a coal producer selling power forward should buy EUA forward with it.
 
-## Monthly clean spark and clean dark spreads {h=d431aa18}
+## Monthly clean spark and clean dark spreads {h=03777ae8}
 
 The chart follows the monthly spreads from January 2015 to October 2026. The clean spark spread was negative in 67 of 138 months in Romania and in 121 in Germany; on average it was higher in Romania by 13.9 EUR/MWh, reflecting higher Romanian power prices for the same gas and carbon prices.
 
@@ -228,7 +228,7 @@ Over the last 12 months, the hourly spread in Romania was positive in 58% of hou
 
 @practice value a gas plant or a battery as options, never as a mean spread times 8,760 h.
 
-## Sorted hourly spreads: the value lies in the best hours {h=5fa9881f}
+## Sorted hourly spreads: the value lies in the best hours {h=fac02d02}
 
 Sorting the hourly spreads of the last 12 months from the highest to the lowest gives a duration curve. The area above zero is the value of the option to run: it is earned in a minority of very profitable hours. At equal gas and carbon prices, Romania has more profitable hours than Germany.
 
@@ -261,7 +261,7 @@ As instruments we use the monthly mean prices of Hungary and of DE-LU, because a
 
 @practice a hedge ratio without a confidence interval is a guess.
 
-## Hungary hedges Romania almost fully; Germany leaves a fifth {h=fe7d732c}
+## Hungary hedges Romania almost fully; Germany leaves a fifth {h=3549c4e3}
 
 The Romanian price follows the Hungarian one closely: $h^{*}$ is 0.966 and the regression explains 98% of the variance of Romanian monthly changes. The German price is a weaker hedge: $h^{*}$ = 0.875 with $R^2$ = 0.80, so about a fifth of the variance remains.
 
@@ -312,7 +312,7 @@ A supplier serving the national load profile paid a factor of 1.039 in 2019 and 
 
 @practice price a solar power purchase agreement (PPA) at the capture factor, not at the band forward.
 
-## Solar is worth ever less than the band, load ever more {h=f256e2ca}
+## Solar is worth ever less than the band, load ever more {h=f91d41cf}
 
 The chart follows the two factors of @eq:shape year by year. The solar capture factor fell to 0.596 in 2025, as midday prices dropped with the growth of solar capacity; the load-weighted price rose to 7.1 EUR/MWh above the band in 2025. The band forward is therefore a poor hedge for both a supplier and a solar producer: one is under-hedged in expensive hours, the other over-hedged in cheap ones.
 
@@ -428,7 +428,7 @@ For each strategy the case study reports the mean cost, its month-to-month stand
 
 @practice a supplier's risk committee should see exactly this table every month.
 
-## Case study: in 2026 the forward beat the spot in 6 of 10 months {h=4018fcc4}
+## Case study: in 2026 the forward beat the spot in 6 of 10 months {h=7387163c}
 
 The chart shows the monthly cost of each strategy. Prices rose during the year, and the spot reached its peak of 239.3 EUR/MWh in October 2026; in 6 of the 10 months the forward was cheaper than the spot. The caps paid out in 5 of 10 months, when the monthly spot exceeded the strike, but their premium was paid every month.
 

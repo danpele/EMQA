@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L1_profile_intraday'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Mean day-ahead price by hour of the day (CET/CEST) in Romania and Germany-Luxembourg, calendar years 2019 and 2025: solar moved the cheapest hour of the day from the night to midday. Data: calendar years 2019 and 2025, hourly. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+Description: 'Mean day-ahead price by hour of the day (CET/CEST) in Romania and Germany-Luxembourg, calendar years 2019 and 2025: solar moved the cheapest hour of the day from the night to midday. Data: calendar years 2019 and 2025, hourly. Source: energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E.'
 
 Keywords: 'electricity prices, intraday seasonality, solar, duck curve, Romania, Germany, hourly profile'
 

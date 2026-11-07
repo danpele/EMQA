@@ -898,12 +898,12 @@ SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices
               "m": "energy-charts.info (OPCOM prices; ENTSO-E hydro generation, Transelectrica data); World Bank Pink Sheet (TTF)",
               "q": "energy-charts.info (Fraunhofer ISE); OPCOM 15-minute day-ahead prices for Romania, via ENTSO-E"},
        "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E",
-              "ecl": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; consum, producție eoliană și solară ENTSO-E (date Transelectrica pentru România)",
-              "ecf": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; producție și fluxuri ENTSO-E (date Transelectrica pentru România); "
+              "ecl": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; consum, producție eoliană și solară: ENTSO-E (date Transelectrica)",
+              "ecf": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; producție și fluxuri: ENTSO-E (date Transelectrica); "
                      "Yahoo Finance (SparkChange EUA ETC)",
               "hu": "energy-charts.info (Fraunhofer ISE); prețurile OPCOM (RO), HUPX (HU) și EPEX SPOT (DE-LU), prin ENTSO-E",
               "m": "energy-charts.info (prețuri OPCOM; producția hidro ENTSO-E, date Transelectrica); Banca Mondială, Pink Sheet (TTF)",
-              "q": "energy-charts.info (Fraunhofer ISE); prețurile PZU pe 15 minute ale OPCOM pentru România, prin ENTSO-E"}}
+              "q": "energy-charts.info (Fraunhofer ISE); prețuri PZU pe 15 minute (OPCOM), prin ENTSO-E"}}
 
 
 def chart(name, src_key, period_en, period_ro):
@@ -921,9 +921,24 @@ def comma_axes(fig, lang, also_x=()):
         ax.xaxis.set_major_formatter(f_)
 
 
+def layout_check(fig, name, lang):
+    """Warn when a y-label is taller than its axes (it gets clipped) or the figure grows wider than 6.6 in."""
+    fig.canvas.draw()
+    rr = fig.canvas.get_renderer()
+    for ax in fig.axes:
+        lab = ax.yaxis.label
+        if lab.get_text() and lab.get_window_extent(rr).height > ax.get_window_extent(rr).height * 1.08:
+            print(f"  [layout] {name} ({lang}): y-label '{lab.get_text()}' taller than its axes")
+    w = fig.get_tightbbox(rr).width
+    if w > 6.6:
+        print(f"  [layout] {name} ({lang}): figure {w:.2f} in wide")
+
+
 def out(fig, lang, name, bottom=0.17, also_x=()):
     comma_axes(fig, lang, also_x)
     os.makedirs(os.path.join(HERE, "charts", lang), exist_ok=True)
+    fig.tight_layout(rect=(0, bottom, 1, 1))
+    layout_check(fig, name, lang)
     save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=bottom)
 
 
@@ -946,7 +961,7 @@ DAYN = {"en": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], "ro": ["lun.", 
 GLAB = {"en": ["P(d-1), same hour", "P(d-1), other hours", "P(d-2)", "P(d-3)", "P(d-7)", "Load (d-2,d-3,d-7)",
                "Wind+solar (d-2,d-3,d-7)", "Day of week"],
         "ro": ["P(d-1), aceeași oră", "P(d-1), alte ore", "P(d-2)", "P(d-3)", "P(d-7)", "Consum (d-2,d-3,d-7)",
-               "Producție eoliană și solară (d-2,d-3,d-7)", "Ziua săptămînii"]}
+               "Eolian+solar (d-2,d-3,d-7)", "Ziua săptămînii"]}
 DAILY = pd.Series(PM.mean(1).values, index=CAL)
 for lang in ["en", "ro"]:
     T = (lambda en, ro: en) if lang == "en" else (lambda en, ro: ro)
@@ -954,7 +969,7 @@ for lang in ["en", "ro"]:
     # 1 chronological design
     fig, ax = plt.subplots(figsize=(6.4, 2.1))
     c0 = FC0 - pd.Timedelta(days=728)
-    ax.axvspan(c0, FC0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0, label=T("calibration window, 728 days (first forecast)", "fereastra de calibrare, 728 de zile (prima prognoză)"))
+    ax.axvspan(c0, FC0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0, label=T("calibration window, 728 days (first forecast)", "calibrare, 728 de zile (prima prognoză)"))
     ax.axvspan(FC0, TEST0 - pd.Timedelta(days=1), color=PAL["BG"], alpha=0.25, lw=0, label=T("burn-in, 182 days", "rodaj (burn-in), 182 de zile"))
     ax.axvspan(TEST0, END, color=PAL["DE_LU"], alpha=0.18, lw=0, label=T("test, 365 days", "test, 365 de zile"))
     ax.plot(DAILY.index, DAILY.values, color=PAL["RO"], lw=0.8, label=T("Romania, daily base price", "România, prețul zilnic de bază"))
@@ -972,42 +987,51 @@ for lang in ["en", "ro"]:
     hnd = [Patch(color=PAL["RO"], label=T("same hour, k days earlier", "aceeași oră, cu k zile înainte")),
            Patch(color=PAL["DE_LU"], label=T("k = 7, 14 (same weekday)", "k = 7, 14 (aceeași zi a săptămînii)"))]
     ax.set_xticks(ks)
-    ax.set_xlabel(T("age of the information k (days)", "k (zile): prognoza folosește prețul aceleiași ore de acum k zile"))
-    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=8)
+    ax.set_xlabel(T("age of the information k (days)", "vechimea informației k (zile)"))
+    ax.set_ylabel("MAE,\nEUR/MWh")
     legend_bottom(fig, handles=hnd, labels=[h_.get_label() for h_ in hnd], ncol=2)
-    out(fig, lang, "horizon_naive", bottom=0.2)
+    out(fig, lang, "horizon_naive", bottom=0.16)
     # 3 MAPE fails near zero
-    fig, ax = plt.subplots(figsize=(6.4, 2.1))
+    fig, ax = plt.subplots(figsize=(6.4, 2.2))
     x_, y_ = A.ravel(), (_ape.ravel() * 100)
     ok = np.isfinite(y_) & (y_ > 0)
     ax.axvspan(-5, 5, color=PAL["c8"], alpha=0.15, lw=0, label=T("|price| < 5 EUR/MWh", "|preț| < 5 EUR/MWh"))
     ax.scatter(np.clip(x_[ok], -120, 620), y_[ok], s=1.5, color=PAL["RO"], alpha=0.35, lw=0,
-               label=T("one hour of the test year, AW-LEAR", "o oră din anul de test, AW-LEAR"))
-    ax.axhline(100, color="#222222", lw=0.7, ls="--", label=T("error = 100% of the price", "eroare = 100% din preț"))
+               label=T("one hour, AW-LEAR", "o oră, AW-LEAR"))
+    ax.axhline(100, color="#222222", lw=0.7, ls="--", label=T("error = 100%", "eroare = 100%"))
     ax.set_yscale("log")
     ax.set_yticks([1e-2, 1, 1e2, 1e4, 1e6])
     ax.set_yticklabels(["0.01", "1", "100", "10$^4$", "10$^6$"] if lang == "en" else ["0,01", "1", "100", "10$^4$", "10$^6$"])
     ax.set_xlabel(T("actual price, EUR/MWh", "prețul realizat, EUR/MWh"))
-    ax.set_ylabel(T("absolute % error", "eroarea procentuală absolută, %"))
+    ax.set_ylabel(T("absolute\n% error", "eroarea\nprocentuală, %"), fontsize=10)
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "mape_fail", bottom=0.22, also_x=[ax])
+    for h_ in getattr(fig.legends[-1], "legend_handles", None) or fig.legends[-1].legendHandles:
+        if hasattr(h_, "set_sizes"):           # make the scatter marker visible in the legend
+            h_.set_sizes([30])
+            h_.set_alpha(1)
+    out(fig, lang, "mape_fail", bottom=0.15, also_x=[ax])
     # 4 DM chessboard
     from matplotlib.colors import LinearSegmentedColormap
     cmap = LinearSegmentedColormap.from_list("dm", ["#0b6e2e", "#7fc97f", "#ffe08a", "#f4a259", "#d7301f", "#5a0000"])
-    fig, ax = plt.subplots(figsize=(6.4, 2.7))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     Z = np.where(np.isnan(DMP), np.nan, np.minimum(DMP, 0.10))
     im = ax.imshow(np.ma.masked_invalid(Z), cmap=cmap, vmin=0, vmax=0.10, aspect="auto")
     ax.set_xticks(range(len(DM_MODELS)))
-    ax.set_xticklabels([L(k) for k in DM_MODELS], rotation=40, ha="right", fontsize=9)
+    ax.set_xticklabels([str(i + 1) for i in range(len(DM_MODELS))], fontsize=10)
     ax.set_yticks(range(len(DM_MODELS)))
-    ax.set_yticklabels([L(k) for k in DM_MODELS], fontsize=9)
-    ax.set_xlabel(T("is the column model more accurate than the row model?", "este modelul din coloană mai precis decît cel din rînd?"), fontsize=9.5)
+    ax.set_yticklabels([f"{L(k)} ({i + 1})" for i, k in enumerate(DM_MODELS)], fontsize=10)
+    ax.tick_params(length=0)
+    ax.set_xlabel(T("column j: is model (j) more accurate than the row model?",
+                    "coloana j: este modelul (j) mai precis decît modelul din rînd?"), fontsize=10)
     for a_ in range(len(DM_MODELS)):
         ax.add_patch(plt.Rectangle((a_ - 0.5, a_ - 0.5), 1, 1, color="#ffffff"))
     cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
-    cb.set_label(T("p-value, capped at 0.10", "valoarea p, plafonată la 0,10"), fontsize=9)
-    if lang == "ro":
-        cb.ax.yaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{v:.2f}".replace(".", ",")))
+    cb.set_label(T("p-value", "valoarea p"), fontsize=9.5)
+    cb.set_ticks([0, 0.02, 0.04, 0.06, 0.08, 0.10])
+    cb.set_ticklabels([num(v, lang, 2) for v in [0, 0.02, 0.04, 0.06, 0.08]] + ["$\\geq$" + num(0.10, lang, 2)])
+    cb.ax.tick_params(labelsize=9.5)
+    cb.ax._keep_y = True
+    ax._keep_y = True
     ax.spines[:].set_visible(False)
     out(fig, lang, "dm_matrix", bottom=0.0)
     # 5 ARX coefficients by hour
@@ -1020,20 +1044,20 @@ for lang in ["en", "ro"]:
     ax.axhline(0, color="#222222", lw=0.5)
     ax.set_xticks(range(0, 23, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
-    ax.set_ylabel(T("mean coefficient", "coeficient mediu"))
+    ax.set_ylabel(T("mean\ncoefficient", "coeficient\nmediu"))
     legend_bottom(fig, ncol=5)
-    out(fig, lang, "arx_coef", bottom=0.2)
+    out(fig, lang, "arx_coef", bottom=0.16)
     # 6 per-hour vs single model
     fig, ax = plt.subplots(figsize=(6.4, 1.9))
     h24 = np.arange(24)
     ax.plot(h24, BYHOUR["naive"], color=COL["naive"], ls=":", marker="o", ms=3, label=L("naive"))
-    ax.plot(h24, BYHOUR["arx728_single"], color=PAL["DE_LU"], marker="s", ms=3, label=T("ARX(728), one model for all hours", "ARX(728), un singur model pentru toate orele"))
-    ax.plot(h24, BYHOUR["arx728"], color=PAL["HU"], marker="o", ms=3, label=T("ARX(728), one model per hour", "ARX(728), cîte un model pe oră"))
+    ax.plot(h24, BYHOUR["arx728_single"], color=PAL["DE_LU"], marker="s", ms=3, label=T("one ARX(728) for all hours", "un ARX(728) pentru toate orele"))
+    ax.plot(h24, BYHOUR["arx728"], color=PAL["HU"], marker="o", ms=3, label=T("one ARX(728) per hour", "cîte un ARX(728) pe oră"))
     ax.set_xticks(range(0, 24, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE,\nEUR/MWh")
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "per_hour_single", bottom=0.2)
+    out(fig, lang, "per_hour_single", bottom=0.16)
     # 7 VST
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.0), gridspec_kw={"width_ratios": [1, 1.25]})
     m_last, s_last = mad_scale(P_[IDX[END] - 735:IDX[END]])
@@ -1041,11 +1065,11 @@ for lang in ["en", "ro"]:
     axs[0].plot(pg, (pg - m_last) / s_last, color="#9a9a9a", ls="--", label=T("z-score (no transform)", "standardizare (fără transformare)"))
     axs[0].plot(pg, np.arcsinh((pg - m_last) / s_last), color=PAL["RO"], label="asinh")
     axs[0].set_xlabel(T("price, EUR/MWh", "preț, EUR/MWh"))
-    axs[0].set_ylabel(T("model scale", "scara modelului"))
+    axs[0].set_ylabel(T("model\nscale", "scara\nmodelului"))
     xm = [pd.Timestamp(str(mm)) for mm in MONTHS_T]
     axs[1].plot(xm, BYMONTH["arx728_raw"], color="#9a9a9a", ls="--", marker="s", ms=3, label=T("ARX(728) on raw prices", "ARX(728) pe prețuri netransformate"))
-    axs[1].plot(xm, BYMONTH["arx728"], color=PAL["RO"], marker="o", ms=3, label=T("ARX(728) on asinh prices", "ARX(728) pe prețuri transformate asinh"))
-    axs[1].set_ylabel("MAE, EUR/MWh")
+    axs[1].plot(xm, BYMONTH["arx728"], color=PAL["RO"], marker="o", ms=3, label=T("ARX(728) on asinh prices", "ARX(728) pe prețuri asinh"))
+    axs[1].set_ylabel("MAE,\nEUR/MWh")
     mfmt(axs[1], lang, 2)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "vst", bottom=0.26, also_x=[axs[0]])
@@ -1053,11 +1077,11 @@ for lang in ["en", "ro"]:
     fig, ax = plt.subplots(figsize=(6.4, 2.3))
     im = ax.imshow(SEL * 100, aspect="auto", cmap="Blues", vmin=0, vmax=100)
     ax.set_yticks(range(len(GLAB[lang])))
-    ax.set_yticklabels(GLAB[lang], fontsize=8.5)
+    ax.set_yticklabels(GLAB[lang], fontsize=10)
     ax.set_xticks(range(0, 24, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
     cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
-    cb.set_label(T("% of regressors kept", "regresori păstrați, %"), fontsize=9)
+    cb.set_label(T("% of regressors kept", "regresori păstrați, %"), fontsize=10)
     ax.spines[:].set_visible(False)
     ax._keep_y = True
     out(fig, lang, "lear_sel", bottom=0.02)
@@ -1076,8 +1100,8 @@ for lang in ["en", "ro"]:
     for ax in axs:
         ax.axhline(ACC["naive"]["mae"], color="#9a9a9a", ls=":", lw=1.2)
     axs[0].plot([], [], color="#9a9a9a", ls=":", label=T("naive benchmark", "modelul naiv de referință"))
-    axs[0].bar([], [], color=PAL["DE_LU"], label=T("average across windows (AW)", "media prognozelor pe ferestre (AW)"))
-    axs[0].set_ylabel("MAE, EUR/MWh")
+    axs[0].add_patch(plt.Rectangle((0, 0), 0, 0, color=PAL["DE_LU"], label=T("average across windows (AW)", "media prognozelor pe ferestre (AW)")))
+    axs[0].set_ylabel("MAE,\nEUR/MWh")
     axs[0].set_ylim(0, ACC["naive"]["mae"] * 1.12)
     fig.text(0.5, 0.17, T("calibration window T (days)", "fereastra de calibrare T (zile)"), ha="center", fontsize=10)
     legend_bottom(fig, ncol=2)
@@ -1088,63 +1112,67 @@ for lang in ["en", "ro"]:
         ax.plot(h24, BYHOUR[k], color=COL[k], ls=ls, marker="o", ms=3, lw=1.6 if k == "ens_all" else 1.2, label=L(k))
     ax.set_xticks(range(0, 24, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE,\nEUR/MWh")
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "ml_hour", bottom=0.2)
+    out(fig, lang, "ml_hour", bottom=0.16)
     # 11 QRA week
     pw = slice(POS[PW] - N_BURN, POS[PW] - N_BURN + 7)
     xt = pd.date_range(PW, periods=168, freq="h")
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
     qw = QRA[pw].reshape(168, 99)
-    ax.fill_between(xt, qw[:, 4], qw[:, 94], color=PAL["RO"], alpha=0.18, lw=0, label=T("90% interval", "intervalul de 90%"))
-    ax.fill_between(xt, qw[:, 24], qw[:, 74], color=PAL["RO"], alpha=0.38, lw=0, label=T("50% interval", "intervalul de 50%"))
+    ax.fill_between(xt, qw[:, 4], qw[:, 94], color=PAL["RO"], alpha=0.18, lw=0, label=T("90% interval", "interval 90%"))
+    ax.fill_between(xt, qw[:, 24], qw[:, 74], color=PAL["RO"], alpha=0.38, lw=0, label=T("50% interval", "interval 50%"))
     ax.plot(xt, qw[:, 49], color=PAL["RO"], lw=1.0, label=T("QRA median", "mediana QRA"))
     ax.plot(xt, A[pw].ravel(), color="#222222", lw=1.0, label=T("actual price", "prețul realizat"))
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[lang][mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "qra_week", bottom=0.2)
+    out(fig, lang, "qra_week", bottom=0.17)
     # 12 reliability (calibration) of the quantiles
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 2.0))
     for k, c, lab in [("qra", PAL["RO"], "QRA"), ("cp", PAL["DE_LU"], T("conformal (CP)", "predicție conformală (CP)")),
                       ("hs", PAL["HU"], T("historical simulation (HS)", "simulare istorică (HS)"))]:
         ax.plot(TAUS * 100, (np.array(PROB[k]["rel"]) - TAUS) * 100, color=c, label=lab)
     ax.axhline(0, color="#222222", lw=0.7)
     ax.set_xlabel(T("quantile level $\\tau$, %", "nivelul cuantilei $\\tau$, %"))
-    ax.set_ylabel(T("actual share below\nminus $\\tau$, pp", "ponderea prețurilor sub cuantilă\nminus $\\tau$, pp"))
+    ax.set_ylabel(T("coverage\nerror, pp", "eroarea de\nacoperire, pp"))
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "prob_rel", bottom=0.2)
+    out(fig, lang, "prob_rel", bottom=0.15)
     # 13 cointegration, daily RO vs HU
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.4), sharex=True, gridspec_kw={"height_ratios": [1.5, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.5), sharex=True, gridspec_kw={"height_ratios": [1.2, 1]})
     axs[0].plot(DLY.index, DLY["HU"], color=PAL["HU"], lw=0.7, label=T("Hungary (HUPX)", "Ungaria (HUPX)"))
     axs[0].plot(DLY.index, DLY["RO"], color=PAL["RO"], lw=0.7, label=T("Romania (OPCOM PZU)", "România (OPCOM PZU)"))
-    axs[0].set_ylabel("EUR/MWh")
     axs[1].plot(DLY.index, DLY["RO"] - DLY["HU"], color=PAL["c8"], lw=0.6, label=T("spread RO - HU", "diferența RO - HU"))
     axs[1].axhline(0, color="#222222", lw=0.5)
-    axs[1].set_ylabel("EUR/MWh")
+    for ax in axs:
+        ax.set_ylabel("EUR/MWh")
     axs[1].set_xlim(DLY.index[0], DLY.index[-1])
+    axs[1].xaxis.set_major_locator(mdates.YearLocator())
+    axs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=3)
     out(fig, lang, "coint_daily", bottom=0.15)
     # 14 cointegration, monthly price vs gas, and hydro
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1), gridspec_kw={"width_ratios": [1.5, 1]})
     axs[0].plot(MD.index, MD["price"], color=PAL["RO"], lw=1.0, label=T("Romania, monthly price", "România, prețul lunar"))
-    axs[0].plot(MD.index, lr_.fittedvalues, color=PAL["DE_LU"], lw=1.0, ls="--", label=T("long-run level from TTF gas", "nivelul de echilibru dat de prețul gazelor TTF"))
+    axs[0].plot(MD.index, lr_.fittedvalues, color=PAL["DE_LU"], lw=1.0, ls="--", label=T("long-run level from TTF gas", "nivel de echilibru (gaze TTF)"))
     axs[0].set_ylabel("EUR/MWh")
+    axs[0].xaxis.set_major_locator(mdates.YearLocator(3))
+    axs[0].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     axs[1].scatter(MD["hydro_ds"], u_, s=8, color=PAL["RO"], alpha=0.7, label=T("one month", "o lună"))
     bb = np.polyfit(MD["hydro_ds"], u_, 1)
     xx = np.linspace(MD["hydro_ds"].min(), MD["hydro_ds"].max(), 10)
     axs[1].plot(xx, np.polyval(bb, xx), color="#222222", lw=1.0)
     axs[1].axhline(0, color="#222222", lw=0.4)
     axs[1].set_xlabel(T("hydro vs its monthly mean, TWh", "hidro față de media lunii, TWh"), fontsize=9.5)
-    axs[1].set_ylabel(T("price minus long-run", "abaterea de la echilibru"), fontsize=9)
+    axs[1].set_ylabel(T("price minus\nlong-run level", "abaterea de la\nechilibru"), fontsize=9.5)
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "coint_monthly", bottom=0.2, also_x=[axs[1]])
+    out(fig, lang, "coint_monthly", bottom=0.13, also_x=[axs[1]])
     # 15 monthly MAE over the test year
     fig, ax = plt.subplots(figsize=(6.4, 1.9))
     for k, ls, mk in [("naive", ":", "o"), ("aw_arx", "--", "s"), ("aw_lear", "-", "o"), ("ens_all", "-", "D")]:
         ax.plot(xm, BYMONTH[k], color=COL[k], ls=ls, marker=mk, ms=3.5, label=L(k))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE,\nEUR/MWh")
     mfmt(ax, lang, 1)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "monthly_mae", bottom=0.2)
@@ -1158,34 +1186,34 @@ for lang in ["en", "ro"]:
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[lang][mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "stress_week", bottom=0.2)
+    out(fig, lang, "stress_week", bottom=0.17)
     # 17 15-minute MTU
     qk = QDAYS.index(QDAY)
     xq = np.arange(96) / 4
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
-    ax.step(xq, Q[qk], where="post", color="#222222", lw=1.1, label=T("actual 15-min price", "prețul realizat pe 15 minute"))
-    ax.step(xq, flat[qk], where="post", color=PAL["RO"], lw=1.0, ls="--", label=T("hourly AW-LEAR, flat", "AW-LEAR orar, constant în interiorul orei"))
-    ax.step(xq, shaped[qk], where="post", color=PAL["DE_LU"], lw=1.0, label=T("+ intra-hour shape (28 past days)", "+ profilul din interiorul orei (28 de zile anterioare)"))
+    ax.step(xq, Q[qk], where="post", color="#222222", lw=1.1, label=T("actual 15-min price", "preț realizat, 15 min"))
+    ax.step(xq, flat[qk], where="post", color=PAL["RO"], lw=1.0, ls="--", label=T("hourly AW-LEAR, flat", "AW-LEAR orar, constant"))
+    ax.step(xq, shaped[qk], where="post", color=PAL["DE_LU"], lw=1.0, label=T("+ intra-hour shape", "+ profil intraorar"))
     ax.set_xticks(range(0, 25, 2))
     ax.set_xlabel(T("hour (CET)", "ora (CET)"))
     ax.set_ylabel("EUR/MWh")
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "mtu15", bottom=0.2)
+    out(fig, lang, "mtu15", bottom=0.16)
     # 18 battery and flexible buyer: value of the forecast
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1))
     kb = ["perfect", "ens_all", "aw_lear", "gbm", "aw_arx", "naive"]
     axs[0].barh(range(len(kb)), [BAT[k].sum() / 1000 for k in kb], color=[COL[k] for k in kb], height=0.65)
     axs[0].set_yticks(range(len(kb)))
-    axs[0].set_yticklabels([L(k) for k in kb], fontsize=9)
+    axs[0].set_yticklabels([L(k) for k in kb], fontsize=10)
     axs[0].invert_yaxis()
-    axs[0].set_xlabel(T("battery profit, thousand EUR per MW", "profitul bateriei, mii EUR pe MW"), fontsize=9.5)
+    axs[0].set_xlabel(T("battery profit,\nthousand EUR per MW", "profitul bateriei,\nmii EUR pe MW"), fontsize=10)
     kf = ["perfect", "ens_all", "aw_lear", "gbm", "aw_arx", "naive"]
     vf = [FLX[k].sum() / (4 * len(FLX[k])) for k in kf] + [FLX_BASE.sum() / (4 * len(FLX_BASE))]
     axs[1].barh(range(len(vf)), vf, color=[COL[k] for k in kf] + ["#5b4a3a"], height=0.65)
     axs[1].set_yticks(range(len(vf)))
-    axs[1].set_yticklabels([L(k) for k in kf] + [T("fixed 8-12 h", "bloc fix 8-12")], fontsize=9)
+    axs[1].set_yticklabels([L(k) for k in kf] + [T("fixed 8-12 h", "bloc fix 8-12")], fontsize=10)
     axs[1].invert_yaxis()
-    axs[1].set_xlabel(T("flexible buyer, EUR/MWh paid", "costul cumpărătorului flexibil, EUR/MWh"), fontsize=9.5)
+    axs[1].set_xlabel(T("flexible buyer:\nmean price paid, EUR/MWh", "cumpărătorul flexibil:\npreț mediu, EUR/MWh"), fontsize=10)
     for ax in axs:
         ax._keep_y = True
     out(fig, lang, "battery", bottom=0.02, also_x=list(axs))

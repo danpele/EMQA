@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_cost_gain'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Compute time for the whole test year (minutes on one core, log scale) against the mean absolute error of AW-LEAR, XGBoost, the DNN, Chronos-Bolt, Chronos-2 and two combinations; times measured on one core of the author’s 18-core laptop. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; time measured on one core of the author’s computer. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Compute time for the whole test year (minutes on one core, log scale) against the mean absolute error of AW-LEAR, XGBoost, the DNN, Chronos-Bolt, Chronos-2 and two combinations; times measured on one core of the author’s 18-core laptop. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; one processor core. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'compute cost, forecast accuracy, LEAR, XGBoost, neural network, Chronos, foundation model, total cost of ownership'
 

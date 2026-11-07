@@ -46,7 +46,7 @@ from scipy import stats
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "common"))
 import emqa_plot as ep  # noqa: E402
-from emqa_plot import PAL, legend_bottom, save  # noqa: E402
+from emqa_plot import PAL  # noqa: E402
 
 import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
@@ -1014,10 +1014,10 @@ LAB = {"naive": ("Naive", "Naiv"), "aw_arx": ("AW-ARX", "AW-ARX"), "aw_lear": ("
 COL = {"naive": "#9a9a9a", "aw_arx": PAL["HU"], "aw_lear": PAL["RO"], "ens4": PAL["c5"], "gbm2": "#c9a14a", "mlp2": "#a99be0",
        "xgb": PAL["BG"], "dnn": PAL["c7"], "bolt": "#6b6b6b", "chr2": PAL["c8"], "ens_ld": PAL["c6"], "ens_lx": PAL["c6"],
        "ens_ldx": PAL["DE_LU"], "ens_t4": PAL["DE_LU"], "ens_t5": PAL["DE_LU"], "ens_lc": "#7a1f1f"}
-SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
-              "ecf": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)"},
-       "ro": {"ec": "energy-charts.info (Fraunhofer ISE): prețurile PZU ale OPCOM pentru România",
-              "ecf": "energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC)"}}
+SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE): OPCOM prices",
+              "ecf": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)"},
+       "ro": {"ec": "energy-charts.info (Fraunhofer ISE): prețuri OPCOM",
+              "ecf": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)"}}
 FNAME = {"en": {"P(d-1,h)": "price d-1, same hour", "P(d-2,h)": "price d-2, same hour", "P(d-3,h)": "price d-3, same hour",
                 "P(d-7,h)": "price d-7, same hour", "P(d-1,23)": "price d-1, 23:00", "min P(d-1)": "min. price d-1",
                 "max P(d-1)": "max. price d-1", "mean P(d-1)": "mean price d-1", "L(d-2,h)": "load d-2, same hour",
@@ -1041,6 +1041,21 @@ BNAME = {"en": {"price d-1": "prices d-1", "price d-2": "prices d-2", "price d-3
 GCOL = {"price": PAL["RO"], "load": "#222222", "res": PAL["BG"], "fund": PAL["HU"], "cal": "#9a9a9a"}
 
 
+def legend_bottom(fig, handles=None, labels=None, ncol=4):
+    """Course legend (bottom, outside the axes, no frame) with compact spacing so that it fits the 6.4-inch width;
+    out() moves it just below the lowest axis label."""
+    if handles is None:
+        handles, labels = [], []
+        for ax in fig.axes:
+            for hh, ll in zip(*ax.get_legend_handles_labels()):
+                if ll not in labels:
+                    handles.append(hh)
+                    labels.append(ll)
+    if handles:
+        fig.legend(handles, labels, loc="upper center", ncol=ncol, frameon=False, handlelength=1.6, handletextpad=0.5,
+                   columnspacing=1.0, borderaxespad=0.1)
+
+
 def chart(name, src_key, period_en, period_ro):
     N["charts"][name] = {"source_en": SRC["en"][src_key], "source_ro": SRC["ro"][src_key], "period_en": period_en, "period_ro": period_ro}
 
@@ -1056,10 +1071,21 @@ def comma_axes(fig, lang, also_x=()):
         ax.xaxis.set_major_formatter(f_)
 
 
-def out(fig, lang, name, bottom=0.17, also_x=()):
+def out(fig, lang, name, bottom=None, also_x=()):
+    """Save one chart: the axes use the whole figure height and the legend (if any) is placed just below the lowest
+    axis label, outside the axes, so that no height is lost between the plot and its legend."""
     comma_axes(fig, lang, also_x)
     os.makedirs(os.path.join(HERE, "charts", lang), exist_ok=True)
-    save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=bottom)
+    fig.tight_layout(pad=0.3)
+    if fig.legends:
+        fig.canvas.draw()
+        r = fig.canvas.get_renderer()
+        y0 = min(ax.get_tightbbox(r).y0 for ax in fig.axes) / fig.bbox.height
+        lg = fig.legends[0]
+        lg.set_loc("upper center")
+        lg.set_bbox_to_anchor((0.5, y0 - 0.01), transform=fig.transFigure)
+    fig.savefig(os.path.join(HERE, "charts", lang, name + ".pdf"), transparent=True, bbox_inches="tight", pad_inches=0.03)
+    plt.close(fig)
 
 
 def mfmt(ax, lang, step=1):
@@ -1077,7 +1103,7 @@ for lang in ["en", "ro"]:
     T = (lambda en, ro: en) if lang == "en" else (lambda en, ro: ro)
     L = lambda k: LAB[k][0 if lang == "en" else 1]  # noqa: E731
     # 1 three chronological samples
-    fig, ax = plt.subplots(figsize=(6.4, 2.1))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0,
                label=T("training (grows each month)", "antrenare (crește în fiecare lună)"))
     ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color=PAL["BG"], alpha=0.28, lw=0,
@@ -1091,7 +1117,7 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=2)
     out(fig, lang, "split_ml", bottom=0.26)
     # 2 random search on the validation year
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), sharey=True)
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.75), sharey=True)
     for ax, V, best_, nm in [(axs[0], VAL_DNN, BEST_DNN, "DNN"), (axs[1], VAL_XGB, BEST_XGB, "XGBoost")]:
         o = np.argsort(V)
         ax.plot(range(1, len(V) + 1), V[o], "o", color="#9a9a9a", ms=4, label=T("one configuration", "o configurație"))
@@ -1101,85 +1127,88 @@ for lang in ["en", "ro"]:
         ax.axhline(naive_val, color="#222222", ls=":", lw=1.0, label=T("naive, validation year", "modelul naiv, anul de validare"))
         ax.set_title(nm, fontsize=10)
         ax.set_xlabel(T("rank on the validation year", "locul în clasamentul de validare"), fontsize=9.5)
-    axs[0].set_ylabel(T("MAE, validation\nyear (EUR/MWh)", "MAE în anul de\nvalidare (EUR/MWh)"), fontsize=9.5)
+    axs[0].set_ylabel(T("MAE, validation\nyear (EUR/MWh)", "MAE la validare\n(EUR/MWh)"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "search", bottom=0.27)
     # 3 learning curve (chosen DNN, last refit, seed 1)
-    fig, ax = plt.subplots(figsize=(6.4, 1.95))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     ee = np.arange(1, len(_curve[0]) + 1)
-    ax.plot(ee, _curve[0], color=PAL["RO"], label=T("training days (first 85%)", "zilele de antrenare (primele 85%)"))
-    ax.plot(ee, _curve[1], color=PAL["DE_LU"], label=T("early-stopping block (last 15%)", "blocul de oprire (ultimele 15%)"))
+    ax.plot(ee, _curve[0], color=PAL["RO"], label=T("training days (first 85%)", "antrenare (primele 85%)"))
+    ax.plot(ee, _curve[1], color=PAL["DE_LU"], label=T("early-stopping block (last 15%)", "oprire timpurie (ultimele 15%)"))
     ax.axvline(N["curve"]["best_ep"], color="#222222", ls="--", lw=0.9, label=T("epoch kept", "epoca păstrată"))
     ax.set_xlabel(T("epoch (one pass over the training days)", "epoca (o parcurgere a zilelor de antrenare)"))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
     legend_bottom(fig, ncol=3)
     out(fig, lang, "learning_curve", bottom=0.22)
     # 4 monthly MAE
-    fig, ax = plt.subplots(figsize=(6.4, 1.95))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     for k, ls, mk in [("aw_lear", "-", "o"), ("xgb", "--", "s"), ("dnn", "-.", "^"), ("ens_ldx", "-", "D")]:
         ax.plot(xm, BYMONTH[k], color=COL[k], ls=ls, marker=mk, ms=3.5, lw=1.6 if k == "ens_ldx" else 1.1, label=L(k))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
     mfmt(ax, lang, 1)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "monthly_ml", bottom=0.22)
     # 5 DM chessboard
     from matplotlib.colors import LinearSegmentedColormap
     cmap = LinearSegmentedColormap.from_list("dm", ["#0b6e2e", "#7fc97f", "#ffe08a", "#f4a259", "#d7301f", "#5a0000"])
-    fig, ax = plt.subplots(figsize=(6.4, 2.75))
+    fig, ax = plt.subplots(figsize=(6.4, 2.2))
     Z = np.where(np.isnan(DMP), np.nan, np.minimum(DMP, 0.10))
     im = ax.imshow(np.ma.masked_invalid(Z), cmap=cmap, vmin=0, vmax=0.10, aspect="auto")
-    ax.set_xticks(range(len(DM_MODELS)))
-    ax.set_xticklabels([L(k) for k in DM_MODELS], rotation=35, ha="right", fontsize=8.5)
+    ax.set_xticks(range(len(DM_MODELS)))      # columns numbered as the rows, so that the labels need no rotation
+    ax.set_xticklabels([str(i + 1) for i in range(len(DM_MODELS))], fontsize=9.5)
     ax.set_yticks(range(len(DM_MODELS)))
-    ax.set_yticklabels([L(k) for k in DM_MODELS], fontsize=8.5)
-    ax.set_xlabel(T("is the column model more accurate than the row model?", "este modelul din coloană mai precis decît cel din rînd?"), fontsize=9.5)
+    ax.set_yticklabels([f"{L(k)} ({i + 1})" for i, k in enumerate(DM_MODELS)], fontsize=9)
+    ax.set_xlabel(T("column model (numbered as the rows): is it more accurate than the row model?",
+                    "modelul din coloană (numerotat ca rîndurile): este mai precis decît cel din rînd?"), fontsize=9.5)
     for a_ in range(len(DM_MODELS)):
         ax.add_patch(plt.Rectangle((a_ - 0.5, a_ - 0.5), 1, 1, color="#ffffff"))
     cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
-    cb.set_label(T("p-value, capped at 0.10", "valoarea p, plafonată la 0,10"), fontsize=9)
-    if lang == "ro":
-        cb.ax.yaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{v:.2f}".replace(".", ",")))
+    cb.set_label(T("p-value,\ncapped at 0.10", "valoarea p,\nplafonată la 0,10"), fontsize=9.5)
+    cb.set_ticks([0, 0.05, 0.10])
+    cb.ax._keep_y = True
+    cb.ax.yaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{v:.2f}".replace(".", "," if lang == "ro" else ".")))
     ax.spines[:].set_visible(False)
     ax._keep_y = True
     out(fig, lang, "dm_matrix", bottom=0.0)
     # 6 combination weight (illustration)
-    fig, ax = plt.subplots(figsize=(6.4, 1.95))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     for k, ls in [("xgb", "-"), ("dnn", "--")]:
         ax.plot(WGRID, WCURVE[k], color=COL[k], ls=ls, label=T(f"AW-LEAR and {L(k)}", f"AW-LEAR și {L(k)}"))
     ax.plot([0.5, 0.5], [WCURVE["xgb"][10], WCURVE["dnn"][10]], "o", color="#222222", ms=4, label=T("equal weights (used)", "ponderi egale (folosite)"))
     ax.set_xlabel(T("weight w of the machine-learning model", "ponderea w a modelului de învățare automată"))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
     legend_bottom(fig, ncol=3)
     out(fig, lang, "combo_weight", bottom=0.22, also_x=[ax])
     # 7 compute cost versus accuracy
-    fig, ax = plt.subplots(figsize=(6.4, 2.2))
+    fig, ax = plt.subplots(figsize=(6.4, 1.6))
     for k in ["aw_lear", "xgb", "dnn", "bolt", "chr2", "ens_ldx", "ens_lc"]:
         ax.plot(max(sec[k], 1) / 60, N["acc"][k]["mae"], "o", color=COL[k], ms=6)
-        off = {"aw_lear": (6, 4), "ens_ldx": (6, -2), "ens_lc": (6, -9), "xgb": (6, 2), "dnn": (6, -9), "bolt": (6, 2), "chr2": (6, -9)}[k]
-        ax.annotate(L(k), (max(sec[k], 1) / 60, N["acc"][k]["mae"]), textcoords="offset points", xytext=off, fontsize=8)
+        off = {"aw_lear": (7, 0), "ens_ldx": (7, 0), "ens_lc": (7, 0), "xgb": (7, 0), "dnn": (7, 0), "bolt": (7, 0), "chr2": (7, 0)}[k]
+        ax.annotate(L(k), (max(sec[k], 1) / 60, N["acc"][k]["mae"]), textcoords="offset points", xytext=off, fontsize=9.5, va="center")
     ax.set_xscale("log")
     ax.set_xlabel(T("compute time for the test year, minutes on one core (log scale)", "timpul de calcul pentru anul de test, minute pe un nucleu (scară log.)"), fontsize=9.5)
-    ax.set_ylabel("MAE, EUR/MWh")
-    xl = ax.get_xlim()
-    ax.set_xlim(xl[0], xl[1] * 4)
+    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
+    xl, yl = ax.get_xlim(), ax.get_ylim()
+    ax.set_xlim(xl[0], xl[1] * 12)
+    ax.set_ylim(yl[0] - 0.25, yl[1] + 0.15)
     out(fig, lang, "cost_gain", bottom=0.02)
     # 8 SHAP global
-    fig, ax = plt.subplots(figsize=(6.4, 2.2))
+    fig, ax = plt.subplots(figsize=(6.4, 2.0))
     o = np.argsort(-share)[:10][::-1]
     gof = {j: g for g, ix in GROUPS.items() for j in ix}
     ax.barh(range(len(o)), share[o], color=[GCOL[gof[j]] for j in o], height=0.7)
     ax.set_yticks(range(len(o)))
-    ax.set_yticklabels([FNAME[lang][XGB_NAMES[j]] for j in o], fontsize=8.5)
+    ax.set_yticklabels([FNAME[lang][XGB_NAMES[j]] for j in o], fontsize=9)
     ax.set_xlabel(T("share of the mean |SHAP value|, %", "ponderea în media valorilor |SHAP|, %"), fontsize=9.5)
     from matplotlib.patches import Patch
     hnd = [Patch(color=GCOL[g], label=lb) for g, lb in [("price", T("prices", "prețuri")), ("load", T("load", "consum")),
                                                         ("res", T("wind+solar", "eolian+solar")), ("fund", T("other fundamentals", "alte variabile fundamentale")),
                                                         ("cal", T("calendar", "calendar"))]]
-    legend_bottom(fig, handles=hnd, labels=[h_.get_label() for h_ in hnd], ncol=5)
+    legend_bottom(fig, handles=hnd, labels=[h_.get_label() for h_ in hnd], ncol=5 if lang == "en" else 3)
     ax._keep_y = True
     out(fig, lang, "shap_global", bottom=0.12, also_x=[ax])
     # 9 SHAP dependence of wind+solar d-2
-    fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    fig, ax = plt.subplots(figsize=(6.4, 1.5))
     xr, sr = XS[:, :, res_j], SH[:, :, res_j]
     day_h = np.zeros_like(xr, bool)
     day_h[:, 9:17] = True
@@ -1194,25 +1223,25 @@ for lang in ["en", "ro"]:
         lh.set_alpha(1)
     out(fig, lang, "shap_res", bottom=0.22, also_x=[ax])
     # 10 DNN permutation importance
-    fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    fig, ax = plt.subplots(figsize=(6.4, 1.7))
     bl = sorted(PI, key=PI.get)
     ax.barh(range(len(bl)), [PI[b] for b in bl], color=[PAL["RO"] if b.startswith("price") else (PAL["BG"] if b == "wind+solar" else ("#222222" if b == "load" else (PAL["HU"] if b == "fund" else "#9a9a9a"))) for b in bl], height=0.65)
     ax.set_yticks(range(len(bl)))
-    ax.set_yticklabels([BNAME[lang][b] for b in bl], fontsize=8.5)
+    ax.set_yticklabels([BNAME[lang][b] for b in bl], fontsize=9.5)
     ax.set_xlabel(T("increase in MAE when the block is shuffled, EUR/MWh", "creșterea MAE la permutarea blocului, EUR/MWh"), fontsize=9.5)
     ax._keep_y = True
     out(fig, lang, "perm_dnn", bottom=0.02, also_x=[ax])
     # 11 events by hour
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     ax.bar(h24 - 0.2, Y_SP.mean(0) * 100, width=0.4, color=PAL["c8"], label=T("spike: price above the 90th percentile of the last 12 months", "vîrf: preț peste percentila 90 a ultimelor 12 luni"))
     ax.bar(h24 + 0.2, Y_NG.mean(0) * 100, width=0.4, color=PAL["HU"], label=T("price $\\leq$ 0", "preț $\\leq$ 0"))
     ax.set_xticks(range(0, 24, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
-    ax.set_ylabel(T("% of test days", "% din zilele de test"))
-    legend_bottom(fig, ncol=1)
+    ax.set_ylabel(T("% of\ntest days", "% din zilele\nde test"), fontsize=10)
+    legend_bottom(fig, ncol=2)
     out(fig, lang, "events_hour", bottom=0.26)
     # 12 ROC curves
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.35), sharey=True)
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.85), sharey=True)
     for ax, Y_, CC, ttl in [(axs[0], Y_SP, CS, T("spikes", "vîrfuri")), (axs[1], Y_NG, CN, T("prices $\\leq$ 0", "prețuri $\\leq$ 0"))]:
         for k, c, ls, lb in [("xgb", PAL["BG"], "-", "XGBoost"), ("logit", PAL["c7"], "--", T("logistic regression", "regresie logistică")),
                              ("persist", "#9a9a9a", ":", T("persistence (last 7 days)", "persistență (ultimele 7 zile)")),
@@ -1222,42 +1251,46 @@ for lang in ["en", "ro"]:
         ax.plot([0, 1], [0, 1], color="#222222", lw=0.5)
         ax.set_title(ttl, fontsize=10)
         ax.set_xlabel(T("false alarm rate", "rata alarmelor false"), fontsize=9.5)
-    axs[0].set_ylabel(T("share of events\ncaught", "ponderea evenimentelor\nsemnalate"), fontsize=9.5)
+        ax.set_xticks([0, 0.25, 0.5, 0.75, 1])
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{v:g}".replace(".", "," if lang == "ro" else ".")))
+        ax.set_yticks([0, 0.5, 1])
+    axs[0].set_ylabel(T("share of events\ncaught", "evenimente\nsemnalate"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "roc", bottom=0.26, also_x=list(axs))
+    out(fig, lang, "roc", bottom=0.26)
     # 13 value of acting by threshold
-    fig, ax = plt.subplots(figsize=(6.4, 1.95))
-    ax.plot(CUTS, VCURVE, color=PAL["BG"], label=T("act when XGBoost probability > threshold", "reacție cînd probabilitatea XGBoost > prag"))
-    ax.axvline(C_ACT / LBAR, color=PAL["DE_LU"], ls="--", lw=1.0, label=T("cost-loss threshold C/L", "pragul cost-pierdere C/L"))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
+    ax.plot(CUTS, VCURVE, color=PAL["BG"], label=T("act if XGBoost probability > threshold", "reacție dacă probabilitatea XGBoost > prag"))
+    ax.axvline(C_ACT / LBAR, color=PAL["DE_LU"], ls="--", lw=1.0, label=T("threshold C/L", "pragul C/L"))
     ax.axvline(0.5, color="#9a9a9a", ls=":", lw=1.0, label=T("threshold 0.5", "pragul 0,5"))
     ax.set_xlim(0.1, 1.0)
     ax.set_ylim(min(0, VCURVE[CUTS >= 0.1].min()) - 3, VCURVE.max() * 1.25)
     ax.axhline(0, color="#222222", lw=0.5)
     ax.set_xlabel(T("action threshold (probability of a spike)", "pragul de reacție (probabilitatea unui vîrf)"))
-    ax.set_ylabel(T("value, thousand\nEUR per MW", "valoarea, mii\nEUR pe MW"), fontsize=9.5)
+    ax.set_ylabel(T("value\n(10$^3$ EUR/MW)", "valoare\n(10$^3$ EUR/MW)"), fontsize=10)
     legend_bottom(fig, ncol=3)
     out(fig, lang, "decision", bottom=0.22, also_x=[ax])
     # 14 data snooping
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.3))
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.65))
     for ax, V, Tt, best_, nm in [(axs[0], VAL_DNN, TEST_DNN, BEST_DNN, "DNN"), (axs[1], VAL_XGB, TEST_XGB, BEST_XGB, "XGBoost")]:
         ax.plot(V, Tt, "o", color="#9a9a9a", ms=4, label=T("one configuration", "o configurație"))
         ax.plot(V[best_], Tt[best_], "o", color=PAL["DE_LU"], ms=7, label=T("chosen on validation (honest)", "aleasă la validare (corect)"))
         jb = int(np.argmin(Tt))
-        ax.plot(V[jb], Tt[jb], "*", color=PAL["c8"], ms=10, label=T("best on the test year (snooping)", "cea mai bună pe anul de test (selecție abuzivă)"))
+        ax.plot(V[jb], Tt[jb], "*", color=PAL["c8"], ms=11, zorder=5, label=T("best on the test year (snooping)", "cea mai bună pe anul de test (selecție abuzivă)"))
         ax.axhline(LEAR_MAE, color=PAL["RO"], ls="--", lw=1.0, label=T("AW-LEAR, test year", "AW-LEAR, anul de test"))
+        ax.set_ylim(min(LEAR_MAE, Tt.min()) - 0.4, Tt.max() + 0.3)
         ax.set_title(nm, fontsize=10)
         ax.set_xlabel(T("MAE, validation year", "MAE, anul de validare"), fontsize=9.5)
     axs[0].set_ylabel(T("MAE, test year", "MAE, anul de test"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "snooping", bottom=0.27, also_x=list(axs))
     # 15 look-ahead pitfalls
-    fig, ax = plt.subplots(figsize=(6.4, 1.6))
+    fig, ax = plt.subplots(figsize=(6.4, 1.25))
     kk = [("honest", T("honest, monthly refits", "corect, reestimare lunară"), PAL["BG"]),
           ("shuffled", T("shuffled 5-fold validation", "5 subeșantioane amestecate"), PAL["c8"]),
           ("leak", T("+ load, RES of day d", "+ consum, RES din ziua d"), PAL["c8"])]
     ax.barh(range(3), [N["pit"][k] for k, _, _ in kk], color=[c for _, _, c in kk], height=0.6)
     ax.set_yticks(range(3))
-    ax.set_yticklabels([lb for _, lb, _ in kk], fontsize=8.5)
+    ax.set_yticklabels([lb for _, lb, _ in kk], fontsize=9.5)
     ax.invert_yaxis()
     ax.axvline(LEAR_MAE, color=PAL["RO"], ls="--", lw=0.9, label=T("AW-LEAR, honest", "AW-LEAR, evaluare corectă"))
     ax.set_xlim(20, max(N["pit"][k] for k, _, _ in kk) + 0.8)
@@ -1266,13 +1299,13 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=1)
     out(fig, lang, "pit_leak", bottom=0.2, also_x=[ax])
     # 15b retraining frequency and window
-    fig, ax = plt.subplots(figsize=(6.4, 1.8))
+    fig, ax = plt.subplots(figsize=(6.4, 1.5))
     kk2 = [("honest", T("monthly, all past days", "lunar, toate zilele anterioare")), ("quarterly", T("quarterly, all past days", "trimestrial, toate zilele anterioare")),
            ("once", T("once, before the test year", "o singură dată, înainte de anul de test")),
            ("roll730", T("monthly, last 730 days", "lunar, ultimele 730 de zile")), ("roll365", T("monthly, last 365 days", "lunar, ultimele 365 de zile"))]
     ax.barh(range(len(kk2)), [N["pit"][k] for k, _ in kk2], color=[PAL["BG"]] + [PAL["c7"]] * 4, height=0.6)
     ax.set_yticks(range(len(kk2)))
-    ax.set_yticklabels([lb for _, lb in kk2], fontsize=8.5)
+    ax.set_yticklabels([lb for _, lb in kk2], fontsize=9.5)
     ax.invert_yaxis()
     ax.axvline(LEAR_MAE, color=PAL["RO"], ls="--", lw=0.9, label="AW-LEAR")
     lo_, hi_ = min(N["pit"][k] for k, _ in kk2), max(N["pit"][k] for k, _ in kk2)
@@ -1285,23 +1318,23 @@ for lang in ["en", "ro"]:
     cw = slice(CWS.start, CWS.stop)
     nd = cw.stop - cw.start
     xs_ = pd.date_range(TDAYS[cw.start], periods=24 * nd, freq="h")
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.75), sharex=True, gridspec_kw={"height_ratios": [1.7, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.05), sharex=True, gridspec_kw={"height_ratios": [1.6, 1]})
     axs[0].plot(xs_, A[cw].ravel(), color="#222222", lw=1.4, label=T("actual price", "prețul realizat"))
     for k, ls in [("aw_lear", "-"), ("xgb", "--"), ("chr2", "-.")]:
         axs[0].plot(xs_, M[k][cw].ravel(), color=COL[k], ls=ls, lw=1.0, label=L(k))
     axs[0].plot(xs_, np.repeat(TH_T[cw], 24), color="#6b6b6b", lw=0.9, ls=":", label=T("spike threshold", "pragul de vîrf"))
     axs[0].set_ylabel("EUR/MWh")
-    axs[1].fill_between(xs_, 0, Y_SP[cw].ravel(), step="mid", color=PAL["c8"], alpha=0.18, lw=0, label=T("actual spike hour", "oră cu vîrf realizat"))
-    axs[1].plot(xs_, CS["xgb"][cw].ravel(), color=PAL["BG"], lw=1.1, label=T("spike probability, XGBoost", "probabilitatea vîrfului, XGBoost"))
+    axs[1].fill_between(xs_, 0, Y_SP[cw].ravel(), step="mid", color=PAL["c8"], alpha=0.18, lw=0, label=T("actual spike hour", "oră cu vîrf"))
+    axs[1].plot(xs_, CS["xgb"][cw].ravel(), color=PAL["BG"], lw=1.1, label=T("spike probability", "probabilitatea vîrfului"))
     axs[1].axhline(C_ACT / LBAR, color=PAL["DE_LU"], ls="--", lw=0.8, label="C/L")
     axs[1].set_ylim(0, 1)
-    axs[1].set_ylabel(T("probability", "probabilitate"), fontsize=9.5)
+    axs[1].set_ylabel(T("XGBoost\nprobability", "probabilitate\nXGBoost"), fontsize=9.5)
     axs[1].xaxis.set_major_locator(mdates.DayLocator())
     axs[1].xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[lang][mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
     legend_bottom(fig, ncol=4)
     out(fig, lang, "case_week", bottom=0.16)
     # 17 local explanation at the peak hour (EUR/MWh)
-    fig, ax = plt.subplots(figsize=(6.4, 2.3))
+    fig, ax = plt.subplots(figsize=(6.4, 1.95))
     top = list(ordr[:7])
     rest = phi_eur.sum() - phi_eur[top].sum()
     vals = [phi_eur[j] for j in top] + [rest]
@@ -1317,45 +1350,45 @@ for lang in ["en", "ro"]:
     for i_, v in enumerate(vals):
         ax.barh(i_, v, left=cum, color=PAL["c8"] if v > 0 else PAL["HU"], height=0.6)
         cum += v
-    ax.axvline(P0, color="#9a9a9a", ls=":", lw=1.0, label=T(f"average forecast of the model ({P0:.0f})", f"prognoza medie a modelului ({P0:.0f})"))
+    ax.axvline(P0, color="#9a9a9a", ls=":", lw=1.0, label=T(f"model average ({P0:.0f})", f"media modelului ({P0:.0f})"))
     ax.axvline(PH, color=PAL["BG"], ls="--", lw=1.0, label=T(f"XGBoost forecast ({PH:.0f})", f"prognoza XGBoost ({PH:.0f})"))
     ax.axvline(A[kd, kh], color="#222222", lw=1.2, label=T(f"actual price ({A[kd, kh]:.0f})", f"prețul realizat ({A[kd, kh]:.0f})"))
     ax.set_xlim(0, max(A[kd, kh], PH) * 1.04)
     ax.set_yticks(range(len(vals)))
-    ax.set_yticklabels(labs, fontsize=8)
+    ax.set_yticklabels(labs, fontsize=9)
     ax.invert_yaxis()
     ax.set_xlabel("EUR/MWh")
     legend_bottom(fig, ncol=3)
     ax._keep_y = True
     out(fig, lang, "shap_local", bottom=0.17, also_x=[ax])
     # 18 foundation models by hour
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 1.45))
     for k, ls, mk in [("naive", ":", "o"), ("bolt", "--", "s"), ("chr2", "-", "^"), ("aw_lear", "-", "o")]:
         ax.plot(h24, BYHOUR[k], color=COL[k], ls=ls, marker=mk, ms=3, label=L(k))
     ax.set_xticks(range(0, 24, 2))
     ax.set_xlabel(T("hour h (CET)", "ora h (CET)"))
-    ax.set_ylabel("MAE, EUR/MWh")
+    ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "foundation_hour", bottom=0.22)
 
 ped, prd = f"test year {d(TEST0)} to {d(END)}", f"anul de test {d(TEST0)} - {d(END)}"
-chart("split_ml", "ec", f"daily base price, {d(START)} to {d(END)}, CET delivery days", f"preț zilnic de bază, {d(START)} - {d(END)}, zile de livrare CET")
-chart("search", "ecf", f"validation year {d(VAL0)} to {d(VDAYS[-1])}; {len(DNN_SPACE)} configurations per model, quarterly refits",
-      f"anul de validare {d(VAL0)} - {d(VDAYS[-1])}; {len(DNN_SPACE)} de configurații pe model, reestimare trimestrială")
+chart("split_ml", "ec", f"daily base price, {d(START)} to {d(END)}", f"preț zilnic de bază, {d(START)} - {d(END)}")
+chart("search", "ecf", f"validation year {d(VAL0)} to {d(VDAYS[-1])}, quarterly refits",
+      f"anul de validare {d(VAL0)} - {d(VDAYS[-1])}, reestimare trimestrială")
 chart("learning_curve", "ecf", f"chosen DNN, refit for {MONTHS_T[-1]}, seed 1", f"rețeaua DNN aleasă, reestimarea pentru {MONTHS_T[-1]}, inițializarea 1")
 chart("monthly_ml", "ecf", ped, prd)
 chart("dm_matrix", "ecf", f"{ped}, {len(TDAYS)} days; one-sided p-values", f"{prd}, {len(TDAYS)} de zile; valori p unilaterale")
 chart("combo_weight", "ecf", f"{ped}; illustration, the weight is not chosen on the test year", f"{prd}; ilustrare, ponderea nu se alege pe anul de test")
-chart("cost_gain", "ecf", f"{ped}; time measured on one core of the author's computer", f"{prd}; timp măsurat pe un nucleu al calculatorului autorului")
-chart("shap_global", "ecf", f"{ped}, {A.size} hours; XGBoost refitted monthly", f"{prd}, {A.size} de ore; XGBoost reestimat lunar")
+chart("cost_gain", "ecf", f"{ped}; one processor core", f"{prd}; un nucleu de procesor")
+chart("shap_global", "ecf", f"{ped}, {A.size} hours", f"{prd}, {A.size} de ore")
 chart("shap_res", "ecf", f"{ped}, {A.size} hours", f"{prd}, {A.size} de ore")
-chart("perm_dnn", "ecf", f"{ped}; 5 random permutations of the test days", f"{prd}; 5 permutări aleatoare ale zilelor de test")
+chart("perm_dnn", "ecf", ped, prd)
 chart("events_hour", "ec", ped, prd)
 chart("roc", "ecf", f"{ped}, {A.size} hours", f"{prd}, {A.size} de ore")
-chart("decision", "ecf", f"{ped}; 1 MW of flexible load, C = 30 EUR/MWh (assumed)", f"{prd}; 1 MW de consum flexibil, C = 30 EUR/MWh (ipoteză)")
-chart("snooping", "ecf", f"validation year and {ped}; one seed per configuration", f"anul de validare și {prd}; o inițializare pe configurație")
-chart("pit_leak", "ecf", f"{ped}; XGBoost, chosen configuration", f"{prd}; XGBoost, configurația aleasă")
-chart("pit_retrain", "ecf", f"{ped}; XGBoost, chosen configuration", f"{prd}; XGBoost, configurația aleasă")
+chart("decision", "ecf", f"{ped}; 1 MW of flexible load", f"{prd}; 1 MW de consum flexibil")
+chart("snooping", "ecf", f"validation and {ped}", f"anul de validare și {prd}")
+chart("pit_leak", "ecf", ped, prd)
+chart("pit_retrain", "ecf", ped, prd)
 chart("case_week", "ecf", f"{N['case']['week_start']} to {N['case']['week_end']}, hourly", f"{N['case']['week_start']} - {N['case']['week_end']}, date orare")
 chart("shap_local", "ecf", f"{N['case']['day']}, hour {N['case']['hour']}:00 CET; contributions rescaled to EUR/MWh (Appendix C)",
       f"{N['case']['day']}, ora {N['case']['hour']}:00 CET; contribuții exprimate în EUR/MWh (anexa C)")

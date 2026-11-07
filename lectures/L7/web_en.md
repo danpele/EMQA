@@ -41,7 +41,7 @@ The difference between models is how much flexibility they have. LEAR has at mos
 
 @practice ask a vendor how many parameters the model has per day of history, and on which days its error was measured.
 
-## Three samples in time order: training, validation, test {h=ccbe6249}
+## Three samples in time order: training, validation, test {h=a1b5f82c}
 
 The chart shows how the history is cut. On the validation year, 25 settings per model are compared, with the models refitted every 3 months; the setting with the lowest MAE is frozen before the test year starts. On the test year, the models are refitted at the start of each month on all earlier days.
 
@@ -100,7 +100,7 @@ To decide when to stop, the network is trained on the first 85% of the training 
 
 @practice the stopping rule uses only past days: it is part of the model, so it is checked like the rest.
 
-## Early stopping: stop when the error on recent days stops falling {h=4053c1ac}
+## Early stopping: stop when the error on recent days stops falling {h=59de281b}
 
 The chart shows the learning curve of the refit for Oct 2026. The error on the training days keeps falling, but the error on the last 15% of days reaches its lowest value at epoch 51, at 24.50 EUR/MWh, and training stops at epoch 76.
 
@@ -111,7 +111,7 @@ After that point the network fits the past better and the recent days worse: it 
 @chart learning_curve
 Training error and error on the last 15% of training days by epoch, chosen DNN, refit for Oct 2026, seed 1; the best epoch is marked.
 
-## Random search cuts the validation error of both models {h=b11ba35b}
+## Random search cuts the validation error of both models {h=d4856e2c}
 
 The chart ranks the 25 settings tried for each model by their MAE on the validation year. For the DNN, the best setting reaches 22.59 EUR/MWh, while the setting of Lecture 2 has 24.24 and ranks 14 of 25. For eXtreme Gradient Boosting (XGBoost), the best setting reaches 22.76 against 23.83 for the Lecture 2 setting, which also ranks 14.
 
@@ -170,7 +170,7 @@ On the test year, with prices only and no fundamentals, Chronos-2 has MAE 20.82 
 
 @practice test a foundation model before building your own network: it is cheap, and here it was the most accurate single model.
 
-## Chronos-2 beats AW-LEAR in every hour of the day {h=1d3d7d5f}
+## Chronos-2 beats AW-LEAR in every hour of the day {h=7f275791}
 
 The chart compares, hour by hour, the MAE of the two Chronos models with that of AW-LEAR on the test year. Chronos-2 is below AW-LEAR in every hour. Chronos-Bolt, smaller and older, is level with AW-LEAR (DM $p$ = 0.220).
 
@@ -180,6 +180,30 @@ The quantiles of @eq:chronos also give a forecast band. The 10%–90% band of Ch
 
 @chart foundation_hour
 MAE by hour of the day on the test year for Chronos-2, Chronos-Bolt and AW-LEAR.
+
+## AIDA 2026 keynote: deep networks beat LEAR, zero-shot models compete {h=b7d6fc53}
+
+At the AIDA 2026 conference (Bucharest University of Economic Studies, June 2026), Rafał Weron's keynote ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf)) retraced how electricity price models evolved, from ARX models and averaging across calibration windows to LEAR and then to deep and interpretable neural networks. The findings and numbers below are those printed on the conference slides.
+
+- **Deep networks against LEAR.** In the open benchmark that accompanies the LEAR and DNN codes of the epftoolbox library, the DNN had a lower rMAE than LEAR in all five markets shown ([Lago et al., 2021](https://doi.org/10.1016/j.apenergy.2021.116983)).
+- **Interpretable networks.** NBEATSx splits the forecast into trend, seasonality and exogenous blocks, so that a deep network can be read like a decomposition ([Olivares et al., 2023](https://doi.org/10.1016/j.ijforecast.2022.03.001)).
+- **Zero-shot models.** Pretrained models used without retraining were compared with LEAR and distributional DNN models on 24 hourly day-ahead prices, with a 4-year rolling training window and a test from 2021 to 2025. The RMSE in 2022 was 45.71 for LEAR with conformal prediction, 41.07 for Chronos 2 and 34.39 for TabPFN v3.0 ts; in 2025 it was 20.38, 20.58 and 17.66. A version of TabPFN had the lowest RMSE in every year, but rankings move: TabPFN v2.0 had an RMSE of 68.85 in 2022 and 17.52 in 2025.
+
+Our own test year points the same way: Chronos-2, used zero-shot, is the most accurate single model (MAE 20.82 EUR/MWh against 22.53 for AW-LEAR). The conference results add the warning that one year is not enough to rank models.
+
+@practice keep LEAR as the benchmark and test zero-shot models next to it, over several years.
+
+## AIDA 2026: four generations of models on 27 European price series {h=eb073ceb}
+
+At the same conference, Alexandru-Victor Andrei ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/andrei_ai4efin_benchmarking.pdf)) presented a comparison of four generations of time series forecasting methods on electricity prices ([Andrei, Velev, Toma, Pele & Lessmann, 2024](https://arxiv.org/abs/2411.03372)). The numbers below are those printed on the slides.
+
+- **Four generations.** Eleven models were compared: econometric models such as the autoregressive integrated moving average (ARIMA); deep learning models (DLinear, NLinear, TSMixer); transformers (Autoformer, Basisformer, Informer, PatchTST, Quatformer); and pretrained models adapted from large language models (LLM), Chronos and TimesFM, used zero-shot.
+- **Data and walk-forward validation.** Wholesale electricity prices for 27 European Union (EU) countries come from the Ember platform (originally ENTSO-E). Each model reads 96 time steps and forecasts the next 96; each training window has 2000 hours (83 days) and each test window 500 hours (20 days), and the windows roll forward. Models are ranked by the score (100·SMAPE + RMSE)/2, where SMAPE is the symmetric mean absolute percentage error.
+- **Results.** PatchTST ranks first or second in all 27 countries. For Romania the ranks are PatchTST 1, TimesFM 2, Chronos 8 and ARIMA 9; for Germany PatchTST 1, TimesFM 5 and Chronos 10. Transformers (PatchTST) and foundation models (TimesFM) lead, but the gains are model-specific, not uniform across the fourth generation.
+
+In this lecture the newer Chronos-2 (2025), used zero-shot on Romanian day-ahead prices, is the most accurate single model (MAE 20.82 EUR/MWh).
+
+@practice compare model generations with walk-forward validation on several markets before choosing one.
 
 ## @end
 
@@ -212,7 +236,7 @@ The table brings together every model on the test year. The RMSE penalises large
 
 Three lessons stand out. Tuned, the DNN and XGBoost are better than their Lecture 2 versions but, alone, still slightly worse than AW-LEAR. Chronos-2, with no training, is the best single model, 7.6% below AW-LEAR. And every combination that mixes machine learning with the statistical models beats AW-LEAR significantly.
 
-## DM tests: combinations with ML beat AW-LEAR significantly {h=61fd66f2}
+## DM tests: combinations with ML beat AW-LEAR significantly {h=e864ceee}
 
 The chart is a matrix of one-sided DM tests over the 365 days of the test year: each cell gives the p-value of the test that the model in the row is more accurate than the model in the column. Small p-values mark wins that are unlikely to be due to chance.
 
@@ -221,7 +245,7 @@ The combination AW-LEAR + DNN + XGBoost beats AW-LEAR ($p$ = 0.001), although ne
 @chart dm_matrix
 Matrix of one-sided DM p-values between all models on the test year (row model more accurate than column model).
 
-## Averaging works because the errors are not identical {h=45b3c185}
+## Averaging works because the errors are not identical {h=cbefd732}
 
 Why does an average of two models beat both of them? For two forecast errors $e_1$ and $e_2$ with standard deviations $\sigma_1$, $\sigma_2$ and correlation $\rho$,
 
@@ -236,7 +260,7 @@ The chart shows the MAE of the combination as a function of the weight given to 
 @chart combo_weight
 MAE on the test year of the combination of AW-LEAR with a machine learning model, as a function of the weight of the latter; equal weights and the best weight in hindsight are marked.
 
-## Month by month, the combination beats AW-LEAR in 10 of 12 months {h=e306fb4d}
+## Month by month, the combination beats AW-LEAR in 10 of 12 months {h=c26b6993}
 
 An annual average can hide months in which a model is much worse. The chart shows the MAE of each model in each month of the test year. Alone, XGBoost and the DNN each beat AW-LEAR in only 3 months; averaged with it, in 10.
 
@@ -247,7 +271,7 @@ All models err more in the same months, January, June and October: the hard days
 @chart monthly_ml
 Monthly MAE on the test year of AW-LEAR, the DNN, XGBoost and their combination.
 
-## Compute cost: daily LEAR is the expensive model, ML costs minutes {h=dc87a8e5}
+## Compute cost: daily LEAR is the expensive model, ML costs minutes {h=42de9683}
 
 Accuracy is only half of a model choice; the other half is cost. Over the test year, on one core, AW-LEAR takes 87.6 minutes, because it is refitted for 365 days $\times$ 3 windows $\times$ 24 hours. XGBoost takes 2.6 minutes, the DNN 2.7 and Chronos-2 only 0.3, since it is never trained.
 
@@ -280,7 +304,7 @@ Shapley values are the only fair split in the game-theory sense, and @eq:additiv
 
 @practice ask for the explanation of each alarm, not only for a global ranking.
 
-## What drives the trees: yesterday's price at the same hour {h=0afaff34}
+## What drives the trees: yesterday's price at the same hour {h=684a77ba}
 
 The chart ranks the inputs of XGBoost by their mean absolute SHAP value $|\phi|$ over the test year. The top inputs are the price of $d-1$ at the same hour, with 32.9% of the mean $|\phi|$, the price of $d-7$ at the same hour, with 15.6%, and the day of week, with 9.3%.
 
@@ -291,7 +315,7 @@ Load has 8.5% and wind and solar 2.5%. Their small shares do not mean that these
 @chart shap_global
 Mean absolute SHAP value of each input of XGBoost, as a share of the total, test year, 8,760 hours.
 
-## Wind and solar lower the price only in the hours when they are large {h=0c55fdce}
+## Wind and solar lower the price only in the hours when they are large {h=1e8ab074}
 
 Each point of the chart is one test hour: on the horizontal axis the wind and solar generation of $d-2$ at that hour, on the vertical axis its SHAP contribution to the forecast. The more wind and solar, the more negative the contribution (correlation −0.64).
 
@@ -302,7 +326,7 @@ The relation is not a straight line. The effect appears above about 2 gigawatts 
 @chart shap_res
 SHAP contribution of wind and solar generation against its level on $d-2$, one point per test hour.
 
-## The neural network relies even more on yesterday's prices {h=a6b1fb87}
+## The neural network relies even more on yesterday's prices {h=971a1226}
 
 Shapley values are cheap for trees but expensive for a network. A simpler measure works for any model: permutation importance (Breiman, 2001),
 
@@ -317,6 +341,18 @@ For the DNN, shuffling the prices of $d-1$ raises the MAE by 22.82 EUR/MWh, the 
 @chart perm_dnn
 Permutation importance of the input blocks of the DNN on the test year, increase in MAE in EUR/MWh, 5 permutations.
 
+## Energy finance uses machine learning widely but rarely explains it {h=4ab304bb}
+
+At the same conference, Roxana Clodnitchi ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf)) presented a systematic review of artificial intelligence (AI) in energy finance ([Anagnoste et al., 2025](https://doi.org/10.1016/j.esr.2025.101833)). About 700 Web of Science articles were screened and 232 peer-reviewed articles from 2020–2025 were kept and mapped on six pillars of energy finance. The numbers below are those printed on the slides.
+
+- **Where AI is used.** The share of papers using AI or machine learning is 100% for pricing mechanisms and for energy derivatives, 97.5% for energy and financial markets, 93.0% for risk management, 60.4% for green finance and 0% for the corporate finance of energy firms, which relies on panel econometrics.
+- **Which methods.** Neural networks dominate: 88.2% of the derivatives papers and 72.1% of the risk-management papers use them.
+- **What is missing.** Explainable AI appears in 19.6% of the derivatives papers and in 0–5% of the papers of the other pillars; the review proposes explainable AI and causal machine learning as the next step, for regulators and for policy evaluation.
+
+The SHAP values and the permutation importance of this section are exactly the kind of explanation that the review finds rare.
+
+@practice ask for the explanation together with the forecast: regulators and boards will ask for it.
+
 ## @end
 
 Both machine learning models rely mostly on yesterday's prices at the same hour. Wind and solar matter only above a threshold, which a linear model cannot capture.
@@ -325,7 +361,7 @@ Both machine learning models rely mostly on yesterday's prices at the same hour.
 
 For many users the extreme hours matter more than the average error: a battery or a flexible consumer earns its money in the hours of spikes and negative prices. This section defines these events, builds classifiers that give their probability, turns probabilities into decisions with a cost–loss rule and studies the highest price of the test year.
 
-## Spikes come in the evening, negative prices at midday {h=55c7ed2f}
+## Spikes come in the evening, negative prices at midday {h=9672ec53}
 
 A spike is an hour with a price above $\theta$, the 90th percentile of the hourly prices of the 12 months before the delivery month. Because the threshold follows the market, it moves over the test year, from 166.8 to 202.4 EUR/MWh. With this definition, 22.1% of test hours are spikes, far more than the one in ten that the definition would give in a stable market; they are most frequent at 19:00, where 57.0% of days have a spike.
 
@@ -365,7 +401,7 @@ The surprise is in the last row: the AW-LEAR price forecast, compared with the t
 
 @practice buy a spike-alert service only if it beats the spike signal already hidden in your price forecast.
 
-## Persistence detects spikes, but not negative prices {h=0a5290aa}
+## Persistence detects spikes, but not negative prices {h=979457de}
 
 The chart draws the receiver operating characteristic (ROC) curves: for every alert threshold, the share of events caught against the share of false alarms. For spikes, the AUC ranges from 0.918 for persistence to 0.959 for AW-LEAR. Even persistence does well, since the evening spike repeats day after day.
 
@@ -374,7 +410,7 @@ For negative prices the picture changes: persistence has AUC 0.847, against 0.98
 @chart roc
 ROC curves of the classifiers and benchmarks on the test year, for spikes (left) and prices at or below zero (right), 8,760 hours.
 
-## Cost–loss rule: act when the spike probability exceeds C/L {h=25124951}
+## Cost–loss rule: act when the spike probability exceeds C/L {h=e5dae4df}
 
 A probability becomes useful only when it is turned into a decision. Take 1 MW of flexible load that can move consumption out of an alerted hour. Acting costs $C$; a missed spike costs on average $\bar L$. The classic cost–loss rule (Murphy, 1977) is to act when
 
@@ -389,7 +425,7 @@ The chart shows the value of the rule over the test year as a function of the th
 @chart decision
 Value per MW and year of acting on spike alerts as a function of the probability threshold, with C/L, persistence and perfect foresight marked; 1 MW of flexible load, C = 30 EUR/MWh.
 
-## Case study, 30 Jun 2026: every model saw the spike, none its size {h=03608bc8}
+## Case study, 30 Jun 2026: every model saw the spike, none its size {h=890621bc}
 
 The case study looks at the week of 27 Jun 2026 – 3 Jul 2026. On 30 Jun 2026, at 20:00 CET, the price reached 954.59 EUR/MWh, the highest price of the test year. All models expected a high price: AW-LEAR forecast 520, XGBoost 499, the DNN 614 and Chronos-2 607 EUR/MWh, and the spike probability was 0.992. None came close to the actual level.
 
@@ -400,7 +436,7 @@ Over the whole week there were 47 spike hours; the rule at C/L raised 45 alerts,
 @chart case_week
 Hourly prices and forecasts of AW-LEAR, XGBoost, the DNN and Chronos-2, 27 Jun – 3 Jul 2026, with alerted hours marked.
 
-## Case study: the trees followed the extreme evening of the day before {h=f8419d72}
+## Case study: the trees followed the extreme evening of the day before {h=5e5274a5}
 
 The chart breaks the XGBoost forecast for 30 Jun 2026, 20:00 CET, into SHAP contributions in EUR/MWh (Appendix C explains the conversion from the asinh scale). The forecast rises from 125 EUR/MWh, the model average, to 499. The price of $d-1$ at the same hour adds 213, and the price of $d-7$ adds 64: the trees followed the extreme evening of the day before.
 
@@ -427,7 +463,7 @@ Spikes come in the evening and negative prices at midday. A good price forecast 
 
 Most claims of large gains from machine learning come from evaluation mistakes rather than from better models. This section reproduces three such mistakes on our data, look-ahead, data snooping and frozen models, measures how much each flatters the result, and ends with a self-check for leakage.
 
-## Look-ahead: two invalid evaluations flatter XGBoost {h=72968893}
+## Look-ahead: two invalid evaluations flatter XGBoost {h=374996c3}
 
 The chart compares the honest MAE of XGBoost, 23.26 EUR/MWh, with two invalid evaluations. The first is shuffled 5-fold cross-validation: the days are shuffled before being split, so future days end up in the training sample. The MAE drops to 22.01, 5.4% better, on paper only.
 
@@ -438,18 +474,36 @@ The second uses the load and wind and solar generation of day $d$ as inputs, lab
 @chart pit_leak
 MAE of XGBoost on the test year under the honest walk-forward evaluation, under shuffled 5-fold cross-validation and with same-day load and RES as inputs.
 
-## Data snooping: choosing on the test year fakes a win over LEAR {h=de1b154e}
+## Data snooping: choosing on the test year fakes a win over LEAR {h=d5495c86}
 
 The honest DNN, chosen on validation and run with 1 seed, has MAE 23.34 EUR/MWh on the test year. If instead we pick the best of the 25 settings directly on the test year, we get 22.52, just below AW-LEAR (22.53): an apparent victory over the statistical benchmark, created only by choosing on the data used for evaluation (White, 2000).
 
-The chart plots the validation rank of each setting against its test rank. The ranks agree, with Spearman correlations of 0.86 for the DNN and 0.94 for XGBoost: validation works, but it is not perfect, and the gap is exactly what snooping exploits.
+The chart plots the validation MAE of each setting against its test MAE. The rankings agree, with Spearman correlations of 0.86 for the DNN and 0.94 for XGBoost: validation works, but it is not perfect, and the gap is exactly what snooping exploits.
 
 @practice ask how many models were tried before the one presented: the more trials, the more the best one flatters.
 
 @chart snooping
-Validation rank against test-year MAE of the 25 settings of each model, one seed per configuration, with AW-LEAR marked.
+Validation-year MAE against test-year MAE of the 25 settings of each model, one seed per configuration, with AW-LEAR marked.
 
-## Retraining: a model frozen for a year loses 4.2% {h=d2cf0111}
+## The best of many models must be tested against the benchmark {h=180abe45}
+
+Choosing the best of many models on the same data is a multiple-testing problem. With $m$ independent tests at the 5% level, the probability of at least one false win is $1-0.95^m$: 0.401 for $m=10$ and 0.994 for $m=100$. Chung-Ming Kuan's keynote at AIDA 2026 ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf)) presented the tests that control this risk; the content below follows the conference slides.
+
+White's Reality Check (RC) compares every model with the benchmark at once,
+
+$$ \mathrm{RC}_n=\max_{k=1,\dots,m}\sqrt{n}\,\bar d_k,\qquad \bar d_k=\frac1n\sum_{t=1}^{n}d_{k,t} $$
+
+where $d_{k,t}$ is the loss of the benchmark minus the loss of model $k$ on day $t$, and the null hypothesis $E(d_{k,t})\le 0$ for every $k$ says that no model beats the benchmark. The critical value comes from a bootstrap of the whole vector $(d_{1,t},\dots,d_{m,t})$, which keeps the correlation between the models ([White, 2000](https://doi.org/10.1111/1468-0262.00152)).
+
+- The Reality Check is conservative: poor models added to the set reduce its power ([Hansen, 2005](https://doi.org/10.1198/073500105000000063)).
+- The superior predictive ability (SPA) test of Hansen (2005) recentres the poor models and is more powerful.
+- Stepwise versions, Step-RC ([Romano & Wolf, 2005](https://doi.org/10.1111/j.1468-0262.2005.00615.x)) and Step-SPA ([Hsu, Hsu & Kuan, 2010](https://doi.org/10.1016/j.jempfin.2010.01.001)), name the models that beat the benchmark while keeping the familywise error rate (FWER) at the chosen level.
+
+On our data, the best of the 25 DNN settings on the test year is just below AW-LEAR: this is exactly the selection that the Reality Check and the SPA test correct for.
+
+@practice when shown the best of many models, ask for an RC or SPA p-value against your benchmark.
+
+## Retraining: a model frozen for a year loses 4.2% {h=93f15bb2}
 
 Markets change, so a model must be refitted. The chart compares the monthly-refitted XGBoost with a version fitted once, before the test year, and with a version fitted on a short rolling window. The frozen model has MAE 24.25, 4.2% worse. The loss grows with time: +0.15 EUR/MWh in the first 3 months and +3.70 in the last 3.
 

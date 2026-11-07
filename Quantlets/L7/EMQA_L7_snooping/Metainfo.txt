@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_snooping'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Test-year MAE against validation-year MAE of the 25 configurations of the DNN and of XGBoost (one seed each), with the configuration chosen honestly on the validation year, the one that would be chosen on the test year (data snooping) and AW-LEAR. Romanian day-ahead prices, validation year 2024-11-01 to 2025-10-31 and test year 2025-11-01 to 2026-10-31. Data: validation year and test year 2025-11-01 to 2026-10-31; one seed per configuration. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Test-year MAE against validation-year MAE of the 25 configurations of the DNN and of XGBoost (one seed each), with the configuration chosen honestly on the validation year, the one that would be chosen on the test year (data snooping) and AW-LEAR. Romanian day-ahead prices, validation year 2024-11-01 to 2025-10-31 and test year 2025-11-01 to 2026-10-31. Data: validation and test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'data snooping, model selection, overfitting, validation, test set, neural network, XGBoost, LEAR, Spearman correlation'
 

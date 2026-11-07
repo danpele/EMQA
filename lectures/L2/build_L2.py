@@ -54,6 +54,8 @@ ABBR = {
     "AW-LEAR": ("LEAR averaged across calibration windows", "LEAR mediat pe ferestre de calibrare"),
     "CET": ("Central European Time", "ora Europei Centrale"),
     "CP": ("conformal prediction", "predicție conformală"),
+    "CRPS": ("continuous ranked probability score", "scorul de probabilitate ordonat continuu (continuous ranked probability score)"),
+    "CVaR": ("conditional value at risk", "valoarea la risc condiționată (conditional value at risk)"),
     "DE-LU": ("Germany--Luxembourg bidding zone", "zona de ofertare Germania--Luxemburg"),
     "DM": ("Diebold--Mariano test", "testul Diebold--Mariano"),
     "DNN": ("deep neural network", "rețea neuronală profundă"),
@@ -104,8 +106,8 @@ ABBR = {
 }
 UNITS = {"EUR", "MW", "MWh", "TWh"}
 # journal codes inside citations only; everything else must be in the Abbreviations list and spelled out
-IGNORE = {"EMQA", "IJF", "ENEECO", "APEN", "JASA", "TPWRS", "TSTE", "IEEE", "JBES", "RSER", "JRSS", "PICBE", "RJEF",
-          "IIF", "SPOT", "CO", "II", "NEMO"}
+IGNORE = {"AI", "ReP", "EMQA", "IJF", "ENEECO", "APEN", "JASA", "TPWRS", "TSTE", "IEEE", "JBES", "RSER", "JRSS", "PICBE", "RJEF",
+          "IIF", "SPOT", "CO", "II", "NEMO", "AIDA", "TabPFN", "UK", "SICI", "AID-JAE"}
 
 
 def build(lang, H=None):
@@ -311,17 +313,16 @@ def build(lang, H=None):
     D.chart(t("Calibration, burn-in, test: time runs one way, data are never shuffled",
               "Datele se împart cronologic în calibrare, rodaj și test, fără amestecare"), "split_timeline", [
         t("Models re-estimated every day on the window ending at $d-1$; no random K-fold, no random validation split.",
-          "Calibrare = estimarea modelului, rodaj = prognoze folosite doar pentru intervale, test = măsurarea erorii."),
-        t("", "Reestimare zilnică pe fereastra care se încheie în ziua $d-1$, fără validare încrucișată aleatoare (K-fold).")],
+          "Calibrare = estimarea modelului, rodaj = prognoze folosite doar pentru intervale, test = măsurarea erorii; reestimare zilnică pe fereastra încheiată în $d-1$, fără K-fold aleator.")],
         height=t("0.52\\textheight", "0.50\\textheight"), job=t("ask any vendor for the rolling backtest, not an in-sample fit.",
-                                         "cereți furnizorului de prognoze o testare retrospectivă (backtest) cu fereastră glisantă, nu ajustarea pe datele de estimare."),
+                                         "cereți furnizorului o testare retrospectivă (backtest) pe fereastră glisantă, nu ajustarea pe datele de estimare."),
         tryit=NB + " \\S1", cite=CITE_W)
 
     D.figframe(t("Older information, larger error, except at the weekly lag", "Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă"),
                None, None, "horizon_naive", [
                    t("Forecast $\\hat P_{d,h}=P_{d-k,h}$; MAE @{horizon.1|.2f} EUR/MWh for $k=1$, @{horizon.2|.2f} for $k=2$, back to @{horizon.7|.2f} for $k=7$ (same weekday).",
-                     "Cea mai simplă prognoză: $\\hat P_{d,h}=P_{d-k,h}$, prețul aceleiași ore de acum $k$ zile; "
-                     "MAE @{horizon.1|.2f} EUR/MWh pentru $k=1$ (ieri), @{horizon.2|.2f} pentru $k=2$, doar @{horizon.7|.2f} pentru $k=7$ (aceeași zi a săptămînii)")],
+                     "Prognoza $\\hat P_{d,h}=P_{d-k,h}$ (prețul aceleiași ore de acum $k$ zile); "
+                     "MAE @{horizon.1|.2f} EUR/MWh pentru $k=1$, @{horizon.2|.2f} pentru $k=2$, doar @{horizon.7|.2f} pentru $k=7$ (aceeași zi a săptămînii)")],
                job=t("the day-ahead horizon is 12 to 36 hours; the freshest price you hold at 12:00 is that of $d-1$.",
                      "prognoza de la 12:00 din ziua $d-1$ privește următoarele 12--36 de ore; cel mai recent preț cunoscut este cel al zilei $d-1$."),
                tryit=NB + " \\S2", height="0.62\\textheight", cite=t("(own computation, " + TEST + ")", "(calcule proprii, " + TEST + ")"))
@@ -724,16 +725,16 @@ def build(lang, H=None):
     D.chart(t("A week of QRA intervals in Romania: wide in the evening, narrow at night", "O săptămînă de intervale QRA în România: largi seara, înguste noaptea"),
             "qra_week", [
                 t("Week @{weeks.prob|date} -- @{weeks.prob_end|date}; the band widens where the evening price is uncertain and narrows in the calm night hours.",
-                  "Săptămîna @{weeks.prob|date} -- @{weeks.prob_end|date}; intervalul se lărgește seara, cînd prețul este incert, și se îngustează noaptea, cînd prețul este stabil."),
+                  "Săptămîna @{weeks.prob|date} -- @{weeks.prob_end|date}; intervalul este larg seara, cînd prețul este incert, și îngust noaptea."),
                 t("The QRA median has MAE @{prob.mae_median_qra|.2f} EUR/MWh, as good as the best point forecast.",
                   "Mediana QRA are MAE @{prob.mae_median_qra|.2f} EUR/MWh, la fel de precisă ca cea mai bună prognoză punctuală.")],
             height="0.52\\textheight", job=t("bid the 50\\% band for volumes you must buy, the tails for what you can shift.",
-                                             "pentru volumele pe care trebuie să le cumpărați, ofertați în intervalul de 50\\%; pentru cele pe care le puteți muta în altă oră, folosiți cozile."),
+                                             "ofertați în intervalul de 50\\% volumele pe care trebuie să le cumpărați, iar în cozi pe cele pe care le puteți muta."),
             tryit=NB + " \\S7", cite="(Nowotarski \\& Weron, 2015, Comput.\\ Stat.)")
 
     D.chart(t("All three methods are too narrow in the tails", "Toate cele trei metode subestimează cozile distribuției prețului"), "prob_rel", [
-        t("Calibrated = $\\tau$\\% of prices below the $\\tau$-quantile (line 0); above the line on the left and below on the right = tails too narrow.",
-          "Calibrare perfectă = exact $\\tau$\\% din prețuri sub cuantila de nivel $\\tau$ (linia 0); peste linie în stînga și sub linie în dreapta = cozi prea înguste."),
+        t("Coverage error = share of prices below the $\\tau$-quantile minus $\\tau$ (0 = calibrated); above 0 on the left and below 0 on the right = tails too narrow.",
+          "Eroarea de acoperire = ponderea prețurilor sub cuantila de nivel $\\tau$ minus $\\tau$ (0 = calibrare perfectă); peste 0 în stînga și sub 0 în dreapta = cozi prea înguste."),
         t("Kupiec statistic for the 90\\% interval: QRA @{prob.qra.kupiec|.1f}, CP @{prob.cp.kupiec|.1f}, HS @{prob.hs.kupiec|.1f} (5\\% critical value 3.84).".replace("3.84", "3{,}84" if ro else "3.84"),
           "Statistica Kupiec pentru intervalul de 90\\%: QRA @{prob.qra.kupiec|.1f}, CP @{prob.cp.kupiec|.1f}, HS @{prob.hs.kupiec|.1f} (valoarea critică la 5\\% este 3{,}84).")],
         height="0.50\\textheight", job=t("widen the tails before using quantiles for collateral (Lecture 4).",
@@ -813,7 +814,7 @@ def build(lang, H=None):
         tryit=NB + " \\S9", cite=t("(own computation, " + TEST + ")", "(calcule proprii, " + TEST + ")"))
 
     D.subsection(t("(b) A stress week", "(b) O săptămînă de criză"))
-    D.chart(t("Case study (b): the stress week of @{weeks.stress|date}", "Studiul de caz (b): în săptămîna de criză (@{weeks.stress|date}) modelele întîrzie o zi"), "stress_week", [
+    D.chart(t("Case study (b): the stress week of @{weeks.stress|date}", "Studiul de caz (b): în săptămîna de criză, modelele întîrzie o zi"), "stress_week", [
         t("Mean @{weeks.stress_mean|.2f}, peak @{weeks.stress_max|.2f} EUR/MWh; MAE naive @{weeks.stress_mae.naive|.2f}, AW-LEAR @{weeks.stress_mae.aw_lear|.2f}, GBM @{weeks.stress_mae.gbm|.2f}, ensemble @{weeks.stress_mae.ens_all|.2f}.",
           "Prețul mediu @{weeks.stress_mean|.2f}, maximul @{weeks.stress_max|.2f} EUR/MWh; MAE: modelul naiv @{weeks.stress_mae.naive|.2f}, AW-LEAR @{weeks.stress_mae.aw_lear|.2f}, GBM @{weeks.stress_mae.gbm|.2f}, ansamblul @{weeks.stress_mae.ens_all|.2f}.")],
         height="0.50\\textheight", job=t("every model lags a jump in level by a day, so hedge the evening hours.",
@@ -826,7 +827,7 @@ def build(lang, H=None):
                 t("The market time unit (MTU) is 15 minutes; forecast = hourly AW-LEAR + the mean intra-hour shape of the 28 previous days.",
                   "Intervalul de tranzacționare (MTU) are 15 minute; prognoza = AW-LEAR orar + profilul intraorar mediu din ultimele 28 de zile."),
                 t("@{mtu15.n_days} test days without DST, quarter-hour MAE @{mtu15.mae_flat|.2f} flat vs @{mtu15.mae_shaped|.2f} EUR/MWh shaped.",
-                  "@{mtu15.n_days} " + de("mtu15.n_days") + "zile fără schimbarea orei; MAE pe sfert de oră: @{mtu15.mae_flat|.2f} constant în oră, @{mtu15.mae_shaped|.2f} EUR/MWh cu profil.")],
+                  "MAE pe sfert de oră în @{mtu15.n_days} " + de("mtu15.n_days") + "zile: @{mtu15.mae_flat|.2f} constant, @{mtu15.mae_shaped|.2f} EUR/MWh cu profil.")],
             height="0.55\\textheight", job=t("a battery bids per quarter-hour; give it the intra-hour shape, not a flat hour.",
                                               "o baterie licitează pe sferturi de oră; folosiți profilul intraorar, nu o valoare constantă."),
             tryit=NB + " \\S9", cite=t("(own computation; OPCOM; SDAC 15-minute go-live, 1 Oct 2025)",
@@ -835,10 +836,10 @@ def build(lang, H=None):
     bt, fx = N["battery"], N["flex"]
     D.subsection(t("(d) From forecast to money", "(d) Valoarea economică a prognozei"))
     D.chart(t("Case study (d): what a better forecast is worth", "Studiul de caz (d): cît valorează, în bani, o prognoză mai bună"), "battery", [
-        t("Battery 1 MW / 2 MWh, one daily cycle set on the forecast, @{battery.n_days} days without DST, @{battery.ens_all.eur|,.0f} EUR per MW with the ensemble (@{battery.ens_all.pct|.1f}\\% of perfect foresight), @{battery.naive.eur|,.0f} with naive.",
-          "Baterie de 1 MW / 2 MWh, un ciclu pe zi ales după prognoză; în @{battery.n_days} " + de("battery.n_days") + "zile fără schimbarea orei: @{battery.ens_all.eur|,.0f} EUR pe MW cu ansamblul (@{battery.ens_all.pct|.1f}\\% din profitul cu informație perfectă), @{battery.naive.eur|,.0f} cu modelul naiv."),
-        t("Flexible 4-hour process of a supplier, @{flex.aw_lear.eur_mwh|.2f} EUR/MWh with AW-LEAR vs @{flex.base_eur_mwh|.2f} for a fixed 8--12 h CET block.",
-          "Proces flexibil de 4 ore al unui furnizor: @{flex.aw_lear.eur_mwh|.2f} EUR/MWh cu AW-LEAR, față de @{flex.base_eur_mwh|.2f} pentru un bloc fix 8--12 CET.")],
+        t("Battery 1 MW / 2 MWh, one daily cycle, @{battery.n_days} days without DST; @{battery.ens_all.eur|,.0f} EUR per MW with the ensemble (@{battery.ens_all.pct|.1f}\\% of perfect foresight), @{battery.naive.eur|,.0f} with naive.",
+          "Baterie de 1 MW / 2 MWh, un ciclu pe zi, @{battery.n_days} " + de("battery.n_days") + "zile fără schimbarea orei; @{battery.ens_all.eur|,.0f} EUR pe MW cu ansamblul (@{battery.ens_all.pct|.1f}\\% din profitul cu informație perfectă), @{battery.naive.eur|,.0f} cu modelul naiv."),
+        t("Flexible 4-hour load: @{flex.aw_lear.eur_mwh|.2f} EUR/MWh with AW-LEAR vs @{flex.base_eur_mwh|.2f} for the fixed 8--12 h CET block.",
+          "Consum flexibil de 4 ore: @{flex.aw_lear.eur_mwh|.2f} EUR/MWh cu AW-LEAR, față de @{flex.base_eur_mwh|.2f} pentru blocul fix 8--12 CET.")],
         height="0.48\\textheight", job=t("translate rMAE into EUR before paying for a forecast.",
                                          "transformați rMAE în EUR înainte de a plăti pentru o prognoză."),
         tryit=NB + " \\S9", cite=t("(own computation; round-trip efficiency 90\\% assumed)", "(calcule proprii; randament de încărcare--descărcare presupus: 90\\%)"))
@@ -863,6 +864,75 @@ def build(lang, H=None):
         D.bottom(t("make the leakage check part of every model review, as Assignment 1 does.",
                    "includeți testul de folosire a informației din viitor în orice evaluare a unui model, ca în tema 1."), NB + " \\S10"),
         "footnotesize", cite=t("(Assignment 1; Lago et al., 2021, APEN)", "(tema 1; Lago et al., 2021, APEN)"))
+
+    # ------------------------------------------------------------------ research and practice: AIDA 2026
+    WER = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf"
+    PET = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf"
+    D.subsection(t("Research and practice: AIDA 2026", "Cercetare și practică: conferința AIDA 2026"))
+    D.frame(t("AIDA 2026: probabilistic forecasts are judged by the money they make",
+              "AIDA 2026: prognozele probabilistice se judecă după banii pe care îi aduc"), cols(
+        it((t("\\textbf{R.\\ Weron, keynote} (4 June 2026, \\href{" + WER + "}{slides})",
+              "\\textbf{R.\\ Weron}, 4 iunie 2026 (\\href{" + WER + "}{diapozitive})"),
+            t("one model per hour (as our ARX, LEAR) or all 24 hours jointly; averaging across windows and LEAR stay the benchmarks to beat",
+              "cîte un model pe oră (ca ARX și LEAR) sau un model comun pentru 24 de ore; medierea pe ferestre și LEAR rămîn reperele")),
+           (t("\\textbf{What the cited work found}", "\\textbf{Ce au găsit lucrările prezentate}"),
+            t("trading on quantiles earned 19--34\\% more than trading on point forecasts (Uniejewski \\& Weron, 2021)",
+              "ofertele pe cuantile au adus cu 19--34\\% mai mult profit decît cele pe prognoze punctuale (Uniejewski \\& Weron, 2021)"),
+            t("test year 2025: continuous ranked probability score (CRPS) 3.56 for the pretrained transformer TabPFN 3.0 vs 4.71 for LEAR + CP",
+              "în 2025, scorul de probabilitate ordonat continuu (CRPS): 3{,}56 pentru transformerul TabPFN (versiunea 3), 4{,}71 pentru LEAR + CP")), sep="3pt"),
+        it((t("\\textbf{A.\\ Petukhina}, with G.\\ Mazzon, D.\\ Marazzina (3 June 2026, \\href{" + PET + "}{slides})",
+              "\\textbf{A.\\ Petukhina}, cu G.\\ Mazzon, D.\\ Marazzina (3 iunie 2026, \\href{" + PET + "}{diapozitive})"),
+            t("Great Britain, outside SDAC, runs two hourly day-ahead auctions (EPEX SPOT, Nord Pool): buy in one, sell in the other",
+              "Marea Britanie, în afara SDAC: două licitații orare (EPEX SPOT, Nord Pool); cumpărați într-una, vindeți în cealaltă"),
+            t("one joint forecast of both auction prices and the system price (copula model); test Mar -- Sep 2022",
+              "prognoză comună a celor două prețuri și a prețului de dezechilibru (copulă); test mar. -- sep. 2022")),
+           (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+            t("EPEX auction: MAE 47.884 vs 27.926 for LASSO + QRA, but CRPS 16.852 vs 32.605",
+              "EPEX: MAE 47{,}884 față de 27{,}926 (LASSO + QRA), dar CRPS 16{,}852 față de 32{,}605"),
+            t("trading on mean and conditional value at risk (CVaR): 22\\,001 EUR vs 6\\,283.3 and $-$3\\,005.1 EUR for the LASSO + QRA models",
+              "strategia medie -- valoarea la risc condiționată (CVaR): 22\\,001 EUR, față de 6\\,283{,}3 și $-$3\\,005{,}1 EUR (LASSO + QRA)")), sep="3pt"),
+        "0.49", "0.48") +
+        D.bottom(t("judge a forecast by the decision it feeds: in Great Britain the model with the larger MAE earned more.",
+                   "judecați prognoza după decizia pe care o susține: modelul cu MAE mai mare a cîștigat mai mult.")),
+        "footnotesize", cite=t("(as printed on the AIDA 2026 slides, Bucharest; papers: \\href{https://doi.org/10.1016/j.eneco.2021.105121}{Uniejewski \\& Weron, 2021, ENEECO}; "
+                               "\\href{https://doi.org/10.1016/j.eneco.2024.108008}{Agakishiev et al., 2025, ENEECO})",
+                               "(diapozitivele AIDA 2026; lucrări: \\href{https://doi.org/10.1016/j.eneco.2021.105121}{Uniejewski \\& Weron, 2021, ENEECO}; "
+                               "\\href{https://doi.org/10.1016/j.eneco.2024.108008}{Agakishiev et al., 2025, ENEECO})"))
+
+    GHE = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf"
+    D.frame(t("AIDA 2026: a data-driven merit order forecasts the price distribution",
+              "AIDA 2026: ordinea de merit, estimată din date, dă distribuția prețului"), cols(
+        it((t("\\textbf{P.\\ Ghelasi}, with J.\\ Browell, F.\\ Ziel (3 June 2026, \\href{" + GHE + "}{slides})",
+              "\\textbf{P.\\ Ghelasi}, cu J.\\ Browell, F.\\ Ziel (3 iunie 2026, \\href{" + GHE + "}{diapozitive})"),
+            t("price = merit order (plants sorted by variable cost) at the load: a fundamental, interpretable model",
+              "prețul = ordinea de merit (centrale ordonate după costul variabil) la nivelul consumului; model fundamental, interpretabil"),
+            t("efficiencies and CO$_2$ intensities estimated from past prices, within expert bounds",
+              "randamentele și intensitățile de CO$_2$, estimate din prețuri trecute, între limite date de experți")),
+           (t("\\textbf{Germany, point forecasts}", "\\textbf{Germania, prognoze punctuale}"),
+            t("train 1 Oct 2022 -- 1 Oct 2023, test 1 Oct 2023 -- 1 Oct 2024, no recalibration",
+              "estimare 1 oct.\\ 2022 -- 1 oct.\\ 2023, test 1 oct.\\ 2023 -- 1 oct.\\ 2024, fără reestimare"),
+            t("MAE, EUR/MWh: 11.83 for this model; 13.11 LASSO, 13.96 boosted trees, 16.36 classical merit order, 24.96 naive",
+              "MAE, EUR/MWh: 11{,}83 pentru acest model; 13{,}11 LASSO, 13{,}96 gradient boosting, 16{,}36 ordinea de merit clasică, 24{,}96 naiv"),
+), sep="2pt"),
+        it((t("\\textbf{Probabilistic merit order}", "\\textbf{Ordinea de merit probabilistică}"),
+            t("forecast the distribution of each input (load, solar, wind, fuels); plug each sampled scenario into the merit order",
+              "distribuția prognozată a fiecărei intrări (consum, solar, vînt, combustibili); fiecare scenariu simulat trece prin ordinea de merit"),
+            t("parameters chosen to minimise the CRPS of the resulting prices",
+              "parametrii minimizează CRPS a prețurilor rezultate")),
+           (t("\\textbf{What it found}", "\\textbf{Ce a găsit}"),
+            t("CRPS 13.92 vs 14.04 for a Johnson $S_U$ distribution model and 20.46 for naive",
+              "CRPS 13{,}92, față de 14{,}04 pentru un model cu distribuția Johnson $S_U$ și 20{,}46 pentru cel naiv"),
+            t("MAE 17.28 vs 18.21 and 25.98; RMSE 25.81 vs 29.19 and 41.47",
+              "MAE 17{,}28, față de 18{,}21 și 25{,}98; RMSE 25{,}81, față de 29{,}19 și 41{,}47"),
+            t("simulated prices form non-parametric distributions, e.g.\\ a cluster near zero at midday",
+              "prețurile simulate au distribuții neparametrice, de ex.\\ o grupare lîngă zero la amiază")), sep="2pt"),
+        "0.50", "0.47") +
+        D.bottom(t("a fundamental model estimated like a statistical one gives forecasts you can explain plant by plant.",
+                   "un model fundamental estimat statistic dă prognoze pe care le puteți explica centrală cu centrală.")),
+        "footnotesize", cite=t("(talk by P.\\ Ghelasi at AIDA 2026, Bucharest, 3 June 2026: \\href{" + GHE + "}{slides}; "
+                               "paper: \\href{https://doi.org/10.1016/j.eneco.2025.109114}{Ghelasi \\& Ziel, 2026, ENEECO})",
+                               "(prezentarea lui P.\\ Ghelasi la AIDA 2026, București, 3 iunie 2026: \\href{" + GHE + "}{diapozitive}; "
+                               "lucrare: \\href{https://doi.org/10.1016/j.eneco.2025.109114}{Ghelasi \\& Ziel, 2026, ENEECO})"))
 
     # ------------------------------------------------------------------ wrap-up
     D.parts.append("\\section*{" + t("Wrap-up", "Recapitulare") + "}\n")
@@ -957,25 +1027,33 @@ def build(lang, H=None):
         "price spikes: Evidence from the Romanian market. \\textit{Proceedings of the International Conference on Business Excellence}, 20(1), "
         "4820--4836. \\href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}",
         "Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\\,T.\\ \\& Lessmann, S.\\ (2024). Energy price modelling: A comparative evaluation of "
-        "four generations of forecasting methods. arXiv:2411.03372.",
-        "Bates, J.\\,M.\\ \\& Granger, C.\\,W.\\,J.\\ (1969). The combination of forecasts. \\textit{Operational Research Quarterly}, 20(4), 451--468.",
+        "four generations of forecasting methods. arXiv:2411.03372. \\href{https://arxiv.org/abs/2411.03372}{arxiv.org/abs/2411.03372}",
+        "Agakishiev, I., Härdle, W.\\,K., Kopa, M., Kozmík, K.\\ \\& Petukhina, A.\\ (2025). Multivariate probabilistic forecasting of electricity prices "
+        "with trading applications. \\textit{Energy Economics}, 141, 108008. \\href{https://doi.org/10.1016/j.eneco.2024.108008}{doi:10.1016/j.eneco.2024.108008}",
+        "Bates, J.\\,M.\\ \\& Granger, C.\\,W.\\,J.\\ (1969). The combination of forecasts. \\textit{Operational Research Quarterly}, 20(4), 451--468. "
+        "\\href{https://doi.org/10.1057/jors.1969.103}{doi:10.1057/jors.1969.103}",
         "Diebold, F.\\,X.\\ \\& Mariano, R.\\,S.\\ (1995). Comparing predictive accuracy. \\textit{Journal of Business \\& Economic Statistics}, "
-        "13(3), 253--263.",
+        "13(3), 253--263. \\href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}",
         "Engle, R.\\,F.\\ \\& Granger, C.\\,W.\\,J.\\ (1987). Co-integration and error correction: Representation, estimation, and testing. "
         "\\textit{Econometrica}, 55(2), 251--276. \\href{https://doi.org/10.2307/1913236}{doi:10.2307/1913236}",
         "Friedman, J.\\,H.\\ (2001). Greedy function approximation: A gradient boosting machine. \\textit{Annals of Statistics}, 29(5), "
         "1189--1232. \\href{https://doi.org/10.1214/aos/1013203451}{doi:10.1214/aos/1013203451}",
+        "Ghelasi, P., Browell, J.\\ \\& Ziel, F.\\ (2026). A probabilistic merit order for electricity price forecasting. AIDA Conference, "
+        "Bucharest University of Economic Studies, 3 June 2026. "
+        "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf}{github.com/danpele/EMQA/resources/aida2026}",
+        "Ghelasi, P.\\ \\& Ziel, F.\\ (2026). A data-driven merit order: Learning a fundamental electricity price model. "
+        "\\textit{Energy Economics}, 154, 109114. \\href{https://doi.org/10.1016/j.eneco.2025.109114}{doi:10.1016/j.eneco.2025.109114}",
         "Gneiting, T.\\ \\& Raftery, A.\\,E.\\ (2007). Strictly proper scoring rules, prediction, and estimation. \\textit{Journal of the "
         "American Statistical Association}, 102(477), 359--378. \\href{https://doi.org/10.1198/016214506000001437}{doi:10.1198/016214506000001437}",
         "Hubicka, K., Marcjasz, G.\\ \\& Weron, R.\\ (2019). A note on averaging day-ahead electricity price forecasts across calibration "
-        "windows. \\textit{IEEE Transactions on Sustainable Energy}, 10(1), 321--323.",
+        "windows. \\textit{IEEE Transactions on Sustainable Energy}, 10(1), 321--323. \\href{https://doi.org/10.1109/TSTE.2018.2869557}{doi:10.1109/TSTE.2018.2869557}",
         "Hyndman, R.\\,J.\\ \\& Koehler, A.\\,B.\\ (2006). Another look at measures of forecast accuracy. \\textit{International Journal of "
         "Forecasting}, 22(4), 679--688. \\href{https://doi.org/10.1016/j.ijforecast.2006.03.001}{doi:10.1016/j.ijforecast.2006.03.001}",
         "Johansen, S.\\ (1991). Estimation and hypothesis testing of cointegration vectors in Gaussian vector autoregressive models. "
         "\\textit{Econometrica}, 59(6), 1551--1580. \\href{https://doi.org/10.2307/2938278}{doi:10.2307/2938278}",
         "Koenker, R.\\ \\& Bassett, G.\\ (1978). Regression quantiles. \\textit{Econometrica}, 46(1), 33--50. "
         "\\href{https://doi.org/10.2307/1913643}{doi:10.2307/1913643}",
-        "Kupiec, P.\\,H.\\ (1995). Techniques for verifying the accuracy of risk measurement models. \\textit{Journal of Derivatives}, 3(2), 73--84.",
+        "Kupiec, P.\\,H.\\ (1995). Techniques for verifying the accuracy of risk measurement models. \\textit{Journal of Derivatives}, 3(2), 73--84. \\href{https://doi.org/10.3905/jod.1995.407942}{doi:10.3905/jod.1995.407942}",
         "Lago, J., Marcjasz, G., De Schutter, B.\\ \\& Weron, R.\\ (2021). Forecasting day-ahead electricity prices: A review of "
         "state-of-the-art algorithms, best practices and an open-access benchmark. \\textit{Applied Energy}, 293, 116983. "
         "\\href{https://doi.org/10.1016/j.apenergy.2021.116983}{doi:10.1016/j.apenergy.2021.116983}",
@@ -984,9 +1062,13 @@ def build(lang, H=None):
         "NEMO Committee (2026). Single Day-Ahead Coupling (SDAC) and the EUPHEMIA algorithm. "
         "\\href{https://www.nemo-committee.eu/sdac}{nemo-committee.eu/sdac}",
         "MacKinnon, J.\\,G.\\ (1996). Numerical distribution functions for unit root and cointegration tests. "
-        "\\textit{Journal of Applied Econometrics}, 11(6), 601--618.",
+        "\\textit{Journal of Applied Econometrics}, 11(6), 601--618. "
+        "\\href{https://doi.org/10.1002/(SICI)1099-1255(199611)11:6\\%3C601::AID-JAE417\\%3E3.0.CO;2-T}{doi:10.1002/(SICI)1099-1255(199611)11:6\\textless{}601::AID-JAE417\\textgreater{}3.0.CO;2-T}",
         "Marcjasz, G., Serafin, T.\\ \\& Weron, R.\\ (2018). Selection of calibration windows for day-ahead electricity price forecasting. "
-        "\\textit{Energies}, 11(9), 2364.",
+        "\\textit{Energies}, 11(9), 2364. \\href{https://doi.org/10.3390/en11092364}{doi:10.3390/en11092364}",
+        "Mazzon, G., Petukhina, A.\\ \\& Marazzina, D.\\ (2026). Multivariate probabilistic day-ahead electricity price forecasting and "
+        "cross-auction trading in the UK market. AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. "
+        "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Nogales, F.\\,J., Contreras, J., Conejo, A.\\,J.\\ \\& Espínola, R.\\ (2002). Forecasting next-day electricity prices by time "
         "series models. \\textit{IEEE Transactions on Power Systems}, 17(2), 342--348. \\href{https://doi.org/10.1109/TPWRS.2002.1007902}{doi:10.1109/TPWRS.2002.1007902}",
         "Nowotarski, J.\\ \\& Weron, R.\\ (2015). Computing electricity spot price prediction intervals using quantile regression and "
@@ -994,20 +1076,24 @@ def build(lang, H=None):
         "Nowotarski, J.\\ \\& Weron, R.\\ (2018). Recent advances in electricity price forecasting: A review of probabilistic forecasting. "
         "\\textit{Renewable and Sustainable Energy Reviews}, 81, 1548--1568. \\href{https://doi.org/10.1016/j.rser.2017.05.234}{doi:10.1016/j.rser.2017.05.234}",
         "Proșcanu, C.\\,A., Proșcanu, M.\\,E., Pele, D.\\,T.\\ \\& Costea, A.\\ (2025). Watt's next? Benchmarking time series models on "
-        "Romania's national electricity consumption. \\textit{Romanian Journal of Economic Forecasting}, 28(3), 146--163.",
+        "Romania's national electricity consumption. \\textit{Romanian Journal of Economic Forecasting}, 28(3), 146--163. \\href{https://EconPapers.repec.org/RePEc:rjr:romjef:v::y:2025:i:3:p:146-163}{RePEc}.",
         "Tibshirani, R.\\ (1996). Regression shrinkage and selection via the lasso. \\textit{Journal of the Royal Statistical Society B}, "
         "58(1), 267--288. \\href{https://doi.org/10.1111/j.2517-6161.1996.tb02080.x}{doi:10.1111/j.2517-6161.1996.tb02080.x}",
         "Uniejewski, B., Nowotarski, J.\\ \\& Weron, R.\\ (2016). Automated variable selection and shrinkage for day-ahead electricity price "
         "forecasting. \\textit{Energies}, 9(8), 621. \\href{https://doi.org/10.3390/en9080621}{doi:10.3390/en9080621}",
         "Uniejewski, B., Weron, R.\\ \\& Ziel, F.\\ (2018). Variance stabilizing transformations for electricity spot price forecasting. "
         "\\textit{IEEE Transactions on Power Systems}, 33(2), 2219--2229. \\href{https://doi.org/10.1109/TPWRS.2017.2734563}{doi:10.1109/TPWRS.2017.2734563}",
+        "Uniejewski, B.\\ \\& Weron, R.\\ (2021). Regularized quantile regression averaging for probabilistic electricity price forecasting. "
+        "\\textit{Energy Economics}, 95, 105121. \\href{https://doi.org/10.1016/j.eneco.2021.105121}{doi:10.1016/j.eneco.2021.105121}",
         "Weron, R.\\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. "
         "\\textit{International Journal of Forecasting}, 30(4), 1030--1081. \\href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}",
+        "Weron, R.\\ (2026). Machine learning for electricity price forecasting. Keynote, AIDA Conference, Bucharest University of Economic "
+        "Studies, 4 June 2026. \\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{github.com/danpele/EMQA/resources/aida2026}",
         "Ziel, F.\\ \\& Weron, R.\\ (2018). Day-ahead electricity price forecasting with high-dimensional structures: Univariate vs.\\ "
         "multivariate modeling frameworks. \\textit{Energy Economics}, 70, 396--420. \\href{https://doi.org/10.1016/j.eneco.2017.12.016}{doi:10.1016/j.eneco.2017.12.016}",
     ]
-    for part, (a_, b_) in enumerate([(0, 9), (9, 18), (18, len(REFS))]):
-        D.frame(t("References", "Bibliografie") + f" ({part + 1}/3)", "\\begin{itemize}\\setlength{\\itemsep}{1pt}\\scriptsize\n" +
+    for part, (a_, b_) in enumerate([(0, 9), (9, 18), (18, 27), (27, len(REFS))]):
+        D.frame(t("References", "Bibliografie") + f" ({part + 1}/4)", "\\begin{itemize}\\setlength{\\itemsep}{0pt}\\scriptsize\n" +
                 "\n".join("\\item " + r for r in REFS[a_:b_]) + "\n\\end{itemize}", "scriptsize")
 
     # ------------------------------------------------------------------ appendix

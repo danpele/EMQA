@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L1_separation_2024'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Daily base day-ahead prices in Romania, Bulgaria, Hungary and Germany-Luxembourg from June to September 2024, and hourly prices on 16 July 2024: in July 2024 Romania paid about twice the German price. Data: 2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right). Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+Description: 'Daily base day-ahead prices in Romania, Bulgaria, Hungary and Germany-Luxembourg from June to September 2024, and hourly prices on 16 July 2024: in July 2024 Romania paid about twice the German price. Data: 2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right). Source: energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E.'
 
 Keywords: 'market coupling, price separation, congestion, cross-border, electricity prices, Romania, Germany, case study'
 

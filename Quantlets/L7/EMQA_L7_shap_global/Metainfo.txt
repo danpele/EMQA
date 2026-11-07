@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_shap_global'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Share of the mean absolute SHAP value of the 10 most important of the 20 inputs of the tuned XGBoost model, coloured by group (prices, load, wind+solar, other fundamentals, calendar); exact tree SHAP values on the test year 2025-11-01 to 2026-10-31, 8760 hours, XGBoost refitted monthly, Romanian day-ahead prices. Data: test year 2025-11-01 to 2026-10-31, 8760 hours; XGBoost refitted monthly. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Share of the mean absolute SHAP value of the 10 most important of the 20 inputs of the tuned XGBoost model, coloured by group (prices, load, wind+solar, other fundamentals, calendar); exact tree SHAP values on the test year 2025-11-01 to 2026-10-31, 8760 hours, XGBoost refitted monthly, Romanian day-ahead prices. Data: test year 2025-11-01 to 2026-10-31, 8760 hours. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'SHAP, Shapley values, explainable AI, feature importance, XGBoost, gradient boosting, electricity price forecasting, Romania'
 

@@ -1,3 +1,3 @@
 EMQA web lecture L3
-[en] 8 sections, 41 blocks, 22 numbered equations, 15 charts of 15
-[ro] 8 sections, 41 blocks, 22 numbered equations, 15 charts of 15
+[en] 8 sections, 43 blocks, 22 numbered equations, 15 charts of 15
+[ro] 8 sections, 43 blocks, 22 numbered equations, 15 charts of 15

@@ -29,7 +29,7 @@ Producția solară, eoliană și a bateriilor, precum și consumul de energie el
 
 Perioada analizată începe în 2019 și se încheie la 31 octombrie 2026, ultima lună completă. Pe această pagină, „2026” înseamnă ianuarie–octombrie 2026, iar „ultimele 12 luni” înseamnă noiembrie 2025 – octombrie 2026. Zilele de livrare se definesc după ora Europei Centrale (CET). Energia este întotdeauna puterea medie, în megawați (MW), înmulțită cu durata, astfel încît un interval de tranzacționare (MTU, *market time unit*) de 15 minute contează 0,25 h.
 
-## Puterea solară instalată în România a crescut de 2,4 ori între 2019 și 2025 {h=2e0f3d08}
+## Puterea solară instalată în România a crescut de 2,4 ori între 2019 și 2025 {h=3e137175}
 
 Puterea solară instalată în România a urcat de la 1,16 gigawați (GW) la sfîrșitul anului 2019 la 2,79 GW la sfîrșitul anului 2025, adică de 2,4 ori. Producția a urmat aceeași direcție: între ianuarie și octombrie, parcurile solare din România au produs 2,53 terawați-oră (TWh) în 2025 și 4,32 TWh în 2026. Raportată la consum, producția solară a acoperit 2,3% în 2019 și 10,2% în 2026.
 
@@ -56,7 +56,7 @@ Relația @eq:slope arată că efectul depinde de forma curbelor în jurul prețu
 
 @practice cu cît curba locală este mai abruptă, cu atît un parc nou își modifică mai mult propriul preț.
 
-## Pe ofertele din România, 40 MW în plus la preț zero coboară prețul de la amiază sub 50 EUR/MWh {h=fd0609c0}
+## Ofertele din România: +40 MW la preț zero coboară amiaza sub 50 EUR/MWh {h=4c38f375}
 
 Graficul aplică relația @eq:merit pe curbele reale din 21 octombrie 2026. La amiază, numai 25 MW în plus la preț zero coboară prețul de la 152,23 la 131,40 EUR/MWh, iar 40 MW îl duc sub 50 EUR/MWh. Seara, pentru aceeași scădere sînt necesari 225 MW, deoarece importul net de 1 054 MW adîncește curba.
 
@@ -89,6 +89,16 @@ Graficul grupează orele după consumul rezidual, în intervale de 0,5 GW, și a
 
 @chart resid_price
 Prețul orar mediu în funcție de consumul rezidual (intervale de 0,5 GW, cu cel puțin 20 de ore), din 2023 pînă în octombrie 2026, pe ani.
+
+## Cercetarea grupului nostru: învățarea automată prognozează redispecerizarea din Germania cu o zi înainte {h=dbaf5175}
+
+Sursele regenerabile încarcă și rețeaua. În Germania, vîntul bate mai ales în nord, iar cel mai mare consum este în sudul industrializat. După închiderea pieței pentru ziua următoare, cei patru operatori de transport și de sistem verifică unde s-ar supraîncărca liniile și cer unor centrale să crească, iar altora să reducă producția. Această redispecerizare menține rețeaua în limitele ei; costul se rambursează ulterior și nu apare în prețul pentru ziua următoare.
+
+Un studiu al grupului nostru, prezentat de Vlad Bolovăneanu la conferința AIDA 2026 (Basangova, Bolovăneanu, Conda, Erlwein-Sayer, Melzer, Pele, Petukhina și Phan, 2026, [diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf)), a prognozat volumul orar al redispecerizării, în MW, în sus și în jos, pentru fiecare dintre cei patru operatori germani, cu 24 de ore înainte și numai cu informația disponibilă în după-amiaza zilei anterioare: producția eoliană și solară, consumul, diferențele de preț și schimburile transfrontaliere programate. Datele acoperă perioada octombrie 2021 – februarie 2026, iar modelele au fost testate pe 11 ferestre lunare, din martie 2025 pînă în februarie 2026, comparînd modele statistice, modele de arbori și rețele neuronale adînci.
+
+Rețelele neuronale adînci au fost cel mai des printre cele mai bune modele: cea mai bună dintre ele intră în mulțimea de încredere a modelelor pentru eroarea absolută medie în 6 din cele 8 serii (4 operatori × 2 direcții). Variabilele explicative ajută numai dacă sînt aliniate corect în timp: cu toate variabilele, prognozele sînt semnificativ mai bune în 40–60% dintre seriile dense decît fără ele sau cu variabilele decalate în timp.
+
+@practice pentru Transelectrica: prognozați cu o zi înainte unde vor atinge eolianul și solarul limitele rețelei.
 
 ## @end
 
@@ -142,7 +152,7 @@ Asteriscul marchează 2026 = ianuarie–octombrie 2026. Anul 2022, al crizei ene
 
 @practice diferența $B-\mathrm{CP}$ este un cost suportat de dezvoltatorul solar și a crescut în fiecare an din 2022.
 
-## Cînd ponderea solarului în consumul lunii crește cu un punct procentual, rata de captare solară scade cu circa 4,2 puncte {h=75c91f5b}
+## Cînd ponderea solarului în consumul lunii crește cu un punct procentual, rata de captare solară scade cu circa 4,2 puncte {h=6176663b}
 
 Canibalizarea se poate măsura direct, punînd în legătură rata de captare solară a fiecărei luni cu ponderea producției solare în consumul acelei luni:
 
@@ -157,7 +167,7 @@ Pentru România, pe 94 de luni, panta estimată este $\hat b$ = −4,20 (SE 1,03
 @chart cannibal
 Rata lunară de captare solară în funcție de ponderea producției solare în consum, în România, Bulgaria și Ungaria, cu dreapta de regresie pentru România.
 
-## Regiunea se canibalizează împreună: ratele de captare din România, Bulgaria și Ungaria au scăzut simultan {h=a3bd24c1}
+## Rata de captare solară a scăzut simultan în România, Bulgaria și Ungaria {h=efb0d440}
 
 Graficul compară ratele anuale de captare solară din cele trei piețe cuplate. Ele au scăzut împreună: în 2025, rata a fost 59,4% în România, 68,6% în Bulgaria și 57,5% în Ungaria. Piețele cuplate își împart surplusul de la amiază, așa că un parc dintr-o țară resimte și parcurile construite în celelalte.
 
@@ -168,7 +178,7 @@ Graficul compară ratele anuale de captare solară din cele trei piețe cuplate.
 @chart capture_region
 Ratele anuale de captare solară în România, Bulgaria și Ungaria, din 2019 (Ungaria din 2020) pînă în octombrie 2026.
 
-## În 2025, 32,1% din producția solară a României s-a vîndut în cele mai ieftine 10% dintre ore {h=7d17c525}
+## În 2025, 32,1% din energia solară s-a vîndut în cele mai ieftine 10% dintre ore {h=284022fa}
 
 Canibalizarea se vede și altfel: se ordonează orele fiecărui an de la cea mai ieftină la cea mai scumpă și se calculează ce parte din energia solară a anului s-a produs pînă la fiecare rang. Graficul desenează această curbă pentru fiecare an. Dacă producția solară ar fi distribuită uniform în timpul anului, cele mai ieftine 10% dintre ore ar conține 10% din ea.
 
@@ -242,7 +252,7 @@ Producătorii ofertează sub zero cînd sprijinul sau costul repornirii fac opri
 
 Prețurile mici de la amiază și cele mari de seară formează un profil zilnic al prețului. Secțiunea citește acest profil pe prețurile la 15 minute, definește diferența zilnică de preț din care cîștigă o baterie și o compară între România și vecinii ei.
 
-## Primăvara, sferturile de oră de la amiază au costat în medie 23,0 EUR/MWh, iar cele de seară 208,3 {h=0e6af8bb}
+## Primăvara, prețul mediu: 23,0 EUR/MWh la amiază, 208,3 seara {h=c33886eb}
 
 Graficul arată prețul mediu al fiecărui sfert de oră din zi în ultimele 12 luni, separat pe anotimpuri. Primăvara, profilul formează o „vale” solară adîncă: minimul, 23,0 EUR/MWh, apare la 12:45 CET, iar maximul, 208,3 EUR/MWh, la 19:45 CET, după apus, cînd cererea este încă mare.
 
@@ -267,7 +277,7 @@ Pentru România și $k=2$, diferența zilnică medie a fost de 45 EUR/MWh în 20
 
 @practice un dezvoltator de baterii citește cazul de afaceri din diferența zilnică de preț, înaintea oricărui model.
 
-## Diferența zilnică de preț este de circa patru ori mai mare decît în 2019 și asemănătoare în România, Bulgaria și Ungaria {h=823281da}
+## Diferența zilnică de preț este de circa patru ori mai mare decît în 2019 și asemănătoare în România, Bulgaria și Ungaria {h=a6d40611}
 
 Graficul urmărește media lunară a diferenței zilnice pe 2 ore, @eq:spread, în cele patru piețe, începînd cu 2019. Diferența a crescut odată cu criza energetică din 2022, nu a mai revenit la nivelul vechi și este acum de circa patru ori mai mare decît în 2019. În 2026, diferența medie dintre cele mai scumpe 2 ore și cele mai ieftine 2 ore a fost 174 EUR/MWh în România, 150 în Bulgaria, 187 în Ungaria și 152 în Germania.
 
@@ -276,7 +286,7 @@ Cele trei piețe vecine au diferențe foarte apropiate pentru că sînt cuplate:
 @practice tratați diferența de preț ca pe o resursă regională, împărțită cu fiecare baterie nouă din țările vecine.
 
 @chart spreads
-Media lunară a diferenței zilnice dintre cele mai scumpe 2 ore și cele mai ieftine 2 ore, în România, Bulgaria, Ungaria și Germania–Luxemburg, din 2019 pînă în octombrie 2026 (scară logaritmică peste 100).
+Media lunară a diferenței zilnice dintre cele mai scumpe 2 ore și cele mai ieftine 2 ore, în România, Bulgaria, Ungaria și Germania–Luxemburg, din 2019 pînă în octombrie 2026.
 
 ## @end
 
@@ -313,7 +323,7 @@ Bateriile mai lungi cîștigă mai mult, dar nu proporțional. O baterie de 4 or
 @chart bat_years
 Venitul anual din arbitraj al bateriilor de 1, 2 și 4 ore, cu informație perfectă, în mii EUR pe MW, 2019–2025 și ultimele 12 luni.
 
-## O regulă simplă de prognoză obține 85% din venitul cu informație perfectă al unei baterii de 2 ore {h=2aa99b7f}
+## O regulă simplă obține 85% din venitul cu informație perfectă (2 ore) {h=7deeb2ed}
 
 O baterie reală nu cunoaște prețurile de mîine. Cursul testează două reguli care folosesc doar informația disponibilă la 12:00 CET în ziua dinaintea livrării, $d-1$, cînd se depun ofertele. Prima folosește profilul mediu al prețurilor din ultimele 7 zile, a doua prețurile de ieri. Programul se optimizează pe prognoză, iar plata se face la prețurile reale.
 
@@ -323,6 +333,14 @@ Regula de 7 zile obține 82%, 85% și 89% din venitul cu informație perfectă p
 
 @chart bat_rules
 Venitul, în mii EUR pe MW, al bateriilor de 1, 2 și 4 ore în ultimele 12 luni: informație perfectă pe prețuri la 15 minute și pe medii orare, regula de 7 zile și prețurile de ieri.
+
+## Prognoza întregii distribuții a prețului ajută o baterie să liciteze {h=de3bfba1}
+
+Regulile de mai sus folosesc un singur preț prognozat pentru fiecare oră. Un studiu al grupului nostru (Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele și Petukhina, 2026, [doi:10.2139/ssrn.6872381](https://doi.org/10.2139/ssrn.6872381)), prezentat de Cosmin Octavian Cepoi la conferința AIDA 2026 ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf)), prognozează în schimb întreaga distribuție comună a celor 96 de prețuri orare de a doua zi: 24 de ore în România, Bulgaria, Ungaria și Cehia. Modelul este o pădure aleatoare distribuțională cu 37 de predictori, pe date din ianuarie 2018 pînă în septembrie 2024, reestimată pe 70 de ferestre mobile (365 de zile pentru estimare, următoarele 30 de zile pentru test). Mediana prognozei alege ora de încărcare și ora ulterioară de descărcare; cuantilele prognozei fixează prețurile-limită de cumpărare și de vînzare.
+
+Erorile de prognoză sînt maxime la 17:00–18:00, de obicei orele de descărcare, adică exact acolo unde o prognoză punctuală este cea mai slabă. Pentru o baterie de 1 MW / 1 MWh din România, profitul cumulat este 143,0 mii EUR cu regula cuantilelor, față de 133,2 cu ore fixe și 188,2 cu informație perfectă; regula cuantilelor depășește regula cu ore fixe în toate cele patru piețe, iar tranzacționarea între piețe adaugă valoare (150,3 mii EUR). La o investiție inițială de 500 000 EUR, un randament de 90%, 15 ani și o rată de actualizare de 7%, arbitrajul pe piața pentru ziua următoare nu acoperă singur investiția, același mesaj ca investiția maximă calculată mai departe în această secțiune.
+
+@practice licitați pe baza cuantilelor prognozei, nu a unei singure valori: orele profitabile sînt în cozile distribuției.
 
 ## Prețurile pe 15 minute au crescut cu 14,5% venitul unei baterii de 1 oră, în aceleași zile {h=57edd823}
 
@@ -402,7 +420,7 @@ Aprilie 2026 a avut 67 de ore cu preț negativ, cele mai multe dintre toate luni
 - **Furnizorul și consumatorul industrial**: 67 de ore cu preț negativ. Mutarea consumului la amiază, primăvara, este plătită.
 - **Transelectrica**: după apus, creșterea cererii nete și interconexiunile fixează prețul.
 
-## Vara 2026: România a exportat la prînz și a cumpărat seara din Bulgaria {h=6cd091dc}
+## Vara 2026: export la prînz, import seara din Bulgaria {h=98a57394}
 
 Graficul arată fluxurile transfrontaliere medii pe ore ale României și prețurile din România și Bulgaria între 1 iunie și 31 august 2026; fluxurile pozitive înseamnă import în România. La prînz, România exportă: 960 MW net la ora 12, pe toate granițele, mai ales spre Ungaria (857 MW) și Serbia (367 MW). Spre Bulgaria a exportat între 12:00 și 15:00 doar în 43 din cele 92 de zile.
 

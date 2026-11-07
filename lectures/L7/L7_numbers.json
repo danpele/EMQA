@@ -1,116 +1,116 @@
 {
  "charts": {
   "split_ml": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
-   "period_en": "daily base price, 2022-01-01 to 2026-10-31, CET delivery days",
-   "period_ro": "pre\u021b zilnic de baz\u0103, 2022-01-01 - 2026-10-31, zile de livrare CET"
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM",
+   "period_en": "daily base price, 2022-01-01 to 2026-10-31",
+   "period_ro": "pre\u021b zilnic de baz\u0103, 2022-01-01 - 2026-10-31"
   },
   "search": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "validation year 2024-11-01 to 2025-10-31; 25 configurations per model, quarterly refits",
-   "period_ro": "anul de validare 2024-11-01 - 2025-10-31; 25 de configura\u021bii pe model, reestimare trimestrial\u0103"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "validation year 2024-11-01 to 2025-10-31, quarterly refits",
+   "period_ro": "anul de validare 2024-11-01 - 2025-10-31, reestimare trimestrial\u0103"
   },
   "learning_curve": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "chosen DNN, refit for 2026-10, seed 1",
    "period_ro": "re\u021beaua DNN aleas\u0103, reestimarea pentru 2026-10, ini\u021bializarea 1"
   },
   "monthly_ml": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "test year 2025-11-01 to 2026-10-31",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "dm_matrix": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale"
   },
   "combo_weight": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "test year 2025-11-01 to 2026-10-31; illustration, the weight is not chosen on the test year",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31; ilustrare, ponderea nu se alege pe anul de test"
   },
   "cost_gain": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31; time measured on one core of the author's computer",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31; timp m\u0103surat pe un nucleu al calculatorului autorului"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; one processor core",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; un nucleu de procesor"
   },
   "shap_global": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours; XGBoost refitted monthly",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore; XGBoost reestimat lunar"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
   },
   "shap_res": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
   },
   "perm_dnn": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31; 5 random permutations of the test days",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31; 5 permut\u0103ri aleatoare ale zilelor de test"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "events_hour": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM",
    "period_en": "test year 2025-11-01 to 2026-10-31",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "roc": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
   },
   "decision": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31; 1 MW of flexible load, C = 30 EUR/MWh (assumed)",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31; 1 MW de consum flexibil, C = 30 EUR/MWh (ipotez\u0103)"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31; 1 MW of flexible load",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31; 1 MW de consum flexibil"
   },
   "snooping": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "validation year and test year 2025-11-01 to 2026-10-31; one seed per configuration",
-   "period_ro": "anul de validare \u0219i anul de test 2025-11-01 - 2026-10-31; o ini\u021bializare pe configura\u021bie"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "validation and test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de validare \u0219i anul de test 2025-11-01 - 2026-10-31"
   },
   "pit_leak": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31; XGBoost, configura\u021bia aleas\u0103"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "pit_retrain": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
-   "period_en": "test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration",
-   "period_ro": "anul de test 2025-11-01 - 2026-10-31; XGBoost, configura\u021bia aleas\u0103"
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "period_en": "test year 2025-11-01 to 2026-10-31",
+   "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "case_week": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "2026-06-27 to 2026-07-03, hourly",
    "period_ro": "2026-06-27 - 2026-07-03, date orare"
   },
   "shap_local": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM; consum, produc\u021bie \u0219i fluxuri ENTSO-E; Yahoo Finance (EUA ETC)",
+   "source_en": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA)",
    "period_en": "2026-06-30, hour 20:00 CET; contributions rescaled to EUR/MWh (Appendix C)",
    "period_ro": "2026-06-30, ora 20:00 CET; contribu\u021bii exprimate \u00een EUR/MWh (anexa C)"
   },
   "foundation_hour": {
-   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania",
-   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia",
+   "source_en": "energy-charts.info (Fraunhofer ISE): OPCOM prices",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): pre\u021buri OPCOM",
    "period_en": "test year 2025-11-01 to 2026-10-31; zero-shot, context = last 2048 hourly prices",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31; f\u0103r\u0103 reantrenare, context = ultimele 2048 de pre\u021buri orare"
   }

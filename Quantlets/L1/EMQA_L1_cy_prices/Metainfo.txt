@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L1_cy_prices'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Daily base day-ahead prices in Romania, Bulgaria, Hungary and Germany-Luxembourg and the Brent front-month close from 1 January of the current year to the cut-off; prints the year-to-date mean against the same months of the previous year and the Brent moves of March. Data: 2026-01-01 to 2026-10-31, daily; Brent: Yahoo Finance (BZ=F). Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+Description: 'Daily base day-ahead prices in Romania, Bulgaria, Hungary and Germany-Luxembourg and the Brent front-month close from 1 January of the current year to the cut-off; prints the year-to-date mean against the same months of the previous year and the Brent moves of March. Data: 2026-01-01 to 2026-10-31, daily. Source: energy-charts.info (exchange prices via ENTSO-E); Yahoo Finance (BZ=F).'
 
 Keywords: 'electricity prices, Brent, crude oil, current year, year-to-date, Romania, case study'
 

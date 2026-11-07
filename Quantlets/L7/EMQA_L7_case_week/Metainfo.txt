@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_case_week'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Studiu de caz around the highest hourly price of the test year: hourly Romanian day-ahead price, the AW-LEAR, XGBoost and Chronos-2 forecasts and the spike threshold (top), and the XGBoost spike probability with the cost-loss threshold C/L and the actual spike hours (bottom); week 2026-06-27 to 2026-07-03. Data: 2026-06-27 to 2026-07-03, hourly. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Studiu de caz around the highest hourly price of the test year: hourly Romanian day-ahead price, the AW-LEAR, XGBoost and Chronos-2 forecasts and the spike threshold (top), and the XGBoost spike probability with the cost-loss threshold C/L and the actual spike hours (bottom); week 2026-06-27 to 2026-07-03. Data: 2026-06-27 to 2026-07-03, hourly. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'case study, price spike, extreme price, spike probability, early warning, LEAR, XGBoost, Chronos, Romania, day-ahead market'
 

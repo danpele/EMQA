@@ -14,61 +14,61 @@
   },
   "mape_fail": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 8760 hours",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 8760 de ore"
   },
   "dm_matrix": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri ENTSO-E (date Transelectrica pentru Rom\u00e2nia); Yahoo Finance (SparkChange EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri: ENTSO-E (date Transelectrica); Yahoo Finance (SparkChange EUA ETC)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale"
   },
   "arx_coef": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "ARX(728), mean over the 365 daily fits of the test year",
    "period_ro": "ARX(728), media celor 365 de estim\u0103ri zilnice din anul de test"
   },
   "per_hour_single": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "test year 2025-11-01 to 2026-10-31",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "vst": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "left, median and scale of the last window; right, test year 2025-11-01 to 2026-10-31",
    "period_ro": "st\u00eenga, mediana \u0219i scala din ultima fereastr\u0103; dreapta, anul de test 2025-11-01 - 2026-10-31"
   },
   "lear_sel": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "LEAR(728), 365 daily fits of the test year",
    "period_ro": "LEAR(728), 365 de estim\u0103ri zilnice din anul de test"
   },
   "windows": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "test year 2025-11-01 to 2026-10-31",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "ml_hour": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri ENTSO-E (date Transelectrica pentru Rom\u00e2nia); Yahoo Finance (SparkChange EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri: ENTSO-E (date Transelectrica); Yahoo Finance (SparkChange EUA ETC)",
    "period_en": "test year 2025-11-01 to 2026-10-31; ML refitted monthly",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31; modelele ML reestimate lunar"
   },
   "qra_week": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "week 2026-10-12 to 2026-10-18, hourly",
    "period_ro": "s\u0103pt\u0103m\u00eena 2026-10-12 - 2026-10-18, date orare"
   },
   "prob_rel": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103 ENTSO-E (date Transelectrica pentru Rom\u00e2nia)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; consum, produc\u021bie eolian\u0103 \u0219i solar\u0103: ENTSO-E (date Transelectrica)",
    "period_en": "test year 2025-11-01 to 2026-10-31, 99 quantiles",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31, 99 de cuantile"
   },
@@ -86,25 +86,25 @@
   },
   "monthly_mae": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri ENTSO-E (date Transelectrica pentru Rom\u00e2nia); Yahoo Finance (SparkChange EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri: ENTSO-E (date Transelectrica); Yahoo Finance (SparkChange EUA ETC)",
    "period_en": "test year 2025-11-01 to 2026-10-31",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31"
   },
   "stress_week": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri ENTSO-E (date Transelectrica pentru Rom\u00e2nia); Yahoo Finance (SparkChange EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri: ENTSO-E (date Transelectrica); Yahoo Finance (SparkChange EUA ETC)",
    "period_en": "week 2026-10-19 to 2026-10-25, hourly",
    "period_ro": "s\u0103pt\u0103m\u00eena 2026-10-19 - 2026-10-25, date orare"
   },
   "mtu15": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM 15-minute day-ahead prices for Romania, via ENTSO-E",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU pe 15 minute ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri PZU pe 15 minute (OPCOM), prin ENTSO-E",
    "period_en": "2026-07-01, 96 quarter-hours (CET)",
    "period_ro": "2026-07-01, 96 de sferturi de or\u0103 (CET)"
   },
   "battery": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC)",
-   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri ENTSO-E (date Transelectrica pentru Rom\u00e2nia); Yahoo Finance (SparkChange EUA ETC)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021buri OPCOM; produc\u021bie \u0219i fluxuri: ENTSO-E (date Transelectrica); Yahoo Finance (SparkChange EUA ETC)",
    "period_en": "test year 2025-11-01 to 2026-10-31; 1 MW / 2 MWh, round-trip efficiency 90\\%",
    "period_ro": "anul de test 2025-11-01 - 2026-10-31; 1 MW / 2 MWh, randament 90\\%"
   }

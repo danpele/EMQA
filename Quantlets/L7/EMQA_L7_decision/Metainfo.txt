@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_decision'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Value over the test year (thousand EUR per MW of flexible load) of moving 1 MWh out of every hour in which the XGBoost spike probability exceeds an action threshold, against the threshold, with the cost-loss threshold C/L (C = 30 EUR/MWh, assumed; L = mean excess over the spike threshold in the validation year) and 0.5. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; 1 MW of flexible load, C = 30 EUR/MWh (assumed). Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Value over the test year (thousand EUR per MW of flexible load) of moving 1 MWh out of every hour in which the XGBoost spike probability exceeds an action threshold, against the threshold, with the cost-loss threshold C/L (C = 30 EUR/MWh, assumed; L = mean excess over the spike threshold in the validation year) and 0.5. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; 1 MW of flexible load. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'cost-loss decision, decision threshold, spike probability, demand response, flexibility, value of forecasts, electricity price'
 

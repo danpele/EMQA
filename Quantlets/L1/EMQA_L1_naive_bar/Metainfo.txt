@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L1_naive_bar'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Mean absolute error of three naive day-ahead forecasts of the Romanian hourly price (same hour of day d-1, of day d-7, and the weekday/weekend naive rule: d-7 on Monday, Saturday, Sunday, d-1 otherwise), last two full years and the current year to the cut-off. Data: hourly day-ahead prices, 2024-01 to 2026-10. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+Description: 'Mean absolute error of three naive day-ahead forecasts of the Romanian hourly price (same hour of day d-1, of day d-7, and the weekday/weekend naive rule: d-7 on Monday, Saturday, Sunday, d-1 otherwise), last two full years and the current year to the cut-off. Data: hourly day-ahead prices, 2024-01 to 2026-10. Source: energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E.'
 
 Keywords: 'naive forecast, benchmark, mean absolute error, MAE, electricity price forecasting, Romania'
 

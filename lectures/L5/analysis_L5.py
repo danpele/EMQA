@@ -584,21 +584,47 @@ def chart(name, src_key, period_en, period_ro):
     N["charts"][name] = {"source_en": SRC["en"][src_key], "source_ro": SRC["ro"][src_key], "period_en": period_en, "period_ro": period_ro}
 
 
+def _dec_formatter(axis):
+    """Decimal-comma tick labels with the same number of decimals on every tick of the axis."""
+    lo, hi = sorted(axis.get_view_interval())
+    locs = [v for v in axis.get_ticklocs() if lo - 1e-9 <= v <= hi + 1e-9]
+    dec = max([len(f"{v:g}".split(".")[1]) if "." in f"{v:g}" else 0 for v in locs] or [0])
+    return FuncFormatter(lambda v, p: f"{v:.{dec}f}".replace(".", ",").replace("-", "\u2212"))
+
+
 def comma_axes(fig, lang, also_x=()):
     if lang != "ro":
         return
-    f_ = FuncFormatter(lambda v, p: f"{v:g}".replace(".", ",").replace("-", "−"))
+    fig.canvas.draw()
     for ax in fig.axes:
         if ax.get_yscale() == "linear" and not getattr(ax, "_keep_y", False):
-            ax.yaxis.set_major_formatter(f_)
+            ax.yaxis.set_major_formatter(_dec_formatter(ax.yaxis))
     for ax in also_x:
-        ax.xaxis.set_major_formatter(f_)
+        ax.xaxis.set_major_formatter(_dec_formatter(ax.xaxis))
 
 
-def out(fig, lang, name, bottom=0.17, also_x=()):
+def out(fig, lang, name, also_x=()):
+    """Save one chart; the space kept under the axes is exactly the height of the bottom legend (if any)."""
     comma_axes(fig, lang, also_x)
+    fig.canvas.draw()
+    W, H = fig.bbox.width, fig.bbox.height
+    bottom = 0.0
+    for lg in fig.legends:
+        ext = lg.get_window_extent()
+        bottom = max(bottom, ext.height / H + 0.035)
+        if ext.width > W * 1.001:
+            print(f"  WARNING {name} [{lang}]: legend wider than the figure ({ext.width / fig.dpi:.2f} in)")
     os.makedirs(os.path.join(HERE, "charts", lang), exist_ok=True)
     save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=bottom)
+
+
+def legend_compact(fig, ncol):
+    """Course bottom legend with shorter handles and column gaps, for many short entries."""
+    legend_bottom(fig, ncol=ncol)
+    h, l_ = fig.legends[-1].legend_handles, [t_.get_text() for t_ in fig.legends[-1].get_texts()]
+    fig.legends[-1].remove()
+    fig.legend(h, l_, loc="lower center", ncol=ncol, bbox_to_anchor=(0.5, 0.0), frameon=False,
+               handlelength=1.0, handletextpad=0.4, columnspacing=0.9)
 
 
 KCOL = {"M": PAL["RO"], "Q": PAL["HU"], "H": PAL["BG"], "Y": PAL["DE_LU"], "other": "#9a9a9a"}
@@ -614,39 +640,39 @@ for lang in ["en", "ro"]:
         if k in vol:
             ax.bar(vol.index, vol[k].values, bottom=bot, color=KCOL[k], width=0.7, label=KL[k])
             bot += vol[k].values
-    ax.set_ylabel(T("TWh contracted", "TWh contractați"))
+    ax.set_ylabel("TWh")
     ax.set_xticks(vol.index)
     ax.set_xticklabels([str(y) + ("*" if y == END.year else "") for y in vol.index])
-    legend_bottom(fig, ncol=5)
-    out(fig, lang, "fw_volume", bottom=0.2)
+    legend_compact(fig, ncol=5)
+    out(fig, lang, "fw_volume")
     # 2 crisis: calendar-2022 forward trades vs monthly spot
-    fig, ax = plt.subplots(figsize=(6.4, 2.2))
+    fig, ax = plt.subplots(figsize=(6.4, 2.1))
     sm_ = SPOT_M.loc["2020-01-01":"2022-12-01"]
-    ax.plot(sm_.index + pd.Timedelta(days=14), sm_.values, color=PAL["RO"], lw=1.4, label=T("Romania, monthly mean day-ahead price", "România, media lunară a prețului PZU"))
+    ax.plot(sm_.index + pd.Timedelta(days=14), sm_.values, color=PAL["RO"], lw=1.4, label=T("Romania, monthly mean day-ahead", "România, media lunară PZU"))
     ax.scatter(c22["auction_date"], c22["price_eur_mwh"], s=9, color=PAL["DE_LU"], zorder=3,
-               label=T("forward for calendar 2022 (baseload), one auction", "forward pentru anul 2022 (bandă), o licitație"))
+               label=T("forward for Cal-22 baseload, one auction", "forward pentru banda 2022, o licitație"))
     ax.hlines(S22, pd.Timestamp("2022-01-01"), pd.Timestamp("2022-12-31"), color="#222222", lw=1.2, ls="--",
               label=T("realised 2022 average", "media realizată în 2022"))
     ax.hlines(F22, pd.Timestamp("2022-01-01"), pd.Timestamp("2022-12-31"), color=PAL["DE_LU"], lw=1.2, ls="--",
-              label=T("volume-weighted forward price", "prețul forward mediu ponderat"))
+              label=T("volume-weighted forward", "forward mediu ponderat"))
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "crisis_cal22", bottom=0.28)
+    out(fig, lang, "crisis_cal22")
     # 3 calendar products by trade date + realised
-    fig, ax = plt.subplots(figsize=(6.4, 2.25))
+    fig, ax = plt.subplots(figsize=(6.4, 2.05))
     cols_ = [PAL["RO"], PAL["HU"], PAL["DE_LU"], PAL["c7"], PAL["BG"], PAL["c5"], PAL["c6"]]
     for i, y in enumerate([y for y in sorted(calt) if int(y) <= END.year + 1]):
         g = CY[CY["dy"] == int(y)]
-        ax.scatter(g["auction_date"], g["price_eur_mwh"], s=7, color=cols_[i % len(cols_)], label=T(f"Cal-{y[2:]}", f"anul {y}"))
+        ax.scatter(g["auction_date"], g["price_eur_mwh"], s=7, color=cols_[i % len(cols_)], label=T(f"Cal-{y[2:]}", y))
         if calt[y]["realised"] is not None and int(y) <= END.year - 1:
             ax.hlines(calt[y]["realised"], pd.Timestamp(f"{y}-01-01"), pd.Timestamp(f"{y}-12-31"), color=cols_[i % len(cols_)], lw=2.0)
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
-    legend_bottom(fig, ncol=7)
-    out(fig, lang, "cal_by_trade", bottom=0.2)
+    legend_compact(fig, ncol=7)
+    out(fig, lang, "cal_by_trade")
     # 4 forward curve today
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
     sp = SPOT_M.loc[END - pd.DateOffset(months=23):]
@@ -660,33 +686,33 @@ for lang in ["en", "ro"]:
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 7]))
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: (MON_EN if lang == "en" else MON_RO)[mdates.num2date(v).month - 1] + f"\n{mdates.num2date(v).year}"))
-    legend_bottom(fig, handles=hnd, labels=lab, ncol=3)
-    out(fig, lang, "fwd_curve", bottom=0.26)
+    legend_bottom(fig, handles=hnd, labels=lab, ncol=2)
+    out(fig, lang, "fwd_curve")
     # 5 forward premium of one-month-ahead monthly products
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
     ax.bar(MP.index, MP["prem"], width=25, color=[PAL["DE_LU"] if v > 0 else PAL["RO"] for v in MP["prem"]])
     ax.axhline(0, color="#222222", lw=0.6)
     from matplotlib.patches import Patch
-    hnd = [Patch(color=PAL["DE_LU"], label=T("forward above realised spot (buyer paid a premium)", "forward peste spotul realizat (cumpărătorul a plătit o primă)")),
-           Patch(color=PAL["RO"], label=T("forward below realised spot", "forward sub spotul realizat"))]
-    ax.set_ylabel(T("F minus realised,\nEUR/MWh", "F minus realizat,\nEUR/MWh"), fontsize=9)
+    hnd = [Patch(color=PAL["DE_LU"], label=T("F above realised spot (premium paid)", "F peste spotul realizat (primă plătită)")),
+           Patch(color=PAL["RO"], label=T("F below realised spot", "F sub spotul realizat"))]
+    ax.set_ylabel(T("F minus realised,\nEUR/MWh", "F minus realizat,\nEUR/MWh"), fontsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, handles=hnd, labels=[h_.get_label() for h_ in hnd], ncol=2)
-    out(fig, lang, "premium", bottom=0.2)
+    out(fig, lang, "premium")
     # 6 clean spark and clean dark spreads
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
-    ax.plot(SPR["RO"].index, SPR["RO"]["css"], color=PAL["RO"], lw=1.3, label=T("clean spark spread, Romania", "clean spark spread, România"))
-    ax.plot(SPR["DE_LU"].index, SPR["DE_LU"]["css"], color=PAL["DE_LU"], lw=1.1, ls=":", label=T("clean spark spread, Germany", "clean spark spread, Germania"))
-    ax.plot(SPR["RO"].index, SPR["RO"]["cds"], color=PAL["c7"], lw=1.1, ls="--", label=T("clean dark spread, Romania", "clean dark spread, România"))
+    ax.plot(SPR["RO"].index, SPR["RO"]["css"], color=PAL["RO"], lw=1.3, label=T("clean spark, Romania", "clean spark, România"))
+    ax.plot(SPR["DE_LU"].index, SPR["DE_LU"]["css"], color=PAL["DE_LU"], lw=1.1, ls=":", label=T("clean spark, Germany", "clean spark, Germania"))
+    ax.plot(SPR["RO"].index, SPR["RO"]["cds"], color=PAL["c7"], lw=1.1, ls="--", label=T("clean dark, Romania", "clean dark, România"))
     ax.axhline(0, color="#222222", lw=0.6)
-    ax.set_ylabel(T("EUR per MWh\nof electricity", "EUR pe MWh\nde energie electrică"), fontsize=9)
+    ax.set_ylabel(T("EUR per MWh\nof electricity", "EUR pe MWh de\nenergie electrică"), fontsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator(2))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
-    legend_bottom(fig, ncol=3)
-    out(fig, lang, "spreads", bottom=0.2)
+    legend_compact(fig, ncol=3)
+    out(fig, lang, "spreads")
     # 7 hourly spark duration curve
-    fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     for z_, col, ls in [("RO", PAL["RO"], "-"), ("DE_LU", PAL["DE_LU"], ":")]:
         s_ = (HH[z_] - HH["c"]).dropna()
         w = HH.loc[s_.index, "w"]
@@ -696,68 +722,68 @@ for lang in ["en", "ro"]:
     ax.axhline(0, color="#222222", lw=0.6)
     ax.set_ylim(-250, 400)
     ax.set_xlabel(T("hours of the last 12 months, sorted from the highest spread", "orele ultimelor 12 luni, ordonate descrescător după spread"))
-    ax.set_ylabel(T("clean spark,\nEUR/MWh", "clean spark,\nEUR/MWh"), fontsize=9)
+    ax.set_ylabel(T("clean spark,\nEUR/MWh", "clean spark,\nEUR/MWh"), fontsize=10)
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "spark_hourly", bottom=0.24, also_x=[ax])
+    out(fig, lang, "spark_hourly", also_x=[ax])
     # 8 hedge scatter
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.25), sharey=True)
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95), sharey=True)
     for ax, z_, col, nm in [(axs[0], "HU", PAL["HU"], T("Hungary", "Ungaria")), (axs[1], "DE_LU", PAL["DE_LU"], T("Germany", "Germania"))]:
         ax.scatter(dP[z_], dP["RO"], s=8, color=col, alpha=0.8)
         xx = np.linspace(dP[z_].min(), dP[z_].max(), 10)
         ax.plot(xx, HR[z_]["h"] * xx, color="#222222", lw=1.0)
-        ax.set_xlabel(T(f"monthly change, {nm}", f"variația lunară, {nm}") + ", EUR/MWh", fontsize=9)
+        ax.set_xlabel(f"Δ {nm}, EUR/MWh", fontsize=10)
         ax.text(0.03, 0.92, f"h* = {HR[z_]['h']:.2f}".replace(".", "," if lang == "ro" else ".") + f",  R² = {HR[z_]['r2']:.2f}".replace(".", "," if lang == "ro" else "."),
-                transform=ax.transAxes, fontsize=9)
-    axs[0].set_ylabel(T("monthly change,\nRomania, EUR/MWh", "variația lunară,\nRomânia, EUR/MWh"), fontsize=9)
-    out(fig, lang, "hedge_scatter", bottom=0.02, also_x=list(axs))
+                transform=ax.transAxes, fontsize=10)
+    axs[0].set_ylabel(T("Δ Romania,\nEUR/MWh", "Δ România,\nEUR/MWh"), fontsize=10)
+    out(fig, lang, "hedge_scatter", also_x=list(axs))
     # 9 basis + convergence
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.2), gridspec_kw={"width_ratios": [1.6, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.05), gridspec_kw={"width_ratios": [1.6, 1]})
     axs[0].plot(BAS.index, BAS["HU"], color=PAL["HU"], lw=1.2, label=T("Romania minus Hungary", "România minus Ungaria"))
     axs[0].plot(BAS.index, BAS["DE_LU"], color=PAL["DE_LU"], lw=1.0, ls=":", label=T("Romania minus Germany", "România minus Germania"))
     axs[0].axhline(0, color="#222222", lw=0.6)
-    axs[0].set_ylabel(T("monthly basis,\nEUR/MWh", "baza lunară,\nEUR/MWh"), fontsize=9)
+    axs[0].set_ylabel(T("monthly basis,\nEUR/MWh", "baza lunară,\nEUR/MWh"), fontsize=10)
     axs[0].xaxis.set_major_locator(mdates.YearLocator(3))
     axs[0].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     yy = [int(y) for y in conv.index]
     axs[1].bar([y - 0.2 for y in yy], conv.values, width=0.4, color=PAL["HU"])
     axs[1].bar([y + 0.2 for y in yy], convd.values, width=0.4, color=PAL["DE_LU"])
-    axs[1].set_ylabel(T("% of hours with\nthe same price", "% din ore cu\nacelași preț"), fontsize=9)
-    axs[1].set_xticks([2015, 2018, 2021, 2024])
+    axs[1].set_ylabel(T("% of hours with\nthe same price", "% din ore cu\nacelași preț"), fontsize=10)
+    axs[1].set_xticks([2015, 2020, 2025])
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "basis", bottom=0.22)
+    out(fig, lang, "basis")
     # 10 shape factors
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
-    ax.plot(PF.index, PF["f_load"], marker="o", ms=3.5, color=PAL["RO"], lw=1.3, label=T("load-weighted price / baseload price", "preț ponderat cu consumul / preț de bandă"))
-    ax.plot(PF.index, PF["f_solar"], marker="s", ms=3.5, color=PAL["BG"], lw=1.3, label=T("solar capture price / baseload price", "preț capturat de solar / preț de bandă"))
+    ax.plot(PF.index, PF["f_load"], marker="o", ms=3.5, color=PAL["RO"], lw=1.3, label=T("load-weighted / baseload price", "preț ponderat cu consumul / bandă"))
+    ax.plot(PF.index, PF["f_solar"], marker="s", ms=3.5, color=PAL["BG"], lw=1.3, label=T("solar capture / baseload price", "preț capturat de solar / bandă"))
     ax.axhline(1, color="#222222", lw=0.6)
     ax.set_xticks(PF.index)
     ax.set_xticklabels([str(y)[2:] + ("*" if y == END.year else "") for y in PF.index])
     ax.set_ylabel(T("ratio", "raport"))
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "shape", bottom=0.2)
+    out(fig, lang, "shape")
     # 11 Samuelson: rolling 60-day volatility of the December and May contracts
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
     for col, cc, ls in [("2026-12", PAL["RO"], "-"), ("2027-05", PAL["DE_LU"], ":")]:
         v = ROLLV[col].dropna() * 100
         ax.plot(v.index, v.values, color=cc, ls=ls, lw=1.3,
                 label=T("TTF contract for ", "contractul TTF pentru ") + (MON_EN if lang == "en" else MON_RO)[int(col[5:]) - 1] + " " + col[:4])
-    ax.set_ylabel(T("60-day volatility,\n% per year", "volatilitate pe 60 de\nzile, % pe an"), fontsize=9)
+    ax.set_ylabel(T("volatility,\n% per year", "volatilitate,\n% pe an"), fontsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "samuelson", bottom=0.2)
+    out(fig, lang, "samuelson")
     # 12 collar / cap payoff with real inputs
-    fig, ax = plt.subplots(figsize=(6.4, 2.15))
+    fig, ax = plt.subplots(figsize=(6.4, 2.05))
     FT = np.linspace(0.75 * F0, 1.3 * F0, 200)
     cT, pT = opts["c"]["call110"] * np.exp(r0 * T0), opts["c"]["put90"] * np.exp(r0 * T0)
-    ax.plot(FT, FT, color="#9a9a9a", lw=1.2, label=T("unhedged: pay the market", "neacoperit: plătește prețul pieței"))
-    ax.plot(FT, np.full_like(FT, F0), color=PAL["HU"], lw=1.4, label=T("forward at F", "forward la prețul F"))
-    ax.plot(FT, np.minimum(FT, 1.1 * F0) + cT, color=PAL["DE_LU"], lw=1.4, ls="--", label=T("cap K = 1.1 F (call bought)", "plafon K = 1,1 F (call cumpărat)"))
-    ax.plot(FT, np.clip(FT, 0.9 * F0, 1.1 * F0) + cT - pT, color=PAL["c7"], lw=1.4, ls="-.", label=T("collar 0.9 F - 1.1 F", "collar 0,9 F - 1,1 F"))
+    ax.plot(FT, FT, color="#9a9a9a", lw=1.2, label=T("unhedged", "neacoperit"))
+    ax.plot(FT, np.full_like(FT, F0), color=PAL["HU"], lw=1.4, label=T("forward at F", "forward la F"))
+    ax.plot(FT, np.minimum(FT, 1.1 * F0) + cT, color=PAL["DE_LU"], lw=1.4, ls="--", label=T("cap at 1.1 F", "plafon la 1,1 F"))
+    ax.plot(FT, np.clip(FT, 0.9 * F0, 1.1 * F0) + cT - pT, color=PAL["c7"], lw=1.4, ls="-.", label=T("collar 0.9 F to 1.1 F", "collar 0,9 F - 1,1 F"))
     ax.set_xlabel(T("forward price at expiry $F_T$, EUR/MWh", "prețul forward la scadență $F_T$, EUR/MWh"))
-    ax.set_ylabel(T("effective price,\nEUR/MWh", "preț efectiv,\nEUR/MWh"), fontsize=9)
-    legend_bottom(fig, ncol=2)
-    out(fig, lang, "collar", bottom=0.3, also_x=[ax])
+    ax.set_ylabel(T("effective price,\nEUR/MWh", "preț efectiv,\nEUR/MWh"), fontsize=10)
+    legend_compact(fig, ncol=4)
+    out(fig, lang, "collar", also_x=[ax])
     # 13 case study 2026
     fig, ax = plt.subplots(figsize=(6.4, 2.1))
     xm = STRAT.index + pd.Timedelta(days=14)
@@ -768,8 +794,8 @@ for lang in ["en", "ro"]:
     ax.set_ylabel(T("cost, EUR/MWh", "cost, EUR/MWh"))
     ax.set_xticks(xm)
     ax.set_xticklabels([(MON_EN if lang == "en" else MON_RO)[m_.month - 1] for m_ in STRAT.index])
-    legend_bottom(fig, ncol=4)
-    out(fig, lang, "case2026", bottom=0.2)
+    legend_bottom(fig, ncol=2)
+    out(fig, lang, "case2026")
 
 chart("fw_volume", "fw", f"{len(FW):,} traded auctions, {d(FW['auction_date'].min())} to {d(END)}; *{END.year} to the cut-off",
       f"{de_(len(FW))} licitații încheiate, {d(FW['auction_date'].min())} - {d(END)}; *{END.year} pînă la data-limită")

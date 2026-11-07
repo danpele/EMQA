@@ -54,7 +54,7 @@ Prețul îl stabilește ultima ofertă acceptată, cea marginală, și toți vî
 
 @practice prețul unui sfert de oră este dat de cea mai scumpă ofertă acceptată, nu de costul mediu al sistemului.
 
-## Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026 {h=8cdca8d9}
+## Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026 {h=95afa9d4}
 
 Graficul prezintă curbele agregate ale cererii și ofertei publicate de OPCOM pentru PZU, în două sferturi de oră din aceeași zi, 21 octombrie 2026. Cantitățile includ ofertele bloc, ofertele orare și fluxurile transfrontaliere nete, deci sînt chiar curbele pe care licitația le-a intersectat.
 
@@ -120,7 +120,7 @@ Panoul din stînga arată cum s-a redus și și-a schimbat structura producția 
 @chart mix_ro_annual
 Producția anuală a României pe surse (TWh, cumulat) în anii compleți 2015–2025, cu consumul marcat printr-o bară neagră (stînga), și ponderile surselor în ianuarie–octombrie 2025 și 2026 (dreapta).
 
-## România: cărbunele scade, solarul crește, iar nuclearul se reduce în 2026 {h=00be4d42}
+## România: cărbunele scade, solarul crește, iar nuclearul se reduce în 2026 {h=488e0773}
 
 Comparația ponderilor fiecărei surse în 2015, 2025 și ianuarie–octombrie 2026 arată trei evoluții. Producția pe cărbune a scăzut cu 63,9% între 2015 și 2025, în timp ce producția solară măsurată a crescut de 2,2 ori în aceeași perioadă. În 2026, producția nucleară din ianuarie–octombrie a fost cu 31,3% mai mică decît în aceleași luni din 2025, pe orele raportate în ambii ani. Scăderea reală este cel puțin la fel de mare, deoarece cele 29 de zile din septembrie pentru care producția nucleară nu a fost raportată sînt pur și simplu excluse din comparație. Tabelul complet se află în Anexa D.
 
@@ -159,7 +159,7 @@ Conform datelor noastre, România a consumat 53,56 TWh în 2025, adică o putere
 
 @practice un contract de 10 MW în bandă înseamnă 240 MWh livrați pe zi.
 
-## O zi de consum în România: puterea în MW, energia în MWh {h=1c89f747}
+## O zi de consum în România: puterea în MW, energia în MWh {h=454f640d}
 
 Graficul face distincția concretă pentru o zi reală, 28 octombrie 2026. Curba reprezintă puterea: cît consumă țara în fiecare oră, în MW. Minimul a fost de 5 253 MW la ora 3:00, iar maximul de 7 719 MW la ora 17:00 (CET). Aria colorată de sub curbă este energia: 159 558 MWh în acea zi, adică 24 de ore înmulțite cu o putere medie de 6 648 MW.
 
@@ -184,7 +184,7 @@ Sursa, energy-charts.info, care republică prețurile raportate de OPCOM și de 
 
 @practice la un furnizor, cele mai multe erori de prognoză apar la prelucrarea datelor (fus orar greșit, goluri completate), nu în model.
 
-## Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel {h=69b5f2ea}
+## Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel {h=d5e0efbd}
 
 Graficul prezintă prețurile zilnice pentru ziua următoare în cele patru zone, din 2015 pînă în octombrie 2026. Pînă în 2020, prețurile au rămas într-un interval îngust; în 2021–2022, criza gazelor din Europa le-a dus la niveluri fără precedent, iar maximul zilnic din România a ajuns la 738,28 EUR/MWh, la 30 august 2022. Prețurile au scăzut apoi, dar nu pînă la vechiul nivel.
 
@@ -210,7 +210,7 @@ Cele două mărimi evoluează împreună: în 2022, cînd media din România a f
 
 @practice garanțiile pentru PZU cresc odată cu prețul: la 200 EUR/MWh piața fluctuează mult mai mult decît la 50.
 
-## Producția solară a mutat minimul zilnic al prețului la amiază {h=529f0ee4}
+## Producția solară a mutat minimul zilnic al prețului la amiază {h=a0e03712}
 
 Graficul compară prețul mediu al fiecărei ore din zi în 2019 și în 2025, pentru fiecare zonă. În 2019, orele cele mai ieftine erau noaptea, ca într-un sistem energetic clasic, cînd cererea este minimă. În 2025, ora cu prețul minim se mutase la 13:00, cu 58,8 EUR/MWh în România, în timp ce vîrful de seară ajungea la 182,5 EUR/MWh. Raportul dintre prețul de seară și cel de la amiază a urcat de la 1,30 la 3,11.
 
@@ -240,7 +240,7 @@ Pe 199 de săptămîni, între 2 ianuarie 2023 și 25 octombrie 2026:
 
 @practice un consumator industrial își poate muta consumul flexibil (mentenanță, pompare, încărcare) duminica, reducîndu-și astfel costurile cu energia.
 
-## Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată {h=6b49c97b}
+## Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată {h=30e28a5a}
 
 De-a lungul anului, prețul din România urmează echilibrul dintre cerere și sursele ieftine. Raportat la media anuală, prețul este maxim în ianuarie (de 1,26 ori media) și minim în aprilie (de 0,72 ori). Consumul este maxim în ianuarie–februarie și minim în mai, iar producția hidro atinge maximul în iunie, odată cu topirea zăpezii. Primăvara, apa abundentă și producția solară în creștere întîlnesc o cerere moderată, iar prețurile scad.
 
@@ -273,7 +273,7 @@ Deoarece pragul urmează distribuția fiecărui an, 2022 are foarte puține salt
 
 @practice un furnizor cu contracte la preț fix își poate pierde cea mai mare parte a marjei anuale în cîteva zeci de ore cu salturi de preț, motiv pentru care își acoperă riscul.
 
-## Prețurile negative au apărut în România în 2023 și au devenit frecvente {h=4c24dbe8}
+## Prețurile negative au apărut în România în 2023 și au devenit frecvente {h=3d3da655}
 
 Primul preț negativ pe PZU a apărut la 21 mai 2023. De atunci, prețurile negative au devenit o trăsătură obișnuită a pieței și urmează un tipar clar: din 2024, 91,1% din orele cu preț negativ cad între 10:00 și 16:00, iar 83,9% în weekend. Sînt orele în care producția solară este maximă, iar cererea minimă.
 
@@ -299,7 +299,7 @@ România nu a avut prețuri negative înainte de 2023, în timp ce Germania le-a
 
 @practice în rapoartele către conducere scrieți „687 de sferturi de oră (171,75 h)”, nu un număr fără unitate.
 
-## Prețul poate fi nul sau negativ: folosiți diferențe sau asinh {h=3cbac2d3}
+## Prețul poate fi nul sau negativ: folosiți diferențe sau asinh {h=7618fe91}
 
 Variațiile procentuale și logaritmii presupun un preț pozitiv, deci eșuează tocmai în orele cele mai importante pentru producția solară și pentru stocare. O transformare definită pentru orice semn păstrează orele cu preț nul sau negativ (Uniejewski, Weron & Ziel, 2018):
 
@@ -312,7 +312,7 @@ unde $p_t$ este prețul, $\tilde p$ este mediana sa, $\widehat{\mathrm{MAD}}$ es
 @chart asinh_ro
 Histograma tuturor prețurilor pe sfert de oră din România, ianuarie–octombrie 2026, în nivel (EUR/MWh, stînga) și după transformarea asinh (dreapta).
 
-## Cozi groase: variațiile extreme ale țițeiului sînt mult mai frecvente {h=5dc78432}
+## Cozi groase: variațiile extreme ale țițeiului sînt mult mai frecvente {h=63d13933}
 
 „Cozile groase” înseamnă că zilele cu creșteri sau scăderi foarte mari apar mult mai des decît ar permite clopotul lui Gauss. Dovada provine din randamentele logaritmice zilnice ale țițeiului Brent, între 5 ianuarie 2015 și 30 octombrie 2026, fără cele 141 de zile de schimbare a contractului. Conform distribuției normale, variațiile de peste 4 abateri standard ar trebui să apară de 0,18 ori într-un asemenea eșantion; observăm 16. Excesul de aplatizare este 13,98, față de 0 pentru distribuția normală; formulele și testul de normalitate Jarque–Bera (JB) se află în Anexa F (Jarque & Bera, 1980).
 
@@ -323,7 +323,7 @@ Graficul cuantil–cuantil arată același lucru vizual: cuantilele observate se
 @chart tails_brent
 Randamentele logaritmice zilnice ale țițeiului Brent, 5 ianuarie 2015 – 30 octombrie 2026: graficul cuantil–cuantil față de distribuția normală (stînga) și histograma randamentelor standardizate, cu densitățile normală și Student-t (dreapta).
 
-## Perioadele calme și cele agitate apar grupat {h=b6d8dae5}
+## Perioadele calme și cele agitate apar grupat {h=728e26a4}
 
 O variație mare astăzi face mai probabilă o altă variație mare mîine, chiar dacă sensul ei nu poate fi anticipat. Statistica Ljung–Box testează dacă primele $m$ autocorelații ale unei serii sînt simultan nule:
 
@@ -346,7 +346,7 @@ Prețurile energiei își schimbă nivelul, urmează cicluri zilnice, săptămî
 
 Secțiunea introduce instrumentele folosite în tot cursul pentru a descrie o serie de prețuri: staționaritatea, autocorelația și autocorelația parțială, prognoza naivă, testele de rădăcină unitară, descompunerea și netezirea exponențială. Fiecare instrument este aplicat pe datele din România, din Germania sau pe țițeiul Brent.
 
-## Staționaritate: regulile jocului nu se schimbă în timp {h=118c36db}
+## Staționaritate: regulile jocului nu se schimbă în timp {h=799527c5}
 
 O serie este (slab) staționară dacă media, dispersia și memoria ei rămîn aceleași în orice perioadă:
 
@@ -373,7 +373,7 @@ Patru reguli de interpretare acoperă majoritatea situațiilor. O scădere lent�
 
 @practice prognoza unui furnizor pentru ziua de mîine pornește de la „aceeași zi din săptămîna trecută”: autocorelația la decalajul 7 este 0,672 în România, din 2023.
 
-## Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră {h=e0aa850e}
+## Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră {h=3538be57}
 
 Cele două grafice aplică regulile de interpretare prețurilor din România. Pentru prețurile zilnice în bandă dintre 1 ianuarie 2023 și 31 octombrie 2026, autocorelația la decalajul 1 este $\hat\rho_1=0{,}789$, iar la decalajul 7, $\hat\rho_7=0{,}672$; autocorelația parțială la decalajul 7 este $\hat\alpha_7=0{,}257$, deci aceeași zi din săptămîna precedentă aduce informație în plus față de ultimele zile. Funcția de autocorelație scade lent, cu vîrfuri la multiplii lui 7.
 
@@ -385,7 +385,7 @@ Autocorelația (stînga) și autocorelația parțială (dreapta) a prețurilor z
 @chart acf_ro_hourly
 Autocorelația prețurilor orare din România în 2024 (T = 8784), pînă la decalajul de 168 de ore, cu banda pentru zgomot alb.
 
-## Prognoza naivă: reperul pe care orice model trebuie să-l depășească {h=df9dce51}
+## Prognoza naivă: reperul pe care orice model trebuie să-l depășească {h=1142030f}
 
 Cea mai simplă prognoză rezonabilă spune că prețul de mîine pentru fiecare oră este prețul de azi pentru aceeași oră; luni, sîmbătă și duminică se folosește prețul aceleiași ore din ziua corespunzătoare a săptămînii precedente:
 
@@ -434,7 +434,7 @@ Nivelurile prețului din România și ale țițeiului Brent sînt compatibile cu
 
 @practice modelați *variațiile* prețului (sau prețul transformat) și includeți explicit sezonalitatea.
 
-## Descompunerea: trend, sezonalitate și componenta reziduală {h=c871f129}
+## Descompunerea: trend, sezonalitate și componenta reziduală {h=8e6a472b}
 
 O serie sezonieră poate fi scrisă ca suma a trei componente:
 
@@ -449,7 +449,7 @@ Graficul aplică ambele metode consumului mediu lunar al României, între ianua
 @chart decomp_load
 Consumul mediu lunar al României, ianuarie 2016 – decembrie 2025 (GW): seria observată, cu trendul clasic și trendul STL (sus), și componentele sezoniere clasică și STL (jos).
 
-## Netezirea exponențială: datele recente cîntăresc mai mult {h=aa13bcf0}
+## Netezirea exponențială: datele recente cîntăresc mai mult {h=88f1ebe7}
 
 Nivelul netezit este o medie a tuturor valorilor trecute, cu ponderi care scad geometric:
 
@@ -472,7 +472,7 @@ Nivelurile prețurilor se comportă ca serii cu rădăcină unitară, iar varia�
 
 Șase episoade din perioada 2023–2026 arată faptele stilizate în acțiune: un an ploios și unul secetos, un șoc petrolier, o separare regională a prețurilor, prețurile negative și producția solară, creșterea prețurilor din 2026 și apariția bateriilor în Bulgaria. Fiecare studiu de caz este analizat cu instrumentele din secțiunile anterioare și numai pe date reale.
 
-## Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023 {h=ef712a4b}
+## Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023 {h=6a8ef687}
 
 Producția hidro a României depinde de ploi și de zăpadă. În 2023, un an ploios, centralele pe firul apei și cele cu lac au produs 18,34 TWh, maximul din 2015 încoace; în 2025, un an secetos, au produs 12,15 TWh, minimul perioadei, adică o scădere de 33,8%. Față de media 2015–2025, de 15,85 TWh, producția din 2025 a fost cu 23,3% sub normal.
 
@@ -512,7 +512,7 @@ Episodul arată cum un șoc geopolitic este întîi inclus în preț ca primă d
 @chart iran_brent
 Prețul de închidere zilnic al țițeiului Brent (USD/bbl) în zilele de tranzacționare dintre 2 iunie și 4 iulie 2025.
 
-## Studiul de caz (c): în iulie 2024, România a plătit dublul prețului din Germania {h=a6247e9c}
+## Studiul de caz (c): în iulie 2024, România a plătit dublul prețului din Germania {h=a1f71249}
 
 În vara lui 2024, piețele cuplate din sud-estul Europei s-au separat de Europa Centrală. În iulie 2024, prețul mediu pentru ziua următoare a fost de 145,14 EUR/MWh în România, 136,47 în Bulgaria și 135,54 în Ungaria, dar numai 67,70 în Germania–Luxemburg.
 
@@ -531,7 +531,7 @@ Ponderea orelor din iulie 2024 în care prețurile au fost egale, cu o diferenț
 
 Concluziile pentru modelare sînt trei. Prețurile piețelor cuplate sînt egale numai cît timp rețeaua nu este la limită. Prețul din România trebuie modelat cu factori regionali: hidro, solar și consumul din sud-estul Europei. Diferența față de Germania trebuie tratată ca o variabilă separată, al cărei comportament depinde de regim.
 
-## Studiul de caz (d): prețurile negative apar mai ales primăvara {h=3e0d1589}
+## Studiul de caz (d): prețurile negative apar mai ales primăvara {h=ef0bee02}
 
 Din 2023, lunile aprilie și mai concentrează 49,6% din orele cu preț negativ din România, iar lunile iunie–august încă 34,0%. Primăvara combină producția solară ridicată, lacurile pline și cererea moderată, adică exact situația în care oferta inflexibilă depășește consumul la amiază.
 
@@ -554,7 +554,7 @@ Interpretarea este simplă: fiecare GW în plus de consum rezidual înmulțește
 
 @practice regenerabilele sînt limitate cel mai probabil în weekendurile de primăvară, cu lacuri pline.
 
-## Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie {h=b9e2a3d4}
+## Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie {h=a6bc21f0}
 
 În ianuarie–octombrie 2026, prețul mediu din România a fost de 137,45 EUR/MWh, cu 29,8% peste aceleași luni din 2025. Creșterea s-a accelerat spre sfîrșitul perioadei: în octombrie, media a fost de 239,3 EUR/MWh, față de 121,9 cu un an înainte.
 
@@ -565,7 +565,7 @@ Interpretarea este simplă: fiecare GW în plus de consum rezidual înmulțește
 @chart cy_prices
 Prețurile zilnice în bandă în cele patru zone (EUR/MWh, sus) și prețul de închidere Brent (USD/bbl, jos), 1 ianuarie – 31 octombrie 2026.
 
-## Studiul de caz (e): două opriri ale centralei nucleare de la Cernavodă, hidro sub nivelul din 2025 {h=65f2debb}
+## Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025 {h=64d1ca94}
 
 În același timp, oferta internă a scăzut. Producția nucleară a României a fost de 0 MW în 19 zile din mai, conform datelor, și din nou începînd din august: unitatea 1 a centralei de la Cernavodă a fost oprită la sfîrșitul lui iulie, iar unitatea 2 la 13 august, din cauza nivelului scăzut al Dunării, din care provine apa de răcire. Datele pentru septembrie nu sînt raportate. În ianuarie–octombrie, producția nucleară a scăzut cu 31,3% pe orele raportate în ambii ani, o limită inferioară a scăderii reale.
 
@@ -614,7 +614,7 @@ Pentru țițeiul Brent, cel mai mare preț de închidere din 2026 a fost de 118,
 
 @practice stabiliți limitele de risc pe baza valorilor extreme, nu a mediilor.
 
-## Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara {h=599bfd1f}
+## Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara {h=2c5526bb}
 
 Piețele din România și Bulgaria sînt cuplate și au de obicei aproape același preț. În orele de seară, între 19:00 și 22:00, ora locală (EET), din aprilie pînă în septembrie, prețul mediu a fost de 171,1 EUR/MWh în România și de 169,7 în Bulgaria în 2025, dar de 215,5 față de 178,0 EUR/MWh în 2026. La amiază, între 11:00 și 15:00, prețurile au rămas apropiate în 2026 (48,1 față de 46,0).
 

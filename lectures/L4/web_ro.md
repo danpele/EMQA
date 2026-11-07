@@ -27,7 +27,7 @@ Seria principală este prețul de bază de pe PZU din România (RO), administrat
 
 Datele acoperă intervalul 1 ianuarie 2015 – 31 octombrie 2026, ultima lună completă, și au fost descărcate la 4 noiembrie 2026. Prețul zilnic este media prețurilor zilei de livrare, după ora Europei Centrale (CET). Cele cinci zile lipsă din seria prețului din România rămîn lipsă, iar variațiile vecine cu ele nu se calculează. Testarea retrospectivă acoperă fiecare zi din intervalul 1 ianuarie 2017 – 31 octombrie 2026, adică 3 587 de zile valide, iar fiecare prognoză folosește numai datele disponibile pînă în ziua precedentă, exact cum ar lucra un birou de risc.
 
-## Riscul se află în variația zilnică a prețului: mică pînă în 2021, foarte mare după {h=142bbc02}
+## Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după {h=a0ad287d}
 
 Variabila care determină pierderea este variația prețului zilnic de bază de la o zi la alta, $X_t=P_t-P_{t-1}$, în EUR/MWh, unde $P_t$ este prețul de bază al zilei $t$. Prețul energiei electrice poate fi negativ, de aceea lucrăm cu variații în euro, nu cu randamente logaritmice, care nu sînt definite pentru un preț negativ.
 
@@ -66,7 +66,7 @@ Pe ultimele 365 de zile, VaR$_{0,975}$ este 61,96 EUR/MWh, iar ES$_{0,975}$ este
 
 @practice dimensionați rezerva de numerar cu ES, nu cu VaR.
 
-## Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală {h=8804722c}
+## Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală {h=89429e75}
 
 Dacă variațiile prețului ar urma o repartiție normală, zilele extreme ar fi extrem de rare. Nu sînt. Excesul de aplatizare (*kurtosis*) al lui $X_t$ este 12,0 în România și 12,1 în Germania–Luxemburg, față de 0 pentru repartiția normală: repartiția are un centru îngust și cozi lungi.
 
@@ -183,7 +183,7 @@ Diferența dintre metode contează cel mai mult într-o criză. Între 1 iulie 2
 @chart var_paths
 Variațiile zilnice ale prețului din România și prognozele VaR de 99% ale celor cinci metode, 1 iulie 2021 – 30 iunie 2023, cu depășirile marcate.
 
-## Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile {h=19cc6a24}
+## Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile {h=ac2b2d7e}
 
 Autoritățile de reglementare și multe companii trec de la VaR pe o zi la VaR pe zece zile înmulțind-o cu $\sqrt{10}$ = 3,16. Regula presupune că variațiile zilnice sînt independente, ca într-un mers aleator. Prețurile energiei electrice nu se comportă așa: ele revin spre un nivel stabilit de costul combustibililor și de calendarul săptămînal.
 
@@ -288,6 +288,14 @@ unde $T$ este numărul zilelor, $\alpha$ = 0,975, $I_t$ depășirea VaR$_{0,975}
 În criză, toate prognozele ES au fost prea mici, cele normale cu diferența cea mai mare. Din 2023, FHS, EVT și HS trec testul. Deoarece un ES de 97,5% se sprijină pe doar circa 9 zile extreme pe an, comparația modelelor are nevoie de mai mulți ani de date (Pele și Mazurencu-Marinescu-Pele, 2026).
 
 @practice evaluați ES pe mai mulți ani, niciodată pe un trimestru (circa 9 zile extreme pe an).
+
+## AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează {h=5aae05ca}
+
+La conferința AIDA (Academia de Studii Economice din București, 4 iunie 2026), D. T. Pele a prezentat o lucrare comună cu V. Bolovăneanu, A. T. Ginavar, S. Lessmann și W. K. Härdle despre recalibrarea prognozelor VaR ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf); lucrarea a fost trimisă spre publicare). Metoda are nevoie de un singur număr. În fiecare zi, scorul $s_t=\hat q_t-r_t$ compară cuantila prognozată cu randamentul realizat și este pozitiv în ziua unei depășiri; $\hat q_V$ este cuantila de 99% a scorurilor trecute, iar VaR corectată este VaR plus $\hat q_V$. Deplasarea este fie fixă, estimată pe un eșantion de calibrare (un audit), fie glisantă, pe ultimele 250 de zile (pentru utilizarea zilnică). Lucrarea o aplică VaR de 1% a 10 modele, modele fundaționale, modele de tip GARCH și HS, pe 24 de active, inclusiv petrol și gaze, în total 240 de perechi, și evaluează rezultatul cu testele Kupiec și Christoffersen și cu semaforul Basel din această secțiune.
+
+Ca diagnostic, $\hat q_V$ variază între −0,007, pentru un model prea prudent, și +0,102, pentru un model fără informație utilă despre coadă, și explică 53,4% ($R^2$ parțial) din cîștigul la scorul cuantilic. Ca instrument de corecție, perechile din zona verde cresc de la 63/240 (26,2%) inițial la 203/240 (84,6%) cu deplasarea fixă și la 234/240 (97,5%) cu deplasarea glisantă. Rata depășirilor este refăcută, dar gruparea lor nu, astfel încît testul Christoffersen își păstrează rolul. Legătura cu acest curs este directă: testul Kupiec arată dacă VaR eșuează, $\hat q_V$ arată cu cît, iar lărgirea $\hat c_t$ a garanției pentru PZU, din secțiunea următoare, este aceeași deplasare cu un singur parametru.
+
+@practice după un test eșuat, lărgiți VaR cu deplasarea conformală și testați în continuare gruparea depășirilor.
 
 # De la cuantile la marje, garanții și limite
 
@@ -403,6 +411,22 @@ Studiul de caz C4 pornește de la o lucrare a grupului nostru (Toma, Dima, Grecu
 Replicarea noastră pe trei companii din România, OMV Petrom, Romgaz și Nuclearelectrica, dă o AUC de 0,38, față de 0,61 pentru volatilitatea trecută: un indicator sistemic are nevoie de multe companii, ca în lucrare. Studiul de caz adaugă două riscuri specifice companiilor energetice. Prima preț–volum a profilului casnic, adică costul suplimentar al cumpărării unor cantități mai mari în orele scumpe, a fost de 5,2% din prețul de bază în 2025. Un parc hidro care a vîndut la termen producția mediană ar fi trebuit să răscumpere în anul secetos 2022 volumul lipsă, cu un cost de 394 de milioane EUR.
 
 @practice includeți indicatorul sistemic, prima preț–volum și costul anului secetos în același tablou de bord.
+
+## AIDA 2026: riscul sistemic din energia UE a crescut brusc din iulie 2021 {h=73044e9c}
+
+La conferința AIDA (3 iunie 2026), F.-M. Toma a prezentat lucrarea din studiul de caz C4 ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/toma_energy_financial_risk_meter.pdf); lucrarea: [doi:10.2139/ssrn.6985301](https://doi.org/10.2139/ssrn.6985301)). Lucrarea folosește 100 de companii energetice europene, din aprilie 2016 pînă în martie 2026. Pentru fiecare firmă, cuantila de 5% a randamentului este regresată prin LASSO pe randamentele celorlalte 99 de firme, pe contractele futures pe petrol și gaze și pe indici bursieri; EFRM este penalizarea LASSO medie, astfel încît o valoare mai mare înseamnă că sînt necesare mai multe legături pentru a explica coada, adică o expunere sistemică mai mare.
+
+EFRM lunar are două rupturi: februarie 2020, la începutul pandemiei, și iulie 2021, în timpul creșterii prețului gazelor, cu șapte luni înaintea invaziei Ucrainei. Riscul geopolitic a influențat EFRM abia după invazie, cu +1,52 puncte procentuale într-un model cu parametri variabili. De atunci, efectul EFRM asupra acțiunilor din Stoxx 600 s-a atenuat cu circa 60%, iar cel asupra swapurilor pe riscul de credit pe 5 ani a rămas pozitiv. În afara eșantionului, EFRM împreună cu CISS prognozează lunile volatile cu o AUC de 0,731, față de 0,708 doar pentru EFRM și 0,673 doar pentru CISS.
+
+@practice VaR proprie a unei firme nu vede contagiunea; urmăriți alături de ea un indicator sectorial.
+
+## AIDA 2026: riscul extrem al firmelor poluante anticipă prima de carbon {h=9423a50f}
+
+La conferința AIDA (5 iunie 2026), prof. Wolfgang Karl Härdle a prezentat o lucrare comună cu R. Wang și L. Zhang ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/wang_carbon_risk_dynamics.pdf); lucrarea: [doi:10.2139/ssrn.5757742](https://doi.org/10.2139/ssrn.5757742)). Punctul de plecare este puzzle-ul primei de carbon. Ipoteza compensării riscului spune că firmele cu emisii mari ar trebui să cîștige mai mult, deoarece investitorii cer un randament mai mare pentru riscul lor de tranziție; preferința pentru activele verzi spune că firmele cu emisii reduse ar trebui să cîștige mai mult. Lucrarea folosește acțiuni din China, din iulie 2014 pînă în februarie 2025: cele mai mari 50 de firme poluante și cele mai mari 50 de firme cu emisii reduse, alese din primele și ultimele 30% după emisiile de CO$_2$ raportate la venituri. Pentru fiecare firmă, cuantila de 5% a randamentului este regresată prin LASSO pe celelalte firme și pe factori macroeconomici, inclusiv volatilitatea prețului carbonului, pe o fereastră de 63 de zile, exact ca pentru EFRM din secțiunea anterioară. Indicatorul dinamic al riscului de carbon (CARDI) este raportul dintre indicatorul de risc financiar (FRM), adică penalizarea LASSO medie $\lambda$, al firmelor poluante și cel al firmelor cu emisii reduse.
+
+Regimurile de risc ridicat ale CARDI coincid cu evenimente neașteptate sau incipiente ale politicii climatice. Ambele ipoteze ale puzzle-ului sînt valabile, în funcție de CARDI: o creștere a CARDI anticipă o primă mai mare a firmelor cu emisii reduse, ajustată pentru factorii de risc, în luna următoare, cu un coeficient de 0,022 pentru cuantila de 5%, pe 118 luni, în timp ce rapoartele construite din conectivitate, din co-mișcarea extremă sau din VaR condiționată nu o anticipează. O strategie cu poziție long pe firmele cu emisii reduse și short pe cele poluante, deschisă doar cînd CARDI crește, a obținut un randament cumulat de 115,84% în 2015–2024, cu un raport Sharpe de 0,72, față de 89,03% și 0,49 pentru aceeași poziție menținută permanent. Pentru o companie energetică, raportul arată ce parte a sectorului poartă riscul extrem.
+
+@practice într-o firmă de petrol și gaze, urmăriți CARDI: cînd crește, investitorii preferă firmele cu emisii reduse.
 
 # Studiu de caz: creșterea prețurilor din toamna anului 2026
 

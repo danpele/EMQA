@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L1_profile_annual'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Monthly profile of Romanian load, hydro and solar generation (mean GW) and of the Romanian day-ahead price relative to its annual mean (median over the years): spring is cheap when water and sun meet mild demand. Data: monthly means 2016-2025. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+Description: 'Monthly profile of Romanian load, hydro and solar generation (mean GW) and of the Romanian day-ahead price relative to its annual mean (median over the years): spring is cheap when water and sun meet mild demand. Data: monthly means 2016-2025. Source: energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E.'
 
 Keywords: 'seasonality, monthly profile, electricity prices, hydro, solar, load, Romania'
 

@@ -51,14 +51,14 @@
   "shape15": {
    "source_en": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E",
    "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile PZU ale OPCOM pentru Rom\u00e2nia, prin ENTSO-E",
-   "period_en": "last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET",
-   "period_ro": "ultimele 12 luni, 2025-11-01 - 2026-10-31, pre\u021buri pe 15 minute, ora CET"
+   "period_en": "last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET; winter = Dec-Feb, spring = Mar-May, summer = Jun-Aug, autumn = Sep-Nov",
+   "period_ro": "ultimele 12 luni, 2025-11-01 - 2026-10-31, pre\u021buri pe 15 minute, ora CET; iarna = dec.-feb., prim\u0103vara = mar.-mai, vara = iun.-aug., toamna = sep.-nov."
   },
   "spreads": {
    "source_en": "energy-charts.info (Fraunhofer ISE); day-ahead prices of OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E",
    "source_ro": "energy-charts.info (Fraunhofer ISE); pre\u021burile pie\u021bei pentru ziua urm\u0103toare: OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
-   "period_en": "daily, hourly prices (15-min averaged), monthly means, 2019 to 2026-10-31; log scale above 100",
-   "period_ro": "zilnic, pre\u021buri orare (media sferturilor), medii lunare, 2019 - 2026-10-31; scar\u0103 logaritmic\u0103 peste 100"
+   "period_en": "daily, hourly prices (15-min averaged), monthly means, 2019 to 2026-10-31",
+   "period_ro": "zilnic, pre\u021buri orare (media sferturilor), medii lunare, 2019 - 2026-10-31"
   },
   "bat_years": {
    "source_en": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation",

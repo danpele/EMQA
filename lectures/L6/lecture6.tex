@@ -106,7 +106,7 @@ Installed capacity & yearly & ENTSO-E via energy-charts.info \\
 
 \begin{frame}{Installed solar in Romania grew 2.4 times from 2019 to 2025}
 \footnotesize
-\begin{center}\includegraphics[width=\textwidth,height=0.525\textheight,keepaspectratio]{charts/en/solar_growth.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.526\textheight,keepaspectratio]{charts/en/solar_growth.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE), installed capacity from ENTSO-E; ENTSO-E solar output (Transelectrica data). Data: installed capacity at year end 2019-2025; output 2019 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -216,6 +216,30 @@ Installed capacity & yearly & ENTSO-E via energy-charts.info \\
 \end{itemize}
 \par\vfill\manager{a hydro producer saves water for high residual load, where each GW is worth most.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation)}\hfill\qlink{EMQA\_L6\_resid\_price}{Quantlets/L6/EMQA_L6_resid_price}\par\vspace{0.5mm}
+\end{frame}
+
+\subsection{Renewables and the grid: redispatch}
+
+\begin{frame}{Research from our group: machine learning forecasts German redispatch one day ahead}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{Why redispatch}: wind in the north, demand in the industrial south of Germany
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item After the day-ahead market, transmission system operators order plants up or down to keep lines within limits
+    \end{itemize}
+  \item \textbf{What the work did}: forecast the hourly redispatch volume (MW), up and down, of the four German operators
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item 24 h ahead, with what is known on the afternoon of $d-1$: wind, solar, load, price spreads, scheduled exchanges
+      \item Data Oct 2021 -- Feb 2026; 11 monthly test windows, Mar 2025 -- Feb 2026
+    \end{itemize}
+  \item \textbf{What it found}: deep neural networks are most often among the best models
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item The best of them is in the model confidence set (mean absolute error) for 6 of the 8 series
+      \item Covariates help only when aligned in time: significantly better forecasts in 40--60\% of the dense series
+    \end{itemize}
+\end{itemize}
+\par\vfill\manager{for Transelectrica: forecast where wind and solar will meet the limits of the grid, a day ahead.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Basangova, Bolovăneanu, Conda, Erlwein-Sayer, Melzer, Pele, Petukhina \& Phan, 2026, talk at AIDA 2026 (AI and Digital Assets in Energy and Finance), Bucharest, 3 June 2026: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf}{slides})}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -333,7 +357,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 
 \begin{frame}{In 2025, 32.1\% of Romanian solar output was sold in the cheapest 10\% of hours}
 \footnotesize
-\begin{center}\includegraphics[width=\textwidth,height=0.404\textheight,keepaspectratio]{charts/en/cheap_hours.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.406\textheight,keepaspectratio]{charts/en/cheap_hours.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E solar, wind and load (Transelectrica data for Romania). Data: each calendar year; 2026 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -454,10 +478,10 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 
 \section{Intraday shape and price spreads}
 
-\begin{frame}{In spring, midday quarter-hours averaged 23.0 EUR/MWh and evening ones 208.3}
+\begin{frame}{Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening}
 \footnotesize
-\begin{center}\includegraphics[width=\textwidth,height=0.394\textheight,keepaspectratio]{charts/en/shape15.pdf}\end{center}\vspace{-3mm}
-\chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET.}
+\begin{center}\includegraphics[width=\textwidth,height=0.533\textheight,keepaspectratio]{charts/en/shape15.pdf}\end{center}\vspace{-3mm}
+\chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET; winter = Dec-Feb, spring = Mar-May, summer = Jun-Aug, autumn = Sep-Nov.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{The solar valley}: spring minimum at 12:45, maximum at 19:45 CET
@@ -465,10 +489,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
       \item Maximum minus minimum: spring 185, summer 226, winter only 98 EUR/MWh
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{a battery charges in the valley and discharges on the evening ramp
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item The gap is its gross margin.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{a battery charges in the valley and discharges on the evening ramp: the gap is its gross margin.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, last 12 months (Nov 2025 -- Oct 2026))}\hfill\qlink{EMQA\_L6\_shape15}{Quantlets/L6/EMQA_L6_shape15}\par\vspace{0.5mm}
 \end{frame}
 
@@ -505,7 +526,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \begin{frame}{The daily spread is about four times its 2019 level and similar in Romania, Bulgaria and Hungary}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.459\textheight,keepaspectratio]{charts/en/spreads.pdf}\end{center}\vspace{-3mm}
-\chartsource{Source: energy-charts.info (Fraunhofer ISE); day-ahead prices of OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: daily, hourly prices (15-min averaged), monthly means, 2019 to 2026-10-31; log scale above 100.}
+\chartsource{Source: energy-charts.info (Fraunhofer ISE); day-ahead prices of OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: daily, hourly prices (15-min averaged), monthly means, 2019 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{Dearest 2 minus cheapest 2 hours, 2026}: Romania 174, Bulgaria 150, Hungary 187, Germany 152 EUR/MWh
@@ -572,9 +593,9 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; day-ahead prices only)}\hfill\qlink{EMQA\_L6\_bat\_years}{Quantlets/L6/EMQA_L6_bat_years}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{A simple forecast rule captures 85\% of the perfect-foresight revenue of a 2-hour battery}
+\begin{frame}{A simple 7-day rule earns 85\% of the 2-hour perfect-foresight revenue}
 \footnotesize
-\begin{center}\includegraphics[width=\textwidth,height=0.394\textheight,keepaspectratio]{charts/en/bat_rules.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.531\textheight,keepaspectratio]{charts/en/bat_rules.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation. Data: last 12 months 2025-11-01 to 2026-10-31; 1 MW, round trip 85\%; forecast rules on 361 common days, scaled to the full period.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -583,11 +604,29 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
       \item Yesterday's prices: 75\%, 79\%, 84\%; longer batteries forgive timing errors
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{budget on a rule you can actually run
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item A better forecast (Lecture 2) closes part of the gap.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{budget on a rule you can actually run: a better forecast (Lecture 2) closes part of the gap.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, last 12 months (Nov 2025 -- Oct 2026))}\hfill\qlink{EMQA\_L6\_bat\_rules}{Quantlets/L6/EMQA_L6_bat_rules}\par\vspace{0.5mm}
+\end{frame}
+
+\subsection{Probabilistic forecasts for trading}
+
+\begin{frame}{Forecasting the whole price distribution helps a battery bid}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{What the work did}: forecast the joint next-day distribution of 96 hourly prices (24 h $\times$ Romania, Bulgaria, Hungary, Czechia)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Distributional random forest, 37 predictors, Jan 2018 -- Sep 2024; 70 rolling windows: 365 days to train, the next 30 to test
+      \item The median picks the charge hour and the later discharge hour; quantiles set the buy and sell limit prices
+    \end{itemize}
+  \item \textbf{What it found}: forecast errors peak at 17:00--18:00, usually the discharge hours
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Romania, cumulative profit of a 1 MW / 1 MWh battery: 143.0 thousand EUR with the quantile rule, 133.2 with fixed hours, 188.2 with perfect foresight
+      \item The quantile rule beats the fixed-hour rule in all four markets; trading across markets adds value (150.3 thousand EUR)
+    \end{itemize}
+  \item \textbf{Investment}: with 500\,000 EUR upfront, 90\% efficiency, 15 years and 7\%, day-ahead arbitrage alone does not cover it
+\end{itemize}
+\par\vfill\manager{bid from forecast quantiles, not from a single price forecast: the hours that pay are in the tails.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \& Petukhina, 2026, \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; talk by C.\,O.\ Cepoi at AIDA 2026, Bucharest, 3 June 2026: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{slides})}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{15 minutes, self-cannibalisation, the region}
@@ -751,9 +790,9 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 
 \subsection{Summer 2026: Romania and Bulgaria}
 
-\begin{frame}{Summer 2026: Romania exported at midday and bought from Bulgaria in the evening}
+\begin{frame}{Summer 2026: midday exports, evening imports from Bulgaria}
 \footnotesize
-\begin{center}\includegraphics[width=\textwidth,height=0.324\textheight,keepaspectratio]{charts/en/rogb_summer.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.430\textheight,keepaspectratio]{charts/en/rogb_summer.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE): cross-border physical flows of Romania (ENTSO-E); day-ahead prices of OPCOM (RO) and IBEX (BG). Data: hourly means, 2026-06-01 to 2026-08-31; Moldova and Ukraine borders only partly reported.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -766,7 +805,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
       \item Price at 21:00: Romania 243.9, Bulgaria 178.3 EUR/MWh; the full border separates the two prices
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{the evening gap of 65.6 EUR/MWh is what evening storage and more interconnection capacity are worth in Romania.}\par\vspace{0.5mm}
+\par\vfill\manager{the evening gap of 65.6 EUR/MWh is the value of evening storage and interconnection.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; + = import into Romania)}\hfill\qlink{EMQA\_L6\_rogb\_summer}{Quantlets/L6/EMQA_L6_rogb_summer}\par\vspace{0.5mm}
 \end{frame}
 
@@ -907,26 +946,35 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \end{columns}
 \end{frame}
 
-\begin{frame}{References (1/2)}
+\begin{frame}{References (1/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
 \item Andrei, A.-V.\ \& Pele, D.\,T.\ (2025). Explainable AI for electricity price anomaly detection: A SHAP-driven approach in Romania's energy market. \textit{Preprints}. \href{https://doi.org/10.20944/preprints202508.0410.v1}{doi:10.20944/preprints202508.0410.v1}
+\item Andrei, A.-V., Cepoi, C., Dumitrescu, B.-A., Lessmann, S., Luchian, A., Pele, D.-T.\ \& Petukhina, A.\ (2026). Joint probabilistic forecasting for battery arbitrage in day-ahead power markets. SSRN Working Paper 6872381. \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}
 \item Andrei, A.-V., Pele, D.-T.\ \& Cramer, A.-A.\ (2026). Multi-horizon explainability in energy price forecasting: Disentangling market dynamics and renewable intermittency in Romania's liberalized electricity market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 104--117. \href{https://doi.org/10.2478/picbe-2026-0014}{doi:10.2478/picbe-2026-0014}
 \item Andrei, A.-V., Pele, D.-T., Cramer, A.-A., Amza, A.\ \& Diaconu, D.\ (2026). Explainable AI-based early warning system for electricity price spikes: Evidence from the Romanian market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 4820--4836. \href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}
+\item Basangova, M., Bolovăneanu, V., Conda, A., Erlwein-Sayer, C., Melzer, A., Pele, D.\,T., Petukhina, A.\ \& Phan, M.\ (2026). Day-ahead forecasting for redispatch measures using machine learning models. Talk at the AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/bolovaneanu_redispatch_forecasting.pdf}{github.com/danpele/EMQA}
 \item Bradbury, K., Pratson, L.\ \& Patiño-Echeverri, D.\ (2014). Economic viability of energy storage systems based on price arbitrage potential in real-time U.S.\ electricity markets. \textit{Applied Energy}, 114, 512--519. \href{https://doi.org/10.1016/j.apenergy.2013.10.010}{doi:10.1016/j.apenergy.2013.10.010}
 \item Cludius, J., Hermann, H., Matthes, F.\,C.\ \& Graichen, V.\ (2014). The merit order effect of wind and photovoltaic electricity generation in Germany 2008--2016: Estimation and distributional implications. \textit{Energy Economics}, 44, 302--313. \href{https://doi.org/10.1016/j.eneco.2014.04.020}{doi:10.1016/j.eneco.2014.04.020}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{References (2/3)}
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Cepoi, C.\,O.\ (2026). Uncertainty meets opportunity: Joint probabilistic forecasting for battery arbitrage in CEE day-ahead power markets. Talk at the AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{github.com/danpele/EMQA}
 \item Cole, W.\ \& Karmakar, A.\ (2023). Cost projections for utility-scale battery storage: 2023 update. NREL/TP-6A40-85332, National Renewable Energy Laboratory. \href{https://doi.org/10.2172/1984976}{doi:10.2172/1984976}
 \item Fanone, E., Gamba, A.\ \& Prokopczuk, M.\ (2013). The case of negative day-ahead electricity prices. \textit{Energy Economics}, 35, 22--34. \href{https://doi.org/10.1016/j.eneco.2011.12.006}{doi:10.1016/j.eneco.2011.12.006}
 \item Hirth, L.\ (2013). The market value of variable renewables: The effect of solar wind power variability on their relative price. \textit{Energy Economics}, 38, 218--236. \href{https://doi.org/10.1016/j.eneco.2013.02.004}{doi:10.1016/j.eneco.2013.02.004}
 \item Hirth, L., Ueckerdt, F.\ \& Edenhofer, O.\ (2016). Why wind is not coal: On the economics of electricity generation. \textit{The Energy Journal}, 37(3), 1--28. \href{https://doi.org/10.5547/01956574.37.3.lhir}{doi:10.5547/01956574.37.3.lhir}
+\item López Prol, J., Steininger, K.\,W.\ \& Zilberman, D.\ (2020). The cannibalization effect of wind and solar in the California wholesale electricity market. \textit{Energy Economics}, 85, 104552. \href{https://doi.org/10.1016/j.eneco.2019.104552}{doi:10.1016/j.eneco.2019.104552}
+\item NEMO Committee (2025). 15-Minute MTU in SDAC was implemented. Single Day-Ahead Coupling (SDAC) press release, 1 October 2025. \href{https://nemo-committee.eu/assets/files/15-minute-mtu-in-sdac-was-implemented.pdf}{nemo-committee.eu}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{References (2/2)}
+\begin{frame}{References (3/3)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
-\item López Prol, J., Steininger, K.\,W.\ \& Zilberman, D.\ (2020). The cannibalization effect of wind and solar in the California wholesale electricity market. \textit{Energy Economics}, 85, 104552. \href{https://doi.org/10.1016/j.eneco.2019.104552}{doi:10.1016/j.eneco.2019.104552}
-\item NEMO Committee (2025). 15-Minute MTU in SDAC was implemented. Single Day-Ahead Coupling (SDAC) press release, 1 October 2025. \href{https://nemo-committee.eu/assets/files/15-minute-mtu-in-sdac-was-implemented.pdf}{nemo-committee.eu}
 \item Proșcanu, C., Proșcanu, M.\ \& Pele, D.\,T.\ (2025). The price elasticity of electricity demand in Romania. \textit{Journal of Social and Economic Statistics}, 14(2), 131--141. \href{https://doi.org/10.2478/jses-2025-0009}{doi:10.2478/jses-2025-0009}
 \item Schmidt, O., Melchior, S., Hawkes, A.\ \& Staffell, I.\ (2019). Projecting the future levelized cost of electricity storage technologies. \textit{Joule}, 3(1), 81--100. \href{https://doi.org/10.1016/j.joule.2018.12.008}{doi:10.1016/j.joule.2018.12.008}
 \item Sensfuß, F., Ragwitz, M.\ \& Genoese, M.\ (2008). The merit-order effect: A detailed analysis of the price effect of renewable electricity generation on spot market prices in Germany. \textit{Energy Policy}, 36(8), 3086--3094. \href{https://doi.org/10.1016/j.enpol.2008.03.035}{doi:10.1016/j.enpol.2008.03.035}

@@ -54,7 +54,7 @@ The price is set by the last accepted offer, the marginal one, and every accepte
 
 @practice the price of a quarter-hour is the cost of its most expensive accepted offer, not the average cost of the system.
 
-## The merit order on real OPCOM curves, 21 October 2026 {h=ec768514}
+## The merit order on real OPCOM curves, 21 October 2026 {h=43e7f730}
 
 The chart shows the aggregated supply and demand curves that OPCOM publishes for the PZU, for two quarter-hours of the same day, 21 October 2026. The quantities include block orders, hourly orders and net cross-border flows, so the curves are the real ones that the auction intersected.
 
@@ -120,7 +120,7 @@ The left panel shows how production shrank and changed composition over a decade
 @chart mix_ro_annual
 Annual Romanian generation by source (TWh, stacked) for the full years 2015–2025, with consumption as a black bar (left), and the shares of each source in January–October 2025 and 2026 (right).
 
-## Romania: coal shrinks, solar grows, nuclear drops in 2026 {h=3fbcf939}
+## Romania: coal shrinks, solar grows, nuclear drops in 2026 {h=acaf501c}
 
 Comparing the shares of each source in 2015, 2025 and January–October 2026 shows three movements. Coal output fell by 63.9% from 2015 to 2025, while metered solar grew 2.2 times over the same years. In 2026, nuclear output fell by 31.3% in January–October compared with the same months of 2025, on the hours reported in both years. The true fall is at least as large, because the 29 September days for which nuclear output was not reported are simply left out of the comparison. The detailed table is in Appendix D.
 
@@ -159,7 +159,7 @@ On our data, Romania consumed 53.56 TWh in 2025, a mean load of 6.1 gigawatts (G
 
 @practice a 10 MW baseload contract delivers 240 MWh a day.
 
-## One day of Romanian consumption: power in MW, energy in MWh {h=daa2fc26}
+## One day of Romanian consumption: power in MW, energy in MWh {h=da68ef86}
 
 The chart makes the distinction concrete for one real day, 28 October 2026. The curve is power: how much the country draws at each hour, in MW. It reached a minimum of 5,253 MW at 3:00 and a maximum of 7,719 MW at 17:00 (CET). The shaded area under the curve is energy: 159,558 MWh over the day, which is 24 hours times a mean load of 6,648 MW.
 
@@ -184,7 +184,7 @@ Futures series have their own breaks. The Brent front-month series jumps when th
 
 @practice most forecasting errors at a supplier start in data handling (wrong clock, filled gaps), not in the model.
 
-## Prices jumped in 2021–2022 and never returned to the old level {h=6f3fda80}
+## Prices jumped in 2021–2022 and never returned to the old level {h=74dc4b84}
 
 The chart shows daily day-ahead prices in the four zones from 2015 to October 2026. Until 2020 prices stayed in a narrow band; in 2021–2022 the European gas crisis lifted them to levels never seen before, and the Romanian daily maximum reached 738.28 EUR/MWh on 30 August 2022. Prices then fell, but not to the old level.
 
@@ -210,7 +210,7 @@ The two move together: in 2022, when the Romanian mean was 265.3 EUR/MWh, the st
 
 @practice collateral for PZU purchases must scale with the price, since a 200 EUR/MWh market moves far more than a 50 one.
 
-## Solar moved the cheapest hour of the day to midday {h=d5de3b72}
+## Solar moved the cheapest hour of the day to midday {h=6cefd195}
 
 The chart compares the average price of each hour of the day in 2019 and in 2025, for each zone. In 2019 the cheapest hours were at night, as in a classical power system, when demand is lowest. By 2025 the cheapest hour had moved to 13:00, at 58.8 EUR/MWh in Romania, while the evening peak reached 182.5 EUR/MWh. The ratio of the evening price to the midday price rose from 1.30 to 3.11.
 
@@ -240,7 +240,7 @@ A Romanian Sunday costs on average 30.7 EUR/MWh less than the mean of its week, 
 
 @practice an industrial consumer can move flexible load (maintenance, pumping, charging) to Sunday and save that difference.
 
-## Spring is cheap: water and sun meet mild demand {h=9e7640d7}
+## Spring is cheap: water and sun meet mild demand {h=ae175bfc}
 
 Over the year, the Romanian price follows the balance between demand and the cheap sources. Relative to the annual mean, the price is highest in January (1.26 times the mean) and lowest in April (0.72 times). Consumption is highest in January–February and lowest in May, while hydro output peaks in June, with the snow melt. In spring, abundant water and growing solar output meet mild demand, and prices fall.
 
@@ -273,7 +273,7 @@ Because the threshold moves with the year's distribution, 2022 has very few spik
 
 @practice a supplier with fixed-price retail contracts loses most of the year's margin in a few dozen spike hours, which is why it hedges.
 
-## Negative prices reached Romania in 2023 and are now routine {h=9389c283}
+## Negative prices reached Romania in 2023 and are now routine {h=7506a920}
 
 The first negative Romanian day-ahead price occurred on 21 May 2023. Since then negative prices have become a regular feature of the market, and they have a clear pattern: since 2024, 91.1% of negative hours fall between 10:00 and 16:00, and 83.9% on weekends. They are the hours when solar output is highest and demand is lowest.
 
@@ -299,7 +299,7 @@ Romania had no negative prices before 2023, while Germany had them every year, b
 
 @practice in reports to the board, write "687 quarter-hours (171.75 h)", never a bare number.
 
-## Prices can be zero or negative: use differences or asinh {h=a005aafb}
+## Prices can be zero or negative: use differences or asinh {h=6713190d}
 
 Percentage changes and logarithms need a positive price, so they fail precisely in the hours that matter most for solar and storage. A transformation that accepts any sign keeps the zero and negative hours (Uniejewski, Weron & Ziel, 2018):
 
@@ -312,7 +312,7 @@ In January–October 2026, 1,189 of 29,184 Romanian quarter-hours had a price of
 @chart asinh_ro
 Histogram of all Romanian quarter-hour prices, January–October 2026, in levels (EUR/MWh, left) and after the asinh transformation (right).
 
-## Extreme oil moves are far more frequent than a normal curve allows {h=070d7fd9}
+## Extreme oil moves are far more frequent than a normal curve allows {h=d1e53fbb}
 
 "Fat tails" means that very large up or down days happen much more often than a bell curve would allow. The evidence comes from Brent daily log returns from 5 January 2015 to 30 October 2026, without the 141 contract-roll days. Under the normal distribution, moves beyond 4 standard deviations should occur 0.18 times in such a sample; we observe 16. The excess kurtosis is 13.98, against 0 for the normal distribution; the formulas and the Jarque–Bera (JB) normality test are in Appendix F (Jarque & Bera, 1980).
 
@@ -323,7 +323,7 @@ The quantile–quantile plot makes the point visually: the observed quantiles de
 @chart tails_brent
 Brent daily log returns, 5 January 2015 to 30 October 2026: quantile–quantile plot against the normal distribution (left) and histogram of standardised returns with normal and Student-t densities (right).
 
-## Calm and turbulent periods come in clusters {h=ebcbfc2e}
+## Calm and turbulent periods come in clusters {h=fedc879c}
 
 A big move today makes another big move tomorrow more likely, even if its direction is unpredictable. The Ljung–Box statistic tests whether the first $m$ autocorrelations of a series are jointly zero:
 
@@ -346,7 +346,7 @@ Energy prices shift level, follow daily, weekly and annual cycles, spike, turn n
 
 This section introduces the tools used throughout the course to describe a price series: stationarity, autocorrelation and partial autocorrelation, the naive benchmark, unit-root tests, decomposition and exponential smoothing. Each tool is applied to the Romanian, German or Brent data.
 
-## Stationary means the rules of the game do not change over time {h=3df28d27}
+## Stationary means the rules of the game do not change over time {h=fb295fc9}
 
 A series is (weakly) stationary if its average, its spread and its memory are the same in every period:
 
@@ -373,7 +373,7 @@ Four reading rules cover most cases. A slow decay from near 1 indicates persiste
 
 @practice a supplier's forecast for tomorrow starts from "same weekday last week": the autocorrelation at lag 7 is 0.672 in Romania since 2023.
 
-## Prices remember yesterday, last week and the same hour {h=9e729e60}
+## Prices remember yesterday, last week and the same hour {h=2ccb9666}
 
 The two charts apply the reading rules to Romanian prices. For daily base prices from 1 January 2023 to 31 October 2026, the autocorrelation at lag 1 is $\hat\rho_1=0.789$ and at lag 7 $\hat\rho_7=0.672$; the partial autocorrelation at lag 7 is $\hat\alpha_7=0.257$, so the same weekday of the previous week carries information beyond that of the last few days. The autocorrelation function decays slowly, with peaks at multiples of 7.
 
@@ -385,7 +385,7 @@ Sample autocorrelation (left) and partial autocorrelation (right) of Romanian da
 @chart acf_ro_hourly
 Sample autocorrelation of Romanian hourly prices in 2024 (T = 8784) up to lag 168 hours, with the white-noise band.
 
-## The benchmark to beat: the naive forecast {h=c0c9e3d1}
+## The benchmark to beat: the naive forecast {h=89f28b3b}
 
 The simplest sensible forecast says that tomorrow's price for each hour is today's price for that hour, except after weekends, when the same day of the previous week is used:
 
@@ -434,7 +434,7 @@ The Romanian and Brent levels are consistent with a unit root (not rejected, whi
 
 @practice model price *changes* (or transformed prices) and put seasonality in explicitly.
 
-## Decomposition splits a series into trend, season and the rest {h=64878c25}
+## Decomposition splits a series into trend, season and the rest {h=e3e6bc12}
 
 A seasonal series can be written as the sum of three components:
 
@@ -449,7 +449,7 @@ The chart applies both to Romanian monthly mean load from January 2016 to Decemb
 @chart decomp_load
 Romanian monthly mean load, January 2016 to December 2025 (GW): observed series with the classical and STL trends (top) and the classical and STL seasonal components (bottom).
 
-## Exponential smoothing: recent data count more {h=615c598b}
+## Exponential smoothing: recent data count more {h=c8c38e31}
 
 The smoothed level is an average of all past values, with weights that shrink geometrically:
 
@@ -472,7 +472,7 @@ Price levels behave like unit-root series and their changes are stationary; pric
 
 Six episodes from 2023 to 2026 show the stylized facts at work: a wet and a dry year, an oil shock, a regional price separation, negative prices and solar, the price rise of 2026 and the arrival of batteries in Bulgaria. Each case study is read with the tools of the previous sections and with real data only.
 
-## Case study (a): 2025 hydro output was a third below wet 2023 {h=28794e21}
+## Case study (a): 2025 hydro output was a third below wet 2023 {h=8a01ced6}
 
 Hydro output in Romania depends on rain and snow. In 2023, a wet year, run-of-river and reservoir plants produced 18.34 TWh, the highest since 2015; in 2025, a dry year, they produced 12.15 TWh, the lowest, a fall of 33.8%. Compared with the 2015–2025 mean of 15.85 TWh, 2025 was 23.3% below normal.
 
@@ -512,7 +512,7 @@ The episode shows how a geopolitical shock is first priced as a risk premium and
 @chart iran_brent
 Brent daily close (USD/bbl) on trading days from 2 June to 4 July 2025.
 
-## Case study (c): in July 2024 Romania paid twice the German price {h=fb38b68c}
+## Case study (c): in July 2024 Romania paid twice the German price {h=87c5009d}
 
 In summer 2024 the coupled markets of South-East Europe separated from Central Europe. In July 2024 the average day-ahead price was 145.14 EUR/MWh in Romania, 136.47 in Bulgaria and 135.54 in Hungary, but only 67.70 in Germany–Luxembourg.
 
@@ -531,7 +531,7 @@ Water was also short. Romanian hydro output in July–August was 1.94 TWh in 202
 
 The lesson for modelling is threefold. Coupled prices are equal only while the network is not binding. Romania should be modelled with regional drivers: hydro, solar and load in South-East Europe. The spread to Germany should be treated as a variable of its own, whose behaviour depends on the regime.
 
-## Case study (d): negative hours cluster in spring, as solar grows year after year {h=359d56cc}
+## Case study (d): negative hours cluster in spring, as solar grows year after year {h=bdadcee0}
 
 Since 2023, April and May hold 49.6% of all Romanian negative hours, and June–August another 34.0%. Spring combines high solar output, full reservoirs and mild demand, which is exactly the situation in which inflexible supply exceeds consumption at midday.
 
@@ -554,7 +554,7 @@ In plain words: each extra GW of residual load multiplies the odds of a negative
 
 @practice curtailment of renewables is most likely on spring weekends with full reservoirs.
 
-## Case study (e): 2026 prices climbed; oil jumped in March {h=8bd9d459}
+## Case study (e): 2026 prices climbed; oil jumped in March {h=565d23c8}
 
 In January–October 2026 the average Romanian price was 137.45 EUR/MWh, 29.8% above the same months of 2025. The rise accelerated at the end of the period: in October the average was 239.3 EUR/MWh, against 121.9 a year earlier.
 
@@ -565,7 +565,7 @@ Oil moved the same way. The monthly average of Brent rose from 64.77 to 108.34 U
 @chart cy_prices
 Daily base prices in the four zones (EUR/MWh, top) and Brent close (USD/bbl, bottom), 1 January to 31 October 2026.
 
-## Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025 {h=4d1eaba2}
+## Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025 {h=479ea9bb}
 
 Domestic supply fell at the same time. Romanian nuclear output was 0 MW on 19 days in May, according to the data, and again from August: Unit 1 of the Cernavodă plant was shut at the end of July and Unit 2 on 13 August, because of the low level of the Danube, which provides its cooling water. September nuclear output was not reported. Over January–October, nuclear output fell by 31.3% on the hours reported in both years, which is a lower bound for the true fall.
 
@@ -614,7 +614,7 @@ For Brent, the highest close of 2026 was 118.35 USD/bbl on 31 March 2026, and th
 
 @practice set risk limits on the extremes, not on the averages.
 
-## Case study (f): since spring 2026, Bulgaria's evenings are cheaper {h=4d5adc42}
+## Case study (f): since spring 2026, Bulgaria's evenings are cheaper {h=171e2351}
 
 The Romanian and Bulgarian markets are coupled and usually have almost the same price. In the evening hours from 19:00 to 22:00 local time (EET), from April to September, the average price was 171.1 EUR/MWh in Romania and 169.7 in Bulgaria in 2025, but 215.5 against 178.0 EUR/MWh in 2026. At midday, from 11:00 to 15:00, prices stayed close in 2026 (48.1 against 46.0).
 

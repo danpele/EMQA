@@ -41,30 +41,32 @@
 AUC & aria de sub curbă (0,5 = fără putere de discriminare, 1 = perfect)\\
 BCBS & Comitetul de la Basel pentru Supraveghere Bancară\\
 BCE & Banca Centrală Europeană\\
+CARDI & indicatorul dinamic al riscului de carbon\\
 CCP & contraparte centrală (casă de compensare)\\
 CEE & Europa Centrală și de Est\\
 CET & ora Europei Centrale\\
 CFaR & fluxul de numerar la risc (cash-flow-at-risk)\\
 CISS & indicatorul compozit de stres sistemic (BCE)\\
-DE-LU & zona de ofertare Germania--Luxemburg\\
-EFRM & indicatorul de risc financiar al sectorului energetic (Energy Financial Risk Meter)\\\end{tabular}}\end{column}
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}EMIR & Regulamentul (UE) nr. 648/2012 privind infrastructura pieței europene (EMIR)\\
+DE-LU & zona de ofertare Germania--Luxemburg\\\end{tabular}}\end{column}
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}EFRM & indicatorul de risc financiar al sectorului energetic (Energy Financial Risk Meter)\\
+EMIR & Regulamentul (UE) nr. 648/2012 privind infrastructura pieței europene (EMIR)\\
 ENTSO-E & Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică\\
 EPEX & bursa europeană de energie EPEX SPOT\\
 ES & deficitul așteptat (expected shortfall)\\
 EUR & euro\\
 EVT & teoria valorilor extreme\\
 FHS & simularea istorică filtrată\\
+FRM & indicatorul de risc financiar (Financial Risk Meter)\\
 FRTB & revizuirea fundamentală a portofoliului de tranzacționare (regulile Basel pentru riscul de piață)\\
-GARCH & model autoregresiv generalizat cu heteroscedasticitate condiționată\\
-GPD & repartiția Pareto generalizată\\\end{tabular}}\end{column}
+GARCH & model autoregresiv generalizat cu heteroscedasticitate condiționată\\\end{tabular}}\end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{Abrevieri (2/2)}
 \small
 \vspace{-1mm}\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}HS & simularea istorică\\
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}GPD & repartiția Pareto generalizată\\
+HS & simularea istorică\\
 ICE & bursa Intercontinental Exchange (ICE Futures Europe)\\
 IM & marja inițială\\
 ISE & Institutul Fraunhofer pentru Sisteme de Energie Solară\\
@@ -73,9 +75,9 @@ LR & raportul de verosimilitate\\
 MLE & estimarea prin metoda verosimilității maxime\\
 MW & megawatt\\
 MWh & megawatt-oră\\
-OPCOM & operatorul pieței de energie electrică și de gaze naturale din România\\
-POT & depășirile unui prag (peaks over threshold)\\\end{tabular}}\end{column}
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}PZU & piața pentru ziua următoare\\
+OPCOM & operatorul pieței de energie electrică și de gaze naturale din România\\\end{tabular}}\end{column}
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}POT & depășirile unui prag (peaks over threshold)\\
+PZU & piața pentru ziua următoare\\
 QR & regresia cuantilică\\
 QRA & medierea prin regresie cuantilică (cursul 2)\\
 RO & România (zonă de ofertare)\\
@@ -118,19 +120,19 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \section{Riscul de preț: pierderi, cuantile, VaR și ES}
 
-\begin{frame}{Riscul se află în variația zilnică a prețului: mică pînă în 2021, foarte mare după}
+\begin{frame}{Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.391\textheight,keepaspectratio]{charts/ro/price_changes.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/price_changes.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM, prin ENTSO-E; estimări proprii. Date: date zilnice, 2015-01-01 - 2026-10-31 (zile de livrare CET).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item $X_t=P_t-P_{t-1}$ = variația prețului zilnic de bază de la o zi la alta, în EUR/MWh
+  \item $X_t=P_t-P_{t-1}$ = variația zilnică a prețului de bază, EUR/MWh
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Prețul poate fi negativ, deci lucrăm cu variații, nu cu randamente logaritmice
-      \item Cea mai mare creștere: 260{,}77 EUR/MWh (11 iulie 2022); cea mai mare scădere: \ensuremath{-}166{,}59 EUR/MWh (24 decembrie 2021)
+      \item Prețul poate fi negativ: folosim variații, nu randamente logaritmice
+      \item Creșterea maximă: 260{,}77 (11 iulie 2022); scăderea maximă: \ensuremath{-}166{,}59 EUR/MWh (24 decembrie 2021)
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{un furnizor care cumpără zilnic 100 MW în bandă pe PZU și își bugetează costul la prețul de ieri pierde 2.400 EUR pentru fiecare creștere de 1 EUR/MWh.}\par\vspace{0.5mm}
+\par\vfill\manager{un furnizor care cumpără 100 MW în bandă pe PZU, la bugetul de ieri, pierde 2.400 EUR la fiecare creștere de 1 EUR/MWh.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; EPEX SPOT; calcule proprii)}\hfill\qlink{EMQA\_L4\_price\_changes}{Quantlets/L4/EMQA_L4_price_changes}\par\vspace{0.5mm}
 \end{frame}
 
@@ -201,7 +203,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \begin{frame}{Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/tails.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.430\textheight,keepaspectratio]{charts/ro/tails.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM (RO) și EPEX SPOT (DE-LU), prin ENTSO-E. Date: variații zilnice, 2015-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -455,16 +457,16 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
 
 \begin{frame}{Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.322\textheight,keepaspectratio]{charts/ro/horizon.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.415\textheight,keepaspectratio]{charts/ro/horizon.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM (RO) și EPEX SPOT (DE-LU), prin ENTSO-E. Date: prețuri zilnice de bază, 2015-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Cuantila de 99\% pe 10 zile = 1{,}72 $\times$ cuantila pe o zi în România (1{,}75 în Germania--Luxemburg), nu $\sqrt{10}$ = 3{,}16
+  \item Cuantila de 99\% pe 10 zile = 1{,}72 $\times$ cea pe o zi (RO; 1{,}75 în DE-LU), nu $\sqrt{10}$ = 3{,}16
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Raportul varianțelor la 10 zile: 0{,}33 (1 pentru un mers aleator); autocorelația lui $X_t$: \ensuremath{-}0{,}076 la decalajul 1, 0{,}474 la decalajul 7
+      \item Raportul varianțelor la 10 zile: 0{,}33 (1 = mers aleator); autocorelația lui $X_t$: \ensuremath{-}0{,}076 (decalaj 1), 0{,}474 (decalaj 7)
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{pentru un orizont de 10 zile, măsurați direct variațiile pe 10 zile
+\par\vfill\manager{măsurați direct variațiile pe 10 zile
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Înmulțirea cu $\sqrt{10}$ blochează capital inutil.
     \end{itemize}}\par\vspace{0.5mm}
@@ -636,6 +638,32 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \end{columns}
 \par\vfill\manager{evaluați ES pe mai mulți ani, niciodată pe un trimestru (circa 9 zile extreme pe an).}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Acerbi \& Székely, 2014; Pele \& Mazurencu-Marinescu-Pele, 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce a făcut lucrarea} (D.\,T.\ Pele, conferința AIDA (AI and Digital Assets in Energy and Finance), 4 iunie 2026)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Scorul $s_t=\hat q_t-r_t$ ($>0$ în ziua unei depășiri); $\hat q_V$ = cuantila de 99\% a scorurilor trecute; VaR corectată = VaR + $\hat q_V$, fixă (audit) sau glisantă pe 250 de zile
+      \item VaR de 1\% a 10 modele (fundaționale, de tip GARCH, HS) pe 24 de active, inclusiv petrol și gaze: 240 de perechi; Kupiec, Christoffersen, semaforul Basel
+    \end{itemize}
+  \item \textbf{Ce a găsit}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item $\hat q_V$ între $-$0{,}007 (prea prudent) și +0{,}102 (fără informație despre coadă); explică 53{,}4\% ($R^2$ parțial) din cîștigul la scorul cuantilic
+      \item Perechi în zona verde: 63/240 (26{,}2\%) inițial, 203/240 (84{,}6\%) fix, 234/240 (97{,}5\%) glisant
+      \item Rata depășirilor este refăcută, gruparea lor nu
+    \end{itemize}
+  \item \textbf{Legătura cu acest curs}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Testul Kupiec arată dacă VaR eșuează, $\hat q_V$ cu cît; lărgirea garanției $\hat c_t$ (secțiunea 4) este aceeași deplasare
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Rezultatele sînt cele raportate de autori; prezentarea: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf}{diapozitive}; lucrare trimisă spre publicare.
+\end{itemize}}
+\par\vfill\manager{după un test eșuat, lărgiți VaR cu deplasarea conformală și testați în continuare gruparea depășirilor.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Pele, Bolovăneanu, Ginavar, Lessmann \& Härdle, AIDA, ASE, 4 iunie 2026)}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -901,6 +929,56 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Toma, Dima, Grecu, Pele \& Lessmann, 2026, SSRN; studiul de caz C4)}\par\vspace{0.5mm}
 \end{frame}
 
+\begin{frame}{AIDA 2026: riscul sistemic din energia UE a crescut brusc din iulie 2021}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce a făcut lucrarea} (F.-M.\ Toma, conferința AIDA, 3 iunie 2026; lucrarea din studiul de caz C4)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item 100 de companii energetice europene, aprilie 2016 -- martie 2026: cuantila de 5\% a randamentului fiecărei firme, regresată prin LASSO pe celelalte 99 de firme, petrol, gaze și indici bursieri
+      \item EFRM = penalizarea LASSO medie: mai multe legături necesare pentru a explica coada = expunere sistemică mai mare
+    \end{itemize}
+  \item \textbf{Ce a găsit}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Rupturi ale EFRM: februarie 2020 (pandemia) și iulie 2021 (creșterea gazelor), cu șapte luni înaintea invaziei
+      \item Riscul geopolitic a influențat EFRM abia după invazie: +1{,}52 puncte procentuale (model cu parametri variabili)
+      \item Efectul asupra acțiunilor din Stoxx 600 s-a atenuat cu circa 60\%, cel asupra swapurilor pe riscul de credit pe 5 ani a rămas pozitiv
+      \item Lunile volatile: AUC 0{,}731 pentru EFRM + CISS, 0{,}708 doar EFRM, 0{,}673 doar CISS
+    \end{itemize}
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Rezultatele sînt cele raportate de autori; prezentarea: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/toma_energy_financial_risk_meter.pdf}{diapozitive}; lucrarea: \href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}.
+\end{itemize}}
+\par\vfill\manager{VaR proprie a unei firme nu vede contagiunea
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Urmăriți alături de ea un indicator sectorial.
+    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Toma, AIDA, ASE, 3 iunie 2026; Toma, Dima, Grecu, Pele \& Lessmann, 2026, SSRN)}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: riscul extrem al firmelor poluante anticipă prima de carbon}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Ce a făcut lucrarea} (prof.\ Wolfgang Karl Härdle, AIDA, 5 iunie 2026; cu R.\ Wang și L.\ Zhang)
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Puzzle-ul primei de carbon: cîștigă mai mult firmele poluante (risc) sau cele cu emisii reduse (preferințe verzi)?
+      \item China, iul.\ 2014 -- feb.\ 2025: cîte 50 de firme poluante și cu emisii reduse; LASSO ca la EFRM, 63 de zile, cuantila de 5\%
+      \item Indicatorul dinamic al riscului de carbon (CARDI) = indicatorul de risc financiar (FRM, $\lambda$ mediu), firme poluante / cu emisii reduse
+    \end{itemize}
+  \item \textbf{Ce a găsit}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Regimurile de risc ridicat ale CARDI coincid cu evenimente neașteptate sau incipiente ale politicii climatice
+      \item Creșterea CARDI anticipă o primă ajustată mai mare a firmelor cu emisii reduse luna următoare (0{,}022, 118 luni); raportul VaR condiționate nu
+      \item Long pe firmele cu emisii reduse, short pe cele poluante doar cînd CARDI crește (2015--2024): 115{,}84\%, Sharpe 0{,}72 (permanent: 89{,}03\%, 0{,}49)
+    \end{itemize}
+  \item \textbf{Legătura cu acest curs}: EFRM din cadrul anterior, separat după intensitatea emisiilor
+\end{itemize}
+\par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Rezultatele sînt cele raportate de autori; prezentarea: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/wang_carbon_risk_dynamics.pdf}{diapozitive}; lucrarea: \href{https://doi.org/10.2139/ssrn.5757742}{doi:10.2139/ssrn.5757742}.
+\end{itemize}}
+\par\vfill\manager{într-o firmă de petrol și gaze, urmăriți CARDI: cînd crește, investitorii preferă firmele cu emisii reduse.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Wang, Härdle \& Zhang, AIDA, ASE, 5 iunie 2026; 2025, SSRN)}\par\vspace{0.5mm}
+\end{frame}
+
 
 \section{Studiu de caz: creșterea prețurilor din toamna anului 2026}
 
@@ -1147,48 +1225,58 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \end{columns}
 \end{frame}
 
-\begin{frame}{Bibliografie (1/3)}
+\begin{frame}{Bibliografie (1/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
-\item Acerbi, C.\ \& Székely, B.\ (2014). Backtesting expected shortfall. \textit{Risk}, 27(11), 76--81.
+\item Acerbi, C.\ \& Székely, B.\ (2014). Backtesting expected shortfall. \textit{Risk}, 27(11), 76--81. \href{https://www.risk.net/risk-magazine/technical-paper/2381658/back-testing-expected-shortfall}{risk.net}
 \item Acerbi, C.\ \& Tasche, D.\ (2002). On the coherence of expected shortfall. \textit{Journal of Banking \& Finance}, 26(7), 1487--1503. \href{https://doi.org/10.1016/S0378-4266(02)00283-2}{doi:10.1016/S0378-4266(02)00283-2}
 \item Artzner, P., Delbaen, F., Eber, J.-M.\ \& Heath, D.\ (1999). Coherent measures of risk. \textit{Mathematical Finance}, 9(3), 203--228. \href{https://doi.org/10.1111/1467-9965.00068}{doi:10.1111/1467-9965.00068}
 \item Balkema, A.\,A.\ \& de Haan, L.\ (1974). Residual life time at great age. \textit{Annals of Probability}, 2(5), 792--804. \href{https://doi.org/10.1214/aop/1176996548}{doi:10.1214/aop/1176996548}
-\item Barone-Adesi, G., Giannopoulos, K.\ \& Vosper, L.\ (1999). VaR without correlations for portfolios of derivative securities. \textit{Journal of Futures Markets}, 19(5), 583--602.
-\item BCBS (1996). Supervisory framework for the use of ``backtesting'' in conjunction with the internal models approach to market risk capital requirements. Basel Committee on Banking Supervision, January 1996.
-\item BCBS (2019). Minimum capital requirements for market risk. Basel Committee on Banking Supervision, January 2019.
+\item Barone-Adesi, G., Giannopoulos, K.\ \& Vosper, L.\ (1999). VaR without correlations for portfolios of derivative securities. \textit{Journal of Futures Markets}, 19(5), 583--602. \href{https://doi.org/10.1002/(SICI)1096-9934(199908)19:5\%3C583::AID-FUT5\%3E3.0.CO;2-S}{doi.org (Wiley)}
+\item BCBS (1996). Supervisory framework for the use of ``backtesting'' in conjunction with the internal models approach to market risk capital requirements. Basel Committee on Banking Supervision, January 1996. \href{https://www.bis.org/publ/bcbs22.htm}{bis.org/publ/bcbs22.htm}
+\item BCBS (2019). Minimum capital requirements for market risk. Basel Committee on Banking Supervision, January 2019. \href{https://www.bis.org/bcbs/publ/d457.htm}{bis.org/bcbs/publ/d457.htm}
 \item Bollerslev, T.\ (1986). Generalized autoregressive conditional heteroskedasticity. \textit{Journal of Econometrics}, 31(3), 307--327. \href{https://doi.org/10.1016/0304-4076(86)90063-1}{doi:10.1016/0304-4076(86)90063-1}
 \item Chan, K.\,F.\ \& Gray, P.\ (2006). Using extreme value theory to measure value-at-risk for daily electricity spot prices. \textit{International Journal of Forecasting}, 22(2), 283--300. \href{https://doi.org/10.1016/j.ijforecast.2005.10.002}{doi:10.1016/j.ijforecast.2005.10.002}
-\item Christoffersen, P.\,F.\ (1998). Evaluating interval forecasts. \textit{International Economic Review}, 39(4), 841--862. \href{https://doi.org/10.2307/2527341}{doi:10.2307/2527341}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliografie (2/3)}
+\begin{frame}{Bibliografie (2/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
-\item Christoffersen, P.\,F.\ (2012). \textit{Elements of Financial Risk Management}, 2nd ed. Academic Press.
-\item Commission Delegated Regulation (EU) No 153/2013 of 19 December 2012 on requirements for central counterparties (RTS under EMIR), \textit{Official Journal of the EU}, L 52, 23.2.2013, Art.~24--28.
-\item Commission Delegated Regulation (EU) 2022/2311 of 21 October 2022 as regards temporary emergency measures on collateral requirements. \textit{Official Journal of the EU}, L 307, 28.11.2022.
-\item ECB --- Furtuna, O., Grassi, A., Ianiro, A., Kallage, K., Koci, R., Lenoci, F., Sowiński, A.\ \& Vacirca, F.\ (2022). Financial stability risks from energy derivatives markets. \textit{Financial Stability Review}, European Central Bank, November 2022.
+\item Christoffersen, P.\,F.\ (1998). Evaluating interval forecasts. \textit{International Economic Review}, 39(4), 841--862. \href{https://doi.org/10.2307/2527341}{doi:10.2307/2527341}
+\item Christoffersen, P.\,F.\ (2012). \textit{Elements of Financial Risk Management}, 2nd ed. Academic Press. \href{https://shop.elsevier.com/books/elements-of-financial-risk-management/christoffersen/978-0-12-374448-7}{elsevier.com}
+\item Commission Delegated Regulation (EU) No 153/2013 of 19 December 2012 on requirements for central counterparties (RTS under EMIR), \textit{Official Journal of the EU}, L 52, 23.2.2013, Art.~24--28. \href{https://eur-lex.europa.eu/eli/reg_del/2013/153/oj}{eur-lex.europa.eu/eli/reg\_del/2013/153/oj}
+\item Commission Delegated Regulation (EU) 2022/2311 of 21 October 2022 as regards temporary emergency measures on collateral requirements. \textit{Official Journal of the EU}, L 307, 28.11.2022. \href{https://eur-lex.europa.eu/eli/reg_del/2022/2311/oj}{eur-lex.europa.eu/eli/reg\_del/2022/2311/oj}
+\item ECB --- Furtuna, O., Grassi, A., Ianiro, A., Kallage, K., Koci, R., Lenoci, F., Sowiński, A.\ \& Vacirca, F.\ (2022). Financial stability risks from energy derivatives markets. \textit{Financial Stability Review}, European Central Bank, November 2022. \href{https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202211_01~173476301a.en.html}{ecb.europa.eu}
 \item Gneiting, T.\ (2011). Making and evaluating point forecasts. \textit{Journal of the American Statistical Association}, 106(494), 746--762. \href{https://doi.org/10.1198/jasa.2011.r10138}{doi:10.1198/jasa.2011.r10138}
 \item Jheng, S.-L., Tak, R., Găman, Ș., Mazurencu-Marinescu-Pele, M.\ \& Pele, D.\,T.\ (2026). Can foundation models manage risk? Zero-shot VaR and ES forecasting with conformal calibration in CEE markets. \textit{Economic Computation and Economic Cybernetics Studies and Research}, 60(2), 267--290. \href{https://doi.org/10.24818/18423264/60.2.26.14}{doi:10.24818/18423264/60.2.26.14}
-\item Jorion, P.\ (2007). \textit{Value at Risk: The New Benchmark for Managing Financial Risk}, 3rd ed. McGraw-Hill.
-\item Koenker, R.\ \& Bassett, G.\ (1978). Regression quantiles. \textit{Econometrica}, 46(1), 33--50. \href{https://doi.org/10.2307/1913643}{doi:10.2307/1913643}
-\item Kupiec, P.\,H.\ (1995). Techniques for verifying the accuracy of risk measurement models. \textit{Journal of Derivatives}, 3(2), 73--84. \href{https://doi.org/10.3905/jod.1995.407942}{doi:10.3905/jod.1995.407942}
+\item Jorion, P.\ (2007). \textit{Value at Risk: The New Benchmark for Managing Financial Risk}, 3rd ed. McGraw-Hill. \href{https://www.mheducation.com.au/ebook-value-at-risk-the-new-benchmark-for-managing-financial-risk-3e-9781307199963-aus}{mheducation.com.au}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliografie (3/3)}
+\begin{frame}{Bibliografie (3/4)}
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\item Koenker, R.\ \& Bassett, G.\ (1978). Regression quantiles. \textit{Econometrica}, 46(1), 33--50. \href{https://doi.org/10.2307/1913643}{doi:10.2307/1913643}
+\item Kupiec, P.\,H.\ (1995). Techniques for verifying the accuracy of risk measurement models. \textit{Journal of Derivatives}, 3(2), 73--84. \href{https://doi.org/10.3905/jod.1995.407942}{doi:10.3905/jod.1995.407942}
 \item McNeil, A.\,J.\ \& Frey, R.\ (2000). Estimation of tail-related risk measures for heteroscedastic financial time series: An extreme value approach. \textit{Journal of Empirical Finance}, 7(3--4), 271--300. \href{https://doi.org/10.1016/S0927-5398(00)00012-8}{doi:10.1016/S0927-5398(00)00012-8}
-\item McNeil, A.\,J., Frey, R.\ \& Embrechts, P.\ (2015). \textit{Quantitative Risk Management: Concepts, Techniques and Tools}, revised ed. Princeton University Press.
+\item McNeil, A.\,J., Frey, R.\ \& Embrechts, P.\ (2015). \textit{Quantitative Risk Management: Concepts, Techniques and Tools}, revised ed. Princeton University Press. \href{https://press.princeton.edu/books/hardcover/9780691166278/quantitative-risk-management}{press.princeton.edu}
 \item Nowotarski, J.\ \& Weron, R.\ (2018). Recent advances in electricity price forecasting: A review of probabilistic forecasting. \textit{Renewable and Sustainable Energy Reviews}, 81, 1548--1568. \href{https://doi.org/10.1016/j.rser.2017.05.234}{doi:10.1016/j.rser.2017.05.234}
 \item OPCOM (2025). Procedura privind constituirea, verificarea și utilizarea garanțiilor financiare pentru participarea la Piața pentru Ziua Următoare, rev.\ 10, May 2025. \href{https://www.opcom.ro}{opcom.ro}
 \item Pele, D.\,T.\ \& Mazurencu-Marinescu-Pele, M.\ (2026). Finite-sample precision limits for expected shortfall forecast comparisons. \textit{Mathematics}, 14(13), 2316. \href{https://doi.org/10.3390/math14132316}{doi:10.3390/math14132316}
+\item Pele, D.\,T., Bolovăneanu, V., Ginavar, A.\,T., Lessmann, S.\ \& Härdle, W.\,K.\ (2026). Recalibrating tail risk forecasts under temporal dependence: conformal audit of foundation models for VaR forecasting. AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf}{github.com/danpele/EMQA/resources/aida2026}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bibliografie (4/4)}
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
 \item Pickands, J.\ (1975). Statistical inference using extreme order statistics. \textit{Annals of Statistics}, 3(1), 119--131. \href{https://doi.org/10.1214/aos/1176343003}{doi:10.1214/aos/1176343003}
-\item Romano, Y., Patterson, E.\ \& Candès, E.\ (2019). Conformalized quantile regression. \textit{Advances in Neural Information Processing Systems}, 32, 3543--3553.
+\item Romano, Y., Patterson, E.\ \& Candès, E.\ (2019). Conformalized quantile regression. \textit{Advances in Neural Information Processing Systems}, 32, 3543--3553. \href{https://proceedings.neurips.cc/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html}{proceedings.neurips.cc}
 \item Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D.\,T.\ \& Lessmann, S.\ (2026). Energy Financial Risk Meter: Systemic risk in the EU energy sector. SSRN Working Paper 6985301. \href{https://doi.org/10.2139/ssrn.6985301}{doi:10.2139/ssrn.6985301}
+\item Toma, F.-M.\ (2026). Energy Financial Risk Meter: systemic risk in the EU energy sector (with D.-M.\ Dima, R.\ Grecu, D.\,T.\ Pele and S.\ Lessmann). AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/toma_energy_financial_risk_meter.pdf}{github.com/danpele/EMQA/resources/aida2026}
+\item Wang, R., Härdle, W.\,K.\ \& Zhang, L.\ (2025). Measuring carbon risk dynamics. SSRN Working Paper 5757742. \href{https://doi.org/10.2139/ssrn.5757742}{doi:10.2139/ssrn.5757742}
+\item Wang, R., Härdle, W.\,K.\ \& Zhang, L.\ (2026). Measuring carbon risk dynamics. AIDA Conference, Bucharest University of Economic Studies, 5 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/wang_carbon_risk_dynamics.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Weron, R.\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. \textit{International Journal of Forecasting}, 30(4), 1030--1081. \href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}
 \end{itemize}
 \end{frame}

@@ -54,7 +54,7 @@ Modelele din acest curs folosesc deci prețurile pînă în ziua $d-1$; consumul
 
 @practice o testare retrospectivă cu consumul realizat în ziua $d-1$ pare excelentă, dar la 12:00 acest consum nu se cunoaște.
 
-## Datele se împart cronologic în calibrare, rodaj și test, fără amestecare {h=fb64bc12}
+## Datele se împart cronologic în calibrare, rodaj și test, fără amestecare {h=329b858f}
 
 Un model de prognoză a prețurilor trebuie evaluat în aceeași ordine în care ar fi folosit. Fiecare model se reestimează zilnic pe o fereastră care se încheie în ziua $d-1$, produce cele 24 de prognoze pentru ziua $d$, apoi fereastra avansează cu o zi. Nu folosim validare încrucișată aleatoare (K-fold) și nici o împărțire aleatoare pentru validare, deoarece amestecarea zilelor ar lăsa modelul să învețe din viitor, iar testarea retrospectivă ar părea mai bună decît realitatea (Weron, 2014; Lago, Marcjasz, De Schutter & Weron, 2021).
 
@@ -65,7 +65,7 @@ Graficul arată cum se folosește eșantionul. Prima prognoză se face cu o fere
 @chart split_timeline
 Prețul zilnic de bază din România, 1 ianuarie 2022 – 31 octombrie 2026, în EUR/MWh, cu prima fereastră de calibrare de 728 de zile, rodajul de 182 de zile și perioada de test de 365 de zile marcate prin fundal colorat.
 
-## Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă {h=7f4714a5}
+## Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă {h=28374035}
 
 Cea mai simplă prognoză copiază prețul aceleiași ore de acum $k$ zile, $\hat P_{d,h}=P_{d-k,h}$. Graficul arată MAE a acestei prognoze în anul de test, în funcție de vechimea $k$ a informației. Cu prețul de ieri, $k=1$, MAE este 29,37 EUR/MWh. Cu prețul de acum două zile urcă la 38,52, pentru că informația este mai veche. La $k=7$, însă, eroarea coboară la 34,41, deoarece aceeași zi a săptămînii trecute are același tipar săptămînal al consumului.
 
@@ -116,7 +116,7 @@ MAE se exprimă în EUR/MWh și se explică ușor; RMSE ridică erorile la pătr
 
 @practice raportați biroului de tranzacționare MAE în EUR/MWh, iar conducerii rMAE, calculate pe aceleași ore.
 
-## Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative {h=50559ac1}
+## Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative {h=83746df4}
 
 Eroarea procentuală absolută medie (MAPE) este populară în rapoartele de afaceri, dar nu funcționează pentru prețurile energiei electrice:
 
@@ -143,9 +143,9 @@ Pe cele 365 de zile de test, modelul naiv față de AW-LEAR dă DM = 7,32, cu $p
 
 @practice schimbați modelul numai dacă îmbunătățirea este semnificativă pe orele care vă interesează.
 
-## Matricea testelor DM: care modele sînt semnificativ mai precise în România {h=da2dce64}
+## Matricea testelor DM: care modele sînt semnificativ mai precise în România {h=b0a013f7}
 
-Aplicînd testul DM din @eq:dm fiecărei perechi de modele, obținem o matrice de valori $p$. Fiecare celulă răspunde la întrebarea „este modelul din coloană mai precis decît cel din rînd?”, iar o celulă verde înseamnă că modelul din coloană este semnificativ mai precis. Diagonala rămîne goală.
+Aplicînd testul DM din @eq:dm fiecărei perechi de modele, obținem o matrice de valori $p$. Rîndurile poartă numele și numărul modelelor, iar coloanele aceleași numere. Fiecare celulă răspunde la întrebarea „este modelul din coloană mai precis decît cel din rînd?”, iar o celulă verde înseamnă că modelul din coloană este semnificativ mai precis. Diagonala rămîne goală.
 
 În anul de test din România, 8 dintre celelalte 9 modele sînt semnificativ mai precise decît modelul naiv, la pragul de 5%; excepția este modelul naiv sezonier, care este mai slab. Coloanele cu multe celule verzi aparțin modelelor care le depășesc pe cele mai multe dintre celelalte. Matricea permite o comparație rapidă a modelelor, fără a supraevalua diferențe mici de MAE care nu sînt semnificative statistic (Ziel & Weron, 2018; Lago et al., 2021).
 
@@ -174,7 +174,7 @@ Modelul se estimează prin metoda celor mai mici pătrate (OLS), separat pentru 
 
 @practice acesta este modelul de depășit înainte să cumpărați o rețea neuronală.
 
-## Coeficienții modelului ARX diferă de la o oră la alta {h=217e83e4}
+## Coeficienții modelului ARX diferă de la o oră la alta {h=64d33737}
 
 Pentru că fiecare oră are propria regresie, coeficienții din @eq:arx pot diferi pe parcursul zilei. Graficul arată media fiecărui coeficient pe cele 365 de estimări zilnice din anul de test, oră cu oră. Ponderea prețului aceleiași ore de ieri, $Y_{d-1,h}$, este maximă la ora 13 (0,68) și minimă la ora 0 (0,08). Noaptea contează mai mult ultima oră a zilei $d-1$, al cărei coeficient ajunge pînă la 0,73: imediat după miezul nopții, prețul cel mai apropiat în timp este cel din seara precedentă, nu cel al aceleiași ore de acum 24 de ore.
 
@@ -201,7 +201,7 @@ Explicația ține de calendar. Informația din ziua $d-2$ este deja inclusă în
 
 @practice cumpărați prognozele TSO de consum și de producție regenerabilă pentru ziua următoare înainte de a plăti pentru un model mai complex.
 
-## Cîte un model pentru fiecare oră este mai precis decît un model comun {h=224d9f21}
+## Cîte un model pentru fiecare oră este mai precis decît un model comun {h=3c3f27cc}
 
 O alternativă la cele 24 de regresii orare este o singură regresie comună pentru toate orele, cu constantă proprie fiecărei ore, dar cu pante comune. Modelul comun este mai simplu și folosește de 24 de ori mai multe observații pentru fiecare coeficient, dar obligă toate orele să reacționeze la fel la prețul de ieri și la variabilele fundamentale.
 
@@ -212,7 +212,7 @@ O alternativă la cele 24 de regresii orare este o singură regresie comună pen
 @chart per_hour_single
 MAE pe ore (CET) în anul de test pentru modelul naiv, ARX(728) cu un singur model pentru toate orele și ARX(728) cu cîte un model pe oră.
 
-## Transformarea asinh atenuează salturile și acceptă prețuri negative {h=03928cf3}
+## Transformarea asinh atenuează salturile și acceptă prețuri negative {h=2ae0a380}
 
 Prețurile energiei electrice au salturi și pot fi negative, astfel încît o regresie pe prețuri netransformate este dominată de cîteva ore extreme. O transformare de stabilizare a varianței (VST) comprimă valorile extreme înainte de estimare (Uniejewski, Weron & Ziel, 2018). Cursul folosește inversa sinusului hiperbolic:
 
@@ -239,7 +239,7 @@ Pe datele din România, LEAR(728) păstrează în medie 42 din cei 247 de regres
 
 @practice un model LASSO este ușor de interpretat: regresorii păstrați arată ce influențează prețul în fiecare oră.
 
-## LEAR păstrează prețul aceleiași ore de ieri și ziua săptămînii {h=b12325f3}
+## LEAR păstrează prețul aceleiași ore de ieri și ziua săptămînii {h=f089cbbf}
 
 Deoarece LASSO face exact zero o parte din coeficienți, putem număra cît de des rămîne în model fiecare grupă de regresori. Harta termică arată, pentru fiecare oră a zilei și fiecare grupă de regresori candidați, procentul păstrat de LEAR(728) în cele 365 de estimări zilnice din anul de test.
 
@@ -270,7 +270,7 @@ Pe datele din România, MAE a modelului ARX este 24,44 EUR/MWh cu o fereastră d
 
 @practice cînd piața își schimbă regimul (2022, 2024), ferestrele scurte reacționează primele; păstrați-le în medie.
 
-## Media pe ferestre este mai precisă decît cea mai bună fereastră {h=15321caf}
+## Media pe ferestre este mai precisă decît cea mai bună fereastră {h=bbae2fb0}
 
 Graficul arată MAE pentru fiecare fereastră de calibrare, pentru ARX și LEAR, cu prognoza mediată ca ultimă bară în fiecare panou și modelul naiv, 27,82 EUR/MWh, ca linie punctată. Pentru ARX, prognoza mediată AW-ARX are MAE 22,30 EUR/MWh, sub cea mai bună fereastră individuală, ARX(714), cu 22,68.
 
@@ -342,7 +342,7 @@ Disciplina seriilor de timp se aplică și aici. Numărul de epoci de antrenare 
 
 @practice o rețea neuronală cere ani de date și o calibrare atentă; altfel, păstrați LEAR.
 
-## Pe ore, învățarea automată ajută în cadrul ansamblului, nu luată separat {h=1b733abe}
+## Pe ore, învățarea automată ajută în cadrul ansamblului, nu luată separat {h=253440b4}
 
 Graficul arată MAE pe ore pentru AW-LEAR, GBM, MLP și ansamblul de 4 modele. Luate separat, modelele de învățare automată sînt mai precise decît AW-LEAR în 0 ore (GBM) și în 0 ore (MLP). Ansamblul de 4 modele, care le include, este mai precis decît AW-LEAR în 15 din 24 de ore. Acesta este sensul practic al relației @eq:ens: un model mai slab, dar cu erori diferite, îmbunătățește totuși media.
 
@@ -385,7 +385,7 @@ Două metode mai simple servesc drept comparație: predicția conformală (CP) �
 
 @practice o bandă de 90% care conține doar 86% din prețuri subestimează riscul poziției deschise.
 
-## O săptămînă de intervale QRA în România: largi seara, înguste noaptea {h=920981fd}
+## O săptămînă de intervale QRA în România: largi seara, înguste noaptea {h=514b2eb9}
 
 Graficul arată prognozele QRA pentru săptămîna 12 octombrie 2026 – 18 octombrie 2026, oră cu oră: intervalele de 90% și de 50%, mediana QRA și prețul realizat. Intervalul se lărgește seara, cînd prețul este incert, și se îngustează noaptea, cînd prețul este stabil. Așa trebuie să se comporte o prognoză probabilistică bună: lățimea intervalului urmează incertitudinea fiecărei ore, în loc să fie aceeași la toate orele.
 
@@ -396,9 +396,9 @@ Mediana distribuției QRA este ea însăși o prognoză punctuală. Pe anul de t
 @chart qra_week
 Prețul orar realizat, mediana QRA și intervalele QRA de 50% și de 90% pentru săptămîna 12–18 octombrie 2026, în EUR/MWh.
 
-## Toate cele trei metode subestimează cozile distribuției prețului {h=1c2fdbbd}
+## Toate cele trei metode subestimează cozile distribuției prețului {h=c66556ae}
 
-O prognoză probabilistică este bine calibrată cînd exact $\tau$% din prețuri se află sub cuantila de nivel $\tau$, pentru orice nivel $\tau$. Graficul arată, pentru cele 99 de niveluri ale cuantilei, ponderea prețurilor aflate sub cuantila prognozată minus $\tau$, în puncte procentuale; o prognoză calibrată perfect se află pe linia 0. Toate cele trei metode sînt peste linie în stînga și sub linie în dreapta: prea multe prețuri cad sub cuantilele mici și peste cele mari, deci cozile sînt prea înguste.
+O prognoză probabilistică este bine calibrată cînd exact $\tau$% din prețuri se află sub cuantila de nivel $\tau$, pentru orice nivel $\tau$. Graficul arată, pentru cele 99 de niveluri ale cuantilei, eroarea de acoperire: ponderea prețurilor aflate sub cuantila prognozată minus $\tau$, în puncte procentuale; o prognoză calibrată perfect se află pe linia 0. Toate cele trei metode sînt peste linie în stînga și sub linie în dreapta: prea multe prețuri cad sub cuantilele mici și peste cele mari, deci cozile sînt prea înguste.
 
 Testul Kupiec pentru intervalul de 90% confirmă formal acest lucru (Kupiec, 1995; Gneiting & Raftery, 2007). Statistica sa este 162,9 pentru QRA, 83,3 pentru CP și 154,1 pentru HS, mult peste valoarea critică de 3,84 la pragul de 5%. Testul este definit în Anexa C.
 
@@ -444,7 +444,7 @@ Pe datele din perioada 2015-01 – 2026-10, statistica Engle–Granger este −5
 
 @practice într-o lună secetoasă, un producător hidro se poate aștepta la prețuri peste nivelul dat de gaze timp de una sau două luni.
 
-## Prețul energiei, gazele și hidro: regresia din cursul 1 nu este spurioasă {h=6a3671f9}
+## Prețul energiei, gazele și hidro: regresia din cursul 1 nu este spurioasă {h=65f21bcc}
 
 Panoul din stînga al graficului arată prețul lunar din România împreună cu nivelul său de echilibru dat de prețul gazelor TTF, din regresia de cointegrare; prețul urmează acest nivel, cu abateri care se închid în cîteva luni. Panoul din dreapta arată, pentru fiecare lună, abaterea prețului de la echilibru în funcție de producția hidro raportată la media lunii respective. Panta este negativă: în lunile cu producție hidro peste medie, prețul este sub nivelul dat de gaze, iar în lunile cu producție hidro sub medie, peste acest nivel.
 
@@ -463,7 +463,7 @@ QRA transformă prognozele punctuale în intervale a căror lățime urmează in
 
 Patru studii de caz aplică modelele din curs pe date recente din România și traduc acuratețea în întrebările unui manager: cît de stabilă este acuratețea de-a lungul anului, ce se întîmplă într-o săptămînă de criză, cum se prognozează noile prețuri pe sfert de oră și cît valorează, în euro, o prognoză mai bună. Secțiunea se încheie cu o listă de verificări pentru orice birou de prognoză.
 
-## Studiul de caz (a): acuratețea diferă mult de la o lună la alta {h=72a86c52}
+## Studiul de caz (a): acuratețea diferă mult de la o lună la alta {h=ea9f3cad}
 
 Graficul urmărește MAE lunară a modelului naiv, a AW-ARX, a AW-LEAR și a ansamblului de 4 modele în anul de test. AW-LEAR este mai precis decît modelul naiv în 12 din 12 luni, deci cîștigul nu se datorează unei singure perioade favorabile. Nivelul erorii variază însă mult: MAE pentru AW-LEAR este între 12,84 EUR/MWh în decembrie 2025 și 34,88 EUR/MWh în octombrie 2026.
 
@@ -474,7 +474,7 @@ Imaginea lunară arată și că o medie anuală bună poate ascunde perioade sla
 @chart monthly_mae
 MAE lunară a modelului naiv, a AW-ARX, a AW-LEAR și a ansamblului de 4 modele în anul de test, în EUR/MWh.
 
-## Studiul de caz (b): în săptămîna de criză (19 octombrie 2026) modelele întîrzie o zi {h=cd6defa6}
+## Studiul de caz (b): în săptămîna de criză, modelele întîrzie o zi {h=534f040c}
 
 Săptămîna 19–25 octombrie 2026 a fost o perioadă de criză pe piața din România. Prețul mediu a fost 258,59 EUR/MWh, iar maximul 412,35 EUR/MWh. Graficul arată prețul orar realizat, împreună cu prognozele modelului naiv, ale AW-LEAR și ale ansamblului.
 
@@ -485,7 +485,7 @@ Săptămîna 19–25 octombrie 2026 a fost o perioadă de criză pe piața din R
 @chart stress_week
 Prețul orar realizat și prognozele modelului naiv, ale AW-LEAR și ale ansamblului pentru săptămîna 19–25 octombrie 2026, în EUR/MWh.
 
-## Studiul de caz (c): sferturile de oră cer un profil în interiorul orei {h=e41d636f}
+## Studiul de caz (c): sferturile de oră cer un profil în interiorul orei {h=d23004c0}
 
 Din 1 octombrie 2025, intervalul de tranzacționare (MTU) al licitației PZU are 15 minute, deci fiecare oră are patru prețuri. Modelele orare din acest curs prognozează media celor patru. O cale simplă de a obține prognoze pe sfert de oră este să adăugăm la prognoza orară AW-LEAR profilul intraorar mediu din ultimele 28 de zile, adică abaterea obișnuită a fiecărui sfert de oră de la media orei sale.
 
@@ -496,7 +496,7 @@ Graficul arată o singură zi, 1 iulie 2026: prețul realizat pe 15 minute, prog
 @chart mtu15
 Prețurile realizate pe 15 minute din 1 iulie 2026, prognoza orară AW-LEAR constantă în interiorul orei și prognoza cu profilul intraorar din ultimele 28 de zile, în EUR/MWh.
 
-## Studiul de caz (d): cît valorează, în bani, o prognoză mai bună {h=b014276a}
+## Studiul de caz (d): cît valorează, în bani, o prognoză mai bună {h=46687da1}
 
 O rMAE mai bună contează numai dacă schimbă deciziile. Studiul de caz traduce acuratețea prognozei în bani pentru doi utilizatori. Primul este o baterie de 1 MW (megawatt) și 2 MWh, cu randament de 90%, care face un ciclu pe zi: se încarcă în orele cele mai ieftine și se descarcă în cele mai scumpe, alese după prognoză. În cele 363 de zile fără schimbarea orei, bateria cîștigă 90 738 EUR pe MW cu prognoza ansamblului, adică 91,0% din profitul cu informație perfectă, față de 84 623 EUR cu modelul naiv.
 
@@ -514,6 +514,21 @@ Stînga: profitul bateriei în anul de test, în mii EUR pe MW, pentru fiecare p
 Analiza din spatele acestui curs se verifică singură (scriptul de analiză, secțiunea 7). Ea face 9 364 de verificări ale momentului publicării, care confirmă că fiecare variabilă este disponibilă cu cel puțin 12 h înainte de ora 12:00. Recalculează 17 serii de prognoză în 14 zile, iar GBM și MLP în prima zi a fiecăreia dintre cele 12 reestimări, după ce datele ulterioare au fost șterse sau înlocuite cu valori absurde; prognozele rămîn identice, pînă la rotunjire. Rezultat: verificare trecută (Lago et al., 2021).
 
 @practice includeți testul de folosire a informației din viitor în orice evaluare a unui model, ca în tema 1.
+
+## AIDA 2026: prognozele probabilistice se judecă după banii pe care îi aduc {h=8c9b0abf}
+
+Două prezentări de la conferința AIDA 2026 (Academia de Studii Economice din București, iunie 2026) leagă acest curs de cercetarea actuală; rezultatele și cifrele de mai jos sînt cele din diapozitivele conferinței.
+
+- **R. Weron, 4 iunie 2026** ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf)). Modelele de preț sînt fie cîte un model pentru fiecare oră, ca ARX și LEAR din acest curs, fie un model comun pentru toate cele 24 de ore; medierea pe ferestre de calibrare și LEAR rămîn reperele pe care orice model nou trebuie să le depășească. Ofertele bazate pe cuantile au adus cu 19–34% mai mult profit decît cele bazate pe prognoze punctuale ([Uniejewski & Weron, 2021](https://doi.org/10.1016/j.eneco.2021.105121)). Într-o testare pe 2021–2025, modelul transformer preantrenat TabPFN (versiunea 3) a obținut în 2025 un scor de probabilitate ordonat continuu (CRPS) de 3,56, față de 4,71 pentru LEAR cu intervale conformale.
+- **A. Petukhina, cu G. Mazzon și D. Marazzina, 3 iunie 2026** ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf)). Marea Britanie, care nu face parte din SDAC, are două licitații orare pentru ziua următoare (EPEX SPOT și Nord Pool), astfel încît un trader poate cumpăra într-una și vinde în cealaltă. Lucrarea prognozează distribuția comună a celor două prețuri și a prețului de dezechilibru cu un model cu copulă și îl testează între martie și septembrie 2022. Pentru licitația EPEX, MAE este 47,884, față de 27,926 pentru LASSO cu QRA, dar CRPS este 16,852, față de 32,605; cu strategia bazată pe medie și pe valoarea la risc condiționată (CVaR), cîștigul cumulat este de 22 001 EUR, față de 6 283,3 și −3 005,1 EUR pentru cele două modele bazate pe LASSO. Lucrarea continuă studiul lui [Agakishiev et al. (2025)](https://doi.org/10.1016/j.eneco.2024.108008).
+
+@practice judecați prognoza după decizia pe care o susține: modelul cu MAE mai mare a cîștigat mai mult.
+
+## AIDA 2026: ordinea de merit, estimată din date, dă distribuția prețului {h=cced0a08}
+
+- **P. Ghelasi, cu J. Browell și F. Ziel, 3 iunie 2026** ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf)). Prețul se formează la intersecția ordinii de merit, adică a centralelor ordonate după costul variabil, cu consumul; este un model fundamental, care poate fi citit centrală cu centrală. În locul randamentelor și al intensităților de CO₂ preluate din tabelele experților, modelul le estimează din prețurile trecute, între limitele date de experți ([Ghelasi & Ziel, 2026](https://doi.org/10.1016/j.eneco.2025.109114)). Pe datele din Germania, cu estimare între 1 octombrie 2022 și 1 octombrie 2023 și test pînă la 1 octombrie 2024, fără reestimare, MAE este 11,83 EUR/MWh, față de 13,11 pentru LASSO, 13,96 pentru gradient boosting, 16,36 pentru ordinea de merit clasică și 24,96 pentru modelul naiv. Varianta probabilistică prognozează distribuția fiecărei variabile de intrare (consum, solar, vînt, combustibili), trece fiecare scenariu simulat prin ordinea de merit și alege parametrii care minimizează CRPS a prețurilor rezultate. CRPS este 13,92, față de 14,04 pentru un model cu distribuția Johnson $S_U$ și 20,46 pentru modelul naiv, iar prețurile simulate au distribuții neparametrice, de exemplu o grupare lîngă zero la amiază.
+
+@practice un model fundamental estimat statistic dă prognoze pe care le puteți explica centrală cu centrală.
 
 ## @end
 

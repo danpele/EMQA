@@ -65,7 +65,7 @@ The chart shows how the sample is used. The first forecast is made with a calibr
 @chart split_timeline
 Daily base price of Romania from 1 Jan 2022 to 31 Oct 2026, in EUR/MWh, with the first 728-day calibration window, the 182-day burn-in and the 365-day test period shaded.
 
-## Older information, larger error, except at the weekly lag {h=174a9917}
+## Older information, larger error, except at the weekly lag {h=66499fbc}
 
 The simplest possible forecast copies the price of the same hour $k$ days earlier, $\hat P_{d,h}=P_{d-k,h}$. The chart shows its MAE on the test year as a function of the age $k$ of the information. With yesterday's price, $k=1$, the MAE is 29.37 EUR/MWh. With the price of two days earlier it rises to 38.52, because the information is older. At $k=7$, however, the error falls back to 34.41, since the same weekday a week earlier shares the weekly pattern of consumption.
 
@@ -116,7 +116,7 @@ The MAE is in EUR/MWh and is easy to explain; the RMSE squares the errors and th
 
 @practice report MAE in EUR/MWh to the desk and rMAE to management, on the same hours.
 
-## Why percentage errors fail near zero and negative prices {h=d623cda8}
+## Why percentage errors fail near zero and negative prices {h=221ecc30}
 
 The mean absolute percentage error (MAPE) is popular in business reports, but it does not work for electricity prices:
 
@@ -145,7 +145,7 @@ On the 365 test days, naive against AW-LEAR gives DM = 7.32 with $p<0.001$: LEAR
 
 ## The DM chessboard: which model beats which on the Romanian test year {h=93b3bfab}
 
-Running the DM test of @eq:dm for every pair of models gives a matrix of p-values. Each cell answers the question "is the column model more accurate than the row model?", and green cells mark a significant win of the column model. The diagonal is empty.
+Running the DM test of @eq:dm for every pair of models gives a matrix of p-values. Rows carry the model names and numbers, columns the same numbers. Each cell answers the question "is the column model more accurate than the row model?", and green cells mark a significant win of the column model. The diagonal is empty.
 
 On the Romanian test year, 8 of the 9 other models beat the naive benchmark at the 5% level; the exception is the seasonal naive forecast, which is worse. Columns with many green cells belong to models that beat most of the others. The matrix is a compact way to read a model comparison without being misled by small differences in MAE that are not statistically meaningful (Ziel & Weron, 2018; Lago et al., 2021).
 
@@ -396,9 +396,9 @@ The median of the QRA distribution is itself a point forecast. Over the test yea
 @chart qra_week
 Hourly actual price, QRA median and 50% and 90% QRA intervals for the week 12–18 Oct 2026, in EUR/MWh.
 
-## All three methods are too narrow in the tails {h=6622b034}
+## All three methods are too narrow in the tails {h=f494e1c6}
 
-A probabilistic forecast is calibrated when $\tau$% of the prices fall below the $\tau$-quantile, for every level $\tau$. The chart plots, for the 99 quantile levels, the actual share of prices below the forecast quantile minus $\tau$, in percentage points; a calibrated forecast lies on the zero line. All three methods lie above the line on the left and below it on the right: too many prices fall below the low quantiles and above the high ones, so the tails are too narrow.
+A probabilistic forecast is calibrated when $\tau$% of the prices fall below the $\tau$-quantile, for every level $\tau$. The chart plots, for the 99 quantile levels, the coverage error: the actual share of prices below the forecast quantile minus $\tau$, in percentage points; a calibrated forecast lies on the zero line. All three methods lie above the line on the left and below it on the right: too many prices fall below the low quantiles and above the high ones, so the tails are too narrow.
 
 The Kupiec test for the 90% interval confirms it formally (Kupiec, 1995; Gneiting & Raftery, 2007). Its statistic is 162.9 for QRA, 83.3 for CP and 154.1 for HS, far above the 5% critical value of 3.84. The test is defined in Appendix C.
 
@@ -485,7 +485,7 @@ In this week the MAE is 40.19 for naive, 36.54 for AW-LEAR, 34.35 for GBM and 34
 @chart stress_week
 Actual hourly price and the forecasts of the naive benchmark, AW-LEAR and the ensemble for the week 19–25 Oct 2026, in EUR/MWh.
 
-## Case study (c): forecasting 96 quarter-hours since 1 October 2025 {h=3bcdb32f}
+## Case study (c): forecasting 96 quarter-hours since 1 October 2025 {h=f0bd61a5}
 
 Since 1 October 2025 the market time unit (MTU) of the day-ahead auction is 15 minutes, so each hour has four prices. The hourly models of this lecture forecast the mean of the four. A simple way to obtain quarter-hour forecasts is to add to the hourly AW-LEAR forecast the mean intra-hour shape of the 28 previous days, that is how much each quarter-hour has typically deviated from its hourly mean.
 
@@ -496,7 +496,7 @@ The chart shows one day, 1 Jul 2026: the actual 15-minute price, the hourly AW-L
 @chart mtu15
 Actual 15-minute prices on 1 Jul 2026, the hourly AW-LEAR forecast kept flat within the hour and the forecast with the intra-hour shape of the 28 previous days, in EUR/MWh.
 
-## Case study (d): what a better forecast is worth {h=3d5c24ca}
+## Case study (d): what a better forecast is worth {h=0ab1117e}
 
 A better rMAE is useful only if it changes decisions. The case study translates forecast accuracy into money for two users. The first is a battery of 1 MW (megawatt) and 2 MWh with a round-trip efficiency of 90%, which runs one daily cycle, charging in the cheapest hours and discharging in the most expensive ones as chosen from the forecast. Over the 363 days without DST it earns 90,738 EUR per MW with the ensemble forecast, which is 91.0% of the profit under perfect foresight, against 84,623 EUR with the naive forecast.
 
@@ -514,6 +514,21 @@ Before trusting a backtest, a forecasting desk should check three things: every 
 The analysis behind this lecture checks itself for leakage of future information (analysis script, section 7). It runs 9,364 timestamp checks, verifying that each input was available at least 12 h before the cut-off. It recomputes 17 forecast series on 14 days, and GBM and MLP on the first day of all 12 refits, after deleting all later data or replacing it with nonsense; the forecasts stay identical up to rounding. Status: passed (Lago et al., 2021).
 
 @practice make the leakage check part of every model review, as Assignment 1 does.
+
+## AIDA 2026: probabilistic forecasts are judged by the money they make {h=e479b646}
+
+Two talks at the AIDA 2026 conference (Bucharest University of Economic Studies, June 2026) connect this lecture to current research; the findings and numbers below are those printed on the conference slides.
+
+- **R. Weron, keynote, 4 June 2026** ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf)). Price models are either one model per hour, as our ARX and LEAR, or a joint model of all 24 hours; averaging across calibration windows and LEAR remain the benchmarks every new model must beat. Trading on quantiles earned 19–34% more than trading on point forecasts ([Uniejewski & Weron, 2021](https://doi.org/10.1016/j.eneco.2021.105121)). In a 2021–2025 test, the pretrained transformer TabPFN 3.0 reached a continuous ranked probability score (CRPS) of 3.56 in 2025, against 4.71 for LEAR with conformal intervals.
+- **A. Petukhina, with G. Mazzon and D. Marazzina, 3 June 2026** ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf)). Great Britain, outside SDAC, runs two hourly day-ahead auctions (EPEX SPOT and Nord Pool), so a trader can buy in one and sell in the other. The work forecasts the joint distribution of both auction prices and the system price with a copula model and tests it from March to September 2022. On the EPEX auction its MAE is 47.884 against 27.926 for LASSO with QRA, but its CRPS is 16.852 against 32.605; trading on the mean and the conditional value at risk (CVaR), it ends with 22,001 EUR, against 6,283.3 and −3,005.1 EUR for the two LASSO-based benchmarks. The work builds on [Agakishiev et al. (2025)](https://doi.org/10.1016/j.eneco.2024.108008).
+
+@practice judge a forecast by the decision it feeds: in Great Britain the model with the larger MAE earned more.
+
+## AIDA 2026: a data-driven merit order forecasts the price distribution {h=ad59639b}
+
+- **P. Ghelasi, with J. Browell and F. Ziel, 3 June 2026** ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf)). The price is where the merit order, the power plants sorted by variable cost, meets the load: a fundamental model that can be read plant by plant. Instead of fixing plant efficiencies and CO₂ intensities from expert tables, the model estimates them from past prices, within expert bounds ([Ghelasi & Ziel, 2026](https://doi.org/10.1016/j.eneco.2025.109114)). On German data, trained from 1 October 2022 to 1 October 2023 and tested to 1 October 2024 without recalibration, its MAE is 11.83 EUR/MWh, against 13.11 for LASSO, 13.96 for boosted trees, 16.36 for the classical merit order and 24.96 for the naive model. The probabilistic version forecasts the distribution of each input (load, solar, wind, fuels), passes every sampled scenario through the merit order and chooses the parameters that minimise the CRPS of the resulting prices. Its CRPS is 13.92, against 14.04 for a model with the Johnson $S_U$ distribution and 20.46 for the naive model, and the simulated prices form non-parametric distributions, for example a cluster near zero at midday.
+
+@practice a fundamental model estimated statistically gives forecasts you can explain plant by plant.
 
 ## @end
 

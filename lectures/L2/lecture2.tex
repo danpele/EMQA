@@ -32,12 +32,14 @@ AW-ARX & ARX averaged across calibration windows\\
 AW-LEAR & LEAR averaged across calibration windows\\
 CET & Central European Time\\
 CP & conformal prediction\\
+CRPS & continuous ranked probability score\\
+CVaR & conditional value at risk\\
 DE-LU & Germany--Luxembourg bidding zone\\
 DM & Diebold--Mariano test\\
 DNN & deep neural network\\
-DST & daylight saving time\\
-ECM & error-correction model\\\end{tabular}}\end{column}
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}ENTSO-E & European Network of Transmission System Operators for Electricity\\
+DST & daylight saving time\\\end{tabular}}\end{column}
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}ECM & error-correction model\\
+ENTSO-E & European Network of Transmission System Operators for Electricity\\
 EPEX & EPEX SPOT power exchange\\
 ETC & exchange-traded commodity\\
 EU & European Union\\
@@ -49,15 +51,15 @@ HS & historical simulation\\
 HU & Hungary (bidding zone)\\
 HUPX & Hungarian Power Exchange\\
 ISE & Fraunhofer Institute for Solar Energy Systems\\
-LARS & least angle regression\\
-LASSO & least absolute shrinkage and selection operator\\\end{tabular}}\end{column}
+LARS & least angle regression\\\end{tabular}}\end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{Abbreviations (2/2)}
 \small
 \vspace{-1mm}\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}LEAR & LASSO-estimated autoregression\\
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}LASSO & least absolute shrinkage and selection operator\\
+LEAR & LASSO-estimated autoregression\\
 LR & likelihood ratio\\
 MAD & median absolute deviation\\
 MAE & mean absolute error\\
@@ -69,9 +71,9 @@ MW & megawatt\\
 MWh & megawatt-hour\\
 OLS & ordinary least squares\\
 OPCOM & Romanian electricity and gas market operator\\
-PS & pinball score\\
-PZU & Piața pentru Ziua Următoare (day-ahead market)\\\end{tabular}}\end{column}
-\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}QRA & quantile regression averaging\\
+PS & pinball score\\\end{tabular}}\end{column}
+\begin{column}{0.49\textwidth}{\scriptsize\renewcommand{\arraystretch}{0.96}\begin{tabular}{@{}>{\bfseries}l@{\ \ }p{0.76\linewidth}@{}}PZU & Piața pentru Ziua Următoare (day-ahead market)\\
+QRA & quantile regression averaging\\
 ReLU & rectified linear unit\\
 rMAE & relative MAE (model MAE / naive MAE)\\
 RMSE & root mean squared error\\
@@ -245,7 +247,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 
 \begin{frame}{Older information, larger error, except at the weekly lag}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.452\textheight,keepaspectratio]{charts/en/horizon_naive.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.450\textheight,keepaspectratio]{charts/en/horizon_naive.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: test year 2025-11-01 to 2026-10-31, hourly.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -364,7 +366,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 
 \begin{frame}{Why percentage errors fail near zero and negative prices}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.407\textheight,keepaspectratio]{charts/en/mape_fail.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.419\textheight,keepaspectratio]{charts/en/mape_fail.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: test year 2025-11-01 to 2026-10-31, 8760 hours.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -886,9 +888,9 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: test year 2025-11-01 to 2026-10-31, 99 quantiles.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Calibrated = $\tau$\% of prices below the $\tau$-quantile (line 0)
+  \item Coverage error = share of prices below the $\tau$-quantile minus $\tau$ (0 = calibrated)
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Above the line on the left and below on the right = tails too narrow.
+      \item Above 0 on the left and below 0 on the right = tails too narrow.
     \end{itemize}
   \item Kupiec statistic for the 90\% interval: QRA 162.9, CP 83.3, HS 154.1 (5\% critical value 3.84).
 \end{itemize}
@@ -1039,7 +1041,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 
 \begin{frame}{Case study (c): forecasting 96 quarter-hours since 1 October 2025}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.387\textheight,keepaspectratio]{charts/en/mtu15.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.412\textheight,keepaspectratio]{charts/en/mtu15.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM 15-minute day-ahead prices for Romania, via ENTSO-E. Data: 2026-07-01, 96 quarter-hours (CET).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1060,12 +1062,15 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 
 \begin{frame}{Case study (d): what a better forecast is worth}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.410\textheight,keepaspectratio]{charts/en/battery.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/en/battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC). Data: test year 2025-11-01 to 2026-10-31; 1 MW / 2 MWh, round-trip efficiency 90\%.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item Battery 1 MW / 2 MWh, one daily cycle set on the forecast, 363 days without DST, 90\,738 EUR per MW with the ensemble (91.0\% of perfect foresight), 84\,623 with naive.
-  \item Flexible 4-hour process of a supplier, 67.87 EUR/MWh with AW-LEAR vs 100.59 for a fixed 8--12 h CET block.
+  \item Battery 1 MW / 2 MWh, one daily cycle, 363 days without DST
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item 90\,738 EUR per MW with the ensemble (91.0\% of perfect foresight), 84\,623 with naive.
+    \end{itemize}
+  \item Flexible 4-hour load: 67.87 EUR/MWh with AW-LEAR vs 100.59 for the fixed 8--12 h CET block.
 \end{itemize}
 \par\vfill\manager{translate rMAE into EUR before paying for a forecast.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; round-trip efficiency 90\% assumed)}\hfill\qlink{EMQA\_L2\_battery}{Quantlets/L2/EMQA_L2_battery}\par\vspace{0.5mm}
@@ -1103,6 +1108,80 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \end{columns}
 \par\vfill\manager{make the leakage check part of every model review, as Assignment 1 does.}\par\vspace{0.5mm}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Assignment 1; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S10}\par\vspace{0.5mm}
+\end{frame}
+
+\subsection{Research and practice: AIDA 2026}
+
+\begin{frame}{AIDA 2026: probabilistic forecasts are judged by the money they make}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{R.\ Weron, keynote} (4 June 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{slides})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item One model per hour (as our ARX, LEAR) or all 24 hours jointly; averaging across windows and LEAR stay the benchmarks to beat
+    \end{itemize}
+  \item \textbf{What the cited work found}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Trading on quantiles earned 19--34\% more than trading on point forecasts (Uniejewski \& Weron, 2021)
+      \item Test year 2025: continuous ranked probability score (CRPS) 3.56 for the pretrained transformer TabPFN 3.0 vs 4.71 for LEAR + CP
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{A.\ Petukhina}, with G.\ Mazzon, D.\ Marazzina (3 June 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf}{slides})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Great Britain, outside SDAC, runs two hourly day-ahead auctions (EPEX SPOT, Nord Pool): buy in one, sell in the other
+      \item One joint forecast of both auction prices and the system price (copula model); test Mar -- Sep 2022
+    \end{itemize}
+  \item \textbf{What it found}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item EPEX auction: MAE 47.884 vs 27.926 for LASSO + QRA, but CRPS 16.852 vs 32.605
+      \item Trading on mean and conditional value at risk (CVaR): 22\,001 EUR vs 6\,283.3 and $-$3\,005.1 EUR for the LASSO + QRA models
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{judge a forecast by the decision it feeds: in Great Britain the model with the larger MAE earned more.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(as printed on the AIDA 2026 slides, Bucharest; papers: \href{https://doi.org/10.1016/j.eneco.2021.105121}{Uniejewski \& Weron, 2021, ENEECO}; \href{https://doi.org/10.1016/j.eneco.2024.108008}{Agakishiev et al., 2025, ENEECO})}\par\vspace{0.5mm}
+\end{frame}
+
+\begin{frame}{AIDA 2026: a data-driven merit order forecasts the price distribution}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.50\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{P.\ Ghelasi}, with J.\ Browell, F.\ Ziel (3 June 2026, \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf}{slides})
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Price = merit order (plants sorted by variable cost) at the load: a fundamental, interpretable model
+      \item Efficiencies and CO$_2$ intensities estimated from past prices, within expert bounds
+    \end{itemize}
+  \item \textbf{Germany, point forecasts}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Train 1 Oct 2022 -- 1 Oct 2023, test 1 Oct 2023 -- 1 Oct 2024, no recalibration
+      \item MAE, EUR/MWh: 11.83 for this model; 13.11 LASSO, 13.96 boosted trees, 16.36 classical merit order, 24.96 naive
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Probabilistic merit order}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item Forecast the distribution of each input (load, solar, wind, fuels); plug each sampled scenario into the merit order
+      \item Parameters chosen to minimise the CRPS of the resulting prices
+    \end{itemize}
+  \item \textbf{What it found}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+      \item CRPS 13.92 vs 14.04 for a Johnson $S_U$ distribution model and 20.46 for naive
+      \item MAE 17.28 vs 18.21 and 25.98; RMSE 25.81 vs 29.19 and 41.47
+      \item Simulated prices form non-parametric distributions, e.g.\ a cluster near zero at midday
+    \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vfill\manager{a fundamental model estimated like a statistical one gives forecasts you can explain plant by plant.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(talk by P.\ Ghelasi at AIDA 2026, Bucharest, 3 June 2026: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf}{slides}; paper: \href{https://doi.org/10.1016/j.eneco.2025.109114}{Ghelasi \& Ziel, 2026, ENEECO})}\par\vspace{0.5mm}
 \end{frame}
 
 \section*{Wrap-up}
@@ -1255,47 +1334,59 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \end{columns}
 \end{frame}
 
-\begin{frame}{References (1/3)}
+\begin{frame}{References (1/4)}
 \scriptsize
-\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\begin{itemize}\setlength{\itemsep}{0pt}\scriptsize
 \item Andrei, A.-V., Pele, D.-T.\ \& Cramer, A.-A.\ (2026). Multi-horizon explainability in energy price forecasting: Disentangling market dynamics and renewable intermittency in Romania's liberalized electricity market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 104--117. \href{https://doi.org/10.2478/picbe-2026-0014}{doi:10.2478/picbe-2026-0014}
 \item Andrei, A.-V., Pele, D.-T., Cramer, A.-A., Amza, A.\ \& Diaconu, D.\ (2026). Explainable AI-based early warning system for electricity price spikes: Evidence from the Romanian market. \textit{Proceedings of the International Conference on Business Excellence}, 20(1), 4820--4836. \href{https://doi.org/10.2478/picbe-2026-0352}{doi:10.2478/picbe-2026-0352}
-\item Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\,T.\ \& Lessmann, S.\ (2024). Energy price modelling: A comparative evaluation of four generations of forecasting methods. arXiv:2411.03372.
-\item Bates, J.\,M.\ \& Granger, C.\,W.\,J.\ (1969). The combination of forecasts. \textit{Operational Research Quarterly}, 20(4), 451--468.
-\item Diebold, F.\,X.\ \& Mariano, R.\,S.\ (1995). Comparing predictive accuracy. \textit{Journal of Business \& Economic Statistics}, 13(3), 253--263.
+\item Andrei, A.-V., Velev, G., Toma, F.-M., Pele, D.\,T.\ \& Lessmann, S.\ (2024). Energy price modelling: A comparative evaluation of four generations of forecasting methods. arXiv:2411.03372. \href{https://arxiv.org/abs/2411.03372}{arxiv.org/abs/2411.03372}
+\item Agakishiev, I., Härdle, W.\,K., Kopa, M., Kozmík, K.\ \& Petukhina, A.\ (2025). Multivariate probabilistic forecasting of electricity prices with trading applications. \textit{Energy Economics}, 141, 108008. \href{https://doi.org/10.1016/j.eneco.2024.108008}{doi:10.1016/j.eneco.2024.108008}
+\item Bates, J.\,M.\ \& Granger, C.\,W.\,J.\ (1969). The combination of forecasts. \textit{Operational Research Quarterly}, 20(4), 451--468. \href{https://doi.org/10.1057/jors.1969.103}{doi:10.1057/jors.1969.103}
+\item Diebold, F.\,X.\ \& Mariano, R.\,S.\ (1995). Comparing predictive accuracy. \textit{Journal of Business \& Economic Statistics}, 13(3), 253--263. \href{https://doi.org/10.1080/07350015.1995.10524599}{doi:10.1080/07350015.1995.10524599}
 \item Engle, R.\,F.\ \& Granger, C.\,W.\,J.\ (1987). Co-integration and error correction: Representation, estimation, and testing. \textit{Econometrica}, 55(2), 251--276. \href{https://doi.org/10.2307/1913236}{doi:10.2307/1913236}
 \item Friedman, J.\,H.\ (2001). Greedy function approximation: A gradient boosting machine. \textit{Annals of Statistics}, 29(5), 1189--1232. \href{https://doi.org/10.1214/aos/1013203451}{doi:10.1214/aos/1013203451}
-\item Gneiting, T.\ \& Raftery, A.\,E.\ (2007). Strictly proper scoring rules, prediction, and estimation. \textit{Journal of the American Statistical Association}, 102(477), 359--378. \href{https://doi.org/10.1198/016214506000001437}{doi:10.1198/016214506000001437}
-\item Hubicka, K., Marcjasz, G.\ \& Weron, R.\ (2019). A note on averaging day-ahead electricity price forecasts across calibration windows. \textit{IEEE Transactions on Sustainable Energy}, 10(1), 321--323.
+\item Ghelasi, P., Browell, J.\ \& Ziel, F.\ (2026). A probabilistic merit order for electricity price forecasting. AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/ghelasi_probabilistic_merit_order.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{References (2/3)}
+\begin{frame}{References (2/4)}
 \scriptsize
-\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\begin{itemize}\setlength{\itemsep}{0pt}\scriptsize
+\item Ghelasi, P.\ \& Ziel, F.\ (2026). A data-driven merit order: Learning a fundamental electricity price model. \textit{Energy Economics}, 154, 109114. \href{https://doi.org/10.1016/j.eneco.2025.109114}{doi:10.1016/j.eneco.2025.109114}
+\item Gneiting, T.\ \& Raftery, A.\,E.\ (2007). Strictly proper scoring rules, prediction, and estimation. \textit{Journal of the American Statistical Association}, 102(477), 359--378. \href{https://doi.org/10.1198/016214506000001437}{doi:10.1198/016214506000001437}
+\item Hubicka, K., Marcjasz, G.\ \& Weron, R.\ (2019). A note on averaging day-ahead electricity price forecasts across calibration windows. \textit{IEEE Transactions on Sustainable Energy}, 10(1), 321--323. \href{https://doi.org/10.1109/TSTE.2018.2869557}{doi:10.1109/TSTE.2018.2869557}
 \item Hyndman, R.\,J.\ \& Koehler, A.\,B.\ (2006). Another look at measures of forecast accuracy. \textit{International Journal of Forecasting}, 22(4), 679--688. \href{https://doi.org/10.1016/j.ijforecast.2006.03.001}{doi:10.1016/j.ijforecast.2006.03.001}
 \item Johansen, S.\ (1991). Estimation and hypothesis testing of cointegration vectors in Gaussian vector autoregressive models. \textit{Econometrica}, 59(6), 1551--1580. \href{https://doi.org/10.2307/2938278}{doi:10.2307/2938278}
 \item Koenker, R.\ \& Bassett, G.\ (1978). Regression quantiles. \textit{Econometrica}, 46(1), 33--50. \href{https://doi.org/10.2307/1913643}{doi:10.2307/1913643}
-\item Kupiec, P.\,H.\ (1995). Techniques for verifying the accuracy of risk measurement models. \textit{Journal of Derivatives}, 3(2), 73--84.
+\item Kupiec, P.\,H.\ (1995). Techniques for verifying the accuracy of risk measurement models. \textit{Journal of Derivatives}, 3(2), 73--84. \href{https://doi.org/10.3905/jod.1995.407942}{doi:10.3905/jod.1995.407942}
 \item Lago, J., Marcjasz, G., De Schutter, B.\ \& Weron, R.\ (2021). Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark. \textit{Applied Energy}, 293, 116983. \href{https://doi.org/10.1016/j.apenergy.2021.116983}{doi:10.1016/j.apenergy.2021.116983}
 \item NEMO Committee (2025). 15-Minute MTU in SDAC was implemented. SDAC press release, 1 October 2025. \href{https://nemo-committee.eu/assets/files/15-minute-mtu-in-sdac-was-implemented.pdf}{nemo-committee.eu}
-\item NEMO Committee (2026). Single Day-Ahead Coupling (SDAC) and the EUPHEMIA algorithm. \href{https://www.nemo-committee.eu/sdac}{nemo-committee.eu/sdac}
-\item MacKinnon, J.\,G.\ (1996). Numerical distribution functions for unit root and cointegration tests. \textit{Journal of Applied Econometrics}, 11(6), 601--618.
-\item Marcjasz, G., Serafin, T.\ \& Weron, R.\ (2018). Selection of calibration windows for day-ahead electricity price forecasting. \textit{Energies}, 11(9), 2364.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{References (3/3)}
+\begin{frame}{References (3/4)}
 \scriptsize
-\begin{itemize}\setlength{\itemsep}{1pt}\scriptsize
+\begin{itemize}\setlength{\itemsep}{0pt}\scriptsize
+\item NEMO Committee (2026). Single Day-Ahead Coupling (SDAC) and the EUPHEMIA algorithm. \href{https://www.nemo-committee.eu/sdac}{nemo-committee.eu/sdac}
+\item MacKinnon, J.\,G.\ (1996). Numerical distribution functions for unit root and cointegration tests. \textit{Journal of Applied Econometrics}, 11(6), 601--618. \href{https://doi.org/10.1002/(SICI)1099-1255(199611)11:6\%3C601::AID-JAE417\%3E3.0.CO;2-T}{doi:10.1002/(SICI)1099-1255(199611)11:6\textless{}601::AID-JAE417\textgreater{}3.0.CO;2-T}
+\item Marcjasz, G., Serafin, T.\ \& Weron, R.\ (2018). Selection of calibration windows for day-ahead electricity price forecasting. \textit{Energies}, 11(9), 2364. \href{https://doi.org/10.3390/en11092364}{doi:10.3390/en11092364}
+\item Mazzon, G., Petukhina, A.\ \& Marazzina, D.\ (2026). Multivariate probabilistic day-ahead electricity price forecasting and cross-auction trading in the UK market. AIDA Conference, Bucharest University of Economic Studies, 3 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Nogales, F.\,J., Contreras, J., Conejo, A.\,J.\ \& Espínola, R.\ (2002). Forecasting next-day electricity prices by time series models. \textit{IEEE Transactions on Power Systems}, 17(2), 342--348. \href{https://doi.org/10.1109/TPWRS.2002.1007902}{doi:10.1109/TPWRS.2002.1007902}
 \item Nowotarski, J.\ \& Weron, R.\ (2015). Computing electricity spot price prediction intervals using quantile regression and forecast averaging. \textit{Computational Statistics}, 30(3), 791--803. \href{https://doi.org/10.1007/s00180-014-0523-0}{doi:10.1007/s00180-014-0523-0}
 \item Nowotarski, J.\ \& Weron, R.\ (2018). Recent advances in electricity price forecasting: A review of probabilistic forecasting. \textit{Renewable and Sustainable Energy Reviews}, 81, 1548--1568. \href{https://doi.org/10.1016/j.rser.2017.05.234}{doi:10.1016/j.rser.2017.05.234}
-\item Proșcanu, C.\,A., Proșcanu, M.\,E., Pele, D.\,T.\ \& Costea, A.\ (2025). Watt's next? Benchmarking time series models on Romania's national electricity consumption. \textit{Romanian Journal of Economic Forecasting}, 28(3), 146--163.
+\item Proșcanu, C.\,A., Proșcanu, M.\,E., Pele, D.\,T.\ \& Costea, A.\ (2025). Watt's next? Benchmarking time series models on Romania's national electricity consumption. \textit{Romanian Journal of Economic Forecasting}, 28(3), 146--163. \href{https://EconPapers.repec.org/RePEc:rjr:romjef:v::y:2025:i:3:p:146-163}{RePEc}.
 \item Tibshirani, R.\ (1996). Regression shrinkage and selection via the lasso. \textit{Journal of the Royal Statistical Society B}, 58(1), 267--288. \href{https://doi.org/10.1111/j.2517-6161.1996.tb02080.x}{doi:10.1111/j.2517-6161.1996.tb02080.x}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{References (4/4)}
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{0pt}\scriptsize
 \item Uniejewski, B., Nowotarski, J.\ \& Weron, R.\ (2016). Automated variable selection and shrinkage for day-ahead electricity price forecasting. \textit{Energies}, 9(8), 621. \href{https://doi.org/10.3390/en9080621}{doi:10.3390/en9080621}
 \item Uniejewski, B., Weron, R.\ \& Ziel, F.\ (2018). Variance stabilizing transformations for electricity spot price forecasting. \textit{IEEE Transactions on Power Systems}, 33(2), 2219--2229. \href{https://doi.org/10.1109/TPWRS.2017.2734563}{doi:10.1109/TPWRS.2017.2734563}
+\item Uniejewski, B.\ \& Weron, R.\ (2021). Regularized quantile regression averaging for probabilistic electricity price forecasting. \textit{Energy Economics}, 95, 105121. \href{https://doi.org/10.1016/j.eneco.2021.105121}{doi:10.1016/j.eneco.2021.105121}
 \item Weron, R.\ (2014). Electricity price forecasting: A review of the state-of-the-art with a look into the future. \textit{International Journal of Forecasting}, 30(4), 1030--1081. \href{https://doi.org/10.1016/j.ijforecast.2014.08.008}{doi:10.1016/j.ijforecast.2014.08.008}
+\item Weron, R.\ (2026). Machine learning for electricity price forecasting. Keynote, AIDA Conference, Bucharest University of Economic Studies, 4 June 2026. \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf}{github.com/danpele/EMQA/resources/aida2026}
 \item Ziel, F.\ \& Weron, R.\ (2018). Day-ahead electricity price forecasting with high-dimensional structures: Univariate vs.\ multivariate modeling frameworks. \textit{Energy Economics}, 70, 396--420. \href{https://doi.org/10.1016/j.eneco.2017.12.016}{doi:10.1016/j.eneco.2017.12.016}
 \end{itemize}
 \end{frame}

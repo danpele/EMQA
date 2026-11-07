@@ -46,7 +46,7 @@ from emqa_plot import PAL, legend_bottom, save  # noqa: E402
 
 import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.ticker import FuncFormatter  # noqa: E402
+from matplotlib.ticker import FuncFormatter, NullFormatter  # noqa: E402
 
 warnings.filterwarnings("ignore")
 ep.style()
@@ -673,14 +673,24 @@ def comma_axes(fig, lang, also_x=()):
         ax.xaxis.set_major_formatter(f_)
 
 
-def out(fig, lang, name, bottom=0.17, also_x=()):
+def legend_room(fig, overlap_in=0.08):
+    """Bottom margin (fraction of the figure height) that just fits the bottom legend: tight_layout adds its own pad
+    (about 0.16 in) above the margin, so the margin stops overlap_in below the legend's top edge; no empty band is left
+    between the x-axis labels and the legend, and the plotting area stays as tall as possible on the slide."""
+    fig.canvas.draw()
+    top = max(lg.get_window_extent().y1 for lg in fig.legends) / fig.dpi
+    return max(top - overlap_in, 0.05) / fig.get_figheight()
+
+
+def out(fig, lang, name, bottom=None, also_x=()):
     comma_axes(fig, lang, also_x)
     os.makedirs(os.path.join(HERE, "charts", lang), exist_ok=True)
-    save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=bottom)
+    save(fig, os.path.join(HERE, "charts", lang, name + ".pdf"), bottom=legend_room(fig) if bottom is None else bottom)
 
 
 def mfmt(ax, lang, step=1):
-    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
+    # quarterly ticks fall on Jan/Apr/Jul/Oct, so every January (with its year) gets a label
+    ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=range(1, 13, step)) if step > 1 else mdates.MonthLocator())
     M_ = MON_RO if lang == "ro" else MON_EN
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: M_[mdates.num2date(v).month - 1] +
                                                (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
@@ -692,16 +702,16 @@ for lang in ["en", "ro"]:
     # 1 price level and daily change
     fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.2), sharex=True, gridspec_kw={"height_ratios": [1, 1]})
     axs[0].plot(P.index, P["RO"], color=PAL["RO"], lw=0.6, label=T("Romania, daily base price $P_t$", "România, prețul zilnic de bază $P_t$"))
-    axs[0].set_ylabel("EUR/MWh", fontsize=9)
+    axs[0].set_ylabel("EUR/MWh", fontsize=10)
     axs[1].plot(X.index, X["RO"], color=PAL["DE_LU"], lw=0.5, label=T("daily change $X_t = P_t - P_{t-1}$", "variația zilnică $X_t = P_t - P_{t-1}$"))
-    axs[1].set_ylabel("EUR/MWh", fontsize=9)
+    axs[1].set_ylabel("EUR/MWh", fontsize=10)
     axs[1].xaxis.set_major_locator(mdates.YearLocator())
     axs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
-    axs[1].tick_params(axis="x", labelsize=9)
+    axs[1].tick_params(axis="x", labelsize=10)
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "price_changes", bottom=0.12)
+    out(fig, lang, "price_changes")
     # 2 tails: empirical survival of standardised changes vs normal
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     zz = np.linspace(0, 10, 200)
     for z_, ls in [("RO", "-"), ("DE_LU", "--")]:
         s_ = X[z_].dropna()
@@ -709,17 +719,19 @@ for lang in ["en", "ro"]:
         surv = 1 - np.arange(1, len(zs) + 1) / (len(zs) + 1)
         sel = zs > 0
         ax.plot(zs[sel], surv[sel], color=PAL[z_], ls=ls, lw=1.3,
-                label=T("Romania, price rises", "România, creșteri de preț") if z_ == "RO" else T("Germany-Luxembourg, price rises", "Germania-Luxemburg, creșteri de preț"))
+                label=T("Romania", "România") if z_ == "RO" else T("Germany-Luxembourg", "Germania-Luxemburg"))
     ax.plot(zz, stats.norm.sf(zz), color="#222222", lw=1.0, ls=":", label=T("normal distribution", "repartiția normală"))
     ax.set_yscale("log")
     ax.set_ylim(1e-4, 1)
     ax.set_xlim(0, 10)
     ax.set_xlabel(T("size of the daily rise, in standard deviations", "mărimea creșterii zilnice, în abateri standard"))
-    ax.set_ylabel(T("share of days", "proporția zilelor"), fontsize=9.5)
-    ax.set_yticks([1e-4, 1e-3, 1e-2, 1e-1, 1])
-    ax.set_yticklabels(["0.0001", "0.001", "0.01", "0.1", "1"] if lang == "en" else ["0,0001", "0,001", "0,01", "0,1", "1"])
+    ax.set_ylabel(T("share of days", "proporția zilelor"))
+    ax.set_yticks([1e-4, 1e-2, 1])
+    ax.set_yticks([1e-3, 1e-1], minor=True)
+    ax.yaxis.set_minor_formatter(NullFormatter())
+    ax.set_yticklabels(["0.0001", "0.01", "1"] if lang == "en" else ["0,0001", "0,01", "1"])
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "tails", bottom=0.2, also_x=[ax])
+    out(fig, lang, "tails", also_x=[ax])
     # 3 GPD tail fit on the standardised residuals of the last refit (RO)
     E_ = ENG["RO"]
     k_ = len(DAYS) - 1
@@ -729,22 +741,24 @@ for lang in ["en", "ro"]:
     om, al, be, sw = garch_filter(e_)
     z_ = np.sort(e_ / sw)
     u, xi, beta, nu_, n_ = gpd_tail(z_)
-    fig, ax = plt.subplots(figsize=(6.4, 2.2))
+    fig, ax = plt.subplots(figsize=(6.4, 2.4))
     zt = z_[z_ > u]
     sv = 1 - (np.searchsorted(z_, zt, side="left")) / len(z_)
-    ax.scatter(zt, sv, s=7, color=PAL["RO"], label=T("standardised residuals above u (empirical)", "reziduuri standardizate peste u (empiric)"), zorder=3)
+    ax.scatter(zt, sv, s=7, color=PAL["RO"], label=T("residuals above $u$ (data)", "reziduuri peste $u$ (date)"), zorder=3)
     gx = np.linspace(u, zt.max() * 1.15, 200)
     ax.plot(gx, (nu_ / n_) * stats.genpareto.sf(gx - u, xi, scale=beta), color=PAL["DE_LU"], lw=1.4,
             label=T("generalised Pareto fit", "ajustarea Pareto generalizată"))
-    ax.plot(gx, stats.norm.sf(gx), color="#222222", ls=":", lw=1.0, label=T("normal", "normală"))
+    ax.plot(gx, stats.norm.sf(gx), color="#222222", ls=":", lw=1.0, label=T("normal curve", "curba normală"))
     ax.set_yscale("log")
-    ax.set_xlabel(T("standardised residual z", "reziduul standardizat z"))
-    ax.set_ylabel(T("P(Z > z)", "P(Z > z)"))
+    ax.set_xlim(u - 0.1, gx[-1] + 0.1)
+    ax.set_ylim(stats.norm.sf(gx[-1]) / 3, 0.3)
+    ax.set_xlabel(T("standardised residual $z$", "reziduul standardizat $z$"))
+    ax.set_ylabel("$P(Z > z)$")
     ax._keep_y = True
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "gpd_tail", bottom=0.2, also_x=[ax])
+    out(fig, lang, "gpd_tail", also_x=[ax])
     # 4 VaR paths 2021-2026, 99%
-    fig, ax = plt.subplots(figsize=(6.4, 2.4))
+    fig, ax = plt.subplots(figsize=(6.4, 2.6))
     a0, a1 = pd.Timestamp("2021-07-01"), pd.Timestamp("2023-06-30")
     xs_ = X["RO"][a0:a1]
     ax.plot(xs_.index, xs_.values, color="#bbbbbb", lw=0.5, label=T("daily change $X_t$", "variația zilnică $X_t$"))
@@ -758,73 +772,80 @@ for lang in ["en", "ro"]:
     ax.set_ylim(-180, 280)
     mfmt(ax, lang, 3)
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "var_paths", bottom=0.25)
+    out(fig, lang, "var_paths")
     # 5 horizon scaling
-    fig, ax = plt.subplots(figsize=(6.4, 1.8))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     hs_ = list(range(1, 21))
-    ax.plot(hs_, np.sqrt(hs_), color="#222222", ls=":", lw=1.2, label=T("square-root-of-time rule, sqrt(h)", "regula rădăcinii pătrate a timpului, sqrt(h)"))
-    ax.plot(hs_, [HOR["RO"][h] for h in hs_], color=PAL["RO"], marker="o", ms=3, lw=1.2, label=T("Romania, empirical", "România, empiric"))
-    ax.plot(hs_, [HOR["DE_LU"][h] for h in hs_], color=PAL["DE_LU"], marker="s", ms=3, lw=1.2, ls="--", label=T("Germany-Luxembourg, empirical", "Germania-Luxemburg, empiric"))
+    ax.plot(hs_, np.sqrt(hs_), color="#222222", ls=":", lw=1.2, label=T("square-root-of-time rule", "regula rădăcinii pătrate"))
+    ax.plot(hs_, [HOR["RO"][h] for h in hs_], color=PAL["RO"], marker="o", ms=3, lw=1.2, label=T("Romania (data)", "România (date)"))
+    ax.plot(hs_, [HOR["DE_LU"][h] for h in hs_], color=PAL["DE_LU"], marker="s", ms=3, lw=1.2, ls="--", label=T("Germany-Luxembourg (data)", "Germania-Luxemburg (date)"))
     ax.set_xticks([1, 5, 10, 15, 20])
-    ax.set_xlabel(T("horizon h (days)", "orizontul h (zile)"))
-    ax.set_ylabel(T("ratio of 99%\nquantiles", "raportul\ncuantilelor de 99%"), fontsize=9)
+    ax.set_xlabel(T("horizon $h$ (days)", "orizontul $h$ (zile)"))
+    ax.set_ylabel(T("$h$-day / 1-day\n99% quantile", "cuantila de 99%:\n$h$ zile / 1 zi"), fontsize=10)
+    ax.set_ylim(0.8, 4.8)
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "horizon", bottom=0.22)
+    out(fig, lang, "horizon")
     # 6 traffic light: rolling 250-day exceedance count at 99%
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     for m in METHODS:
         c = HITS[("RO", m, 0.99)].fillna(0).rolling(250).sum()
         ax.plot(c.index, c.values, color=COL[m], lw=1.0, label=L(m))
     ax.axhspan(-0.5, 4.5, color=PAL["c6"], alpha=0.10, lw=0)
     ax.axhspan(4.5, 9.5, color=PAL["BG"], alpha=0.15, lw=0)
     ax.axhspan(9.5, 40, color=PAL["c8"], alpha=0.10, lw=0)
-    ax.text(DAYS[3], 2, T("green", "verde"), fontsize=8, color=PAL["c6"])
-    ax.text(DAYS[3], 6.5, T("yellow", "galben"), fontsize=8, color="#9a6a00")
-    ax.text(DAYS[3], 12, T("red", "roșu"), fontsize=8, color=PAL["c8"])
-    ax.set_ylim(0, max(25, max(BT["RO"][m]["a99"]["max250"] for m in METHODS) + 2))
-    ax.set_ylabel(T("exceedances in the\nlast 250 days", "depășiri în ultimele\n250 de zile"), fontsize=9)
+    ytop = max(25, max(BT["RO"][m]["a99"]["max250"] for m in METHODS) + 2)
+    tr = ax.get_yaxis_transform()                 # x in axes units, y in data units: labels in the right margin
+    for y_, lab_, c_ in [(2, T("green", "verde"), PAL["c6"]), (7, T("yellow", "galben"), "#9a6a00"),
+                         ((9.5 + ytop) / 2, T("red", "roșu"), PAL["c8"])]:
+        ax.text(1.01, y_, lab_, transform=tr, fontsize=9.5, color=c_, va="center", ha="left", clip_on=False)
+    ax.set_xlim(DAYS[249] - pd.Timedelta(days=30), DAYS[-1] + pd.Timedelta(days=30))
+    ax.set_ylim(0, ytop)
+    ax.set_ylabel(T("exceedances,\nlast 250 days", "depășiri în\nultimele 250 de zile"), fontsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=5)
-    out(fig, lang, "traffic", bottom=0.18)
+    out(fig, lang, "traffic")
     # 7 Brent initial margin per lot
-    fig, ax = plt.subplots(figsize=(6.4, 1.9))
+    fig, ax = plt.subplots(figsize=(6.4, 2.2))
     ax.plot(im.index, im["im1"] / 1000, color=PAL["RO"], lw=1.0, label=T("99% 2-day HS, 12-month lookback", "HS 99% pe 2 zile, istoric de 12 luni"))
     ax.plot(im.index, im["ima"] / 1000, color=PAL["DE_LU"], lw=1.0, ls="--", label=T("floor: lookback since 2015 (anti-procyclical)", "prag: istoric din 2015 (anticiclic)"))
-    ax.set_ylabel(T("IM, thousand\nUSD per lot", "IM, mii USD\npe lot"), fontsize=9)
+    ax.set_ylabel(T("IM, thousand\nUSD per lot", "IM, mii USD\npe lot"), fontsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=2)
-    out(fig, lang, "brent_im", bottom=0.18)
+    out(fig, lang, "brent_im")
     # 8 coverage of the guarantee rule (99%) by period
-    fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     labs = [T("2017-2020", "2017-2020"), T("2021-2022", "2021-2022"), T("2023-" + str(END.year), "2023-" + str(END.year))]
     ww = 0.26
     for j, (k_, lab_, c_) in enumerate([("qr", T("quantile regression", "regresie cuantilică"), PAL["BG"]),
                                          ("cqr", T("+ conformal widening", "+ lărgire conformală"), PAL["RO"]),
-                                         ("fhs", T("FHS: P(t-1) + VaR", "FHS: P(t-1) + VaR"), PAL["DE_LU"])]):
+                                         ("fhs", "FHS", PAL["DE_LU"])]):
         vals = [GUAR["a99"][k_][f"cov_{p_[0]}"] for p_ in PERIODS]
         ax.bar(np.arange(3) + (j - 1) * ww, vals, width=ww, color=c_, label=lab_)
     ax.axhline(99, color="#222222", lw=0.9, ls=":", label=T("target 99%", "ținta 99%"))
     ax.set_xticks(range(3))
     ax.set_xticklabels(labs)
     ax.set_ylim(90, 100.5)
-    ax.set_ylabel(T("days with price\nbelow the quantile, %", "zile cu prețul sub\ncuantilă, %"), fontsize=9)
+    ax.set_ylabel(T("coverage, % of days", "acoperirea,\n% din zile"), fontsize=10)
     legend_bottom(fig, ncol=4)
-    out(fig, lang, "coverage", bottom=0.2)
+    out(fig, lang, "coverage")
     # 9 supplier monthly overrun
     fig, ax = plt.subplots(figsize=(6.4, 2.2))
     xm = mon.index.to_timestamp()
-    ax.bar(xm, 100 * mon["o"], width=22, color=np.where(mon["o"] > lim_o, PAL["c8"], PAL["RO"]),
-           label=T("monthly change of the load-weighted price (cost overrun)", "variația lunară a prețului ponderat cu consumul (depășirea costului)"))
+    above = (mon["o"] > lim_o).values
+    ax.bar(xm[~above], 100 * mon["o"][~above], width=22, color=PAL["RO"],
+           label=T("cost overrun: monthly change of the load-weighted price", "depășirea costului: variația lunară a prețului ponderat cu consumul"))
+    ax.bar(xm[above], 100 * mon["o"][above], width=22, color=PAL["c8"], label=T("above the limit", "peste limită"))
     ax.axhline(100 * lim_o, color="#222222", lw=0.9, ls="--", label=T("normal 99% limit, 2015-2020 data", "limita normală de 99%, date 2015-2020"))
     ax.set_ylabel("%")
+    ax.tick_params(axis="x", labelsize=10)
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
-    legend_bottom(fig, ncol=1)
-    out(fig, lang, "supplier_month", bottom=0.22)
+    legend_bottom(fig, ncol=2)
+    out(fig, lang, "supplier_month")
     # 10 case study: autumn 2026
-    fig, ax = plt.subplots(figsize=(6.4, 2.0))
+    fig, ax = plt.subplots(figsize=(6.4, 2.3))
     cc = pd.date_range(C0, END, freq="D")
     ax.plot(cc, PR.reindex(cc), color="#222222", lw=1.2, label=T("base price $P_t$", "prețul de bază $P_t$"))
     for m, ls in [("hs", "--"), ("fhs", "-")]:
@@ -837,7 +858,7 @@ for lang in ["en", "ro"]:
     ax.set_ylabel("EUR/MWh")
     mfmt(ax, lang)
     legend_bottom(fig, ncol=3)
-    out(fig, lang, "case2026", bottom=0.25)
+    out(fig, lang, "case2026")
 
 P0, P1 = d(T0), d(END)
 chart("price_changes", "eco", f"daily, {d(START)} to {P1} (CET delivery days)", f"date zilnice, {d(START)} - {P1} (zile de livrare CET)")

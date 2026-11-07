@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_events_hour'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Share of test days with a price spike (price above the 90th percentile of the hourly prices of the 12 months before the delivery month) and with a price <= 0, by hour of the day (CET), Romanian day-ahead market, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE): OPCOM day-ahead prices for Romania.'
+Description: 'Share of test days with a price spike (price above the 90th percentile of the hourly prices of the 12 months before the delivery month) and with a price <= 0, by hour of the day (CET), Romanian day-ahead market, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices.'
 
 Keywords: 'price spikes, negative prices, intraday profile, day-ahead market, Romania, OPCOM, battery storage, extreme prices'
 

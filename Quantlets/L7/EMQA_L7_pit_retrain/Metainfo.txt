@@ -2,7 +2,7 @@ Name of QuantLet: 'EMQA_L7_pit_retrain'
 
 Published in: 'Energy Markets Quantitative Analysis (EMQA)'
 
-Description: 'Test-year MAE of the tuned XGBoost by retraining frequency (monthly, quarterly, once before the test year) and window (all past days, last 730 or 365 days), against AW-LEAR. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+Description: 'Test-year MAE of the tuned XGBoost by retraining frequency (monthly, quarterly, once before the test year) and window (all past days, last 730 or 365 days), against AW-LEAR. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA).'
 
 Keywords: 'retraining frequency, rolling window, expanding window, concept drift, XGBoost, electricity price forecasting, model maintenance'
 

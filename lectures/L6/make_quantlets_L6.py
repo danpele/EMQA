@@ -211,8 +211,11 @@ def run_battery(dg, E, forecast=None):
     return pd.Series(out)'''
 
 
-def finish(chart, bottom):
-    return (f"fig.tight_layout(rect=(0, {bottom}, 1, 1))\n"
+def finish(chart, bottom=None):
+    """Axes start just above the bottom legend (its height + a small gap), as in analysis_L6.py."""
+    return ("fig.canvas.draw()\n"
+            "legend_h = max([lg.get_window_extent().height for lg in fig.legends] or [0.0]) / fig.bbox.height\n"
+            "fig.tight_layout(rect=(0, legend_h + 0.035, 1, 1))\n"
             f"plt.savefig('{chart}.png', dpi=150, bbox_inches='tight', transparent=True)\n"
             "plt.show()")
 
@@ -450,12 +453,12 @@ ax.bar(xs - 0.2, sol, width=0.38, color=PAL['BG'], label='solar')
 ax.bar(xs + 0.2, [CAPT[('RO', 'wind_onshore', y)]['crp'] for y in YEARS], width=0.38, color=PAL['HU'], label='wind')
 ax.axhline(100, color=INK, lw=0.8, ls='--', label='100% = baseload price')
 for i, v in enumerate(sol):
-    ax.text(i - 0.2, v + 2, f'{v:.0f}', ha='center', fontsize=8)
+    ax.text(i - 0.2, v - 4, f'{v:.0f}', ha='center', va='top', fontsize=8, color='white')
 ax.set_xticks(xs)
 ax.set_xticklabels([str(y) + ('*' if y == Y else '') for y in YEARS])
 ax.set_ylim(0, 125)
 ax.set_ylabel('capture rate (%)', fontsize=9)
-ax.text(0.0, 1.02, YTD, transform=ax.transAxes, fontsize=8, ha='left')
+ax.text(1.0, 1.02, YTD, transform=ax.transAxes, fontsize=8, ha='right')
 legend_bottom(fig, ncol=3)
 ''' + finish("capture_rates", 0.2))])
 
@@ -527,7 +530,7 @@ for z in ('RO', 'BG', 'HU'):
             ls=ZONE_LS[z], marker='o', ms=4, label=ZN[z])
 ax.axhline(100, color=INK, lw=0.6, ls='--')
 ax.set_ylabel('solar capture\nrate (%)', fontsize=9)
-ax.text(0.99, 0.9, YTD, transform=ax.transAxes, fontsize=8, ha='right')
+ax.text(1.0, 1.02, YTD, transform=ax.transAxes, fontsize=8, ha='right')
 legend_bottom(fig, ncol=3)
 ''' + finish("capture_region", 0.2))])
 
@@ -563,7 +566,8 @@ for y, col, ls in ((2019, '#9a9a9a', ':'), (2023, PAL['HU'], '-.'), (Y - 1, PAL[
 ax.plot([0, 100], [0, 100], color=INK, lw=0.6)
 ax.axvline(10, color=PAL['c8'], lw=0.8, ls='--')
 ax.set_xlabel('hours of the year ranked from the cheapest, cumulative %')
-ax.set_ylabel('solar energy\n(cumulative %)', fontsize=9)
+ax.set_ylabel('solar energy,\ncum. %', fontsize=9)
+ax.set_yticks([0, 50, 100])
 legend_bottom(fig, ncol=4)
 ''' + finish("cheap_hours", 0.23))])
 
@@ -618,7 +622,7 @@ show_numbers({'shape.spring.min': fl(sp.min(), 1), 'shape.spring.min_t': hm(sp.i
               'shape.spring.range': fl(sp.max() - sp.min(), 1), 'shape.summer.range': fl(PROF['summer'].max() - PROF['summer'].min(), 1),
               'shape.winter.range': fl(PROF['winter'].max() - PROF['winter'].min(), 1)})'''),
      ("code", r'''fig, ax = plt.subplots(figsize=(6.4, 1.85))
-SL = {'winter': 'winter (Dec-Feb)', 'spring': 'spring (Mar-May)', 'summer': 'summer (Jun-Aug)', 'autumn': 'autumn (Sep-Nov)'}
+SL = {'winter': 'winter', 'spring': 'spring', 'summer': 'summer', 'autumn': 'autumn'}   # Dec-Feb, Mar-May, Jun-Aug, Sep-Nov
 SC = {'winter': PAL['c7'], 'spring': PAL['HU'], 'summer': PAL['DE_LU'], 'autumn': PAL['BG']}
 for s_, pr in PROF.items():
     ax.step(np.arange(96) / 4, pr.values, where='post', color=SC[s_], lw=1.3, label=SL[s_])
@@ -635,7 +639,7 @@ legend_bottom(fig, ncol=4)
 add("spreads",
     f"Daily price spread: monthly mean of the daily difference between the 2 most expensive and the 2 cheapest hours of the "
     f"day-ahead price (hourly prices, 15-min averaged to the hour) in Romania, Bulgaria, Hungary and Germany-Luxembourg, 2019 "
-    f"to {END}; symmetric log scale above 100 EUR/MWh. Prints the mean daily spread of {Y} by zone.",
+    f"to {END}. Prints the mean daily spread of {Y} by zone.",
     "price spread, daily spread, top-bottom spread, battery, arbitrage, volatility, day-ahead, Romania, Bulgaria, Hungary, Germany",
     PX_WORDS,
     [("md", "Spread of day d: mean of the 2 most expensive hours minus mean of the 2 cheapest hours (duration-weighted, complete "
@@ -670,10 +674,9 @@ fig, ax = plt.subplots(figsize=(6.4, 1.8))
 for z in ZONES:
     s = SPRM[z]
     ax.plot(s.index.to_timestamp(), s.values, color=PAL[z], ls=ZONE_LS[z], lw=1.2, label=ZN[z])
-ax.set_ylabel('top-2 minus bottom-2\nhours (EUR/MWh)', fontsize=8.5)
-ax.set_yscale('symlog', linthresh=100)
-ax.set_yticks([0, 50, 100, 200, 500])
-ax.set_yticklabels(['0', '50', '100', '200', '500'])
+ax.set_ylabel('daily spread\n(EUR/MWh)', fontsize=9)
+ax.set_ylim(0, 400)
+ax.set_yticks([0, 100, 200, 300, 400])
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 ax.set_xlim(pd.Timestamp('2019-01-01'), END)
@@ -912,8 +915,8 @@ show_numbers({'rogb.n_days': int(len(RG.index.normalize().unique())),
 ROGB_PLOT = """fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95))
 hh = H.index.values
 axs[0].axhline(0, color=INK, lw=0.6)
-axs[0].plot(hh, H['sum'] / 1000, color=PAL['RO'], lw=1.8, label='Romania: net flow on all borders; RO price')
-axs[0].plot(hh, H['bulgaria'] / 1000, color=PAL['BG'], lw=1.6, ls='--', label='Bulgaria: flow on the RO-BG border; BG price')
+axs[0].plot(hh, H['sum'] / 1000, color=PAL['RO'], lw=1.8, label='Romania (all borders; RO price)')
+axs[0].plot(hh, H['bulgaria'] / 1000, color=PAL['BG'], lw=1.6, ls='--', label='Bulgaria (RO-BG border; BG price)')
 axs[0].set_ylabel('net import, GW\\n(< 0: export)', fontsize=8.5)
 axs[0].set_title('cross-border flows', fontsize=9.5)
 axs[1].plot(hh, H['RO'], color=PAL['RO'], lw=1.8)
