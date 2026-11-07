@@ -24,9 +24,25 @@
 
     function typeset(el) {
         if (window.MathJax && MathJax.typesetPromise) {
-            MathJax.typesetPromise(el ? [el] : undefined).catch(() => {});
+            MathJax.typesetPromise(el ? [el] : undefined).then(() => fitMath()).catch(() => {});
         }
     }
+
+    // shrink display formulas that are wider than their box, so no sideways scrolling is needed (as on the MFM site)
+    function fitMath(root) {
+        (root || document).querySelectorAll('.cf-tex').forEach(box => {
+            const m = box.querySelector('mjx-container');
+            if (!m || !box.clientWidth) return;
+            m.style.fontSize = '';
+            const w = m.scrollWidth, avail = box.clientWidth - 4;
+            if (w > avail) m.style.fontSize = Math.max(55, Math.floor(100 * avail / w)) + '%';
+        });
+    }
+    let fitTimer;
+    window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(() => fitMath(), 150); });
+    document.addEventListener('toggle', e => {
+        if (e.target.classList && e.target.classList.contains('chapter-formulas') && e.target.open) fitMath(e.target);
+    }, true);
 
     // ------------------------------------------------------------
     // STATIC TEXT (header, nav, section titles)
@@ -60,13 +76,19 @@
     // the lecture number is in READY or when the file is found on the server (HEAD request),
     // so a card switches from "in preparation" to links as soon as the PDF is published.
     // ------------------------------------------------------------
-    const READY = [];   // e.g. [1] once lecture 1 is final; lectures not listed here are probed
-    const LINK_ROWS = [['course', ['slides']], ['code', ['notebook', 'code']]];
-    const LINK_CLASS = { slides: 'btn-primary', notebook: 'btn-outline', code: 'btn-outline' };
-    const avail = {};   // avail[id] = { slides, notebook, code }
+    const READY = [1, 2, 3, 4, 5, 6, 7];   // lectures whose PDF and notebook are published; lectures not listed here are probed
+    // lecture buttons in labelled rows, as on the MFM site: lecture (slides, web page, interactive), code (notebook + Colab, Quantlets)
+    const LINK_ROWS = [['course', ['slides', 'web', 'interactive']], ['code', ['notebook', 'quantlets']]];
+    const LINK_CLASS = { slides: 'btn-primary', web: 'btn-outline', interactive: 'btn-outline', notebook: 'btn-outline', quantlets: 'btn-outline' };
+    const avail = {};   // avail[id] = { slides, notebook, quantlets, web, interactive }
+
+    // web lecture (web/LK.html) and interactive companion (interactive/LK.html), _ro on the Romanian page;
+    // their buttons appear only once the file is found on the server (probePages), never as "in preparation"
+    const pageOf = (type, l) => `${type}/L${l.num}${LANG === 'ro' ? '_ro' : ''}.html`;
 
     function linkButton(type, l, ok) {
         const label = T.links[type];
+        if (type === 'web' || type === 'interactive') return ok ? `<a href="${pageOf(type, l)}" class="btn ${LINK_CLASS[type]}">${label}</a>` : '';
         if (!ok) return `<span class="btn disabled" aria-disabled="true" title="${T.comingSoon}">${label} · ${T.comingSoonShort}</span>`;
         if (type === 'slides') return `<a href="${(LANG === 'ro' && l.files.pdf_ro) || l.files.pdf}" class="btn ${LINK_CLASS[type]}" target="_blank" rel="noopener">${label}</a>`;
         if (type === 'notebook') {
@@ -74,18 +96,105 @@
             return `<span class="link-group"><a href="${D.repo}/blob/main/${nb}" class="btn btn-outline" target="_blank" rel="noopener">${label}</a>` +
                 `<a href="${D.colab}${nb}" class="btn btn-colab" target="_blank" rel="noopener" title="${T.links.colab}">Colab</a></span>`;
         }
-        return `<a href="${D.repo}/tree/main/${l.files.code}" class="btn btn-outline" target="_blank" rel="noopener">${label}</a>`;
+        return `<a href="${D.repo}/tree/main/${l.files.quantlets}" class="btn btn-outline" target="_blank" rel="noopener" title="${T.links.quantletsTitle}"><img class="btn-ql" src="assets/logos/ql_logo.png" alt="">${label}</a>`;
     }
+
+    // ------------------------------------------------------------
+    // CHART CAROUSEL (assets/showcase.js, generated from the Quantlets by assets/make_showcase.py)
+    // the image opens the lightbox, the caption opens the Quantlet that draws the chart
+    // ------------------------------------------------------------
+    const chartsOf = id => (D.lectureCharts || {})[id] || [];
+    const slideIdx = {};   // current chart of each lecture card
+
+    function showcase(l) {
+        const cs = chartsOf(l.id);
+        if (!cs.length) return '';
+        const i = Math.min(slideIdx[l.id] || 0, cs.length - 1), c = cs[i];
+        const nav = cs.length > 1
+            ? `<button type="button" class="sc-arrow" data-step="-1" aria-label="${T.prevChart}">&#8249;</button>` +
+              `<span class="sc-count">${i + 1} / ${cs.length}</span>` +
+              `<button type="button" class="sc-arrow" data-step="1" aria-label="${T.nextChart}">&#8250;</button>`
+            : '';
+        return `<div class="chapter-showcase" data-id="${l.id}">
+            <button type="button" class="chapter-chart" data-src="${c.src}" data-cap="${esc(c[LANG])}" data-url="${c.url}" title="${T.enlarge}">
+                <img src="${c.src}" alt="${esc(c[LANG])}" loading="lazy"></button>
+            <div class="sc-bar">
+                <a class="sc-cap" href="${c.url}" target="_blank" rel="noopener" title="${T.openQuantlet}: ${c.q}">${esc(c[LANG])}</a>
+                <div class="sc-nav">${nav}</div>
+            </div>
+        </div>`;
+    }
+
+    function stepChart(id, step) {
+        const n = chartsOf(id).length;
+        if (!n) return;
+        slideIdx[id] = ((slideIdx[id] || 0) + step + n) % n;
+        const box = document.querySelector(`.chapter-showcase[data-id="${id}"]`);
+        if (box) box.outerHTML = showcase(D.lectures.find(x => x.id === id));
+        const next = chartsOf(id)[(slideIdx[id] + 1) % n];   // preload the next chart
+        if (next) { const im = new Image(); im.src = next.src; }
+    }
+
+    // one delegated handler for every card (cards are re-rendered when the probe finds their files)
+    function initShowcase() {
+        $('chapters-grid').addEventListener('click', e => {
+            const arrow = e.target.closest('.sc-arrow');
+            if (arrow) { stepChart(arrow.closest('.chapter-showcase').dataset.id, parseInt(arrow.dataset.step, 10)); return; }
+            const fig = e.target.closest('.chapter-chart');
+            if (fig) openLightbox(fig.dataset.src, fig.dataset.cap, fig.dataset.url);
+        });
+        $('chapters-grid').addEventListener('keydown', e => {
+            const box = e.target.closest && e.target.closest('.chapter-showcase');
+            if (!box || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+            e.preventDefault();
+            stepChart(box.dataset.id, e.key === 'ArrowLeft' ? -1 : 1);
+            const nb = document.querySelector(`.chapter-showcase[data-id="${box.dataset.id}"] .sc-arrow[data-step="${e.key === 'ArrowLeft' ? -1 : 1}"]`);
+            if (nb) nb.focus();
+        });
+    }
+
+    // ------------------------------------------------------------
+    // LIGHTBOX (lecture charts)
+    // ------------------------------------------------------------
+    function openLightbox(src, caption, url) {
+        $('lightbox-img').src = src;
+        $('lightbox-img').alt = caption;
+        $('lightbox-cap').innerHTML = esc(caption) +
+            (url ? ` <a href="${url}" target="_blank" rel="noopener">${T.openQuantlet} &#8599;</a>` : '');
+        $('lightbox').hidden = false;
+        document.body.classList.add('no-scroll');
+        $('lightbox-close').focus();
+    }
+
+    function initLightbox() {
+        const box = $('lightbox');
+        const close = () => { box.hidden = true; document.body.classList.remove('no-scroll'); };
+        $('lightbox-close').setAttribute('aria-label', T.close);
+        $('lightbox-close').onclick = close;
+        box.onclick = e => { if (e.target === box) close(); };
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) close(); });
+    }
+
+    // on the narrow lecture cards, put the parts of a multi-part formula on separate lines (as on the MFM site)
+    const stackTex = tex => /\\qquad/.test(tex) && !/\\begin\{/.test(tex)
+        ? '$$\\begin{gathered}' + tex.slice(2, -2).replace(/,?\s*\\qquad\s*/g, () => ' \\\\ ') + '\\end{gathered}$$'
+        : tex;
 
     function lectureCard(l) {
         const a = avail[l.id] || {};
         const ready = !!a.slides;
         const badge = ready ? '' : `<span class="badge badge-soon">${l.status === 'prep' ? T.comingSoon : T.coming}</span>`;
-        const anyFile = a.slides || a.notebook || a.code;
+        const anyFile = a.slides || a.notebook || a.quantlets;
         const links = (l.status === 'prep' || anyFile)
             ? LINK_ROWS.map(([row, types]) =>
                 `<div class="link-row"><span class="link-row-h">${T.rows[row]}</span><div class="link-row-b">${types.map(t => linkButton(t, l, a[t])).join('')}</div></div>`).join('')
             : `<p class="chapter-soon">${T.chapterSoon}</p>`;
+        const fs = (D.formulas || []).filter(f => f.ch === l.id);
+        const formulas = fs.length
+            ? `<details class="chapter-formulas"><summary>${T.formulas} (${fs.length})</summary>` +
+              fs.map(f => `<div class="cf"><h5>${f[LANG]}</h5><div class="cf-tex">${stackTex((LANG === 'ro' && f.tex_ro) || f.tex)}</div></div>`).join('') +
+              '</details>'
+            : '';
         const cases = (l.cases || []).length
             ? `<p class="lecture-cases"><strong>${T.casesShort}:</strong> ${l.cases.map(id => {
                 const c = D.cases.find(x => x.id === id);
@@ -97,9 +206,11 @@
             : '';
         return `<div class="chapter-card${ready ? '' : ' soon'}" id="lecture-${l.id}">
             <div class="chapter-header"><h3>${T.chapter} ${l.num}: ${l.title[LANG]}</h3><div class="badges">${badge}</div></div>
+            ${showcase(l)}
             <div class="chapter-body">
                 <ul>${l.topics[LANG].map(t => `<li>${t}</li>`).join('')}</ul>
                 ${cases}
+                ${formulas}
                 <div class="chapter-links">${links}</div>
                 ${further}
             </div>
@@ -107,22 +218,53 @@
     }
 
     function renderLectures() {
+        D.lectures.forEach(l => { if (READY.includes(l.num)) avail[l.id] = { slides: true, notebook: true, quantlets: true }; });
         $('chapters-grid').innerHTML = D.lectures.map(lectureCard).join('');
     }
 
     const exists = path => fetch(path, { method: 'HEAD', cache: 'no-store' }).then(r => r.ok).catch(() => false);
 
+    function rerenderLecture(l) {
+        const old = $('lecture-' + l.id);
+        if (old) { old.outerHTML = lectureCard(l); typeset($('lecture-' + l.id)); }
+    }
+
+    // on GitHub Pages: the files of web/ and interactive/ listed by the GitHub API (three requests, no 404 in the console);
+    // elsewhere (local server), or when the API fails or is rate-limited: null, and every page is probed with a HEAD request
+    function publishedPages() {
+        if (!/\.github\.io$/.test(location.hostname)) return Promise.resolve(null);
+        const json = u => fetch(u).then(r => r.ok ? r.json() : Promise.reject(r.status));
+        return json(D.repo.replace('https://github.com/', 'https://api.github.com/repos/') + '/git/trees/main')
+            .then(root => Promise.all(['web', 'interactive'].map(dir => {
+                const t = root.tree.find(e => e.path === dir && e.type === 'tree');
+                return t ? json(t.url).then(x => x.tree.map(e => `${dir}/${e.path}`)) : [];
+            })))
+            .then(ls => new Set(ls.flat()))
+            .catch(() => null);
+    }
+
+    // web page and interactive page of every lecture: a button appears only when its file is published
+    function probePages() {
+        publishedPages().then(pub => D.lectures.forEach(l => {
+            const has = p => pub ? Promise.resolve(pub.has(p)) : exists(p);
+            Promise.all([has(pageOf('web', l)), has(pageOf('interactive', l))]).then(([w, i]) => {
+                if (!w && !i) return;
+                avail[l.id] = Object.assign(avail[l.id] || {}, { web: w, interactive: i });
+                rerenderLecture(l);
+            });
+        }));
+    }
+
     function probeLectures() {
         D.lectures.forEach(l => {
-            if (READY.includes(l.num)) { avail[l.id] = { slides: true, notebook: true, code: true }; return; }
+            if (READY.includes(l.num)) return;
             const f = l.files || {};
-            // one request per lecture until its PDF exists; the notebook and the code are linked together with the PDF
+            // one request per lecture until its PDF exists; the notebook and the Quantlets are linked together with the PDF
             (f.pdf ? exists(f.pdf) : Promise.resolve(false)).then(s => {
                 if (!s) return;
-                return Promise.all([f.notebook ? exists(f.notebook) : false, f.codeProbe ? exists(f.codeProbe) : false]).then(([n, c]) => {
-                    avail[l.id] = { slides: true, notebook: n, code: c };
-                    const old = $('lecture-' + l.id);
-                    if (old) old.outerHTML = lectureCard(l);
+                return exists(f.notebook || '').then(n => {
+                    avail[l.id] = Object.assign(avail[l.id] || {}, { slides: true, notebook: n, quantlets: chartsOf(l.id).length > 0 });
+                    rerenderLecture(l);
                 });
             });
         });
@@ -131,9 +273,17 @@
     // ------------------------------------------------------------
     // CASE STUDIES, DATA
     // ------------------------------------------------------------
+    // lectures that use a case study (from lectures[].cases), linked to their cards
+    function usedIn(id) {
+        const ls = D.lectures.filter(l => (l.cases || []).includes(id));
+        return ls.length ? `<p class="case-lecture">${T.usedIn}: ${ls.map(l => `<a href="#lecture-${l.id}">${T.chapter} ${l.num}</a>`).join(', ')}</p>` : '';
+    }
+
     function renderCases() {
         $('cases-grid').innerHTML = D.cases.map(c =>
-            `<div class="info-card case-card" id="case-${c.id}"><h3>${c[LANG].h}</h3>${c[LANG].p.map(p => `<p>${p}</p>`).join('')}</div>`
+            `<div class="info-card case-card" id="case-${c.id}"><h3>${c[LANG].h}</h3>${c[LANG].p.map(p => `<p>${p}</p>`).join('')}` +
+            (c.quantlet ? `<p class="case-link"><a class="btn btn-outline" href="${c.quantlet}" target="_blank" rel="noopener"><img class="btn-ql" src="assets/logos/ql_logo.png" alt="">${T.caseQuantlet}</a></p>` : '') +
+            usedIn(c.id) + `</div>`
         ).join('');
     }
 
@@ -150,6 +300,21 @@
             '</tbody></table>';
         $('data-missing').innerHTML = d.missing.map(m => `<li><strong>${m.name}</strong> - ${m[LANG]}</li>`).join('');
         $('data-licence').innerHTML = d.licence[LANG];
+    }
+
+    // ------------------------------------------------------------
+    // TEAM PROJECT AND AI POLICY (section #project, same layout as the MFM site)
+    // an item is a string or a [label, value] pair; a value that starts with 'TODO' reads "To be announced"
+    // ------------------------------------------------------------
+    const item = x => Array.isArray(x) ? `<strong>${x[0]}:</strong> ${tbd(x[1])}` : tbd(x);
+
+    function renderProject() {
+        const P = D.project;
+        $('project-cards').innerHTML = P.cards[LANG].map(c =>
+            `<div class="info-card project-card"><h3>${c.h}</h3>${c.p.map(p => `<p>${item(p)}</p>`).join('')}</div>`
+        ).join('');
+        $('ai-policy').innerHTML = P.ai[LANG].map(o => `<li>${item(o)}</li>`).join('');
+        $('project-repro').innerHTML = P.repro[LANG].map(o => `<li>${item(o)}</li>`).join('');
     }
 
     // ------------------------------------------------------------
@@ -442,10 +607,14 @@
     function init() {
         renderStatic();
         renderOverview();
+        initLightbox();
         renderLectures();
+        initShowcase();
         probeLectures();
+        probePages();
         renderCases();
         renderData();
+        renderProject();
         renderResources();
         renderContact();
         renderLogin();

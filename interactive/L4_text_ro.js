@@ -1,0 +1,28 @@
+// Readouts of the Lecture 4 interactive page, written by lectures/L4/build_interactive_L4.py.
+window.LK_TEXT = {
+ eur: 'EUR/MWh', count: 'Zile', change: 'Variația zilnică X (EUR/MWh)', z: 'z (abateri standard)', surv: 'Proporția zilelor cu X > z·σ (scală log)',
+ emp: 'Empirică', normal: 'Normală', varE: 'VaR, empiric', varN: 'VaR, normal', esE: 'ES, empiric',
+ per: { all: '2015–2026', calm: '2015–2020', crisis: '2021–2022', after: '2023–2026', last: 'ultimele 365 de zile' },
+ ve: (z, p, n, a, ve, vn, ee, en) => `${z}, ${p} (${window.EMQAI.cnt(n, 'zi', 'zile')}): VaR ${a} ${ve} EUR/MWh empiric, ${vn} normal; ES ${ee} empiric, ${en} normal.`,
+ ve2: (k, e, eur) => `Zile peste VaR normal: ${k} (așteptat ${e}). Pentru 100 MW în bandă (2.400 MWh pe zi), VaR empiric este ${eur} EUR pe zi.`,
+ meth: { hs: 'HS', normal: 'Normal', t: 'Student-t', fhs: 'FHS', evt: 'EVT' },
+ actual: 'Variația zilnică X', exc: 'Depășiri', varLab: (m, a) => `VaR ${m} ${a}`,
+ vp: (d0, d1, m, a, k, n, e, p) => `${d0} – ${d1}: VaR ${m} ${a} depășit în ${k} din ${window.EMQAI.cnt(n, 'zi', 'zile')} (așteptat ${e}); testul Kupiec p = ${p}.`,
+ vp2: (m, v) => `VaR ${m} mediu în fereastră: ${v} EUR/MWh.`,
+ gpTitle: 'Coada superioară a reziduurilor standardizate', gpQ: 'Cuantilele implicate de fiecare model', resid: 'Reziduul standardizat z', pex: 'P(Z > z) (scală log)',
+ gpd: 'Ajustarea GPD', level: 'Nivelul', quant: 'Cuantila lui z',
+ gp: (u, uq, n, xi, b) => `Pragul u = ${u} (cuantila de ${uq}), ${window.EMQAI.cnt(n, 'depășire', 'depășiri')}; forma GPD ξ = ${xi}, scala β = ${b}.`,
+ gp2: (e, g, nn) => `Cuantila de 99,9% a lui z: ${e} empiric, ${g} GPD, ${nn} normal.`,
+ gp3: (n, d0, d1) => `Reziduurile filtrate GARCH din ultimele ${window.EMQAI.cnt(n, 'zi', 'zile')}, ${d0} – ${d1}.`,
+ tlTitle: w => `Depășiri ale VaR de 99% în ultimele ${window.EMQAI.cnt(w, 'zi', 'zile')}`, cntL: 'Depășiri',
+ green: 'verde', yellow: 'galben', red: 'roșu',
+ tl: (w, g, r) => `Fereastra de ${window.EMQAI.cnt(w, 'zi', 'zile')}: verde pînă la ${g} depășiri, roșu de la ${r} (probabilitatea cumulată Binomial(${w}, 1%) sub 95%, respectiv de la 99,99%).`,
+ tlRow: (m, sg, sy, sr, mx) => `${m}: verde ${sg}, galben ${sy}, roșu ${sr} din zile; maximum ${window.EMQAI.cnt(mx, 'depășire', 'depășiri')}.`,
+ hzTitle: 'q(h) / q(1): empiric față de √h', hzVr: 'Raportul varianțelor Var(h zile) / (h · Var(1 zi))', h: 'Orizontul h (zile)',
+ sqrt: 'Regula √h', emp2: 'Raportul empiric',
+ hz: (z, a, h, r, s, q1, qh) => `${z}, cuantila de ${a}: raportul la ${h} zile ${r}, față de √h = ${s}; cuantila pe o zi ${q1}, pe ${h} zile ${qh} EUR/MWh.`,
+ hz2: (h, vr, r1) => `Raportul varianțelor la ${h} zile: ${vr}; autocorelația de ordinul 1 a variației zilnice ${r1}.`,
+ smTitle: 'Depășirea lunară a costului furnizorului (%)', overrun: 'Depășirea față de luna anterioară', limit: 'Limita normală', est: 'Eșantionul de estimare',
+ sm: (y, a, m, s, l) => `Eșantionul 2015-03 – ${y}-12: media ${m}%, abaterea standard ${s}%; limita normală de ${a} ${l}%.`,
+ sm2: (n, k, e, w, wp, we) => `După eșantion: ${k} din ${window.EMQAI.cnt(n, 'lună', 'luni')} peste limită (așteptat ${e}); cea mai rea lună ${w}, +${wp}% (${we} milioane EUR pentru 100 MW).`
+};

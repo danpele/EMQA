@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_arx_coef'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Coefficients of the expert ARX(728) model of the Romanian day-ahead price (asinh scale), averaged over the 365 daily estimations of the test year, hour by hour: the weight of the same hour yesterday peaks at midday, night hours lean on the last hour of the previous day, and the two-day-old load and wind + solar stay close to zero. Data: ARX(728), mean over the 365 daily fits of the test year. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'ARX, autoregression, expert model, hourly regression, coefficients, asinh transformation, electricity price, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)'
+
+Output: 'arx_coef.png'

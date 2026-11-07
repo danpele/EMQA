@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_traffic'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Basel traffic light for the one-day 99% VaR of the daily price change in Romania: rolling count of exceedances in the last 250 days for historical simulation, normal, Student-t, filtered historical simulation and EVT, with the green, yellow and red zones (backtest 2017-01-01 to 2026-10-31, 99% VaR). Prints the share of days in the red zone and the zone probabilities of a correct model.'
+
+Keywords: 'value at risk, VaR, expected shortfall, risk management, electricity prices, day-ahead market, Romania, OPCOM, backtesting, Basel traffic light, exceedances, binomial distribution, BCBS'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E (cut-off 2026-10-31); the VaR forecasts are recomputed in the notebook'
+
+Output: 'traffic.png'

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_tails_brent'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Normal Q-Q plot and log-scale density of standardised Brent front-month daily log returns (contract-roll days removed), compared with the normal distribution and a fitted Student-t: far more 4-sigma days than the normal predicts. Data: 2015-01-05 to 2026-10-30. Source: Yahoo Finance (BZ=F).'
+
+Keywords: 'fat tails, kurtosis, Q-Q plot, Student-t, Brent, crude oil, returns, normality'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
+
+Output: 'tails_brent.png'

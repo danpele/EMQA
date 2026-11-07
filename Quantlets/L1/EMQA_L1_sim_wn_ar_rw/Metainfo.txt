@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_sim_wn_ar_rw'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Simulation (concept only, labelled as such on the slide): white noise, a stationary AR(1) with phi = 0.9 and a random walk built from the same 500 standard normal shocks (seed 20261104), with their sample autocorrelation functions and the white-noise band. Data: T = 500, N(0,1) shocks. Source: simulation, numpy, seed 20261104.'
+
+Keywords: 'simulation, white noise, autoregressive process, AR(1), random walk, autocorrelation, ACF, stationarity'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'None: simulated series (numpy, seed 20261104)'
+
+Output: 'sim_wn_ar_rw.png'

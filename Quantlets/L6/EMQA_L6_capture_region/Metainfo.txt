@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_capture_region'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Yearly solar capture rate (%) of Romania, Bulgaria and Hungary, 2019 (Hungary 2020) to 2026-10-31 (2026 = Jan-Oct); Bulgaria publishes hourly solar output only, so after 1 Oct 2025 its hourly value is paired with each quarter-hour price. Prints the capture rates of the last full year and the current year.'
+
+Keywords: 'capture rate, cannibalisation, solar, regional market, market coupling, Romania, Bulgaria, Hungary, day-ahead, renewables'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025); generation_bg_mw_native_utc.csv: Bulgarian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, hourly); generation_hu_mw_native_utc.csv: Hungarian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, 15-min)'
+
+Output: 'capture_region.png'

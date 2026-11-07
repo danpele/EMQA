@@ -1,0 +1,27 @@
+// Readouts of the Lecture 7 interactive page, written by lectures/L7/build_interactive_L7.py.
+window.LK_TEXT = {
+ lab: {"naive": "Naive", "aw_arx": "AW-ARX", "aw_lear": "AW-LEAR", "gbm2": "GBM (L2)", "mlp2": "MLP (L2)", "xgb": "XGBoost", "dnn": "DNN", "bolt": "Chronos-Bolt", "chr2": "Chronos-2", "ens4": "Ensemble of 4 (L2)", "ens_ldx": "AW-LEAR + DNN + XGBoost", "ens_t4": "AW-ARX + AW-LEAR + DNN + XGBoost", "ens_lc": "AW-LEAR + Chronos-2", "ens_t5": "5 models"},
+ months: ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+ eur: 'EUR/MWh', epoch: 'Epoch', mae: 'MAE (EUR/MWh)', train: 'Training days', valid: 'Last 15% of the days (validation)',
+ best: 'Best epoch (weights kept)', stop: 'Stop',
+ lc: (p, s, b, vb, ts, vs) => `Patience ${p}: training stops at epoch ${s} and keeps the weights of epoch ${b} (validation MAE ${vb} EUR/MWh). At epoch ${s}: training MAE ${ts}, validation MAE ${vs}.`,
+ lcEnd: (t, v) => `Trained to the end (epoch 76): training MAE ${t}, validation MAE ${v} EUR/MWh.`,
+ mmLev: 'Monthly MAE (EUR/MWh)', mmRel: 'MAE minus MAE of AW-LEAR (EUR/MWh)',
+ mm: (m, a, n) => `${m}: annual MAE ${a} EUR/MWh; beats AW-LEAR in ${n} of 12 months.`,
+ cwCurve: 'MAE of the combination (EUR/MWh)', cwW: 'Weight w of the second model', cwMonth: 'Monthly MAE minus AW-LEAR (EUR/MWh)',
+ cw: (a, b, w, m, ma, mb, r) => `MAE of (1 − w)·${a} + w·${b} with w = ${w}: ${m} EUR/MWh (${a} alone ${ma}, ${b} alone ${mb}); error correlation ${r}.`,
+ cwBest: (w, m, m5) => `Best weight seen afterwards: w = ${w} (MAE ${m}); equal weights: ${m5} EUR/MWh.`,
+ cwMonthN: n => `The combination beats the first model in ${n} of 12 months.`,
+ dmHeat: 'One-sided DM p-value: column more accurate than row', dmCum: 'Cumulative daily MAE difference, row − column (EUR/MWh)',
+ dm: (a, b, ma, mb, s, p) => `${a} (MAE ${ma}) against ${b} (MAE ${mb}): DM statistic ${s}, one-sided p-value ${p}.`,
+ dmYes: 'The column model is significantly more accurate at 5%.', dmNo: 'No significant gain at 5%.', dmSame: 'Choose two different models.',
+ fhMae: 'MAE by hour (EUR/MWh)', fhCov: 'Chronos-2: share of prices inside the 10%–90% band', hour: 'Hour of the day (CET)', share: 'Share (%)',
+ nominal: 'Nominal 80%',
+ fh: (n, m) => `${n}: MAE ${m} EUR/MWh.`,
+ fhWin: (n) => `Chronos-2 beats AW-LEAR in ${n} of the 24 hours.`, fhCovT: c => `Coverage of the Chronos-2 10%–90% band: ${c} (nominal 80%).`,
+ fpr: 'False alarm rate (FPR)', tpr: 'Spikes caught (TPR)', roc: 'ROC curve, spike hours of the test year', point: 'Chosen threshold',
+ val: 'Value per MW and year (thousand EUR)', thr: 'Probability threshold', cl: 'C/L̄',
+ sd: (m, a, auc, n, tp, fp, fn) => `${m}: AUC ${auc}. Threshold ${a}: ${n} alerts, ${tp} spikes caught, ${fp} false alarms, ${fn} spikes missed.`,
+ sd2: (v, c, cl, vcl, vp) => `Value at this threshold: ${v} thousand EUR per MW and year; with C = ${c} EUR/MWh the rule C/L̄ gives ${cl} (value ${vcl}); perfect foresight ${vp}.`,
+ spikes: (n, lo, hi) => `${n} spike hours in the test year (price above the 90th percentile of the previous 365 days: ${lo}–${hi} EUR/MWh).`
+};

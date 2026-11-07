@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_horizon'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Ratio of the empirical 99% quantile of h-day price changes to the 1-day one, h = 1 to 20, for Romania and Germany-Luxembourg, against the square-root-of-time rule sqrt(h); daily base prices, 2015-01-01 to 2026-10-31. Prints the 10-day ratios, the variance ratio and the autocorrelation of the daily change.'
+
+Keywords: 'square-root-of-time rule, VaR horizon, mean reversion, variance ratio, autocorrelation, electricity prices, Romania, Germany'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania (OPCOM) and Germany-Luxembourg (EPEX SPOT), EUR/MWh, energy-charts.info (Fraunhofer ISE) via ENTSO-E (cut-off 2026-10-31)'
+
+Output: 'horizon.png'

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 6 · Renewables, negative prices and batteries</title>
+<meta name="description" content="Energy Markets Quantitative Analysis: Lecture 6 · Renewables, negative prices and batteries">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'en';</script>
+<link rel="preload" as="script" href="L6.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L6_data.js?v=20261107a", "L6_text_en.js?v=20261107a", "common.js?v=20261107a"], "L6.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index.html">Energy Markets Quantitative Analysis</a></h1><p>Lecture 6 · Renewables, negative prices and batteries</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Romanian Academy, Institute for Economic Forecasting"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index.html#chapters">← Course site</a></li>
+  <li><a href="../lectures/L6/lecture6.pdf" target="_blank" rel="noopener">Lecture PDF</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L6.html" class="lang-btn active">EN</a><a href="L6_ro.html" class="lang-btn">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The ▶ button moves the main parameter step by step. Under each figure: a readout, a question for the room and the Quantlet with the code of the chart.</p>
+<p class="toc"><a href="#s-merit">Renewables and the merit order</a> · <a href="#s-capt">Capture prices and cannibalisation</a> · <a href="#s-neg">Negative prices</a> · <a href="#s-bat">The economics of a battery</a> · <a href="#s-case">Case study: summer 2026, Romania and Bulgaria</a></p>
+<h2 class="sec" id="s-merit">Renewables and the merit order</h2>
+<section class="blk" id="resid-price">
+  <h3>Price rises with residual load; hours below 2 GW of residual load reached 9.0% in 2026</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=10" target="_blank" rel="noopener"><img src="slides/L6_resid_price_en.jpg" alt="Slide 10: Price rises with residual load; hours below 2 GW of residual load reached 9.0% in 2026" loading="lazy"></a>
+      <figcaption>Slide 10</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="rp-y"><span class="lbl">Years</span><div class="tgs"><label class="tg"><input type="checkbox" name="rp-y" value="2023" checked> 2023</label><label class="tg"><input type="checkbox" name="rp-y" value="2024"> 2024</label><label class="tg"><input type="checkbox" name="rp-y" value="2025"> 2025</label><label class="tg"><input type="checkbox" name="rp-y" value="2026" checked> 2026</label></div></div><div class="ctl"><label for="rp-h">Hours of the day</label><select id="rp-h"><option value="all" selected>All hours</option><option value="mid">Midday, 11:00–15:00</option><option value="eve">Evening, 18:00–22:00</option></select></div><div class="ctl"><label for="rp-b">Width of the residual-load bins (GW): <b id="rp-b-v"></b></label><input type="range" id="rp-b" min="0.25" max="2" step="0.25" value="0.5"></div></div><div class="charts one"><div class="chart" id="rp-chart"></div></div><ul class="out" id="rp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_resid_price" target="_blank" rel="noopener">EMQA_L6_resid_price</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_resid_price/EMQA_L6_resid_price.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Residual load is load minus wind and solar output. In 2026, how often is the hourly residual load of Romania below 2 GW, and what is the mean price in those hours?</div>
+  <details><summary>Answer</summary><p>In about 9% of the hours of 2026 (to the cut-off), against 0.1% in 2023; the mean price in those hours is about 51 EUR/MWh, against about 192 EUR/MWh when residual load is above 6 GW. Across 2023–2026, a regression with month, hour and weekday fixed effects gives +28.32 EUR/MWh per GW of residual load (t = 32.1). The cloud of points is wide: residual load explains a large part of the price, but neighbouring markets, hydro and fuel prices move it too.</p></details>
+</section><h2 class="sec" id="s-capt">Capture prices and cannibalisation</h2>
+<section class="blk" id="capture-rates">
+  <h3>Solar's capture rate in Romania fell from 104% in 2019 to 59% in 2025</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=13" target="_blank" rel="noopener"><img src="slides/L6_capture_rates_en.jpg" alt="Slide 13: Solar's capture rate in Romania fell from 104% in 2019 to 59% in 2025" loading="lazy"></a>
+      <figcaption>Slide 13</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cr-t">Technology</label><select id="cr-t"><option value="solar" selected>Solar</option><option value="wind">Wind</option></select></div><div class="ctl ctl-tg" id="cr-z"><span class="lbl">Zones</span><div class="tgs"><label class="tg"><input type="checkbox" name="cr-z" value="RO" checked> Romania</label><label class="tg"><input type="checkbox" name="cr-z" value="BG" checked> Bulgaria</label><label class="tg"><input type="checkbox" name="cr-z" value="HU" checked> Hungary</label></div></div><div class="ctl"><label for="cr-m">Show</label><select id="cr-m"><option value="cr" selected>Capture rate (%)</option><option value="disc">Discount to the base price (EUR/MWh)</option></select></div></div><div class="charts "><div class="chart" id="cr-chart"></div><div class="chart" id="cr-px"></div></div><ul class="out" id="cr-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_capture_rates" target="_blank" rel="noopener">EMQA_L6_capture_rates</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_capture_rates/EMQA_L6_capture_rates.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The capture rate is the output-weighted mean price of a technology divided by the time-weighted (base) price. Why did the solar capture rate of Romania fall from 104.5% in 2019 to 59.4% in 2025?</div>
+  <details><summary>Answer</summary><p>Because solar output is concentrated in the same midday hours, and as capacity grew those hours became the cheapest of the day (the merit-order effect of the plants themselves). In 2025 solar earned 64.2 EUR/MWh against a base price of 108.2 EUR/MWh, a discount of 43.9 EUR/MWh. Wind, spread more evenly over the day and night, keeps a much higher capture rate: switch the technology.</p></details>
+</section>
+<section class="blk" id="cannibal">
+  <h3>When solar's share of monthly load rises by one point, the solar capture rate falls by about 4.2 points</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=15" target="_blank" rel="noopener"><img src="slides/L6_cannibal_en.jpg" alt="Slide 15: When solar's share of monthly load rises by one point, the solar capture rate falls by about 4.2 points" loading="lazy"></a>
+      <figcaption>Slide 15</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cn-z">Zone</label><select id="cn-z"><option value="RO" selected>Romania</option><option value="BG">Bulgaria</option><option value="HU">Hungary</option></select></div><div class="ctl"><label for="cn-y0">Months from: <b id="cn-y0-v"></b></label><input type="range" id="cn-y0" min="2019" max="2026" step="1" value="2019"></div><div class="ctl"><label for="cn-y1">to (year included): <b id="cn-y1-v"></b></label><input type="range" id="cn-y1" min="2019" max="2026" step="1" value="2026"></div><button class="btn play" id="cn-play" type="button"></button></div><div class="charts one"><div class="chart" id="cn-chart"></div></div><ul class="out" id="cn-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_cannibal" target="_blank" rel="noopener">EMQA_L6_cannibal</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_cannibal/EMQA_L6_cannibal.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Over the months from 2019 to October 2026, by how much does the Romanian solar capture rate fall for each extra percentage point of solar in the load?</div>
+  <details><summary>Answer</summary><p>About 4.2 percentage points (slope −4.2, R² = 0.53 on 94 months; standard error 1.03 in the lecture, robust to autocorrelation). The same slope is −1.32 in Bulgaria and −2.14 in Hungary. Move the start of the window: the slope estimated on recent months only is driven by the record solar shares of 2025–2026 (up to 17.8% of the load in August 2026, lowest capture rate 44.3% in March 2026).</p></details>
+</section><h2 class="sec" id="s-neg">Negative prices</h2>
+<section class="blk" id="neg-hours">
+  <h3>Romania had 196 negative hours in 2025, Germany 575</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L6_neg_hours_en.jpg" alt="Slide 20: Romania had 196 negative hours in 2025, Germany 575" loading="lazy"></a>
+      <figcaption>Slide 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="nh-z">Zone</label><select id="nh-z"><option value="RO" selected>Romania</option><option value="BG">Bulgaria</option><option value="HU">Hungary</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="nh-y">Year: <b id="nh-y-v"></b></label><input type="range" id="nh-y" min="2022" max="2026" step="1" value="2026"></div><button class="btn play" id="nh-play" type="button"></button></div><div class="charts "><div class="chart" id="nh-heat"></div><div class="chart" id="nh-depth"></div></div><ul class="out" id="nh-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_neg_hours" target="_blank" rel="noopener">EMQA_L6_neg_hours</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_neg_hours/EMQA_L6_neg_hours.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> In Romania, in which months and hours are the negative prices of 2026 concentrated, and how deep are they?</div>
+  <details><summary>Answer</summary><p>In the middle of the day (roughly 10:00–16:00) of the spring months, when solar output is high, demand moderate and hydro plants run. The heat map counts hour-equivalents (a 15-minute interval counts 0.25 h); the right panel shows the duration-weighted mean of the negative prices by month. Choose 2022: Romania had no negative price before May 2023.</p></details>
+</section><h2 class="sec" id="s-bat">The economics of a battery</h2>
+<section class="blk" id="battery">
+  <h3>With perfect foresight, a 2-hour battery earned 111.2 thousand EUR per MW in the last 12 months</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=29" target="_blank" rel="noopener"><img src="slides/L6_bat_years_en.jpg" alt="Slide 29: With perfect foresight, a 2-hour battery earned 111.2 thousand EUR per MW in the last 12 months" loading="lazy"></a>
+      <figcaption>Slide 29</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bt-z">Zone</label><select id="bt-z"><option value="RO" selected>Romania</option><option value="BG">Bulgaria</option><option value="HU">Hungary</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="bt-e">Battery duration (hours at full power)</label><select id="bt-e"><option value="1">1 h (1 MWh / 1 MW)</option><option value="2" selected>2 h (2 MWh / 1 MW)</option><option value="4">4 h (4 MWh / 1 MW)</option></select></div><div class="ctl"><label for="bt-eta">Round-trip efficiency (%): <b id="bt-eta-v"></b></label><input type="range" id="bt-eta" min="75" max="95" step="5" value="85"></div><div class="ctl"><label for="bt-y">Year: <b id="bt-y-v"></b></label><input type="range" id="bt-y" min="2019" max="2026" step="1" value="2025"></div><button class="btn play" id="bt-play" type="button"></button></div><div class="charts "><div class="chart" id="bt-years"></div><div class="chart" id="bt-eff"></div></div><ul class="out" id="bt-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_bat_years" target="_blank" rel="noopener">EMQA_L6_bat_years</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_bat_years/EMQA_L6_bat_years.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> A 1-MW battery with 2 hours of storage and 85% round-trip efficiency earned about 98.7 thousand EUR in Romania in 2025 with perfect foresight. Does a 4-hour battery earn twice as much?</div>
+  <details><summary>Answer</summary><p>No: 165.2 thousand EUR, i.e. 1.67 times as much. The extra hours of storage buy energy in less cheap hours and sell it in less expensive ones, so each MWh of capacity earns less (and the real schedule is decided on forecasts, not on known prices: with the mean profile of the previous week the lecture keeps about 85% of the perfect-foresight revenue). Move the efficiency: from 75% to 95%, the revenue of the 2-hour battery in Romania rises by 39–46% in 2019–2022 but only by 21–22% in 2024–2026, when the deep midday troughs (down to negative prices) make the buying price small compared with the selling price, so the losses cost less.</p></details>
+</section><h2 class="sec" id="s-case">Case study: summer 2026, Romania and Bulgaria</h2>
+<section class="blk" id="rogb">
+  <h3>Summer 2026: Romania exported at midday and bought from Bulgaria in the evening</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6.pdf#page=38" target="_blank" rel="noopener"><img src="slides/L6_rogb_summer_en.jpg" alt="Slide 38: Summer 2026: Romania exported at midday and bought from Bulgaria in the evening" loading="lazy"></a>
+      <figcaption>Slide 38</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="rg-d0">First day of the period: <b id="rg-d0-v"></b></label><input type="range" id="rg-d0" min="0" max="91" step="1" value="0"></div><div class="ctl"><label for="rg-d1">Last day of the period: <b id="rg-d1-v"></b></label><input type="range" id="rg-d1" min="0" max="91" step="1" value="91"></div><div class="ctl ctl-tg" id="rg-b"><span class="lbl">Borders</span><div class="tgs"><label class="tg"><input type="checkbox" name="rg-b" value="sum" checked> All</label><label class="tg"><input type="checkbox" name="rg-b" value="bulgaria" checked> Bulgaria</label><label class="tg"><input type="checkbox" name="rg-b" value="hungary"> Hungary</label><label class="tg"><input type="checkbox" name="rg-b" value="serbia"> Serbia</label></div></div><div class="ctl"><label for="rg-p">Right panel</label><select id="rg-p"><option value="lev" selected>RO and BG prices</option><option value="gap">Price gap RO − BG</option></select></div><button class="btn play" id="rg-play" type="button"></button></div><div class="charts "><div class="chart" id="rg-flow"></div><div class="chart" id="rg-price"></div></div><ul class="out" id="rg-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_rogb_summer" target="_blank" rel="noopener">EMQA_L6_rogb_summer</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_rogb_summer/EMQA_L6_rogb_summer.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> In summer 2026 (1 June–31 August), Romania exported at midday and imported in the evening. From which neighbour did the evening imports come, and why?</div>
+  <details><summary>Answer</summary><p>From Bulgaria, on all 92 days: at 21:00 Romanian time, the mean flow on the Romania–Bulgaria border was 2,064 MW towards Romania. At that hour the mean Romanian price was 243.9 EUR/MWh and the Bulgarian one 178.3 EUR/MWh (gap 65.6 EUR/MWh): the interconnector was congested, otherwise market coupling would have equalised the two prices. At midday both prices were about 50 EUR/MWh and Romania exported, mostly to Hungary (857 MW) and Serbia (367 MW).</p></details>
+</section>
+<p class="src foot">Day-ahead prices: OPCOM PZU (Piața pentru Ziua Următoare, the Romanian day-ahead market), IBEX (Bulgaria), HUPX (Hungary), EPEX (Germany–Luxembourg); generation, load and cross-border physical flows (data of ENTSO-E, the European Network of Transmission System Operators for Electricity): energy-charts.info (Fraunhofer ISE). Prices hourly to September 2025 and per 15 minutes from 1 October 2025 (a quarter-hour counts 0.25 h). Battery: 1 MW, at most one full cycle a day, perfect foresight of the day-ahead prices, optimal schedule of each delivery day by linear programming (rule of the lecture). Data to the cut-off of the lecture (31 October 2026).</p>
+</main>
+</body>
+</html>

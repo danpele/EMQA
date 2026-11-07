@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_day_load'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Hourly Romanian load on the most recent Wednesday (CET day) with all 24 hours reported: the curve is power in MW, the shaded area is the energy of the day in MWh. Data: Romania, load on 2026-10-28 (CET day, 24 hourly values). Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'load, power, energy, MW, MWh, Romania, electricity consumption, units'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly load (energy-charts.info, ENTSO-E, Transelectrica data; data/clean/generation_ro_mw_hourly_utc.csv)'
+
+Output: 'day_load.png'

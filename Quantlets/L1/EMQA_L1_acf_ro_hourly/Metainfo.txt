@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_acf_ro_hourly'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Sample autocorrelation function of the Romanian hourly day-ahead price in 2024, lags 1 to 192 hours: peaks at 24 h (daily cycle) and 168 h (weekly cycle). Data: 2024, hourly, T = 8784. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'autocorrelation, ACF, hourly prices, daily seasonality, weekly seasonality, electricity, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices (energy-charts.info, OPCOM via ENTSO-E; data/clean/power_da_prices_hourly_utc.csv)'
+
+Output: 'acf_ro_hourly.png'

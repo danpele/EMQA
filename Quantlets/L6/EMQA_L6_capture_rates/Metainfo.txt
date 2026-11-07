@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_capture_rates'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Capture rate of Romanian solar and onshore wind by calendar year, 2019 to 2026-10-31 (2026 = Jan-Oct): generation-weighted mean day-ahead price divided by the baseload price, in %; hourly prices to Sep 2025, 15-min from Oct 2025. Prints the solar capture rates of 2019, the last full year and the current year, the range of the wind capture rate and the like-for-like change in solar output.'
+
+Keywords: 'capture price, capture rate, cannibalisation, solar, wind, baseload price, day-ahead, Romania, OPCOM, renewables'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025)'
+
+Output: 'capture_rates.png'

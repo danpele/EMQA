@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_decomp_load'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly mean Romanian load (GW) with the classical 2x12 centred moving-average trend and the STL trend (top), and the classical and STL seasonal components (bottom); prints the classical seasonal indices and the STL seasonal amplitude in the first and the last full year. Data: 2016-01 to 2025-12, monthly mean load. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'time series decomposition, trend, seasonality, STL, moving average, load, electricity demand, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly load (energy-charts.info, ENTSO-E, Transelectrica data; data/clean/generation_ro_mw_hourly_utc.csv)'
+
+Output: 'decomp_load.png'

@@ -83,6 +83,12 @@
    "source_ro": "energy-charts.info; pre\u021buri PZU prin ENTSO-E; produc\u021bia bateriilor, ENTSO-E (BG, RO); optimizare proprie",
    "period_en": "last 12 months 2025-11-01 to 2026-10-31; 1 MW, round trip 85\\%; forecast rules on 361 common days, scaled to the full period",
    "period_ro": "ultimele 12 luni, 2025-11-01 - 2026-10-31; 1 MW, randament 85\\%; regulile de prognoz\u0103 pe 361 de zile comune, scalate la \u00eentreaga perioad\u0103"
+  },
+  "rogb_summer": {
+   "source_en": "energy-charts.info (Fraunhofer ISE): cross-border physical flows of Romania (ENTSO-E); day-ahead prices of OPCOM (RO) and IBEX (BG)",
+   "source_ro": "energy-charts.info (Fraunhofer ISE): fluxurile fizice transfrontaliere ale Rom\u00e2niei (ENTSO-E); pre\u021burile pentru ziua urm\u0103toare OPCOM (RO) \u0219i IBEX (BG)",
+   "period_en": "hourly means, 2026-06-01 to 2026-08-31; Moldova and Ukraine borders only partly reported",
+   "period_ro": "medii orare, 2026-06-01 - 2026-08-31; grani\u021bele cu Moldova \u0219i Ucraina s\u00eent raportate doar par\u021bial"
   }
  },
  "cutoff": {
@@ -1186,5 +1192,31 @@
   "week_cr": 42.5,
   "week_cp": 37.0,
   "week_base": 87.0
+ },
+ "rogb": {
+  "year": 2026,
+  "start": "2026-06-01",
+  "end": "2026-08-31",
+  "n_days": 92,
+  "exp_h": 12,
+  "exp_mw": 960.0,
+  "imp_h": 20,
+  "imp_mw": 1582.0,
+  "bg_eve_h": 21,
+  "bg_eve_mw": 2064.0,
+  "days_bg_eve_imp": 92,
+  "days_bg_mid_exp": 43,
+  "n_days_mid": 43,
+  "hu_mid_mw": 857.0,
+  "rs_mid_mw": 367.0,
+  "bg_mid_mw": 332.0,
+  "p_ro_eve": 243.9,
+  "p_bg_eve": 178.3,
+  "p_gap_eve": 65.6,
+  "p_ro_mid": 50.0,
+  "p_bg_mid": 50.0,
+  "n_h_gap10": 406,
+  "n_h": 2208,
+  "share_h_gap10": 18.4
  }
 }

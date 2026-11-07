@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_tails'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Survival function (share of days with a rise larger than z standard deviations) of the standardised daily changes of the day-ahead base price in Romania and Germany-Luxembourg against the normal distribution, log scale; daily changes, 2015-01-01 to 2026-10-31. Prints excess kurtosis and the count of rises above 3 standard deviations.'
+
+Keywords: 'heavy tails, kurtosis, normal distribution, survival function, electricity prices, Romania, Germany, extreme events'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania (OPCOM) and Germany-Luxembourg (EPEX SPOT), EUR/MWh, energy-charts.info (Fraunhofer ISE) via ENTSO-E (cut-off 2026-10-31)'
+
+Output: 'tails.png'

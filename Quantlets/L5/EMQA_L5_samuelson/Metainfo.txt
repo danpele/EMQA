@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_samuelson'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Samuelson effect in Dutch TTF gas futures: rolling 60-trading-day annualised volatility of the NYMEX TTF contracts for December 2026 and May 2027 (single contracts, no rolls); daily closes to 2026-10-31, rolling 60 trading days. The contract nearer to delivery is more volatile.'
+
+Keywords: 'Samuelson effect, futures volatility, time to maturity, TTF, natural gas, rolling volatility'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'NYMEX TTF futures, individual contract months, daily closes from Yahoo Finance (data/clean/ttf_futures_contracts_daily.csv)'
+
+Output: 'samuelson.png'

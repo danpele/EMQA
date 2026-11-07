@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_mix_ro_annual'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Annual Romanian electricity generation by source (hydro, nuclear, coal, gas, wind, solar, biomass) in TWh for the full years, with load as a black bar, and the shares of each source in January to the cut-off month of the current and the previous year over the hours reported in both years. Energy is summed over reported hours; coverage is reported. Data: 2015-2025 full years (left); Jan-Oct 2025 and 2026, hours reported in both years (right); cut-off 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'electricity, generation mix, Romania, hydro, nuclear, coal, solar, energy, TWh, coverage, missing data'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly generation by source and load (energy-charts.info, ENTSO-E; data/clean/generation_ro_mw_hourly_utc.csv)'
+
+Output: 'mix_ro_annual.png'

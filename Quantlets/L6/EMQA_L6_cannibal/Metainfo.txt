@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_cannibal'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Cannibalisation of solar: monthly solar capture rate (%) against solar output as % of load in the month, Romania, Bulgaria and Hungary, 2019-01 to 2026-10 (Hungary from Oct 2019), with the OLS line for Romania; prints the slopes (HAC standard errors, 6 lags), R-squared and number of months.'
+
+Keywords: 'cannibalisation, capture rate, solar share, regression, Newey-West, solar, Romania, Bulgaria, Hungary, day-ahead, renewables'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025); generation_bg_mw_native_utc.csv: Bulgarian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, hourly); generation_hu_mw_native_utc.csv: Hungarian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, 15-min)'
+
+Output: 'cannibal.png'

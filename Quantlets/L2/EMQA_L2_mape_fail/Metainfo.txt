@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_mape_fail'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Absolute percentage error of the AW-LEAR forecast of the Romanian day-ahead price, hour by hour, against the actual price on the test year (log scale): near zero and negative prices the percentage error explodes, so the mean absolute percentage error (MAPE) is dominated by a few hours with |price| < 5 EUR/MWh. Data: test year 2025-11-01 to 2026-10-31, 8760 hours. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'MAPE, percentage error, negative prices, forecast evaluation, LEAR, LASSO, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar of Romania (generation_ro_mw_hourly_utc.csv); saved LEAR forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py)'
+
+Output: 'mape_fail.png'

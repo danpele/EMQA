@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_spreads'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly clean spark spread (Romania and Germany) and clean dark spread (Romania): monthly mean day-ahead price minus fuel cost (TTF gas at 50% efficiency, South African coal at 38%) and carbon cost (EUA); monthly, 2015-01 to 2026-10.'
+
+Keywords: 'clean spark spread, clean dark spread, gas-fired generation, coal, EUA, carbon price, TTF, Romania, Germany'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'day-ahead daily base prices of OPCOM, HUPX and EPEX SPOT via energy-charts.info (data/clean/power_da_prices_daily_cet.csv); World Bank TTF gas monthly (data/clean/ttf_monthly.csv); EEX primary-auction EUA prices and the SparkChange CO2 ETC proxy (data/clean/eua_daily.csv); World Bank South African coal (data/clean/coal_monthly.csv) converted with the ECB EUR/USD rate (data/clean/fuels_daily.csv)'
+
+Output: 'spreads.png'

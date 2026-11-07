@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_coint_daily'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Daily base day-ahead prices of Romania (OPCOM) and Hungary (HUPX) and their spread: the two coupled markets are cointegrated (Engle-Granger and Johansen tests) and shocks to the spread die out within about a day. Data: daily base prices, 2022-01-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); prices of OPCOM (RO), HUPX (HU) and EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'cointegration, Engle-Granger, Johansen trace test, market coupling, price spread, half-life, Romania, Hungary, day-ahead electricity prices'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Daily and hourly day-ahead prices of Romania, Hungary and Germany-Luxembourg (power_da_prices_daily_cet.csv, power_da_prices_hourly_utc.csv); Romanian generation (cut-off only)'
+
+Output: 'coint_daily.png'

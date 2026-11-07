@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_ml_hour'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Hourly mean absolute error on the test year of four forecasts of the Romanian day-ahead price: AW-LEAR, gradient boosting (GBM), a neural network (MLP) and the equal-weight ensemble of AW-ARX, AW-LEAR, GBM and MLP. Data: test year 2025-11-01 to 2026-10-31; ML refitted monthly. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC).'
+
+Keywords: 'machine learning, gradient boosting, neural network, ensemble, LEAR, MAE by hour, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR, GBM and MLP forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports and the EUA price)'
+
+Output: 'ml_hour.png'

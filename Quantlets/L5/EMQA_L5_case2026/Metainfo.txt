@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_case2026'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Case study 2026: monthly cost of 1 MW of baseload for a Romanian supplier, 2026-01 to 2026-10, with four strategies: unhedged (realised day-ahead monthly mean), 100% forward Cal-26 (OPCOM VWAP), 50% forward + 50% spot, and monthly caps at K bought in December of the previous year (Black-76 premium with the terminal volatility of one-month-ahead forwards and the euro short-term rate).'
+
+Keywords: 'case study, hedging strategy, forward, cap, Black-76, supplier, cost of energy, OPCOM, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'OPCOM PCCB-LE-flex forward auction results (data/clean/opcom_forward_trades.csv, prices in EUR via the ECB EUR/RON fixing) and OPCOM day-ahead (PZU) daily base prices via energy-charts.info (data/clean/power_da_prices_daily_cet.csv); ECB euro short-term rate (data/clean/ecb_ron_estr_daily.csv)'
+
+Output: 'case2026.png'

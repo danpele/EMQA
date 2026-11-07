@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_fw_volume'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Yearly volume (TWh) of electricity contracted on the Romanian OPCOM PCCB-LE-flex forward auctions, stacked by delivery product (month, quarter, half-year, calendar year, other periods); 2,298 traded auctions, 2020-05-12 to 2026-10-31; *2026 to the cut-off. Also prints the shares of the three state producers in the volume sold and the share of calendar-year products.'
+
+Keywords: 'forward contracts, OPCOM, PCCB-LE-flex, liquidity, traded volume, Romania, electricity, energy derivatives'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'OPCOM PCCB-LE-flex forward auction results (data/clean/opcom_forward_trades.csv, prices in EUR via the ECB EUR/RON fixing) and OPCOM day-ahead (PZU) daily base prices via energy-charts.info (data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'fw_volume.png'

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_data'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Downloads every series used in the EMQA course from its public source (day-ahead power prices of Romania, Bulgaria, Hungary and Germany-Luxembourg, generation by source and load, cross-border physical flows of Romania, fuels, EU carbon allowances, exchange rates, Romanian energy equities, OPCOM curves and forward trades), and shows the period covered by each file of data/clean.'
+
+Keywords: 'energy data, day-ahead prices, generation mix, cross-border flows, ENTSO-E, energy-charts, OPCOM, data coverage'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'All files of data/clean, written by download_all.py, download_L5.py and download_L6.py; sources in data/SOURCES.md'
+
+Output: 'data_coverage.png'

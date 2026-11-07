@@ -1,0 +1,27 @@
+// Readouts of the Lecture 7 interactive page, written by lectures/L7/build_interactive_L7.py.
+window.LK_TEXT = {
+ lab: {"naive": "Naiv", "aw_arx": "AW-ARX", "aw_lear": "AW-LEAR", "gbm2": "GBM (C2)", "mlp2": "MLP (C2)", "xgb": "XGBoost", "dnn": "DNN", "bolt": "Chronos-Bolt", "chr2": "Chronos-2", "ens4": "Ansamblul de 4 (C2)", "ens_ldx": "AW-LEAR + DNN + XGBoost", "ens_t4": "AW-ARX + AW-LEAR + DNN + XGBoost", "ens_lc": "AW-LEAR + Chronos-2", "ens_t5": "5 modele"},
+ months: ["nov", "dec", "ian", "feb", "mar", "apr", "mai", "iun", "iul", "aug", "sep", "oct"],
+ eur: 'EUR/MWh', epoch: 'Epoca', mae: 'MAE (EUR/MWh)', train: 'Zilele de antrenare', valid: 'Ultimele 15% dintre zile (validare)',
+ best: 'Cea mai bună epocă (ponderi păstrate)', stop: 'Oprire',
+ lc: (p, s, b, vb, ts, vs) => `Răbdarea ${p}: antrenarea se oprește în epoca ${s} și păstrează ponderile epocii ${b} (MAE de validare ${vb} EUR/MWh). În epoca ${s}: MAE de antrenare ${ts}, MAE de validare ${vs}.`,
+ lcEnd: (t, v) => `Antrenare pînă la capăt (epoca 76): MAE de antrenare ${t}, MAE de validare ${v} EUR/MWh.`,
+ mmLev: 'MAE lunar (EUR/MWh)', mmRel: 'MAE minus MAE-ul AW-LEAR (EUR/MWh)',
+ mm: (m, a, n) => `${m}: MAE anual ${a} EUR/MWh; bate AW-LEAR în ${n} din 12 luni.`,
+ cwCurve: 'MAE-ul combinației (EUR/MWh)', cwW: 'Ponderea w a celui de-al doilea model', cwMonth: 'MAE lunar minus AW-LEAR (EUR/MWh)',
+ cw: (a, b, w, m, ma, mb, r) => `MAE pentru (1 − w)·${a} + w·${b} cu w = ${w}: ${m} EUR/MWh (${a} singur ${ma}, ${b} singur ${mb}); corelația erorilor ${r}.`,
+ cwBest: (w, m, m5) => `Cea mai bună pondere văzută ulterior: w = ${w} (MAE ${m}); ponderi egale: ${m5} EUR/MWh.`,
+ cwMonthN: n => `Combinația bate primul model în ${n} din 12 luni.`,
+ dmHeat: 'Valoarea p DM unilaterală: coloana mai precisă decît rîndul', dmCum: 'Diferența cumulată a MAE zilnic, rînd − coloană (EUR/MWh)',
+ dm: (a, b, ma, mb, s, p) => `${a} (MAE ${ma}) față de ${b} (MAE ${mb}): statistica DM ${s}, valoarea p unilaterală ${p}.`,
+ dmYes: 'Modelul din coloană este semnificativ mai precis la 5%.', dmNo: 'Niciun cîștig semnificativ la 5%.', dmSame: 'Alegeți două modele diferite.',
+ fhMae: 'MAE pe oră (EUR/MWh)', fhCov: 'Chronos-2: ponderea prețurilor din banda 10%–90%', hour: 'Ora zilei (CET)', share: 'Pondere (%)',
+ nominal: 'Nominal 80%',
+ fh: (n, m) => `${n}: MAE ${m} EUR/MWh.`,
+ fhWin: (n) => `Chronos-2 bate AW-LEAR în ${n} din cele 24 de ore.`, fhCovT: c => `Acoperirea benzii 10%–90% a Chronos-2: ${c} (nominal 80%).`,
+ fpr: 'Rata alarmelor false (FPR)', tpr: 'Salturi detectate (TPR)', roc: 'Curba ROC, orele cu salt din anul de test', point: 'Pragul ales',
+ val: 'Valoarea pe MW și an (mii EUR)', thr: 'Pragul de probabilitate', cl: 'C/L̄',
+ sd: (m, a, auc, n, tp, fp, fn) => `${m}: AUC ${auc}. Pragul ${a}: ${window.EMQAI.cnt(n, 'alertă', 'alerte')}, ${window.EMQAI.cnt(tp, 'salt detectat', 'salturi detectate')}, ${window.EMQAI.cnt(fp, 'alarmă falsă', 'alarme false')}, ${window.EMQAI.cnt(fn, 'salt ratat', 'salturi ratate')}.`,
+ sd2: (v, c, cl, vcl, vp) => `Valoarea la acest prag: ${v} mii EUR pe MW și an; cu C = ${c} EUR/MWh, regula C/L̄ dă ${cl} (valoarea ${vcl}); previziune perfectă ${vp}.`,
+ spikes: (n, lo, hi) => `${window.EMQAI.cnt(n, 'oră', 'ore')} cu salt în anul de test (preț peste percentila 90 a celor 365 de zile anterioare: ${lo}–${hi} EUR/MWh).`
+};

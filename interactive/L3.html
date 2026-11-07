@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 3 · Volatility</title>
+<meta name="description" content="Energy Markets Quantitative Analysis: Lecture 3 · Volatility">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'en';</script>
+<link rel="preload" as="script" href="L3.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261107a", "L3_text_en.js?v=20261107a", "common.js?v=20261107a"], "L3.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index.html">Energy Markets Quantitative Analysis</a></h1><p>Lecture 3 · Volatility</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Romanian Academy, Institute for Economic Forecasting"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index.html#chapters">← Course site</a></li>
+  <li><a href="../lectures/L3/lecture3.pdf" target="_blank" rel="noopener">Lecture PDF</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L3.html" class="lang-btn active">EN</a><a href="L3_ro.html" class="lang-btn">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The ▶ button moves the main parameter step by step. Under each figure: a readout, a question for the room and the Quantlet with the code of the chart. GARCH = generalised autoregressive conditional heteroskedasticity; the shocks are the residuals of the mean equation of the lecture (constant, AR(1..7) and day-of-week dummies).</p>
+<p class="toc"><a href="#s-meas">Measuring volatility</a> · <a href="#s-garch">The GARCH family</a> · <a href="#s-case">Case study: Romanian power in 2026</a></p>
+<h2 class="sec" id="s-meas">Measuring volatility</h2>
+<section class="blk" id="clustering">
+  <h3>The sign of a shock is unpredictable, its size is not</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_en.jpg" alt="Slide 11: The sign of a shock is unpredictable, its size is not" loading="lazy"></a>
+      <figcaption>Slide 11</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cl-u">Unit of the shocks</label><select id="cl-u"><option value="pct" selected>Change in % (log)</option><option value="eur">Change in EUR/MWh</option></select></div><div class="ctl"><label for="cl-L">Lags shown (days): <b id="cl-L-v"></b></label><input type="range" id="cl-L" min="10" max="60" step="5" value="30"></div><div class="ctl"><label for="cl-y">Start of the sample: <b id="cl-y-v"></b></label><input type="range" id="cl-y" min="2019" max="2025" step="1" value="2019"></div><button class="btn play" id="cl-play" type="button"></button></div><div class="charts "><div class="chart" id="cl-e"></div><div class="chart" id="cl-e2"></div></div><ul class="out" id="cl-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_acf_clust" target="_blank" rel="noopener">EMQA_L3_acf_clust</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_acf_clust/EMQA_L3_acf_clust.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The daily shocks of the Romanian price are almost uncorrelated, yet the lecture speaks of volatility clustering. Where is the clustering?</div>
+  <details><summary>Answer</summary><p>In the squared shocks. On the full sample the first-order autocorrelation of the % shocks is 0.001, but that of the squared shocks is 0.133, and the Ljung–Box statistic for ten lags rises from 13.8 (p = 0.18) to 120.0. Large moves, of either sign, follow large moves: the size of a shock is predictable even when its sign is not. Switch to EUR/MWh: the squared shocks are far more autocorrelated (Ljung–Box 1,519.5), because the price level itself moved from about 40 to over 400 EUR/MWh.</p></details>
+</section>
+<section class="blk" id="fat-tails">
+  <h3>Extreme days are far more frequent than the normal law allows</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=12" target="_blank" rel="noopener"><img src="slides/L3_tails_en.jpg" alt="Slide 12: Extreme days are far more frequent than the normal law allows" loading="lazy"></a>
+      <figcaption>Slide 12</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ft-nu">Degrees of freedom of the Student-t, ν: <b id="ft-nu-v"></b></label><input type="range" id="ft-nu" min="2.5" max="30" step="any" value="4.27"></div><div class="ctl"><label for="ft-k">Threshold |z| > k: <b id="ft-k-v"></b></label><input type="range" id="ft-k" min="2" max="6" step="0.5" value="4"></div><button class="btn play" id="ft-play" type="button"></button></div><div class="charts one"><div class="chart" id="ft-chart"></div></div><ul class="out" id="ft-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_tails" target="_blank" rel="noopener">EMQA_L3_tails</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_tails/EMQA_L3_tails.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> After dividing each % shock by its GARCH-t volatility, 17 of the 2,853 standardised shocks exceed 4 in absolute value. How many would a normal distribution give?</div>
+  <details><summary>Answer</summary><p>About 0.18, i.e. none: the normal tail beyond 4 standard deviations has probability 6.3 × 10⁻⁵. Even after GARCH removes the clustering, the tails stay fat; the estimated Student-t, with ν = 4.27 degrees of freedom, expects 12.7. Move ν: with a small ν the Student-t curve reaches the far bins of the histogram, with ν above 30 it is close to the normal.</p></details>
+</section><h2 class="sec" id="s-garch">The GARCH family</h2>
+<section class="blk" id="garch-filter">
+  <h3>GARCH volatility: short spikes in percent, a long hump in EUR/MWh</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=18" target="_blank" rel="noopener"><img src="slides/L3_cond_vol_en.jpg" alt="Slide 18: GARCH volatility: short spikes in percent, a long hump in EUR/MWh" loading="lazy"></a>
+      <figcaption>Slide 18</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="gf-u">Unit of the shocks</label><select id="gf-u"><option value="pct" selected>Change in % (log)</option><option value="eur">Change in EUR/MWh</option></select></div><div class="ctl"><label for="gf-a">α (reaction to yesterday's shock): <b id="gf-a-v"></b></label><input type="range" id="gf-a" min="0" max="0.5" step="any" value="0.3081"></div><div class="ctl"><label for="gf-b">β (memory of the variance): <b id="gf-b-v"></b></label><input type="range" id="gf-b" min="0" max="0.99" step="any" value="0.4378"></div><button class="btn play" id="gf-play" type="button"></button></div><div class="charts one"><div class="chart" id="gf-chart"></div></div><ul class="out" id="gf-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_cond_vol" target="_blank" rel="noopener">EMQA_L3_cond_vol</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_cond_vol/EMQA_L3_cond_vol.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> For the % shocks the GARCH(1,1)-t estimates are α = 0.31 and β = 0.44. What happens to the conditional volatility if we keep α and raise β to 0.68?</div>
+  <details><summary>Answer</summary><p>With the long-run variance held at its estimate, the persistence α + β rises from 0.75 to 0.99: shocks die out slowly, the path becomes smooth and stays high for weeks after a spike, and the half-life of a shock grows from 2.4 days to about 58 days. The Student-t log-likelihood in the readout falls: the data prefer the faster decay. In EUR/MWh the estimate itself is persistent (α + β = 0.994, half-life 113.5 days), because the level of the price drives the size of the changes.</p></details>
+</section>
+<section class="blk" id="half-life">
+  <h3>Answer to Lecture 1: oil and carbon shocks fade in weeks, not days</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_en.jpg" alt="Slide 20: Answer to Lecture 1: oil and carbon shocks fade in weeks, not days" loading="lazy"></a>
+      <figcaption>Slide 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hl-p">Persistence α + β: <b id="hl-p-v"></b></label><input type="range" id="hl-p" min="0.5" max="0.999" step="0.001" value="0.746"></div><div class="ctl"><label for="hl-h">Horizon shown (days): <b id="hl-h-v"></b></label><input type="range" id="hl-h" min="20" max="250" step="10" value="120"></div><button class="btn play" id="hl-play" type="button"></button></div><div class="charts one"><div class="chart" id="hl-chart"></div></div><ul class="out" id="hl-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_halflife" target="_blank" rel="noopener">EMQA_L3_halflife</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_halflife/EMQA_L3_halflife.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Brent has a GARCH persistence of 0.973, Romanian power in % of 0.746. How long does it take for half of a volatility shock to fade?</div>
+  <details><summary>Answer</summary><p>Half-life = ln 0.5 / ln(α + β): 25.6 trading days (about five weeks) for Brent and 2.4 days for Romanian power in %. A shock to the volatility of a daily auction fades in days, one to oil volatility in weeks. EUA (EU emission allowances, 0.992, 82.8 trading days) and Romanian power in EUR/MWh (0.994, 113.5 days) are the most persistent. Near α + β = 1 a small change of persistence moves the half-life a lot.</p></details>
+</section>
+<section class="blk" id="news-impact">
+  <h3>In EUR/MWh, rises raise volatility more: the inverse leverage effect</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L3_nic_en.jpg" alt="Slide 22: In EUR/MWh, rises raise volatility more: the inverse leverage effect" loading="lazy"></a>
+      <figcaption>Slide 22</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ni-u">Unit of the shocks</label><select id="ni-u"><option value="pct" selected>Change in % (log)</option><option value="eur">Change in EUR/MWh</option></select></div><div class="ctl"><label for="ni-g">γ (extra effect of a fall): <b id="ni-g-v"></b></label><input type="range" id="ni-g" min="-0.3" max="0.6" step="any" value="0.2245"></div><div class="ctl"><label for="ni-a">α: <b id="ni-a-v"></b></label><input type="range" id="ni-a" min="0" max="0.5" step="any" value="0.179"></div><button class="btn play" id="ni-play" type="button"></button></div><div class="charts one"><div class="chart" id="ni-chart"></div></div><ul class="out" id="ni-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_nic" target="_blank" rel="noopener">EMQA_L3_nic</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_nic/EMQA_L3_nic.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> In the GJR-GARCH-t model of the % shocks, γ = 0.22 > 0. Does tomorrow's volatility react more to a price fall or to a price rise of the same size?</div>
+  <details><summary>Answer</summary><p>To a fall. GJR (Glosten–Jagannathan–Runkle) adds γ·ε² on the days when the shock is negative. With the estimates, a shock of −2 standard deviations (−39.7%) gives a next-day σ of 30.3%, a shock of +2 standard deviations 23.7%. For the EUR/MWh shocks the estimate is γ = −0.13: there a rise of the price increases volatility more than a fall, as rises of the level come with larger changes. Set γ = 0 to recover the symmetric GARCH curve.</p></details>
+</section><h2 class="sec" id="s-case">Case study: Romanian power in 2026</h2>
+<section class="blk" id="forecast-band">
+  <h3>Case study: the one-day GARCH-t band held over the test year</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=41" target="_blank" rel="noopener"><img src="slides/L3_case_band_en.jpg" alt="Slide 41: Case study: the one-day GARCH-t band held over the test year" loading="lazy"></a>
+      <figcaption>Slide 41</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="fb-m">Volatility forecast</label><select id="fb-m"><option value="garch" selected>GARCH(1,1)-t, re-estimated daily</option><option value="hist30">30-day historical, normal</option></select></div><div class="ctl"><label for="fb-c">Coverage of the band (%): <b id="fb-c-v"></b></label><input type="range" id="fb-c" min="50" max="99" step="1" value="90"></div><button class="btn play" id="fb-play" type="button"></button></div><div class="charts one"><div class="chart" id="fb-chart"></div></div><ul class="out" id="fb-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_case_band" target="_blank" rel="noopener">EMQA_L3_case_band</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_case_band/EMQA_L3_case_band.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> On the test year, a 90% band built from the daily GARCH-t forecast leaves out 38 of 365 days (10.4%). Is the band well calibrated?</div>
+  <details><summary>Answer</summary><p>Roughly: 10.4% outside against 10% nominal. The 30-day historical volatility with a normal quantile also leaves out 38 days (10.4%) at 90%, but its band reacts late to new shocks and drops abruptly when a large shock leaves the 30-day window. Change the coverage: at high coverage the normal quantile is too narrow for fat tails. At 99% the historical band leaves out 13 days (3.6%), the GARCH-t band 4 days (1.1%); at 95%, 8.2% against 6.3%.</p></details>
+</section>
+<p class="src foot">Romanian day-ahead daily base price: OPCOM PZU via energy-charts.info (Fraunhofer ISE), 2019-01-01 to the cut-off of the lecture. Shocks: residuals of the OLS (ordinary least squares) mean equation on the daily log change (%) or the daily change in EUR/MWh. Model parameters: maximum-likelihood estimates of lectures/L3/analysis_L3.py. Market half-lives: GARCH(1,1)-t on Brent, EUA (EU emission allowances) and OMV Petrom (SNP) returns. Test-year forecasts: Quantlet EMQA_L3_case_band.</p>
+</main>
+</body>
+</html>

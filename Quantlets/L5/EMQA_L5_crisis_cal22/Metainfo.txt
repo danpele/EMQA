@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_crisis_cal22'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Prices of the OPCOM forward auctions for calendar-2022 baseload by auction date, against the monthly mean Romanian day-ahead price 2020-2022, the realised 2022 average and the volume-weighted forward price; 150 auctions for 2022 baseload; spot 2020-2022. A supplier who bought 2022 forward paid a fraction of the 2022 spot price.'
+
+Keywords: 'forward hedge, energy crisis 2022, OPCOM, day-ahead price, Romania, VWAP, hedging'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'OPCOM PCCB-LE-flex forward auction results (data/clean/opcom_forward_trades.csv, prices in EUR via the ECB EUR/RON fixing) and OPCOM day-ahead (PZU) daily base prices via energy-charts.info (data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'crisis_cal22.png'

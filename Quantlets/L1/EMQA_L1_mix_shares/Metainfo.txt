@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_mix_shares'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Shares of Romanian electricity generation by source in 2015, in the last full year and in January to the cut-off month of the current year (hours reported in both the current and the previous year); prints the change of coal output, the growth of metered solar and the like-for-like change of nuclear output. Data: 2015, 2025 full years; Jan-Oct 2026, hours reported in both 2025 and 2026. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'electricity, generation mix, Romania, coal, solar, nuclear, shares, like-for-like comparison, missing data'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly and daily generation by source (energy-charts.info, ENTSO-E; data/clean/generation_ro_mw_hourly_utc.csv, generation_ro_mw_daily_cet.csv)'
+
+Output: 'mix_shares.png'

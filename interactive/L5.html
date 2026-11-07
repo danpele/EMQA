@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 5 · Derivatives and hedging</title>
+<meta name="description" content="Energy Markets Quantitative Analysis: Lecture 5 · Derivatives and hedging">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'en';</script>
+<link rel="preload" as="script" href="L5.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261107a", "L5_text_en.js?v=20261107a", "common.js?v=20261107a"], "L5.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index.html">Energy Markets Quantitative Analysis</a></h1><p>Lecture 5 · Derivatives and hedging</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Romanian Academy, Institute for Economic Forecasting"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index.html#chapters">← Course site</a></li>
+  <li><a href="../lectures/L5/lecture5.pdf" target="_blank" rel="noopener">Lecture PDF</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L5.html" class="lang-btn active">EN</a><a href="L5_ro.html" class="lang-btn">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The ▶ button moves the main parameter step by step. Under each figure: a readout, a question for the room and the Quantlet with the code of the chart.</p>
+<p class="toc"><a href="#s-fwd">Forwards, futures and the forward curve</a> · <a href="#s-spr">Spreads: the margins of power plants</a> · <a href="#s-hedge">Hedge ratio, basis risk and shape risk</a> · <a href="#s-opt">Options on energy</a></p>
+<h2 class="sec" id="s-fwd">Forwards, futures and the forward curve</h2>
+<section class="blk" id="forward-curve">
+  <h3>The Romanian forward curve slopes down from a high spot</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=16" target="_blank" rel="noopener"><img src="slides/L5_fwd_curve_en.jpg" alt="Slide 16: The Romanian forward curve slopes down from a high spot" loading="lazy"></a>
+      <figcaption>Slide 16</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="fc-t">Curve at the end of: <b id="fc-t-v"></b></label><input type="range" id="fc-t" min="0" max="1" step="1" value="1"></div><div class="ctl"><label for="fc-w">Window of auctions (months): <b id="fc-w-v"></b></label><input type="range" id="fc-w" min="1" max="6" step="1" value="2"></div><button class="btn play" id="fc-play" type="button"></button></div><div class="charts one"><div class="chart" id="fc-chart"></div></div><ul class="out" id="fc-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_fwd_curve" target="_blank" rel="noopener">EMQA_L5_fwd_curve</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_fwd_curve/EMQA_L5_fwd_curve.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> At the end of October 2026, the October day-ahead average in Romania was 239.32 EUR/MWh, while the calendar 2027 baseload traded at 148.12 EUR/MWh. Does the downward slope of the curve mean that the market expects spot prices to fall by about 90 EUR/MWh?</div>
+  <details><summary>Answer</summary><p>Not exactly. A forward price is the expected spot price plus a risk premium, and part of the gap is seasonal: November and December 2026 traded at 215.33 and 214.27 EUR/MWh, the first quarter of 2027 at 176.69 and the whole year at 148.12, which also averages the cheap solar summer. Move the slider back: in 2022 the curve sloped down from a crisis spot, and the Cal-23 product (calendar year 2023) traded at up to 509.18 EUR/MWh, while 2023 delivered 103.74 EUR/MWh on the day-ahead market.</p></details>
+</section><h2 class="sec" id="s-spr">Spreads: the margins of power plants</h2>
+<section class="blk" id="spreads">
+  <h3>Monthly clean spark and clean dark spreads</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=23" target="_blank" rel="noopener"><img src="slides/L5_spreads_en.jpg" alt="Slide 23: Monthly clean spark and clean dark spreads" loading="lazy"></a>
+      <figcaption>Slide 23</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="sp-z">Zone</label><select id="sp-z"><option value="RO" selected>Romania</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="sp-g">Efficiency of the gas plant, η: <b id="sp-g-v"></b></label><input type="range" id="sp-g" min="0.35" max="0.62" step="0.01" value="0.5"></div><div class="ctl"><label for="sp-c">Efficiency of the coal plant, η: <b id="sp-c-v"></b></label><input type="range" id="sp-c" min="0.3" max="0.46" step="0.01" value="0.38"></div><button class="btn play" id="sp-play" type="button"></button></div><div class="charts one"><div class="chart" id="sp-chart"></div></div><ul class="out" id="sp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_spreads" target="_blank" rel="noopener">EMQA_L5_spreads</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_spreads/EMQA_L5_spreads.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> With the course assumptions (gas plant efficiency 50%, coal 38%), the Romanian clean spark spread was negative in 67 of 138 months. What happens to this count if the gas plant is a modern combined cycle with an efficiency of 58%?</div>
+  <details><summary>Answer</summary><p>The count falls, because a higher efficiency lowers both the fuel cost and the carbon cost per MWh of electricity: clean spark spread = p − gas/η − (0.202/η)·EUA. At 0.58 the count falls from 67 to 29 months. The clean dark spread of coal does not change with the gas slider: the switch between gas and coal depends on the relative cost, not on the price of power alone.</p></details>
+</section><h2 class="sec" id="s-hedge">Hedge ratio, basis risk and shape risk</h2>
+<section class="blk" id="hedge-ratio">
+  <h3>Hungary hedges Romania almost fully; Germany leaves a fifth</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_en.jpg" alt="Slide 28: Hungary hedges Romania almost fully; Germany leaves a fifth" loading="lazy"></a>
+      <figcaption>Slide 28</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hr-z">Hedging instrument</label><select id="hr-z"><option value="HU" selected>Hungarian price</option><option value="DE_LU">German–Luxembourg price</option></select></div><div class="ctl"><label for="hr-a">First year of the sample: <b id="hr-a-v"></b></label><input type="range" id="hr-a" min="2015" max="2024" step="1" value="2015"></div><div class="ctl"><label for="hr-b">Last year of the sample: <b id="hr-b-v"></b></label><input type="range" id="hr-b" min="2016" max="2026" step="1" value="2026"></div><button class="btn play" id="hr-play" type="button"></button></div><div class="charts "><div class="chart" id="hr-sc"></div><div class="chart" id="hr-roll"></div></div><ul class="out" id="hr-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_hedge_scatter" target="_blank" rel="noopener">EMQA_L5_hedge_scatter</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_hedge_scatter/EMQA_L5_hedge_scatter.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Monthly changes of the Romanian price are hedged with the Hungarian price. Over 2015–2026 the minimum-variance hedge ratio is h* = 0.966. Is the hedge ratio with the German price lower, and why?</div>
+  <details><summary>Answer</summary><p>Yes: h* = 0.875 with R² = 0.80, against R² = 0.98 for Hungary. The hedge ratio is h* = ρ·σ_RO/σ_F; Romania and Hungary are coupled and often share the same price, while Germany is farther away in the grid and its price moves partly for other reasons (wind, solar, its own interconnections). The variance left after the hedge is 1 − R²: about 2% with Hungary and about a fifth with Germany.</p></details>
+</section>
+<section class="blk" id="basis">
+  <h3>The basis became more volatile after 2021, though RO and HU often share a price</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=30" target="_blank" rel="noopener"><img src="slides/L5_basis_en.jpg" alt="Slide 30: The basis became more volatile after 2021, though RO and HU often share a price" loading="lazy"></a>
+      <figcaption>Slide 30</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bs-z">Reference zone</label><select id="bs-z"><option value="HU" selected>Hungary</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="bs-s">Split year (before / after): <b id="bs-s-v"></b></label><input type="range" id="bs-s" min="2017" max="2025" step="1" value="2021"></div><button class="btn play" id="bs-play" type="button"></button></div><div class="charts "><div class="chart" id="bs-chart"></div><div class="chart" id="bs-conv"></div></div><ul class="out" id="bs-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_basis" target="_blank" rel="noopener">EMQA_L5_basis</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_basis/EMQA_L5_basis.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The basis is the difference between the Romanian price and the price of the hedging instrument. Did the RO–HU basis become more or less volatile after 2021?</div>
+  <details><summary>Answer</summary><p>More volatile: the standard deviation of the monthly RO–HU basis rises from 2.82 EUR/MWh before 2021 to 5.77 EUR/MWh from 2021, and that of RO–DE from 7.61 to 18.23 EUR/MWh. At the same time Romania and Hungary still share exactly the same price in many hours (the right panel): a basis that is usually zero but occasionally large is the typical risk left by a cross-border hedge.</p></details>
+</section><h2 class="sec" id="s-opt">Options on energy</h2>
+<section class="blk" id="samuelson">
+  <h3>Near contracts move more: the Samuelson effect in TTF</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L5_samuelson_en.jpg" alt="Slide 37: Near contracts move more: the Samuelson effect in TTF" loading="lazy"></a>
+      <figcaption>Slide 37</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="sm-c"><span class="lbl">TTF contracts</span><div class="tgs"><label class="tg"><input type="checkbox" name="sm-c" value="2026-12" checked> Dec 2026</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-01"> Jan 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-02"> Feb 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-05" checked> May 2027</label></div></div><div class="ctl"><label for="sm-w">Volatility window (trading days): <b id="sm-w-v"></b></label><input type="range" id="sm-w" min="20" max="250" step="10" value="60"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_samuelson" target="_blank" rel="noopener">EMQA_L5_samuelson</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_samuelson/EMQA_L5_samuelson.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Over the last 12 months, the TTF contract for December 2026 had an annualised volatility of 63.0%, the May 2027 contract 47.7%. Why does the nearer contract move more?</div>
+  <details><summary>Answer</summary><p>This is the Samuelson effect: shocks to supply and demand (storage, weather, cargoes of LNG, liquefied natural gas) mostly affect the price for delivery soon, and are expected to fade before a distant delivery month. As expiry approaches, the futures price behaves more and more like the spot price, and its volatility rises. In 2022 the difference was small (66.1% against 66.8%): in a crisis even distant months moved as much as the front.</p></details>
+</section>
+<section class="blk" id="black76-collar">
+  <h3>What each instrument pays for the 2027 band</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=39" target="_blank" rel="noopener"><img src="slides/L5_collar_en.jpg" alt="Slide 39: What each instrument pays for the 2027 band" loading="lazy"></a>
+      <figcaption>Slide 39</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bk-F">Forward price F (EUR/MWh): <b id="bk-F-v"></b></label><input type="range" id="bk-F" min="80" max="250" step="0.01" value="148.12"></div><div class="ctl"><label for="bk-s">Volatility σ (% a year): <b id="bk-s-v"></b></label><input type="range" id="bk-s" min="5" max="100" step="0.01" value="22.02"></div><div class="ctl"><label for="bk-T">Days to expiry: <b id="bk-T-v"></b></label><input type="range" id="bk-T" min="1" max="365" step="1" value="45"></div><div class="ctl"><label for="bk-r">Interest rate r (% a year): <b id="bk-r-v"></b></label><input type="range" id="bk-r" min="0" max="6" step="0.01" value="2.44"></div><div class="ctl"><label for="bk-c">Cap: call strike (% of F): <b id="bk-c-v"></b></label><input type="range" id="bk-c" min="100" max="130" step="1" value="110"></div><div class="ctl"><label for="bk-p">Floor: put strike (% of F): <b id="bk-p-v"></b></label><input type="range" id="bk-p" min="70" max="100" step="1" value="90"></div><button class="btn play" id="bk-play" type="button"></button></div><div class="charts "><div class="chart" id="bk-pay"></div><div class="chart" id="bk-prem"></div></div><ul class="out" id="bk-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_collar" target="_blank" rel="noopener">EMQA_L5_collar</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_collar/EMQA_L5_collar.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> With F = 148.12 EUR/MWh, σ = 22.0%, 45 days to expiry and r = 2.44%, the at-the-money call costs 4.55 EUR/MWh. How much does a cap at 1.1·F cost, and how much does a collar 0.9·F – 1.1·F cost?</div>
+  <details><summary>Answer</summary><p>The cap (a call with strike 162.93) costs 0.63 EUR/MWh, about 5,500 EUR for 1 MW over a year; selling a put with strike 133.31 (0.43 EUR/MWh) brings the collar to 0.20 EUR/MWh. The buyer gives up the gains below the floor in exchange for a cheaper cap. Raise σ to 50% (close to the volatility of near TTF contracts): the at-the-money call rises to 10.33 and the collar to 0.88 EUR/MWh, and the call and the put at K = F stay equal, as put–call parity requires (C − P = e<sup>−rT</sup>(F − K)).</p></details>
+</section>
+<p class="src foot">Forward trades: OPCOM (Romanian power exchange), PCCB-LE-flex and related forward markets, baseload ("banda") products, prices converted to EUR/MWh at the ECB (European Central Bank) EUR/RON rate. Day-ahead prices: OPCOM PZU, HUPX, EPEX via energy-charts.info. TTF (Title Transfer Facility) gas: World Bank monthly series and single futures contracts; EUA (EU Allowance) carbon prices: EEX auctions; coal: World Bank (South Africa, Richards Bay); €STR (euro short-term rate): ECB. Monthly averages only for complete months. Data to the cut-off of the lecture (31 October 2026).</p>
+</main>
+</body>
+</html>

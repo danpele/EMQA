@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_mtu15'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian day-ahead price for the 96 quarter-hours of the test day with the largest intra-hour variation, against the hourly AW-LEAR forecast held flat within each hour and the same forecast plus the mean intra-hour shape of the 28 previous days (15-minute market time unit since 1 October 2025). Data: 2026-07-01, 96 quarter-hours (CET). Source: energy-charts.info (Fraunhofer ISE); OPCOM 15-minute day-ahead prices for Romania, via ENTSO-E.'
+
+Keywords: '15-minute market time unit, MTU, quarter-hour prices, intra-hour profile, SDAC, LEAR, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly and 15-minute day-ahead prices of Romania (power_da_prices_hourly_utc.csv, power_da_prices_native_utc.csv); hourly load, wind and solar of Romania; saved LEAR forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py)'
+
+Output: 'mtu15.png'

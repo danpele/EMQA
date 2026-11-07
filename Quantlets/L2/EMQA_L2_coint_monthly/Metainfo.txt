@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_coint_monthly'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly mean day-ahead price of Romania against its long-run level implied by the TTF gas price (cointegrating regression), and the deviation from that level against hydro generation in excess of its calendar-month mean: months with more hydro than usual sit below the gas-implied level (error-correction model). Data: monthly, 2015-01 to 2026-10. Source: energy-charts.info (OPCOM prices; ENTSO-E hydro generation, Transelectrica data); World Bank Pink Sheet (TTF).'
+
+Keywords: 'cointegration, error-correction model, gas price, TTF, hydro generation, Engle-Granger, Johansen, half-life, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Daily day-ahead prices of Romania (power_da_prices_daily_cet.csv); hourly hydro generation of Romania (generation_ro_mw_hourly_utc.csv); monthly TTF gas price (ttf_monthly.csv, World Bank Pink Sheet)'
+
+Output: 'coint_monthly.png'

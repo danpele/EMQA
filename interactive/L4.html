@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 4 · Risk for energy companies</title>
+<meta name="description" content="Energy Markets Quantitative Analysis: Lecture 4 · Risk for energy companies">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'en';</script>
+<link rel="preload" as="script" href="L4.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261107a", "L4_text_en.js?v=20261107a", "common.js?v=20261107a"], "L4.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index.html">Energy Markets Quantitative Analysis</a></h1><p>Lecture 4 · Risk for energy companies</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Romanian Academy, Institute for Economic Forecasting"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index.html#chapters">← Course site</a></li>
+  <li><a href="../lectures/L4/lecture4.pdf" target="_blank" rel="noopener">Lecture PDF</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L4.html" class="lang-btn active">EN</a><a href="L4_ro.html" class="lang-btn">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The risk factor is the daily change of the Romanian day-ahead base price, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): a rise is a loss for a supplier that buys on the day-ahead market. VaR (Value at Risk) is a quantile of the loss, ES (Expected Shortfall) the mean loss beyond it. The ▶ button moves the main parameter step by step.</p>
+<p class="toc"><a href="#s-risk">Price risk: losses, quantiles, VaR and ES</a> · <a href="#s-est">Estimating VaR and ES: four methods</a> · <a href="#s-bt">Backtesting: did the model keep its promise?</a> · <a href="#s-coll">From quantiles to margins, guarantees and limits</a> · <a href="#s-pos">Supplier and producer: one price, two tails</a></p>
+<h2 class="sec" id="s-risk">Price risk: losses, quantiles, VaR and ES</h2>
+<section class="blk" id="var-es">
+  <h3>Large price rises are far more frequent than the normal curve allows</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=10" target="_blank" rel="noopener"><img src="slides/L4_tails_en.jpg" alt="Slide 10: Large price rises are far more frequent than the normal curve allows" loading="lazy"></a>
+      <figcaption>Slide 10</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ve-z">Zone</label><select id="ve-z"><option value="RO" selected>Romania</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="ve-p">Period</label><select id="ve-p"><option value="all" selected>2015–2026</option><option value="calm">2015–2020</option><option value="crisis">2021–2022</option><option value="after">2023–2026</option><option value="last">Last 365 days</option></select></div><div class="ctl"><label for="ve-a">Confidence level, α (%): <b id="ve-a-v"></b></label><input type="range" id="ve-a" min="90" max="99.5" step="0.5" value="99"></div><button class="btn play" id="ve-play" type="button"></button></div><div class="charts "><div class="chart" id="ve-hist"></div><div class="chart" id="ve-surv"></div></div><ul class="out" id="ve-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_tails" target="_blank" rel="noopener">EMQA_L4_tails</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_tails/EMQA_L4_tails.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> A normal curve fitted to the Romanian daily price changes of 2015–2026 puts the 99% quantile at 60.18 EUR/MWh. The empirical 99% quantile is 88.21 EUR/MWh. Why the gap?</div>
+  <details><summary>Answer</summary><p>The daily changes have fat tails: excess kurtosis 11.97, and 52 rises above three standard deviations against 5.82 expected under the normal law. The normal VaR therefore understates the extreme quantiles, and the gap widens as α grows. ES (the mean loss beyond VaR) reacts even more, because it averages the extreme days the normal curve misses. Choose the period 2021–2022 to see both measures on the crisis years, or the last 365 days for the current risk.</p></details>
+</section><h2 class="sec" id="s-est">Estimating VaR and ES: four methods</h2>
+<section class="blk" id="var-paths">
+  <h3>In the crisis FHS adapted within days; HS and the normal VaR lagged</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=19" target="_blank" rel="noopener"><img src="slides/L4_var_paths_en.jpg" alt="Slide 19: In the crisis FHS adapted within days; HS and the normal VaR lagged" loading="lazy"></a>
+      <figcaption>Slide 19</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="vp-m">Method</label><select id="vp-m"><option value="hs">HS, historical simulation</option><option value="normal">Normal</option><option value="t">Student-t</option><option value="fhs" selected>FHS, filtered historical simulation</option><option value="evt">EVT, extreme value theory</option></select></div><div class="ctl"><label for="vp-L">Window length</label><select id="vp-L"><option value="12">12 months</option><option value="24" selected>24 months</option></select></div><div class="ctl"><label for="vp-a">VaR level</label><select id="vp-a"><option value="0.95">95%</option><option value="0.99" selected>99%</option></select></div><div class="ctl"><label for="vp-y">Window starts in: <b id="vp-y-v"></b></label><input type="range" id="vp-y" min="2017" max="2025.75" step="0.25" value="2021.5"></div><button class="btn play" id="vp-play" type="button"></button></div><div class="charts one"><div class="chart" id="vp-chart"></div></div><ul class="out" id="vp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_var_paths" target="_blank" rel="noopener">EMQA_L4_var_paths</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_var_paths/EMQA_L4_var_paths.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> In July 2021–June 2023, a correct 99% VaR model should be exceeded on about 7 of the 730 days. How many exceedances do the normal model and filtered historical simulation (FHS) have?</div>
+  <details><summary>Answer</summary><p>The normal model is exceeded on 45 days, historical simulation (HS) on 28, FHS on 19 and EVT on 17 (expected 7.3). All methods were too low in the crisis, but FHS, which scales the residuals by a GARCH (generalised autoregressive conditional heteroskedasticity) volatility, reacts within days to a volatility jump, while HS and the normal model, with a 365-day window, adapt only slowly. The Kupiec test in the readout compares the exceedance rate of the window with 1 − α.</p></details>
+</section>
+<section class="blk" id="gpd-tail">
+  <h3>Above the threshold the Pareto curve follows the data; the normal curve does not</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L4_gpd_tail_en.jpg" alt="Slide 17: Above the threshold the Pareto curve follows the data; the normal curve does not" loading="lazy"></a>
+      <figcaption>Slide 17</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="gp-u">Threshold u: quantile of the standardised residuals (%): <b id="gp-u-v"></b></label><input type="range" id="gp-u" min="80" max="97" step="1" value="90"></div><button class="btn play" id="gp-play" type="button"></button></div><div class="charts "><div class="chart" id="gp-chart"></div><div class="chart" id="gp-q"></div></div><ul class="out" id="gp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_gpd_tail" target="_blank" rel="noopener">EMQA_L4_gpd_tail</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_gpd_tail/EMQA_L4_gpd_tail.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The generalised Pareto distribution (GPD) is fitted to the residuals above the threshold u. Does the estimated tail shape ξ depend on the choice of u?</div>
+  <details><summary>Answer</summary><p>Yes, and this is the main practical difficulty of extreme value theory (EVT): a low threshold gives many exceedances but mixes in the body of the distribution; a high threshold uses only a few dozen points and the estimate becomes noisy. Move u from 80% to 97% and watch ξ and the implied 99.9% quantile. In the lecture, the shape at the 90% threshold varies between −0.38 and 0.33 across the 171 refits since 2017, positive in 53% of them.</p></details>
+</section><h2 class="sec" id="s-bt">Backtesting: did the model keep its promise?</h2>
+<section class="blk" id="traffic-light">
+  <h3>The Basel traffic light: the normal VaR spent 30% of days in the red zone</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=25" target="_blank" rel="noopener"><img src="slides/L4_traffic_en.jpg" alt="Slide 25: The Basel traffic light: the normal VaR spent 30% of days in the red zone" loading="lazy"></a>
+      <figcaption>Slide 25</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="tl-m"><span class="lbl">Methods</span><div class="tgs"><label class="tg"><input type="checkbox" name="tl-m" value="hs" checked> HS</label><label class="tg"><input type="checkbox" name="tl-m" value="normal" checked> Normal</label><label class="tg"><input type="checkbox" name="tl-m" value="t"> Student-t</label><label class="tg"><input type="checkbox" name="tl-m" value="fhs" checked> FHS</label><label class="tg"><input type="checkbox" name="tl-m" value="evt"> EVT</label></div></div><div class="ctl"><label for="tl-w">Backtest window (days): <b id="tl-w-v"></b></label><input type="range" id="tl-w" min="100" max="500" step="25" value="250"></div><button class="btn play" id="tl-play" type="button"></button></div><div class="charts one"><div class="chart" id="tl-chart"></div></div><ul class="out" id="tl-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_traffic" target="_blank" rel="noopener">EMQA_L4_traffic</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_traffic/EMQA_L4_traffic.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Over 250 days, a correct 99% VaR model is in the green zone (at most 4 exceedances) 89.2% of the time. In which share of the days is the normal model in the red zone (10 or more)?</div>
+  <details><summary>Answer</summary><p>In 29.5% of the days since the backtest window filled (from September 2017), against 6.2% for FHS and 2.8% for EVT; a correct model would be red only 0.025% of the time. The zones are binomial quantiles: green while the cumulative probability of the count under a Binomial(n, 1%) law is below 95%, red from 99.99%. Change the window to see the thresholds scale with n.</p></details>
+</section><h2 class="sec" id="s-coll">From quantiles to margins, guarantees and limits</h2>
+<section class="blk" id="horizon">
+  <h3>The square-root-of-time rule overstates the 10-day risk</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L4_horizon_en.jpg" alt="Slide 20: The square-root-of-time rule overstates the 10-day risk" loading="lazy"></a>
+      <figcaption>Slide 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hz-z">Zone</label><select id="hz-z"><option value="RO" selected>Romania</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="hz-a">Quantile level (%): <b id="hz-a-v"></b></label><input type="range" id="hz-a" min="90" max="99.5" step="0.5" value="99"></div><div class="ctl"><label for="hz-h">Highlighted horizon, h (days): <b id="hz-h-v"></b></label><input type="range" id="hz-h" min="1" max="20" step="1" value="10"></div><button class="btn play" id="hz-play" type="button"></button></div><div class="charts "><div class="chart" id="hz-chart"></div><div class="chart" id="hz-vr"></div></div><ul class="out" id="hz-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_horizon" target="_blank" rel="noopener">EMQA_L4_horizon</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_horizon/EMQA_L4_horizon.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The square-root-of-time rule scales a 1-day VaR to 10 days by √10 = 3.16. What ratio do the Romanian prices show at the 99% level?</div>
+  <details><summary>Answer</summary><p>Only 1.72 (Germany–Luxembourg: 1.75). Daily price changes are negatively autocorrelated (ρ(1) = −0.076): a price spike is followed by a fall, so changes over several days partly cancel. The variance ratio at 10 days is 0.33, far below 1. The √h rule assumes independent changes and would overstate the 10-day VaR of a flat day-ahead position.</p></details>
+</section><h2 class="sec" id="s-pos">Supplier and producer: one price, two tails</h2>
+<section class="blk" id="supplier">
+  <h3>Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L4_supplier_month_en.jpg" alt="Slide 37: Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)" loading="lazy"></a>
+      <figcaption>Slide 37</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="sm-e">Limit estimated on data to the end of: <b id="sm-e-v"></b></label><input type="range" id="sm-e" min="2017" max="2025" step="1" value="2020"></div><div class="ctl"><label for="sm-a">Level of the limit (%): <b id="sm-a-v"></b></label><input type="range" id="sm-a" min="90" max="99.5" step="0.5" value="99"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_supplier_month" target="_blank" rel="noopener">EMQA_L4_supplier_month</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_supplier_month/EMQA_L4_supplier_month.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> A supplier budgets each month at the load-weighted price of the previous month. A normal 99% limit estimated on 2015–2020 puts the monthly cost overrun at 50.5%. How many months exceed it in 2021–2026?</div>
+  <details><summary>Answer</summary><p>Three months out of 70, against 0.7 expected; the worst is November 2024, +86.6% (about 5.96 million EUR for 100 MW shaped like the national load). The limit estimated on calm years is too tight for the crisis and after. Move the end of the estimation sample: a limit that includes 2021–2022 is wider, and the count of later exceedances falls.</p></details>
+</section>
+<p class="src foot">Day-ahead base prices: OPCOM PZU (Romania), EPEX SPOT (Germany–Luxembourg), via energy-charts.info (Fraunhofer ISE) and ENTSO-E (European Network of Transmission System Operators for Electricity); hourly load of Romania: ENTSO-E (Transelectrica data). Rolling one-day-ahead VaR forecasts from 2017-01-01: lectures/L4/analysis_L4.py (each forecast uses only the changes known the day before). Data to 2026-10-31, the cut-off of the lecture.</p>
+</main>
+</body>
+</html>

@@ -680,7 +680,7 @@ def build(lang, H=None):
             height="0.58\\textheight",
             job=t("a limit that jumps 30 days after a shock, with no news, is a warning sign of a historical-window model.",
                   "o limită care se modifică brusc la 30 de zile după un șoc, fără nicio informație nouă, trădează un model cu fereastră istorică."),
-            tryit=NB + " \\S7", cite=t("(" + OWN + ", " + TEST + ")", "(" + OWN + ", " + TEST + ")"))
+            tryit=NB + " \\S7", cite=t("(" + OWN + ", " + TEST + ")", "(" + OWN + ")"))   # RO: test year already in the source line; keeps the footer on one line
 
     BP, BE = "ts.brent.peak", "ts.brent.end"
     D.concept(t("Weeks ahead, volatility returns to its long-run level",
@@ -739,7 +739,7 @@ def build(lang, H=None):
             height="0.55\\textheight",
             job=t("a supplier can set its daily purchase limit from this band; the formal tests of such bands come in Lecture 4.",
                   "un furnizor își poate fixa limita zilnică de achiziție pe baza acestei benzi; testele formale ale acestor benzi se studiază în cursul 4."),
-            tryit=NB + " \\S8", cite=t("(" + OWN + ", " + TEST + ")", "(" + OWN + ", " + TEST + ")"))
+            tryit=NB + " \\S8", cite=t("(" + OWN + ", " + TEST + ")", "(" + OWN + ")"))   # RO: test year already in the source line; keeps the footer on one line
 
     D.chart(t("Case study: November 2026 limits and the April oil shock",
               "Studiu de caz: limitele pentru noiembrie 2026 și șocul din aprilie"),

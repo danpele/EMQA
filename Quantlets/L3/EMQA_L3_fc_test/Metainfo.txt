@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_fc_test'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Absolute daily EUR/MWh shocks of the Romanian base price over the test year 2025-11-01 to 2026-10-31 with the one-day-ahead GARCH(1,1)-t volatility forecast and the 30-day historical volatility, both re-estimated every day with the data up to the day before: GARCH reacts at once, the 30-day history lags and then forgets the shock abruptly 30 days later.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, GARCH, volatility forecasting, historical volatility, out-of-sample, rolling window'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; garch_t_rolling_eur.csv (in this Quantlet): the 365 rolling one-day-ahead GARCH(1,1)-t and 30-day historical variance forecasts, computed from these prices'
+
+Output: 'fc_test.png'

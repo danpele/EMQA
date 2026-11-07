@@ -191,6 +191,8 @@
 % link to code: \quantlet{label}{path inside the repo}
 \newcommand{\quantlet}[2]{\par\vspace{1pt}\hfill\href{\emqarepo/#2}{%
   \raisebox{-0.15em}{\includegraphics[height=0.75em]{ql_logo.png}}\textcolor{MainBlue}{\scriptsize\ #1}}}
+% inline Quantlet link for the bottom-right corner of a frame: \qlink{label}{path inside the repo}
+\newcommand{\qlink}[2]{{\scriptsize\href{\emqarepo/#2}{\raisebox{-0.15em}{\includegraphics[height=0.85em]{ql_logo.png}}\,\textcolor{MainBlue}{#1}}}}
 \newcommand{\simlabel}{\colorbox{Crimson!12}{\scriptsize\bfseries\color{Crimson}\txtsim}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Var}{\operatorname{Var}}

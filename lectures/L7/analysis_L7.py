@@ -940,12 +940,13 @@ N["case"]["res_d_h"] = fl(R_[IDX[CDAY], kh], 0)
 PF = {"honest": M["xgb"], "leak": vstack_blocks(C["xgb_leak"]), "shuffled": C["xgb_shuffled"][rows_all],
       "quarterly": vstack_blocks(C["xgb_quarterly"]), "once": vstack_blocks(C["xgb_once"]),
       "roll365": vstack_blocks(C["xgb_roll365"]), "roll730": vstack_blocks(C["xgb_roll730"])}
-N["pit"] = {k: fl(acc(v)["mae"], 2) for k, v in PF.items()}
-N["pit"]["leak_gain"] = fl((1 - N["pit"]["leak"] / N["pit"]["honest"]) * 100, 1)
-N["pit"]["shuf_gain"] = fl((1 - N["pit"]["shuffled"] / N["pit"]["honest"]) * 100, 1)
+PIT_RAW = {k: acc(v)["mae"] for k, v in PF.items()}            # unrounded MAEs: the percentages below use these
+N["pit"] = {k: fl(v, 2) for k, v in PIT_RAW.items()}
+N["pit"]["leak_gain"] = fl((1 - PIT_RAW["leak"] / PIT_RAW["honest"]) * 100, 1)
+N["pit"]["shuf_gain"] = fl((1 - PIT_RAW["shuffled"] / PIT_RAW["honest"]) * 100, 1)
 N["pit"]["leak_rmae"] = fl(N["pit"]["leak"] / NAIVE_MAE, 3)
 N["pit"]["shuf_rmae"] = fl(N["pit"]["shuffled"] / NAIVE_MAE, 3)
-N["pit"]["once_loss"] = fl((N["pit"]["once"] / N["pit"]["honest"] - 1) * 100, 1)
+N["pit"]["once_loss"] = fl((PIT_RAW["once"] / PIT_RAW["honest"] - 1) * 100, 1)
 N["pit"]["n_quarters"] = len(C["xgb_quarterly"])
 sl_q = [np.mean(np.abs(A[TM == mm] - PF["once"][TM == mm])) - np.mean(np.abs(A[TM == mm] - PF["honest"][TM == mm])) for mm in MONTHS_T]
 N["pit"]["once_last_q"] = fl(np.mean(sl_q[-3:]), 2)

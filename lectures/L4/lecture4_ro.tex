@@ -131,7 +131,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un furnizor care cumpără zilnic 100 MW în bandă pe PZU și își bugetează costul la prețul de ieri pierde 2.400 EUR pentru fiecare creștere de 1 EUR/MWh.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; EPEX SPOT; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 1}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; EPEX SPOT; calcule proprii)}\hfill\qlink{EMQA\_L4\_price\_changes}{Quantlets/L4/EMQA_L4_price_changes}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Valoarea la risc este o cuantilă a pierderii de mîine}
@@ -212,7 +212,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{o limită calculată cu repartiția normală subestimează frecvența zilelor de criză (cursul 1).}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, 1 ianuarie 2015 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, 1 ianuarie 2015 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L4\_tails}{Quantlets/L4/EMQA_L4_tails}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{O limită calculată în 2020 cu repartiția normală a fost depășită în 2021--2022 de 19 ori mai des decît se prevedea}
@@ -409,7 +409,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Curba normală o consideră practic imposibilă.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Balkema \& de Haan, 1974; McNeil \& Frey, 2000)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Balkema \& de Haan, 1974; McNeil \& Frey, 2000)}\hfill\qlink{EMQA\_L4\_gpd\_tail}{Quantlets/L4/EMQA_L4_gpd_tail}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Compararea metodelor}
@@ -450,7 +450,7 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{într-o criză, un model care reacționează în cîteva zile protejează lichiditățile.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii)}\hfill\qlink{EMQA\_L4\_var\_paths}{Quantlets/L4/EMQA_L4_var_paths}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile}
@@ -468,7 +468,7 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Înmulțirea cu $\sqrt{10}$ blochează capital inutil.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; Weron, 2014, IJF)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; Weron, 2014, IJF)}\hfill\qlink{EMQA\_L4\_horizon}{Quantlets/L4/EMQA_L4_horizon}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -575,7 +575,7 @@ EVT & \cellcolor{Forest!40}5{,}55 & 0{,}139 & 49 & \cellcolor{Forest!36}1{,}37 &
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{zona galbenă cere recalibrarea modelului, iar cea roșie oprirea lui pentru limite.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(BCBS, 1996)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(BCBS, 1996)}\hfill\qlink{EMQA\_L4\_traffic}{Quantlets/L4/EMQA_L4_traffic}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{În 2021--2022 toate metodele au eșuat; din 2023, metodele filtrate au revenit aproape de 1\%}
@@ -708,7 +708,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{planificați lichiditățile pentru marja cerută într-o criză, nu pentru marja de astăzi.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; RTS EMIR, art.~28; Brent ICE)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; RTS EMIR, art.~28; Brent ICE)}\hfill\qlink{EMQA\_L4\_brent\_im}{Quantlets/L4/EMQA_L4_brent_im}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Garanții și limite}
@@ -758,7 +758,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{o prognoză folosită pentru garanții trebuie să fie calibrată în coadă, nu doar precisă în medie.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2018, RSER; Romano et al., 2019)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2018, RSER; Romano et al., 2019)}\hfill\qlink{EMQA\_L4\_coverage}{Quantlets/L4/EMQA_L4_coverage}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Limita de poziție în MW trebuie să scadă atunci cînd VaR crește}
@@ -845,7 +845,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{reestimați limita lunară în fiecare trimestru și testați-o în condițiile lunilor din 2022.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii)}\hfill\qlink{EMQA\_L4\_supplier\_month}{Quantlets/L4/EMQA_L4_supplier_month}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Același preț, două cozi: coada furnizorului este mai groasă decît a producătorului}
@@ -916,7 +916,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{o creștere lentă trece testele VaR, dar consumă lichidități: urmăriți și nivelul prețului.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii; OPCOM)}\hfill\tryit{notebook-ul Jupyter, secțiunea 8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii; OPCOM)}\hfill\qlink{EMQA\_L4\_case2026}{Quantlets/L4/EMQA_L4_case2026}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiu de caz: în 2026 pericolul a fost lipsa de lichidități, nu VaR zilnică}

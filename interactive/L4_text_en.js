@@ -1,0 +1,28 @@
+// Readouts of the Lecture 4 interactive page, written by lectures/L4/build_interactive_L4.py.
+window.LK_TEXT = {
+ eur: 'EUR/MWh', count: 'Days', change: 'Daily change X (EUR/MWh)', z: 'z (standard deviations)', surv: 'Share of days with X > z·σ (log scale)',
+ emp: 'Empirical', normal: 'Normal', varE: 'VaR, empirical', varN: 'VaR, normal', esE: 'ES, empirical',
+ per: { all: '2015–2026', calm: '2015–2020', crisis: '2021–2022', after: '2023–2026', last: 'last 365 days' },
+ ve: (z, p, n, a, ve, vn, ee, en) => `${z}, ${p} (${window.EMQAI.cnt(n, 'day', 'days')}): ${a} VaR ${ve} EUR/MWh empirical, ${vn} normal; ES ${ee} empirical, ${en} normal.`,
+ ve2: (k, e, eur) => `Days above the normal VaR: ${k} (expected ${e}). For 100 MW flat (2,400 MWh a day), the empirical VaR is ${eur} EUR a day.`,
+ meth: { hs: 'HS', normal: 'Normal', t: 'Student-t', fhs: 'FHS', evt: 'EVT' },
+ actual: 'Daily change X', exc: 'Exceedances', varLab: (m, a) => `${m} VaR ${a}`,
+ vp: (d0, d1, m, a, k, n, e, p) => `${d0} to ${d1}: ${m} ${a} VaR exceeded on ${k} of ${n} days (expected ${e}); Kupiec test p = ${p}.`,
+ vp2: (m, v) => `Mean ${m} VaR in the window: ${v} EUR/MWh.`,
+ gpTitle: 'Upper tail of the standardised residuals', gpQ: 'Quantiles implied by each model', resid: 'Standardised residual z', pex: 'P(Z > z) (log scale)',
+ gpd: 'GPD fit', level: 'Level', quant: 'Quantile of z',
+ gp: (u, uq, n, xi, b) => `Threshold u = ${u} (${uq} quantile), ${window.EMQAI.cnt(n, 'exceedance', 'exceedances')}; GPD shape ξ = ${xi}, scale β = ${b}.`,
+ gp2: (e, g, nn) => `99.9% quantile of z: ${e} empirical, ${g} GPD, ${nn} normal.`,
+ gp3: (n, d0, d1) => `GARCH-filtered residuals of the last ${n} days, ${d0} to ${d1}.`,
+ tlTitle: w => `Exceedances of the 99% VaR in the last ${w} days`, cntL: 'Exceedances',
+ green: 'green', yellow: 'yellow', red: 'red',
+ tl: (w, g, r) => `Window ${w} days: green up to ${g} exceedances, red from ${r} (cumulative Binomial(${w}, 1%) probability below 95% and from 99.99%).`,
+ tlRow: (m, sg, sy, sr, mx) => `${m}: green ${sg}, yellow ${sy}, red ${sr} of the days; maximum ${mx} exceedances.`,
+ hzTitle: 'q(h) / q(1): empirical vs √h', hzVr: 'Variance ratio Var(h-day) / (h · Var(1-day))', h: 'Horizon h (days)',
+ sqrt: '√h rule', emp2: 'Empirical ratio',
+ hz: (z, a, h, r, s, q1, qh) => `${z}, ${a} quantile: ${h}-day ratio ${r} against √h = ${s}; 1-day quantile ${q1}, ${h}-day ${qh} EUR/MWh.`,
+ hz2: (h, vr, r1) => `Variance ratio at ${h} days: ${vr}; first-order autocorrelation of the daily change ${r1}.`,
+ smTitle: 'Monthly cost overrun of the supplier (%)', overrun: 'Overrun vs last month', limit: 'Normal limit', est: 'Estimation sample',
+ sm: (y, a, m, s, l) => `Sample 2015-03 to ${y}-12: mean ${m}%, standard deviation ${s}%; normal ${a} limit ${l}%.`,
+ sm2: (n, k, e, w, wp, we) => `After the sample: ${k} of ${n} months above the limit (expected ${e}); worst month ${w}, +${wp}% (${we} million EUR for 100 MW).`
+};

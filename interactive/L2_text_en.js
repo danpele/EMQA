@@ -1,0 +1,28 @@
+// Readouts of the Lecture 2 interactive page, written by lectures/L2/build_interactive_L2.py.
+window.LK_TEXT = {
+ eur: 'EUR/MWh', hour: 'Hour of the day (CET)', month: 'Month', day: 'Day of the test year',
+ lab: { naive: 'Naive', snaive: 'Seasonal naive', arx728: 'ARX(728)', arx728_single: 'ARX(728), single regression', aw_arx: 'AW-ARX',
+        lear728: 'LEAR(728)', aw_lear: 'AW-LEAR', gbm: 'GBM', mlp: 'MLP', ens_all: 'Ensemble of 4 models' },
+ mpBar: 'Error measures', mpApe: 'Absolute percentage error (APE) by actual price, log scale', ape: 'APE (%)', absp: 'Actual price (EUR/MWh)',
+ mp: (m, x, n, mae, mape, smape) => `${m}, hours with |price| ≥ ${x} EUR/MWh: ${n}. MAE ${mae} EUR/MWh, MAPE ${mape}%, sMAPE ${smape}%.`,
+ mp2: n => `${n} excluded.`,
+ dmDiff: 'Daily loss differential d_t (A − B)', dmCum: 'Cumulative sum of d_t', dt: 'd_t',
+ dm: (a, b, mA, mB, s, p, L) => `${a}: mean loss ${mA}; ${b}: ${mB}. DM = ${s} (Newey–West, ${L} lags), one-sided p ${p} for H₁: B is more accurate than A.`,
+ dmSame: 'Choose two different models.',
+ dmV: (p) => p < 0.05 ? 'At 5%, B is significantly more accurate than A.' : 'At 5%, there is no significant evidence that B is more accurate than A.',
+ phTitle: e => `${e === 'mae' ? 'MAE' : 'RMSE'} by hour of the day (EUR/MWh)`,
+ ph: (m, v, hw, w, hb, b) => `${m}: ${v} over the period; worst hour ${hw}:00 (${w}), best ${hb}:00 (${b}).`,
+ phCmp: n => `ARX(728) with a single regression is worse than ARX(728) with one regression per hour in ${n} of the 24 hours.`,
+ wnTitle: f => `MAE of ${f.toUpperCase()} by calibration window and of their average (EUR/MWh)`, win: 'Calibration window (days)', avg: 'Average',
+ wn: (f, list, m, best, bm) => `AW-${f.toUpperCase()} over ${list} days: MAE ${m} EUR/MWh; best single window ${best} days (${bm}).`,
+ wnNone: 'Tick at least one window of this family.',
+ wnGain: (g, s) => g > 0 ? `The average is ${s} EUR/MWh below the best window it contains.` : `The average is ${s} EUR/MWh above the best window it contains.`,
+ mmTitle: r => r === 'abs' ? 'MAE by month (EUR/MWh)' : 'MAE relative to the naive forecast, by month', mmRel: 'rMAE',
+ mm: (m, v, wm, w, bm, b) => `${m}: year ${v}; worst month ${wm} (${w}), best ${bm} (${b}).`,
+ qrFan: (d0, d1) => `QRA intervals and actual price, ${d0} – ${d1}`, qrRel: 'Reliability: share of prices below the quantile minus τ (pp)',
+ nominal: 'Nominal level of the quantile τ (%)', empirical: 'Empirical share − τ (pp)', actual: 'Actual price', median: 'Median', diag: 'Perfect calibration',
+ lvl: [50, 80, 90, 98],
+ qr: (c, h, cov, w) => `${c}% interval, ${h}: coverage ${cov}%, mean width ${w} EUR/MWh.`,
+ qrWeek: (cov) => `In the week shown, the interval contains ${cov}% of the 168 prices.`,
+ all: 'all hours'
+};

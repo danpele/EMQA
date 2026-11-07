@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L7_roc'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Receiver operating characteristic (ROC) curves of four scores for price spikes and for prices <= 0: XGBoost and logistic classifiers refitted monthly, persistence (share of events at the same hour in the last 7 days) and the AW-LEAR point forecast. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31, 8760 hours. Data: test year 2025-11-01 to 2026-10-31, 8760 hours. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+
+Keywords: 'ROC curve, AUC, classification, price spikes, negative prices, XGBoost, logistic regression, persistence, electricity price'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year probabilities of the XGBoost and logistic classifiers and the AW-LEAR forecasts (roc_results.npz)'
+
+Output: 'roc.png'

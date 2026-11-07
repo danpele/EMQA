@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_prob_rel'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Reliability of three probabilistic forecasts of the Romanian day-ahead price on the test year (99 quantiles each): share of actual prices below the tau-quantile minus tau, for quantile regression averaging (QRA), conformal prediction (CP) and historical simulation (HS); all three are too narrow in the tails. The Kupiec statistic tests the coverage of the 90% interval. Data: test year 2025-11-01 to 2026-10-31, 99 quantiles. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'probabilistic forecasting, reliability, calibration, quantile regression averaging, conformal prediction, historical simulation, Kupiec test, pinball loss, electricity price, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR forecasts of the burn-in and test days (forecasts.csv) and QRA quantiles of the test year (qra_test.npz, single precision), from lectures/L2/analysis_L2.py'
+
+Output: 'prob_rel.png'

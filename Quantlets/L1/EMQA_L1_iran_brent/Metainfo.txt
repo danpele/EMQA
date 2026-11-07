@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_iran_brent'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Brent front-month daily close from 2 June to 4 July 2025, with the Israeli strikes on Iran (13 June), the peak close and the ceasefire (24 June); prints the one-day jump, its size in 2024 standard deviations and the reversal. Data: 2025-06-02 to 2025-07-04, trading days. Source: Yahoo Finance (BZ=F).'
+
+Keywords: 'event study, geopolitical risk, Brent, crude oil, Iran, Israel, price shock, case study'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
+
+Output: 'iran_brent.png'

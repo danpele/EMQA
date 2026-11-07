@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 2 · Forecasting day-ahead electricity prices</title>
+<meta name="description" content="Energy Markets Quantitative Analysis: Lecture 2 · Forecasting day-ahead electricity prices">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'en';</script>
+<link rel="preload" as="script" href="L2.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261107a", "L2_text_en.js?v=20261107a", "common.js?v=20261107a"], "L2.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index.html">Energy Markets Quantitative Analysis</a></h1><p>Lecture 2 · Forecasting day-ahead electricity prices</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Romanian Academy, Institute for Economic Forecasting"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index.html#chapters">← Course site</a></li>
+  <li><a href="../lectures/L2/lecture2.pdf" target="_blank" rel="noopener">Lecture PDF</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L2.html" class="lang-btn active">EN</a><a href="L2_ro.html" class="lang-btn">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the forecasts of the lecture when you move a control. The ▶ button moves the main parameter step by step. Test year: 1 November 2025 – 31 October 2026 (365 days × 24 hours, Romanian day-ahead market, OPCOM PZU). Under each figure: a readout, a question for the room and the Quantlet with the code of the chart.</p>
+<p class="toc"><a href="#s-bench">The forecasting problem and its benchmarks</a> · <a href="#s-expert">Expert models: ARX and LEAR</a> · <a href="#s-win">Windows, combinations and machine learning</a> · <a href="#s-prob">Probabilistic forecasts and cointegration</a> · <a href="#s-case">Case studies on recent Romanian data</a></p>
+<h2 class="sec" id="s-bench">The forecasting problem and its benchmarks</h2>
+<section class="blk" id="mape">
+  <h3>Why percentage errors fail near zero and negative prices</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=15" target="_blank" rel="noopener"><img src="slides/L2_mape_fail_en.jpg" alt="Slide 15: Why percentage errors fail near zero and negative prices" loading="lazy"></a>
+      <figcaption>Slide 15</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="mp-x">Exclude hours with |price| below (EUR/MWh): <b id="mp-x-v"></b></label><input type="range" id="mp-x" min="0" max="30" step="1" value="0"></div><div class="ctl"><label for="mp-m">Model</label><select id="mp-m"><option value="naive">Naive</option><option value="snaive">Seasonal naive</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear" selected>AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ensemble of 4 models</option></select></div><button class="btn play" id="mp-play" type="button"></button></div><div class="charts "><div class="chart" id="mp-chart"></div><div class="chart" id="mp-ape"></div></div><ul class="out" id="mp-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_mape_fail" target="_blank" rel="noopener">EMQA_L2_mape_fail</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_mape_fail/EMQA_L2_mape_fail.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The test year has 8,760 hours. The MAPE of AW-LEAR is above 5,700%, its MAE 22.53 EUR/MWh. Is the model really that bad?</div>
+  <details><summary>Answer</summary><p>No. The percentage error divides by the actual price, and 387 hours have |price| below 5 EUR/MWh (60 are exactly zero, 195 are negative). These hours produce 99.5% of the MAPE; excluding them, the MAPE of AW-LEAR falls to 32.4%. Move the slider: the MAE and the sMAPE hardly change, the MAPE collapses. With prices near zero, MAE, RMSE and the relative MAE (rMAE, MAE divided by the MAE of the naive forecast) are the measures to report.</p></details>
+</section>
+<section class="blk" id="dm-test">
+  <h3>The DM chessboard: which model beats which on the Romanian test year</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L2_dm_matrix_en.jpg" alt="Slide 17: The DM chessboard: which model beats which on the Romanian test year" loading="lazy"></a>
+      <figcaption>Slide 17</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="dm-a">Model A (row)</label><select id="dm-a"><option value="naive" selected>Naive</option><option value="snaive">Seasonal naive</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear">AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ensemble of 4 models</option></select></div><div class="ctl"><label for="dm-b">Model B (column)</label><select id="dm-b"><option value="naive">Naive</option><option value="snaive">Seasonal naive</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear" selected>AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ensemble of 4 models</option></select></div><div class="ctl"><label for="dm-l">Loss</label><select id="dm-l"><option value="abs" selected>Absolute error</option><option value="sq">Squared error</option></select></div><div class="ctl"><label for="dm-L">Newey–West lags: <b id="dm-L-v"></b></label><input type="range" id="dm-L" min="0" max="21" step="1" value="7"></div><button class="btn play" id="dm-play" type="button"></button></div><div class="charts "><div class="chart" id="dm-diff"></div><div class="chart" id="dm-cum"></div></div><ul class="out" id="dm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_dm_matrix" target="_blank" rel="noopener">EMQA_L2_dm_matrix</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_dm_matrix/EMQA_L2_dm_matrix.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> AW-LEAR has an MAE of 22.53 EUR/MWh, the naive forecast 27.82. Is the difference significant, and is AW-LEAR significantly better than AW-ARX (22.30)?</div>
+  <details><summary>Answer</summary><p>The first yes, the second no. The DM test works on the daily loss differential d_t (mean over the 24 hours of |e_A| − |e_B|) with a Newey–West variance (7 lags): naive vs AW-LEAR gives DM = 7.32, one-sided p < 0.001; AW-ARX vs AW-LEAR gives DM = −0.83, p = 0.80, so AW-LEAR is not more accurate than AW-ARX. Change the loss to squared errors or the number of lags: the sign of the conclusion for naive vs AW-LEAR does not change; for close models it can.</p></details>
+</section><h2 class="sec" id="s-expert">Expert models: ARX and LEAR</h2>
+<section class="blk" id="per-hour">
+  <h3>One model per hour beats one model for all hours</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L2_per_hour_single_en.jpg" alt="Slide 22: One model per hour beats one model for all hours" loading="lazy"></a>
+      <figcaption>Slide 22</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="ph-m"><span class="lbl">Models</span><div class="tgs"><label class="tg"><input type="checkbox" name="ph-m" value="naive" checked> Naive</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728" checked> ARX(728)</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728_single" checked> ARX(728), single regression</label><label class="tg"><input type="checkbox" name="ph-m" value="aw_lear"> AW-LEAR</label><label class="tg"><input type="checkbox" name="ph-m" value="gbm"> GBM</label><label class="tg"><input type="checkbox" name="ph-m" value="ens_all"> Ensemble of 4 models</label></div></div><div class="ctl"><label for="ph-q">Period</label><select id="ph-q"><option value="all" selected>Whole test year</option><option value="win">Winter (Dec–Feb)</option><option value="spr">Spring (Mar–May)</option><option value="sum">Summer (Jun–Aug)</option><option value="aut">Autumn (Sep–Nov)</option></select></div><div class="ctl"><label for="ph-e">Measure</label><select id="ph-e"><option value="mae" selected>MAE</option><option value="rmse">RMSE</option></select></div></div><div class="charts one"><div class="chart" id="ph-chart"></div></div><ul class="out" id="ph-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_per_hour_single" target="_blank" rel="noopener">EMQA_L2_per_hour_single</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_per_hour_single/EMQA_L2_per_hour_single.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> ARX(728) estimates one regression per hour (24 models); the single-regression version uses common slopes and only hour-specific intercepts. In how many hours is the single regression worse?</div>
+  <details><summary>Answer</summary><p>In 21 of the 24 hours. Its MAE over the year is 24.54 EUR/MWh, against 22.72 for ARX(728) with one regression per hour: each hour has its own dynamics (night hours follow the previous day closely, the solar hours depend more on renewables). The errors of all models peak in the evening: AW-LEAR has its worst hour at 19:00 (34.52 EUR/MWh) and its best at 01:00 (9.47).</p></details>
+</section><h2 class="sec" id="s-win">Windows, combinations and machine learning</h2>
+<section class="blk" id="windows">
+  <h3>Averaging across windows beats the best single window</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L2_windows_en.jpg" alt="Slide 28: Averaging across windows beats the best single window" loading="lazy"></a>
+      <figcaption>Slide 28</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="wn-f">Model family</label><select id="wn-f"><option value="arx" selected>ARX</option><option value="lear">LEAR</option></select></div><div class="ctl ctl-tg" id="wn-w"><span class="lbl">Windows in the average (days)</span><div class="tgs"><label class="tg"><input type="checkbox" name="wn-w" value="56" checked> 56</label><label class="tg"><input type="checkbox" name="wn-w" value="84" checked> 84</label><label class="tg"><input type="checkbox" name="wn-w" value="112" checked> 112</label><label class="tg"><input type="checkbox" name="wn-w" value="364" checked> 364</label><label class="tg"><input type="checkbox" name="wn-w" value="546" checked> 546</label><label class="tg"><input type="checkbox" name="wn-w" value="714" checked> 714</label><label class="tg"><input type="checkbox" name="wn-w" value="721" checked> 721</label><label class="tg"><input type="checkbox" name="wn-w" value="728" checked> 728</label></div></div></div><div class="charts one"><div class="chart" id="wn-chart"></div></div><ul class="out" id="wn-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_windows" target="_blank" rel="noopener">EMQA_L2_windows</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_windows/EMQA_L2_windows.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> ARX with a 56-day window has an MAE of 24.44 EUR/MWh, with 728 days 22.72. Does the average of the forecasts across the six ARX windows beat the best single window?</div>
+  <details><summary>Answer</summary><p>Yes. AW-ARX, the average across the windows 56, 84, 112, 714, 721 and 728 days, has an MAE of 22.30 EUR/MWh, below every single window (best: 714 days, 22.68). Short windows adapt quickly to new price levels, long ones estimate the coefficients precisely; their errors are not perfectly correlated, so averaging reduces the error. Untick windows to see which combinations still help. For LEAR, the average of 364, 546 and 728 days (22.53) also beats each window (best: 728 days, 22.62).</p></details>
+</section><h2 class="sec" id="s-prob">Probabilistic forecasts and cointegration</h2>
+<section class="blk" id="qra">
+  <h3>All three methods are too narrow in the tails</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=38" target="_blank" rel="noopener"><img src="slides/L2_prob_rel_en.jpg" alt="Slide 38: All three methods are too narrow in the tails" loading="lazy"></a>
+      <figcaption>Slide 38</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="qr-c">Nominal level of the interval (%): <b id="qr-c-v"></b></label><input type="range" id="qr-c" min="0" max="3" step="1" value="2"></div><div class="ctl"><label for="qr-w">Week shown (starts on day): <b id="qr-w-v"></b></label><input type="range" id="qr-w" min="0" max="358" step="7" value="182"></div><div class="ctl"><label for="qr-h">Hour for the coverage</label><select id="qr-h"><option value="all" selected>All hours</option><option value="0">00:00</option><option value="1">01:00</option><option value="2">02:00</option><option value="3">03:00</option><option value="4">04:00</option><option value="5">05:00</option><option value="6">06:00</option><option value="7">07:00</option><option value="8">08:00</option><option value="9">09:00</option><option value="10">10:00</option><option value="11">11:00</option><option value="12">12:00</option><option value="13">13:00</option><option value="14">14:00</option><option value="15">15:00</option><option value="16">16:00</option><option value="17">17:00</option><option value="18">18:00</option><option value="19">19:00</option><option value="20">20:00</option><option value="21">21:00</option><option value="22">22:00</option><option value="23">23:00</option></select></div><button class="btn play" id="qr-play" type="button"></button></div><div class="charts "><div class="chart" id="qr-fan"></div><div class="chart" id="qr-rel"></div></div><ul class="out" id="qr-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_prob_rel" target="_blank" rel="noopener">EMQA_L2_prob_rel</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_prob_rel/EMQA_L2_prob_rel.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> The 90% QRA interval (built from the AW-ARX and AW-LEAR forecasts) should contain the price in 90% of the hours. How often does it in the test year?</div>
+  <details><summary>Answer</summary><p>In 85.67% of the hours, below 90%: the interval is too narrow, and the Kupiec test (a likelihood-ratio test of the share of hours outside the interval) rejects correct coverage (p < 0.001). The 50% interval covers 47.3%. The reliability chart shows, for each quantile level τ, the share of prices below the quantile minus τ, in percentage points (pp): above zero in the lower tail and below zero in the upper tail, so extreme prices are more frequent than the model expects. Choose an hour: the evening hours have the widest intervals.</p></details>
+</section><h2 class="sec" id="s-case">Case studies on recent Romanian data</h2>
+<section class="blk" id="monthly">
+  <h3>Case study (a): a year of forecasts, month by month</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=44" target="_blank" rel="noopener"><img src="slides/L2_monthly_mae_en.jpg" alt="Slide 44: Case study (a): a year of forecasts, month by month" loading="lazy"></a>
+      <figcaption>Slide 44</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="mm-m"><span class="lbl">Models</span><div class="tgs"><label class="tg"><input type="checkbox" name="mm-m" value="naive" checked> Naive</label><label class="tg"><input type="checkbox" name="mm-m" value="aw_arx"> AW-ARX</label><label class="tg"><input type="checkbox" name="mm-m" value="aw_lear" checked> AW-LEAR</label><label class="tg"><input type="checkbox" name="mm-m" value="gbm"> GBM</label><label class="tg"><input type="checkbox" name="mm-m" value="mlp"> MLP</label><label class="tg"><input type="checkbox" name="mm-m" value="ens_all" checked> Ensemble of 4 models</label></div></div><div class="ctl"><label for="mm-r">Scale</label><select id="mm-r"><option value="abs" selected>MAE (EUR/MWh)</option><option value="rel">MAE relative to naive (rMAE)</option></select></div></div><div class="charts one"><div class="chart" id="mm-chart"></div></div><ul class="out" id="mm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_monthly_mae" target="_blank" rel="noopener">EMQA_L2_monthly_mae</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_monthly_mae/EMQA_L2_monthly_mae.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Question for the room</span> Is AW-LEAR better than the naive forecast in every month of the test year, and is the ensemble of four models always better than AW-LEAR?</div>
+  <details><summary>Answer</summary><p>AW-LEAR beats the naive forecast in all 12 months; the ensemble (mean of AW-ARX, AW-LEAR, GBM and MLP) beats AW-LEAR in 8 of the 12 months. The error level moves a lot between months: AW-LEAR has 12.84 EUR/MWh in December 2025 and 34.88 in October 2026. Switch to the relative MAE: the ranking of the models is more stable than the level of their errors.</p></details>
+</section>
+<p class="src foot">Prices: OPCOM PZU (Romanian day-ahead market) via energy-charts.info (Fraunhofer ISE); delivery day in Central European Time (CET/CEST), 24 hourly values per day (the 15-minute prices from 1 October 2025 are averaged to the hour). Forecasts: the models of Lecture 2, re-estimated every day of the test year with data available at gate closure (Quantlets EMQA_L2_*). Abbreviations: MAE mean absolute error, RMSE root mean squared error, MAPE mean absolute percentage error, sMAPE symmetric MAPE, ARX autoregressive model with exogenous inputs, LEAR lasso-estimated autoregressive model, AW average across calibration windows, GBM gradient boosting machine, MLP multilayer perceptron, DM Diebold–Mariano, QRA quantile regression averaging.</p>
+</main>
+</body>
+</html>

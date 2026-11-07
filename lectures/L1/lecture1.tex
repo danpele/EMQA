@@ -97,7 +97,6 @@ YTD & year to date\\\end{tabular}}\end{column}
 % END-ABBR
 
 \begin{frame}{Real data only: what we use and where it ends}
-\framesubtitle{\hfill\tryit{notebook \S1}}
 \small
 
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
@@ -120,6 +119,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
   \item Missing values stay missing: never interpolated, never counted as zero, and coverage is always reported.
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -128,7 +128,6 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \subsection{How the day-ahead auction works}
 
 \begin{frame}{One auction, one price per quarter-hour: where supply meets demand}
-\framesubtitle{(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}
 \footnotesize
 \intuition{Sellers and buyers send price--quantity bids; the exchange finds the price at which energy offered equals energy demanded, and every accepted trade is paid that single price.}
 \begin{columns}[T,onlytextwidth]
@@ -156,10 +155,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \end{column}
 \end{columns}
 \par\vfill\manager{on PZU a supplier pays the price of the most expensive plant needed, not the average cost.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{The merit order: how the price is formed}
-\framesubtitle{(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Supply}: sell offers sorted from cheapest to dearest
@@ -184,12 +183,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{the price of a quarter-hour is the cost of its most expensive accepted offer, not the average cost of the system.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{The merit order on real OPCOM curves, 21 Oct 2026}
-\framesubtitle{(OPCOM, PZU aggregated curves)\hfill\tryit{notebook \S1}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.481\textheight,keepaspectratio]{charts/en/merit_opcom.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.472\textheight,keepaspectratio]{charts/en/merit_opcom.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM, PZU aggregated curves. Data: 2026-10-21, Romanian time; quantities include blocks, hourly orders and net flows.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -203,10 +202,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a buyer who can shift consumption from evening to midday pays the lower clearing price.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, PZU aggregated curves)}\hfill\qlink{EMQA\_L1\_merit\_opcom}{Quantlets/L1/EMQA_L1_merit_opcom}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{One delivery day, step by step}
-\framesubtitle{(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}
 \footnotesize
 
 \begin{center}
@@ -233,10 +232,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a trader hedges forward, bids on PZU before 13:00 Bucharest time, fixes forecast errors intraday and pays what is left as imbalance.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Who sets the rules: operators, regulators, price limits, disclosure}
-\framesubtitle{(OPCOM; ANRE; ACER; Regulation (EU) 1227/2011)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Who is who}
@@ -261,12 +260,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item An unplanned outage announced in time changes the PZU price.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; ANRE; ACER; Regulation (EU) 1227/2011)}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Market coupling and the 15-minute market time unit}
 
 \begin{frame}{Coupling lets power flow to the higher price until the network limit binds}
-\framesubtitle{(Weron, 2014, IJF; JAO; Core flow-based market coupling)}
 \footnotesize
 \intuition{Europe runs one joint day-ahead auction; cheap zones export to expensive ones until a network limit binds, and only then do prices differ.}
 \begin{columns}[T,onlytextwidth]
@@ -300,12 +299,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \end{column}
 \end{columns}
 \par\vfill\manager{a trader on RO--HU flows earns the price spread only when cross-border capacity binds.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; JAO; Core flow-based market coupling)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Ten years of coupling: from four countries to one European auction}
-\framesubtitle{(OPCOM press releases 2019--2025; IBEX/OPCOM, 27 Oct 2021; JAO)}
 \small
-\vspace{3mm}\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
+\vspace{0.5mm}\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
 \draw[-{Latex},thick,MainBlue] (0,0) -- (14.1,0);
 \fill[MainBlue] (1.10,0) circle (2.2pt);\draw[MainBlue] (1.10,0) -- (1.10,0.63);
 \node[align=center,text width=2.25cm,font=\scriptsize] at (1.10,1.15) {\textbf{2014}\\ Romania coupled with Czechia, Slovakia, Hungary (4M Market Coupling)};
@@ -322,7 +321,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \fill[MainBlue] (13.10,0) circle (2.2pt);\draw[MainBlue] (13.10,0) -- (13.10,0.63);
 \node[align=center,text width=2.25cm,font=\scriptsize] at (13.10,1.15) {\textbf{1 Oct 2025}\\ 15-minute market time unit in SDAC};
 \end{tikzpicture}\end{center}
-\vspace{2mm}
+\vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item Prices are computed by the Pan-European Hybrid Electricity Market Integration Algorithm (EUPHEMIA).
   \item Each step changed the data: new neighbours, new products, a finer resolution
@@ -330,10 +329,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
       \item Check the date before comparing periods.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM press releases 2019--2025; IBEX/OPCOM, 27 Oct 2021; JAO)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Since 1 October 2025 a trading day has 96 prices, not 24}
-\framesubtitle{(OPCOM, 1 Oct 2025)\hfill\tryit{notebook \S1}}
 \footnotesize
 \intuition{The market time unit (MTU) shrank from one hour to 15 minutes, so every count of hours must be converted.}
 \begin{columns}[T,onlytextwidth]
@@ -342,7 +341,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
   \item \textbf{\txtwhere}
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item $p_{d,m}$ = price of MTU $m$ on day $d$
-      \item $M_d$ = MTUs that day: 96 since Oct 2025, 24 before (one hour more or less on the two daylight saving time (DST) days)
+      \item $M_d$ = MTUs that day: 96 since Oct 2025, 24 before ($\pm$1 hour on the daylight saving time (DST) days)
       \item $\bar p_d$ = \emph{daily base price}
       \item $\Delta_t\in\{60,15\}$ = MTU length in minutes
       \item $H_y$ = hour-equivalents in year $y$.
@@ -361,14 +360,14 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \end{column}
 \end{columns}
 \par\vfill\manager{always ask ``hours or quarter-hours?'' before comparing years.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 1 Oct 2025)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{What Romania generates}
 
 \begin{frame}{Romania's power: hydro, nuclear, gas and coal --- with solar rising fast}
-\framesubtitle{(energy-charts.info; data source: ENTSO-E)\hfill\tryit{notebook \S2}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.547\textheight,keepaspectratio]{charts/en/mix_ro_annual.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.526\textheight,keepaspectratio]{charts/en/mix_ro_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2015-2025 full years (left); Jan-Oct 2025 and 2026, hours reported in both years (right); cut-off 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -379,12 +378,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
       \item Metered solar may miss rooftop output.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_ro\_annual}{Quantlets/L1/EMQA_L1_mix_ro_annual}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Romania: coal shrinks, solar grows, nuclear drops in 2026}
-\framesubtitle{(Romania; energy-charts.info; data source: ENTSO-E)\hfill\tryit{notebook \S2}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.409\textheight,keepaspectratio]{charts/en/mix_shares.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.402\textheight,keepaspectratio]{charts/en/mix_shares.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2015, 2025 full years; Jan-Oct 2026, hours reported in both 2025 and 2026.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -398,10 +397,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{hydro producers and industrial consumers watch which plant becomes marginal when water or a reactor is missing.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Romania; energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_shares}{Quantlets/L1/EMQA_L1_mix_shares}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Where the course goes: seven lectures, one map of models}
-\framesubtitle{(Weron, 2014, IJF; Ziel \& Weron, 2018, ENEECO)}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.56\textwidth}
@@ -435,6 +434,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \end{column}
 \end{columns}
 \par\vfill\manager{ask any forecast vendor which family the model belongs to and by how much it beats the naive benchmark.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Ziel \& Weron, 2018, ENEECO)}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -443,7 +443,6 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \subsection{Units, clocks and clean data}
 
 \begin{frame}{Power and energy: a MW is not a MWh}
-\framesubtitle{(energy-charts.info; World Bank Commodity Price Data)\hfill\tryit{notebook \S1}}
 \footnotesize
 \intuition{A megawatt (MW) is how fast energy flows; a megawatt-hour (MWh) is how much flowed, e.g.\ 1 MW for one hour.}
 \begin{columns}[T,onlytextwidth]
@@ -474,12 +473,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \end{column}
 \end{columns}
 \par\vfill\manager{a 10 MW baseload contract delivers 240 MWh a day.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; World Bank Commodity Price Data)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{One day of Romanian consumption: power in MW, energy in MWh}
-\framesubtitle{(Romania; energy-charts.info; data source: ENTSO-E)\hfill\tryit{notebook \S1}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.353\textheight,keepaspectratio]{charts/en/day_load.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.328\textheight,keepaspectratio]{charts/en/day_load.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: Romania, load on 2026-10-28 (CET day, 24 hourly values).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -496,10 +495,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item The grid must cover the peak power (MW)
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Romania; energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_day\_load}{Quantlets/L1/EMQA_L1_day_load}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Clean data (1): delivery day, clock changes, zone changes}
-\framesubtitle{(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)\hfill\tryit{notebook \S1}}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Clocks}: raw time stamps are in Coordinated Universal Time (UTC)
@@ -520,10 +519,10 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
       \item One simulated figure, clearly labelled, illustrates white noise and the random walk.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Clean data (2): missing days and series breaks}
-\framesubtitle{(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)\hfill\tryit{notebook \S1}}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Missing days}: the source (energy-charts.info, which republishes the prices of OPCOM and of the Independent Bulgarian Energy Exchange (IBEX) reported to ENTSO-E) has no price for some days, and gives no reason
@@ -538,14 +537,14 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{most forecasting errors at a supplier start in data handling (wrong clock, filled gaps), not in the model.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Price level and seasonality}
 
 \begin{frame}{Prices jumped in 2021--2022 and never returned to the old level}
-\framesubtitle{(energy-charts.info; prices: OPCOM, IBEX, HUPX, EPEX SPOT)\hfill\tryit{notebook \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.534\textheight,keepaspectratio]{charts/en/prices_daily_4zones.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.527\textheight,keepaspectratio]{charts/en/prices_daily_4zones.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2015-01-01 to 2026-10-31 (BG from 2016-10-31).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -555,12 +554,12 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{an industrial consumer budgeting with pre-2021 prices is off by a factor of two to three.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; prices: OPCOM, IBEX, HUPX, EPEX SPOT)}\hfill\qlink{EMQA\_L1\_prices\_daily\_4zones}{Quantlets/L1/EMQA_L1_prices_daily_4zones}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Volatility moves with the price level}
-\framesubtitle{(energy-charts.info; own computation)}
 \small
-{\footnotesize\renewcommand{\arraystretch}{1.12}\setlength{\tabcolsep}{4pt}
+{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrrrr@{}}\toprule
 Mean, EUR/MWh & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 & 2026 YTD \\ \midrule
 RO & \cellcolor{Forest!52}46.4 & \cellcolor{Forest!50}50.4 & \cellcolor{Forest!55}39.5 & \cellcolor{Forest!20}111.4 & \cellcolor{Crimson!55}265.3 & \cellcolor{Forest!24}103.7 & \cellcolor{Forest!24}103.5 & \cellcolor{Forest!22}108.2 & \cellcolor{Forest!7}137.4 \\
@@ -581,12 +580,12 @@ DE-LU & \cellcolor{Forest!55}11.5 & \cellcolor{Forest!54}11.9 & \cellcolor{Fores
   \item 2026 YTD: Romania 137.45 vs 105.88 EUR/MWh in Jan--Oct 2025 (\ensuremath{+}29.8\%).
 \end{itemize}
 \par\vfill\manager{collateral for PZU purchases must scale with the price, since a 200 EUR/MWh market moves far more than a 50 one.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; own computation)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Solar moved the cheapest hour of the day to midday}
-\framesubtitle{(energy-charts.info; hourly day-ahead prices)\hfill\tryit{notebook \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.493\textheight,keepaspectratio]{charts/en/profile_intraday.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.485\textheight,keepaspectratio]{charts/en/profile_intraday.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: calendar years 2019 and 2025, hourly.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -597,10 +596,10 @@ DE-LU & \cellcolor{Forest!55}11.5 & \cellcolor{Forest!54}11.9 & \cellcolor{Fores
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a battery developer's revenue is this midday-to-evening spread, captured once or twice a day.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; hourly day-ahead prices)}\hfill\qlink{EMQA\_L1\_profile\_intraday}{Quantlets/L1/EMQA_L1_profile_intraday}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Weekends are cheaper}
-\framesubtitle{\hfill\tryit{notebook \S3}}
 \footnotesize
 \intuition{Factories and offices consume less on weekends, so fewer plants are needed and the price drops.}
 \begin{columns}[T,onlytextwidth]
@@ -629,12 +628,12 @@ DE-LU & \cellcolor{Crimson!41}7.0 & \cellcolor{Crimson!53}11.0 & \cellcolor{Crim
 \end{column}
 \end{columns}
 \par\vfill\manager{an industrial consumer can move flexible load (maintenance, pumping, charging) to Sunday and save that difference.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Spring is cheap: water and sun meet mild demand}
-\framesubtitle{(energy-charts.info; monthly means 2016--2025)\hfill\tryit{notebook \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.415\textheight,keepaspectratio]{charts/en/profile_annual.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.417\textheight,keepaspectratio]{charts/en/profile_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: monthly means 2016-2025.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -645,12 +644,12 @@ DE-LU & \cellcolor{Crimson!41}7.0 & \cellcolor{Crimson!53}11.0 & \cellcolor{Crim
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a hydro producer saves reservoir water in spring, when power is cheap, to sell it in winter and late summer.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; monthly means 2016--2025)}\hfill\qlink{EMQA\_L1\_profile\_annual}{Quantlets/L1/EMQA_L1_profile_annual}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Spikes and negative prices}
 
 \begin{frame}{Spikes: a few hours with extreme prices}
-\framesubtitle{(Janczura, Trück, Weron \& Wolff, 2013, ENEECO)\hfill\tryit{notebook \S4}}
 \footnotesize
 \intuition{A spike is an interval whose price is far above what is normal for that year.}
 \begin{columns}[T,onlytextwidth]
@@ -680,12 +679,12 @@ Year & RO thr. & RO h & DE-LU h \\ \midrule
 \end{column}
 \end{columns}
 \par\vfill\manager{a supplier with fixed-price retail contracts loses most of the year's margin in a few dozen spike hours, which is why it hedges.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Janczura, Trück, Weron \& Wolff, 2013, ENEECO)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Negative prices reached Romania in 2023 and are now routine}
-\framesubtitle{(energy-charts.info; own count, a 15-min MTU = 0.25 h)\hfill\tryit{notebook \S4}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.491\textheight,keepaspectratio]{charts/en/negative_prices.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.484\textheight,keepaspectratio]{charts/en/negative_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2018 to 2026-10-31; a 15-min MTU counts 0.25 h.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -696,12 +695,12 @@ Year & RO thr. & RO h & DE-LU h \\ \midrule
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a solar park without storage sells much of its output in the cheapest hours of the year (Lecture 6).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; own count, a 15-min MTU = 0.25 h)}\hfill\qlink{EMQA\_L1\_negative\_prices}{Quantlets/L1/EMQA_L1_negative_prices}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Counting negative prices correctly: hour-equivalents}
-\framesubtitle{(energy-charts.info; own computation)\hfill\tryit{notebook \S4}}
 \small
-{\footnotesize\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{4pt}
+{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrr@{}}\toprule
 Zone & 2022 & 2023 & 2024 & 2025 & 2026 YTD & Jan--Oct 2025 & 2026: 15-min MTUs \\ \midrule
 RO & 0 & \cellcolor{MainBlue!3}32 & \cellcolor{MainBlue!9}85 & \cellcolor{MainBlue!20}196 & \cellcolor{MainBlue!18}171.75 & 196 & 687 \\
@@ -728,16 +727,16 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Never a bare number.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; own computation)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Distribution and volatility}
 
 \begin{frame}{Prices can be zero or negative: use differences or asinh}
-\framesubtitle{(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)\hfill\tryit{notebook \S5}}
 \small
 \intuition{Percentage changes need a positive price; a transformation that accepts any sign keeps the zero and negative hours.}
 \vspace{-1mm}\[ y_t=\operatorname{asinh}(x_t)=\ln\big(x_t+\sqrt{x_t^2+1}\big),\quad x_t=\frac{p_t-\tilde p}{\widehat{\mathrm{MAD}}},\quad \operatorname{asinh}(x)\approx\operatorname{sign}(x)\ln(2|x|)\ \text{for large } |x| \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.276\textheight,keepaspectratio]{charts/en/asinh_ro.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.240\textheight,keepaspectratio]{charts/en/asinh_ro.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: all 15-min MTUs, 2026-01-01 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -751,13 +750,13 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
       \item Excess kurtosis 6.73 $\to$ \ensuremath{-}0.55.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\qlink{EMQA\_L1\_asinh\_ro}{Quantlets/L1/EMQA_L1_asinh_ro}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Extreme oil moves are far more frequent than a normal curve allows}
-\framesubtitle{(Jarque \& Bera, 1980, Econ.\ Letters; Yahoo Finance BZ=F)\hfill\tryit{notebook \S5}}
 \small
 \intuition{``Fat tails'': very large up or down days happen much more often than a bell curve would allow.}
-\begin{center}\includegraphics[width=\textwidth,height=0.396\textheight,keepaspectratio]{charts/en/tails_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.383\textheight,keepaspectratio]{charts/en/tails_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance (BZ=F). Data: 2015-01-05 to 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -768,14 +767,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a fuel-budget limit built on the normal curve understates how often a crisis day comes (Lecture 4).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Jarque \& Bera, 1980, Econ.\ Letters; Yahoo Finance BZ=F)}\hfill\qlink{EMQA\_L1\_tails\_brent}{Quantlets/L1/EMQA_L1_tails_brent}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Calm and turbulent periods come in clusters}
-\framesubtitle{(Ljung \& Box, 1978, Biometrika)\hfill\tryit{notebook \S5}}
 \small
 \intuition{A big move today makes another big move tomorrow more likely, even if its direction is unpredictable.}
 \vspace{-1mm}\[ Q(m)=T(T+2)\sum_{k=1}^{m}\frac{\hat\rho_k^2}{T-k}\ \sim\ \chi^2_m\quad\text{(Ljung--Box)} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.329\textheight,keepaspectratio]{charts/en/volclust_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.300\textheight,keepaspectratio]{charts/en/volclust_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance (BZ=F). Data: 2015-01-05 to 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -785,6 +784,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{after a shock, a risk desk keeps wider limits for weeks, not days (Lecture 3).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ljung \& Box, 1978, Biometrika)}\hfill\qlink{EMQA\_L1\_volclust\_brent}{Quantlets/L1/EMQA_L1_volclust_brent}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -793,11 +793,10 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \subsection{Stationarity and autocorrelation}
 
 \begin{frame}{Stationary means the rules of the game do not change over time}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021, OTexts)\hfill\tryit{notebook \S6}}
 \small
 \intuition{A series is (weakly) stationary if its average, its spread and its memory are the same in every period; memory depends only on the lag $k$, not on the date $t$.}
 \vspace{-1mm}\[ \E X_t=\mu,\quad \Var X_t=\gamma_0,\quad \Cov(X_t,X_{t-k})=\gamma_k\quad \text{for every } t \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.243\textheight,keepaspectratio]{charts/en/sim_wn_ar_rw.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.210\textheight,keepaspectratio]{charts/en/sim_wn_ar_rw.pdf}\end{center}\vspace{-3mm}
 \chartsource{\simlabel\ Source: simulation, numpy, seed 20261104. Data: T = 500, N(0,1) shocks.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -808,10 +807,10 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Test it before budgeting with it.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021, OTexts)}\hfill\qlink{EMQA\_L1\_sim\_wn\_ar\_rw}{Quantlets/L1/EMQA_L1_sim_wn_ar_rw}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Autocorrelation measures how much today's price remembers the past}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)\hfill\tryit{notebook \S6}}
 \footnotesize
 \intuition{The autocorrelation at lag $k$ is the correlation between the series and itself shifted by $k$ periods.}
 \begin{columns}[T,onlytextwidth]
@@ -835,14 +834,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \end{column}
 \end{columns}
 \par\vfill\manager{a supplier's forecast for tomorrow starts from ``same weekday last week'': $\hat\rho_7=$ 0.672 in Romania since 2023.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prices remember yesterday, last week and the same hour}
-\framesubtitle{(Ziel \& Weron, 2018, ENEECO)\hfill\tryit{notebook \S6}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.330\textheight,keepaspectratio]{charts/en/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.321\textheight,keepaspectratio]{charts/en/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2023-01-01 to 2026-10-31, T = 1400.}
-\begin{center}\includegraphics[width=\textwidth,height=0.230\textheight,keepaspectratio]{charts/en/acf_ro_hourly.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.221\textheight,keepaspectratio]{charts/en/acf_ro_hourly.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2024, hourly, T = 8784.}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item Daily, 1 Jan 2023 -- 31 Oct 2026: $\hat\rho_1=$ 0.789, $\hat\rho_7=$ 0.672, PACF $\hat\alpha_7=$ 0.257
@@ -850,14 +849,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
       \item Hourly, 2024: $\hat\rho_{24}=$ 0.776, $\hat\rho_{168}=$ 0.681.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\qlink{EMQA\_L1\_acf\_pacf\_ro\_daily}{Quantlets/L1/EMQA_L1_acf_pacf_ro_daily}\hspace{0.8em}\qlink{EMQA\_L1\_acf\_ro\_hourly}{Quantlets/L1/EMQA_L1_acf_ro_hourly}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{The benchmark to beat: the naive forecast}
-\framesubtitle{(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF; Lago et al., 2021, APEN)\hfill\tryit{notebook \S6}}
 \small
 \intuition{Tomorrow's price for each hour is today's price for that hour --- after weekends, the same day last week.}
 \vspace{-1mm}\[ \hat p_{d,h}=\begin{cases} p_{d-1,h} & d=\text{Tue--Fri}\\ p_{d-7,h} & d=\text{Mon, Sat, Sun}\end{cases},\qquad \mathrm{MAE}=\frac{1}{n}\sum_{d,h}|p_{d,h}-\hat p_{d,h}| \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.247\textheight,keepaspectratio]{charts/en/naive_bar.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.229\textheight,keepaspectratio]{charts/en/naive_bar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: hourly day-ahead prices, 2024-01 to 2026-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -868,12 +867,12 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{before paying for a forecasting service, ask for its MAE next to this benchmark.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L1\_naive\_bar}{Quantlets/L1/EMQA_L1_naive_bar}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Unit-root tests, decomposition, smoothing}
 
 \begin{frame}{Do shocks die out or stay? Two tests ask it from opposite sides}
-\framesubtitle{(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)\hfill\tryit{notebook \S7}}
 \footnotesize
 \intuition{One test starts from ``shocks are permanent'' and looks for a pull back to a mean; the other starts from ``the series is stable'' and looks for a slow drift.}
 \begin{columns}[T,onlytextwidth]
@@ -899,10 +898,10 @@ ADF: keep & inconclusive & \cellcolor{Crimson!25}unit root$^{*}$ \\
 \end{column}
 \end{columns}
 \par\vfill\manager{if a supplier's price can carry permanent shocks, ``prices will come back to normal'' is not a safe budget assumption.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{One verdict per series: levels drift, changes are stable}
-\framesubtitle{(own computation; constant only; ADF lags by AIC; 5\% level)\hfill\tryit{notebook \S7}}
 \small
 {\footnotesize\renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}llrrrrrl@{}}\toprule
@@ -927,14 +926,14 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{model price \emph{changes} (or transformed prices) and put seasonality in explicitly.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; constant only; ADF lags by AIC; 5\% level)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Decomposition splits a series into trend, season and the rest}
-\framesubtitle{(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)\hfill\tryit{notebook \S8}}
 \small
 \intuition{The classical method keeps the season fixed; Seasonal--Trend decomposition using Loess (STL) lets it evolve.}
 \vspace{-1mm}\[ x_t=\underbrace{T_t}_{\text{trend}}+\underbrace{S_t}_{\text{season}}+\underbrace{R_t}_{\text{remainder}} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.234\textheight,keepaspectratio]{charts/en/decomp_load.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.200\textheight,keepaspectratio]{charts/en/decomp_load.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2016-01 to 2025-12, monthly mean load.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -948,27 +947,25 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item STL shows when the pattern itself shifts.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)}\hfill\qlink{EMQA\_L1\_decomp\_load}{Quantlets/L1/EMQA_L1_decomp_load}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Exponential smoothing: recent data count more}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021, OTexts, ch.\ 8)\hfill\tryit{notebook \S9}}
 \small
-\intuition{The smoothed level is a weighted average of all past values, with weights shrinking geometrically into the past.}
+\intuition{The smoothed level averages all past values, with weights shrinking geometrically.}
 \vspace{-1mm}\[ \ell_t=\underbrace{\alpha x_t}_{\text{news}}+\underbrace{(1-\alpha)\ell_{t-1}}_{\text{memory}},\qquad \alpha=1-2^{-1/h} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.237\textheight,keepaspectratio]{charts/en/smooth_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.339\textheight,keepaspectratio]{charts/en/smooth_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance (BZ=F). Data: 2024-01-02 to 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item $h$ = half-life: after $h$ days an observation keeps half of its weight.
-  \item Simple moving average (SMA) and exponentially weighted moving average (EWMA, $\alpha=$ 0.067)
+  \item $h$ = half-life (days)
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item The best simple exponential smoothing (SES) weight is 0.948 $\approx1$, almost the last price.
+      \item Exponentially weighted moving average (EWMA): $\alpha=$ 0.067
+      \item Best simple exponential smoothing (SES) weight: 0.948, almost the last price.
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{a fuel buyer can use an EWMA as a contract reference price
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item As a forecast it adds little over the last price.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{an EWMA is a good contract reference price, but a weak forecast.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021, OTexts, ch.\ 8)}\hfill\qlink{EMQA\_L1\_smooth\_brent}{Quantlets/L1/EMQA_L1_smooth_brent}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -977,9 +974,8 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
 \subsection{(a) Wet 2023, dry 2025}
 
 \begin{frame}{Case study (a): 2025 hydro output was a third below wet 2023}
-\framesubtitle{(energy-charts.info; data source: ENTSO-E)\hfill\tryit{notebook \S10a}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.419\textheight,keepaspectratio]{charts/en/hydro_case.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.395\textheight,keepaspectratio]{charts/en/hydro_case.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: monthly, 2015-01 to 2025-12.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -993,10 +989,10 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a hydro producer's annual output and a net importer's bill depend on rain as much as on the market.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_hydro\_case}{Quantlets/L1/EMQA_L1_hydro_case}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (a): wetter months go with lower Romanian prices}
-\framesubtitle{(own estimation; Newey--West standard errors)\hfill\tryit{notebook \S10a}}
 \footnotesize
 \intuition{Holding the gas price fixed, months with more hydro output have had lower Romanian prices --- an association, not a measured effect.}
 \begin{columns}[T,onlytextwidth]
@@ -1004,7 +1000,7 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
 \[ p_m=\beta_0+\underbrace{\beta_1\,\mathrm{Hydro}_m}_{\text{water}}+\underbrace{\beta_2\,\mathrm{TTF}_m}_{\text{gas cost}}+u_m \]{\footnotesize\begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{\txtwhere}
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item $p_m$ = mean Romanian day-ahead price in month $m$ (EUR/MWh)
+      \item $p_m$ = mean RO day-ahead price, month $m$ (EUR/MWh)
       \item $\mathrm{Hydro}_m$ = hydro output (TWh)
       \item $\mathrm{TTF}_m$ = Dutch gas price (EUR/MWh)
       \item Estimated by ordinary least squares (OLS) with heteroskedasticity- and autocorrelation-consistent (HAC) standard errors, 6 lags.
@@ -1020,7 +1016,7 @@ Hydro & \ensuremath{-}19.55 & 7.02 & \ensuremath{-}2.78 \\
 TTF & 1.89 & 0.06 & 34.16 \\
 \bottomrule\end{tabular}}\par\vspace{1mm}\begin{itemize}\setlength{\itemsep}{1pt}
   \item One TWh more hydro in a month: \ensuremath{-}19.55 EUR/MWh on average, gas held fixed.
-  \item Caveat: price and gas are trending levels (Section 3), so the regression can be spurious unless they are cointegrated
+  \item Caveat: price and gas levels trend (Section 3): spurious regression unless cointegrated
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item $R^2=$ 0.941 is not evidence
       \item Lecture 2 tests cointegration.
@@ -1029,14 +1025,14 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \end{column}
 \end{columns}
 \par\vfill\manager{hydro producers and traders watch reservoir levels as a leading indicator of the PZU price.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation; Newey--West standard errors)}\hfill\tryit{notebook \S10a}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(b) The June 2025 oil shock}
 
 \begin{frame}{Case study (b): Brent +7\% in a day, then back below the pre-war price}
-\framesubtitle{(Yahoo Finance, Brent BZ=F)\hfill\tryit{notebook \S10b}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.432\textheight,keepaspectratio]{charts/en/iran_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.425\textheight,keepaspectratio]{charts/en/iran_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance (BZ=F). Data: 2025-06-02 to 2025-07-04, trading days.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1050,14 +1046,14 @@ TTF & 1.89 & 0.06 & 34.16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Four days later the market was far below that price.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Yahoo Finance, Brent BZ=F)}\hfill\qlink{EMQA\_L1\_iran\_brent}{Quantlets/L1/EMQA_L1_iran_brent}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(c) Regional price separation, summer 2024}
 
 \begin{frame}{Case study (c): in July 2024 Romania paid twice the German price}
-\framesubtitle{(energy-charts.info; daily and hourly day-ahead prices)\hfill\tryit{notebook \S10c}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.600\textheight,keepaspectratio]{charts/en/separation_2024.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.489\textheight,keepaspectratio]{charts/en/separation_2024.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2024-06-01 to 2024-09-30 daily (left); 2024-07-16 hourly (right).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1068,10 +1064,10 @@ TTF & 1.89 & 0.06 & 34.16 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{for South-East European buyers, the evening hours of hot, dry summers are the main price risk.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; daily and hourly day-ahead prices)}\hfill\qlink{EMQA\_L1\_separation\_2024}{Quantlets/L1/EMQA_L1_separation_2024}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (c): evening, heat and a congested network}
-\framesubtitle{(energy-charts.info; ENTSO-E physical flows)\hfill\tryit{notebook \S10c}}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.60\textwidth}
@@ -1105,14 +1101,14 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \end{block}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; ENTSO-E physical flows)}\hfill\tryit{notebook \S10c}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(d) Negative prices and solar}
 
 \begin{frame}{Case study (d): negative hours cluster in spring, as solar grows year after year}
-\framesubtitle{(energy-charts.info; data source: ENTSO-E)\hfill\tryit{notebook \S10d}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/en/negative_solar.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.473\textheight,keepaspectratio]{charts/en/negative_solar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: Jan 2023 to 2026-10-31 (left); 2018-2025 (right).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1125,10 +1121,10 @@ TTF & 1.89 & 0.06 & 34.16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item A battery charges and flexible industry consumes then.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_negative\_solar}{Quantlets/L1/EMQA_L1_negative_solar}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (d): what accompanies negative-price days}
-\framesubtitle{(own estimation, logit; energy-charts.info)\hfill\tryit{notebook \S10d}}
 \footnotesize
 \intuition{We describe the realised conditions on days with at least one negative quarter-hour; this describes, it does not forecast for bidding.}
 \begin{columns}[T,onlytextwidth]
@@ -1157,14 +1153,14 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \end{column}
 \end{columns}
 \par\vfill\manager{curtailment of renewables is most likely on spring weekends with full reservoirs.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, logit; energy-charts.info)}\hfill\tryit{notebook \S10d}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(e) 2026 so far}
 
 \begin{frame}{Case study (e): 2026 prices climbed; oil jumped in March}
-\framesubtitle{(energy-charts.info; Yahoo Finance BZ=F; cut-off 31 Oct 2026)\hfill\tryit{notebook \S10e}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.355\textheight,keepaspectratio]{charts/en/cy_prices.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.330\textheight,keepaspectratio]{charts/en/cy_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E. Data: 2026-01-01 to 2026-10-31, daily; Brent: Yahoo Finance (BZ=F).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1182,12 +1178,12 @@ TTF & 1.89 & 0.06 & 34.16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Oil and domestic supply moved the same way.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; Yahoo Finance BZ=F; cut-off 31 Oct 2026)}\hfill\qlink{EMQA\_L1\_cy\_prices}{Quantlets/L1/EMQA_L1_cy_prices}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025}
-\framesubtitle{(Nuclearelectrica, 29 Jul 2026; World Nuclear News, 30 Jul 2026; CNCAN, 9 Sep 2026)\hfill\tryit{notebook \S10e}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.300\textheight,keepaspectratio]{charts/en/cy_generation.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.315\textheight,keepaspectratio]{charts/en/cy_generation.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: monthly means of reported hours, 2025-01 to 2026-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1202,10 +1198,10 @@ TTF & 1.89 & 0.06 & 34.16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Read REMIT messages as closely as the weather forecast.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nuclearelectrica, 29 Jul 2026; World Nuclear News, 30 Jul 2026; CNCAN, 9 Sep 2026)}\hfill\qlink{EMQA\_L1\_cy\_generation}{Quantlets/L1/EMQA_L1_cy_generation}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (e): 2026 drivers --- price up about 30\%, supply down}
-\framesubtitle{(own computation; energy-charts.info)\hfill\tryit{notebook \S10e}}
 \small
 \begin{center}{\small\renewcommand{\arraystretch}{1.08}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrr@{}}\toprule
@@ -1225,10 +1221,10 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
   \item $^{*}$Hours reported in both years (lower bound).
 \end{itemize}}
 \par\vfill\manager{price up by about 30\%, with nuclear, hydro and oil all pointing the same way, and a hedge paid for itself.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; energy-charts.info)}\hfill\tryit{notebook \S10e}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (e): 2026 extremes in Romania and on Brent}
-\framesubtitle{(own computation; energy-charts.info; Yahoo Finance)\hfill\tryit{notebook \S10e}}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.550\textheight,keepaspectratio]{charts/en/cy_extremes.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (OPCOM prices); Yahoo Finance (BZ=F). Data: 2026-01-01 to 2026-10-31, daily.}
@@ -1240,10 +1236,10 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
       \item Quarter-hour: high 1015.65 on 30 Jun 2026, 18:45, low \ensuremath{-}99.75 on 26 Apr 2026, 13:00 (CET/CEST)
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; energy-charts.info; Yahoo Finance)}\hfill\qlink{EMQA\_L1\_cy\_extremes}{Quantlets/L1/EMQA_L1_cy_extremes}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study (e): 2026 extremes in Germany and on Brent}
-\framesubtitle{(own computation; OPCOM SDAC note, 7 May 2026)\hfill\tryit{notebook \S10e}}
 \small
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Germany}
@@ -1258,14 +1254,14 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{set risk limits on the extremes, not on the averages.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM SDAC note, 7 May 2026)}\hfill\tryit{notebook \S10e}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(f) Romania, Bulgaria and batteries}
 
 \begin{frame}{Case study (f): since spring 2026, Bulgaria's evenings are cheaper}
-\framesubtitle{(energy-charts.info; data source: ENTSO-E; own computation, local time EET)\hfill\tryit{notebook \S10f}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.400\textheight,keepaspectratio]{charts/en/bg_battery.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.398\textheight,keepaspectratio]{charts/en/bg_battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2023-01 to 2026-10, local time; BG battery series reported from 2026-09-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1279,6 +1275,7 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{a Romanian battery developer competes for the same regional evening spread (Lecture 6).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E; own computation, local time EET)}\hfill\qlink{EMQA\_L1\_bg\_battery}{Quantlets/L1/EMQA_L1_bg_battery}\par\vspace{0.5mm}
 \end{frame}
 
 \section*{Wrap-up}
@@ -1340,7 +1337,6 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
 \end{frame}
 
 \begin{frame}{Research from our group on the Romanian market}
-\framesubtitle{(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{The summer-2024 crisis} (Case c): a counterfactual analysis of Romania's June--July 2024 price crisis on ENTSO-E hourly data
@@ -1358,6 +1354,7 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
   \item Findings as stated in the papers' abstracts; numbers on the other slides come from our own data.
 \end{itemize}}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Want to learn more?}
@@ -1480,7 +1477,6 @@ Jun & \ensuremath{-}0.442 & Dec & 0.565 \\
 \end{frame}
 
 \begin{frame}{Appendix C: the STL algorithm}
-\framesubtitle{(Cleveland, Cleveland, McRae \& Terpenning, 1990, JOS)}
 \small
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Inner loop} (repeated): (1) detrend, $x_t-\hat T_t$
@@ -1496,10 +1492,10 @@ Jun & \ensuremath{-}0.442 & Dec & 0.565 \\
     \end{itemize}
   \item Additive only: for multiplicative seasonality apply STL to $\ln x_t$ (or asinh for prices).
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland, Cleveland, McRae \& Terpenning, 1990, JOS)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Appendix D: generation mix in numbers}
-\framesubtitle{(energy-charts.info; data source: ENTSO-E)}
 \small
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrr@{}}\toprule
@@ -1519,10 +1515,10 @@ Net imp. TWh & \ensuremath{-}6.9 & 1.9 & \ensuremath{-}3.1 & 3.0 & 3.8 & 3.7 & 2
   \item Last two columns: hours reported in both years.
   \item Net imports $>0$: into Romania.
 \end{itemize}}\end{center}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Appendix E: naive benchmark, all years}
-\framesubtitle{(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)}
 \small
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrrr@{}}\toprule
@@ -1538,10 +1534,10 @@ DE-LU $d-7$ & \cellcolor{Crimson!55}10.3 & \cellcolor{Crimson!55}10.3 & \cellcol
   \item MAE in EUR/MWh on hourly prices (from Oct 2025: hourly mean of the 15-min prices).
   \item Green = best of the three in that year and zone.
 \end{itemize}}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Appendix F: fat tails and the negative-day logit in full}
-\framesubtitle{(Jarque \& Bera, 1980; own estimation)}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.43\textwidth}
@@ -1568,10 +1564,10 @@ Year 2026 & 0.534 & 1.71 & 1.54 \\
 \end{itemize}}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Jarque \& Bera, 1980; own estimation)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Appendix G: converting gas and oil prices to EUR/MWh}
-\framesubtitle{(World Bank Commodity Price Data; ECB reference rates)}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -1597,6 +1593,7 @@ Year 2026 & 0.534 & 1.71 & 1.54 \\
 \end{itemize}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(World Bank Commodity Price Data; ECB reference rates)}\par\vspace{0.5mm}
 \end{frame}
 
 \end{document}

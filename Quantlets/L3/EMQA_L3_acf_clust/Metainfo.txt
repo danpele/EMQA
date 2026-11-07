@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_acf_clust'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Autocorrelation function (lags 1-30) of the daily shocks of the Romanian base price and of their squares, 2019-01-01 to 2026-10-31: the shocks are almost uncorrelated, their squares are not (volatility clustering); Ljung-Box and ARCH-LM tests.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, autocorrelation, ACF, Ljung-Box test, ARCH-LM test, volatility clustering, stylised facts'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'acf_clust.png'

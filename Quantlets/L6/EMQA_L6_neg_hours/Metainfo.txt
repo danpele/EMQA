@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_neg_hours'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Negative day-ahead prices: number of hour-equivalents with a negative price per year in Romania, Bulgaria, Hungary and Germany-Luxembourg, 2022 to 2026-10-31 (2026 = Jan-Oct); a 15-min interval counts 0.25 h. Prints the counts of the last full year and the like-for-like January-cut-off counts.'
+
+Keywords: 'negative prices, day-ahead, hour-equivalents, 15-minute MTU, solar, Romania, Bulgaria, Hungary, Germany, market coupling'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E'
+
+Output: 'neg_hours.png'

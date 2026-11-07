@@ -153,7 +153,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{treat the test year like a sealed envelope: it is opened once, after every choice is made.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L7\_split\_ml}{Quantlets/L7/EMQA_L7_split_ml}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Hyperparameters are chosen by random search on the validation year}
@@ -275,7 +275,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
   \item After that point the network fits the past better and the recent days worse: it starts to memorise.
 \end{itemize}
 \par\vfill\manager{if a vendor cannot show you this curve, the network was probably trained until it fitted the past.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; chosen DNN, seed 1)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; chosen DNN, seed 1)}\hfill\qlink{EMQA\_L7\_learning\_curve}{Quantlets/L7/EMQA_L7_learning_curve}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Random search cuts the validation error of both models}
@@ -291,7 +291,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
   \item All 25 settings of both models beat the naive model on the validation year (26.90 EUR/MWh).
 \end{itemize}
 \par\vfill\manager{budget one validation year for tuning before you trust any machine-learning forecast.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; validation year 1 Nov 2024 -- 31 Oct 2025)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; validation year 1 Nov 2024 -- 31 Oct 2025)}\hfill\qlink{EMQA\_L7\_search}{Quantlets/L7/EMQA_L7_search}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -407,7 +407,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Recalibrate the bands (Lecture 2) before sizing risk with them.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_foundation\_hour}{Quantlets/L7/EMQA_L7_foundation_hour}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -452,7 +452,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
     \end{itemize}
   \item Adding AW-LEAR to Chronos-2 changes nothing ($p$ = 0.491): on the hard days the two models make similar errors.
 \end{itemize}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; one-sided DM tests)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; one-sided DM tests)}\hfill\qlink{EMQA\_L7\_dm\_matrix}{Quantlets/L7/EMQA_L7_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Averaging works because the errors are not identical}
@@ -468,7 +468,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{average with equal weights before estimating clever weights.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; own computation)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; own computation)}\hfill\qlink{EMQA\_L7\_combo\_weight}{Quantlets/L7/EMQA_L7_combo_weight}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Month by month, the combination beats AW-LEAR in 10 of 12 months}
@@ -484,7 +484,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
   \item All models err more in the same months (January, June, October): the hard days are hard for everyone.
 \end{itemize}
 \par\vfill\manager{report accuracy month by month to the risk committee, not only the annual average.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_monthly\_ml}{Quantlets/L7/EMQA_L7_monthly_ml}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Compute cost: daily LEAR is the expensive model, ML costs minutes}
@@ -502,7 +502,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
   \item Hidden costs: the search (7.3 min), the pretraining of Chronos (by others), the people who run the pipeline.
 \end{itemize}
 \par\vfill\manager{compare models on error per euro of total cost of ownership, not on error alone.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; times measured on one core of an 18-core laptop)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; times measured on one core of an 18-core laptop)}\hfill\qlink{EMQA\_L7\_cost\_gain}{Quantlets/L7/EMQA_L7_cost_gain}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -552,7 +552,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
   \item Load 8.5\%, wind + solar 2.5\%: known only up to $d-2$, they are old news at gate closure.
 \end{itemize}
 \par\vfill\manager{buy better inputs first: the load and wind forecasts of the transmission system operator (TSO).}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_shap\_global}{Quantlets/L7/EMQA_L7_shap_global}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Wind and solar lower the price only in the hours when they are large}
@@ -565,7 +565,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
   \item The effect appears above about 2 gigawatts (GW), mostly at midday: a threshold that a linear model cannot express.
 \end{itemize}
 \par\vfill\manager{a solar developer can read here the price discount that its own output helps to create.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_shap\_res}{Quantlets/L7/EMQA_L7_shap_res}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{The neural network relies even more on yesterday's prices}
@@ -586,7 +586,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{monitor the price feed of $d-1$ first: the network fails without it.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; own computation)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; own computation)}\hfill\qlink{EMQA\_L7\_perm\_dnn}{Quantlets/L7/EMQA_L7_perm_dnn}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -605,7 +605,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
   \item \textbf{Price $\leq$ 0}: 255 hours on 53 days of the test year, mostly around 13:00.
 \end{itemize}
 \par\vfill\manager{a battery charges at midday and discharges at 19:00--20:00: the two events are its business model.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_events\_hour}{Quantlets/L7/EMQA_L7_events_hour}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Spike classifiers: a good price forecast already detects spikes}
@@ -676,7 +676,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
       \item They depend on tomorrow's sun and wind, not on yesterday.
     \end{itemize}
 \end{itemize}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_roc}{Quantlets/L7/EMQA_L7_roc}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Cost--loss rule: act when the spike probability exceeds C/L}
@@ -695,7 +695,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item The best one seen afterwards (0.64) is hindsight.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; own computation)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; own computation)}\hfill\qlink{EMQA\_L7\_decision}{Quantlets/L7/EMQA_L7_decision}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study, 30 Jun 2026: every model saw the spike, none its size}
@@ -711,7 +711,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
   \item Week 27 Jun 2026 -- 3 Jul 2026: 47 spike hours, 45 alerts at C/L, 39 of them correct.
 \end{itemize}
 \par\vfill\manager{the probability says whether to act, the point forecast how much.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; Romanian day-ahead prices)}\hfill\tryit{notebook \S8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; Romanian day-ahead prices)}\hfill\qlink{EMQA\_L7\_case\_week}{Quantlets/L7/EMQA_L7_case_week}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Case study: the trees followed the extreme evening of the day before}
@@ -727,7 +727,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
   \item Trees cannot go above the prices stored in their leaves: extremes are capped.
 \end{itemize}
 \par\vfill\manager{show the board this breakdown for every large alert.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; SHAP values in EUR/MWh, Appendix C)}\hfill\tryit{notebook \S8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; SHAP values in EUR/MWh, Appendix C)}\hfill\qlink{EMQA\_L7\_shap\_local}{Quantlets/L7/EMQA_L7_shap_local}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Our group on spike early warning: the paper and our replication}
@@ -771,7 +771,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{ask every vendor for a walk-forward test with each input time-stamped at gate closure.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; own computation)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; own computation)}\hfill\qlink{EMQA\_L7\_pit\_leak}{Quantlets/L7/EMQA_L7_pit_leak}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Data snooping: choosing on the test year fakes a win over LEAR}
@@ -790,10 +790,10 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item The more trials, the more the best one flatters.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(White, 2000, Econometrica; own computation)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(White, 2000, Econometrica; own computation)}\hfill\qlink{EMQA\_L7\_snooping}{Quantlets/L7/EMQA_L7_snooping}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Retraining: a model frozen for a year loses 4.3\%}
+\begin{frame}{Retraining: a model frozen for a year loses 4.2\%}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.420\textheight,keepaspectratio]{charts/en/pit_retrain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC). Data: test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration.}
@@ -806,7 +806,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
   \item A short rolling window (365 days, MAE 25.59) is worse than the whole history: the trees need many past spikes to learn from.
 \end{itemize}
 \par\vfill\manager{put the monthly refit in the operating calendar, with an owner, like any other control.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_pit\_retrain}{Quantlets/L7/EMQA_L7_pit_retrain}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Leakage self-check: deleting the future changes no forecast}
@@ -923,7 +923,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \vspace{2mm}
 \begin{exampleblock}{Answer}
 \begin{itemize}
-  \item A model frozen for the year was 4.3\% less accurate, and the gap widened in the last months
+  \item A model frozen for the year was 4.2\% less accurate, and the gap widened in the last months
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item A monthly refit of XGBoost takes about 13 seconds.
     \end{itemize}

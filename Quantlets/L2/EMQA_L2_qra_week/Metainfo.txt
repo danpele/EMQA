@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_qra_week'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'One week of hourly probabilistic forecasts of the Romanian day-ahead price by quantile regression averaging (QRA) on the AW-ARX and AW-LEAR point forecasts: 50% and 90% intervals, the QRA median and the actual price, for the last full week of the test year without a clock change. Data: week 2026-10-12 to 2026-10-18, hourly. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'probabilistic forecasting, quantile regression averaging, QRA, prediction interval, LEAR, ARX, electricity price, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved QRA quantiles of the test year (qra_week.npz: the 99 quantiles of the week and the median of every test hour, from lectures/L2/analysis_L2.py)'
+
+Output: 'qra_week.png'

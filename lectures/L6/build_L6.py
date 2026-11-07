@@ -558,7 +558,8 @@ def build(lang, H=None):
               tryit=NB + " \\S8", cite="(Cole \\& Karmakar, 2023, NREL; Schmidt et al., 2019, Joule)", wl="0.47", wr="0.50")
 
     # ------------------------------------------------------------------ 6 case study
-    D.section(t("Case study: @{case.month|ym}", "Studiu de caz: @{case.month|ym}"))
+    D.section(t("Case studies: @{case.month|ym}; summer @{rogb.year}", "Studii de caz: @{case.month|ym}; vara @{rogb.year}"))
+    D.subsection(t("@{case.month|ym}: the most negative hours", "@{case.month|ym}: cele mai multe ore cu preț negativ"))
     D.chart(t("Case study: in the week of @{case.week|date}, Romania had @{case.week_neg_h|.0f} negative hours and solar captured @{case.week_cr|.0f}\\%",
               "Studiu de caz: în săptămîna din @{case.week|date}, România a avut @{case.week_neg_h|.0f} " + de("case.week_neg_h") +
               "ore cu preț negativ, iar rata de captare solară a fost @{case.week_cr|.0f}\\%"), "case_week", [
@@ -586,6 +587,23 @@ def build(lang, H=None):
         t(("\\textbf{Transelectrica}", "after sunset the evening ramp and the interconnectors set the price"),
           ("\\textbf{Transelectrica}", "după apus, creșterea cererii nete și interconexiunile fixează prețul")),
         sep="3pt") + D.bottom(None, NB + " \\S9"), "footnotesize", cite=t("(" + OWN + ")", "(" + OWN + ")"))
+
+    # ------------------------------------------------------------------ 6b case study: summer, Romania and Bulgaria
+    D.subsection(t("Summer @{rogb.year}: Romania and Bulgaria", "Vara @{rogb.year}: România și Bulgaria"))
+    D.chart(t("Summer @{rogb.year}: Romania exported at midday and bought from Bulgaria in the evening",
+              "Vara @{rogb.year}: România a exportat la prînz și a cumpărat seara din Bulgaria"), "rogb_summer", [
+        t(("\\textbf{Midday: Romania exports}, @{rogb.exp_mw|,.0f} MW net at 12:00 on all borders",
+           "mostly to Hungary (@{rogb.hu_mid_mw|,.0f} MW) and Serbia (@{rogb.rs_mid_mw|,.0f} MW); to Bulgaria on only @{rogb.n_days_mid} of @{rogb.n_days} days (12:00--15:00)"),
+          ("\\textbf{La prînz România exportă}: @{rogb.exp_mw|,.0f} MW net la ora 12, pe toate granițele",
+           "mai ales spre Ungaria (@{rogb.hu_mid_mw|,.0f} MW) și Serbia (@{rogb.rs_mid_mw|,.0f} MW); spre Bulgaria doar în @{rogb.n_days_mid} din @{rogb.n_days} de zile (12:00--15:00)")),
+        t(("\\textbf{Evening: Romania imports from Bulgaria}, @{rogb.bg_eve_mw|,.0f} MW at 21:00, on all @{rogb.n_days} days",
+           "price at 21:00: Romania @{rogb.p_ro_eve|.1f}, Bulgaria @{rogb.p_bg_eve|.1f} EUR/MWh; the full border separates the two prices"),
+          ("\\textbf{Seara România importă din Bulgaria}: @{rogb.bg_eve_mw|,.0f} MW la ora 21, în toate cele @{rogb.n_days} de zile",
+           "prețul la ora 21: România @{rogb.p_ro_eve|.1f}, Bulgaria @{rogb.p_bg_eve|.1f} EUR/MWh; granița plină separă cele două prețuri"))],
+        height="0.50\\textheight", size="footnotesize",
+        job=t("the evening gap of @{rogb.p_gap_eve|.1f} EUR/MWh is what evening storage and more interconnection capacity are worth in Romania.",
+              "diferența de seară, de @{rogb.p_gap_eve|.1f} EUR/MWh, arată cît valorează în România stocarea pentru seară și o capacitate mai mare de interconexiune."),
+        cite=t("(" + OWN + "; + = import into Romania)", "(" + OWN + "; + = import în România)"))
 
     # ------------------------------------------------------------------ wrap-up
     D.parts.append("\\section*{" + t("Wrap-up", "Recapitulare") + "}\n")

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_supplier_month'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly change of the load-weighted day-ahead price in Romania (the cost overrun of a supplier that budgets each month at last month’s price) against the normal 99% limit estimated on 2015-2020 data; months above the limit in red; monthly, 2015-03 to 2026-10. Prints the exceedances since 2021 and the worst month.'
+
+Keywords: 'supplier risk, procurement cost, load-weighted price, risk limit, normal distribution, electricity prices, Romania, Transelectrica'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_hourly_utc.csv: hourly day-ahead prices of Romania (OPCOM), EUR/MWh, and generation_ro_mw_hourly_utc.csv: hourly national load of Romania (Transelectrica via ENTSO-E), MW, both from energy-charts.info (Fraunhofer ISE) (cut-off 2026-10-31)'
+
+Output: 'supplier_month.png'

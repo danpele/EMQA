@@ -1,0 +1,28 @@
+// Readouts of the Lecture 2 interactive page, written by lectures/L2/build_interactive_L2.py.
+window.LK_TEXT = {
+ eur: 'EUR/MWh', hour: 'Ora zilei (CET)', month: 'Luna', day: 'Ziua anului de test',
+ lab: { naive: 'Naiv', snaive: 'Naiv sezonier', arx728: 'ARX(728)', arx728_single: 'ARX(728), o singură regresie', aw_arx: 'AW-ARX',
+        lear728: 'LEAR(728)', aw_lear: 'AW-LEAR', gbm: 'GBM', mlp: 'MLP', ens_all: 'Ansamblu 4 modele' },
+ mpBar: 'Măsuri ale erorii', mpApe: 'Eroarea procentuală absolută (APE) după prețul efectiv, scală logaritmică', ape: 'APE (%)', absp: 'Prețul efectiv (EUR/MWh)',
+ mp: (m, x, n, mae, mape, smape) => `${m}, ore cu |preț| ≥ ${x} EUR/MWh: ${n}. MAE ${mae} EUR/MWh, MAPE ${mape}%, sMAPE ${smape}%.`,
+ mp2: n => `${n} excluse.`,
+ dmDiff: 'Diferența zilnică a pierderilor d_t (A − B)', dmCum: 'Suma cumulată a d_t', dt: 'd_t',
+ dm: (a, b, mA, mB, s, p, L) => `${a}: pierderea medie ${mA}; ${b}: ${mB}. DM = ${s} (Newey–West, ${L} laguri), p unilateral ${p} pentru H₁: B este mai precis decît A.`,
+ dmSame: 'Alegeți două modele diferite.',
+ dmV: (p) => p < 0.05 ? 'La 5%, B este semnificativ mai precis decît A.' : 'La 5%, nu avem dovezi semnificative că B este mai precis decît A.',
+ phTitle: e => `${e === 'mae' ? 'MAE' : 'RMSE'} pe ora zilei (EUR/MWh)`,
+ ph: (m, v, hw, w, hb, b) => `${m}: ${v} pe perioadă; cea mai slabă oră ${hw}:00 (${w}), cea mai bună ${hb}:00 (${b}).`,
+ phCmp: n => `ARX(728) cu o singură regresie este mai slab decît ARX(728) cu cîte o regresie pe oră în ${n} din cele 24 de ore.`,
+ wnTitle: f => `MAE pentru ${f.toUpperCase()} pe ferestre de calibrare și pentru media lor (EUR/MWh)`, win: 'Fereastra de calibrare (zile)', avg: 'Media',
+ wn: (f, list, m, best, bm) => `AW-${f.toUpperCase()} pe ${list} zile: MAE ${m} EUR/MWh; cea mai bună fereastră ${best} zile (${bm}).`,
+ wnNone: 'Bifați cel puțin o fereastră din această familie.',
+ wnGain: (g, s) => g > 0 ? `Media este cu ${s} EUR/MWh sub cea mai bună fereastră inclusă.` : `Media este cu ${s} EUR/MWh peste cea mai bună fereastră inclusă.`,
+ mmTitle: r => r === 'abs' ? 'MAE pe luni (EUR/MWh)' : 'MAE relativ la prognoza naivă, pe luni', mmRel: 'rMAE',
+ mm: (m, v, wm, w, bm, b) => `${m}: anul ${v}; cea mai slabă lună ${wm} (${w}), cea mai bună ${bm} (${b}).`,
+ qrFan: (d0, d1) => `Intervale QRA și prețul efectiv, ${d0} – ${d1}`, qrRel: 'Fiabilitate: ponderea prețurilor sub cuantilă minus τ (pp)',
+ nominal: 'Nivelul nominal al cuantilei τ (%)', empirical: 'Ponderea empirică − τ (pp)', actual: 'Prețul efectiv', median: 'Mediana', diag: 'Calibrare perfectă',
+ lvl: [50, 80, 90, 98],
+ qr: (c, h, cov, w) => `Intervalul de ${c}%, ${h}: acoperire ${cov}%, lățime medie ${w} EUR/MWh.`,
+ qrWeek: (cov) => `În săptămîna afișată, intervalul conține ${cov}% din cele 168 de prețuri.`,
+ all: 'toate orele'
+};

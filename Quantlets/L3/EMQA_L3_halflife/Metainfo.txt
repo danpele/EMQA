@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_halflife'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Decay of a volatility shock, 100(alpha+beta)^h, implied by GARCH(1,1)-t models for the Romanian base price (percent and EUR/MWh shocks, 2019-01-01 to 2026-10-31), Brent crude oil (ICE Brent front month, from 2019), EU carbon allowances (SparkChange EUA ETC, from 2021-10-19) and OMV Petrom shares (BVB: SNP, from 2019), all to the cut-off; half-lives in brackets: oil and carbon shocks fade in weeks, not days.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, GARCH, persistence, half-life, Brent, EU ETS, carbon, OMV Petrom, mean reversion'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; fuels_daily.csv: Brent BZ=F close, USD/bbl (Yahoo Finance); eua_daily.csv: SparkChange physical EUA ETC (CO2L), EUR (Yahoo Finance); ro_energy_equities_daily.csv: OMV Petrom (SNP) dividend-adjusted close and volume, RON (EODHD)'
+
+Output: 'halflife.png'

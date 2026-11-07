@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_bat_rules'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Battery revenue in the last 12 months (2025-11-01 to 2026-10-31), Romanian day-ahead market, 1 MW with 1, 2 or 4 h of storage, round trip 85%: perfect foresight on 15-min prices, perfect foresight on hourly averages, and two forecast rules known at gate closure (mean profile of the last 7 days; yesterday’s prices); rules evaluated on the common days and scaled to the full period. Prints the share of the perfect-foresight revenue earned by each rule.'
+
+Keywords: 'battery, energy storage, arbitrage, forecast, perfect foresight, linear programming, 15-minute MTU, day-ahead, Romania, OPCOM'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E (Romanian prices only)'
+
+Output: 'bat_rules.png'

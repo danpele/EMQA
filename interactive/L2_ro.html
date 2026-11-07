@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 2 · Prognoza prețurilor pentru ziua următoare</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 2 · Prognoza prețurilor pentru ziua următoare">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L2.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261107a", "L2_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L2.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 2 · Prognoza prețurilor pentru ziua următoare</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L2/lecture2_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L2.html" class="lang-btn">EN</a><a href="L2_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din prognozele cursului cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Anul de test: 1 noiembrie 2025 – 31 octombrie 2026 (365 de zile × 24 de ore, piața pentru ziua următoare din România, OPCOM PZU). Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
+<p class="toc"><a href="#s-bench">Problema de prognoză și modelele de referință</a> · <a href="#s-expert">Modele expert: ARX și LEAR</a> · <a href="#s-win">Ferestre, combinații și învățare automată</a> · <a href="#s-prob">Prognoze probabilistice și cointegrare</a> · <a href="#s-case">Studii de caz pe date recente din România</a></p>
+<h2 class="sec" id="s-bench">Problema de prognoză și modelele de referință</h2>
+<section class="blk" id="mape">
+  <h3>Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=15" target="_blank" rel="noopener"><img src="slides/L2_mape_fail_ro.jpg" alt="Slide-ul 15: Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative" loading="lazy"></a>
+      <figcaption>Slide-ul 15</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="mp-x">Se exclud orele cu |preț| sub (EUR/MWh): <b id="mp-x-v"></b></label><input type="range" id="mp-x" min="0" max="30" step="1" value="0"></div><div class="ctl"><label for="mp-m">Model</label><select id="mp-m"><option value="naive">Naiv</option><option value="snaive">Naiv sezonier</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear" selected>AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ansamblu 4 modele</option></select></div><button class="btn play" id="mp-play" type="button"></button></div><div class="charts "><div class="chart" id="mp-chart"></div><div class="chart" id="mp-ape"></div></div><ul class="out" id="mp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_mape_fail" target="_blank" rel="noopener">EMQA_L2_mape_fail</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_mape_fail/EMQA_L2_mape_fail.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Anul de test are 8.760 de ore. MAPE pentru AW-LEAR depășește 5.700%, iar MAE este 22,53 EUR/MWh. Este modelul chiar atît de slab?</div>
+  <details><summary>Răspuns</summary><p>Nu. Eroarea procentuală împarte la prețul efectiv, iar 387 de ore au |preț| sub 5 EUR/MWh (60 sînt exact zero, 195 negative). Aceste ore produc 99,5% din MAPE; fără ele, MAPE pentru AW-LEAR scade la 32,4%. Mutați cursorul: MAE și sMAPE aproape nu se schimbă, MAPE se prăbușește. Cu prețuri apropiate de zero, raportăm MAE, RMSE și MAE relativ (rMAE, MAE împărțit la MAE al prognozei naive).</p></details>
+</section>
+<section class="blk" id="dm-test">
+  <h3>Matricea testelor DM: care modele sînt semnificativ mai precise în România</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L2_dm_matrix_ro.jpg" alt="Slide-ul 17: Matricea testelor DM: care modele sînt semnificativ mai precise în România" loading="lazy"></a>
+      <figcaption>Slide-ul 17</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="dm-a">Modelul A (rîndul)</label><select id="dm-a"><option value="naive" selected>Naiv</option><option value="snaive">Naiv sezonier</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear">AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ansamblu 4 modele</option></select></div><div class="ctl"><label for="dm-b">Modelul B (coloana)</label><select id="dm-b"><option value="naive">Naiv</option><option value="snaive">Naiv sezonier</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear" selected>AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ansamblu 4 modele</option></select></div><div class="ctl"><label for="dm-l">Funcția de pierdere</label><select id="dm-l"><option value="abs" selected>Eroare absolută</option><option value="sq">Eroare pătratică</option></select></div><div class="ctl"><label for="dm-L">Laguri Newey–West: <b id="dm-L-v"></b></label><input type="range" id="dm-L" min="0" max="21" step="1" value="7"></div><button class="btn play" id="dm-play" type="button"></button></div><div class="charts "><div class="chart" id="dm-diff"></div><div class="chart" id="dm-cum"></div></div><ul class="out" id="dm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_dm_matrix" target="_blank" rel="noopener">EMQA_L2_dm_matrix</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_dm_matrix/EMQA_L2_dm_matrix.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> AW-LEAR are MAE 22,53 EUR/MWh, prognoza naivă 27,82. Este diferența semnificativă și este AW-LEAR semnificativ mai bun decît AW-ARX (22,30)?</div>
+  <details><summary>Răspuns</summary><p>Prima da, a doua nu. Testul DM folosește diferența zilnică a pierderilor d_t (media pe cele 24 de ore a |e_A| − |e_B|), cu varianța Newey–West (7 laguri): naiv față de AW-LEAR dă DM = 7,32, p unilateral < 0,001; AW-ARX față de AW-LEAR dă DM = −0,83, p = 0,80, deci AW-LEAR nu este mai precis decît AW-ARX. Schimbați pierderea în eroare pătratică sau numărul de laguri: concluzia pentru naiv față de AW-LEAR rămîne; pentru modele apropiate se poate schimba.</p></details>
+</section><h2 class="sec" id="s-expert">Modele expert: ARX și LEAR</h2>
+<section class="blk" id="per-hour">
+  <h3>Cîte un model pentru fiecare oră este mai precis decît un model comun</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L2_per_hour_single_ro.jpg" alt="Slide-ul 22: Cîte un model pentru fiecare oră este mai precis decît un model comun" loading="lazy"></a>
+      <figcaption>Slide-ul 22</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="ph-m"><span class="lbl">Modele</span><div class="tgs"><label class="tg"><input type="checkbox" name="ph-m" value="naive" checked> Naiv</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728" checked> ARX(728)</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728_single" checked> ARX(728), o singură regresie</label><label class="tg"><input type="checkbox" name="ph-m" value="aw_lear"> AW-LEAR</label><label class="tg"><input type="checkbox" name="ph-m" value="gbm"> GBM</label><label class="tg"><input type="checkbox" name="ph-m" value="ens_all"> Ansamblu 4 modele</label></div></div><div class="ctl"><label for="ph-q">Perioada</label><select id="ph-q"><option value="all" selected>Tot anul de test</option><option value="win">Iarna (dec–feb)</option><option value="spr">Primăvara (mar–mai)</option><option value="sum">Vara (iun–aug)</option><option value="aut">Toamna (sep–nov)</option></select></div><div class="ctl"><label for="ph-e">Măsura</label><select id="ph-e"><option value="mae" selected>MAE</option><option value="rmse">RMSE</option></select></div></div><div class="charts one"><div class="chart" id="ph-chart"></div></div><ul class="out" id="ph-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_per_hour_single" target="_blank" rel="noopener">EMQA_L2_per_hour_single</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_per_hour_single/EMQA_L2_per_hour_single.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> ARX(728) estimează o regresie pentru fiecare oră (24 de modele); varianta cu o singură regresie are pante comune și doar termeni liberi diferiți pe ore. În cîte ore este varianta cu o singură regresie mai slabă?</div>
+  <details><summary>Răspuns</summary><p>În 21 din cele 24 de ore. MAE pe an este 24,54 EUR/MWh, față de 22,72 pentru ARX(728) cu cîte o regresie pe oră: fiecare oră are propria dinamică (orele de noapte urmează îndeaproape ziua anterioară, orele solare depind mai mult de regenerabile). Erorile tuturor modelelor sînt maxime seara: AW-LEAR are cea mai slabă oră la 19:00 (34,52 EUR/MWh) și cea mai bună la 01:00 (9,47).</p></details>
+</section><h2 class="sec" id="s-win">Ferestre, combinații și învățare automată</h2>
+<section class="blk" id="windows">
+  <h3>Media pe ferestre este mai precisă decît cea mai bună fereastră</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L2_windows_ro.jpg" alt="Slide-ul 28: Media pe ferestre este mai precisă decît cea mai bună fereastră" loading="lazy"></a>
+      <figcaption>Slide-ul 28</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="wn-f">Familia de modele</label><select id="wn-f"><option value="arx" selected>ARX</option><option value="lear">LEAR</option></select></div><div class="ctl ctl-tg" id="wn-w"><span class="lbl">Ferestre incluse în medie (zile)</span><div class="tgs"><label class="tg"><input type="checkbox" name="wn-w" value="56" checked> 56</label><label class="tg"><input type="checkbox" name="wn-w" value="84" checked> 84</label><label class="tg"><input type="checkbox" name="wn-w" value="112" checked> 112</label><label class="tg"><input type="checkbox" name="wn-w" value="364" checked> 364</label><label class="tg"><input type="checkbox" name="wn-w" value="546" checked> 546</label><label class="tg"><input type="checkbox" name="wn-w" value="714" checked> 714</label><label class="tg"><input type="checkbox" name="wn-w" value="721" checked> 721</label><label class="tg"><input type="checkbox" name="wn-w" value="728" checked> 728</label></div></div></div><div class="charts one"><div class="chart" id="wn-chart"></div></div><ul class="out" id="wn-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_windows" target="_blank" rel="noopener">EMQA_L2_windows</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_windows/EMQA_L2_windows.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> ARX cu fereastra de 56 de zile are MAE 24,44 EUR/MWh, cu 728 de zile 22,72. Este media prognozelor pe cele șase ferestre ARX mai bună decît cea mai bună fereastră?</div>
+  <details><summary>Răspuns</summary><p>Da. AW-ARX, media pe ferestrele de 56, 84, 112, 714, 721 și 728 de zile, are MAE 22,30 EUR/MWh, sub fiecare fereastră luată separat (cea mai bună: 714 zile, 22,68). Ferestrele scurte se adaptează repede la noile niveluri ale prețului, cele lungi estimează precis coeficienții; erorile lor nu sînt perfect corelate, deci media reduce eroarea. Debifați ferestre pentru a vedea ce combinații mai ajută. Pentru LEAR, media pe 364, 546 și 728 de zile (22,53) este și ea sub fiecare fereastră (cea mai bună: 728 de zile, 22,62).</p></details>
+</section><h2 class="sec" id="s-prob">Prognoze probabilistice și cointegrare</h2>
+<section class="blk" id="qra">
+  <h3>Toate cele trei metode subestimează cozile distribuției prețului</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=38" target="_blank" rel="noopener"><img src="slides/L2_prob_rel_ro.jpg" alt="Slide-ul 38: Toate cele trei metode subestimează cozile distribuției prețului" loading="lazy"></a>
+      <figcaption>Slide-ul 38</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="qr-c">Nivelul nominal al intervalului (%): <b id="qr-c-v"></b></label><input type="range" id="qr-c" min="0" max="3" step="1" value="2"></div><div class="ctl"><label for="qr-w">Săptămîna afișată (începe în ziua): <b id="qr-w-v"></b></label><input type="range" id="qr-w" min="0" max="358" step="7" value="182"></div><div class="ctl"><label for="qr-h">Ora pentru acoperire</label><select id="qr-h"><option value="all" selected>Toate orele</option><option value="0">00:00</option><option value="1">01:00</option><option value="2">02:00</option><option value="3">03:00</option><option value="4">04:00</option><option value="5">05:00</option><option value="6">06:00</option><option value="7">07:00</option><option value="8">08:00</option><option value="9">09:00</option><option value="10">10:00</option><option value="11">11:00</option><option value="12">12:00</option><option value="13">13:00</option><option value="14">14:00</option><option value="15">15:00</option><option value="16">16:00</option><option value="17">17:00</option><option value="18">18:00</option><option value="19">19:00</option><option value="20">20:00</option><option value="21">21:00</option><option value="22">22:00</option><option value="23">23:00</option></select></div><button class="btn play" id="qr-play" type="button"></button></div><div class="charts "><div class="chart" id="qr-fan"></div><div class="chart" id="qr-rel"></div></div><ul class="out" id="qr-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_prob_rel" target="_blank" rel="noopener">EMQA_L2_prob_rel</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_prob_rel/EMQA_L2_prob_rel.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Intervalul QRA de 90% (construit din prognozele AW-ARX și AW-LEAR) ar trebui să conțină prețul în 90% din ore. Cît de des o face în anul de test?</div>
+  <details><summary>Răspuns</summary><p>În 85,67% din ore, sub 90%: intervalul este prea îngust, iar testul Kupiec (un test al raportului de verosimilitate pentru ponderea orelor din afara intervalului) respinge acoperirea corectă (p < 0,001). Intervalul de 50% acoperă 47,3%. Graficul de fiabilitate arată, pentru fiecare nivel τ, ponderea prețurilor sub cuantilă minus τ, în puncte procentuale (pp): peste zero în coada inferioară și sub zero în coada superioară, deci prețurile extreme sînt mai frecvente decît se așteaptă modelul. Alegeți o oră: orele de seară au intervalele cele mai largi.</p></details>
+</section><h2 class="sec" id="s-case">Studii de caz pe date recente din România</h2>
+<section class="blk" id="monthly">
+  <h3>Studiul de caz (a): acuratețea diferă mult de la o lună la alta</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L2/lecture2_ro.pdf#page=44" target="_blank" rel="noopener"><img src="slides/L2_monthly_mae_ro.jpg" alt="Slide-ul 44: Studiul de caz (a): acuratețea diferă mult de la o lună la alta" loading="lazy"></a>
+      <figcaption>Slide-ul 44</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="mm-m"><span class="lbl">Modele</span><div class="tgs"><label class="tg"><input type="checkbox" name="mm-m" value="naive" checked> Naiv</label><label class="tg"><input type="checkbox" name="mm-m" value="aw_arx"> AW-ARX</label><label class="tg"><input type="checkbox" name="mm-m" value="aw_lear" checked> AW-LEAR</label><label class="tg"><input type="checkbox" name="mm-m" value="gbm"> GBM</label><label class="tg"><input type="checkbox" name="mm-m" value="mlp"> MLP</label><label class="tg"><input type="checkbox" name="mm-m" value="ens_all" checked> Ansamblu 4 modele</label></div></div><div class="ctl"><label for="mm-r">Scala</label><select id="mm-r"><option value="abs" selected>MAE (EUR/MWh)</option><option value="rel">MAE relativ la naiv (rMAE)</option></select></div></div><div class="charts one"><div class="chart" id="mm-chart"></div></div><ul class="out" id="mm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_monthly_mae" target="_blank" rel="noopener">EMQA_L2_monthly_mae</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_monthly_mae/EMQA_L2_monthly_mae.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Este AW-LEAR mai bun decît prognoza naivă în fiecare lună a anului de test și este ansamblul de patru modele mereu mai bun decît AW-LEAR?</div>
+  <details><summary>Răspuns</summary><p>AW-LEAR bate prognoza naivă în toate cele 12 luni; ansamblul (media AW-ARX, AW-LEAR, GBM și MLP) bate AW-LEAR în 8 din cele 12 luni. Nivelul erorii variază mult între luni: AW-LEAR are 12,84 EUR/MWh în decembrie 2025 și 34,88 în octombrie 2026. Treceți la MAE relativ: ordinea modelelor este mai stabilă decît nivelul erorilor.</p></details>
+</section>
+<p class="src foot">Prețuri: OPCOM PZU (piața pentru ziua următoare din România), prin energy-charts.info (Fraunhofer ISE); ziua de livrare în ora Europei Centrale (CET/CEST), 24 de valori orare pe zi (prețurile pe 15 minute din 1 octombrie 2025 sînt mediate pe oră). Prognoze: modelele din Cursul 2, reestimate în fiecare zi a anului de test numai cu datele disponibile la închiderea ofertelor (Quantlets EMQA_L2_*). Abrevieri: MAE eroarea absolută medie, RMSE rădăcina erorii pătratice medii, MAPE eroarea procentuală absolută medie, sMAPE MAPE simetrică, ARX model autoregresiv cu variabile exogene, LEAR model autoregresiv estimat cu lasso, AW media pe ferestrele de calibrare, GBM gradient boosting, MLP perceptron multistrat, DM Diebold–Mariano, QRA medierea prin regresie cuantilică.</p>
+</main>
+</body>
+</html>

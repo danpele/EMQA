@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_nic'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'News impact curves of GJR-GARCH(1,1,1)-t models for the daily shocks of the Romanian base price, 2019-01-01 to 2026-10-31: next-day volatility as a function of today’s shock, in percent and in EUR/MWh; in EUR/MWh rises raise volatility more (inverse leverage effect), in percent falls do.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, GJR-GARCH, asymmetry, leverage effect, inverse leverage effect, news impact curve'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'nic.png'

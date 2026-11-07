@@ -719,7 +719,7 @@
   "shuf_gain": 5.4,
   "leak_rmae": 0.811,
   "shuf_rmae": 0.791,
-  "once_loss": 4.3,
+  "once_loss": 4.2,
   "n_quarters": 5,
   "once_last_q": 3.7,
   "once_first_q": 0.15

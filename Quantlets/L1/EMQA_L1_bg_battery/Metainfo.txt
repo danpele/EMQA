@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_bg_battery'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly Romania minus Bulgaria day-ahead price spread in the evening hours 19:00-22:00 local time (EET) since 2023, and the monthly mean Bulgarian battery discharge and charging (MW) since the battery series starts; an association, not proof. Data: 2023-01 to 2026-10, local time; BG battery series reported from 2026-09-10. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'battery storage, price spread, evening peak, Romania, Bulgaria, day-ahead market, case study'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Day-ahead prices at native resolution and Bulgarian hourly generation incl. batteries (energy-charts.info, ENTSO-E); data/clean/power_da_prices_native_utc.csv, generation_bg_mw_hourly_utc.csv'
+
+Output: 'bg_battery.png'

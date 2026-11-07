@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_solar_growth'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Installed solar capacity at year end in Romania, Bulgaria and Hungary (2019-2025, ENTSO-E) and yearly Romanian solar output in TWh (2019 to 2026-10-31, 2026 = Jan-Oct). Prints the growth factor of Romanian capacity, the like-for-like Jan-cut-off output of the last two years and the solar share of load.'
+
+Keywords: 'solar, photovoltaic, installed capacity, renewables, generation, Romania, Bulgaria, Hungary, energy, TWh, bar chart'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'installed_capacity_yearly.csv: installed capacity by country, technology and year (ENTSO-E via energy-charts.info); power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E (used for the interval lengths); generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025)'
+
+Output: 'solar_growth.png'

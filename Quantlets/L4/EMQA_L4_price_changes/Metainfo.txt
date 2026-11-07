@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_price_changes'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Daily day-ahead base price of Romania (OPCOM) and its daily change X_t = P_t - P_(t-1), the risk factor of Lecture 4; daily, 2015-01-01 to 2026-10-31 (CET delivery days). Prints the largest daily rise and fall.'
+
+Keywords: 'electricity prices, day-ahead market, price changes, risk factor, volatility, Romania, OPCOM, time series'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E (cut-off 2026-10-31)'
+
+Output: 'price_changes.png'

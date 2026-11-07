@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_coverage'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Coverage of the 99% quantile forecast of the next day’s base price in Romania, used to size the OPCOM day-ahead guarantee: share of days with the price below the forecast in 2017-2020, 2021-2022 and 2023-2026 for quantile regression, quantile regression with conformal widening and FHS (previous price plus 99% VaR); forecasts 2017-01-01 to 2026-10-31, 99% quantile. Prints the coverage and the Kupiec test p-values.'
+
+Keywords: 'quantile regression, conformal prediction, collateral, guarantee, coverage, Kupiec test, filtered historical simulation, electricity prices, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E (cut-off 2026-10-31); the quantile regressions and the FHS forecasts are recomputed in the notebook'
+
+Output: 'coverage.png'

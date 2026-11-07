@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_case_week'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Case study: the Monday-to-Sunday week with the most negative-price hours in the month of 2026 with the most negative hours (2026-04-20 to 2026-04-26): Romanian 15-min day-ahead price with the optimal schedule of a 2h, 1 MW battery (charging and discharging intervals), and Romanian solar and wind output (GW). Prints the negative hours, price range, solar capture price and rate of the week and the battery revenue against the last-12-month average.'
+
+Keywords: 'case study, negative prices, battery, energy storage, solar, wind, capture rate, 15-minute MTU, day-ahead, Romania, OPCOM'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025)'
+
+Output: 'case_week.png'

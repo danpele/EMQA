@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_windows'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Mean absolute error on the test year of the expert ARX model of the Romanian day-ahead price for six calibration windows (56 to 728 days) and of LEAR for three windows (364, 546, 728 days), against the average of the forecasts across windows (AW) and the naive benchmark. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'calibration window, averaging across windows, forecast combination, ARX, LEAR, MAE, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py)'
+
+Output: 'windows.png'

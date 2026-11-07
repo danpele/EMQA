@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_hedge_scatter'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Minimum-variance hedge ratio of the Romanian monthly day-ahead price with Hungarian and German prices: scatter of monthly changes with the OLS line, h* and R2; monthly changes, 2015-02 to 2026-10. Prints h* with HAC standard errors, moving-block bootstrap 95% intervals and the out-of-sample variance reduction from 2021 with h* estimated on 2015-2020.'
+
+Keywords: 'hedge ratio, minimum variance, OLS, HAC, block bootstrap, hedge effectiveness, cross hedge, Romania, Hungary, Germany'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'day-ahead daily base prices of OPCOM, HUPX and EPEX SPOT via energy-charts.info (data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'hedge_scatter.png'

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_basis'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Basis risk of a foreign hedge: monthly price gap Romania minus Hungary and Romania minus Germany (left) and the duration-weighted share of hours in which the Romanian price equals the Hungarian or German one within 0.01 EUR/MWh, by year (right); 2015-01 to 2026-10; hourly and monthly data.'
+
+Keywords: 'basis risk, market coupling, price convergence, cross-border, Romania, Hungary, Germany, day-ahead'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'day-ahead daily base prices of OPCOM, HUPX and EPEX SPOT via energy-charts.info (data/clean/power_da_prices_daily_cet.csv); day-ahead prices at native resolution (data/clean/power_da_prices_native_utc.csv)'
+
+Output: 'basis.png'

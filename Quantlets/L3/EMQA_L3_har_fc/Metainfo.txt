@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_har_fc'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Realised intraday variation of the Romanian day-ahead price and its one-day-ahead HAR forecast over the test year 2025-11-01 to 2026-10-31, the HAR model being re-estimated every day on the data available the day before: the forecasts follow the variation, not its isolated spikes.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, HAR model, realised volatility, intraday variation, forecasting, out-of-sample, mean absolute error'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; power_da_prices_hourly_utc.csv: hourly day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E; 15-min market time units averaged to the hour from 1 Oct 2025), EUR/MWh'
+
+Output: 'har_fc.png'

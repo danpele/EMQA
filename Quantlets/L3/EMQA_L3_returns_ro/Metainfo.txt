@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_returns_ro'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian daily base day-ahead price and its daily log change r_t = 100 ln(P_t/P_t-1), 2019-01-01 to 2026-10-31 (CET delivery days), with the energy crisis (Sep 2021 to Dec 2022) shaded: calm and turbulent stretches alternate (volatility clustering).'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, log returns, volatility clustering, time series plot, energy crisis'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'returns_ro.png'

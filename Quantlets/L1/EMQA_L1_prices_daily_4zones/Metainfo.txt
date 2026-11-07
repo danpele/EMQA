@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_prices_daily_4zones'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Seven-day mean of the daily base day-ahead electricity price in Romania (OPCOM PZU), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT); prints the Romanian daily maximum and its date. Data: 2015-01-01 to 2026-10-31 (BG from 2016-10-31). Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'electricity prices, day-ahead market, Romania, Bulgaria, Hungary, Germany, market coupling, energy crisis, time series'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Daily base day-ahead prices (energy-charts.info, from the exchanges via ENTSO-E; data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'prices_daily_4zones.png'

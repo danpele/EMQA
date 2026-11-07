@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 1 · Piețele de energie și datele lor</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 1 · Piețele de energie și datele lor">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L1.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261107a", "L1_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L1.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 1 · Piețele de energie și datele lor</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L1/lecture1_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L1.html" class="lang-btn">EN</a><a href="L1_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
+<p class="toc"><a href="#s-mkt">Piețele de energie electrică din România și Europa</a> · <a href="#s-facts">Datele din energie și faptele stilizate</a> · <a href="#s-tool">Instrumente pentru serii de timp</a></p>
+<h2 class="sec" id="s-mkt">Piețele de energie electrică din România și Europa</h2>
+<section class="blk" id="merit-order">
+  <h3>Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=9" target="_blank" rel="noopener"><img src="slides/L1_merit_opcom_ro.jpg" alt="Slide-ul 9: Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026" loading="lazy"></a>
+      <figcaption>Slide-ul 9</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="mo-i">Intervalul de 15 minute</label><select id="mo-i"><option value="0" selected>Q45, 12:00–12:15 ora României (amiază)</option><option value="1">Q77, 20:00–20:15 ora României (seară)</option></select></div><div class="ctl"><label for="mo-s">Ofertă suplimentară la preț zero, de exemplu solar (MW): <b id="mo-s-v"></b></label><input type="range" id="mo-s" min="0" max="1000" step="25" value="0"></div><div class="ctl"><label for="mo-d">Cerere suplimentară, inelastică (MW): <b id="mo-d-v"></b></label><input type="range" id="mo-d" min="-1000" max="1000" step="50" value="0"></div><button class="btn play" id="mo-play" type="button"></button></div><div class="charts one"><div class="chart" id="mo-chart"></div></div><ul class="out" id="mo-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_merit_opcom" target="_blank" rel="noopener">EMQA_L1_merit_opcom</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_merit_opcom/EMQA_L1_merit_opcom.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> La amiază, pe 21 octombrie 2026, PZU (piața pentru ziua următoare) s-a închis la 152,23 EUR/MWh, cu aproximativ 2,8 GW pe curbele publicate. Cîtă ofertă suplimentară la preț zero aduce prețul de la amiază aproape de zero: circa 50 MW, 500 MW sau 2.000 MW?</div>
+  <details><summary>Răspuns</summary><p>Circa 50 MW. Lîngă punctul de intersecție, curba cererii este aproape verticală: cumpărătorii cer aproximativ 2.816 MW la 152 EUR/MWh și doar cu circa 11 MW mai mult la 0 EUR/MWh. Cu 25 MW de ofertă în plus, curbele publicate se intersectează la 131,40 EUR/MWh, iar cu 50 MW la 0,68 EUR/MWh. În intervalul de seară, curbele se intersectează pe un segment vertical (orice preț între 206,49 și 247,00 EUR/MWh închide 3.423 MW; prețul oficial este 244,00 EUR/MWh), iar 300 MW la preț zero duc prețul la 0. Cererea inelastică la preț explică de ce o oră însorită poate face prețul negativ.</p></details>
+</section><h2 class="sec" id="s-facts">Datele din energie și faptele stilizate</h2>
+<section class="blk" id="daily-prices">
+  <h3>Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=23" target="_blank" rel="noopener"><img src="slides/L1_prices_daily_4zones_ro.jpg" alt="Slide-ul 23: Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel" loading="lazy"></a>
+      <figcaption>Slide-ul 23</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="dp-z"><span class="lbl">Zone</span><div class="tgs"><label class="tg"><input type="checkbox" name="dp-z" value="RO" checked> România</label><label class="tg"><input type="checkbox" name="dp-z" value="BG"> Bulgaria</label><label class="tg"><input type="checkbox" name="dp-z" value="HU"> Ungaria</label><label class="tg"><input type="checkbox" name="dp-z" value="DE_LU" checked> Germania–Luxemburg</label></div></div><div class="ctl"><label for="dp-w">Media mobilă (zile): <b id="dp-w-v"></b></label><input type="range" id="dp-w" min="1" max="90" step="1" value="30"></div><div class="ctl"><label for="dp-y">Începutul perioadei: <b id="dp-y-v"></b></label><input type="range" id="dp-y" min="2015" max="2026" step="1" value="2019"></div><button class="btn play" id="dp-play" type="button"></button></div><div class="charts one"><div class="chart" id="dp-chart"></div></div><ul class="out" id="dp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_prices_daily_4zones" target="_blank" rel="noopener">EMQA_L1_prices_daily_4zones</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_prices_daily_4zones/EMQA_L1_prices_daily_4zones.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În 2015–2020, cele patru zone aveau prețuri zilnice apropiate. Ce se întîmplă după 2022 cu diferența dintre România și Germania–Luxemburg?</div>
+  <details><summary>Răspuns</summary><p>Alegeți începutul în 2022 și păstrați România și Germania–Luxemburg: mediile pe 30 de zile se separă pe perioade lungi, cu România peste Germania în fiecare vară din 2022 pînă în 2026 (mediile iunie–august). Cuplarea piețelor egalizează prețurile numai cînd interconexiunile nu sînt congestionate; sinteza dă media și abaterea standard a fiecărei zone pe perioada aleasă.</p></details>
+</section>
+<section class="blk" id="intraday-profile">
+  <h3>Producția solară a mutat minimul zilnic al prețului la amiază</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=25" target="_blank" rel="noopener"><img src="slides/L1_profile_intraday_ro.jpg" alt="Slide-ul 25: Producția solară a mutat minimul zilnic al prețului la amiază" loading="lazy"></a>
+      <figcaption>Slide-ul 25</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ip-z">Zona</label><select id="ip-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="ip-s">Sezonul</label><select id="ip-s"><option value="all" selected>Tot anul</option><option value="win">Iarna (dec–feb)</option><option value="spr">Primăvara (mar–mai)</option><option value="sum">Vara (iun–aug)</option><option value="aut">Toamna (sep–nov)</option></select></div><div class="ctl"><label for="ip-y">Anul: <b id="ip-y-v"></b></label><input type="range" id="ip-y" min="2016" max="2026" step="1" value="2025"></div><button class="btn play" id="ip-play" type="button"></button></div><div class="charts "><div class="chart" id="ip-chart"></div><div class="chart" id="ip-norm"></div></div><ul class="out" id="ip-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_profile_intraday" target="_blank" rel="noopener">EMQA_L1_profile_intraday</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_profile_intraday/EMQA_L1_profile_intraday.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În România, este ora cea mai ieftină a zilei în 2025 aceeași ca în 2016?</div>
+  <details><summary>Răspuns</summary><p>Nu. În 2016, ca și în 2019, ora cea mai ieftină este 03:00, ca într-o piață determinată de consum; în 2025 este 13:00 (58,8 EUR/MWh), din cauza creșterii capacității solare. Ora cea mai scumpă rămîne 19:00, dar raportul 19:00 / 13:00 crește de la 1,30 în 2019 la 3,11 în 2025. Alegeți vara pentru a vedea „curba rață” (duck curve) cea mai adîncă; panoul din dreapta împarte fiecare oră la media zilei, deci compară ani cu niveluri diferite ale prețului.</p></details>
+</section>
+<section class="blk" id="negative-prices">
+  <h3>Prețurile negative au apărut în România în 2023 și au devenit frecvente</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=29" target="_blank" rel="noopener"><img src="slides/L1_negative_prices_ro.jpg" alt="Slide-ul 29: Prețurile negative au apărut în România în 2023 și au devenit frecvente" loading="lazy"></a>
+      <figcaption>Slide-ul 29</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ng-z">Zona</label><select id="ng-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="ng-t">Prag: preț sub (EUR/MWh): <b id="ng-t-v"></b></label><input type="range" id="ng-t" min="-50" max="20" step="5" value="0"></div><div class="ctl"><label for="ng-y">Anul pentru profilul orar: <b id="ng-y-v"></b></label><input type="range" id="ng-y" min="2019" max="2026" step="1" value="2025"></div><button class="btn play" id="ng-play" type="button"></button></div><div class="charts "><div class="chart" id="ng-year"></div><div class="chart" id="ng-hour"></div></div><ul class="out" id="ng-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_negative_prices" target="_blank" rel="noopener">EMQA_L1_negative_prices</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_negative_prices/EMQA_L1_negative_prices.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> România a avut primul preț negativ pentru ziua următoare pe 21 mai 2023. În ce ore ale zilei apar prețurile negative din 2025?</div>
+  <details><summary>Răspuns</summary><p>În jurul amiezii, cînd producția solară este maximă: în 2025, 95% dintre orele cu preț negativ sînt între 10:00 și 16:00, cel mai des la 13:00. Din 2024, 84% dintre ele cad în weekend, iar din 2023 aproximativ jumătate în aprilie și mai (cifrele din curs). Ridicați pragul la 0 EUR/MWh și peste: numărul orelor foarte ieftine crește mai repede decît cel al orelor strict negative.</p></details>
+</section>
+<section class="blk" id="asinh">
+  <h3>Prețul poate fi nul sau negativ: folosiți diferențe sau asinh</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=31" target="_blank" rel="noopener"><img src="slides/L1_asinh_ro_ro.jpg" alt="Slide-ul 31: Prețul poate fi nul sau negativ: folosiți diferențe sau asinh" loading="lazy"></a>
+      <figcaption>Slide-ul 31</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="as-c">Scala transformării, c (multipli ai abaterii absolute mediane, MAD): <b id="as-c-v"></b></label><input type="range" id="as-c" min="0.1" max="5" step="0.1" value="1"></div><div class="ctl"><label for="as-y">Anul (prețuri orare, România)</label><select id="as-y"><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected>2025</option><option value="2026">2026</option></select></div><button class="btn play" id="as-play" type="button"></button></div><div class="charts "><div class="chart" id="as-raw"></div><div class="chart" id="as-tr"></div></div><ul class="out" id="as-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_asinh_ro" target="_blank" rel="noopener">EMQA_L1_asinh_ro</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_asinh_ro/EMQA_L1_asinh_ro.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Prețurile orare au o coadă dreaptă lungă și, din 2023, valori negative. De ce nu luăm pur și simplu logaritmul?</div>
+  <details><summary>Răspuns</summary><p>Logaritmul nu este definit pentru prețuri zero sau negative. Sinusul hiperbolic invers, asinh((p − mediana)/(c·MAD)), unde MAD este abaterea absolută mediană, se comportă ca un logaritm în cozi și aproape liniar lîngă mediană, și acceptă orice semn. Pentru România în 2025, c = 1 reduce asimetria de la 0,90 la 0,09 și excesul de kurtosis de la 4,24 la −0,24; un c mai mic comprimă și mai mult cozile (exces de kurtosis negativ), un c mai mare lasă seria mai aproape de prețurile brute.</p></details>
+</section><h2 class="sec" id="s-tool">Instrumente pentru serii de timp</h2>
+<section class="blk" id="acf-hourly">
+  <h3>Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L1_acf_ro_hourly_ro.jpg" alt="Slide-ul 37: Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră" loading="lazy"></a>
+      <figcaption>Slide-ul 37</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ac-z">Zona</label><select id="ac-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="ac-f">Seria</label><select id="ac-f"><option value="lev" selected>Prețul orar</option><option value="d24">Diferența față de aceeași oră de ieri</option></select></div><div class="ctl"><label for="ac-y">Anul: <b id="ac-y-v"></b></label><input type="range" id="ac-y" min="2016" max="2026" step="1" value="2025"></div><div class="ctl"><label for="ac-L">Laguri afișate (ore): <b id="ac-L-v"></b></label><input type="range" id="ac-L" min="48" max="336" step="24" value="168"></div><button class="btn play" id="ac-play" type="button"></button></div><div class="charts one"><div class="chart" id="ac-chart"></div></div><ul class="out" id="ac-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_acf_ro_hourly" target="_blank" rel="noopener">EMQA_L1_acf_ro_hourly</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_acf_ro_hourly/EMQA_L1_acf_ro_hourly.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Autocorelația prețurilor orare are din nou vîrfuri la lagurile 24 și 168. Ce înseamnă aceasta pentru un model de prognoză?</div>
+  <details><summary>Răspuns</summary><p>Prețul orei h depinde de aceeași oră din ziua anterioară și din aceeași zi a săptămînii trecute: sezonalitate zilnică și săptămînală (România, 2025: ρ(24) = 0,777, ρ(168) = 0,724). Un model pentru ziua următoare folosește deci lagurile 24 (d−1), 48 (d−2) și 168 (d−7), ca modelul ARX (autoregresiv cu variabile exogene) din Cursul 2. Diferența față de aceeași oră de ieri face ρ(24) negativ (−0,263, semnul obișnuit după o diferență sezonieră) și păstrează un vîrf săptămînal (ρ(168) = 0,296).</p></details>
+</section>
+<p class="src foot">Prețuri pentru ziua următoare: OPCOM PZU (România), IBEX (Bulgaria), HUPX (Ungaria), EPEX (Germania–Luxemburg), prin energy-charts.info (Fraunhofer ISE). Curbele agregate de cerere și ofertă: OPCOM, PZU, ziua de livrare 21 octombrie 2026. Ora zilei în ora Europei Centrale (CET/CEST); din 1 octombrie 2025, prețurile pe 15 minute sînt mediate pe oră (profiluri, ACF) sau numărate ca sferturi de oră (orele negative). Date pînă la data-limită a cursului.</p>
+</main>
+</body>
+</html>

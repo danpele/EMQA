@@ -214,7 +214,7 @@ def build(lang, H=None):
           "\\textbf{Date pînă la @{cutoff.end|date}} (ultima lună completă), descărcate la @{data.download|date}; "
           "„@{Y}, de la începutul anului (YTD)” înseamnă întotdeauna " + jan_last + " @{Y}."),
         t("Missing values stay missing: never interpolated, never counted as zero, and coverage is always reported.",
-          "Valorile lipsă nu se completează: nu le interpolăm, nu le tratăm ca zero și raportăm întotdeauna gradul de acoperire."),
+          "Valorile lipsă nu se interpolează și nu devin zero, iar gradul de acoperire se raportează mereu."),
         sep="2pt") + D.bottom(None, NB + " \\S1"))
 
     # ------------------------------------------------------------------ 1 markets
@@ -369,7 +369,7 @@ def build(lang, H=None):
              "Schimburile programate diferă de fluxurile fizice; drepturile pe termen lung se alocă prin Joint Allocation Office (JAO)."),
            sep="2pt"),
         t("a trader on RO--HU flows earns the price spread only when cross-border capacity binds.",
-          "un trader pe interconexiunea RO--HU cîștigă din diferența de preț doar cînd capacitatea este saturată."),
+          "pe RO--HU, un trader cîștigă din diferența de preț doar cînd interconexiunea este saturată."),
         cite=t("(Weron, 2014, IJF; JAO; Core flow-based market coupling)", "(Weron, 2014, IJF; JAO; cuplarea bazată pe fluxuri Core)"),
         wl="0.45", wr="0.52")
 
@@ -388,7 +388,7 @@ def build(lang, H=None):
                 f"\\node[align=center,text width=2.25cm,font=\\scriptsize] at ({x:.2f},{yv:.2f}) {{\\textbf{{{dte}}}\\\\ {txt}}};\n")
     tik += "\\end{tikzpicture}\\end{center}"
     D.frame(t("Ten years of coupling: from four countries to one European auction", "Zece ani de cuplare: de la patru țări la o licitație europeană"),
-            "\\vspace{3mm}" + tik + "\n\\vspace{2mm}\n" + it(
+            "\\vspace{0.5mm}" + tik + "\n\\vspace{0.5mm}\n" + it(
                 t("Prices are computed by the Pan-European Hybrid Electricity Market Integration Algorithm (EUPHEMIA).",
                   "Prețurile se calculează cu algoritmul hibrid paneuropean de integrare a piețelor de energie electrică (EUPHEMIA)."),
                 t("Each step changed the data: new neighbours, new products, a finer resolution; check the date before comparing periods.",
@@ -403,8 +403,8 @@ def build(lang, H=None):
         "\\[ \\bar p_d=\\frac{1}{M_d}\\sum_{m=1}^{M_d}p_{d,m},\\qquad H_y=\\sum_{t\\in y}\\underbrace{\\mathbb 1\\{p_t<0\\}}_{" +
         t("\\text{1 if negative}", "\\text{1 dacă } p_t<0") + "}\\cdot\\underbrace{\\Delta_t/60}_{" +
         t("\\text{length in hours}", "\\text{durata în ore}") + "} \\]" +
-        "\\where{" + t("$p_{d,m}$ = price of MTU $m$ on day $d$; $M_d$ = MTUs that day: 96 since Oct 2025, 24 before (one hour "
-                       "more or less on the two daylight saving time (DST) days); $\\bar p_d$ = \\emph{daily base price}; "
+        "\\where{" + t("$p_{d,m}$ = price of MTU $m$ on day $d$; $M_d$ = MTUs that day: 96 since Oct 2025, 24 before ($\\pm$1 "
+                       "hour on the daylight saving time (DST) days); $\\bar p_d$ = \\emph{daily base price}; "
                        "$\\Delta_t\\in\\{60,15\\}$ = MTU length in minutes; $H_y$ = hour-equivalents in year $y$.",
                        "$p_{d,m}$ = prețul intervalului $m$ din ziua $d$; $M_d$ = numărul de intervale din zi: 96 din oct. "
                        "2025, 24 înainte ($\\pm$1 oră la schimbarea orei de vară (DST)); "
@@ -511,7 +511,7 @@ def build(lang, H=None):
              "Orele lipsă nu se completează, iar fiecare total are alături gradul de acoperire."),
            (t("\\textbf{Reference prices}", "\\textbf{Prețuri de referință}"),
             t("base: mean of the delivery day", "în bandă (base): media prețurilor zilei de livrare"),
-            t("peak: mean of 08:00--20:00, Monday to Friday", "de vîrf (peak): media prețurilor 08:00--20:00, luni--vineri")),
+            t("peak: mean of 08:00--20:00, Monday to Friday", "de vîrf (peak): prețul mediu 08:00--20:00, luni--vineri")),
            t("Gas and oil are quoted in US dollars (USD) per million British thermal units (MMBtu) and per barrel (bbl); "
              "conversion to EUR/MWh: Appendix G.",
              "Gazele și țițeiul se cotează în dolari americani (USD) pe milion de unități termice britanice (MMBtu), respectiv pe "
@@ -595,7 +595,7 @@ def build(lang, H=None):
         rows.append([ZN[z]] + [heat(x, min(v), max(v), shown=fmt(x, ".1f", lang)) for x in v])
     D.frame(t("Volatility moves with the price level", "Volatilitatea crește odată cu nivelul prețului"), table(
         "@{}l" + "r" * len(yrs) + "@{}", [t("Mean, EUR/MWh", "Media, EUR/MWh")] + yrs[:-1] + ["@{Y} YTD"], rows,
-        size="footnotesize", stretch="1.12") +
+        size="footnotesize", stretch="1.05") +
         note(t("Colour within each row: green = lowest, red = highest (@{Y} YTD = " + jan_last + ").",
                "Culoarea, pe fiecare rînd: verde = valoarea minimă, roșu = valoarea maximă (@{Y} YTD = " + jan_last + " @{Y}).")) +
         "\n\\vspace{1mm}\n" + it(t("@{Y} YTD: Romania @{cy.mean.RO|.2f} vs @{cy.mean_prev.RO|.2f} EUR/MWh in " + jan_last + " @{YP} "
@@ -603,7 +603,7 @@ def build(lang, H=None):
                                  "@{Y} YTD: România @{cy.mean.RO|.2f} EUR/MWh, față de @{cy.mean_prev.RO|.2f} EUR/MWh în " + jan_last +
                                  " @{YP} (@{cy.chg.RO|+.1f}\\%).")) +
         D.bottom(t("collateral for PZU purchases must scale with the price, since a 200 EUR/MWh market moves far more than a 50 one.",
-                   "garanțiile pentru achizițiile pe PZU cresc odată cu prețul, deoarece la 200 EUR/MWh piața fluctuează mult mai mult decît la 50.")),
+                   "garanțiile pentru PZU cresc odată cu prețul: la 200 EUR/MWh piața fluctuează mult mai mult decît la 50.")),
         cite=t("(energy-charts.info; own computation)", "(energy-charts.info; calcule proprii)"))
 
     D.chart(t("Solar moved the cheapest hour of the day to midday", "Producția solară a mutat minimul zilnic al prețului la amiază"), "profile_intraday", [
@@ -698,7 +698,7 @@ def build(lang, H=None):
             [strip0(f(f"neg.lfl_prev.{z}", ".2f")), f(f"neg.n_mtu.{z}.{Y}", ",d")] for z in ZONES]
     D.frame(t("Counting negative prices correctly: hour-equivalents", "Prețurile negative, numărate corect: ore echivalente"), table(
         "@{}l" + "r" * (len(ny) + 2) + "@{}", [t("Zone", "Zona")] + ny[:-1] + ["@{Y} YTD", jan_last + " @{YP}", t("@{Y}: 15-min MTUs", "@{Y}: intervale 15 min")],
-        rows, size="footnotesize", stretch="1.2") +
+        rows, size="footnotesize", stretch="1.1") +
         note(t("Hours with a negative day-ahead price; darker = more hours; last column: negative quarter-hours "
                "(= 4 $\\times$ hour-equivalents).",
                "Ore cu preț PZU negativ; nuanța mai închisă = mai multe ore; ultima coloană: sferturi de oră cu preț negativ "
@@ -706,7 +706,7 @@ def build(lang, H=None):
             t("Romania had none before 2023; Germany had them every year (inflexible plants plus wind).",
               "România nu a avut niciunul înainte de 2023; Germania a avut în fiecare an (centrale inflexibile și vînt)."),
             t("RO, BG and HU move together (coupled), but Hungary has had more negative hours since 2023.",
-              "RO, BG și HU evoluează împreună (piețe cuplate), dar din 2023 Ungaria are mai multe ore cu preț negativ."),
+              "RO, BG și HU evoluează împreună (cuplare), dar din 2023 Ungaria are mai multe ore cu preț negativ."),
             t(jan_last + " @{Y}: Romania @{neg.hours.RO.@{Y}|.2f} h vs @{neg.lfl_prev.RO|.2f} h a year earlier; growth is not automatic (Case study d).",
               jan_last + " @{Y}: România @{neg.hours.RO.@{Y}|.2f} h, față de @{neg.lfl_prev.RO|.2f} h cu un an înainte; creșterea nu este automată (studiul de caz d)."),
             sep="0pt") +
@@ -858,7 +858,7 @@ def build(lang, H=None):
                                     "$^{*}$Compatibil cu o rădăcină unitară, dar nu este o dovadă: testul ADF are putere redusă în "
                                     "cazul revenirii lente la medie, iar rupturile de nivel (2022) favorizează nerespingerea rădăcinii unitare."), sep="1pt"),
         t("if a supplier's price can carry permanent shocks, ``prices will come back to normal'' is not a safe budget assumption.",
-          "dacă prețul poate suferi șocuri permanente, ipoteza „prețurile vor reveni la normal” nu este o bază sigură pentru bugetul unui furnizor."),
+          "dacă șocurile pot fi permanente, un furnizor nu își poate baza bugetul pe „revenirea la normal”."),
         tryit=NB + " \\S7", cite="(Dickey \\& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\\ Econometrics)", wl="0.55", wr="0.42")
 
     LBL = {"ro_lvl": t("RO price, level", "Preț RO, nivel"), "ro_d": t("RO price, daily change", "Preț RO, variație zilnică"),
@@ -907,20 +907,18 @@ def build(lang, H=None):
 
     D.figframe(
         t("Exponential smoothing: recent data count more", "Netezirea exponențială: datele recente cîntăresc mai mult"),
-        t("The smoothed level is a weighted average of all past values, with weights shrinking geometrically into the past.",
-          "Nivelul netezit este o medie ponderată a tuturor valorilor trecute, cu ponderi care scad geometric pe măsură ce ne îndepărtăm în trecut."),
+        t("The smoothed level averages all past values, with weights shrinking geometrically.",
+          "Nivelul netezit: medie ponderată a valorilor trecute, cu ponderi care scad geometric."),
         "\\[ \\ell_t=\\underbrace{\\alpha x_t}_{" + t("\\text{news}", "\\text{informația nouă}") + "}+\\underbrace{(1-\\alpha)\\ell_{t-1}}_{" +
         t("\\text{memory}", "\\text{memoria}") + "},\\qquad \\alpha=1-2^{-1/h} \\]",
         "smooth_brent", [
-            t("$h$ = half-life: after $h$ days an observation keeps half of its weight.",
-              "$h$ = timpul de înjumătățire: după $h$ zile, o observație își păstrează jumătate din pondere."),
-            t("Simple moving average (SMA) and exponentially weighted moving average (EWMA, $\\alpha=$ @{smooth.alpha_hl|.3f}); the best "
-              "simple exponential smoothing (SES) weight is @{smooth.alpha_ses|.3f} $\\approx1$, almost the last price.",
-              "Media mobilă simplă (SMA) și media mobilă ponderată exponențial (EWMA, $\\alpha=$ @{smooth.alpha_hl|.3f}); ponderea optimă "
-              "a netezirii exponențiale simple (SES) este @{smooth.alpha_ses|.3f} $\\approx1$, astfel încît prognoza este practic ultimul preț.")],
-        job=t("a fuel buyer can use an EWMA as a contract reference price; as a forecast it adds little over the last price.",
-              "un cumpărător de combustibil poate folosi o EWMA ca preț de referință în contracte; ca prognoză, ea aduce puțin în plus față de ultimul preț."),
-        tryit=NB + " \\S9", cite="(Hyndman \\& Athanasopoulos, 2021, OTexts, ch.\\ 8)", height="0.60\\textheight")
+            t("$h$ = half-life (days); exponentially weighted moving average (EWMA): $\\alpha=$ @{smooth.alpha_hl|.3f}; "
+              "best simple exponential smoothing (SES) weight: @{smooth.alpha_ses|.3f}, almost the last price.",
+              "$h$ = timpul de înjumătățire (zile); media mobilă ponderată exponențial (EWMA): $\\alpha=$ @{smooth.alpha_hl|.3f}; "
+              "ponderea optimă a netezirii exponențiale simple (SES): @{smooth.alpha_ses|.3f}, practic ultimul preț.")],
+        job=t("an EWMA is a good contract reference price, but a weak forecast.",
+              "EWMA este un bun preț de referință în contracte, dar o prognoză slabă."),
+        tryit=NB + " \\S9", cite="(Hyndman \\& Athanasopoulos, 2021, OTexts, ch.\\ 8)", height="0.62\\textheight")
     D.section(t("Case studies on current data", "Studii de caz pe date recente"))
     D.subsection(t("(a) Wet 2023, dry 2025", "(a) 2023, an ploios; 2025, an secetos"))
     D.chart(t("Case study (a): 2025 hydro output was a third below wet 2023", "Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023"), "hydro_case", [
@@ -938,24 +936,24 @@ def build(lang, H=None):
     D.concept(
         t("Case study (a): wetter months go with lower Romanian prices", "Studiul de caz (a): mai multă apă, prețuri mai mici"),
         t("Holding the gas price fixed, months with more hydro output have had lower Romanian prices --- an association, not a measured effect.",
-          "La un preț dat al gazelor, lunile cu producție hidro mai mare au avut prețuri mai mici în România; este o asociere, nu un efect cauzal măsurat."),
+          "Cu gazele la preț fix, lunile cu mai multă apă au avut prețuri mai mici: o asociere, nu un efect cauzal."),
         "\\[ p_m=\\beta_0+\\underbrace{\\beta_1\\,\\mathrm{Hydro}_m}_{" + t("\\text{water}", "\\text{apa}") + "}+\\underbrace{\\beta_2\\,\\mathrm{TTF}_m}_{" +
         t("\\text{gas cost}", "\\text{costul gazelor}") + "}+u_m \\]" +
-        "\\where{" + t("$p_m$ = mean Romanian day-ahead price in month $m$ (EUR/MWh); $\\mathrm{Hydro}_m$ = hydro output (TWh); "
+        "\\where{" + t("$p_m$ = mean RO day-ahead price, month $m$ (EUR/MWh); $\\mathrm{Hydro}_m$ = hydro output (TWh); "
                        "$\\mathrm{TTF}_m$ = Dutch gas price (EUR/MWh); estimated by ordinary least squares (OLS) with heteroskedasticity- and "
                        "autocorrelation-consistent (HAC) standard errors, 6 lags.",
                        "$p_m$ = prețul mediu PZU în luna $m$ (EUR/MWh); $\\mathrm{Hydro}_m$ = producția hidro (TWh); $\\mathrm{TTF}_m$ = "
                        "prețul gazelor pe hubul olandez (EUR/MWh); estimare prin metoda celor mai mici pătrate (OLS), cu erori standard "
-                       "robuste la heteroscedasticitate și autocorelație (HAC), calculate cu 6 decalaje.") + "}",
+                       "robuste la heteroscedasticitate și autocorelație (HAC), 6 decalaje.") + "}",
         table("@{}lrrr@{}", [N["hydro"]["reg"]["start"][:4] + "--" + N["hydro"]["reg"]["end"][:4], "$\\hat\\beta$", t("s.e.", "e.s."), "$t$"],
               [[lab, f(f"hydro.reg.{k}.b", ".2f"), f(f"hydro.reg.{k}.se", ".2f"), f(f"hydro.reg.{k}.t", ".2f")]
                for lab, k in [(t("Constant", "Constantă"), "const"), ("Hydro", "hydro"), ("TTF", "ttf")]], size="footnotesize") +
         "\\par\\vspace{1mm}" + it(
             t("One TWh more hydro in a month: @{hydro.reg.hydro.b|.2f} EUR/MWh on average, gas held fixed.",
               "Un TWh hidro în plus într-o lună: în medie, @{hydro.reg.hydro.b|.2f} EUR/MWh, la același preț al gazelor."),
-            t("Caveat: price and gas are trending levels (Section 3), so the regression can be spurious unless they are cointegrated; "
+            t("Caveat: price and gas levels trend (Section 3): spurious regression unless cointegrated; "
               "$R^2=$ @{hydro.reg.r2|.3f} is not evidence; Lecture 2 tests cointegration.",
-              "Atenție: seriile prețului energiei și al gazelor au trend în nivel (secțiunea 3), iar regresia poate fi spurioasă dacă nu sînt cointegrate; "
+              "Atenție: prețurile energiei și ale gazelor au trend (secțiunea 3), deci fără cointegrare regresia poate fi spurioasă; "
               "$R^2=$ @{hydro.reg.r2|.3f} nu este o dovadă; cointegrarea se testează în cursul 2."), sep="2pt"),
         t("hydro producers and traders watch reservoir levels as a leading indicator of the PZU price.",
           "producătorii hidro și traderii urmăresc nivelul lacurilor ca indicator anticipativ al prețului PZU."),
@@ -1053,8 +1051,9 @@ def build(lang, H=None):
             t("a weekend day multiplies the odds by @{logit.coef.wkend.or|.2f}", "o zi de weekend înmulțește șansele cu @{logit.coef.wkend.or|.2f}"),
             t("McFadden pseudo-$R^2=$ @{logit.pr2|.3f}", "pseudo-$R^2$ McFadden $=$ @{logit.pr2|.3f}"))),
         t("curtailment of renewables is most likely on spring weekends with full reservoirs.",
-          "limitarea producției regenerabile este cea mai probabilă în weekendurile de primăvară, cu lacuri pline."),
-        tryit=NB + " \\S10d", cite=t("(own estimation, logit; energy-charts.info)", "(estimare proprie, logit; energy-charts.info)"), wl="0.57", wr="0.40")
+          "regenerabilele sînt limitate cel mai probabil în weekendurile de primăvară, cu lacuri pline."),
+        tryit=NB + " \\S10d", cite=t("(own estimation, logit; energy-charts.info)", "(estimare proprie, logit; energy-charts.info)"),
+        wl="0.61" if ro else "0.57", wr="0.36" if ro else "0.40")
     D.subsection(t("(e) @{Y} so far", "(e) Anul @{Y} pînă acum"))
     D.chart(t("Case study (e): @{Y} prices climbed; oil jumped in March", "Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie"), "cy_prices", [
         t(jan_last + " @{Y}: Romania @{cy.mean.RO|.2f} EUR/MWh (@{cy.chg.RO|+.1f}\\%); " + mlast + " @{cy.lm.RO|.1f} vs @{cy.lm_prev.RO|.1f} a year earlier.",

@@ -260,7 +260,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
   \item Reestimare zilnică pe fereastra care se încheie în ziua $d-1$, fără validare încrucișată aleatoare (K-fold).
 \end{itemize}
 \par\vfill\manager{cereți furnizorului de prognoze o testare retrospectivă (backtest) cu fereastră glisantă, nu ajustarea pe datele de estimare.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook-ul Jupyter, secțiunea 1}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\qlink{EMQA\_L2\_split\_timeline}{Quantlets/L2/EMQA_L2_split_timeline}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă}
@@ -278,7 +278,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Cel mai recent preț cunoscut este cel al zilei $d-1$.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L2\_horizon\_naive}{Quantlets/L2/EMQA_L2_horizon_naive}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prognozele punctuale, probabilistice și de traiectorie răspund la întrebări diferite}
@@ -398,7 +398,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Cereți MAE și rMAE.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Weron, 2014, IJF)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Weron, 2014, IJF)}\hfill\qlink{EMQA\_L2\_mape\_fail}{Quantlets/L2/EMQA_L2_mape_fail}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Testarea acurateței prognozelor}
@@ -449,7 +449,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Multe celule verzi indică un model pentru care merită să plătiți.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO; Lago et al., 2021, APEN)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L2\_dm\_matrix}{Quantlets/L2/EMQA_L2_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -502,7 +502,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
   \item Consumul și producția eoliană și solară au coeficienți apropiați de zero: datele din $d-2$ adaugă puțin.
 \end{itemize}
 \par\vfill\manager{cîte un model pe oră permite ca vîrful de seară să depindă de alți factori decît noaptea.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, ARX(728))}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, ARX(728))}\hfill\qlink{EMQA\_L2\_arx\_coef}{Quantlets/L2/EMQA_L2_arx_coef}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Variabilele fundamentale din ziua $d-2$ aproape că nu îmbunătățesc prognoza}
@@ -552,7 +552,7 @@ numai prețuri și calendar & 22{,}63 & 36{,}49 & 0{,}813 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{din 1 octombrie 2025 se tranzacționează sferturi de oră, deci aceeași alegere apare pentru cele 96 de intervale ale zilei.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\qlink{EMQA\_L2\_per\_hour\_single}{Quantlets/L2/EMQA_L2_per_hour_single}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Transformări de stabilizare a varianței}
@@ -573,7 +573,7 @@ numai prețuri și calendar & 22{,}63 & 36{,}49 & 0{,}813 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{funcția asinh este definită și pentru valori negative, unde logaritmul nu poate fi folosit.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\qlink{EMQA\_L2\_vst}{Quantlets/L2/EMQA_L2_vst}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Autoregresia estimată cu LASSO}
@@ -612,14 +612,14 @@ numai prețuri și calendar & 22{,}63 & 36{,}49 & 0{,}813 \\
 
 \begin{frame}{LEAR păstrează prețul aceleiași ore de ieri și ziua săptămînii}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.452\textheight,keepaspectratio]{charts/ro/lear_sel.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.499\textheight,keepaspectratio]{charts/ro/lear_sel.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri OPCOM; consum, producție eoliană și solară ENTSO-E (date Transelectrica pentru România). Date: LEAR(728), 365 de estimări zilnice din anul de test.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
   \item Procentul mediu al regresorilor păstrați din fiecare grupă: $P_{d-1,h}$ (aceeași oră, ieri) 79\%, ziua săptămînii 64\%, consum 9\%, producție eoliană și solară 11\%.
 \end{itemize}
 \par\vfill\manager{pentru cîștiguri reale aveți nevoie de prognoze ale variabilelor fundamentale pentru ziua $d$.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, LEAR(728), anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, LEAR(728), anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L2\_lear\_sel}{Quantlets/L2/EMQA_L2_lear_sel}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -676,7 +676,7 @@ numai prețuri și calendar & 22{,}63 & 36{,}49 & 0{,}813 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Faceți media prognozelor obținute pe o fereastră scurtă și pe una lungă.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Hubicka, Marcjasz \& Weron, 2019, IEEE TSTE)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hubicka, Marcjasz \& Weron, 2019, IEEE TSTE)}\hfill\qlink{EMQA\_L2\_windows}{Quantlets/L2/EMQA_L2_windows}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Combinarea prognozelor}
@@ -824,7 +824,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
   \item Ora cea mai dificilă este 19 CET, cînd prețul urcă abrupt seara (MAE AW-LEAR 34{,}52 EUR/MWh).
 \end{itemize}
 \par\vfill\manager{alocați cel mai bun analist orelor de seară, unde se pierd cei mai mulți bani.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L2\_ml\_hour}{Quantlets/L2/EMQA_L2_ml_hour}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz C2: pentru consumul din România, învățarea automată dă cele mai mici erori}
@@ -908,7 +908,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Pentru cele pe care le puteți muta în altă oră, folosiți cozile.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2015, Comput.\ Stat.)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2015, Comput.\ Stat.)}\hfill\qlink{EMQA\_L2\_qra\_week}{Quantlets/L2/EMQA_L2_qra_week}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Toate cele trei metode subestimează cozile distribuției prețului}
@@ -924,7 +924,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
   \item Statistica Kupiec pentru intervalul de 90\%: QRA 162{,}9, CP 83{,}3, HS 154{,}1 (valoarea critică la 5\% este 3{,}84).
 \end{itemize}
 \par\vfill\manager{lărgiți cozile înainte de a folosi cuantilele pentru calculul garanțiilor (cursul 4).}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives; Gneiting \& Raftery, 2007, JASA)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives; Gneiting \& Raftery, 2007, JASA)}\hfill\qlink{EMQA\_L2\_prob\_rel}{Quantlets/L2/EMQA_L2_prob_rel}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Cointegrarea: prețuri care evoluează împreună}
@@ -977,7 +977,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{folosiți prețul din Ungaria ca regresor sau ca verificare a prognozei pentru România.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Engle \& Granger, 1987, Econometrica)}\hfill\tryit{notebook-ul Jupyter, secțiunea 8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Engle \& Granger, 1987, Econometrica)}\hfill\qlink{EMQA\_L2\_coint\_daily}{Quantlets/L2/EMQA_L2_coint_daily}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prețul energiei revine spre nivelul dat de gaze: model cu corecția erorii}
@@ -1026,7 +1026,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{interpretați un an hidrologic secetos ca o primă de preț peste nivelul dat de gaze, nu ca un nou nivel al prețului.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(cursul 1, studiul de caz hidro; estimare proprie)}\hfill\tryit{notebook-ul Jupyter, secțiunea 8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(cursul 1, studiul de caz hidro; estimare proprie)}\hfill\qlink{EMQA\_L2\_coint\_monthly}{Quantlets/L2/EMQA_L2_coint_monthly}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -1046,7 +1046,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{raportați acuratețea lună de lună: o MAE anuală bună poate ascunde o toamnă slabă.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L2\_monthly\_mae}{Quantlets/L2/EMQA_L2_monthly_mae}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(b) O săptămînă de criză}
@@ -1066,7 +1066,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Acoperiți riscul orelor de seară.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM)}\hfill\qlink{EMQA\_L2\_stress\_week}{Quantlets/L2/EMQA_L2_stress_week}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(c) Intervalul de tranzacționare de 15 minute}
@@ -1090,7 +1090,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Folosiți profilul intraorar, nu o valoare constantă.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM; trecerea SDAC la 15 minute, 1 oct. 2025)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM; trecerea SDAC la 15 minute, 1 oct. 2025)}\hfill\qlink{EMQA\_L2\_mtu15}{Quantlets/L2/EMQA_L2_mtu15}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(d) Valoarea economică a prognozei}
@@ -1108,7 +1108,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
   \item Proces flexibil de 4 ore al unui furnizor: 67{,}87 EUR/MWh cu AW-LEAR, față de 100{,}59 pentru un bloc fix 8--12 CET.
 \end{itemize}
 \par\vfill\manager{transformați rMAE în EUR înainte de a plăti pentru o prognoză.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; randament de încărcare--descărcare presupus: 90\%)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; randament de încărcare--descărcare presupus: 90\%)}\hfill\qlink{EMQA\_L2\_battery}{Quantlets/L2/EMQA_L2_battery}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{O prognoză se acceptă numai după o listă de verificări; testul nostru arată că nu folosim informație din viitor}

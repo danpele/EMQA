@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_horizon_naive'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Mean absolute error (MAE) of the simplest forecast of the Romanian day-ahead price, the price of the same hour k days earlier, for k = 1 to 14 on the test year: older information gives larger errors, except at the weekly lags k = 7 and 14 (same weekday). Data: test year 2025-11-01 to 2026-10-31, hourly. Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E.'
+
+Keywords: 'electricity price forecasting, naive forecast, forecast horizon, weekly seasonality, MAE, Romania, OPCOM'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania (power_da_prices_hourly_utc.csv); daily prices and Romanian generation (cut-off only)'
+
+Output: 'horizon_naive.png'

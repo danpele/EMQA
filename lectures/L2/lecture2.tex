@@ -240,7 +240,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{ask any vendor for the rolling backtest, not an in-sample fit.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\qlink{EMQA\_L2\_split\_timeline}{Quantlets/L2/EMQA_L2_split_timeline}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Older information, larger error, except at the weekly lag}
@@ -258,7 +258,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item The freshest price you hold at 12:00 is that of $d-1$.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L2\_horizon\_naive}{Quantlets/L2/EMQA_L2_horizon_naive}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Point, probabilistic and path forecasts answer different questions}
@@ -378,7 +378,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Ask for MAE and rMAE.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Weron, 2014, IJF)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Weron, 2014, IJF)}\hfill\qlink{EMQA\_L2\_mape\_fail}{Quantlets/L2/EMQA_L2_mape_fail}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Testing forecast accuracy}
@@ -429,7 +429,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Many green cells mean a model worth paying for.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L2\_dm\_matrix}{Quantlets/L2/EMQA_L2_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -482,7 +482,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
   \item The load and wind + solar coefficients stay close to zero: at $d-2$ they add little to yesterday's price.
 \end{itemize}
 \par\vfill\manager{one model per hour lets the evening peak learn from different drivers than the night.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, ARX(728))}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, ARX(728))}\hfill\qlink{EMQA\_L2\_arx\_coef}{Quantlets/L2/EMQA_L2_arx_coef}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Fundamentals lagged by two days add almost nothing}
@@ -532,7 +532,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{since 1 Oct 2025 the same choice arises for the 96 quarter-hours.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\qlink{EMQA\_L2\_per\_hour\_single}{Quantlets/L2/EMQA_L2_per_hour_single}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Variance-stabilising transformations}
@@ -550,7 +550,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{asinh works below zero, where the logarithm cannot be used.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\qlink{EMQA\_L2\_vst}{Quantlets/L2/EMQA_L2_vst}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{LASSO-estimated autoregression}
@@ -596,7 +596,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
   \item Kept on average, $P_{d-1,h}$ 79\%, weekday 64\%, load 9\%, wind + solar 11\% of the regressors.
 \end{itemize}
 \par\vfill\manager{real gains need forecasts of the fundamentals for day $d$.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, LEAR(728), test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, LEAR(728), test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L2\_lear\_sel}{Quantlets/L2/EMQA_L2_lear_sel}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -653,7 +653,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Average a short and a long one.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Hubicka, Marcjasz \& Weron, 2019, IEEE TSTE)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hubicka, Marcjasz \& Weron, 2019, IEEE TSTE)}\hfill\qlink{EMQA\_L2\_windows}{Quantlets/L2/EMQA_L2_windows}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Combining forecasts}
@@ -798,7 +798,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
   \item The hardest hour is 19 h CET, the evening ramp (AW-LEAR MAE 34.52 EUR/MWh).
 \end{itemize}
 \par\vfill\manager{put your best analyst on the evening hours, where the money is lost.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L2\_ml\_hour}{Quantlets/L2/EMQA_L2_ml_hour}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Our group on Romanian load: machine learning wins when the series is smooth}
@@ -877,7 +877,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
   \item The QRA median has MAE 22.14 EUR/MWh, as good as the best point forecast.
 \end{itemize}
 \par\vfill\manager{bid the 50\% band for volumes you must buy, the tails for what you can shift.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2015, Comput.\ Stat.)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nowotarski \& Weron, 2015, Comput.\ Stat.)}\hfill\qlink{EMQA\_L2\_qra\_week}{Quantlets/L2/EMQA_L2_qra_week}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{All three methods are too narrow in the tails}
@@ -893,7 +893,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
   \item Kupiec statistic for the 90\% interval: QRA 162.9, CP 83.3, HS 154.1 (5\% critical value 3.84).
 \end{itemize}
 \par\vfill\manager{widen the tails before using quantiles for collateral (Lecture 4).}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives; Gneiting \& Raftery, 2007, JASA)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives; Gneiting \& Raftery, 2007, JASA)}\hfill\qlink{EMQA\_L2\_prob\_rel}{Quantlets/L2/EMQA_L2_prob_rel}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Cointegration: prices that move together}
@@ -946,7 +946,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{use the Hungarian price as a regressor or a check on your Romanian forecast.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Engle \& Granger, 1987, Econometrica)}\hfill\tryit{notebook \S8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Engle \& Granger, 1987, Econometrica)}\hfill\qlink{EMQA\_L2\_coint\_daily}{Quantlets/L2/EMQA_L2_coint_daily}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Power, gas and hydro: an error-correction model on monthly data}
@@ -995,7 +995,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{read a dry hydro year as a price premium over gas, not as a new price level.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Lecture 1, hydro case; own estimation)}\hfill\tryit{notebook \S8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Lecture 1, hydro case; own estimation)}\hfill\qlink{EMQA\_L2\_coint\_monthly}{Quantlets/L2/EMQA_L2_coint_monthly}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -1015,7 +1015,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{report accuracy by month, since a good annual MAE can hide a bad autumn.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L2\_monthly\_mae}{Quantlets/L2/EMQA_L2_monthly_mae}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(b) A stress week}
@@ -1032,7 +1032,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{every model lags a jump in level by a day, so hedge the evening hours.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM)}\hfill\qlink{EMQA\_L2\_stress\_week}{Quantlets/L2/EMQA_L2_stress_week}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(c) The 15-minute market time unit}
@@ -1053,7 +1053,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Give it the intra-hour shape, not a flat hour.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM; SDAC 15-minute go-live, 1 Oct 2025)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM; SDAC 15-minute go-live, 1 Oct 2025)}\hfill\qlink{EMQA\_L2\_mtu15}{Quantlets/L2/EMQA_L2_mtu15}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(d) From forecast to money}
@@ -1068,7 +1068,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
   \item Flexible 4-hour process of a supplier, 67.87 EUR/MWh with AW-LEAR vs 100.59 for a fixed 8--12 h CET block.
 \end{itemize}
 \par\vfill\manager{translate rMAE into EUR before paying for a forecast.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; round-trip efficiency 90\% assumed)}\hfill\tryit{notebook \S9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; round-trip efficiency 90\% assumed)}\hfill\qlink{EMQA\_L2\_battery}{Quantlets/L2/EMQA_L2_battery}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{A forecasting desk checklist, and our leakage self-check}

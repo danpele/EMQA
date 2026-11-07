@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_negative_solar'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian negative-price hours by month and year since 2023 (hour-equivalents) and metered Romanian solar generation per full year since 2018: negative hours cluster in spring as solar grows. Data: Jan 2023 to 2026-10-31 (left); 2018-2025 (right). Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'negative prices, solar, seasonality, Romania, electricity, hour-equivalents'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Day-ahead prices at native resolution and Romanian hourly generation (energy-charts.info, ENTSO-E; data/clean/power_da_prices_native_utc.csv, generation_ro_mw_hourly_utc.csv)'
+
+Output: 'negative_solar.png'

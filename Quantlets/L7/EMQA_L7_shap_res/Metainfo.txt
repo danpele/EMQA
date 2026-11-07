@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L7_shap_res'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'SHAP dependence plot of the input wind+solar generation on d-2 at the same hour in the tuned XGBoost model: one point per test hour, SHAP value (asinh price scale) against the generation in GW, sunny hours 09-16 highlighted; test year 2025-11-01 to 2026-10-31, 8760 hours, Romania. Data: test year 2025-11-01 to 2026-10-31, 8760 hours. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+
+Keywords: 'SHAP dependence, explainable AI, wind and solar, renewable generation, merit order effect, XGBoost, electricity price, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'saved input values and SHAP values of wind+solar d-2 for the 8760 test hours (shap_res_results.npz, from lectures/L7/cache/ml.pkl); RUN_ALL recomputes them from data/clean'
+
+Output: 'shap_res.png'

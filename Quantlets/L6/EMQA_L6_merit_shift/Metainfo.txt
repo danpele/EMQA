@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_merit_shift'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Merit-order effect on the real OPCOM day-ahead (PZU) aggregated supply and demand curves of delivery day 2026-10-21, quarter-hours 12:00-12:15 and 20:00-20:15 Romanian time: clearing price after adding X MW of supply offered at 0 EUR/MWh (solar) or X MW of demand bid at any price (battery charging), X = 0-400 MW; cross-border flows, blocks and hourly orders held at their accepted values.'
+
+Keywords: 'merit order, supply curve, demand curve, day-ahead market, OPCOM, PZU, clearing price, solar, battery, Romania, quarter-hour'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'opcom_pzu_curves.csv: OPCOM PZU aggregated supply and demand curves (price, MW) of two quarter-hours of 2026-10-21; opcom_pzu_curves_meta.json: official clearing prices, cleared quantities and net exports'
+
+Output: 'merit_shift.png'

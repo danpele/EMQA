@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_cal_by_trade'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Prices of the calendar-year baseload forward contracts on OPCOM (Cal-21 to Cal-27) by auction date, with the realised mean day-ahead price of each delivered year as a thick line; calendar-year baseload auctions to 2026-10-31; thick line = realised mean. Shows how the forward curve moves with the trade date.'
+
+Keywords: 'forward curve, calendar-year baseload, OPCOM, trade date, realised spot, Romania, electricity'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'OPCOM PCCB-LE-flex forward auction results (data/clean/opcom_forward_trades.csv, prices in EUR via the ECB EUR/RON fixing) and OPCOM day-ahead (PZU) daily base prices via energy-charts.info (data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'cal_by_trade.png'

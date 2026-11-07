@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_dm_matrix'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Chessboard of one-sided Diebold-Mariano (DM) tests between ten forecasts of the Romanian day-ahead price on the test year (naive, seasonal naive, ARX(728), AW-ARX, LEAR(728), AW-LEAR, GBM, MLP and two ensembles): each cell is the p-value of the hypothesis that the column model is not more accurate than the row model (multivariate DM on the daily mean absolute error, Newey-West variance with 7 lags). Data: test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC).'
+
+Keywords: 'Diebold-Mariano test, forecast comparison, Newey-West, ARX, LEAR, gradient boosting, neural network, ensemble, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices, load, wind and solar of Romania; saved LEAR, GBM and MLP forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports and the EUA price)'
+
+Output: 'dm_matrix.png'

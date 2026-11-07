@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_smooth_brent'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Brent front-month daily close since 2024 with a 20-day simple moving average and an exponentially weighted moving average with a half-life of 10 trading days; prints the EWMA weight and the weight estimated by simple exponential smoothing. Data: 2024-01-02 to 2026-10-30. Source: Yahoo Finance (BZ=F).'
+
+Keywords: 'smoothing, moving average, exponentially weighted moving average, EWMA, exponential smoothing, half-life, Brent, crude oil'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
+
+Output: 'smooth_brent.png'

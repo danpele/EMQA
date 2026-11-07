@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_hydro_case'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly Romanian hydro generation (TWh) in the wet year 2023, the dry year 2025 and the 2015-2025 monthly mean, and a scatter of monthly hydro output against the monthly mean Romanian day-ahead price; prints the annual totals, net imports and the hydro coefficient of a regression of the price on hydro and TTF gas (HAC standard errors). Data: monthly, 2015-01 to 2025-12. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'hydro, drought, case study, Romania, electricity prices, regression, HAC, TTF gas, net imports'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly generation, daily cross-border flows, daily day-ahead prices (energy-charts.info, ENTSO-E) and monthly TTF gas prices (World Bank); data/clean/generation_ro_mw_hourly_utc.csv, crossborder_ro_mw_daily_cet.csv, power_da_prices_daily_cet.csv, ttf_monthly.csv'
+
+Output: 'hydro_case.png'

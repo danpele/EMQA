@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 5 · Instrumente derivate și acoperirea riscului</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 5 · Instrumente derivate și acoperirea riscului">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L5.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261107a", "L5_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L5.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 5 · Instrumente derivate și acoperirea riscului</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L5/lecture5_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L5.html" class="lang-btn">EN</a><a href="L5_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
+<p class="toc"><a href="#s-fwd">Contracte forward, futures și curba forward</a> · <a href="#s-spr">Spread-urile: marjele centralelor electrice</a> · <a href="#s-hedge">Raportul de acoperire, riscul de bază și riscul de profil</a> · <a href="#s-opt">Opțiuni pe energie</a></p>
+<h2 class="sec" id="s-fwd">Contracte forward, futures și curba forward</h2>
+<section class="blk" id="forward-curve">
+  <h3>Curba forward din România coboară de la un spot ridicat</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=16" target="_blank" rel="noopener"><img src="slides/L5_fwd_curve_ro.jpg" alt="Slide-ul 16: Curba forward din România coboară de la un spot ridicat" loading="lazy"></a>
+      <figcaption>Slide-ul 16</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="fc-t">Curba la sfîrșitul lunii: <b id="fc-t-v"></b></label><input type="range" id="fc-t" min="0" max="1" step="1" value="1"></div><div class="ctl"><label for="fc-w">Fereastra licitațiilor (luni): <b id="fc-w-v"></b></label><input type="range" id="fc-w" min="1" max="6" step="1" value="2"></div><button class="btn play" id="fc-play" type="button"></button></div><div class="charts one"><div class="chart" id="fc-chart"></div></div><ul class="out" id="fc-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_fwd_curve" target="_blank" rel="noopener">EMQA_L5_fwd_curve</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_fwd_curve/EMQA_L5_fwd_curve.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> La sfîrșitul lui octombrie 2026, media PZU (piața pentru ziua următoare) din România în octombrie era 239,32 EUR/MWh, iar banda pentru anul calendaristic 2027 se tranzacționa la 148,12 EUR/MWh. Înseamnă panta descendentă a curbei că piața se așteaptă ca prețul spot să scadă cu aproximativ 90 EUR/MWh?</div>
+  <details><summary>Răspuns</summary><p>Nu întocmai. Prețul forward este prețul spot așteptat plus o primă de risc, iar o parte din diferență este sezonieră: noiembrie și decembrie 2026 s-au tranzacționat la 215,33 și 214,27 EUR/MWh, primul trimestru din 2027 la 176,69, iar anul întreg la 148,12, care include și vara ieftină, cu producție solară mare. Mutați cursorul înapoi: în 2022, curba cobora de la un spot de criză, iar produsul Cal-23 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 media PZU a fost 103,74 EUR/MWh.</p></details>
+</section><h2 class="sec" id="s-spr">Spread-urile: marjele centralelor electrice</h2>
+<section class="blk" id="spreads">
+  <h3>Clean spark spread și clean dark spread, lunar</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=23" target="_blank" rel="noopener"><img src="slides/L5_spreads_ro.jpg" alt="Slide-ul 23: Clean spark spread și clean dark spread, lunar" loading="lazy"></a>
+      <figcaption>Slide-ul 23</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="sp-z">Zona</label><select id="sp-z"><option value="RO" selected>România</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="sp-g">Randamentul centralei pe gaz, η: <b id="sp-g-v"></b></label><input type="range" id="sp-g" min="0.35" max="0.62" step="0.01" value="0.5"></div><div class="ctl"><label for="sp-c">Randamentul centralei pe cărbune, η: <b id="sp-c-v"></b></label><input type="range" id="sp-c" min="0.3" max="0.46" step="0.01" value="0.38"></div><button class="btn play" id="sp-play" type="button"></button></div><div class="charts one"><div class="chart" id="sp-chart"></div></div><ul class="out" id="sp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_spreads" target="_blank" rel="noopener">EMQA_L5_spreads</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_spreads/EMQA_L5_spreads.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Cu ipotezele din curs (randamentul centralei pe gaz 50%, al celei pe cărbune 38%), spread-ul clean spark din România a fost negativ în 67 din 138 de luni. Ce se întîmplă cu acest număr dacă centrala pe gaz este un ciclu combinat modern, cu randamentul 58%?</div>
+  <details><summary>Răspuns</summary><p>Numărul scade, deoarece un randament mai mare reduce atît costul combustibilului, cît și costul emisiilor pe MWh de energie electrică: clean spark spread = p − gaz/η − (0,202/η)·EUA. La 0,58, numărul scade de la 67 la 29 de luni. Spread-ul clean dark al cărbunelui nu se schimbă cu acest cursor: alegerea între gaz și cărbune depinde de costul relativ, nu doar de prețul energiei.</p></details>
+</section><h2 class="sec" id="s-hedge">Raportul de acoperire, riscul de bază și riscul de profil</h2>
+<section class="blk" id="hedge-ratio">
+  <h3>Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_ro.jpg" alt="Slide-ul 28: Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime" loading="lazy"></a>
+      <figcaption>Slide-ul 28</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hr-z">Instrumentul de acoperire</label><select id="hr-z"><option value="HU" selected>Prețul din Ungaria</option><option value="DE_LU">Prețul din Germania–Luxemburg</option></select></div><div class="ctl"><label for="hr-a">Primul an al eșantionului: <b id="hr-a-v"></b></label><input type="range" id="hr-a" min="2015" max="2024" step="1" value="2015"></div><div class="ctl"><label for="hr-b">Ultimul an al eșantionului: <b id="hr-b-v"></b></label><input type="range" id="hr-b" min="2016" max="2026" step="1" value="2026"></div><button class="btn play" id="hr-play" type="button"></button></div><div class="charts "><div class="chart" id="hr-sc"></div><div class="chart" id="hr-roll"></div></div><ul class="out" id="hr-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_hedge_scatter" target="_blank" rel="noopener">EMQA_L5_hedge_scatter</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_hedge_scatter/EMQA_L5_hedge_scatter.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Variațiile lunare ale prețului din România sînt acoperite cu prețul din Ungaria. Pe 2015–2026, raportul de acoperire de varianță minimă este h* = 0,966. Este mai mic raportul cu prețul din Germania și de ce?</div>
+  <details><summary>Răspuns</summary><p>Da: h* = 0,875, cu R² = 0,80, față de R² = 0,98 pentru Ungaria. Raportul de acoperire este h* = ρ·σ_RO/σ_F; România și Ungaria sînt cuplate și au adesea același preț, în timp ce Germania este mai departe în rețea, iar prețul ei se mișcă parțial din alte cauze (vînt, solar, propriile interconexiuni). Varianța rămasă după acoperire este 1 − R²: circa 2% cu Ungaria și circa o cincime cu Germania.</p></details>
+</section>
+<section class="blk" id="basis">
+  <h3>Volatilitatea bazei a crescut după 2021, deși RO și HU au adesea același preț</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=30" target="_blank" rel="noopener"><img src="slides/L5_basis_ro.jpg" alt="Slide-ul 30: Volatilitatea bazei a crescut după 2021, deși RO și HU au adesea același preț" loading="lazy"></a>
+      <figcaption>Slide-ul 30</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bs-z">Zona de referință</label><select id="bs-z"><option value="HU" selected>Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="bs-s">Anul de separare (înainte / după): <b id="bs-s-v"></b></label><input type="range" id="bs-s" min="2017" max="2025" step="1" value="2021"></div><button class="btn play" id="bs-play" type="button"></button></div><div class="charts "><div class="chart" id="bs-chart"></div><div class="chart" id="bs-conv"></div></div><ul class="out" id="bs-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_basis" target="_blank" rel="noopener">EMQA_L5_basis</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_basis/EMQA_L5_basis.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Baza este diferența dintre prețul din România și prețul instrumentului de acoperire. A devenit baza RO–HU mai volatilă sau mai puțin volatilă după 2021?</div>
+  <details><summary>Răspuns</summary><p>Mai volatilă: abaterea standard a bazei lunare RO–HU crește de la 2,82 EUR/MWh înainte de 2021 la 5,77 EUR/MWh din 2021, iar a bazei RO–DE de la 7,61 la 18,23 EUR/MWh. În același timp, România și Ungaria au încă exact același preț în multe ore (panoul din dreapta): o bază de obicei nulă, dar ocazional mare, este riscul tipic lăsat de o acoperire printr-o altă zonă.</p></details>
+</section><h2 class="sec" id="s-opt">Opțiuni pe energie</h2>
+<section class="blk" id="samuelson">
+  <h3>Contractele apropiate de livrare variază mai mult: efectul Samuelson</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L5_samuelson_ro.jpg" alt="Slide-ul 37: Contractele apropiate de livrare variază mai mult: efectul Samuelson" loading="lazy"></a>
+      <figcaption>Slide-ul 37</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="sm-c"><span class="lbl">Contracte TTF</span><div class="tgs"><label class="tg"><input type="checkbox" name="sm-c" value="2026-12" checked> dec 2026</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-01"> ian 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-02"> feb 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-05" checked> mai 2027</label></div></div><div class="ctl"><label for="sm-w">Fereastra volatilității (zile de tranzacționare): <b id="sm-w-v"></b></label><input type="range" id="sm-w" min="20" max="250" step="10" value="60"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_samuelson" target="_blank" rel="noopener">EMQA_L5_samuelson</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_samuelson/EMQA_L5_samuelson.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În ultimele 12 luni, contractul TTF pentru decembrie 2026 a avut volatilitatea anualizată 63,0%, iar contractul pentru mai 2027 47,7%. De ce se mișcă mai mult contractul mai apropiat?</div>
+  <details><summary>Răspuns</summary><p>Acesta este efectul Samuelson: șocurile de cerere și ofertă (stocuri, vreme, transporturi de GNL, adică gaz natural lichefiat) afectează mai ales prețul pentru livrarea apropiată și se așteaptă să dispară înainte de o lună de livrare îndepărtată. Pe măsură ce scadența se apropie, prețul futures se comportă tot mai mult ca prețul spot, iar volatilitatea lui crește. În 2022, diferența a fost mică (66,1% față de 66,8%): într-o criză, chiar și lunile îndepărtate s-au mișcat cît contractul apropiat.</p></details>
+</section>
+<section class="blk" id="black76-collar">
+  <h3>Prețul efectiv al benzii pentru 2027 cu fiecare instrument</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=39" target="_blank" rel="noopener"><img src="slides/L5_collar_ro.jpg" alt="Slide-ul 39: Prețul efectiv al benzii pentru 2027 cu fiecare instrument" loading="lazy"></a>
+      <figcaption>Slide-ul 39</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bk-F">Prețul forward F (EUR/MWh): <b id="bk-F-v"></b></label><input type="range" id="bk-F" min="80" max="250" step="0.01" value="148.12"></div><div class="ctl"><label for="bk-s">Volatilitatea σ (% pe an): <b id="bk-s-v"></b></label><input type="range" id="bk-s" min="5" max="100" step="0.01" value="22.02"></div><div class="ctl"><label for="bk-T">Zile pînă la scadență: <b id="bk-T-v"></b></label><input type="range" id="bk-T" min="1" max="365" step="1" value="45"></div><div class="ctl"><label for="bk-r">Rata dobînzii r (% pe an): <b id="bk-r-v"></b></label><input type="range" id="bk-r" min="0" max="6" step="0.01" value="2.44"></div><div class="ctl"><label for="bk-c">Plafon: strike-ul call-ului (% din F): <b id="bk-c-v"></b></label><input type="range" id="bk-c" min="100" max="130" step="1" value="110"></div><div class="ctl"><label for="bk-p">Prag: strike-ul put-ului (% din F): <b id="bk-p-v"></b></label><input type="range" id="bk-p" min="70" max="100" step="1" value="90"></div><button class="btn play" id="bk-play" type="button"></button></div><div class="charts "><div class="chart" id="bk-pay"></div><div class="chart" id="bk-prem"></div></div><ul class="out" id="bk-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_collar" target="_blank" rel="noopener">EMQA_L5_collar</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_collar/EMQA_L5_collar.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Cu F = 148,12 EUR/MWh, σ = 22,0%, 45 de zile pînă la scadență și r = 2,44%, call-ul la bani (K = F) costă 4,55 EUR/MWh. Cît costă un plafon (cap) la 1,1·F și cît costă un collar 0,9·F – 1,1·F?</div>
+  <details><summary>Răspuns</summary><p>Plafonul (un call cu strike 162,93) costă 0,63 EUR/MWh, adică circa 5.500 EUR pentru 1 MW pe un an; vînzarea unui put cu strike 133,31 (0,43 EUR/MWh) aduce costul collar-ului la 0,20 EUR/MWh. Cumpărătorul renunță la cîștigurile de sub prag în schimbul unui plafon mai ieftin. Ridicați σ la 50% (aproape de volatilitatea contractelor TTF apropiate): call-ul la bani crește la 10,33, iar collar-ul la 0,88 EUR/MWh, iar call-ul și put-ul la K = F rămîn egale, cum cere paritatea put–call (C − P = e<sup>−rT</sup>(F − K)).</p></details>
+</section>
+<p class="src foot">Tranzacții forward: OPCOM (bursa de energie din România), PCCB-LE-flex și piețele forward asociate, produse de bandă, prețuri convertite în EUR/MWh la cursul EUR/RON al BCE (Banca Centrală Europeană). Prețuri pentru ziua următoare: OPCOM PZU, HUPX, EPEX, prin energy-charts.info. Gaze TTF (Title Transfer Facility): seria lunară a Băncii Mondiale și contracte futures individuale; certificate de emisii EUA (EU Allowance): licitațiile EEX; cărbune: Banca Mondială (Africa de Sud, Richards Bay); €STR (rata euro pe termen scurt): BCE. Mediile lunare doar pentru lunile complete. Date pînă la data-limită a cursului (31 octombrie 2026).</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_vol_level'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly standard deviation of the daily EUR/MWh shocks of the Romanian base price against the monthly mean price, 2019-01-01 to 2026-10-31, log-log scales, coloured by year, with the log-log regression line: volatility in EUR/MWh grows with the price level.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, volatility and price level, log-log regression, merit order, scatter plot'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'vol_level.png'

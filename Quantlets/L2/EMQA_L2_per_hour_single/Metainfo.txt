@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_per_hour_single'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Hourly mean absolute error (MAE) on the test year of the expert ARX(728) model of the Romanian day-ahead price estimated as one regression per hour, against one pooled regression for all hours (hour intercepts, common slopes) and the naive benchmark. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'ARX, per-hour model, pooled model, multivariate, univariate, MAE by hour, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)'
+
+Output: 'per_hour_single.png'

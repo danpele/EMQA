@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_vol_units'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Standard deviation of the daily shocks of the Romanian base price by year, 2019-01-01 to 2026-10-31, in percent (left) and in EUR/MWh (right): in 2022 the percent volatility equals that of 2019, while the EUR/MWh volatility is about four times higher, because it follows the price level.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, standard deviation, volatility units, energy crisis, price level'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'vol_units.png'

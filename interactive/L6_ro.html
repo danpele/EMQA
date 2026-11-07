@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 6 · Surse regenerabile, prețuri negative și baterii</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 6 · Surse regenerabile, prețuri negative și baterii">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L6.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L6_data.js?v=20261107a", "L6_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L6.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 6 · Surse regenerabile, prețuri negative și baterii</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L6/lecture6_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L6.html" class="lang-btn">EN</a><a href="L6_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
+<p class="toc"><a href="#s-merit">Sursele regenerabile și ordinea de merit</a> · <a href="#s-capt">Prețuri de captură și canibalizare</a> · <a href="#s-neg">Prețuri negative</a> · <a href="#s-bat">Economia unei baterii</a> · <a href="#s-case">Studiu de caz: vara lui 2026, România și Bulgaria</a></p>
+<h2 class="sec" id="s-merit">Sursele regenerabile și ordinea de merit</h2>
+<section class="blk" id="resid-price">
+  <h3>Prețul crește cu consumul rezidual; orele sub 2 GW au ajuns la 9,0% în 2026</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=10" target="_blank" rel="noopener"><img src="slides/L6_resid_price_ro.jpg" alt="Slide-ul 10: Prețul crește cu consumul rezidual; orele sub 2 GW au ajuns la 9,0% în 2026" loading="lazy"></a>
+      <figcaption>Slide-ul 10</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="rp-y"><span class="lbl">Anii</span><div class="tgs"><label class="tg"><input type="checkbox" name="rp-y" value="2023" checked> 2023</label><label class="tg"><input type="checkbox" name="rp-y" value="2024"> 2024</label><label class="tg"><input type="checkbox" name="rp-y" value="2025"> 2025</label><label class="tg"><input type="checkbox" name="rp-y" value="2026" checked> 2026</label></div></div><div class="ctl"><label for="rp-h">Orele zilei</label><select id="rp-h"><option value="all" selected>Toate orele</option><option value="mid">Amiaza, 11:00–15:00</option><option value="eve">Seara, 18:00–22:00</option></select></div><div class="ctl"><label for="rp-b">Lățimea intervalelor de consum rezidual (GW): <b id="rp-b-v"></b></label><input type="range" id="rp-b" min="0.25" max="2" step="0.25" value="0.5"></div></div><div class="charts one"><div class="chart" id="rp-chart"></div></div><ul class="out" id="rp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_resid_price" target="_blank" rel="noopener">EMQA_L6_resid_price</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_resid_price/EMQA_L6_resid_price.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Consumul rezidual este consumul minus producția eoliană și solară. În 2026, cît de des este consumul rezidual orar al României sub 2 GW și care este prețul mediu în acele ore?</div>
+  <details><summary>Răspuns</summary><p>În aproximativ 9% dintre orele din 2026 (pînă la data-limită), față de 0,1% în 2023; prețul mediu în aceste ore este de circa 51 EUR/MWh, față de circa 192 EUR/MWh cînd consumul rezidual depășește 6 GW. Pe 2023–2026, o regresie cu efecte fixe de lună, oră și zi a săptămînii dă +28,32 EUR/MWh pentru fiecare GW de consum rezidual (t = 32,1). Norul de puncte este larg: consumul rezidual explică o parte mare a prețului, dar și piețele vecine, hidrocentralele și prețurile combustibililor îl mișcă.</p></details>
+</section><h2 class="sec" id="s-capt">Prețuri de captură și canibalizare</h2>
+<section class="blk" id="capture-rates">
+  <h3>Rata de captare a solarului în România a scăzut de la 104% în 2019 la 59% în 2025</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=13" target="_blank" rel="noopener"><img src="slides/L6_capture_rates_ro.jpg" alt="Slide-ul 13: Rata de captare a solarului în România a scăzut de la 104% în 2019 la 59% în 2025" loading="lazy"></a>
+      <figcaption>Slide-ul 13</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cr-t">Tehnologia</label><select id="cr-t"><option value="solar" selected>Solar</option><option value="wind">Eolian</option></select></div><div class="ctl ctl-tg" id="cr-z"><span class="lbl">Zone</span><div class="tgs"><label class="tg"><input type="checkbox" name="cr-z" value="RO" checked> România</label><label class="tg"><input type="checkbox" name="cr-z" value="BG" checked> Bulgaria</label><label class="tg"><input type="checkbox" name="cr-z" value="HU" checked> Ungaria</label></div></div><div class="ctl"><label for="cr-m">Afișează</label><select id="cr-m"><option value="cr" selected>Rata de captură (%)</option><option value="disc">Discountul față de prețul de bază (EUR/MWh)</option></select></div></div><div class="charts "><div class="chart" id="cr-chart"></div><div class="chart" id="cr-px"></div></div><ul class="out" id="cr-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_capture_rates" target="_blank" rel="noopener">EMQA_L6_capture_rates</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_capture_rates/EMQA_L6_capture_rates.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Rata de captură este prețul mediu ponderat cu producția unei tehnologii, împărțit la prețul mediu ponderat cu timpul (prețul de bază). De ce a scăzut rata de captură a solarului din România de la 104,5% în 2019 la 59,4% în 2025?</div>
+  <details><summary>Răspuns</summary><p>Pentru că producția solară este concentrată în aceleași ore de la amiază, iar pe măsură ce capacitatea a crescut, acele ore au devenit cele mai ieftine ale zilei (efectul de ordine de merit al centralelor înseși). În 2025, solarul a obținut 64,2 EUR/MWh, față de un preț de bază de 108,2 EUR/MWh, un discount de 43,9 EUR/MWh. Eolianul, distribuit mai uniform între zi și noapte, păstrează o rată de captură mult mai mare: schimbați tehnologia.</p></details>
+</section>
+<section class="blk" id="cannibal">
+  <h3>Cînd ponderea solarului în consumul lunii crește cu un punct procentual, rata de captare solară scade cu circa 4,2 puncte</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=15" target="_blank" rel="noopener"><img src="slides/L6_cannibal_ro.jpg" alt="Slide-ul 15: Cînd ponderea solarului în consumul lunii crește cu un punct procentual, rata de captare solară scade cu circa 4,2 puncte" loading="lazy"></a>
+      <figcaption>Slide-ul 15</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cn-z">Zona</label><select id="cn-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option></select></div><div class="ctl"><label for="cn-y0">Lunile de la: <b id="cn-y0-v"></b></label><input type="range" id="cn-y0" min="2019" max="2026" step="1" value="2019"></div><div class="ctl"><label for="cn-y1">pînă la (inclusiv anul): <b id="cn-y1-v"></b></label><input type="range" id="cn-y1" min="2019" max="2026" step="1" value="2026"></div><button class="btn play" id="cn-play" type="button"></button></div><div class="charts one"><div class="chart" id="cn-chart"></div></div><ul class="out" id="cn-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_cannibal" target="_blank" rel="noopener">EMQA_L6_cannibal</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_cannibal/EMQA_L6_cannibal.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Pe lunile din 2019 pînă în octombrie 2026, cu cît scade rata de captură a solarului din România pentru fiecare punct procentual în plus al solarului în consum?</div>
+  <details><summary>Răspuns</summary><p>Cu aproximativ 4,2 puncte procentuale (panta −4,2, R² = 0,53 pe 94 de luni; eroarea standard 1,03 în curs, robustă la autocorelare). Aceeași pantă este −1,32 în Bulgaria și −2,14 în Ungaria. Mutați începutul ferestrei: panta estimată numai pe lunile recente este determinată de ponderile record ale solarului din 2025–2026 (pînă la 17,8% din consum în august 2026, cea mai mică rată de captură 44,3% în martie 2026).</p></details>
+</section><h2 class="sec" id="s-neg">Prețuri negative</h2>
+<section class="blk" id="neg-hours">
+  <h3>România a avut 196 de ore cu preț negativ în 2025, Germania 575</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L6_neg_hours_ro.jpg" alt="Slide-ul 20: România a avut 196 de ore cu preț negativ în 2025, Germania 575" loading="lazy"></a>
+      <figcaption>Slide-ul 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="nh-z">Zona</label><select id="nh-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="nh-y">Anul: <b id="nh-y-v"></b></label><input type="range" id="nh-y" min="2022" max="2026" step="1" value="2026"></div><button class="btn play" id="nh-play" type="button"></button></div><div class="charts "><div class="chart" id="nh-heat"></div><div class="chart" id="nh-depth"></div></div><ul class="out" id="nh-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_neg_hours" target="_blank" rel="noopener">EMQA_L6_neg_hours</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_neg_hours/EMQA_L6_neg_hours.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În România, în ce luni și ore sînt concentrate prețurile negative din 2026 și cît de adînci sînt?</div>
+  <details><summary>Răspuns</summary><p>La mijlocul zilei (aproximativ 10:00–16:00) în lunile de primăvară, cînd producția solară este mare, consumul moderat și hidrocentralele funcționează. Harta numără ore echivalente (un interval de 15 minute contează 0,25 h); panoul din dreapta arată media ponderată cu durata a prețurilor negative, pe luni. Alegeți 2022: România nu a avut preț negativ înainte de mai 2023.</p></details>
+</section><h2 class="sec" id="s-bat">Economia unei baterii</h2>
+<section class="blk" id="battery">
+  <h3>Cu informație perfectă, o baterie de 2 ore a cîștigat 111,2 mii EUR pe MW în ultimele 12 luni</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=29" target="_blank" rel="noopener"><img src="slides/L6_bat_years_ro.jpg" alt="Slide-ul 29: Cu informație perfectă, o baterie de 2 ore a cîștigat 111,2 mii EUR pe MW în ultimele 12 luni" loading="lazy"></a>
+      <figcaption>Slide-ul 29</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="bt-z">Zona</label><select id="bt-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="bt-e">Durata bateriei (ore la puterea maximă)</label><select id="bt-e"><option value="1">1 h (1 MWh / 1 MW)</option><option value="2" selected>2 h (2 MWh / 1 MW)</option><option value="4">4 h (4 MWh / 1 MW)</option></select></div><div class="ctl"><label for="bt-eta">Randamentul pe ciclu complet, încărcare și descărcare (%): <b id="bt-eta-v"></b></label><input type="range" id="bt-eta" min="75" max="95" step="5" value="85"></div><div class="ctl"><label for="bt-y">Anul: <b id="bt-y-v"></b></label><input type="range" id="bt-y" min="2019" max="2026" step="1" value="2025"></div><button class="btn play" id="bt-play" type="button"></button></div><div class="charts "><div class="chart" id="bt-years"></div><div class="chart" id="bt-eff"></div></div><ul class="out" id="bt-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_bat_years" target="_blank" rel="noopener">EMQA_L6_bat_years</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_bat_years/EMQA_L6_bat_years.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> O baterie de 1 MW cu 2 ore de stocare și randament pe ciclu complet de 85% a cîștigat în România, în 2025, aproximativ 98,7 mii EUR, cu prețurile cunoscute perfect. Cîștigă o baterie de 4 ore de două ori mai mult?</div>
+  <details><summary>Răspuns</summary><p>Nu: 165,2 mii EUR, adică de 1,67 ori mai mult. Orele suplimentare de stocare cumpără energie în ore mai puțin ieftine și o vînd în ore mai puțin scumpe, deci fiecare MWh de capacitate cîștigă mai puțin (iar programul real se decide pe prognoze, nu pe prețuri cunoscute: cu profilul mediu al săptămînii anterioare, cursul păstrează circa 85% din venitul cu prețuri cunoscute). Mutați randamentul: de la 75% la 95%, venitul bateriei de 2 ore din România crește cu 39–46% în 2019–2022, dar doar cu 21–22% în 2024–2026, cînd golurile adînci de la amiază (pînă la prețuri negative) fac prețul de cumpărare mic față de cel de vînzare, deci pierderile costă mai puțin.</p></details>
+</section><h2 class="sec" id="s-case">Studiu de caz: vara lui 2026, România și Bulgaria</h2>
+<section class="blk" id="rogb">
+  <h3>Vara 2026: România a exportat la prînz și a cumpărat seara din Bulgaria</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L6/lecture6_ro.pdf#page=38" target="_blank" rel="noopener"><img src="slides/L6_rogb_summer_ro.jpg" alt="Slide-ul 38: Vara 2026: România a exportat la prînz și a cumpărat seara din Bulgaria" loading="lazy"></a>
+      <figcaption>Slide-ul 38</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="rg-d0">Prima zi a perioadei: <b id="rg-d0-v"></b></label><input type="range" id="rg-d0" min="0" max="91" step="1" value="0"></div><div class="ctl"><label for="rg-d1">Ultima zi a perioadei: <b id="rg-d1-v"></b></label><input type="range" id="rg-d1" min="0" max="91" step="1" value="91"></div><div class="ctl ctl-tg" id="rg-b"><span class="lbl">Granițele</span><div class="tgs"><label class="tg"><input type="checkbox" name="rg-b" value="sum" checked> Toate</label><label class="tg"><input type="checkbox" name="rg-b" value="bulgaria" checked> Bulgaria</label><label class="tg"><input type="checkbox" name="rg-b" value="hungary"> Ungaria</label><label class="tg"><input type="checkbox" name="rg-b" value="serbia"> Serbia</label></div></div><div class="ctl"><label for="rg-p">Panoul din dreapta</label><select id="rg-p"><option value="lev" selected>Prețurile RO și BG</option><option value="gap">Diferența de preț RO − BG</option></select></div><button class="btn play" id="rg-play" type="button"></button></div><div class="charts "><div class="chart" id="rg-flow"></div><div class="chart" id="rg-price"></div></div><ul class="out" id="rg-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_rogb_summer" target="_blank" rel="noopener">EMQA_L6_rogb_summer</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L6/EMQA_L6_rogb_summer/EMQA_L6_rogb_summer.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În vara lui 2026 (1 iunie–31 august), România a exportat la amiază și a importat seara. De la care vecin au venit importurile de seară și de ce?</div>
+  <details><summary>Răspuns</summary><p>Din Bulgaria, în toate cele 92 de zile: la ora 21:00 a României, fluxul mediu pe granița România–Bulgaria a fost de 2.064 MW spre România. La acea oră, prețul mediu din România a fost 243,9 EUR/MWh, iar cel din Bulgaria 178,3 EUR/MWh (diferența 65,6 EUR/MWh): interconexiunea era congestionată, altfel cuplarea piețelor ar fi egalizat cele două prețuri. La amiază, ambele prețuri au fost de circa 50 EUR/MWh, iar România a exportat, mai ales spre Ungaria (857 MW) și Serbia (367 MW).</p></details>
+</section>
+<p class="src foot">Prețuri pentru ziua următoare: OPCOM PZU (Piața pentru Ziua Următoare, România), IBEX (Bulgaria), HUPX (Ungaria), EPEX (Germania–Luxemburg); producția, consumul și fluxurile fizice transfrontaliere (date ENTSO-E, Rețeaua europeană a operatorilor de transport și sistem pentru energie electrică): energy-charts.info (Fraunhofer ISE). Prețuri orare pînă în septembrie 2025 și pe 15 minute din 1 octombrie 2025 (un sfert de oră contează 0,25 h). Bateria: 1 MW, cel mult un ciclu complet pe zi, prețurile pentru ziua următoare cunoscute perfect, programul optim al fiecărei zile de livrare prin programare liniară (regula din curs). Date pînă la data-limită a cursului (31 octombrie 2026).</p>
+</main>
+</body>
+</html>

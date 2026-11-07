@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_split_timeline'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Chronological design of the forecasting study: the daily base price of Romania (OPCOM day-ahead market), with the 728-day calibration window of the first forecast, the 182-day burn-in and the 365-day test year. Models are re-estimated every day on the window ending the day before; data are never shuffled. Data: daily base price, 2022-01-01 to 2026-10-31, CET delivery days. Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E.'
+
+Keywords: 'electricity price forecasting, day-ahead market, Romania, OPCOM, backtest, calibration window, burn-in, test period'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania (power_da_prices_hourly_utc.csv); daily prices and Romanian generation (only to fix the cut-off, the last complete month)'
+
+Output: 'split_timeline.png'

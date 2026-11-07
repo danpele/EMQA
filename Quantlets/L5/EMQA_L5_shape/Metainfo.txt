@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_shape'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Shape risk in Romania: yearly load-weighted day-ahead price and solar capture price relative to the baseload (time-average) price; hourly, 2015 to 2026-10-31; *to the cut-off.'
+
+Keywords: 'shape risk, profile factor, capture price, solar cannibalisation, load-weighted price, baseload, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'hourly day-ahead prices (data/clean/power_da_prices_hourly_utc.csv) and Romanian hourly load and solar output (data/clean/generation_ro_mw_hourly_utc.csv), energy-charts.info / ENTSO-E'
+
+Output: 'shape.png'

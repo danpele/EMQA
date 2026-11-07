@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_asinh_ro'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Histogram of all Romanian 15-minute day-ahead prices of the current year to the cut-off, in levels and after the variance-stabilising area hyperbolic sine transform asinh((p - median)/MAD), which handles zero and negative prices where a logarithm cannot. Data: all 15-min MTUs, 2026-01-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'variance stabilising transformation, asinh, negative prices, skewness, kurtosis, electricity prices, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Day-ahead prices at native resolution (energy-charts.info, OPCOM via ENTSO-E; data/clean/power_da_prices_native_utc.csv)'
+
+Output: 'asinh_ro.png'

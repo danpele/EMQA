@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_dow_effect'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Weekly calendar in the Romanian daily price change, 2019-01-01 to 2026-10-31: mean log change by weekday (left) and the standard deviation of the daily change before and after the mean equation (constant + AR(1..7) + day-of-week dummies, OLS), which removes about half of the variance.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, day-of-week effect, seasonality, autoregression, OLS, mean equation'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'dow_effect.png'

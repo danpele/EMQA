@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_ms_regime'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian daily base price and the smoothed probability of the turbulent regime of a two-regime Markov-switching model (switching mean and variance) on the daily EUR/MWh shocks, 2019-01-01 to 2026-10-31: the energy crisis was one long turbulent regime, 2026 moves in and out.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, Markov switching, regime switching, Hamilton filter, smoothed probabilities, energy crisis'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'ms_regime.png'

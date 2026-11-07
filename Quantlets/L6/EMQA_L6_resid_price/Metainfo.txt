@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_resid_price'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian day-ahead price against residual load (load - wind - solar), hourly, 2023-01-01 to 2026-10-31: mean price in bins of 0.5 GW (bins with at least 20 hours) for 2023, the previous year and the current year to the cut-off; prints the OLS slope of price on residual load with month, hour and weekday fixed effects and HAC (Newey-West, 48 lags) standard errors, and the share of hours with residual load below 2 GW.'
+
+Keywords: 'residual load, merit order, day-ahead price, regression, fixed effects, Newey-West, HAC, solar, wind, Romania, OPCOM'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv: Romanian solar, onshore wind and load (MW, ENTSO-E via energy-charts.info, Transelectrica data; hourly, 15-min from Oct 2025)'
+
+Output: 'resid_price.png'

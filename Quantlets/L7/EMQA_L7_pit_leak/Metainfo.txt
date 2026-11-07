@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L7_pit_leak'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Test-year MAE of the tuned XGBoost evaluated honestly (monthly refits on past days), with shuffled 5-fold cross-validation (future days in the training folds) and with the realised load and wind+solar of the delivery day as inputs (not known at gate closure), against AW-LEAR. Romanian day-ahead prices, test year 2025-11-01 to 2026-10-31. Data: test year 2025-11-01 to 2026-10-31; XGBoost, chosen configuration. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+
+Keywords: 'look-ahead bias, data leakage, cross-validation, walk-forward evaluation, XGBoost, electricity price forecasting, pitfalls'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year forecasts of the three XGBoost evaluations and of AW-LEAR (pit_leak_results.npz)'
+
+Output: 'pit_leak.png'

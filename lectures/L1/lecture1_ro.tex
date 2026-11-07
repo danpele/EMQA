@@ -99,7 +99,6 @@ YTD & de la începutul anului\\\end{tabular}}\end{column}
 % END-ABBR
 
 \begin{frame}{Numai date reale: surse și perioadă acoperită}
-\framesubtitle{\hfill\tryit{notebook-ul Jupyter \S1}}
 \small
 
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
@@ -120,8 +119,9 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item „2026, de la începutul anului (YTD)” înseamnă întotdeauna ian.--oct. 2026.
     \end{itemize}
-  \item Valorile lipsă nu se completează: nu le interpolăm, nu le tratăm ca zero și raportăm întotdeauna gradul de acoperire.
+  \item Valorile lipsă nu se interpolează și nu devin zero, iar gradul de acoperire se raportează mereu.
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -130,7 +130,6 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \subsection{Cum funcționează licitația pentru ziua următoare}
 
 \begin{frame}{Prețul de închidere a pieței: intersecția cererii cu oferta}
-\framesubtitle{(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}
 \footnotesize
 \intuition{Vînzătorii și cumpărătorii depun oferte de preț și cantitate; bursa determină prețul la care cantitatea oferită egalează cantitatea cerută, iar toate tranzacțiile acceptate se decontează la acest preț unic.}
 \begin{columns}[T,onlytextwidth]
@@ -158,10 +157,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \end{column}
 \end{columns}
 \par\vfill\manager{pe PZU, un furnizor plătește prețul fixat de centrala marginală, nu costul mediu al sistemului.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Mecanismul ordinii de merit: cum se formează prețul}
-\framesubtitle{(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Oferta}: ofertele de vînzare sînt ordonate de la cea mai ieftină la cea mai scumpă
@@ -186,12 +185,12 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{prețul unui sfert de oră este dat de cea mai scumpă ofertă acceptată, nu de costul mediu al sistemului.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026}
-\framesubtitle{(OPCOM, curbele agregate PZU)\hfill\tryit{notebook-ul Jupyter \S1}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.474\textheight,keepaspectratio]{charts/ro/merit_opcom.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.465\textheight,keepaspectratio]{charts/ro/merit_opcom.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: OPCOM, curbele agregate PZU. Date: 2026-10-21, ora României; cantitățile includ blocurile, ordinele orare și fluxurile nete.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -205,10 +204,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un consumator care își mută consumul de seara la amiază plătește prețul de închidere mai mic.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, curbele agregate PZU)}\hfill\qlink{EMQA\_L1\_merit\_opcom}{Quantlets/L1/EMQA_L1_merit_opcom}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Etapele tranzacționării pentru o zi de livrare}
-\framesubtitle{(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}
 \footnotesize
 
 \begin{center}
@@ -235,10 +234,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{traderul își acoperă riscul la termen, licitează pe PZU pînă la ora 13:00 (ora Bucureștiului), corectează erorile pe piața intrazilnică și decontează dezechilibrul rămas.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Cine stabilește regulile: operatori, reglementatori, limite de preț, transparență}
-\framesubtitle{(OPCOM; ANRE; ACER; Regulamentul (UE) 1227/2011)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Cine ce face}
@@ -263,12 +262,12 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item O oprire neplanificată anunțată la timp schimbă prețul PZU.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; ANRE; ACER; Regulamentul (UE) 1227/2011)}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Cuplarea piețelor și intervalul de 15 minute}
 
 \begin{frame}{Cuplarea piețelor: exporturi spre zonele cu prețuri mari, pînă la limita rețelei}
-\framesubtitle{(Weron, 2014, IJF; JAO; cuplarea bazată pe fluxuri Core)}
 \footnotesize
 \intuition{Europa organizează o singură licitație comună pentru ziua următoare; zonele cu prețuri mici exportă către cele cu prețuri mari pînă la atingerea unei limite de rețea și abia atunci prețurile se separă.}
 \begin{columns}[T,onlytextwidth]
@@ -301,13 +300,13 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \end{itemize}
 \end{column}
 \end{columns}
-\par\vfill\manager{un trader pe interconexiunea RO--HU cîștigă din diferența de preț doar cînd capacitatea este saturată.}\par\vspace{0.5mm}
+\par\vfill\manager{pe RO--HU, un trader cîștigă din diferența de preț doar cînd interconexiunea este saturată.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; JAO; cuplarea bazată pe fluxuri Core)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Zece ani de cuplare: de la patru țări la o licitație europeană}
-\framesubtitle{(comunicate OPCOM 2019--2025; IBEX/OPCOM, 27 oct. 2021; JAO)}
 \small
-\vspace{3mm}\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
+\vspace{0.5mm}\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
 \draw[-{Latex},thick,MainBlue] (0,0) -- (14.1,0);
 \fill[MainBlue] (1.10,0) circle (2.2pt);\draw[MainBlue] (1.10,0) -- (1.10,0.63);
 \node[align=center,text width=2.25cm,font=\scriptsize] at (1.10,1.15) {\textbf{2014}\\ România se cuplează cu Cehia, Slovacia și Ungaria (4M Market Coupling)};
@@ -324,7 +323,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \fill[MainBlue] (13.10,0) circle (2.2pt);\draw[MainBlue] (13.10,0) -- (13.10,0.63);
 \node[align=center,text width=2.25cm,font=\scriptsize] at (13.10,1.15) {\textbf{1 oct. 2025}\\ intervalul de 15 minute în SDAC};
 \end{tikzpicture}\end{center}
-\vspace{2mm}
+\vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item Prețurile se calculează cu algoritmul hibrid paneuropean de integrare a piețelor de energie electrică (EUPHEMIA).
   \item Fiecare etapă a schimbat datele: vecini noi, produse noi, o rezoluție mai fină
@@ -332,10 +331,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
       \item Verificați data înainte de a compara perioade.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(comunicate OPCOM 2019--2025; IBEX/OPCOM, 27 oct. 2021; JAO)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Din 1 octombrie 2025, o zi are 96 de prețuri, nu 24}
-\framesubtitle{(OPCOM, 1 oct. 2025)\hfill\tryit{notebook-ul Jupyter \S1}}
 \footnotesize
 \intuition{Intervalul de tranzacționare (MTU) s-a redus de la o oră la 15 minute, așa că numărul intervalelor trebuie convertit în ore echivalente.}
 \begin{columns}[T,onlytextwidth]
@@ -363,14 +362,14 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \end{column}
 \end{columns}
 \par\vfill\manager{întrebați mereu „ore sau sferturi de oră?” înainte de a compara anii între ei.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 1 oct. 2025)}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Ce produce România}
 
 \begin{frame}{Producția României: hidro, nuclear, gaze, cărbune și tot mai mult solar}
-\framesubtitle{(energy-charts.info; sursa datelor: ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S2}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.545\textheight,keepaspectratio]{charts/ro/mix_ro_annual.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.525\textheight,keepaspectratio]{charts/ro/mix_ro_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: 2015-2025 ani compleți (stînga); ian.-oct. 2025 și 2026, ore raportate în ambii ani (dreapta); date pînă la 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -381,12 +380,12 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
       \item Datele solare măsurate pot exclude producția panourilor de pe acoperișuri.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_ro\_annual}{Quantlets/L1/EMQA_L1_mix_ro_annual}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{România: cărbunele scade, solarul crește, iar nuclearul se reduce în 2026}
-\framesubtitle{(România; energy-charts.info; sursa datelor: ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S2}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.362\textheight,keepaspectratio]{charts/ro/mix_shares.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.334\textheight,keepaspectratio]{charts/ro/mix_shares.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: 2015, 2025 ani compleți; ian.-oct. 2026, ore raportate și în 2025, și în 2026.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -401,10 +400,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{producătorii hidro și consumatorii industriali urmăresc ce centrală devine marginală cînd lipsește apa sau un reactor.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(România; energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_shares}{Quantlets/L1/EMQA_L1_mix_shares}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Structura cursului: șapte prelegeri și o hartă a modelelor}
-\framesubtitle{(Weron, 2014, IJF; Ziel \& Weron, 2018, ENEECO)}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.56\textwidth}
@@ -438,6 +437,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \end{column}
 \end{columns}
 \par\vfill\manager{întrebați furnizorul de prognoze din ce familie face parte modelul și cu cît depășește prognoza naivă.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Ziel \& Weron, 2018, ENEECO)}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -446,7 +446,6 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \subsection{Unități de măsură, fusuri orare și date curate}
 
 \begin{frame}{Putere și energie: MW nu înseamnă MWh}
-\framesubtitle{(energy-charts.info; Banca Mondială)\hfill\tryit{notebook-ul Jupyter \S1}}
 \footnotesize
 \intuition{Un megawatt (MW) măsoară puterea, adică ritmul producției sau al consumului; un megawatt-oră (MWh) măsoară cantitatea de energie, de exemplu 1 MW timp de o oră.}
 \begin{columns}[T,onlytextwidth]
@@ -467,7 +466,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
   \item \textbf{Prețuri de referință}
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item În bandă (base): media prețurilor zilei de livrare
-      \item De vîrf (peak): media prețurilor 08:00--20:00, luni--vineri
+      \item De vîrf (peak): prețul mediu 08:00--20:00, luni--vineri
     \end{itemize}
   \item Gazele și țițeiul se cotează în dolari americani (USD) pe milion de unități termice britanice (MMBtu), respectiv pe baril (bbl)
     \begin{itemize}\setlength{\itemsep}{0pt}
@@ -477,12 +476,12 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \end{column}
 \end{columns}
 \par\vfill\manager{un contract de 10 MW în bandă înseamnă 240 MWh livrați pe zi.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; Banca Mondială)}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{O zi de consum în România: puterea în MW, energia în MWh}
-\framesubtitle{(România; energy-charts.info; sursa datelor: ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S1}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.345\textheight,keepaspectratio]{charts/ro/day_load.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.320\textheight,keepaspectratio]{charts/ro/day_load.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: România, consumul din 2026-10-28 (zi CET, 24 de valori orare).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -499,10 +498,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Rețeaua trebuie să acopere puterea de vîrf (MW)
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(România; energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_day\_load}{Quantlets/L1/EMQA_L1_day_load}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Pregătirea datelor (1): ziua de livrare, schimbarea orei și a zonei}
-\framesubtitle{(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)\hfill\tryit{notebook-ul Jupyter \S1}}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Fusuri orare}: marcajele temporale din datele brute sînt în timpul universal coordonat (UTC)
@@ -523,10 +522,10 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
       \item Un singur grafic, marcat ca atare, folosește date simulate (zgomot alb, mers aleator).
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Pregătirea datelor (2): zile lipsă și rupturi de serie}
-\framesubtitle{(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)\hfill\tryit{notebook-ul Jupyter \S1}}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Zile lipsă}: sursa (energy-charts.info, care republică prețurile OPCOM și ale bursei independente de energie din Bulgaria (IBEX) raportate la ENTSO-E) nu are preț pentru unele zile și nu indică motivul
@@ -541,14 +540,14 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{la un furnizor, cele mai multe erori de prognoză apar la prelucrarea datelor (fus orar greșit, goluri completate), nu în model.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Nivelul prețurilor și sezonalitatea}
 
 \begin{frame}{Prețurile au explodat în 2021--2022 și nu au mai revenit la vechiul nivel}
-\framesubtitle{(energy-charts.info; prețuri: OPCOM, IBEX, HUPX, EPEX SPOT)\hfill\tryit{notebook-ul Jupyter \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.493\textheight,keepaspectratio]{charts/ro/prices_daily_4zones.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.486\textheight,keepaspectratio]{charts/ro/prices_daily_4zones.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2015-01-01 - 2026-10-31 (BG din 2016-10-31).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -558,12 +557,12 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un consumator industrial care își face bugetul cu prețurile de dinainte de 2021 le subestimează de două-trei ori.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; prețuri: OPCOM, IBEX, HUPX, EPEX SPOT)}\hfill\qlink{EMQA\_L1\_prices\_daily\_4zones}{Quantlets/L1/EMQA_L1_prices_daily_4zones}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Volatilitatea crește odată cu nivelul prețului}
-\framesubtitle{(energy-charts.info; calcule proprii)}
 \small
-{\footnotesize\renewcommand{\arraystretch}{1.12}\setlength{\tabcolsep}{4pt}
+{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrrrr@{}}\toprule
 Media, EUR/MWh & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 & 2026 YTD \\ \midrule
 RO & \cellcolor{Forest!52}46{,}4 & \cellcolor{Forest!50}50{,}4 & \cellcolor{Forest!55}39{,}5 & \cellcolor{Forest!20}111{,}4 & \cellcolor{Crimson!55}265{,}3 & \cellcolor{Forest!24}103{,}7 & \cellcolor{Forest!24}103{,}5 & \cellcolor{Forest!22}108{,}2 & \cellcolor{Forest!7}137{,}4 \\
@@ -583,13 +582,13 @@ DE-LU & \cellcolor{Forest!55}11{,}5 & \cellcolor{Forest!54}11{,}9 & \cellcolor{F
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item 2026 YTD: România 137{,}45 EUR/MWh, față de 105{,}88 EUR/MWh în ian.--oct. 2025 (\ensuremath{+}29{,}8\%).
 \end{itemize}
-\par\vfill\manager{garanțiile pentru achizițiile pe PZU cresc odată cu prețul, deoarece la 200 EUR/MWh piața fluctuează mult mai mult decît la 50.}\par\vspace{0.5mm}
+\par\vfill\manager{garanțiile pentru PZU cresc odată cu prețul: la 200 EUR/MWh piața fluctuează mult mai mult decît la 50.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; calcule proprii)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Producția solară a mutat minimul zilnic al prețului la amiază}
-\framesubtitle{(energy-charts.info; prețuri orare PZU)\hfill\tryit{notebook-ul Jupyter \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.445\textheight,keepaspectratio]{charts/ro/profile_intraday.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.438\textheight,keepaspectratio]{charts/ro/profile_intraday.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: anii 2019 și 2025, date orare.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -600,10 +599,10 @@ DE-LU & \cellcolor{Forest!55}11{,}5 & \cellcolor{Forest!54}11{,}9 & \cellcolor{F
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{venitul unei baterii provine din această diferență dintre amiază și seară, valorificată o dată sau de două ori pe zi.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; prețuri orare PZU)}\hfill\qlink{EMQA\_L1\_profile\_intraday}{Quantlets/L1/EMQA_L1_profile_intraday}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{La sfîrșit de săptămînă, energia este mai ieftină}
-\framesubtitle{\hfill\tryit{notebook-ul Jupyter \S3}}
 \footnotesize
 \intuition{În weekend, fabricile și birourile consumă mai puțin, sînt necesare mai puține centrale și prețul scade.}
 \begin{columns}[T,onlytextwidth]
@@ -632,12 +631,12 @@ DE-LU & \cellcolor{Crimson!41}7{,}0 & \cellcolor{Crimson!53}11{,}0 & \cellcolor{
 \end{column}
 \end{columns}
 \par\vfill\manager{un consumator industrial își poate muta consumul flexibil (mentenanță, pompare, încărcare) duminica, reducîndu-și astfel costurile cu energia.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook-ul Jupyter \S3}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată}
-\framesubtitle{(energy-charts.info; medii lunare 2016--2025)\hfill\tryit{notebook-ul Jupyter \S3}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.438\textheight,keepaspectratio]{charts/ro/profile_annual.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.425\textheight,keepaspectratio]{charts/ro/profile_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: medii lunare 2016-2025.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -648,12 +647,12 @@ DE-LU & \cellcolor{Crimson!41}7{,}0 & \cellcolor{Crimson!53}11{,}0 & \cellcolor{
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un producător hidro economisește apa din lacuri primăvara, cînd energia este ieftină, pentru a o turbina iarna și la sfîrșitul verii.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; medii lunare 2016--2025)}\hfill\qlink{EMQA\_L1\_profile\_annual}{Quantlets/L1/EMQA_L1_profile_annual}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Salturi de preț și prețuri negative}
 
 \begin{frame}{Salturile de preț: puține ore, prețuri extreme}
-\framesubtitle{(Janczura, Trück, Weron \& Wolff, 2013, ENEECO)\hfill\tryit{notebook-ul Jupyter \S4}}
 \footnotesize
 \intuition{Un salt de preț (spike) apare într-un interval în care prețul depășește cu mult nivelul obișnuit al anului respectiv.}
 \begin{columns}[T,onlytextwidth]
@@ -683,12 +682,12 @@ Anul & Prag RO & RO h & DE-LU h \\ \midrule
 \end{column}
 \end{columns}
 \par\vfill\manager{un furnizor cu contracte la preț fix își poate pierde cea mai mare parte a marjei anuale în cîteva zeci de ore cu salturi de preț, motiv pentru care își acoperă riscul.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Janczura, Trück, Weron \& Wolff, 2013, ENEECO)}\hfill\tryit{notebook-ul Jupyter \S4}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prețurile negative au apărut în România în 2023 și au devenit frecvente}
-\framesubtitle{(energy-charts.info; numărare proprie, 15 min = 0,25 h)\hfill\tryit{notebook-ul Jupyter \S4}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.449\textheight,keepaspectratio]{charts/ro/negative_prices.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.442\textheight,keepaspectratio]{charts/ro/negative_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2018 - 2026-10-31; un interval de 15 min = 0,25 h.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -699,12 +698,12 @@ Anul & Prag RO & RO h & DE-LU h \\ \midrule
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un parc solar fără stocare își vinde o mare parte din producție în cele mai ieftine ore ale anului (cursul 6).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; numărare proprie, 15 min = 0,25 h)}\hfill\qlink{EMQA\_L1\_negative\_prices}{Quantlets/L1/EMQA_L1_negative_prices}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prețurile negative, numărate corect: ore echivalente}
-\framesubtitle{(energy-charts.info; calcule proprii)\hfill\tryit{notebook-ul Jupyter \S4}}
 \small
-{\footnotesize\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{4pt}
+{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrr@{}}\toprule
 Zona & 2022 & 2023 & 2024 & 2025 & 2026 YTD & ian.--oct. 2025 & 2026: intervale 15 min \\ \midrule
 RO & 0 & \cellcolor{MainBlue!3}32 & \cellcolor{MainBlue!9}85 & \cellcolor{MainBlue!20}196 & \cellcolor{MainBlue!18}171{,}75 & 196 & 687 \\
@@ -721,23 +720,23 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Germania a avut în fiecare an (centrale inflexibile și vînt).
     \end{itemize}
-  \item RO, BG și HU evoluează împreună (piețe cuplate), dar din 2023 Ungaria are mai multe ore cu preț negativ.
+  \item RO, BG și HU evoluează împreună (cuplare), dar din 2023 Ungaria are mai multe ore cu preț negativ.
   \item ian.--oct. 2026: România 171{,}75 h, față de 196{,}00 h cu un an înainte
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Creșterea nu este automată (studiul de caz d).
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{în rapoartele către conducere scrieți „687 de sferturi de oră (171{,}75 h)”, nu un număr fără unitate.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; calcule proprii)}\hfill\tryit{notebook-ul Jupyter \S4}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Distribuția prețurilor și volatilitatea}
 
 \begin{frame}{Prețul poate fi nul sau negativ: folosiți diferențe sau asinh}
-\framesubtitle{(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)\hfill\tryit{notebook-ul Jupyter \S5}}
 \small
 \intuition{Variațiile procentuale presupun un preț pozitiv; o transformare definită pentru orice semn păstrează orele cu preț nul sau negativ.}
 \vspace{-1mm}\[ y_t=\operatorname{asinh}(x_t)=\ln\big(x_t+\sqrt{x_t^2+1}\big),\quad x_t=\frac{p_t-\tilde p}{\widehat{\mathrm{MAD}}},\quad \operatorname{asinh}(x)\approx\operatorname{sign}(x)\ln(2|x|)\ \text{pentru } |x| \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.271\textheight,keepaspectratio]{charts/ro/asinh_ro.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.240\textheight,keepaspectratio]{charts/ro/asinh_ro.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: toate intervalele de 15 min, 2026-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -751,13 +750,13 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
       \item Excesul de aplatizare (kurtosis) 6{,}73 $\to$ \ensuremath{-}0{,}55.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Uniejewski, Weron \& Ziel, 2018, IEEE TPWRS)}\hfill\qlink{EMQA\_L1\_asinh\_ro}{Quantlets/L1/EMQA_L1_asinh_ro}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Cozi groase: variațiile extreme ale țițeiului sînt mult mai frecvente}
-\framesubtitle{(Jarque \& Bera, 1980, Econ.\ Letters; Yahoo Finance BZ=F)\hfill\tryit{notebook-ul Jupyter \S5}}
 \small
 \intuition{„Cozi groase”: zilele cu creșteri sau scăderi foarte mari apar mult mai des decît ar permite clopotul lui Gauss.}
-\begin{center}\includegraphics[width=\textwidth,height=0.297\textheight,keepaspectratio]{charts/ro/tails_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.281\textheight,keepaspectratio]{charts/ro/tails_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance (BZ=F). Date: 2015-01-05 - 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -768,14 +767,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{o limită de buget pentru combustibil calculată pe baza legii normale subestimează frecvența zilelor de criză (cursul 4).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Jarque \& Bera, 1980, Econ.\ Letters; Yahoo Finance BZ=F)}\hfill\qlink{EMQA\_L1\_tails\_brent}{Quantlets/L1/EMQA_L1_tails_brent}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Perioadele calme și cele agitate apar grupat}
-\framesubtitle{(Ljung \& Box, 1978, Biometrika)\hfill\tryit{notebook-ul Jupyter \S5}}
 \small
 \intuition{O variație mare astăzi face mai probabilă o altă variație mare mîine, chiar dacă sensul ei nu poate fi anticipat.}
 \vspace{-1mm}\[ Q(m)=T(T+2)\sum_{k=1}^{m}\frac{\hat\rho_k^2}{T-k}\ \sim\ \chi^2_m\quad\text{(Ljung--Box)} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.283\textheight,keepaspectratio]{charts/ro/volclust_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.249\textheight,keepaspectratio]{charts/ro/volclust_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance (BZ=F). Date: 2015-01-05 - 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -785,6 +784,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{după un șoc, departamentul de risc menține limite mai largi săptămîni întregi, nu doar cîteva zile (cursul 3).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ljung \& Box, 1978, Biometrika)}\hfill\qlink{EMQA\_L1\_volclust\_brent}{Quantlets/L1/EMQA_L1_volclust_brent}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -793,11 +793,10 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \subsection{Staționaritate și autocorelație}
 
 \begin{frame}{Staționaritate: regulile jocului nu se schimbă în timp}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021, OTexts)\hfill\tryit{notebook-ul Jupyter \S6}}
 \small
 \intuition{O serie este (slab) staționară dacă media, dispersia și memoria ei rămîn aceleași în orice perioadă; memoria depinde numai de decalajul $k$, nu și de momentul $t$.}
 \vspace{-1mm}\[ \E X_t=\mu,\quad \Var X_t=\gamma_0,\quad \Cov(X_t,X_{t-k})=\gamma_k\quad \text{pentru orice } t \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.214\textheight,keepaspectratio]{charts/ro/sim_wn_ar_rw.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.196\textheight,keepaspectratio]{charts/ro/sim_wn_ar_rw.pdf}\end{center}\vspace{-3mm}
 \chartsource{\simlabel\ Sursa: simulare, numpy, seed = 20261104. Date: T = 500, șocuri N(0,1).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -808,10 +807,10 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Testați acest lucru înainte de a construi bugetul.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021, OTexts)}\hfill\qlink{EMQA\_L1\_sim\_wn\_ar\_rw}{Quantlets/L1/EMQA_L1_sim_wn_ar_rw}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Autocorelația: cît din trecut se regăsește în prețul de azi}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)\hfill\tryit{notebook-ul Jupyter \S6}}
 \footnotesize
 \intuition{Autocorelația de ordinul $k$ este corelația dintre serie și aceeași serie decalată cu $k$ perioade.}
 \begin{columns}[T,onlytextwidth]
@@ -835,14 +834,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \end{column}
 \end{columns}
 \par\vfill\manager{prognoza unui furnizor pentru ziua de mîine pornește de la „aceeași zi din săptămîna trecută”: $\hat\rho_7=$ 0{,}672 în România, din 2023.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)}\hfill\tryit{notebook-ul Jupyter \S6}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră}
-\framesubtitle{(Ziel \& Weron, 2018, ENEECO)\hfill\tryit{notebook-ul Jupyter \S6}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.329\textheight,keepaspectratio]{charts/ro/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.320\textheight,keepaspectratio]{charts/ro/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2023-01-01 - 2026-10-31, T = 1400.}
-\begin{center}\includegraphics[width=\textwidth,height=0.229\textheight,keepaspectratio]{charts/ro/acf_ro_hourly.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.220\textheight,keepaspectratio]{charts/ro/acf_ro_hourly.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2024, date orare, T = 8784.}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item Date zilnice, 1 ianuarie 2023 -- 31 octombrie 2026: $\hat\rho_1=$ 0{,}789, $\hat\rho_7=$ 0{,}672, PACF $\hat\alpha_7=$ 0{,}257
@@ -850,14 +849,14 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
       \item Date orare, 2024: $\hat\rho_{24}=$ 0{,}776, $\hat\rho_{168}=$ 0{,}681.
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\qlink{EMQA\_L1\_acf\_pacf\_ro\_daily}{Quantlets/L1/EMQA_L1_acf_pacf_ro_daily}\hspace{0.8em}\qlink{EMQA\_L1\_acf\_ro\_hourly}{Quantlets/L1/EMQA_L1_acf_ro_hourly}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Prognoza naivă: reperul pe care orice model trebuie să-l depășească}
-\framesubtitle{(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF; Lago et al., 2021, APEN)\hfill\tryit{notebook-ul Jupyter \S6}}
 \small
 \intuition{Prețul de mîine pentru fiecare oră este prețul de azi pentru aceeași oră; luni, sîmbătă și duminică se folosește prețul aceleiași ore din ziua corespunzătoare a săptămînii precedente.}
 \vspace{-1mm}\[ \hat p_{d,h}=\begin{cases} p_{d-1,h} & d=\text{Ma--Vi}\\ p_{d-7,h} & d=\text{Lu, Sî, Du}\end{cases},\qquad \mathrm{MAE}=\frac{1}{n}\sum_{d,h}|p_{d,h}-\hat p_{d,h}| \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.189\textheight,keepaspectratio]{charts/ro/naive_bar.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.180\textheight,keepaspectratio]{charts/ro/naive_bar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: prețuri PZU orare, 2024-01 - 2026-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -867,12 +866,12 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{înainte de a plăti un serviciu de prognoză, cereți eroarea lui absolută medie comparativ cu acest reper.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L1\_naive\_bar}{Quantlets/L1/EMQA_L1_naive_bar}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{Teste de rădăcină unitară, descompunere și netezire}
 
 \begin{frame}{Persistența șocurilor: două teste cu ipoteze opuse}
-\framesubtitle{(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)\hfill\tryit{notebook-ul Jupyter \S7}}
 \footnotesize
 \intuition{Un test pornește de la ipoteza „șocurile sînt permanente” și caută o revenire la medie; celălalt pornește de la „seria este stabilă” și caută o derivă lentă.}
 \begin{columns}[T,onlytextwidth]
@@ -897,11 +896,11 @@ ADF nerespinsă & neconcludent & \cellcolor{Crimson!25}răd.\ unitară$^{*}$ \\
 \end{itemize}
 \end{column}
 \end{columns}
-\par\vfill\manager{dacă prețul poate suferi șocuri permanente, ipoteza „prețurile vor reveni la normal” nu este o bază sigură pentru bugetul unui furnizor.}\par\vspace{0.5mm}
+\par\vfill\manager{dacă șocurile pot fi permanente, un furnizor nu își poate baza bugetul pe „revenirea la normal”.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)}\hfill\tryit{notebook-ul Jupyter \S7}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Un verdict pe serie: nivelurile persistă, variațiile sînt staționare}
-\framesubtitle{(calcule proprii; numai constantă; decalaje ADF după AIC; prag de 5\%)\hfill\tryit{notebook-ul Jupyter \S7}}
 \small
 {\footnotesize\renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}llrrrrrl@{}}\toprule
@@ -926,14 +925,14 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{modelați \emph{variațiile} prețului (sau prețul transformat) și includeți explicit sezonalitatea.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; numai constantă; decalaje ADF după AIC; prag de 5\%)}\hfill\tryit{notebook-ul Jupyter \S7}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Descompunerea: trend, sezonalitate și componenta reziduală}
-\framesubtitle{(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)\hfill\tryit{notebook-ul Jupyter \S8}}
 \small
 \intuition{Metoda clasică presupune o componentă sezonieră constantă; descompunerea sezonieră și de trend prin regresie locală (STL) îi permite să varieze în timp.}
 \vspace{-1mm}\[ x_t=\underbrace{T_t}_{\text{trend}}+\underbrace{S_t}_{\text{sezon}}+\underbrace{R_t}_{\text{rest}} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.205\textheight,keepaspectratio]{charts/ro/decomp_load.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.187\textheight,keepaspectratio]{charts/ro/decomp_load.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: 2016-01 - 2025-12, consum mediu lunar.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -947,27 +946,25 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item STL arată cînd se schimbă chiar profilul sezonier.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)}\hfill\qlink{EMQA\_L1\_decomp\_load}{Quantlets/L1/EMQA_L1_decomp_load}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Netezirea exponențială: datele recente cîntăresc mai mult}
-\framesubtitle{(Hyndman \& Athanasopoulos, 2021, OTexts, ch.\ 8)\hfill\tryit{notebook-ul Jupyter \S9}}
 \small
-\intuition{Nivelul netezit este o medie ponderată a tuturor valorilor trecute, cu ponderi care scad geometric pe măsură ce ne îndepărtăm în trecut.}
+\intuition{Nivelul netezit: medie ponderată a valorilor trecute, cu ponderi care scad geometric.}
 \vspace{-1mm}\[ \ell_t=\underbrace{\alpha x_t}_{\text{informația nouă}}+\underbrace{(1-\alpha)\ell_{t-1}}_{\text{memoria}},\qquad \alpha=1-2^{-1/h} \]\vspace{-2mm}
-\begin{center}\includegraphics[width=\textwidth,height=0.187\textheight,keepaspectratio]{charts/ro/smooth_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.620\textheight,keepaspectratio]{charts/ro/smooth_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance (BZ=F). Date: 2024-01-02 - 2026-10-30.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
-  \item $h$ = timpul de înjumătățire: după $h$ zile, o observație își păstrează jumătate din pondere.
-  \item Media mobilă simplă (SMA) și media mobilă ponderată exponențial (EWMA, $\alpha=$ 0{,}067)
+  \item $h$ = timpul de înjumătățire (zile)
     \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Ponderea optimă a netezirii exponențiale simple (SES) este 0{,}948 $\approx1$, astfel încît prognoza este practic ultimul preț.
+      \item Media mobilă ponderată exponențial (EWMA): $\alpha=$ 0{,}067
+      \item Ponderea optimă a netezirii exponențiale simple (SES): 0{,}948, practic ultimul preț.
     \end{itemize}
 \end{itemize}
-\par\vfill\manager{un cumpărător de combustibil poate folosi o EWMA ca preț de referință în contracte
-    \begin{itemize}\setlength{\itemsep}{0pt}
-      \item Ca prognoză, ea aduce puțin în plus față de ultimul preț.
-    \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\manager{EWMA este un bun preț de referință în contracte, dar o prognoză slabă.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021, OTexts, ch.\ 8)}\hfill\qlink{EMQA\_L1\_smooth\_brent}{Quantlets/L1/EMQA_L1_smooth_brent}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -976,9 +973,8 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
 \subsection{(a) 2023, an ploios; 2025, an secetos}
 
 \begin{frame}{Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023}
-\framesubtitle{(energy-charts.info; sursa datelor: ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S10a}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.345\textheight,keepaspectratio]{charts/ro/hydro_case.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.329\textheight,keepaspectratio]{charts/ro/hydro_case.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: lunar, 2015-01 - 2025-12.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -992,12 +988,12 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{producția unei companii hidro și factura unui importator net depind de precipitații la fel de mult ca de piață.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_hydro\_case}{Quantlets/L1/EMQA_L1_hydro_case}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (a): mai multă apă, prețuri mai mici}
-\framesubtitle{(estimare proprie; erori standard Newey--West)\hfill\tryit{notebook-ul Jupyter \S10a}}
 \footnotesize
-\intuition{La un preț dat al gazelor, lunile cu producție hidro mai mare au avut prețuri mai mici în România; este o asociere, nu un efect cauzal măsurat.}
+\intuition{Cu gazele la preț fix, lunile cu mai multă apă au avut prețuri mai mici: o asociere, nu un efect cauzal.}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
 \[ p_m=\beta_0+\underbrace{\beta_1\,\mathrm{Hydro}_m}_{\text{apa}}+\underbrace{\beta_2\,\mathrm{TTF}_m}_{\text{costul gazelor}}+u_m \]{\footnotesize\begin{itemize}\setlength{\itemsep}{0pt}
@@ -1006,7 +1002,7 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
       \item $p_m$ = prețul mediu PZU în luna $m$ (EUR/MWh)
       \item $\mathrm{Hydro}_m$ = producția hidro (TWh)
       \item $\mathrm{TTF}_m$ = prețul gazelor pe hubul olandez (EUR/MWh)
-      \item Estimare prin metoda celor mai mici pătrate (OLS), cu erori standard robuste la heteroscedasticitate și autocorelație (HAC), calculate cu 6 decalaje.
+      \item Estimare prin metoda celor mai mici pătrate (OLS), cu erori standard robuste la heteroscedasticitate și autocorelație (HAC), 6 decalaje.
     \end{itemize}
 \end{itemize}\par}
 \end{column}
@@ -1019,7 +1015,7 @@ Hydro & \ensuremath{-}19{,}55 & 7{,}02 & \ensuremath{-}2{,}78 \\
 TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \bottomrule\end{tabular}}\par\vspace{1mm}\begin{itemize}\setlength{\itemsep}{1pt}
   \item Un TWh hidro în plus într-o lună: în medie, \ensuremath{-}19{,}55 EUR/MWh, la același preț al gazelor.
-  \item Atenție: seriile prețului energiei și al gazelor au trend în nivel (secțiunea 3), iar regresia poate fi spurioasă dacă nu sînt cointegrate
+  \item Atenție: prețurile energiei și ale gazelor au trend (secțiunea 3), deci fără cointegrare regresia poate fi spurioasă
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item $R^2=$ 0{,}941 nu este o dovadă
       \item Cointegrarea se testează în cursul 2.
@@ -1028,14 +1024,14 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \end{column}
 \end{columns}
 \par\vfill\manager{producătorii hidro și traderii urmăresc nivelul lacurilor ca indicator anticipativ al prețului PZU.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie; erori standard Newey--West)}\hfill\tryit{notebook-ul Jupyter \S10a}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(b) Șocul petrolier din iunie 2025}
 
 \begin{frame}{Studiul de caz (b): Brent, +7\% într-o zi, apoi sub nivelul inițial}
-\framesubtitle{(Yahoo Finance, Brent BZ=F)\hfill\tryit{notebook-ul Jupyter \S10b}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.377\textheight,keepaspectratio]{charts/ro/iran_brent.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.416\textheight,keepaspectratio]{charts/ro/iran_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance (BZ=F). Date: 2025-06-02 - 2025-07-04, zile de tranzacționare.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1049,14 +1045,14 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Patru zile mai tîrziu, piața era mult sub prețul fixat.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Yahoo Finance, Brent BZ=F)}\hfill\qlink{EMQA\_L1\_iran\_brent}{Quantlets/L1/EMQA_L1_iran_brent}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(c) Separarea regională a prețurilor în vara lui 2024}
 
 \begin{frame}{Studiul de caz (c): în iulie 2024, România a plătit dublul prețului din Germania}
-\framesubtitle{(energy-charts.info; prețuri PZU zilnice și orare)\hfill\tryit{notebook-ul Jupyter \S10c}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.440\textheight,keepaspectratio]{charts/ro/separation_2024.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.427\textheight,keepaspectratio]{charts/ro/separation_2024.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2024-06-01 - 2024-09-30 zilnic (stînga); 2024-07-16 orar (dreapta).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1067,10 +1063,10 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{pentru cumpărătorii din sud-estul Europei, serile verilor caniculare și secetoase reprezintă principalul risc de preț.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; prețuri PZU zilnice și orare)}\hfill\qlink{EMQA\_L1\_separation\_2024}{Quantlets/L1/EMQA_L1_separation_2024}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (c): seri caniculare și o rețea congestionată}
-\framesubtitle{(energy-charts.info; fluxuri fizice ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S10c}}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.60\textwidth}
@@ -1104,14 +1100,14 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \end{block}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; fluxuri fizice ENTSO-E)}\hfill\tryit{notebook-ul Jupyter \S10c}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(d) Prețurile negative și energia solară}
 
 \begin{frame}{Studiul de caz (d): prețurile negative apar mai ales primăvara}
-\framesubtitle{(energy-charts.info; sursa datelor: ENTSO-E)\hfill\tryit{notebook-ul Jupyter \S10d}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.429\textheight,keepaspectratio]{charts/ro/negative_solar.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.422\textheight,keepaspectratio]{charts/ro/negative_solar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: ian. 2023 - 2026-10-31 (stînga); 2018-2025 (dreapta).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1124,14 +1120,14 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Atunci se încarcă bateriile, iar industria își poate programa consumul flexibil.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_negative\_solar}{Quantlets/L1/EMQA_L1_negative_solar}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (d): factorii asociați zilelor cu prețuri negative}
-\framesubtitle{(estimare proprie, logit; energy-charts.info)\hfill\tryit{notebook-ul Jupyter \S10d}}
 \footnotesize
 \intuition{Descriem condițiile efectiv înregistrate în zilele cu cel puțin un sfert de oră cu preț negativ; modelul descrie condițiile observate, fără a oferi prognoze pentru licitare.}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.57\textwidth}
+\begin{column}{0.61\textwidth}
 \[ \Pr(\text{zi negativă})=\Lambda\big(\beta_0+\underbrace{\beta_1R_d}_{\text{consum rezidual}}+\beta_2\mathrm{Hyd}_d+\underbrace{\beta_3\mathrm{Wkd}_d+\gamma_{y}}_{\text{calendar}}\big) \]{\footnotesize\begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{\txtwhere}
     \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1143,7 +1139,7 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \end{itemize}
 \end{itemize}\par}
 \end{column}
-\begin{column}{0.40\textwidth}
+\begin{column}{0.36\textwidth}
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Interpretare}
     \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1155,15 +1151,15 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \end{itemize}
 \end{column}
 \end{columns}
-\par\vfill\manager{limitarea producției regenerabile este cea mai probabilă în weekendurile de primăvară, cu lacuri pline.}\par\vspace{0.5mm}
+\par\vfill\manager{regenerabilele sînt limitate cel mai probabil în weekendurile de primăvară, cu lacuri pline.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, logit; energy-charts.info)}\hfill\tryit{notebook-ul Jupyter \S10d}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(e) Anul 2026 pînă acum}
 
 \begin{frame}{Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie}
-\framesubtitle{(energy-charts.info; Yahoo Finance BZ=F; date pînă la 31 octombrie 2026)\hfill\tryit{notebook-ul Jupyter \S10e}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.274\textheight,keepaspectratio]{charts/ro/cy_prices.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.249\textheight,keepaspectratio]{charts/ro/cy_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri de la bursele OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E. Date: 2026-01-01 - 2026-10-31, zilnic; Brent: Yahoo Finance (BZ=F).}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1181,12 +1177,12 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Țițeiul și oferta internă au evoluat în aceeași direcție.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; Yahoo Finance BZ=F; date pînă la 31 octombrie 2026)}\hfill\qlink{EMQA\_L1\_cy\_prices}{Quantlets/L1/EMQA_L1_cy_prices}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (e): două opriri ale centralei nucleare de la Cernavodă, hidro sub nivelul din 2025}
-\framesubtitle{(Nuclearelectrica, 29 iul. 2026; World Nuclear News, 30 iul. 2026; CNCAN, 9 sep. 2026)\hfill\tryit{notebook-ul Jupyter \S10e}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.210\textheight,keepaspectratio]{charts/ro/cy_generation.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.236\textheight,keepaspectratio]{charts/ro/cy_generation.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: medii lunare pe orele raportate, 2025-01 - 2026-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1201,10 +1197,10 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Citiți mesajele REMIT la fel de atent ca prognoza meteo.
     \end{itemize}}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nuclearelectrica, 29 iul. 2026; World Nuclear News, 30 iul. 2026; CNCAN, 9 sep. 2026)}\hfill\qlink{EMQA\_L1\_cy\_generation}{Quantlets/L1/EMQA_L1_cy_generation}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (e): prețuri cu circa 30\% mai mari, ofertă mai mică}
-\framesubtitle{(calcule proprii; energy-charts.info)\hfill\tryit{notebook-ul Jupyter \S10e}}
 \small
 \begin{center}{\small\renewcommand{\arraystretch}{1.08}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrr@{}}\toprule
@@ -1224,10 +1220,10 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
   \item $^{*}$Numai orele raportate în ambii ani (limită inferioară).
 \end{itemize}}
 \par\vfill\manager{prețul a crescut cu circa 30\%, cu nuclearul, hidro și țițeiul în aceeași direcție, iar acoperirea riscului s-a dovedit rentabilă.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; energy-charts.info)}\hfill\tryit{notebook-ul Jupyter \S10e}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (e): valorile extreme din 2026, România și Brent}
-\framesubtitle{(calcule proprii; energy-charts.info; Yahoo Finance)\hfill\tryit{notebook-ul Jupyter \S10e}}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.550\textheight,keepaspectratio]{charts/ro/cy_extremes.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (prețuri OPCOM); Yahoo Finance (BZ=F). Date: 2026-01-01 - 2026-10-31, zilnic.}
@@ -1239,10 +1235,10 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
       \item Sfertul de oră: maximul, 1015{,}65, la 30 iunie 2026, ora 18:45; minimul, \ensuremath{-}99{,}75, la 26 aprilie 2026, ora 13:00 (CET/CEST)
     \end{itemize}
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; energy-charts.info; Yahoo Finance)}\hfill\qlink{EMQA\_L1\_cy\_extremes}{Quantlets/L1/EMQA_L1_cy_extremes}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiul de caz (e): valorile extreme din 2026, Germania și Brent}
-\framesubtitle{(calcule proprii; nota SDAC a OPCOM, 7 mai 2026)\hfill\tryit{notebook-ul Jupyter \S10e}}
 \small
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Germania}
@@ -1257,14 +1253,14 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{stabiliți limitele de risc pe baza valorilor extreme, nu a mediilor.}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; nota SDAC a OPCOM, 7 mai 2026)}\hfill\tryit{notebook-ul Jupyter \S10e}\par\vspace{0.5mm}
 \end{frame}
 
 \subsection{(f) România, Bulgaria și bateriile}
 
 \begin{frame}{Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara}
-\framesubtitle{(energy-charts.info; sursa datelor: ENTSO-E; calcule proprii, ora locală EET)\hfill\tryit{notebook-ul Jupyter \S10f}}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.364\textheight,keepaspectratio]{charts/ro/bg_battery.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.340\textheight,keepaspectratio]{charts/ro/bg_battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: 2023-01 - 2026-10, ora locală; seria bateriilor BG raportată din 2026-09-10.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -1278,6 +1274,7 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{un dezvoltator român de proiecte de stocare concurează pentru aceeași diferență regională amiază--seară (cursul 6).}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; sursa datelor: ENTSO-E; calcule proprii, ora locală EET)}\hfill\qlink{EMQA\_L1\_bg\_battery}{Quantlets/L1/EMQA_L1_bg_battery}\par\vspace{0.5mm}
 \end{frame}
 
 \section*{Recapitulare}
@@ -1339,7 +1336,6 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
 \end{frame}
 
 \begin{frame}{Cercetările grupului nostru despre piața din România}
-\framesubtitle{(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Criza din vara lui 2024} (studiul de caz c): analiză contrafactuală a crizei prețurilor din România din iunie--iulie 2024, pe date orare ENTSO-E
@@ -1357,6 +1353,7 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
   \item Rezultatele sînt preluate din rezumatele lucrărilor; cifrele de pe celelalte diapozitive provin din datele noastre.
 \end{itemize}}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Vreți să aflați mai mult?}
@@ -1479,7 +1476,6 @@ iun & \ensuremath{-}0{,}442 & dec & 0{,}565 \\
 \end{frame}
 
 \begin{frame}{Anexa C: algoritmul STL}
-\framesubtitle{(Cleveland, Cleveland, McRae \& Terpenning, 1990, JOS)}
 \small
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Bucla interioară} (repetată): (1) eliminarea trendului, $x_t-\hat T_t$
@@ -1495,10 +1491,10 @@ iun & \ensuremath{-}0{,}442 & dec & 0{,}565 \\
     \end{itemize}
   \item Numai pentru modelul aditiv: în cazul sezonalității multiplicative, aplicați STL seriei transformate prin $\ln x_t$ (sau prin asinh, pentru prețuri).
 \end{itemize}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland, Cleveland, McRae \& Terpenning, 1990, JOS)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Anexa D: mixul de producție în cifre}
-\framesubtitle{(energy-charts.info; sursa datelor: ENTSO-E)}
 \small
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrr@{}}\toprule
@@ -1518,10 +1514,10 @@ Import net TWh & \ensuremath{-}6{,}9 & 1{,}9 & \ensuremath{-}3{,}1 & 3{,}0 & 3{,
   \item Ultimele două coloane: numai orele raportate în ambii ani.
   \item Import net $>0$: energie intrată în România.
 \end{itemize}}\end{center}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; sursa datelor: ENTSO-E)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Anexa E: prognoza naivă, toți anii}
-\framesubtitle{(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)}
 \small
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.1}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrrrr@{}}\toprule
@@ -1537,10 +1533,10 @@ DE-LU $d-7$ & \cellcolor{Crimson!55}10{,}3 & \cellcolor{Crimson!55}10{,}3 & \cel
   \item MAE în EUR/MWh, pe prețuri orare (din oct. 2025: media orară a prețurilor pe 15 minute).
   \item Verde = cea mai bună dintre cele trei variante, în anul și zona respective.
 \end{itemize}}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Anexa F: cozile groase și modelul logit, în detaliu}
-\framesubtitle{(Jarque \& Bera, 1980; estimare proprie)}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.43\textwidth}
@@ -1567,10 +1563,10 @@ Anul 2026 & 0{,}534 & 1{,}71 & 1{,}54 \\
 \end{itemize}}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Jarque \& Bera, 1980; estimare proprie)}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Anexa G: conversia prețurilor gazelor și țițeiului în EUR/MWh}
-\framesubtitle{(Banca Mondială; cursurile de referință ECB)}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -1596,6 +1592,7 @@ Anul 2026 & 0{,}534 & 1{,}71 & 1{,}54 \\
 \end{itemize}
 \end{column}
 \end{columns}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Banca Mondială; cursurile de referință ECB)}\par\vspace{0.5mm}
 \end{frame}
 
 \end{document}

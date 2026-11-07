@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L5_spark_hourly'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Sorted hourly clean spark spreads of a gas plant (50% efficiency) in Romania and Germany over the last 12 complete months, 2025-11-01 to 2026-10-31, hourly (60-min and 15-min market time units weighted by duration): the area above zero is the value of running only in profitable hours (a strip of hourly call options).'
+
+Keywords: 'spark spread option, real option, gas-fired plant, flexibility, duration curve, day-ahead, Romania, Germany'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'day-ahead prices at native resolution (data/clean/power_da_prices_native_utc.csv, energy-charts.info); World Bank TTF gas monthly (data/clean/ttf_monthly.csv); EEX primary-auction EUA prices and the SparkChange CO2 ETC proxy (data/clean/eua_daily.csv)'
+
+Output: 'spark_hourly.png'

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_merit_opcom'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Aggregated supply and demand curves of the Romanian day-ahead market (OPCOM PZU) for one delivery day, midday (12:00-12:15) and evening (20:00-20:15) quarter-hours, with the official clearing price: the price is set where the curves cross. Data: 2026-10-21, Romanian time; quantities include blocks, hourly orders and net flows. Source: OPCOM, PZU aggregated curves.'
+
+Keywords: 'merit order, supply curve, demand curve, day-ahead market, OPCOM, clearing price, order book, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'OPCOM PZU aggregated curves for one day (data/clean/opcom_pzu_curves.csv and opcom_pzu_curves_meta.json)'
+
+Output: 'merit_opcom.png'

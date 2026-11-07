@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_stress_week'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Hourly Romanian day-ahead price in the stress week of the test year (the Monday-Sunday week with the highest mean price) against the naive, AW-LEAR and ensemble forecasts: every model lags the jump in level by a day. Data: week 2026-10-19 to 2026-10-25, hourly. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC).'
+
+Keywords: 'stress week, price spike, forecast error, LEAR, ensemble, naive benchmark, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR, GBM and MLP forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports and the EUA price)'
+
+Output: 'stress_week.png'

@@ -616,14 +616,16 @@ SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices
               "regg": "energy-charts.info (Fraunhofer ISE); day-ahead prices (OPCOM, IBEX, HUPX); ENTSO-E solar output and load",
               "cap": "energy-charts.info (Fraunhofer ISE), installed capacity from ENTSO-E; ENTSO-E solar output (Transelectrica data)",
               "opc": "OPCOM, PZU aggregated curves (XML), own computation",
-              "bat": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation"},
+              "bat": "energy-charts.info; day-ahead prices via ENTSO-E; ENTSO-E battery output (BG, RO); own optimisation",
+              "rogb": "energy-charts.info (Fraunhofer ISE): cross-border physical flows of Romania (ENTSO-E); day-ahead prices of OPCOM (RO) and IBEX (BG)"},
        "ro": {"ec": "energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E",
               "ecg": "energy-charts.info (Fraunhofer ISE); prețuri OPCOM; producția solară și eoliană și consumul, ENTSO-E (date Transelectrica)",
               "reg": "energy-charts.info (Fraunhofer ISE); prețurile pieței pentru ziua următoare: OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), prin ENTSO-E",
               "regg": "energy-charts.info (Fraunhofer ISE); prețuri pentru ziua următoare (OPCOM, IBEX, HUPX); producția solară și consumul, ENTSO-E",
               "cap": "energy-charts.info (Fraunhofer ISE), puterea instalată din ENTSO-E; producția solară, ENTSO-E (date Transelectrica)",
               "opc": "OPCOM, curbele agregate PZU (XML), calcule proprii",
-              "bat": "energy-charts.info; prețuri PZU prin ENTSO-E; producția bateriilor, ENTSO-E (BG, RO); optimizare proprie"}}
+              "bat": "energy-charts.info; prețuri PZU prin ENTSO-E; producția bateriilor, ENTSO-E (BG, RO); optimizare proprie",
+              "rogb": "energy-charts.info (Fraunhofer ISE): fluxurile fizice transfrontaliere ale României (ENTSO-E); prețurile pentru ziua următoare OPCOM (RO) și IBEX (BG)"}}
 
 
 def chart(name, src_key, period_en, period_ro):
@@ -888,6 +890,57 @@ chart("bat_region", "bat", f"2h battery, perfect foresight, 2024-01 to {d(END)[:
       f"baterie de 2 h, informație perfectă, 2024-01 - {d(END)[:7]}; producția bateriilor raportată la ENTSO-E")
 chart("bat_rules", "bat", f"{ltm_en}; 1 MW, round trip 85\\%; forecast rules on {N['bat']['ltm']['2']['n_common']} common days, scaled to the full period",
       f"{ltm_ro}; 1 MW, randament 85\\%; regulile de prognoză pe {N['bat']['ltm']['2']['n_common']} de zile comune, scalate la întreaga perioadă")
+
+# =============================================================================
+# 9. Case study: summer of the last year, Romania and Bulgaria (cross-border flows and prices by hour of the day)
+# =============================================================================
+# energy-charts physical flows per border, MW; sign: + = net import into Romania (data/SOURCES.md)
+CB = pd.read_csv(os.path.join(DATA, "crossborder_ro_mw_hourly_utc.csv"), parse_dates=["timestamp_utc"]).set_index("timestamp_utc")
+CB.index = pd.to_datetime(CB.index, utc=True).tz_convert("Europe/Bucharest")
+PH = pd.read_csv(os.path.join(DATA, "power_da_prices_hourly_utc.csv"), parse_dates=["timestamp_utc"]).set_index("timestamp_utc")
+PH.index = pd.to_datetime(PH.index, utc=True).tz_convert("Europe/Bucharest")
+SUMMER = (CB.index.year == Y) & CB.index.month.isin([6, 7, 8])
+RG = CB.loc[SUMMER, ["bulgaria", "hungary", "serbia", "sum"]].join(PH[["RO", "BG"]], how="left")
+RGH = RG.groupby(RG.index.hour).mean()
+_days = RG.index.normalize().unique()
+_mid = RG[RG.index.hour.isin([12, 13, 14])].groupby(RG[RG.index.hour.isin([12, 13, 14])].index.normalize())["bulgaria"].mean()
+_eve = RG[RG.index.hour.isin([19, 20, 21, 22])].groupby(RG[RG.index.hour.isin([19, 20, 21, 22])].index.normalize())["bulgaria"].mean()
+_hx = int(RGH["sum"].idxmin())
+_hm = int(RGH["sum"].idxmax())
+_hb = int(RGH["bulgaria"].idxmax())
+N["rogb"] = {"year": Y, "start": d(RG.index.min()), "end": d(RG.index.max()), "n_days": int(len(_days)),
+             "exp_h": _hx, "exp_mw": fl(-RGH["sum"].min(), 0), "imp_h": _hm, "imp_mw": fl(RGH["sum"].max(), 0),
+             "bg_eve_h": _hb, "bg_eve_mw": fl(RGH["bulgaria"].max(), 0),
+             "days_bg_eve_imp": int((_eve > 0).sum()), "days_bg_mid_exp": int((_mid < 0).sum()), "n_days_mid": int((_mid < 0).sum()),
+             "hu_mid_mw": fl(-RGH.loc[12, "hungary"], 0), "rs_mid_mw": fl(-RGH.loc[12, "serbia"], 0),
+             "bg_mid_mw": fl(RGH.loc[12, "bulgaria"], 0),
+             "p_ro_eve": fl(RGH.loc[_hb, "RO"], 1), "p_bg_eve": fl(RGH.loc[_hb, "BG"], 1),
+             "p_gap_eve": fl(RGH.loc[_hb, "RO"] - RGH.loc[_hb, "BG"], 1),
+             "p_ro_mid": fl(RGH.loc[13, "RO"], 1), "p_bg_mid": fl(RGH.loc[13, "BG"], 1),
+             "n_h_gap10": int(((RG["RO"] - RG["BG"]) > 10).sum()), "n_h": int(RG["RO"].notna().sum())}
+N["rogb"]["share_h_gap10"] = fl(N["rogb"]["n_h_gap10"] / N["rogb"]["n_h"] * 100, 1)
+ROGB_H = RGH
+for lang in ["en", "ro"]:
+    T = (lambda en, ro_: en) if lang == "en" else (lambda en, ro_: ro_)
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95))
+    hh = ROGB_H.index.values
+    axs[0].axhline(0, color="#222222", lw=0.6)
+    axs[0].plot(hh, ROGB_H["sum"] / 1000, color=PAL["RO"], lw=1.8, label=T("Romania: net flow on all borders; RO price", "România: flux net pe toate granițele; prețul RO"))
+    axs[0].plot(hh, ROGB_H["bulgaria"] / 1000, color=PAL["BG"], lw=1.6, ls="--", label=T("Bulgaria: flow on the RO-BG border; BG price", "Bulgaria: flux pe granița RO-BG; prețul BG"))
+    axs[0].set_ylabel(T("net import, GW\n(< 0: export)", "import net, GW\n(< 0: export)"), fontsize=8.5)
+    axs[0].set_title(T("cross-border flows", "fluxuri transfrontaliere"), fontsize=9.5)
+    axs[1].plot(hh, ROGB_H["RO"], color=PAL["RO"], lw=1.8)
+    axs[1].plot(hh, ROGB_H["BG"], color=PAL["BG"], lw=1.6, ls="--")
+    axs[1].set_title(T("day-ahead prices", "prețuri PZU"), fontsize=9.5)
+    axs[1].set_ylabel(T("day-ahead price\n(EUR/MWh)", "preț PZU\n(EUR/MWh)"), fontsize=8.5)
+    for ax in axs:
+        ax.set_xticks([0, 6, 12, 18, 23])
+        ax.set_xlabel(T("hour of the day (Romanian time)", "ora din zi (ora României)"), fontsize=8.5)
+    legend_bottom(fig, ncol=2)
+    fig.subplots_adjust(wspace=0.45)
+    out(fig, lang, "rogb_summer", bottom=0.27)
+chart("rogb_summer", "rogb", f"hourly means, {N['rogb']['start']} to {N['rogb']['end']}; Moldova and Ukraine borders only partly reported",
+      f"medii orare, {N['rogb']['start']} - {N['rogb']['end']}; granițele cu Moldova și Ucraina sînt raportate doar parțial")
 
 with open(os.path.join(HERE, "L6_numbers.json"), "w") as fh:
     json.dump(N, fh, indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))

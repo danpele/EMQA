@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_brent_im'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Initial margin of one ICE Brent futures lot (1,000 barrels) computed as a 99% two-day historical-simulation VaR with a 12-month lookback, and with an anti-procyclical floor (lookback since 2015), EMIR RTS 153/2013 Art. 24-28; trading days 2016-01-01 to 2026-10-30; contract-roll days dropped; 1 lot = 1,000 bbl. Prints the 2026 rise of price and margin and the share of days with losses beyond the margin.'
+
+Keywords: 'initial margin, collateral, procyclicality, EMIR, CCP, Brent, futures, historical simulation, value at risk'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'fuels_daily.csv: daily settlement of the ICE Brent front-month futures (BZ=F), USD/bbl, Yahoo Finance (cut-off 2026-10-31)'
+
+Output: 'brent_im.png'

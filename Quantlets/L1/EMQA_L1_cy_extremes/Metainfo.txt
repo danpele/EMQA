@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_cy_extremes'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Romanian daily base day-ahead price and Brent front-month close from 1 January of the current year to the cut-off, with the highest and lowest days marked; prints the daily and 15-minute extremes with their dates. Data: 2026-01-01 to 2026-10-31, daily. Source: energy-charts.info (OPCOM prices); Yahoo Finance (BZ=F).'
+
+Keywords: 'extremes, price spikes, negative prices, electricity, Brent, Romania, current year, case study'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Daily and native-resolution day-ahead prices (energy-charts.info, OPCOM via ENTSO-E) and Brent front-month close (Yahoo Finance BZ=F); data/clean/power_da_prices_daily_cet.csv, power_da_prices_native_utc.csv, fuels_daily.csv'
+
+Output: 'cy_extremes.png'

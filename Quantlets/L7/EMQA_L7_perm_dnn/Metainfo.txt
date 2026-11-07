@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L7_perm_dnn'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Permutation importance of the input blocks of the tuned deep neural network (DNN): increase in the test-year MAE (EUR/MWh) when one block (prices of d-1, d-2, d-3, d-7, load, wind+solar, fundamentals, day of week) is shuffled across the test days; mean of 5 random permutations, test year 2025-11-01 to 2026-10-31, Romanian day-ahead prices. Data: test year 2025-11-01 to 2026-10-31; 5 random permutations of the test days. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+
+Keywords: 'permutation importance, explainable AI, neural network, feature importance, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'saved permutation importance of each input block (perm_dnn_results.npz, computed by lectures/L7/analysis_L7.py with the 48 trained networks of the test year); RUN_ALL retrains the networks from data/clean and recomputes it'
+
+Output: 'perm_dnn.png'

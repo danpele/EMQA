@@ -168,7 +168,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{tratați anul de test ca pe un plic sigilat: se deschide o singură dată, după ce toate alegerile au fost făcute.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; Lago et al., 2021, APEN)}\hfill\tryit{notebook-ul Jupyter, secțiunea 1}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; Lago et al., 2021, APEN)}\hfill\qlink{EMQA\_L7\_split\_ml}{Quantlets/L7/EMQA_L7_split_ml}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Hiperparametrii se aleg prin căutare aleatoare pe anul de validare}
@@ -293,7 +293,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{dacă un furnizor nu vă poate arăta această curbă, rețeaua a fost probabil antrenată pînă a reprodus trecutul.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; rețeaua DNN aleasă, inițializarea 1)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; rețeaua DNN aleasă, inițializarea 1)}\hfill\qlink{EMQA\_L7\_learning\_curve}{Quantlets/L7/EMQA_L7_learning_curve}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Căutarea aleatoare reduce eroarea de validare a ambelor modele}
@@ -309,7 +309,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
   \item Toate cele 25 de setări ale ambelor modele sînt mai precise decît modelul naiv în anul de validare (26{,}90 EUR/MWh)
 \end{itemize}
 \par\vfill\manager{prevedeți un an de validare pentru calibrare înainte de a avea încredere într-o prognoză de învățare automată.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; anul de validare 1 noiembrie 2024 -- 31 octombrie 2025)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; anul de validare 1 noiembrie 2024 -- 31 octombrie 2025)}\hfill\qlink{EMQA\_L7\_search}{Quantlets/L7/EMQA_L7_search}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -425,7 +425,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Recalibrați intervalele (cursul 2) înainte de a dimensiona riscul cu ele.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_foundation\_hour}{Quantlets/L7/EMQA_L7_foundation_hour}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -470,7 +470,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
     \end{itemize}
   \item Adăugarea AW-LEAR la Chronos-2 nu schimbă nimic ($p$ = 0{,}491): în zilele dificile, cele două modele greșesc asemănător
 \end{itemize}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; teste DM unilaterale)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; teste DM unilaterale)}\hfill\qlink{EMQA\_L7\_dm\_matrix}{Quantlets/L7/EMQA_L7_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Media funcționează pentru că erorile nu sînt identice}
@@ -486,7 +486,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{faceți media cu ponderi egale înainte de a estima ponderi „inteligente”.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; calcule proprii)}\hfill\qlink{EMQA\_L7\_combo\_weight}{Quantlets/L7/EMQA_L7_combo_weight}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni}
@@ -502,7 +502,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
   \item Toate modelele greșesc mai mult în aceleași luni (ianuarie, iunie, octombrie): zilele dificile sînt dificile pentru toate
 \end{itemize}
 \par\vfill\manager{raportați comitetului de risc acuratețea lună de lună, nu doar media anuală.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_monthly\_ml}{Quantlets/L7/EMQA_L7_monthly_ml}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute}
@@ -520,7 +520,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
   \item Costuri ascunse: căutarea setărilor (7{,}3 min), preantrenarea Chronos (făcută de alții), oamenii care întrețin fluxul de date
 \end{itemize}
 \par\vfill\manager{comparați modelele după eroare raportată la costul total de utilizare, nu doar după eroare.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; timpi măsurați pe un nucleu al unui laptop cu 18 nuclee)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; timpi măsurați pe un nucleu al unui laptop cu 18 nuclee)}\hfill\qlink{EMQA\_L7\_cost\_gain}{Quantlets/L7/EMQA_L7_cost_gain}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -570,7 +570,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
   \item Consumul are 8{,}5\%, iar producția eoliană și solară 2{,}5\%: fiind cunoscute doar pînă în $d-2$, sînt informații vechi la închiderea licitației
 \end{itemize}
 \par\vfill\manager{cumpărați întîi intrări mai bune: prognozele operatorului de transport și de sistem (TSO).}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_shap\_global}{Quantlets/L7/EMQA_L7_shap_global}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Producția eoliană și solară scade prețul doar în orele în care este mare}
@@ -583,7 +583,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
   \item Efectul apare peste aproximativ 2 gigawați (GW), mai ales la prînz: un prag pe care un model liniar nu îl poate exprima
 \end{itemize}
 \par\vfill\manager{un dezvoltator de parcuri solare poate citi aici reducerea de preț la care contribuie chiar producția sa.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_shap\_res}{Quantlets/L7/EMQA_L7_shap_res}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Rețeaua neuronală se bazează și mai mult pe prețurile de ieri}
@@ -604,7 +604,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{monitorizați întîi fluxul prețurilor din $d-1$: fără el, rețeaua cedează.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; calcule proprii)}\hfill\qlink{EMQA\_L7\_perm\_dnn}{Quantlets/L7/EMQA_L7_perm_dnn}\par\vspace{0.5mm}
 \end{frame}
 
 
@@ -623,7 +623,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
   \item \textbf{Preț $\leq$ 0}: 255 de ore, în 53 de zile din anul de test, mai ales în jurul orei 13
 \end{itemize}
 \par\vfill\manager{o baterie se încarcă la prînz și se descarcă la orele 19--20: cele două evenimente sînt chiar modelul ei de afaceri.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_events\_hour}{Quantlets/L7/EMQA_L7_events_hour}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Clasificarea vîrfurilor: o prognoză bună de preț le detectează deja}
@@ -694,7 +694,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
       \item Ele depind de soarele și vîntul de mîine, nu de ziua de ieri
     \end{itemize}
 \end{itemize}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_roc}{Quantlets/L7/EMQA_L7_roc}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Regula cost--pierdere: reacționați cînd probabilitatea depășește C/L}
@@ -713,7 +713,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Cel mai bun prag văzut ulterior (0{,}64) este înțelepciune retrospectivă.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; calcule proprii)}\hfill\qlink{EMQA\_L7\_decision}{Quantlets/L7/EMQA_L7_decision}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiu de caz, 30 iunie 2026: vîrful a fost anticipat, amploarea lui nu}
@@ -729,7 +729,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
   \item Săptămîna 27 iunie 2026 -- 3 iulie 2026: 47 de ore cu vîrfuri, 45 de alerte la pragul C/L, iar 39 de alerte au fost corecte
 \end{itemize}
 \par\vfill\manager{probabilitatea arată dacă reacționați, prognoza punctuală arată cît.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; prețurile PZU din România)}\hfill\tryit{notebook-ul Jupyter, secțiunea 8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; prețurile PZU din România)}\hfill\qlink{EMQA\_L7\_case\_week}{Quantlets/L7/EMQA_L7_case_week}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Studiu de caz: arborii au urmat seara extremă din ziua precedentă}
@@ -745,7 +745,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
   \item Arborii nu pot depăși prețurile memorate în frunze: valorile extreme sînt plafonate
 \end{itemize}
 \par\vfill\manager{prezentați consiliului de administrație această descompunere pentru fiecare alertă importantă.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; valori SHAP în EUR/MWh, anexa C)}\hfill\tryit{notebook-ul Jupyter, secțiunea 8}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; valori SHAP în EUR/MWh, anexa C)}\hfill\qlink{EMQA\_L7\_shap\_local}{Quantlets/L7/EMQA_L7_shap_local}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Avertizarea timpurie a vîrfurilor: lucrarea grupului și replicarea ei}
@@ -789,7 +789,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
     \end{itemize}
 \end{itemize}
 \par\vfill\manager{cereți oricărui furnizor o testare cronologică, cu fiecare intrare datată la momentul închiderii licitației.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; calcule proprii)}\hfill\qlink{EMQA\_L7\_pit\_leak}{Quantlets/L7/EMQA_L7_pit_leak}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Alegerea pe anul de test simulează o victorie asupra LEAR}
@@ -808,10 +808,10 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item Cu cît sînt mai multe încercări, cu atît cel mai bun pare mai bun decît este.
     \end{itemize}}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(White, 2000, Econometrica; calcule proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(White, 2000, Econometrica; calcule proprii)}\hfill\qlink{EMQA\_L7\_snooping}{Quantlets/L7/EMQA_L7_snooping}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Reestimarea: un model neactualizat un an pierde 4{,}3\%}
+\begin{frame}{Reestimarea: un model neactualizat un an pierde 4{,}2\%}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.401\textheight,keepaspectratio]{charts/ro/pit_retrain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM; consum, producție și fluxuri ENTSO-E; Yahoo Finance (EUA ETC). Date: anul de test 2025-11-01 - 2026-10-31; XGBoost, configurația aleasă.}
@@ -824,7 +824,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
   \item O fereastră glisantă scurtă (365 de zile, MAE 25{,}59) este mai slabă decît întregul istoric: arborii au nevoie de multe vîrfuri din trecut pentru a învăța
 \end{itemize}
 \par\vfill\manager{includeți reestimarea lunară în calendarul operațional, cu un responsabil, ca pe orice alt control.}\par\vspace{0.5mm}
-\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 9}\par\vspace{0.5mm}
+\par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_pit\_retrain}{Quantlets/L7/EMQA_L7_pit_retrain}\par\vspace{0.5mm}
 \end{frame}
 
 \begin{frame}{Testul de scurgere a informației: ștergerea viitorului nu schimbă nimic}
@@ -941,7 +941,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \vspace{2mm}
 \begin{exampleblock}{R\u{a}spuns}
 \begin{itemize}
-  \item Un model neactualizat un an a fost cu 4{,}3\% mai puțin precis, iar diferența a crescut în ultimele luni
+  \item Un model neactualizat un an a fost cu 4{,}2\% mai puțin precis, iar diferența a crescut în ultimele luni
     \begin{itemize}\setlength{\itemsep}{0pt}
       \item O reestimare lunară a XGBoost durează circa 13 de secunde.
     \end{itemize}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 4 · Riscul companiilor din energie</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 4 · Riscul companiilor din energie">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L4.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261107a", "L4_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L4.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 4 · Riscul companiilor din energie</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L4/lecture4_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L4.html" class="lang-btn">EN</a><a href="L4_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Factorul de risc este variația zilnică a prețului de bază PZU din România, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): o creștere este o pierdere pentru un furnizor care cumpără pe piața pentru ziua următoare. VaR (Value at Risk, valoarea la risc) este o cuantilă a pierderii, ES (Expected Shortfall, pierderea așteptată în coadă) media pierderilor de dincolo de ea. Butonul ▶ modifică parametrul principal pas cu pas.</p>
+<p class="toc"><a href="#s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</a> · <a href="#s-est">Estimarea VaR și ES: patru metode</a> · <a href="#s-bt">Testarea retrospectivă: și-a ținut modelul promisiunea?</a> · <a href="#s-coll">De la cuantile la marje, garanții și limite</a> · <a href="#s-pos">Furnizorul și producătorul: un singur preț, două cozi</a></p>
+<h2 class="sec" id="s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</h2>
+<section class="blk" id="var-es">
+  <h3>Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=10" target="_blank" rel="noopener"><img src="slides/L4_tails_ro.jpg" alt="Slide-ul 10: Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală" loading="lazy"></a>
+      <figcaption>Slide-ul 10</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ve-z">Zona</label><select id="ve-z"><option value="RO" selected>România</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="ve-p">Perioada</label><select id="ve-p"><option value="all" selected>2015–2026</option><option value="calm">2015–2020</option><option value="crisis">2021–2022</option><option value="after">2023–2026</option><option value="last">Ultimele 365 de zile</option></select></div><div class="ctl"><label for="ve-a">Nivelul de încredere, α (%): <b id="ve-a-v"></b></label><input type="range" id="ve-a" min="90" max="99.5" step="0.5" value="99"></div><button class="btn play" id="ve-play" type="button"></button></div><div class="charts "><div class="chart" id="ve-hist"></div><div class="chart" id="ve-surv"></div></div><ul class="out" id="ve-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_tails" target="_blank" rel="noopener">EMQA_L4_tails</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_tails/EMQA_L4_tails.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> O curbă normală ajustată la variațiile zilnice ale prețului din România în 2015–2026 plasează cuantila de 99% la 60,18 EUR/MWh. Cuantila empirică de 99% este 88,21 EUR/MWh. De unde vine diferența?</div>
+  <details><summary>Răspuns</summary><p>Variațiile zilnice au cozi groase: excesul de kurtosis este 11,97, iar creșterile de peste trei abateri standard sînt 52, față de 5,82 așteptate în legea normală. VaR normal subestimează deci cuantilele extreme, iar diferența crește odată cu α. ES (media pierderilor de dincolo de VaR) reacționează și mai puternic, pentru că mediază zilele extreme pe care curba normală nu le vede. Alegeți perioada 2021–2022 pentru anii de criză sau ultimele 365 de zile pentru riscul actual.</p></details>
+</section><h2 class="sec" id="s-est">Estimarea VaR și ES: patru metode</h2>
+<section class="blk" id="var-paths">
+  <h3>În criză, FHS s-a adaptat repede, iar HS și VaR normală au întîrziat</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=19" target="_blank" rel="noopener"><img src="slides/L4_var_paths_ro.jpg" alt="Slide-ul 19: În criză, FHS s-a adaptat repede, iar HS și VaR normală au întîrziat" loading="lazy"></a>
+      <figcaption>Slide-ul 19</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="vp-m">Metoda</label><select id="vp-m"><option value="hs">HS, simulare istorică</option><option value="normal">Normală</option><option value="t">Student-t</option><option value="fhs" selected>FHS, simulare istorică filtrată</option><option value="evt">EVT, teoria valorilor extreme</option></select></div><div class="ctl"><label for="vp-L">Lungimea ferestrei</label><select id="vp-L"><option value="12">12 luni</option><option value="24" selected>24 de luni</option></select></div><div class="ctl"><label for="vp-a">Nivelul VaR</label><select id="vp-a"><option value="0.95">95%</option><option value="0.99" selected>99%</option></select></div><div class="ctl"><label for="vp-y">Fereastra începe în: <b id="vp-y-v"></b></label><input type="range" id="vp-y" min="2017" max="2025.75" step="0.25" value="2021.5"></div><button class="btn play" id="vp-play" type="button"></button></div><div class="charts one"><div class="chart" id="vp-chart"></div></div><ul class="out" id="vp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_var_paths" target="_blank" rel="noopener">EMQA_L4_var_paths</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_var_paths/EMQA_L4_var_paths.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În iulie 2021–iunie 2023, un model VaR de 99% corect ar trebui depășit în circa 7 din cele 730 de zile. Cîte depășiri au modelul normal și simularea istorică filtrată (FHS)?</div>
+  <details><summary>Răspuns</summary><p>Modelul normal este depășit în 45 de zile, simularea istorică (HS) în 28, FHS în 19, iar EVT în 17 (așteptat: 7,3). Toate metodele au fost prea jos în criză, dar FHS, care scalează reziduurile cu o volatilitate GARCH (model autoregresiv generalizat cu heteroscedasticitate condiționată), reacționează în cîteva zile la un salt al volatilității, în timp ce HS și modelul normal, cu o fereastră de 365 de zile, se adaptează lent. Testul Kupiec din sinteză compară rata depășirilor din fereastră cu 1 − α.</p></details>
+</section>
+<section class="blk" id="gpd-tail">
+  <h3>Peste prag, curba Pareto urmează datele, iar curba normală nu</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L4_gpd_tail_ro.jpg" alt="Slide-ul 17: Peste prag, curba Pareto urmează datele, iar curba normală nu" loading="lazy"></a>
+      <figcaption>Slide-ul 17</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="gp-u">Pragul u: cuantila reziduurilor standardizate (%): <b id="gp-u-v"></b></label><input type="range" id="gp-u" min="80" max="97" step="1" value="90"></div><button class="btn play" id="gp-play" type="button"></button></div><div class="charts "><div class="chart" id="gp-chart"></div><div class="chart" id="gp-q"></div></div><ul class="out" id="gp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_gpd_tail" target="_blank" rel="noopener">EMQA_L4_gpd_tail</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_gpd_tail/EMQA_L4_gpd_tail.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Distribuția Pareto generalizată (GPD) se ajustează reziduurilor de peste pragul u. Depinde forma estimată a cozii, ξ, de alegerea lui u?</div>
+  <details><summary>Răspuns</summary><p>Da, și aceasta este principala dificultate practică a teoriei valorilor extreme (EVT): un prag jos dă multe depășiri, dar amestecă și corpul distribuției; un prag înalt folosește doar cîteva zeci de puncte, iar estimația devine instabilă. Mutați u de la 80% la 97% și urmăriți ξ și cuantila de 99,9% implicată. În curs, forma estimată la pragul de 90% variază între −0,38 și 0,33 în cele 171 de reestimări din 2017, fiind pozitivă în 53% dintre ele.</p></details>
+</section><h2 class="sec" id="s-bt">Testarea retrospectivă: și-a ținut modelul promisiunea?</h2>
+<section class="blk" id="traffic-light">
+  <h3>Semaforul Basel: VaR normală a stat 30% din zile în zona roșie</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=25" target="_blank" rel="noopener"><img src="slides/L4_traffic_ro.jpg" alt="Slide-ul 25: Semaforul Basel: VaR normală a stat 30% din zile în zona roșie" loading="lazy"></a>
+      <figcaption>Slide-ul 25</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="tl-m"><span class="lbl">Metodele</span><div class="tgs"><label class="tg"><input type="checkbox" name="tl-m" value="hs" checked> HS</label><label class="tg"><input type="checkbox" name="tl-m" value="normal" checked> Normală</label><label class="tg"><input type="checkbox" name="tl-m" value="t"> Student-t</label><label class="tg"><input type="checkbox" name="tl-m" value="fhs" checked> FHS</label><label class="tg"><input type="checkbox" name="tl-m" value="evt"> EVT</label></div></div><div class="ctl"><label for="tl-w">Fereastra de testare (zile): <b id="tl-w-v"></b></label><input type="range" id="tl-w" min="100" max="500" step="25" value="250"></div><button class="btn play" id="tl-play" type="button"></button></div><div class="charts one"><div class="chart" id="tl-chart"></div></div><ul class="out" id="tl-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_traffic" target="_blank" rel="noopener">EMQA_L4_traffic</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_traffic/EMQA_L4_traffic.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Pe 250 de zile, un model VaR de 99% corect este în zona verde (cel mult 4 depășiri) în 89,2% din timp. În ce proporție din zile este modelul normal în zona roșie (10 sau mai multe)?</div>
+  <details><summary>Răspuns</summary><p>În 29,5% din zile de cînd fereastra de testare s-a umplut (din septembrie 2017), față de 6,2% pentru FHS și 2,8% pentru EVT; un model corect ar fi în zona roșie doar 0,025% din timp. Zonele sînt cuantile binomiale: verde cît timp probabilitatea cumulată a numărului de depășiri într-o lege Binomial(n, 1%) este sub 95%, roșu de la 99,99%. Schimbați fereastra pentru a vedea cum se scalează pragurile cu n.</p></details>
+</section><h2 class="sec" id="s-coll">De la cuantile la marje, garanții și limite</h2>
+<section class="blk" id="horizon">
+  <h3>Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L4_horizon_ro.jpg" alt="Slide-ul 20: Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile" loading="lazy"></a>
+      <figcaption>Slide-ul 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hz-z">Zona</label><select id="hz-z"><option value="RO" selected>România</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="hz-a">Nivelul cuantilei (%): <b id="hz-a-v"></b></label><input type="range" id="hz-a" min="90" max="99.5" step="0.5" value="99"></div><div class="ctl"><label for="hz-h">Orizontul evidențiat, h (zile): <b id="hz-h-v"></b></label><input type="range" id="hz-h" min="1" max="20" step="1" value="10"></div><button class="btn play" id="hz-play" type="button"></button></div><div class="charts "><div class="chart" id="hz-chart"></div><div class="chart" id="hz-vr"></div></div><ul class="out" id="hz-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_horizon" target="_blank" rel="noopener">EMQA_L4_horizon</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_horizon/EMQA_L4_horizon.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Regula rădăcinii pătrate a timpului scalează un VaR pe o zi la 10 zile cu √10 = 3,16. Ce raport arată prețurile din România la nivelul de 99%?</div>
+  <details><summary>Răspuns</summary><p>Doar 1,72 (Germania–Luxemburg: 1,75). Variațiile zilnice ale prețului sînt autocorelate negativ (ρ(1) = −0,076): un salt de preț este urmat de o scădere, deci variațiile pe mai multe zile se compensează parțial. Raportul varianțelor la 10 zile este 0,33, mult sub 1. Regula √h presupune variații independente și ar supraestima VaR pe 10 zile al unei poziții de bandă pe PZU.</p></details>
+</section><h2 class="sec" id="s-pos">Furnizorul și producătorul: un singur preț, două cozi</h2>
+<section class="blk" id="supplier">
+  <h3>Din 2021, limita lunară normală de 99% a fost depășită de 3 ori (0,7 așteptate)</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L4/lecture4_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L4_supplier_month_ro.jpg" alt="Slide-ul 37: Din 2021, limita lunară normală de 99% a fost depășită de 3 ori (0,7 așteptate)" loading="lazy"></a>
+      <figcaption>Slide-ul 37</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="sm-e">Limita estimată pe date pînă la sfîrșitul anului: <b id="sm-e-v"></b></label><input type="range" id="sm-e" min="2017" max="2025" step="1" value="2020"></div><div class="ctl"><label for="sm-a">Nivelul limitei (%): <b id="sm-a-v"></b></label><input type="range" id="sm-a" min="90" max="99.5" step="0.5" value="99"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_supplier_month" target="_blank" rel="noopener">EMQA_L4_supplier_month</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L4/EMQA_L4_supplier_month/EMQA_L4_supplier_month.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Un furnizor își bugetează fiecare lună la prețul ponderat cu consumul din luna anterioară. O limită normală de 99% estimată pe 2015–2020 plasează depășirea lunară a costului la 50,5%. Cîte luni o depășesc în 2021–2026?</div>
+  <details><summary>Răspuns</summary><p>Trei luni din 70, față de 0,7 așteptate; cea mai rea este noiembrie 2024, +86,6% (circa 5,96 milioane EUR pentru 100 MW cu profilul consumului național). Limita estimată pe anii calmi este prea strînsă pentru criză și pentru perioada de după. Mutați sfîrșitul eșantionului de estimare: o limită care include 2021–2022 este mai largă, iar numărul depășirilor ulterioare scade.</p></details>
+</section>
+<p class="src foot">Prețurile zilnice de bază: OPCOM PZU (România), EPEX SPOT (Germania–Luxemburg), prin energy-charts.info (Fraunhofer ISE) și ENTSO-E (Rețeaua europeană a operatorilor de transport și sistem pentru energie electrică); consumul orar al României: ENTSO-E (date Transelectrica). Prognozele VaR pentru ziua următoare, din 2017-01-01: lectures/L4/analysis_L4.py (fiecare prognoză folosește doar variațiile cunoscute în ziua anterioară). Date pînă la 2026-10-31, data-limită a cursului.</p>
+</main>
+</body>
+</html>

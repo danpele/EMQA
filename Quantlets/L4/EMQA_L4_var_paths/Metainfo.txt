@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_var_paths'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Daily price change in Romania with the one-day-ahead 99% VaR of historical simulation (HS), the normal model and filtered historical simulation (FHS), and the days the FHS VaR was exceeded, during the 2021-2022 energy crisis (forecasts for 2021-07-01 to 2023-06-30). Prints the number of exceedances of the five methods.'
+
+Keywords: 'value at risk, VaR, expected shortfall, risk management, electricity prices, day-ahead market, Romania, OPCOM, historical simulation, filtered historical simulation, GARCH, EVT, backtesting, energy crisis'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E (cut-off 2026-10-31); the VaR forecasts are recomputed in the notebook'
+
+Output: 'var_paths.png'

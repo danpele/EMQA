@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_vst'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Variance-stabilising transformation of electricity prices: left, the asinh transformation of the price, standardised with the median and the median absolute deviation of the last 735 days, against a plain z-score; right, monthly mean absolute error of the expert ARX(728) model of the Romanian day-ahead price estimated on raw and on asinh-transformed prices. Data: left, median and scale of the last window; right, test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania).'
+
+Keywords: 'variance-stabilising transformation, asinh, area hyperbolic sine, median absolute deviation, ARX, price spikes, negative prices, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)'
+
+Output: 'vst.png'

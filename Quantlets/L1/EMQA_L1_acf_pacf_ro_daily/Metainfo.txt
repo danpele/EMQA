@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_acf_pacf_ro_daily'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Sample autocorrelation (with Bartlett band) and partial autocorrelation functions of the Romanian daily base day-ahead price since 2023, lags 1 to 42 days: slow decay and a weekly pattern at lags 7, 14, 21. Data: 2023-01-01 to 2026-10-31, T = 1400. Source: energy-charts.info (Fraunhofer ISE); prices from the exchanges OPCOM (RO), IBEX (BG), HUPX (HU), EPEX SPOT (DE-LU), via ENTSO-E.'
+
+Keywords: 'autocorrelation, partial autocorrelation, ACF, PACF, Bartlett band, weekly seasonality, electricity prices, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Daily base day-ahead prices (energy-charts.info, OPCOM via ENTSO-E; data/clean/power_da_prices_daily_cet.csv)'
+
+Output: 'acf_pacf_ro_daily.png'

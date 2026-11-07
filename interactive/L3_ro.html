@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursul 3 · Volatilitate</title>
+<meta name="description" content="Analiza cantitativă a piețelor de energie: Cursul 3 · Volatilitate">
+<link rel="icon" href="../assets/logos/ase_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261107a">
+<link rel="stylesheet" href="interactive.css?v=20261107a">
+<script>window.EMQA_LANG = 'ro';</script>
+<link rel="preload" as="script" href="L3.js?v=20261107a">
+<script>
+(function (early, page) {
+  'use strict';
+  let left = early.length, ok = true, parsed = document.readyState !== 'loading', started = false;
+  function add(src, k, done, ordered) {
+    const s = document.createElement('script');
+    s.src = k ? src + (src.indexOf('?') < 0 ? '?' : '&') + 'retry=' + k : src;
+    s.async = !ordered;
+    s.onload = () => done(true);
+    s.onerror = () => { s.remove(); if (k < 3) setTimeout(() => add(src, k + 1, done, ordered), 300 * (k + 1)); else done(false); };
+    document.head.appendChild(s);
+  }
+  function go() {
+    if (started || left || !parsed) return;
+    started = true;
+    if (!ok || !window.EMQAI) { console.error('EMQA: a script of the interactive charts did not load; the live charts are off.'); return; }
+    add(page, 0, () => {}, true);
+  }
+  early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
+  if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
+  go();
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261107a", "L3_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L3.js?v=20261107a");
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="https://www.ase.ro" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/ase_logo.png" alt="ASE"></a>
+    <div class="header-title"><h1><a href="../index_ro.html">Analiza cantitativă a piețelor de energie</a></h1><p>Cursul 3 · Volatilitate</p></div>
+    <a href="https://ipe.ro/new/" target="_blank" rel="noopener"><img class="header-logo" src="../assets/logos/acad_logo.png" alt="Academia Română, Institutul de Prognoză Economică"></a>
+  </div>
+</header>
+<nav><ul>
+  <li><a href="../index_ro.html#chapters">← Site-ul cursului</a></li>
+  <li><a href="../lectures/L3/lecture3_ro.pdf" target="_blank" rel="noopener">PDF-ul cursului</a></li>
+  <li><a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3" target="_blank" rel="noopener">Quantlets</a></li>
+  <li class="lang-switcher"><a href="L3.html" class="lang-btn">EN</a><a href="L3_ro.html" class="lang-btn active">RO</a></li>
+</ul></nav>
+<main class="imain">
+<p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii. GARCH = heteroscedasticitate condiționată autoregresivă generalizată; șocurile sînt reziduurile ecuației mediei din curs (constantă, AR(1..7) și variabile dummy pentru ziua săptămînii).</p>
+<p class="toc"><a href="#s-meas">Măsurarea volatilității</a> · <a href="#s-garch">Modelele din familia GARCH</a> · <a href="#s-case">Studiu de caz: prețul energiei electrice din România în 2026</a></p>
+<h2 class="sec" id="s-meas">Măsurarea volatilității</h2>
+<section class="blk" id="clustering">
+  <h3>Sensul unui șoc nu poate fi anticipat, mărimea lui da</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_ro.jpg" alt="Slide-ul 11: Sensul unui șoc nu poate fi anticipat, mărimea lui da" loading="lazy"></a>
+      <figcaption>Slide-ul 11</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="cl-u">Unitatea șocurilor</label><select id="cl-u"><option value="pct" selected>Variația în % (logaritmică)</option><option value="eur">Variația în EUR/MWh</option></select></div><div class="ctl"><label for="cl-L">Laguri afișate (zile): <b id="cl-L-v"></b></label><input type="range" id="cl-L" min="10" max="60" step="5" value="30"></div><div class="ctl"><label for="cl-y">Începutul eșantionului: <b id="cl-y-v"></b></label><input type="range" id="cl-y" min="2019" max="2025" step="1" value="2019"></div><button class="btn play" id="cl-play" type="button"></button></div><div class="charts "><div class="chart" id="cl-e"></div><div class="chart" id="cl-e2"></div></div><ul class="out" id="cl-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_acf_clust" target="_blank" rel="noopener">EMQA_L3_acf_clust</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_acf_clust/EMQA_L3_acf_clust.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Șocurile zilnice ale prețului din România sînt aproape necorelate, totuși cursul vorbește despre gruparea volatilității. Unde este gruparea?</div>
+  <details><summary>Răspuns</summary><p>În pătratul șocurilor. Pe tot eșantionul, autocorelația de ordinul întîi a șocurilor în % este 0,001, dar cea a pătratului șocurilor este 0,133, iar statistica Ljung–Box pentru zece laguri crește de la 13,8 (p = 0,18) la 120,0. Mișcările mari, de orice semn, urmează după mișcări mari: mărimea unui șoc este previzibilă, chiar dacă semnul său nu este. Treceți la EUR/MWh: pătratele șocurilor sînt mult mai autocorelate (Ljung–Box 1.519,5), deoarece nivelul prețului a urcat de la circa 40 la peste 400 EUR/MWh.</p></details>
+</section>
+<section class="blk" id="fat-tails">
+  <h3>Zilele extreme sînt mult mai frecvente decît prevede legea normală</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=12" target="_blank" rel="noopener"><img src="slides/L3_tails_ro.jpg" alt="Slide-ul 12: Zilele extreme sînt mult mai frecvente decît prevede legea normală" loading="lazy"></a>
+      <figcaption>Slide-ul 12</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ft-nu">Gradele de libertate ale repartiției Student-t, ν: <b id="ft-nu-v"></b></label><input type="range" id="ft-nu" min="2.5" max="30" step="any" value="4.27"></div><div class="ctl"><label for="ft-k">Pragul |z| > k: <b id="ft-k-v"></b></label><input type="range" id="ft-k" min="2" max="6" step="0.5" value="4"></div><button class="btn play" id="ft-play" type="button"></button></div><div class="charts one"><div class="chart" id="ft-chart"></div></div><ul class="out" id="ft-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_tails" target="_blank" rel="noopener">EMQA_L3_tails</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_tails/EMQA_L3_tails.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> După împărțirea fiecărui șoc în % la volatilitatea sa GARCH-t, 17 dintre cele 2.853 de șocuri standardizate depășesc 4 în valoare absolută. Cîte ar da o repartiție normală?</div>
+  <details><summary>Răspuns</summary><p>Circa 0,18, adică niciunul: coada normalei dincolo de 4 abateri standard are probabilitatea 6,3 × 10⁻⁵. Chiar după ce GARCH elimină gruparea, cozile rămîn groase; repartiția Student-t estimată, cu ν = 4,27 grade de libertate, se așteaptă la 12,7. Mutați ν: cu un ν mic, curba Student-t ajunge în clasele îndepărtate ale histogramei, cu ν peste 30 este apropiată de normală.</p></details>
+</section><h2 class="sec" id="s-garch">Modelele din familia GARCH</h2>
+<section class="blk" id="garch-filter">
+  <h3>GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=18" target="_blank" rel="noopener"><img src="slides/L3_cond_vol_ro.jpg" alt="Slide-ul 18: GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh" loading="lazy"></a>
+      <figcaption>Slide-ul 18</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="gf-u">Unitatea șocurilor</label><select id="gf-u"><option value="pct" selected>Variația în % (logaritmică)</option><option value="eur">Variația în EUR/MWh</option></select></div><div class="ctl"><label for="gf-a">α (reacția la șocul de ieri): <b id="gf-a-v"></b></label><input type="range" id="gf-a" min="0" max="0.5" step="any" value="0.3081"></div><div class="ctl"><label for="gf-b">β (memoria varianței): <b id="gf-b-v"></b></label><input type="range" id="gf-b" min="0" max="0.99" step="any" value="0.4378"></div><button class="btn play" id="gf-play" type="button"></button></div><div class="charts one"><div class="chart" id="gf-chart"></div></div><ul class="out" id="gf-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_cond_vol" target="_blank" rel="noopener">EMQA_L3_cond_vol</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_cond_vol/EMQA_L3_cond_vol.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Pentru șocurile în %, estimațiile GARCH(1,1)-t sînt α = 0,31 și β = 0,44. Ce se întîmplă cu volatilitatea condiționată dacă păstrăm α și ridicăm β la 0,68?</div>
+  <details><summary>Răspuns</summary><p>Cu varianța de lungă durată fixată la estimația ei, persistența α + β crește de la 0,75 la 0,99: șocurile se sting încet, traiectoria devine netedă și rămîne ridicată săptămîni întregi după un salt, iar timpul de înjumătățire al unui șoc crește de la 2,4 zile la circa 58 de zile. Log-verosimilitatea Student-t din sinteză scade: datele preferă o stingere mai rapidă. În EUR/MWh, chiar estimația este persistentă (α + β = 0,994, timp de înjumătățire 113,5 zile), deoarece nivelul prețului determină mărimea variațiilor.</p></details>
+</section>
+<section class="blk" id="half-life">
+  <h3>Petrolul și carbonul: șocurile de volatilitate durează săptămîni</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_ro.jpg" alt="Slide-ul 20: Petrolul și carbonul: șocurile de volatilitate durează săptămîni" loading="lazy"></a>
+      <figcaption>Slide-ul 20</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="hl-p">Persistența α + β: <b id="hl-p-v"></b></label><input type="range" id="hl-p" min="0.5" max="0.999" step="0.001" value="0.746"></div><div class="ctl"><label for="hl-h">Orizontul afișat (zile): <b id="hl-h-v"></b></label><input type="range" id="hl-h" min="20" max="250" step="10" value="120"></div><button class="btn play" id="hl-play" type="button"></button></div><div class="charts one"><div class="chart" id="hl-chart"></div></div><ul class="out" id="hl-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_halflife" target="_blank" rel="noopener">EMQA_L3_halflife</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_halflife/EMQA_L3_halflife.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Brent are persistența GARCH 0,973, iar energia electrică din România, în %, 0,746. În cît timp se stinge jumătate dintr-un șoc de volatilitate?</div>
+  <details><summary>Răspuns</summary><p>Timpul de înjumătățire = ln 0,5 / ln(α + β): 25,6 zile de tranzacționare (circa cinci săptămîni) pentru Brent și 2,4 zile pentru energia electrică din România, în %. Un șoc al volatilității unei licitații zilnice se stinge în cîteva zile, unul al volatilității țițeiului în săptămîni. EUA (certificatele de emisii ale UE, 0,992, 82,8 zile de tranzacționare) și energia electrică din România în EUR/MWh (0,994, 113,5 zile) sînt cele mai persistente. Lîngă α + β = 1, o mică schimbare a persistenței mută mult timpul de înjumătățire.</p></details>
+</section>
+<section class="blk" id="news-impact">
+  <h3>În EUR/MWh, creșterile de preț măresc mai mult volatilitatea</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L3_nic_ro.jpg" alt="Slide-ul 22: În EUR/MWh, creșterile de preț măresc mai mult volatilitatea" loading="lazy"></a>
+      <figcaption>Slide-ul 22</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="ni-u">Unitatea șocurilor</label><select id="ni-u"><option value="pct" selected>Variația în % (logaritmică)</option><option value="eur">Variația în EUR/MWh</option></select></div><div class="ctl"><label for="ni-g">γ (efectul suplimentar al unei scăderi): <b id="ni-g-v"></b></label><input type="range" id="ni-g" min="-0.3" max="0.6" step="any" value="0.2245"></div><div class="ctl"><label for="ni-a">α: <b id="ni-a-v"></b></label><input type="range" id="ni-a" min="0" max="0.5" step="any" value="0.179"></div><button class="btn play" id="ni-play" type="button"></button></div><div class="charts one"><div class="chart" id="ni-chart"></div></div><ul class="out" id="ni-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_nic" target="_blank" rel="noopener">EMQA_L3_nic</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_nic/EMQA_L3_nic.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În modelul GJR-GARCH-t al șocurilor în %, γ = 0,22 > 0. Reacționează volatilitatea de mîine mai mult la o scădere sau la o creștere de aceeași mărime a prețului?</div>
+  <details><summary>Răspuns</summary><p>La o scădere. GJR (Glosten–Jagannathan–Runkle) adaugă γ·ε² în zilele cu șoc negativ. Cu estimațiile din curs, un șoc de −2 abateri standard (−39,7%) dă un σ de a doua zi de 30,3%, iar un șoc de +2 abateri standard 23,7%. Pentru șocurile în EUR/MWh, estimația este γ = −0,13: acolo o creștere a prețului mărește volatilitatea mai mult decît o scădere, deoarece creșterile nivelului vin cu variații mai mari. Fixați γ = 0 pentru a regăsi curba simetrică GARCH.</p></details>
+</section><h2 class="sec" id="s-case">Studiu de caz: prețul energiei electrice din România în 2026</h2>
+<section class="blk" id="forecast-band">
+  <h3>Studiu de caz: banda GARCH-t de o zi a fost corectă în anul de test</h3>
+  <div class="pair">
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=41" target="_blank" rel="noopener"><img src="slides/L3_case_band_ro.jpg" alt="Slide-ul 41: Studiu de caz: banda GARCH-t de o zi a fost corectă în anul de test" loading="lazy"></a>
+      <figcaption>Slide-ul 41</figcaption></figure>
+    <div class="live"><div class="ctls"><div class="ctl"><label for="fb-m">Prognoza volatilității</label><select id="fb-m"><option value="garch" selected>GARCH(1,1)-t, reestimat zilnic</option><option value="hist30">Istoric pe 30 de zile, normală</option></select></div><div class="ctl"><label for="fb-c">Nivelul de acoperire al benzii (%): <b id="fb-c-v"></b></label><input type="range" id="fb-c" min="50" max="99" step="1" value="90"></div><button class="btn play" id="fb-play" type="button"></button></div><div class="charts one"><div class="chart" id="fb-chart"></div></div><ul class="out" id="fb-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_case_band" target="_blank" rel="noopener">EMQA_L3_case_band</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_case_band/EMQA_L3_case_band.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
+  </div>
+  <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> În anul de test, o bandă de 90% construită din prognoza zilnică GARCH-t lasă în afară 38 din 365 de zile (10,4%). Este banda bine calibrată?</div>
+  <details><summary>Răspuns</summary><p>Aproximativ: 10,4% în afară, față de 10% nominal. Volatilitatea istorică pe 30 de zile, cu o cuantilă normală, lasă și ea în afară 38 de zile (10,4%) la 90%, dar banda ei reacționează tîrziu la șocurile noi și scade brusc cînd un șoc mare iese din fereastra de 30 de zile. Schimbați acoperirea: la o acoperire mare, cuantila normală este prea îngustă pentru cozi groase. La 99%, banda istorică lasă în afară 13 zile (3,6%), banda GARCH-t 4 zile (1,1%); la 95%, 8,2% față de 6,3%.</p></details>
+</section>
+<p class="src foot">Prețul zilnic de bază pentru ziua următoare în România: OPCOM PZU, prin energy-charts.info (Fraunhofer ISE), 2019-01-01 pînă la data-limită a cursului. Șocuri: reziduurile ecuației mediei estimate prin OLS (metoda celor mai mici pătrate) pe variația zilnică logaritmică (%) sau pe variația zilnică în EUR/MWh. Parametrii modelelor: estimații de verosimilitate maximă din lectures/L3/analysis_L3.py. Timpii de înjumătățire pentru piețe: GARCH(1,1)-t pe randamentele Brent, EUA (certificatele de emisii ale UE) și OMV Petrom (SNP). Prognozele din anul de test: Quantlet-ul EMQA_L3_case_band.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_term_structure'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Term structure of GARCH(1,1)-t volatility forecasts: daily volatility forecast of the Romanian base price (EUR/MWh shocks) for the 60 days after the cut-off 2026-10-31, against its long-run level (left); 90% band of the Brent return over h trading days on 2026-04-09, the day of the highest 2026 Brent volatility, from the GARCH forecasts, from today’s sigma times sqrt(h) and from the long-run level (right). Estimation samples from 2019.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, GARCH, volatility forecast, term structure, mean reversion, square-root-of-time rule, Brent, risk limits, case study'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; fuels_daily.csv: Brent BZ=F close, USD/bbl (Yahoo Finance)'
+
+Output: 'term_structure.png'

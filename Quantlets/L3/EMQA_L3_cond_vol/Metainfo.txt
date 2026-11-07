@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_cond_vol'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'GARCH(1,1)-t conditional volatility of the daily shocks of the Romanian base price, 2019-01-01 to 2026-10-31, in percent and in EUR/MWh: short spikes in percent, a long hump in EUR/MWh during the energy crisis.'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, GARCH, conditional volatility, Student-t, energy crisis'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'cond_vol.png'

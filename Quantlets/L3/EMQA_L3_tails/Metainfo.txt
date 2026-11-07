@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L3_tails'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Density (log scale) of the GARCH(1,1)-t standardised daily shocks of the Romanian base price, 2019-01-01 to 2026-10-31, against the normal and the fitted Student-t density: extreme days are far more frequent than the normal law allows (fat tails).'
+
+Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM, volatility, fat tails, kurtosis, Student-t distribution, GARCH, standardised residuals'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day'
+
+Output: 'tails.png'

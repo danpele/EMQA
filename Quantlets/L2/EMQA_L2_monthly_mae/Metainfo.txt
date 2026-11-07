@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_monthly_mae'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly mean absolute error over the test year of four forecasts of the Romanian day-ahead price: naive, AW-ARX, AW-LEAR and the equal-weight ensemble of AW-ARX, AW-LEAR, GBM and MLP. Data: test year 2025-11-01 to 2026-10-31. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC).'
+
+Keywords: 'forecast evaluation, monthly MAE, LEAR, ARX, ensemble, naive benchmark, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR, GBM and MLP forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports and the EUA price)'
+
+Output: 'monthly_mae.png'

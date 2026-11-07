@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L4_gpd_tail'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Upper tail of the GARCH-filtered standardised residuals of the daily price change in Romania: empirical exceedance probabilities above the 90% threshold, generalised Pareto fit and normal curve, log scale (GARCH-filtered changes, the 730 days before 2026-10-31). Also refits the filter every 21 days from 2017-01-01 and prints the shape and scale of the last refit and the share of refits with a positive shape.'
+
+Keywords: 'extreme value theory, EVT, generalised Pareto distribution, peaks over threshold, GARCH, tail index, electricity prices, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E (cut-off 2026-10-31)'
+
+Output: 'gpd_tail.png'

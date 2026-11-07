@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L7_learning_curve'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Learning curves of the chosen deep neural network (DNN), refit for the last test month (2026-10, seed 1): MAE in EUR/MWh on the first 85% of the training days and on the last 15% (chronological early-stopping block), by epoch, with the epoch kept. Romanian day-ahead prices from 2022-01-08 to 2026-10-01 (training sample of that refit). Data: chosen DNN, refit for 2026-10, seed 1. Source: energy-charts.info (Fraunhofer ISE): OPCOM prices, ENTSO-E load, generation and flows; Yahoo Finance (EUA ETC).'
+
+Keywords: 'early stopping, learning curve, overfitting, neural network, epochs, electricity price forecasting, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved learning curves of the chosen DNN (learning_curve_results.npz, from lectures/L7/cache/ml.pkl)'
+
+Output: 'learning_curve.png'

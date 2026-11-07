@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_bat_region'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Regional battery arbitrage: mean daily revenue (EUR per MW) of a 2h, 1 MW battery with perfect foresight on the day-ahead prices of Romania, Bulgaria and Hungary, monthly, 2024-01 to 2026-10, and the monthly mean output of the Romanian and Bulgarian battery fleets as reported to ENTSO-E. Prints the revenue of the last 12 months by zone (with Germany-Luxembourg) and the correlation of daily revenues between Romania and its neighbours.'
+
+Keywords: 'battery, energy storage, arbitrage, regional market, market coupling, correlation, Romania, Bulgaria, Hungary, Germany, ENTSO-E'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'power_da_prices_native_utc.csv: day-ahead prices (EUR/MWh) of Romania (OPCOM), Bulgaria (IBEX), Hungary (HUPX) and Germany-Luxembourg (EPEX SPOT), hourly to 30 Sep 2025 and 15-min from 1 Oct 2025, from energy-charts.info (Fraunhofer ISE) / ENTSO-E; generation_ro_mw_native_utc.csv and generation_bg_mw_native_utc.csv: battery discharge of the Romanian and Bulgarian fleets (MW, ENTSO-E via energy-charts.info)'
+
+Output: 'bat_region.png'

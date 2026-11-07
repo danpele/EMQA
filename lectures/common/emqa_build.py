@@ -213,6 +213,15 @@ def seq(v, hi, shown=None, max_pct=60, col="MainBlue"):
 
 
 # ---------------------------------------------------------------- deck
+QL_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Quantlets"))
+
+
+def quantlet_name(k, chart):
+    """EMQA_Lk_<chart> when the Quantlet folder Quantlets/Lk/EMQA_Lk_<chart>/ exists, else None."""
+    q = f"EMQA_L{k}_{chart}"
+    return q if os.path.isfile(os.path.join(QL_ROOT, f"L{k}", q, "Metainfo.txt")) else None
+
+
 class Deck:
     """One deck in one language. Frame helpers follow the course rules (see lectures/README.md)."""
 
@@ -243,10 +252,15 @@ class Deck:
         self._pending_try = None
         # standard course layout (as MFM, SFM): no subtitle line; the source/citation sits in small grey type at the
         # bottom left and the notebook pointer at the bottom right, like the Quantlet link of the other courses
+        # Quantlet of every chart on the frame (Quantlets/Lk/EMQA_Lk_<chart>/), linked at the bottom right as in MFM, SFM
+        qls = [q for q in (quantlet_name(self.k, f) for f in self._figs_now) if q]
+        qtxt = "\\hspace{0.8em}".join(f"\\qlink{{{q.replace('_', chr(92) + '_')}}}{{Quantlets/L{self.k}/{q}}}" for q in dict.fromkeys(qls))
+        # as in MFM: a chart frame points to its Quantlet; the notebook pointer is kept only on frames without one
+        right = qtxt or (f"\\tryit{{{tr}}}" if tr else "")
         tail = ""
-        if cite or tr:
+        if cite or right:
             tail = ("\n\\par\\vfill\\noindent{\\scriptsize\\color{FooterGray}" + (cite or "") + "}"
-                    + (f"\\hfill\\tryit{{{tr}}}" if tr else "") + "\\par\\vspace{0.5mm}")
+                    + (f"\\hfill{right}" if right else "") + "\\par\\vspace{0.5mm}")
         self.parts.append(f"\\begin{{frame}}{{{title}}}\n\\{size}\n{body}{tail}\n\\end{{frame}}\n")
         self.frame_figs[self.V.render(title)] = list(self._figs_now)
         self._figs_now = []

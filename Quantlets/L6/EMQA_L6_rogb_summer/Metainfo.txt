@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L6_rogb_summer'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Case study, summer 2026 (2026-06-01 to 2026-08-31): mean cross-border physical flow of Romania by hour of the day (all borders, and the border with Bulgaria; + = net import into Romania) and mean day-ahead prices of Romania and Bulgaria by hour. Romania exports at midday, mostly to Hungary and Serbia, and imports from Bulgaria every evening, when its price is above the Bulgarian one.'
+
+Keywords: 'cross-border flows, interconnection, market coupling, Romania, Bulgaria, day-ahead price, price spread, solar, evening peak'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'crossborder_ro_mw_hourly_utc.csv: physical flows of Romania per border (MW, + = import), hourly, energy-charts.info / ENTSO-E; power_da_prices_hourly_utc.csv: hourly day-ahead prices of Romania (OPCOM) and Bulgaria (IBEX), EUR/MWh'
+
+Output: 'rogb_summer.png'

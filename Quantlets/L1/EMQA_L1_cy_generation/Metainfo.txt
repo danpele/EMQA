@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_cy_generation'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Monthly mean Romanian hydro, nuclear and solar generation (GW, reported hours) in the previous year and in the current year to the cut-off: the Cernavoda nuclear plant offline twice and hydro below the previous year; months without reported data stay empty. Data: monthly means of reported hours, 2025-01 to 2026-10. Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania).'
+
+Keywords: 'generation, nuclear outage, hydro, solar, Romania, current year, missing data, case study'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Romanian hourly and daily generation by source (energy-charts.info, ENTSO-E; data/clean/generation_ro_mw_hourly_utc.csv, generation_ro_mw_daily_cet.csv)'
+
+Output: 'cy_generation.png'

@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L2_battery'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Economic value of forecasts of the Romanian day-ahead price on the test year: left, profit of a 1 MW / 2 MWh battery (one daily cycle chosen on the forecast, round-trip efficiency 90%) with perfect foresight, the ensemble, AW-LEAR, GBM, AW-ARX and the naive forecast; right, price paid by a flexible 4-hour consumer who places its process on the forecast, against a fixed 8-12 h block. Data: test year 2025-11-01 to 2026-10-31; 1 MW / 2 MWh, round-trip efficiency 90%. Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC).'
+
+Keywords: 'value of forecasts, battery arbitrage, demand flexibility, perfect foresight, LEAR, ensemble, electricity price, Romania'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR, GBM and MLP forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports and the EUA price)'
+
+Output: 'battery.png'

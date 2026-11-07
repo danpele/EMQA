@@ -1,0 +1,15 @@
+Name of QuantLet: 'EMQA_L1_volclust_brent'
+
+Published in: 'Energy Markets Quantitative Analysis (EMQA)'
+
+Description: 'Brent front-month daily log returns (contract-roll days removed) and their 21-day rolling volatility in % a year: calm and turbulent periods cluster; Ljung-Box statistics of returns and squared returns. Data: 2015-01-05 to 2026-10-30. Source: Yahoo Finance (BZ=F).'
+
+Keywords: 'volatility clustering, Ljung-Box, ARCH effects, Brent, crude oil, returns, rolling volatility'
+
+Author: 'Daniel Traian Pele'
+
+Submitted: 'Saturday, 07 November 2026'
+
+Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
+
+Output: 'volclust_brent.png'
