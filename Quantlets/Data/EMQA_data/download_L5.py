@@ -180,20 +180,11 @@ Written by `data/download_L5.py` (re-running it replaces only this section). Dow
 
 | Series | Frequency | Coverage obtained | Units | Source | Notes / gaps |
 |---|---|---|---|---|---|
-| Romanian forward contracts, OPCOM PCCB-LE-flex auction results (`opcom_forward_trades.csv`) | per auction session | {fw['auction_date'].min()} - {fw['auction_date'].max()}, {len(fw)} traded sessions | lei/MWh; EUR/MWh converted | https://www.opcom.ro/rapoarte-pccb-le-flex-rez-pccb-le-flex-export?from=..&to=..&limba=ro (public 'Export' of PCCB-LE-flex > Rezultate) | One row per traded session (single closing price); quantity = initiator side; profile 'banda LD' = baseload (all hours, Mon-Sun), 'varf' = peak profiles. Physical delivery. EUR = lei / ECB EUR/RON of the auction date (last fixing on or before). The older PCCB-LE archive export (before May 2020) returned an HTML page, not data: not used. |
+| Romanian forward contracts, OPCOM PCCB-LE-flex auction results (`opcom_forward_trades.csv`) | per auction session | {fw['auction_date'].min()} - {fw['auction_date'].max()}, {len(fw)} traded sessions | lei/MWh; EUR/MWh converted | https://www.opcom.ro/rapoarte-pccb-le-flex-rez-pccb-le-flex-export?from=..&to=..&limba=ro (public 'Export' of PCCB-LE-flex > Rezultate) | One row per traded session (single closing price); quantity = initiator side; profile 'banda LD' = baseload (all hours, Mon-Sun), 'varf' = peak profiles. Physical delivery. EUR = lei / ECB EUR/RON of the auction date (last fixing on or before). |
 | ECB EUR/RON reference rate; euro short-term rate EUR STR (`ecb_ron_estr_daily.csv`) | daily (TARGET days) | {rates['eurron_ecb'].first_valid_index().date()} - {rates.index.max().date()} | RON per EUR; % p.a. | https://data-api.ecb.europa.eu/service/data/EXR/D.RON.EUR.SP00.A ; .../EST/B.EU000A2X2A25.WT | EUR STR starts 2019-10-01. |
 | NYMEX Dutch TTF natural gas futures, individual contract months (`ttf_futures_contracts_daily.csv`, columns = delivery month) | daily (trading days) | {rng} | EUR/MWh | https://finance.yahoo.com/quote/TTFZ26.NYM (pattern TTF<month code><YY>.NYM) | Only contracts still listed on Yahoo are served; expired contracts are not available and are not reconstructed. |
 | Coal, Australian and South African export prices (`coal_monthly.csv`) | monthly | {cm.index.min()} - {cm.dropna(how='all').index.max()} | USD/t | World Bank Pink Sheet (CMO-Historical-Data-Monthly.xlsx, cached by download_all.py) | Reference for the dark spread; Romanian lignite has no market price. |
 
-### Lecture 5: not obtained
-
-| Series | Reason |
-|---|---|
-| EEX German/Hungarian/Romanian power futures settlement prices | no free public download (EEX DataSource is paid; the website widget is not a download service) |
-| HUDEX (Hungarian power futures) settlement prices | hudex.hu did not respond to scripted requests (connection timeout); not used |
-| ICE/EEX EUA futures, API2 coal futures history | no free history (Yahoo MTF=F ends Feb 2025; no EUA futures on Yahoo) |
-| Expired TTF futures contracts | Yahoo serves only listed contracts |
-| Power option prices / implied volatilities | no free source; Lecture 5 uses historical volatilities only |
 """
     with open(p, "w", encoding="utf-8") as f:
         f.write(txt + sec)

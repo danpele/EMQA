@@ -298,7 +298,6 @@
                 `<td class="c">${loc(s.coverage)}</td><td>${loc(s.units)}</td>` +
                 `<td><a href="${s.href}" target="_blank" rel="noopener">${s.source}</a>${s.note ? `<br><span class="muted-note">${s.note[LANG]}</span>` : ''}</td></tr>`).join('') +
             '</tbody></table>';
-        $('data-missing').innerHTML = d.missing.map(m => `<li><strong>${m.name}</strong> - ${m[LANG]}</li>`).join('');
         $('data-licence').innerHTML = d.licence[LANG];
     }
 

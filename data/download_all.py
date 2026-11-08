@@ -597,9 +597,6 @@ def write_sources():
         if file.startswith("fuels") and cols == ["eurusd_ecb"]:
             dl = last_download("ecb")
         lines.append(f"| {name} (`{file}`: {', '.join(cols)}) | {freq} | {cov} | {unit} | {url} | {dl} | {notes} |")
-    lines += ["", "## Not obtained / failed", "", "| Series | Reason |", "|---|---|"]
-    for s, r in FAILURES:
-        lines.append(f"| {s} | {r} |")
     lines += ["", "Licence note: energy-charts.info price data are for private/internal (teaching) use; "
               "generation data CC BY 4.0. Yahoo/EODHD data are for personal/educational use.", ""]
     open(os.path.join(ROOT, "SOURCES.md"), "w").write("\n".join(lines))

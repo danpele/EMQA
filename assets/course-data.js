@@ -61,7 +61,6 @@
                 casesIntro: 'Real episodes from the course data, used across the lectures.',
                 dataTitle: 'Data',
                 dataCols: ['Series', 'Frequency', 'Coverage', 'Units', 'Source'],
-                dataMissing: 'Not obtained',
                 projectTitle: 'Team Project and the Use of AI',
                 projectIntro: 'A team project in which you answer a real decision question of an energy company with the data of the course, and the rules for using AI (artificial intelligence) tools in it.',
                 aiTitle: 'Use of AI',
@@ -132,7 +131,6 @@
                 casesIntro: 'Episoade reale din datele cursului, folosite de-a lungul cursurilor.',
                 dataTitle: 'Date',
                 dataCols: ['Serie', 'Frecvență', 'Perioadă', 'Unități', 'Sursă'],
-                dataMissing: 'Serii care nu au putut fi obținute',
                 projectTitle: 'Proiect de echipă și utilizarea AI',
                 projectIntro: 'Un proiect de echipă în care răspundeți la o întrebare reală de decizie a unei companii din energie, folosind datele cursului, și regulile de utilizare a instrumentelor AI (inteligență artificială) în acest proiect.',
                 aiTitle: 'Utilizarea AI',
@@ -445,12 +443,6 @@
                   file: 'ro_energy_equities_daily.csv', freq: { en: 'daily', ro: 'zilnic' }, coverage: { en: '2015-01-01 – 2026-11-04 (H2O from 2023-07-12)', ro: '2015-01-01 – 2026-11-04 (H2O din 2023-07-12)' }, units: 'RON',
                   source: 'EODHD', href: 'https://eodhd.com/',
                   note: { en: 'Close and dividend/split-adjusted close.', ro: 'Preț de închidere și preț de închidere ajustat pentru dividende și divizări.' } }
-            ],
-            missing: [
-                { name: 'TTF daily (TTF=F)', en: 'Yahoo Finance returned no usable history.', ro: 'Yahoo Finance nu a returnat un istoric utilizabil.' },
-                { name: 'ENTSO-E Transparency Platform', en: 'No access token available; energy-charts.info was used instead.', ro: 'Nu a fost disponibil un token de acces; s-a folosit energy-charts.info.' },
-                { name: 'AGSI+ gas storage', en: 'Aggregated Gas Storage Inventory: the API (application programming interface) requires a key; not downloaded.', ro: 'Aggregated Gas Storage Inventory: API-ul (interfața de programare) cere o cheie; nu a fost descărcat.' },
-                { name: 'EEX German power futures (front calendar year)', en: 'No free public series; not downloaded.', ro: 'Nu există o serie publică gratuită; nu a fost descărcată.' }
             ],
             licence: {
                 en: 'Licences: energy-charts.info price data are for private and internal (teaching) use; its generation data are under CC BY 4.0 (Creative Commons Attribution). Yahoo Finance and EODHD data are for personal and educational use.',
