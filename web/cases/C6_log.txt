@@ -11,7 +11,7 @@ EMQA web case C6
 [en] expanded at first use: TFT -> Temporal Fusion Transformer  [...9/ssrn.7511080 — neural networks (NBEATSx, NHiTS, |) forecast German redispatch v...]
 [en] expanded at first use: BG -> Bulgaria  [...notebook_EN.ipynb: hourly day-ahead prices of RO, | and HU (energy-charts.info), ...]
 [en] expanded at first use: CET -> Central European Time  [...ead prices of RO, BG and HU (energy-charts.info), | hours; the paper's test windo...]
-[en] expanded at first use: NPV -> net present value  [...(1 MW / 1 MWh, Romania)Profit 2019–24, EUREUR/year|, EURPayback, yrsBoth bids, %E...]
+[en] expanded at first use: NPV -> net present value  [... MW / 1 MWh, Romania)Profit 2019–2024, EUREUR/year|, EURPayback, yrsBoth bids, %E...]
 [ro] 6 sections, 4 numbered figures, 1 tables; acronyms: BESS, PZU, TTF, CAPEX, DRF, QB, NH, MAE, RMSE, CRPS, SSRN, NHiTS, TFT, CET, VAN, RO, BG, HU
 [ro] expanded at first use: TTF -> Title Transfer Facility  [... acestora, prețurile anterioare, prețurile Brent, | și ale certificatelor de emis...]
 [ro] expanded at first use: MAE -> eroarea absolută medie  [...în mai multe zone).Acuratețea DRF pentru România: | 39,63, RMSE 49,60, CRPS 28,12...]
@@ -21,7 +21,7 @@ EMQA web case C6
 [ro] expanded at first use: NHiTS -> Neural Hierarchical Interpolation for Time Series  [....2139/ssrn.7511080 — rețelele neuronale (NBEATSx, |, TFT) prognozează volumele de...]
 [ro] expanded at first use: TFT -> Temporal Fusion Transformer  [...srn.7511080 — rețelele neuronale (NBEATSx, NHiTS, |) prognozează volumele de redi...]
 [ro] expanded at first use: CET -> ora Europei Centrale  [...garia (energy-charts.info), cu orele exprimate în |; perioada de test din lucrare...]
-[ro] expanded at first use: VAN -> valoarea actualizată netă  [...(1 MW / 1 MWh, România)Profitul 2019–24, EUREUR/an|, EURPerioada de recuperare, a...]
+[ro] expanded at first use: VAN -> valoarea actualizată netă  [... MW / 1 MWh, România)Profitul 2019–2024, EUREUR/an|, EURPerioada de recuperare, a...]
 [ro] expanded at first use: RO -> România  [...roprii; CAPEX 500.000 EUR, 15 ani, 7 %. Lucrarea (|, aceeași perioadă): PF-Daily ...]
 [ro] expanded at first use: BG -> Bulgaria  [...a transfrontalieră, cea mai bună dintre rutele RO/|/HU adaugă 10,7 % la profitul ...]
 [ro] expanded at first use: HU -> Ungaria  [...ransfrontalieră, cea mai bună dintre rutele RO/BG/| adaugă 10,7 % la profitul obț...]

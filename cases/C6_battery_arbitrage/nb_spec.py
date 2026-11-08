@@ -175,9 +175,9 @@ def lbl(k):
 t = tab[["cum_profit", "profit_year", "NPV", "payback", "both_accepted"]].copy()
 t["new_year"] = tab_new["profit_year"].values
 t.index = [lbl(k) for k in t.index]
-cu.write_table(t, "strategies", header=[("Strategy (1 MW / 1 MWh, Romania)", "Strategia (1 MW / 1 MWh, România)"), ("Profit 2019--24, EUR", "Profitul 2019--24, EUR"),
+cu.write_table(t, "strategies", header=[("Strategy (1 MW / 1 MWh, Romania)", "Strategia (1 MW / 1 MWh, România)"), ("Profit 2019--2024, EUR", "Profitul 2019--2024, EUR"),
                ("EUR/year", "EUR/an"), ("NPV, EUR", "VAN, EUR"), ("Payback, yrs", "Perioada de recuperare, ani"), ("Both bids, \\%", "Ambele oferte acceptate, \\%"),
-               ("EUR/year 2025--26", "EUR/an 2025--26")],
+               ("EUR/year 2025--2026", "EUR/an 2025--2026")],
                digits={"cum_profit": 0, "profit_year": 0, "NPV": 0, "payback": 1, "both_accepted": 1, "new_year": 0},
                best={"profit_year": "max", "NPV": "max", "payback": "min", "new_year": "max"})
 cols = {"Perfect": cu.MUTED, "Fixed": cu.PAL["BG"], "0.0": cu.PAL["c5"], "0.4": cu.PAL["c7"], "0.8": cu.PAL["RO"]}
@@ -266,8 +266,8 @@ for lang in ("en", "ro"):
           "\\textbf{Arbitrajul cu baterii și prognozele probabilistice} (Andrei, Cepoi, Dumitrescu, Lessmann, Chiriac, Pele și Petukhina, 2026, SSRN): ofertele bazate pe DRF depășesc strategia cu ore fixe în RO, BG, HU și CZ, dar nicio strategie nu recuperează o investiție de 500 de mii EUR într-o baterie (secțiunea~6.2)."),
         t(f"Our replication (RO, 2019--Sep 2024): perfect foresight {F(pf.cum_profit / 1e3)}k EUR (paper 188.2k), fixed hours chosen on the previous year {F(nh.cum_profit / 1e3)}k (paper 133.2k).",
           f"Replicarea noastră (RO, 2019--sept.\\ 2024): previziune perfectă {F(pf.cum_profit / 1e3)} mii EUR (lucrarea: 188,2 mii), ore fixe alese pe anul anterior {F(nh.cum_profit / 1e3)} mii EUR (lucrarea: 133,2 mii)."),
-        t(f"Realistic strategy: {F(qb.profit_year / 1e3)}k EUR/year vs {F(CAPEX / ann_f / 1e3)}k needed; {F(tab_new.loc[k08, 'profit_year'] / 1e3)}k/year in 2025--26 as solar middays deepen.",
-          f"Strategia realistă: {F(qb.profit_year / 1e3)} mii EUR/an, față de cele {F(CAPEX / ann_f / 1e3)} mii EUR/an necesare; {F(tab_new.loc[k08, 'profit_year'] / 1e3)} mii EUR/an în 2025--26, cînd prețurile de la prînz sînt și mai scăzute din cauza producției solare."),
+        t(f"Realistic strategy: {F(qb.profit_year / 1e3)}k EUR/year vs {F(CAPEX / ann_f / 1e3)}k needed; {F(tab_new.loc[k08, 'profit_year'] / 1e3)}k/year in 2025--2026 as solar middays deepen.",
+          f"Strategia realistă: {F(qb.profit_year / 1e3)} mii EUR/an, față de cele {F(CAPEX / ann_f / 1e3)} mii EUR/an necesare; {F(tab_new.loc[k08, 'profit_year'] / 1e3)} mii EUR/an în 2025--2026, cînd prețurile de la prînz sînt și mai scăzute din cauza producției solare."),
         t("Decision: value storage on forecast-driven profits and stacked revenues, never on perfect foresight.",
           "Decizia: evaluați stocarea după profitul strategiilor bazate pe prognoze și după veniturile cumulate din mai multe surse, niciodată după previziunea perfectă."),
     ]
