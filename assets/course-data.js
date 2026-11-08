@@ -755,7 +755,7 @@
         ],
 
         // Quiz banks register themselves here by lecture id (format: see the QUIZ ENGINE comment in site.js)
-        // TODO: whether quiz scores count toward the grade is still to be decided
+        // Quiz scores are recorded in the sheet "EMQA 2026/2027 - Scoruri quiz" (see assets/config.js)
         quizzes: {}
     };
 })();

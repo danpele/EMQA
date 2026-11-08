@@ -8,5 +8,5 @@
 // ============================================================
 window.EMQA_CONFIG = {
     GOOGLE_CLIENT_ID: '1095360272769-rhjjncfor0gumhev6a0l6tnnrnmdrnna.apps.googleusercontent.com',
-    QUIZ_SCORES_URL: 'YOUR_QUIZ_SCORES_URL'
+    QUIZ_SCORES_URL: 'https://script.google.com/macros/s/AKfycbxGtpmuAJZlsOmxw7o0rLBK4aQRevL3TW2keCnwqrXm1nNGFhYYstvM8l7ZBlJUTDpKow/exec'
 };
