@@ -69,7 +69,7 @@
                 dataCols: ['Series', 'Frequency', 'Coverage', 'Units', 'Source'],
                 dataFiles: 'All data files (CSV, download)', dataRepo: 'Folder on GitHub',
                 projectTitle: 'Team Project and the Use of AI',
-                projectIntro: 'A team project in which you answer a real decision question of an energy company with the data of the course, and the rules for using AI (artificial intelligence) tools in it.',
+                projectIntro: 'A team project on a real decision of an energy company, and the rules for AI (artificial intelligence) tools.',
                 aiTitle: 'Use of AI',
                 reproTitle: 'Reproducibility and submission format',
                 quizzes: 'Self-Assessment Quizzes',
@@ -146,7 +146,7 @@
                 dataCols: ['Serie', 'Frecvență', 'Perioadă', 'Unități', 'Sursă'],
                 dataFiles: 'Toate fișierele de date (CSV, descărcare)', dataRepo: 'Folderul pe GitHub',
                 projectTitle: 'Proiect de echipă și utilizarea AI',
-                projectIntro: 'Un proiect de echipă în care răspundeți la o întrebare reală de decizie a unei companii din energie, folosind datele cursului, și regulile de utilizare a instrumentelor AI (inteligență artificială) în acest proiect.',
+                projectIntro: 'Un proiect de echipă despre o decizie reală a unei companii din energie și regulile pentru instrumentele AI (inteligență artificială).',
                 aiTitle: 'Utilizarea AI',
                 reproTitle: 'Reproducibilitate și formatul de predare',
                 quizzes: 'Quiz-uri de autoevaluare',
@@ -563,146 +563,58 @@
             cards: {
                 en: [
                     { h: 'The project', p: [
-                        'Your team works as the analysis team of a Romanian energy company (a supplier, a producer, a battery operator or a large consumer) and answers one decision question with the real data of the course.',
-                        'The result is a recommendation that a manager can act on: what to do, how much it is worth in EUR, how much risk it carries and under which conditions the recommendation changes.'] },
-                    { h: 'Team', p: [
-                        ['Team size', 'TODO: number of students per team'],
-                        'Each member owns one part of the analysis and presents it. Grades can differ between team members.',
-                        'Public data only: never bring confidential data of your employer into the project or into an AI tool.'] },
-                    { h: 'Possible questions', p: [
-                        'Day-ahead bidding: does a LEAR (Lasso-Estimated AutoRegressive) or machine-learning forecast beat the naive rule in the hours that matter for your desk, and how many EUR does it save? (lectures 2 and 7)',
-                        'Risk: Cash-Flow-at-Risk (CFaR) and Expected Shortfall (ES) of a supplier with fixed-price clients, with backtesting. (lectures 3 and 4)',
-                        'Hedging: which share of the volume to fix with a baseload contract, chosen by the minimum-variance hedge ratio, and what it does to the worst month. (lecture 5)',
-                        'Solar PPA (power purchase agreement) or merchant sale: capture prices, cannibalisation and the PPA price at which the producer is indifferent. (lectures 5 and 6)',
-                        'Battery: the value of a battery on the Romanian day-ahead market (OPCOM PZU), with a price forecast compared with perfect foresight. (lecture 6)',
-                        'Or a question proposed by the team and accepted by the instructor.'] },
-                    { h: '1. Reproduce', p: [
-                        'Before your own analysis, reproduce one number of the course (from a lecture, a Quantlet or a case study) from the files in <code>data/clean</code>, and explain any difference.',
-                        'An AI assistant cannot guess an exact number from our data: matching it shows that your data loading and your code are right.'] },
-                    { h: '2. Plan first, then test', p: [
-                        'Before you look at the test period, commit to the repository a short analysis plan: the decision, the information available at gate closure (12:00 CET, Central European Time, on day d−1), the benchmark rule, the profit or loss measure, the sample split and the test.',
-                        'Choose models and parameters on the estimation and selection periods only; report the test period once, including the results that do not support your recommendation.'] },
-                    { h: '3. Deliver on GitHub', p: [
-                        'A Quantlet-style repository: one folder per result, each with <code>Metainfo.txt</code>, the code and the chart or table it produces, plus <code>AI_USE.md</code> and <code>AI_ERRORS.md</code>.',
-                        'A short report written as a decision memo: page 1 is the recommendation for the manager, the appendix holds the tables, the checks and the references.',
-                        ['Report length', 'TODO: page limit']] },
-                    { h: '4. Present and defend', p: [
-                        'A team presentation of the recommendation for a management audience, then an oral defence without AI.',
-                        'Each member explains one result and answers a “what changes if...” question (a dry hydro year, a higher battery cost, a lower PPA price).',
-                        ['Length of the presentation and of the defence', 'TODO: minutes per team']] },
-                    { h: 'Timeline', p: [
-                        ['Teams and question', 'TODO: date'],
-                        ['Analysis plan in the repository', 'TODO: date'],
-                        ['Repository and report', 'TODO: deadline'],
-                        ['Presentations and oral defence', 'TODO: dates and room']] },
+                        'As the analysis team of a Romanian energy company, answer one decision question with the course data and give a recommendation in EUR, with its risk.',
+                        'Topics: day-ahead bidding (lectures 1–2), risk of a supplier (3–4), hedging and PPAs (power purchase agreements) (5–6), the value of a battery (6), or your own question.',
+                        ['Team size', 'TODO: number of students per team']] },
+                    { h: 'Steps', p: [
+                        '1. Reproduce one number of the course from <code>data/clean</code>.',
+                        '2. Commit a short analysis plan before looking at the test period.',
+                        '3. Deliver a GitHub repository (one folder per result, as in the Quantlets) and a decision memo: page 1 is the recommendation.',
+                        '4. Present to a management audience; oral defence without AI.'] },
                     { h: 'Grading', p: [
-                        '<strong>Question and decision:</strong> clear, relevant for an energy company, answered in EUR.',
-                        '<strong>Data and method:</strong> correct information set (no look-ahead), a benchmark, an out-of-sample test.',
-                        '<strong>Checks:</strong> the reproduced course number, backtests, sensitivity to the main assumptions.',
-                        '<strong>Reproducibility:</strong> one command regenerates every number of the report.',
-                        '<strong>Communication and defence:</strong> recommendation, value and risk on one page; each member explains their part.',
-                        ['Points per criterion and weight of the project in the final grade', 'TODO']] },
+                        'Question and decision; data and method without look-ahead; checks and backtests; reproducibility; recommendation and defence.',
+                        ['Weight in the final grade and deadlines', 'TODO']] },
                     { h: 'Assignments A1 and A2', p: [
-                        'The two assignments train the methods that the project uses, with personal parameters, the gate-closure check and a hand reconciliation of the numbers.',
-                        '<a href="assignments/A1/A1_brief_EN.pdf" target="_blank" rel="noopener">A1: Forecasting the Romanian day-ahead price for a bidding desk</a> (lectures 1–3; <a href="' + REPO + '/blob/main/assignments/A1/A1_starter_EN.ipynb" target="_blank" rel="noopener">starter notebook</a>)',
-                        '<a href="assignments/A2/A2_brief_EN.pdf" target="_blank" rel="noopener">A2: Risk, contracts and forecast-driven decisions for your role</a> (lectures 4–7; <a href="' + REPO + '/blob/main/assignments/A2/A2_starter_EN.ipynb" target="_blank" rel="noopener">starter notebook</a>)',
-                        ['How the assignments and the project combine in the final grade', 'TODO']] }
+                        '<a href="assignments/A1/A1_brief_EN.pdf" target="_blank" rel="noopener">A1: Forecasting the Romanian day-ahead price</a> (lectures 1–3; <a href="' + REPO + '/blob/main/assignments/A1/A1_starter_EN.ipynb" target="_blank" rel="noopener">notebook</a>)',
+                        '<a href="assignments/A2/A2_brief_EN.pdf" target="_blank" rel="noopener">A2: Risk, contracts and forecast-driven decisions</a> (lectures 4–7; <a href="' + REPO + '/blob/main/assignments/A2/A2_starter_EN.ipynb" target="_blank" rel="noopener">notebook</a>)'] }
                 ],
                 ro: [
                     { h: 'Proiectul', p: [
-                        'Echipa lucrează ca echipa de analiză a unei companii energetice din România (furnizor, producător, operator de baterii sau consumator mare) și răspunde la o singură întrebare de decizie, folosind datele reale ale cursului.',
-                        'Rezultatul este o recomandare pe care un manager o poate aplica: ce trebuie făcut, cît valorează în euro, ce risc implică și în ce condiții recomandarea se schimbă.'] },
-                    { h: 'Echipa', p: [
-                        ['Numărul de membri', 'TODO: numărul de studenți dintr-o echipă'],
-                        'Fiecare membru răspunde de o parte a analizei și o prezintă. Notele pot diferi între membrii echipei.',
-                        'Numai date publice: nu introduceți date confidențiale ale angajatorului nici în proiect, nici într-un instrument AI.'] },
-                    { h: 'Întrebări posibile', p: [
-                        'Ofertarea pe piața pentru ziua următoare: o prognoză LEAR (Lasso-Estimated AutoRegressive) sau una obținută prin învățare automată bate regula naivă în orele care contează pentru biroul de ofertare și cîți euro economisește? (cursurile 2 și 7)',
-                        'Risc: Cash-Flow-at-Risk (CFaR, fluxul de numerar la risc) și Expected Shortfall (ES, pierderea medie în coadă) pentru un furnizor cu clienți la preț fix, cu testare retrospectivă. (cursurile 3 și 4)',
-                        'Acoperirea riscului: ce parte din volum se fixează printr-un contract în bandă, aleasă cu raportul de acoperire de varianță minimă, și cum se schimbă cea mai proastă lună. (cursul 5)',
-                        'PPA (power purchase agreement, contract de achiziție de energie) solar sau vînzare pe piață: prețul capturat, canibalizarea și prețul PPA la care producătorul este indiferent. (cursurile 5 și 6)',
-                        'Baterie: valoarea unei baterii pe piața pentru ziua următoare din România (OPCOM PZU, Piața pentru Ziua Următoare), cu o prognoză de preț comparată cu cunoașterea perfectă a viitorului. (cursul 6)',
-                        'Sau o întrebare propusă de echipă și acceptată de titularul de curs.'] },
-                    { h: '1. Reproduceți', p: [
-                        'Înainte de analiza proprie, reproduceți o cifră a cursului (dintr-un curs, dintr-un Quantlet sau dintr-un studiu de caz) pornind de la fișierele din <code>data/clean</code> și explicați orice diferență.',
-                        'Un asistent AI nu poate ghici o cifră exactă din datele noastre: dacă o obțineți, înseamnă că citirea datelor și codul vostru sînt corecte.'] },
-                    { h: '2. Întîi planul, apoi testul', p: [
-                        'Înainte de a vă uita la perioada de test, încărcați în repository un plan scurt de analiză: decizia, informația disponibilă la închiderea porții (ora 12:00 CET, ora Europei Centrale, în ziua d−1), regula de referință, măsura de profit sau de pierdere, împărțirea eșantionului și testul.',
-                        'Alegeți modelele și parametrii numai pe perioadele de estimare și de selecție; raportați perioada de test o singură dată, inclusiv rezultatele care nu susțin recomandarea voastră.'] },
-                    { h: '3. Livrați pe GitHub', p: [
-                        'Un repository în stilul Quantlet: cîte un dosar pentru fiecare rezultat, fiecare cu <code>Metainfo.txt</code>, codul și graficul sau tabelul pe care îl produce, plus <code>AI_USE.md</code> și <code>AI_ERRORS.md</code>.',
-                        'Un raport scurt, scris ca memoriu de decizie: pagina 1 este recomandarea pentru manager, anexa cuprinde tabelele, verificările și referințele.',
-                        ['Lungimea raportului', 'TODO: numărul maxim de pagini']] },
-                    { h: '4. Prezentați și susțineți', p: [
-                        'Prezentarea recomandării de către echipă, pentru un public de management, urmată de o susținere orală fără AI.',
-                        'Fiecare membru explică un rezultat și răspunde la o întrebare de tipul „ce se schimbă dacă...” (un an hidrologic secetos, un cost mai mare al bateriei, un preț PPA mai mic).',
-                        ['Durata prezentării și a susținerii', 'TODO: minute pentru fiecare echipă']] },
-                    { h: 'Calendar', p: [
-                        ['Echipele și întrebarea', 'TODO: data'],
-                        ['Planul de analiză în repository', 'TODO: data'],
-                        ['Repository-ul și raportul', 'TODO: termenul'],
-                        ['Prezentările și susținerea orală', 'TODO: datele și sala']] },
-                    { h: 'Criterii de evaluare', p: [
-                        '<strong>Întrebarea și decizia:</strong> clare, relevante pentru o companie din energie, cu răspuns exprimat în euro.',
-                        '<strong>Datele și metoda:</strong> setul de informații corect (fără privire în viitor), o regulă de referință, un test în afara eșantionului.',
-                        '<strong>Verificările:</strong> cifra reprodusă din curs, testarea retrospectivă, sensibilitatea la ipotezele principale.',
-                        '<strong>Reproducibilitatea:</strong> o singură comandă regenerează fiecare cifră din raport.',
-                        '<strong>Comunicarea și susținerea:</strong> recomandarea, valoarea și riscul pe o pagină; fiecare membru își explică partea.',
-                        ['Punctajul fiecărui criteriu și ponderea proiectului în nota finală', 'TODO']] },
+                        'Ca echipă de analiză a unei companii energetice din România, răspundeți la o întrebare de decizie cu datele cursului și dați o recomandare în euro, cu riscul ei.',
+                        'Teme: ofertarea pe PZU (cursurile 1–2), riscul unui furnizor (3–4), acoperirea riscului și contractele PPA (power purchase agreement) (5–6), valoarea unei baterii (6) sau o întrebare proprie.',
+                        ['Numărul de membri', 'TODO: numărul de studenți dintr-o echipă']] },
+                    { h: 'Etape', p: [
+                        '1. Reproduceți o cifră a cursului din <code>data/clean</code>.',
+                        '2. Încărcați un plan scurt de analiză înainte de a vă uita la perioada de test.',
+                        '3. Predați un repository GitHub (cîte un dosar pentru fiecare rezultat, ca în Quantlet-uri) și un memoriu de decizie: pagina 1 este recomandarea.',
+                        '4. Prezentare pentru un public de management; susținere orală fără AI.'] },
+                    { h: 'Evaluare', p: [
+                        'Întrebarea și decizia; datele și metoda, fără privire în viitor; verificări și testare retrospectivă; reproducibilitate; recomandarea și susținerea.',
+                        ['Ponderea în nota finală și termenele', 'TODO']] },
                     { h: 'Temele 1 și 2', p: [
-                        'Cele două teme exersează metodele folosite în proiect, cu parametri personali, verificarea informației disponibile la închiderea porții și reconcilierea manuală a cifrelor.',
-                        '<a href="assignments/A1/A1_brief_RO.pdf" target="_blank" rel="noopener">Tema 1: Prognoza prețului PZU din România, pentru un birou de ofertare</a> (cursurile 1–3; <a href="' + REPO + '/blob/main/assignments/A1/A1_starter_RO.ipynb" target="_blank" rel="noopener">notebook de pornire</a>)',
-                        '<a href="assignments/A2/A2_brief_RO.pdf" target="_blank" rel="noopener">Tema 2: Risc, contracte și decizii bazate pe prognoze pentru rolul dumneavoastră</a> (cursurile 4–7; <a href="' + REPO + '/blob/main/assignments/A2/A2_starter_RO.ipynb" target="_blank" rel="noopener">notebook de pornire</a>)',
-                        ['Cum se combină temele și proiectul în nota finală', 'TODO']] }
+                        '<a href="assignments/A1/A1_brief_RO.pdf" target="_blank" rel="noopener">Tema 1: Prognoza prețului PZU din România</a> (cursurile 1–3; <a href="' + REPO + '/blob/main/assignments/A1/A1_starter_RO.ipynb" target="_blank" rel="noopener">notebook</a>)',
+                        '<a href="assignments/A2/A2_brief_RO.pdf" target="_blank" rel="noopener">Tema 2: Risc, contracte și decizii bazate pe prognoze</a> (cursurile 4–7; <a href="' + REPO + '/blob/main/assignments/A2/A2_starter_RO.ipynb" target="_blank" rel="noopener">notebook</a>)'] }
                 ]
             },
 
-            // AI policy: the MFM policy, adapted to energy data and to an MBA audience
+            // AI policy, short version
             ai: {
                 en: [
-                    '<strong>AI is allowed</strong> for code, debugging, literature search and writing, in the project and in the assignments.',
-                    '<strong>AI use must be declared</strong> in <code>AI_USE.md</code> (<a href="' + REPO + '/blob/main/project/EN/AI_USE.md" target="_blank" rel="noopener">template</a>): which tool, for what, and what you checked yourself. Undeclared use of AI counts as plagiarism.',
-                    '<strong>You are responsible for every line.</strong> “The AI wrote it” is not an explanation at the oral defence.',
-                    '<strong>Log the errors you find</strong> in <code>AI_ERRORS.md</code> (<a href="' + REPO + '/blob/main/project/EN/AI_ERRORS.md" target="_blank" rel="noopener">template</a>): at least three places where the assistant was wrong (a wrong formula, look-ahead bias such as using data not yet known at gate closure, CET mixed up with UTC (Coordinated Universal Time) or local time, a sign error in VaR (Value-at-Risk) or in a cash flow, invented data or a reference that does not exist) and how you found out.',
-                    '<strong>Numbers come from your code, not from the assistant.</strong> Every number in the report and in the slides must be produced by the repository.',
-                    '<strong>No confidential data in AI tools.</strong> Do not paste data, contracts or prices of your employer into an AI tool; the project uses public data only.',
-                    '<strong>Check every reference.</strong> Each citation needs a working DOI (Digital Object Identifier) or link. A reference that does not exist is treated as fabricated data.',
-                    '<strong>What we grade:</strong> the question, the checks, the interpretation and your answers at the defence, not the amount of code.',
-                    '<strong>No AI during the oral defence.</strong> You answer alone, from your own understanding of the project.'
+                    '<strong>AI is allowed</strong> and must be declared in <code>AI_USE.md</code> (<a href="' + REPO + '/blob/main/project/EN/AI_USE.md" target="_blank" rel="noopener">template</a>); undeclared use counts as plagiarism.',
+                    '<strong>Log at least three AI errors</strong> you caught in <code>AI_ERRORS.md</code> (<a href="' + REPO + '/blob/main/project/EN/AI_ERRORS.md" target="_blank" rel="noopener">template</a>).',
+                    '<strong>Numbers come from your code</strong>, and every reference needs a working DOI (Digital Object Identifier) or link.',
+                    '<strong>No confidential employer data</strong> in the project or in AI tools.',
+                    '<strong>No AI at the oral defence:</strong> you answer for every line.'
                 ],
                 ro: [
-                    '<strong>AI-ul este permis</strong> pentru cod, depanare, căutarea literaturii și redactare, în proiect și în teme.',
-                    '<strong>Utilizarea AI se declară</strong> în <code>AI_USE.md</code> (<a href="' + REPO + '/blob/main/project/RO/AI_USE.md" target="_blank" rel="noopener">model</a>): ce instrument, pentru ce și ce ați verificat voi. Utilizarea nedeclarată a AI este tratată ca plagiat.',
-                    '<strong>Răspundeți pentru fiecare rînd.</strong> „L-a scris AI-ul” nu este o explicație la susținerea orală.',
-                    '<strong>Notați erorile găsite</strong> în <code>AI_ERRORS.md</code> (<a href="' + REPO + '/blob/main/project/RO/AI_ERRORS.md" target="_blank" rel="noopener">model</a>): cel puțin trei locuri în care asistentul a greșit (o formulă greșită, privirea în viitor, de exemplu folosirea unor date care nu erau cunoscute la închiderea porții, confuzia dintre ora CET și UTC (Coordinated Universal Time, timpul universal coordonat) sau ora locală, semnul greșit al VaR (Value-at-Risk, valoarea la risc) sau al unui flux de numerar, date inventate sau o referință care nu există) și cum v-ați dat seama.',
-                    '<strong>Cifrele provin din codul vostru, nu din asistent.</strong> Fiecare cifră din raport și din slide-uri trebuie produsă de repository.',
-                    '<strong>Fără date confidențiale în instrumentele AI.</strong> Nu introduceți într-un instrument AI date, contracte sau prețuri ale angajatorului; proiectul folosește numai date publice.',
-                    '<strong>Verificați fiecare referință.</strong> Fiecare citare are nevoie de un DOI (Digital Object Identifier, identificator digital al documentului) sau de un link funcțional. O referință care nu există este tratată ca date fabricate.',
-                    '<strong>Criterii de evaluare:</strong> întrebarea, verificările, interpretarea și răspunsurile de la susținere, nu cantitatea de cod.',
-                    '<strong>Fără AI la susținerea orală.</strong> Răspundeți singuri, pe baza propriei înțelegeri a proiectului.'
+                    '<strong>AI-ul este permis</strong> și se declară în <code>AI_USE.md</code> (<a href="' + REPO + '/blob/main/project/RO/AI_USE.md" target="_blank" rel="noopener">model</a>); utilizarea nedeclarată este tratată ca plagiat.',
+                    '<strong>Notați cel puțin trei erori ale AI</strong> descoperite de voi în <code>AI_ERRORS.md</code> (<a href="' + REPO + '/blob/main/project/RO/AI_ERRORS.md" target="_blank" rel="noopener">model</a>).',
+                    '<strong>Cifrele provin din codul vostru</strong>, iar fiecare referință are un DOI (Digital Object Identifier, identificator digital al documentului) sau un link funcțional.',
+                    '<strong>Fără date confidențiale ale angajatorului</strong>, nici în proiect, nici în instrumentele AI.',
+                    '<strong>Fără AI la susținerea orală:</strong> răspundeți pentru fiecare rînd.'
                 ]
             },
-
-            repro: {
-                en: [
-                    '<strong>One GitHub repository per team</strong>, with a <code>README.md</code> that states the question, the answer in one paragraph and the command that regenerates every number.',
-                    '<strong>Quantlet layout</strong>, as in the <a href="' + REPO + '/tree/main/Quantlets" target="_blank" rel="noopener">Quantlets of the course</a>: one folder per result, with a common team prefix in the folder names, holding the code (notebook or script), its output (chart or table) and a <code>Metainfo.txt</code> with the fields Name of QuantLet, Published in, Description, Keywords, Author, Submitted, Datafile and Output (<a href="' + REPO + '/blob/main/Quantlets/L6/EMQA_L6_rogb_summer/Metainfo.txt" target="_blank" rel="noopener">example</a>).',
-                    '<strong>Data provenance:</strong> read the course data from <code>data/clean</code> (sources in <a href="' + REPO + '/blob/main/data/SOURCES.md" target="_blank" rel="noopener">data/SOURCES.md</a>); any other public series is downloaded by a script in the repository, with its source and download date; no manual edits, no interpolation, gaps stay gaps.',
-                    '<strong>Information set:</strong> a decision for day d uses only what is known at 12:00 CET on day d−1, the rule of the assignments (<code>leakage_check</code> in <code>assignments/emqa_assign.py</code>).',
-                    '<strong>Same result on another computer:</strong> fixed random seeds, package versions in <code>requirements.txt</code>, notebooks that run with <em>Restart &amp; Run All</em> without errors.',
-                    '<strong>Templates:</strong> <a href="' + REPO + '/blob/main/project/EN/AI_USE.md" target="_blank" rel="noopener">AI_USE.md</a> and <a href="' + REPO + '/blob/main/project/EN/AI_ERRORS.md" target="_blank" rel="noopener">AI_ERRORS.md</a> (Romanian versions in <code>project/RO</code>).',
-                    ['How to submit the repository link, the report and the slides', 'TODO']
-                ],
-                ro: [
-                    '<strong>Un repository GitHub pentru fiecare echipă</strong>, cu un <code>README.md</code> care formulează întrebarea, răspunsul într-un paragraf și comanda care regenerează fiecare cifră.',
-                    '<strong>Structura Quantlet</strong>, ca în <a href="' + REPO + '/tree/main/Quantlets" target="_blank" rel="noopener">Quantlet-urile cursului</a>: cîte un dosar pentru fiecare rezultat, cu un prefix comun al echipei în numele dosarelor, care conține codul (notebook sau script), rezultatul lui (grafic sau tabel) și un fișier <code>Metainfo.txt</code> cu cîmpurile Name of QuantLet, Published in, Description, Keywords, Author, Submitted, Datafile și Output (<a href="' + REPO + '/blob/main/Quantlets/L6/EMQA_L6_rogb_summer/Metainfo.txt" target="_blank" rel="noopener">exemplu</a>).',
-                    '<strong>Proveniența datelor:</strong> citiți datele cursului din <code>data/clean</code> (sursele în <a href="' + REPO + '/blob/main/data/SOURCES.md" target="_blank" rel="noopener">data/SOURCES.md</a>); orice altă serie publică este descărcată de un script din repository, cu sursa și data descărcării; fără modificări manuale, fără interpolare, lipsurile rămîn lipsuri.',
-                    '<strong>Setul de informații:</strong> o decizie pentru ziua d folosește numai ce se știe la ora 12:00 CET în ziua d−1, regula din teme (<code>leakage_check</code> din <code>assignments/emqa_assign.py</code>).',
-                    '<strong>Același rezultat pe alt calculator:</strong> seed-uri fixate pentru numerele aleatoare, versiunile pachetelor în <code>requirements.txt</code>, notebook-uri care rulează fără erori cu <em>Restart &amp; Run All</em>.',
-                    '<strong>Modele de fișiere:</strong> <a href="' + REPO + '/blob/main/project/RO/AI_USE.md" target="_blank" rel="noopener">AI_USE.md</a> și <a href="' + REPO + '/blob/main/project/RO/AI_ERRORS.md" target="_blank" rel="noopener">AI_ERRORS.md</a> (versiunile în engleză în <code>project/EN</code>).',
-                    ['Cum se predau link-ul repository-ului, raportul și slide-urile', 'TODO']
-                ]
-            }
+            repro: { en: [], ro: [] }
         },
 
         // ---------------------------------------------------------------

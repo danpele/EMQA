@@ -355,7 +355,6 @@
             `<div class="info-card project-card"><h3>${c.h}</h3>${c.p.map(p => `<p>${item(p)}</p>`).join('')}</div>`
         ).join('');
         $('ai-policy').innerHTML = P.ai[LANG].map(o => `<li>${item(o)}</li>`).join('');
-        $('project-repro').innerHTML = P.repro[LANG].map(o => `<li>${item(o)}</li>`).join('');
     }
 
     // ------------------------------------------------------------
