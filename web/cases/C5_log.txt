@@ -1,0 +1,19 @@
+EMQA web case C5
+[en] 6 sections, 4 numbered figures, 1 tables; acronyms: PPA, US, ADF, ARMA, SARIMA, ARIMA, AR, SAR, MA, SMA, ENTSO-E, TTF, OLS, VAR, EV, RO
+[en] expanded at first use: US -> United States  [...n &amp; Pele (2025, arXiv 2507.12331), finds that | retail liberalisation lowered...]
+[en] expanded at first use: ARMA -> autoregressive moving average  [...ion of log consumption on log price with seasonal | errors (SARIMA: AR(1), SAR(12...]
+[en] expanded at first use: SARIMA -> seasonal ARIMA  [...nsumption on log price with seasonal ARMA errors (|: AR(1), SAR(12), MA(1), SMA(1...]
+[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [... it yourselfNotebook C5_notebook_EN.ipynb: hourly | load summed to GWh per month ...]
+[en] expanded at first use: TTF -> Title Transfer Facility  [...ber 2024, 72 months — the paper's sample;
+monthly | gas (World Bank) as instrumen...]
+[en] expanded at first use: OLS -> ordinary least squares  [...3.15Ours: same specification0.06440.01823.53Ours: | + month dummies 0.02130.0134 ...]
+[en] expanded at first use: VAR -> vector autoregression  [..., ours vs the paper; dotted line: 5 %.Source: our | on energy-charts.info data; p...]
+[en] expanded at first use: EV -> electric vehicle  [...dustry with flexible processes, electric heating, | charging)? How would you pric...]
+[en] expanded at first use: RO -> Romania  [...of the volume should a supplier hedge?DataMonthly | consumption (GWh) and day-ahe...]
+[ro] 6 sections, 4 numbered figures, 1 tables; acronyms: PPA, PZU, SUA, ADF, ARMA, SARIMA, ARIMA, AR, SAR, MA, SMA, VAR, ENTSO-E, TTF, MCO
+[ro] expanded at first use: SUA -> Statele Unite ale Americii  [...), arată că liberalizarea pieței cu amănuntul din | a redus prețurile pentru cons...]
+[ro] expanded at first use: SARIMA -> ARIMA sezonier  [... de logaritmul prețului, cu erori ARMA sezoniere (|: AR(1), SAR(12), MA(1), SMA(1...]
+[ro] expanded at first use: ENTSO-E -> Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică  [...k-ul C5_notebook_RO.ipynb folosește consumul orar |, însumat lunar în GWh, și med...]
+[ro] expanded at first use: TTF -> Title Transfer Facility  [...4, adică 72 de luni — eșantionul lucrării;
+prețul | lunar (Banca Mondială) serveș...]
+[ro] expanded at first use: MCO -> metoda celor mai mici pătrate  [...e: aceeași specificație0,06440,01823,53Replicare: | + variabile indicatoare lunar...]

@@ -271,7 +271,7 @@ Toate modelele greșesc mai mult în aceleași luni, ianuarie, iunie și octombr
 @chart monthly_ml
 MAE lunară în anul de test pentru AW-LEAR, rețeaua DNN, XGBoost și combinația lor.
 
-## Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute {h=bfc59d28}
+## Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute {h=31fd863a}
 
 Acuratețea este doar jumătate din alegerea unui model; cealaltă jumătate este costul. Pe tot anul de test, pe un singur nucleu, AW-LEAR are nevoie de 87,6 minute, pentru că este reestimat pentru 365 de zile $\times$ 3 ferestre $\times$ 24 de ore. XGBoost are nevoie de 2,6 minute, rețeaua DNN de 2,7, iar Chronos-2 de numai 0,3, fiindcă nu este antrenat niciodată.
 

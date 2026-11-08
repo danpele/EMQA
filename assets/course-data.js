@@ -55,10 +55,16 @@
                 openQuantlet: 'Open the Quantlet',
                 caseQuantlet: 'Quantlet (code and chart)',
                 usedIn: 'Used in',
-                casesShort: 'Case studies',
-                further: 'Go deeper',
+                casesShort: 'Episodes in the data',
+                studyShort: 'Case study',
+                studyPlural: 'Case studies',
+                study: { lecture: 'Lecture', extra: 'Extra case study', paper: 'Paper', page: 'Read the case study', brief: 'Brief (PDF)', colab: 'Open in Colab', notebook: 'Notebook', related: 'Related lectures', noPaper: 'Descriptive analysis on real data; not built on a single paper.' },
+                episodesTitle: 'Episodes in the data',
+                episodesIntro: 'Short real episodes from the course data, used as examples across the lectures. The research case studies above treat a question in depth; these episodes are illustrations.',
+                further: 'Go deeper: AIDA Conference 2026 talks and references',
+                quantinar: 'Further reading on Quantinar',
                 casesTitle: 'Case Studies',
-                casesIntro: 'Real episodes from the course data, used across the lectures.',
+                casesIntro: 'Eight case studies, one for each lecture and one on the price of electricity in Romania. Seven are built on papers of our research group (Bucharest University of Economic Studies and Romanian Academy, Institute for Economic Forecasting) and replicated on the real data of the course; each has a web page, a brief in English and Romanian, and a notebook that runs in Colab.',
                 dataTitle: 'Data',
                 dataCols: ['Series', 'Frequency', 'Coverage', 'Units', 'Source'],
                 projectTitle: 'Team Project and the Use of AI',
@@ -125,10 +131,16 @@
                 openQuantlet: 'Deschide Quantlet-ul',
                 caseQuantlet: 'Quantlet (cod și grafic)',
                 usedIn: 'Folosit în',
-                casesShort: 'Studii de caz',
-                further: 'Aprofundare',
+                casesShort: 'Episoade din date',
+                studyShort: 'Studiu de caz',
+                studyPlural: 'Studii de caz',
+                study: { lecture: 'Cursul', extra: 'Studiu de caz suplimentar', paper: 'Lucrarea', page: 'Citiți studiul de caz', brief: 'Studiul de caz (PDF)', colab: 'Deschide în Colab', notebook: 'Notebook', related: 'Cursurile asociate', noPaper: 'Analiză descriptivă pe date reale; nu se bazează pe o anumită lucrare.' },
+                episodesTitle: 'Episoade din date',
+                episodesIntro: 'Episoade reale scurte din datele cursului, folosite ca exemple de-a lungul cursurilor. Studiile de caz de mai sus tratează în profunzime o întrebare; aceste episoade sînt ilustrări.',
+                further: 'Aprofundare: prezentări de la Conferința AIDA 2026 și referințe',
+                quantinar: 'Lecturi suplimentare pe Quantinar',
                 casesTitle: 'Studii de caz',
-                casesIntro: 'Episoade reale din datele cursului, folosite de-a lungul cursurilor.',
+                casesIntro: 'Opt studii de caz, cîte unul pentru fiecare curs și unul despre prețul energiei electrice din România. Șapte se bazează pe lucrări ale grupului nostru de cercetare (Academia de Studii Economice din București și Academia Română, Institutul de Prognoză Economică) și sînt replicate pe datele reale ale cursului; fiecare are o pagină web, o prezentare în engleză și în română și un notebook care rulează în Colab.',
                 dataTitle: 'Date',
                 dataCols: ['Serie', 'Frecvență', 'Perioadă', 'Unități', 'Sursă'],
                 projectTitle: 'Proiect de echipă și utilizarea AI',
@@ -216,6 +228,7 @@
         lectures: [
             {
                 id: 'l1', num: 1, status: 'prep', files: files(1),
+                quantinar: [{ title: "Statistics of Financial Markets", url: "https://quantinar.com/course/103/statistics-of-financial-markets" }, { title: "Applied Time Series Analysis with Python", url: "https://quantinar.com/course/137/applied-time-series-analysis-with-python" }],
                 title: { en: 'Energy markets and their data', ro: 'Piețele de energie și datele lor' },
                 topics: {
                     en: ['The Romanian generation mix and the day-ahead markets of Romania (OPCOM PZU, Piața pentru Ziua Următoare), Bulgaria, Hungary and Germany–Luxembourg; 15-minute market time units (MTU) since October 2025', 'Daily and yearly price profiles, price spikes and negative prices', 'Stylised facts: heavy tails, volatility clustering, autocorrelation; white noise, autoregressive processes and the random walk; decomposition and smoothing'],
@@ -225,6 +238,7 @@
             },
             {
                 id: 'l2', num: 2, status: 'prep', files: files(2),
+                quantinar: [{ title: "Applied Time Series Analysis with Python", url: "https://quantinar.com/course/137/applied-time-series-analysis-with-python" }, { title: "Kalman Filter", url: "https://quantinar.com/course/42/methodology" }, { title: "Statistics of Financial Markets", url: "https://quantinar.com/course/103/statistics-of-financial-markets" }],
                 further: [
                     { url: 'resources/aida2026/weron_ml_electricity_price_forecasting.pdf', en: 'Rafał Weron (Wrocław Tech), “Machine learning for electricity price forecasting”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Rafał Weron (Wrocław Tech), „Machine learning for electricity price forecasting”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
                     { url: 'resources/aida2026/ghelasi_probabilistic_merit_order.pdf', en: 'Paul Ghelasi (University of Duisburg-Essen), “A probabilistic merit order for electricity price forecasting”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Paul Ghelasi (University of Duisburg-Essen), „A probabilistic merit order for electricity price forecasting”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
@@ -238,6 +252,7 @@
             },
             {
                 id: 'l3', num: 3, status: 'prep', files: files(3),
+                quantinar: [{ title: "Statistics of Financial Markets", url: "https://quantinar.com/course/103/statistics-of-financial-markets" }, { title: "XFG Advanced Methods in Quantitative Finance", url: "https://quantinar.com/course/100067/xfg-advanced-methods-in-quantitative-finance" }, { title: "Applied Time Series Analysis with Python", url: "https://quantinar.com/course/137/applied-time-series-analysis-with-python" }],
                 further: [
                     { url: 'resources/aida2026/cramer_energy_stock_markets.pdf', en: 'Alexandru Adrian Cramer (ASE, AI4EFin), “The link between energy prices and stock markets in European Union countries”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Alexandru Adrian Cramer (ASE, AI4EFin), „The link between energy prices and stock markets in European Union countries”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
                     { url: 'resources/aida2026/benamor_energy_tokens_spillovers.pdf', en: 'Souhir Ben Amor (ASE) and Matúš Horváth (Masaryk University), “Transitory and persistent cross-market spillovers of energy tokens”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Souhir Ben Amor (ASE) și Matúš Horváth (Universitatea Masaryk), „Transitory and persistent cross-market spillovers of energy tokens”, Conferința AIDA 2026, ASE, 4 iunie 2026' }
@@ -250,6 +265,7 @@
             },
             {
                 id: 'l4', num: 4, status: 'prep', files: files(4),
+                quantinar: [{ title: "Measuring Statistical Risk", url: "https://quantinar.com/course/100080/measuring-statistical-risk" }, { title: "XFG Advanced Methods in Quantitative Finance", url: "https://quantinar.com/course/100067/xfg-advanced-methods-in-quantitative-finance" }, { title: "Financial Risk Meter for Emerging Markets", url: "https://quantinar.com/course/52/FRM" }, { title: "Machine learning in Financial Risk", url: "https://quantinar.com/course/934/machine-learning-in-financial-risk" }],
                 further: [
                     { url: 'resources/aida2026/toma_energy_financial_risk_meter.pdf', en: 'Mihai Filip Toma (ASE, AI4EFin), “Energy Financial Risk Meter”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Mihai Filip Toma (ASE, AI4EFin), „Energy Financial Risk Meter”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
                     { url: 'resources/aida2026/pele_conformal_tail_risk.pdf', en: 'Daniel Traian Pele (ASE; IPE, Romanian Academy), “Conformal diagnosis and recalibration of tail risk forecasts”, AIDA Conference 2026, ASE, 4 June 2026', ro: 'Daniel Traian Pele (ASE; IPE, Academia Română), „Conformal diagnosis and recalibration of tail risk forecasts”, Conferința AIDA 2026, ASE, 4 iunie 2026' },
@@ -263,6 +279,7 @@
             },
             {
                 id: 'l5', num: 5, status: 'prep', files: files(5),
+                quantinar: [{ title: "Applied Computational Finance", url: "https://quantinar.com/course/977/applied-computational-finance" }, { title: "Statistics of Financial Markets", url: "https://quantinar.com/course/103/statistics-of-financial-markets" }],
                 title: { en: 'Derivatives and hedging', ro: 'Instrumente derivate și acoperirea riscului' },
                 topics: {
                     en: ['Why hedge: exposures and the lesson of the 2021–2022 crisis', 'Forwards, futures and the forward curve; spark and dark spreads, including the cost of EU Allowances (EUA)', 'Hedge ratio, basis risk and shape risk; options on energy futures with the Black-76 model; power purchase agreements (PPA)'],
@@ -271,6 +288,7 @@
             },
             {
                 id: 'l6', num: 6, status: 'prep', files: files(6),
+                quantinar: [{ title: "Machine learning in Financial Risk", url: "https://quantinar.com/course/934/machine-learning-in-financial-risk" }, { title: "Nonparametric and Semiparametric Models", url: "https://quantinar.com/course/750/nonparametric" }],
                 further: [
                     { url: 'resources/aida2026/cepoi_battery_arbitrage.pdf', en: 'Cosmin Octavian Cepoi (ASE, AI4EFin), “Uncertainty meets opportunity: joint probabilistic forecasting for battery arbitrage in CEE day-ahead power markets”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Cosmin Octavian Cepoi (ASE, AI4EFin), „Uncertainty meets opportunity: joint probabilistic forecasting for battery arbitrage in CEE day-ahead power markets”, Conferința AIDA 2026, ASE, 3 iunie 2026' },
                     { url: 'resources/aida2026/bolovaneanu_redispatch_forecasting.pdf', en: 'Vlad Bolovăneanu (ASE, AI4EFin), “Day-ahead forecasting for redispatch measures using machine learning models”, AIDA Conference 2026, ASE, 3 June 2026', ro: 'Vlad Bolovăneanu (ASE, AI4EFin), „Day-ahead forecasting for redispatch measures using machine learning models”, Conferința AIDA 2026, ASE, 3 iunie 2026' }
@@ -284,6 +302,7 @@
             },
             {
                 id: 'l7', num: 7, status: 'prep', files: files(7),
+                quantinar: [{ title: "Random Forests", url: "https://quantinar.com/course/68/RF" }, { title: "Shapley Values", url: "https://quantinar.com/course/48/shapley" }, { title: "MSCA Digital: The Need for Explainable AI", url: "https://quantinar.com/course/940/msca-digital-the-need-for-explainable-ai" }, { title: "Machine learning in Financial Risk", url: "https://quantinar.com/course/934/machine-learning-in-financial-risk" }],
                 title: { en: 'Machine learning and foundation models for electricity price forecasting', ro: 'Învățare automată și modele fundație pentru prognoza prețului energiei electrice' },
                 topics: {
                     en: ['Electricity price forecasting (EPF) following the work of Rafał Weron: LEAR as the benchmark, deep neural networks (DNN) and gradient boosting', 'The Chronos foundation model for time series, zero-shot; forecast combinations and explanations with SHAP (SHapley Additive exPlanations)', 'Price spikes and negative prices; pitfalls that make a model look better than it is'],
@@ -360,7 +379,64 @@
         ],
 
         // ---------------------------------------------------------------
-        // Case studies used across the lectures
+        // Research case studies C1-C8 (cases/<folder>/): one per lecture (lecture k <-> Ck) plus C8.
+        // Each has a web page web/cases/C<n>.html (EN) and C<n>_ro.html (RO), built from the case brief by
+        // cases/common/build_web_case.py; brief PDFs and notebooks are in cases/<folder>/.
+        // Numbers in the summaries come from the briefs (numbers.json of each case).
+        // ---------------------------------------------------------------
+        studies: [
+            { num: 1, folder: 'C1_crisis_2024', lectures: ['l1'],
+              paper: { cite: 'Andrei, A.-V., Pele, D.-T. & Cramer, A.-A. (2026). Evaluating intervention effectiveness during extreme price events: A counterfactual analysis of Romania’s 2024 energy crisis. <em>Proceedings of the International Conference on Business Excellence</em>, 20(1), 84–103.', url: 'https://doi.org/10.2478/picbe-2026-0013', link: 'doi:10.2478/picbe-2026-0013' },
+              title: { en: 'The summer-2024 price crisis: which intervention would have helped?', ro: 'Criza prețurilor din vara anului 2024: ce intervenție ar fi fost eficientă?' },
+              summary: {
+                  en: 'In July 2024 the Romanian day-ahead price exceeded 900 EUR/MWh in evening hours. A Random Forest and a Ridge regression, trained on 2023–May 2024, re-predict the spike hours of June–July 2024 under counterfactual scenarios: a 10 % demand cut lowers the predicted spike price by about 16.9 EUR/MWh, while 50 % more solar changes almost nothing, because the spikes come after sunset. Demand response in the evening is the first lever to contract.',
+                  ro: 'În iulie 2024, prețul pentru ziua următoare din România a depășit 900 EUR/MWh în orele de seară. Un model Random Forest și o regresie Ridge, estimate pe perioada 2023–mai 2024, refac prognoza orelor cu vîrfuri de preț din iunie–iulie 2024 în scenarii contrafactuale: o reducere a cererii cu 10 % scade prețul prognozat cu aproximativ 16,9 EUR/MWh, în timp ce o producție solară mai mare cu 50 % nu schimbă aproape nimic, deoarece vîrfurile apar după apusul soarelui. Răspunsul cererii în orele de seară este primul instrument care trebuie contractat.' } },
+            { num: 2, folder: 'C2_load_forecasting', lectures: ['l2'],
+              paper: { cite: 'Proșcanu, C. A., Proșcanu, M. E., Pele, D. T. & Costea, A. (2025). Watt’s next? Benchmarking time series models on Romania’s national electricity consumption. <em>Romanian Journal of Economic Forecasting</em>, 28(3), 146–163.', url: 'https://EconPapers.repec.org/RePEc:rjr:romjef:v::y:2025:i:3:p:146-163', link: 'RePEc:rjr:romjef:v::y:2025:i:3:p:146-163' },
+              title: { en: 'Watt’s next? Forecasting national consumption one day ahead', ro: 'Watt’s next? Prognoza consumului național pentru ziua următoare' },
+              summary: {
+                  en: 'Which model should forecast tomorrow’s hourly national consumption, and is the gain worth its cost? On hourly load for 2022–2024, a naive rule, SARIMA (seasonal autoregressive integrated moving average), regression, gradient boosting, a neural network and the Chronos foundation model are compared. Gradient boosting reaches a mean absolute percentage error of 4.09 %, against 10.17 % for the naive rule; for a supplier with 10 % of national consumption and an illustrative imbalance cost of 50 EUR/MWh, the saving is about 15.76 million EUR a year.',
+                  ro: 'Ce model ar trebui să prognozeze consumul național orar de mîine și justifică îmbunătățirea costul? Pe consumul orar din 2022–2024 sînt comparate o regulă naivă, modelul SARIMA (autoregresiv integrat cu medie mobilă, sezonier), regresia, gradient boosting, o rețea neuronală și modelul fundație Chronos. Gradient boosting are o eroare procentuală absolută medie de 4,09 %, față de 10,17 % pentru regula naivă; pentru un furnizor cu 10 % din consumul național și un cost ilustrativ al dezechilibrelor de 50 EUR/MWh, economia este de aproximativ 15,76 milioane EUR pe an.' } },
+            { num: 3, folder: 'C3_energy_stocks', lectures: ['l3'],
+              paper: { cite: 'Grecu, R. A., Cramer, A. A., Pele, D. T. & Lessmann, S. (2025). The link between energy prices and stock markets in European Union countries. <em>The North American Journal of Economics and Finance</em>, 78, 102420.', url: 'https://doi.org/10.1016/j.najef.2025.102420', link: 'doi:10.1016/j.najef.2025.102420' },
+              title: { en: 'Do Romanian energy stocks move with oil? Time-varying correlation and hedging', ro: 'Evoluează acțiunile energetice românești în același sens cu petrolul? Corelația variabilă în timp și acoperirea riscului' },
+              summary: {
+                  en: 'Is the link between the shares of OMV Petrom, Romgaz and Nuclearelectrica and the price of Brent oil stable, and does a Brent hedge reduce risk? A GARCH model (generalised autoregressive conditional heteroskedasticity) with dynamic conditional correlation on daily data for 2015–2026 gives a mean correlation of 0.13, between −0.32 (2022) and 0.54 (2020), as for the Central and Eastern European index of the paper. Out of sample, the hedge does not reduce the variance of the portfolio.',
+                  ro: 'Este stabilă legătura dintre acțiunile OMV Petrom, Romgaz și Nuclearelectrica și prețul petrolului Brent și reduce riscul o acoperire cu Brent? Un model GARCH (heteroscedasticitate condiționată autoregresivă generalizată) cu corelație condiționată dinamică, pe date zilnice din 2015–2026, dă o corelație medie de 0,13, între −0,32 (2022) și 0,54 (2020), ca pentru indicele țărilor din Europa Centrală și de Est din lucrare. În afara eșantionului, acoperirea nu reduce varianța portofoliului.' } },
+            { num: 4, folder: 'C4_risk_meter', lectures: ['l4'],
+              paper: { cite: 'Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D. T. & Lessmann, S. (2026). Energy Financial Risk Meter: Systemic risk in the EU energy sector. SSRN (Social Science Research Network) Working Paper 6985301.', url: 'https://doi.org/10.2139/ssrn.6985301', link: 'doi:10.2139/ssrn.6985301' },
+              title: { en: 'A risk meter for energy companies: systemic stress, price–volume risk and the dry year', ro: 'Un indicator de risc pentru companiile energetice: stresul sistemic, riscul preț–volum și anii secetoși' },
+              summary: {
+                  en: 'A risk committee wants one dashboard: is the energy sector under stress, how much does the supply business lose because customers consume most when power is expensive, and what would a dry year cost a hydro producer that has sold its output forward? The paper’s Energy Financial Risk Meter, built from 100 European energy companies, is rebuilt on three Romanian companies with LASSO quantile regression (least absolute shrinkage and selection operator); the price–volume premium and the cost of buying back the missing hydro output in the dry year 2022 (about 394 million EUR) complete the dashboard.',
+                  ro: 'Un comitet de risc vrea un singur tablou de bord: se află sectorul energetic în stres, cît pierde activitatea de furnizare pentru că clienții consumă cel mai mult cînd energia este scumpă și cît ar costa un an secetos un producător hidro care și-a vîndut producția la termen? Indicatorul Energy Financial Risk Meter din lucrare, construit din 100 de companii energetice europene, este refăcut pe trei companii românești, cu regresie cuantilică LASSO (least absolute shrinkage and selection operator); prima preț–volum și costul recumpărării producției hidro lipsă în anul secetos 2022 (aproximativ 394 de milioane EUR) completează tabloul de bord.' } },
+            { num: 5, folder: 'C5_demand_elasticity', lectures: ['l5'],
+              paper: { cite: 'Proșcanu, C., Proșcanu, M. & Pele, D. T. (2025). The price elasticity of electricity demand in Romania. <em>Journal of Social and Economic Statistics</em>, 14(2), 131–141.', url: 'https://doi.org/10.2478/jses-2025-0009', link: 'doi:10.2478/jses-2025-0009' },
+              title: { en: 'Does demand react to price? Elasticity, causality and the supplier’s hedge ratio', ro: 'Reacționează cererea la preț? Elasticitatea, cauzalitatea și raportul de acoperire al furnizorului' },
+              summary: {
+                  en: 'A supplier signs one-year fixed-price contracts and must decide how much of the expected volume to buy forward. On monthly Romanian consumption and day-ahead prices for 2019–2024, the price elasticity of demand is close to zero (0.0644 in the paper’s specification, −0.0231 with the gas price as instrument), so demand gives no natural hedge: the minimum-variance hedge ratio is 0.93, close to the full expected volume.',
+                  ro: 'Un furnizor încheie contracte cu preț fix pe un an și trebuie să decidă ce parte din volumul așteptat cumpără la termen. Pe consumul lunar și prețurile pentru ziua următoare din România din 2019–2024, elasticitatea cererii în raport cu prețul este apropiată de zero (0,0644 în specificația lucrării, −0,0231 cu prețul gazelor ca variabilă instrumentală), deci cererea nu oferă o acoperire naturală: raportul de acoperire cu varianță minimă este 0,93, aproape de întregul volum așteptat.' } },
+            { num: 6, folder: 'C6_battery_arbitrage', lectures: ['l6'],
+              paper: { cite: 'Andrei, A.-V., Cepoi, C. O., Dumitrescu, B. A., Lessmann, S., Chiriac (Luchian), A.-C., Pele, D. T. & Petukhina, A. (2026). Joint probabilistic forecasting for battery arbitrage in day-ahead power markets. SSRN (Social Science Research Network) Working Paper 6872381.', url: 'https://doi.org/10.2139/ssrn.6872381', link: 'doi:10.2139/ssrn.6872381' },
+              title: { en: 'Should we buy a battery? Probabilistic forecasts and day-ahead arbitrage', ro: 'Merită investiția într-o baterie? Prognoze probabilistice și arbitraj pe piața pentru ziua următoare' },
+              summary: {
+                  en: 'Does day-ahead arbitrage repay a 1 MW / 1 MWh battery when the bids must be set a day ahead? Random-forest probabilistic forecasts of the hourly prices of Romania, Bulgaria and Hungary set the buy and sell bids. The realistic strategy earns 22,136 EUR a year in 2019–2024 and 40,858 EUR a year in 2025–2026, against the 54,897 EUR a year needed to repay a capital expenditure of 500,000 EUR: arbitrage alone does not pay for the battery, other revenues must be stacked.',
+                  ro: 'Își recuperează o baterie de 1 MW / 1 MWh investiția din arbitrajul pe piața pentru ziua următoare, dacă ofertele se depun cu o zi înainte? Prognozele probabilistice ale prețurilor orare din România, Bulgaria și Ungaria, obținute cu păduri aleatoare (random forests), stabilesc ofertele de cumpărare și de vînzare. Strategia realistă aduce 22.136 EUR pe an în 2019–2024 și 40.858 EUR pe an în 2025–2026, față de 54.897 EUR pe an necesari pentru a recupera o cheltuială de capital de 500.000 EUR: arbitrajul singur nu acoperă investiția, sînt necesare și alte surse de venit.' } },
+            { num: 7, folder: 'C7_spike_early_warning', lectures: ['l7'],
+              paper: { cite: 'Andrei, A.-V., Pele, D.-T., Cramer, A.-A., Amza, A. & Diaconu, D. (2026). Explainable AI-based early warning system for electricity price spikes: Evidence from the Romanian market. <em>Proceedings of the International Conference on Business Excellence</em>, 20(1), 4820–4836.', url: 'https://doi.org/10.2478/picbe-2026-0352', link: 'doi:10.2478/picbe-2026-0352' },
+              title: { en: 'An explainable early-warning system for price spikes', ro: 'Un sistem explicabil de avertizare timpurie pentru vîrfurile de preț' },
+              summary: {
+                  en: 'Will tomorrow have a price spike, why, and when should a trader act? An XGBoost (extreme gradient boosting) classifier, using only the information available at gate closure, predicts the hours above the 90th percentile of training prices, with an area under the receiver operating characteristic curve of 0.946; SHAP values (Shapley additive explanations) show that yesterday’s and last week’s price at the same hour drive the warning, and a cost–loss rule says to act when the spike probability exceeds 0.199.',
+                  ro: 'Va avea ziua de mîine un vîrf de preț, de ce și cînd trebuie să reacționeze un trader? Un clasificator XGBoost (extreme gradient boosting), care folosește numai informația disponibilă la închiderea porții, prognozează orele cu prețuri peste percentila 90 din eșantionul de antrenare, cu o arie de sub curba ROC (receiver operating characteristic) de 0,946; valorile SHAP (Shapley additive explanations) arată că prețul de ieri și cel de acum o săptămînă, la aceeași oră, determină avertizarea, iar o regulă cost–pierdere recomandă reacția cînd probabilitatea unui vîrf depășește 0,199.' } },
+            { num: 8, folder: 'C8_why_expensive', lectures: ['l1', 'l5', 'l6'], extra: true,
+              title: { en: 'Why is electricity expensive in Romania?', ro: 'De ce este scumpă energia electrică în România?' },
+              summary: {
+                  en: 'Why does a Romanian company pay more for electricity than its competitors in Germany, and will it last? The price is followed along the chain (forward contracts, day-ahead market, balancing, retail) on OPCOM, Transelectrica, Eurostat and course data. In January–October 2026 the Romanian day-ahead price was 23.4 EUR/MWh above Germany’s on average and 42.9 EUR/MWh above it in the evening, but 3.5 EUR/MWh below Hungary’s: a regional evening premium. A descriptive decomposition, without causal claims, relates the 2024–2026 increase to gas and carbon costs and to lower nuclear and hydro output.',
+                  ro: 'De ce plătește o companie din România energia electrică mai scump decît concurenții din Germania și cît va dura această situație? Prețul este urmărit de-a lungul lanțului (contracte la termen, piața pentru ziua următoare, echilibrare, consumatorul final), pe date OPCOM, Transelectrica, Eurostat și pe datele cursului. În ianuarie–octombrie 2026, prețul pentru ziua următoare din România a fost, în medie, cu 23,4 EUR/MWh peste cel din Germania și cu 42,9 EUR/MWh peste acesta seara, dar cu 3,5 EUR/MWh sub cel din Ungaria: o primă regională, de seară. O descompunere descriptivă, fără pretenții cauzale, leagă creșterea din 2024–2026 de costul gazelor și al certificatelor de emisii și de producția nucleară și hidro mai mică.' } }
+        ],
+
+        // ---------------------------------------------------------------
+        // Episodes in the data: short real episodes used as examples across the lectures
+        // (lectures[].cases lists the episodes of each lecture; shown in the "Episodes in the data" block)
         // ---------------------------------------------------------------
         cases: [
             { id: 'iran',
@@ -679,7 +755,7 @@
         ],
 
         // Quiz banks register themselves here by lecture id (format: see the QUIZ ENGINE comment in site.js)
-        // TODO: no quiz content yet; whether quiz scores count toward the grade is still to be decided
+        // TODO: whether quiz scores count toward the grade is still to be decided
         quizzes: {}
     };
 })();

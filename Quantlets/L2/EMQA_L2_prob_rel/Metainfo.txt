@@ -8,7 +8,7 @@ Keywords: 'probabilistic forecasting, reliability, calibration, quantile regress
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR forecasts of the burn-in and test days (forecasts.csv) and QRA quantiles of the test year (qra_test.npz, single precision), from lectures/L2/analysis_L2.py'
 

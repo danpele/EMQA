@@ -8,7 +8,7 @@ Keywords: 'negative prices, solar, seasonality, Romania, electricity, hour-equiv
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Day-ahead prices at native resolution and Romanian hourly generation (energy-charts.info, ENTSO-E; data/clean/power_da_prices_native_utc.csv, generation_ro_mw_hourly_utc.csv)'
 

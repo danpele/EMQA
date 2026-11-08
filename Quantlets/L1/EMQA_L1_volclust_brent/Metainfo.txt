@@ -8,7 +8,7 @@ Keywords: 'volatility clustering, Ljung-Box, ARCH effects, Brent, crude oil, ret
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
 

@@ -8,7 +8,7 @@ Keywords: 'cost-loss decision, decision threshold, spike probability, demand res
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year spike probabilities of the XGBoost and logistic classifiers (decision_results.npz)'
 

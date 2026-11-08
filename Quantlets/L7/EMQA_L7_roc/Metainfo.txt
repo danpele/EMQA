@@ -8,7 +8,7 @@ Keywords: 'ROC curve, AUC, classification, price spikes, negative prices, XGBoos
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year probabilities of the XGBoost and logistic classifiers and the AW-LEAR forecasts (roc_results.npz)'
 

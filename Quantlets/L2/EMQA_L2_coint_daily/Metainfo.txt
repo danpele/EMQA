@@ -8,7 +8,7 @@ Keywords: 'cointegration, Engle-Granger, Johansen trace test, market coupling, p
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Daily and hourly day-ahead prices of Romania, Hungary and Germany-Luxembourg (power_da_prices_daily_cet.csv, power_da_prices_hourly_utc.csv); Romanian generation (cut-off only)'
 

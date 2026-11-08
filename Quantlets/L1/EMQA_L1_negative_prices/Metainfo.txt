@@ -8,7 +8,7 @@ Keywords: 'negative prices, electricity, day-ahead market, solar, Romania, hour-
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Day-ahead prices at native resolution (energy-charts.info, from the exchanges via ENTSO-E; data/clean/power_da_prices_native_utc.csv)'
 

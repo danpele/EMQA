@@ -948,13 +948,35 @@ def num(v, lang, k=1):
 
 
 def mfmt(ax, lang, step=1):
+    """Month ticks; the four-digit year is written under the first tick and under the first month of each new year."""
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
-    if lang == "ro":
-        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON_RO[mdates.num2date(v).month - 1] +
-                                                   (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+    mm = MON_RO if lang == "ro" else MON_EN
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: mm[mdates.num2date(v).month - 1] +
+                                               (f"\n{mdates.num2date(v).year}" if p == 0 or mdates.num2date(v).month <= step else "")))
+
+
+MON_FULL = {"en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            "ro": ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"]}
+
+
+def week_label(t0, lang):
+    """x-axis label of a one-week hourly chart: month(s) and the four-digit year, e.g. 'January 2026' or 'June - July 2025'."""
+    t1 = t0 + pd.Timedelta(days=6)
+    m = MON_FULL[lang]
+    if t0.month == t1.month:
+        s = f"{m[t0.month - 1]} {t0.year}"
+    elif t0.year == t1.year:
+        s = f"{m[t0.month - 1]} - {m[t1.month - 1]} {t1.year}"
     else:
-        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON_EN[mdates.num2date(v).month - 1] +
-                                                   (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+        s = f"{m[t0.month - 1]} {t0.year} - {m[t1.month - 1]} {t1.year}"
+    return s + (", hours CET" if lang == "en" else ", ore CET")
+
+
+def thick_legend(fig, lw=2.0):
+    """Thin data lines (lw < 1) give faint legend keys: draw the keys thicker."""
+    for lg in fig.legends:
+        for ln in lg.get_lines():
+            ln.set_linewidth(max(ln.get_linewidth(), lw))
 
 
 DAYN = {"en": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], "ro": ["lun.", "mar.", "mie.", "joi", "vin.", "sîm.", "dum."]}
@@ -1127,6 +1149,7 @@ for lang in ["en", "ro"]:
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[lang][mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
+    ax.set_xlabel(week_label(pd.Timestamp(PW), lang), fontsize=10)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "qra_week", bottom=0.17)
     # 12 reliability (calibration) of the quantiles
@@ -1151,6 +1174,7 @@ for lang in ["en", "ro"]:
     axs[1].xaxis.set_major_locator(mdates.YearLocator())
     axs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     legend_bottom(fig, ncol=3)
+    thick_legend(fig)
     out(fig, lang, "coint_daily", bottom=0.15)
     # 14 cointegration, monthly price vs gas, and hydro
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.1), gridspec_kw={"width_ratios": [1.5, 1]})
@@ -1185,7 +1209,9 @@ for lang in ["en", "ro"]:
     ax.set_ylabel("EUR/MWh")
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[lang][mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))
+    ax.set_xlabel(week_label(pd.Timestamp(SW), lang), fontsize=10)
     legend_bottom(fig, ncol=4)
+    thick_legend(fig, 1.6)
     out(fig, lang, "stress_week", bottom=0.17)
     # 17 15-minute MTU
     qk = QDAYS.index(QDAY)

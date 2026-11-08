@@ -189,8 +189,7 @@ def fig_fit(lang):
     ax.plot(wk.index, wk.RF, color=cu.PAL["RO"], lw=1.1, label=cu.T(lang, "Random Forest", "Random Forest (RF)"))
     ax.plot(wk.index, wk.Ridge, color=cu.PAL["DE_LU"], lw=1.0, ls="--", label=cu.T(lang, "Ridge regression", "Regresie Ridge"))
     ax.set_ylabel("EUR/MWh")
-    import matplotlib.dates as mdates
-    ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+    cu.day_ticks(ax, lang, interval=3)
     cu.legend_bottom(fig, ncol=3)
     return fig
 cu.save_both(fig_fit, "f3_model_fit")

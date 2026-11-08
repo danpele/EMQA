@@ -8,7 +8,7 @@ Keywords: 'initial margin, collateral, procyclicality, EMIR, CCP, Brent, futures
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'fuels_daily.csv: daily settlement of the ICE Brent front-month futures (BZ=F), USD/bbl, Yahoo Finance (cut-off 2026-10-31)'
 

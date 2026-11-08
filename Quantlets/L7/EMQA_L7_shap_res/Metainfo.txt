@@ -8,7 +8,7 @@ Keywords: 'SHAP dependence, explainable AI, wind and solar, renewable generation
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'saved input values and SHAP values of wind+solar d-2 for the 8760 test hours (shap_res_results.npz, from lectures/L7/cache/ml.pkl); RUN_ALL recomputes them from data/clean'
 

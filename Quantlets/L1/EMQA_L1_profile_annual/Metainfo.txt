@@ -8,7 +8,7 @@ Keywords: 'seasonality, monthly profile, electricity prices, hydro, solar, load,
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Daily Romanian generation and load and daily day-ahead prices (energy-charts.info; data/clean/generation_ro_mw_daily_cet.csv, power_da_prices_daily_cet.csv)'
 

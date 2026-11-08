@@ -8,7 +8,7 @@ Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM,
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; power_da_prices_hourly_utc.csv: hourly day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E; 15-min market time units averaged to the hour from 1 Oct 2025), EUR/MWh; generation_ro_mw_daily_cet.csv: Romanian solar generation, daily mean MW (ENTSO-E, Transelectrica data, via energy-charts.info)'
 

@@ -647,7 +647,7 @@ with open(os.path.join(REPO, "cases", "C4_risk_meter", "numbers.json")) as fh:
 # =============================================================================
 LAB = {"hs": ("HS", "HS"), "normal": ("Normal", "Normală"), "t": ("Student-t", "Student-t"), "fhs": ("FHS", "FHS"),
        "evt": ("EVT", "EVT")}
-COL = {"hs": PAL["BG"], "normal": "#9a9a9a", "t": PAL["c7"], "fhs": PAL["RO"], "evt": PAL["DE_LU"]}
+COL = {"hs": PAL["BG"], "normal": PAL["c5"], "t": PAL["c7"], "fhs": PAL["RO"], "evt": PAL["DE_LU"]}
 SRC = {"en": {"ec": "energy-charts.info (Fraunhofer ISE); OPCOM (RO) and EPEX SPOT (DE-LU) day-ahead prices, via ENTSO-E",
               "eco": "energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E; own estimates",
               "ecl": "energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load (Transelectrica data for Romania)",
@@ -693,7 +693,7 @@ def mfmt(ax, lang, step=1):
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=range(1, 13, step)) if step > 1 else mdates.MonthLocator())
     M_ = MON_RO if lang == "ro" else MON_EN
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: M_[mdates.num2date(v).month - 1] +
-                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 or p == 0 else "")))
 
 
 for lang in ["en", "ro"]:
@@ -752,6 +752,10 @@ for lang in ["en", "ro"]:
     ax.set_yscale("log")
     ax.set_xlim(u - 0.1, gx[-1] + 0.1)
     ax.set_ylim(stats.norm.sf(gx[-1]) / 3, 0.3)
+    _yt = [10.0 ** -k for k in range(1, 9, 2) if 10.0 ** -k >= stats.norm.sf(gx[-1]) / 3]
+    ax.set_yticks(_yt)
+    ax.set_yticklabels([T(f"{v:.{k}f}", f"{v:.{k}f}".replace(".", ",")) for v, k in zip(_yt, range(1, 9, 2))])
+    ax.minorticks_off()
     ax.set_xlabel(T("standardised residual $z$", "reziduul standardizat $z$"))
     ax.set_ylabel("$P(Z > z)$")
     ax._keep_y = True

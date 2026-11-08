@@ -5,7 +5,7 @@ const D = window.LK_DATA, T = window.LK_TEXT;
 const { C, ZONE, mean, sdev, quantile, npdf, ncdf, nqnt, nf, pct, $, AX, layout, ttl, plot, out, vline, hline,
   bindSlider, bindSelect, bindToggles, Player, range, safe } = window.EMQAI;
 const P = (id, input, vals, ms) => new Player(id, $(input), vals, ms);
-const MCOL = { hs: C.BG, normal: C.grey, t: C.c7, fhs: C.RO, evt: C.DE_LU };
+const MCOL = { hs: C.BG, normal: C.c5, t: C.c7, fhs: C.RO, evt: C.DE_LU };
 
 // ---------------------------------------------------------------- lecture helpers
 const day0 = new Date(D.t0 + 'T00:00:00Z');

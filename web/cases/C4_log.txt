@@ -1,0 +1,27 @@
+EMQA web case C4
+[en] 6 sections, 4 numbered figures, 2 tables; acronyms: EU, TTF, VSTOXX, LSEG, GPRD, CDS, ECB, CISS, EFRM, COVID, TVP-VAR, AUC, ROC, LASSO, RO-ERM, EODHD, GACV, SNP, SNG, SNN
+[en] expanded at first use: EU -> European Union  [...specific systemic-risk indicator be built for the | energy sector, how does geopo...]
+[en] expanded at first use: TTF -> Title Transfer Facility  [... European energy companies plus European factors (| gas and Brent futures, Brent ...]
+[en] expanded at first use: VSTOXX -> volatility index of the EURO STOXX 50  [...STOXX Europe 600 Oil &amp; Gas, STOXX Europe 600, |, crude-oil stocks), LSEG, Apr...]
+[en] expanded at first use: LSEG -> London Stock Exchange Group  [...Gas, STOXX Europe 600, VSTOXX, crude-oil stocks), |, April 2016 – April 2026;
+the...]
+[en] expanded at first use: ECB -> European Central Bank  [...5-year CDS (credit default swap) spreads, and the |'s Composite Indicator of Syst...]
+[en] expanded at first use: EFRM -> Energy Financial Risk Meter  [...ark (Section 3.3).Main findings of the paper.“The | index captures major systemic...]
+[en] expanded at first use: COVID -> coronavirus disease  [...mic events in the energy markets, namely the 2020 | pandemic and the 2022 Russia–...]
+[en] expanded at first use: TVP-VAR -> time-varying parameter vector autoregression  [... moves from   pp before the war to   pp after it (|, Section 4.1.2), while transm...]
+[en] expanded at first use: AUC -> area under the ROC curve, ROC = receiver operating characteristic  [...of high energy-sector volatility: EFRM + CISS has | 0.731, EFRM alone 0.708, CISS...]
+[en] expanded at first use: LASSO -> Least Absolute Shrinkage and Selection Operator  [... loss that targets the 5 % quantile, and   is the | penalty that sets weak links ...]
+[en] expanded at first use: RO-ERM -> energy risk meter for Romanian companies  [... it yourselfNotebook C4_notebook_EN.ipynb: (A) a “|” from OMV Petrom, Romgaz and ...]
+[en] expanded at first use: EODHD -> EOD Historical Data, a market-data provider  [...ross the three companies.Source: our estimates on | and Yahoo Finance data, April...]
+[en] expanded at first use: GACV -> generalised approximate cross-validation  [...y alone reaches 0.612. With only four covariates, | chooses (almost) no penalty i...]
+[ro] 6 sections, 4 numbered figures, 2 tables; acronyms: UE, TTF, VSTOXX, LSEG, GPRD, CDS, BCE, CISS, EFRM, TVP-VAR, AUC, ROC, LASSO, RO-ERM, EODHD, GACV, SNP, SNG, SNN
+[ro] expanded at first use: UE -> Uniunea Europeană  [...e risc sistemic specific sectorului energetic din |, cum influențează riscul geop...]
+[ro] expanded at first use: TTF -> Title Transfer Facility  [...ri la nivel european (contracte futures pe gazele | și pe Brent, prețul spot Bren...]
+[ro] expanded at first use: VSTOXX -> indicele de volatilitate al EURO STOXX 50  [...OXX Europe 600 Oil &amp; Gas și STOXX Europe 600, |, stocurile de țiței), LSEG, a...]
+[ro] expanded at first use: LSEG -> London Stock Exchange Group  [...și STOXX Europe 600, VSTOXX, stocurile de țiței), |, aprilie 2016 – aprilie 2026;...]
+[ro] expanded at first use: EFRM -> Energy Financial Risk Meter  [...3.3).Principalele rezultate ale lucrării.Indicele | surprinde principalele evenim...]
+[ro] expanded at first use: TVP-VAR -> model vectorial autoregresiv cu parametri variabili în timp  [...inte de război la   pp după declanșarea acestuia (|, secțiunea 4.1.2), iar transm...]
+[ro] expanded at first use: AUC -> aria de sub curba ROC, ROC = receiver operating characteristic  [...e ridicată în sectorul energetic: EFRM + CISS are | 0,731, EFRM singur 0,708, iar...]
+[ro] expanded at first use: RO-ERM -> indicator de risc energetic pentru companiile din România  [...ok_RO.ipynb conține trei părți. (A) Un indicator „|” construit din OMV Petrom, Ro...]
+[ro] expanded at first use: EODHD -> EOD Historical Data, furnizor de date de piață  [...e trei companii.Sursa: estimările noastre pe date | și Yahoo Finance, 04.2016–10....]
+[ro] expanded at first use: GACV -> validare încrucișată aproximativă generalizată  [.... Cu numai patru variabile explicative, criteriul | alege o penalizare nulă sau a...]

@@ -8,7 +8,7 @@ Keywords: 'ARX, autoregression, expert model, hourly regression, coefficients, a
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)'
 

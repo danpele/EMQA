@@ -8,7 +8,7 @@ Keywords: 'spark spread option, real option, gas-fired plant, flexibility, durat
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'day-ahead prices at native resolution (data/clean/power_da_prices_native_utc.csv, energy-charts.info); World Bank TTF gas monthly (data/clean/ttf_monthly.csv); EEX primary-auction EUA prices and the SparkChange CO2 ETC proxy (data/clean/eua_daily.csv)'
 

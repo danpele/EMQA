@@ -8,7 +8,7 @@ Keywords: 'fat tails, kurtosis, Q-Q plot, Student-t, Brent, crude oil, returns, 
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Brent front-month futures daily close (Yahoo Finance BZ=F; data/clean/fuels_daily.csv)'
 

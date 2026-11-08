@@ -8,7 +8,7 @@ Keywords: 'load, power, energy, MW, MWh, Romania, electricity consumption, units
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Romanian hourly load (energy-charts.info, ENTSO-E, Transelectrica data; data/clean/generation_ro_mw_hourly_utc.csv)'
 

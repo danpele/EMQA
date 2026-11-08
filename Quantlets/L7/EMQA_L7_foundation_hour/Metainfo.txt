@@ -8,7 +8,7 @@ Keywords: 'foundation model, Chronos, Chronos-2, zero-shot forecasting, time ser
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year forecasts of the naive model, AW-LEAR, Chronos-Bolt and Chronos-2 with its 10% and 90% quantiles (foundation_hour_results.npz)'
 

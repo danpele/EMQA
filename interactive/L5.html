@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261107a">
-<link rel="stylesheet" href="interactive.css?v=20261107a">
+<link rel="stylesheet" href="../assets/site.css?v=20261108a">
+<link rel="stylesheet" href="interactive.css?v=20261108a">
 <script>window.EMQA_LANG = 'en';</script>
-<link rel="preload" as="script" href="L5.js?v=20261107a">
+<link rel="preload" as="script" href="L5.js?v=20261108a">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261107a", "L5_text_en.js?v=20261107a", "common.js?v=20261107a"], "L5.js?v=20261107a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261108a", "L5_text_en.js?v=20261108a", "common.js?v=20261108a"], "L5.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -63,7 +63,7 @@
     <div class="live"><div class="ctls"><div class="ctl"><label for="fc-t">Curve at the end of: <b id="fc-t-v"></b></label><input type="range" id="fc-t" min="0" max="1" step="1" value="1"></div><div class="ctl"><label for="fc-w">Window of auctions (months): <b id="fc-w-v"></b></label><input type="range" id="fc-w" min="1" max="6" step="1" value="2"></div><button class="btn play" id="fc-play" type="button"></button></div><div class="charts one"><div class="chart" id="fc-chart"></div></div><ul class="out" id="fc-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_fwd_curve" target="_blank" rel="noopener">EMQA_L5_fwd_curve</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_fwd_curve/EMQA_L5_fwd_curve.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> At the end of October 2026, the October day-ahead average in Romania was 239.32 EUR/MWh, while the calendar 2027 baseload traded at 148.12 EUR/MWh. Does the downward slope of the curve mean that the market expects spot prices to fall by about 90 EUR/MWh?</div>
-  <details><summary>Answer</summary><p>Not exactly. A forward price is the expected spot price plus a risk premium, and part of the gap is seasonal: November and December 2026 traded at 215.33 and 214.27 EUR/MWh, the first quarter of 2027 at 176.69 and the whole year at 148.12, which also averages the cheap solar summer. Move the slider back: in 2022 the curve sloped down from a crisis spot, and the Cal-23 product (calendar year 2023) traded at up to 509.18 EUR/MWh, while 2023 delivered 103.74 EUR/MWh on the day-ahead market.</p></details>
+  <details><summary>Answer</summary><p>Not exactly. A forward price is the expected spot price plus a risk premium, and part of the gap is seasonal: November and December 2026 traded at 215.33 and 214.27 EUR/MWh, the first quarter of 2027 at 176.69 and the whole year at 148.12, which also averages the cheap solar summer. Move the slider back: in 2022 the curve sloped down from a crisis spot, and the Cal-2023 product (calendar year 2023) traded at up to 509.18 EUR/MWh, while 2023 delivered 103.74 EUR/MWh on the day-ahead market.</p></details>
 </section><h2 class="sec" id="s-spr">Spreads: the margins of power plants</h2>
 <section class="blk" id="spreads">
   <h3>Monthly clean spark and clean dark spreads</h3>

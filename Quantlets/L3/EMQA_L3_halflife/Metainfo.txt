@@ -8,7 +8,7 @@ Keywords: 'energy markets, electricity prices, Romania, day-ahead market, OPCOM,
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'power_da_prices_daily_cet.csv: daily base day-ahead price of Romania (OPCOM, via energy-charts.info / ENTSO-E), EUR/MWh, mean of all market time units of the CET/CEST delivery day; fuels_daily.csv: Brent BZ=F close, USD/bbl (Yahoo Finance); eua_daily.csv: SparkChange physical EUA ETC (CO2L), EUR (Yahoo Finance); ro_energy_equities_daily.csv: OMV Petrom (SNP) dividend-adjusted close and volume, RON (EODHD)'
 

@@ -1,0 +1,23 @@
+EMQA web case C7
+[en] 6 sections, 4 numbered figures, 1 tables; acronyms: XAI, OPCOM, ENTSO-E, SHAP, LIME, MAE, SSRN, CEE, ECECSR, CET, AUC, ROC, ML, AI, RO
+[en] expanded at first use: OPCOM -> the Romanian power and gas market operator  [...rs (p. 4821)?Data. 5,000 consecutive hours of the | day-ahead market, March–Septe...]
+[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [...the OPCOM day-ahead market, March–September 2024; | generation, load and day-ahea...]
+[en] expanded at first use: MAE -> mean absolute error  [...6 % of price variance on the test set (  = 0.676, | 24.58 EUR/MWh) (p. 4828, Tabl...]
+[en] expanded at first use: SSRN -> Social Science Research Network  [...n, Chiriac (Luchian), Pele &amp; Petukhina, 2026, | 6872381, doi:10.2139/ssrn.687...]
+[en] expanded at first use: CEE -> Central and Eastern Europe  [... conformal calibration for tail-risk forecasts in | markets (Jheng, Tak, Găman, M...]
+[en] expanded at first use: ECECSR -> Economic Computation and Economic Cybernetics Studies and Research  [...Găman, Mazurencu-Marinescu-Pele &amp; Pele, 2026, | 60(2), 267–290, doi:10.24818/...]
+[en] expanded at first use: CET -> Central European Time  [... the information available at gate closure (12:00 | on  ): prices up to   and the...]
+[en] expanded at first use: AUC -> area under the ROC curve, ROC = receiver operating characteristic  [...arning rule (test period)PrecisionRecallF1Accuracy|XGBoost classifier (probabilit...]
+[en] expanded at first use: ML -> machine learning  [...nd enters our model only through its   value.
+The | classifier separates spike an...]
+[en] expanded at first use: AI -> artificial intelligence  [...r and recalibrate them?Your board must approve an | tool. Is a SHAP explanation e...]
+[en] expanded at first use: RO -> Romania  [...ice spike, why, and when should we act?DataHourly | prices and fundamentals 2023–...]
+[ro] 6 sections, 4 numbered figures, 1 tables; acronyms: XAI, OPCOM, ENTSO-E, SHAP, LIME, MAE, SSRN, ECECSR, CET, AUC, ROC, RO
+[ro] expanded at first use: OPCOM -> operatorul pieței de energie electrică și de gaze naturale din România  [...de pe piața pentru ziua următoare administrată de |, martie–septembrie 2024; prod...]
+[ro] expanded at first use: ENTSO-E -> Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică  [...eptembrie 2024; producția, consumul și prognozele | pentru ziua următoare, prețur...]
+[ro] expanded at first use: MAE -> eroarea absolută medie  [... XGBoost explică 67,6 % din varianța prețului ( , | 24,58 EUR/MWh) (p. 4828, Tabe...]
+[ro] expanded at first use: SSRN -> Social Science Research Network  [...mann, Chiriac (Luchian), Pele și Petukhina, 2026, | 6872381, doi:10.2139/ssrn.687...]
+[ro] expanded at first use: ECECSR -> Economic Computation and Economic Cybernetics Studies and Research  [...k, Găman, Mazurencu-Marinescu-Pele și Pele, 2026, | 60(2), 267–290, doi:10.24818/...]
+[ro] expanded at first use: CET -> ora Europei Centrale  [...mația disponibilă la închiderea porții (ora 12:00 | în ziua  ), adică prețurile p...]
+[ro] expanded at first use: AUC -> aria de sub curba ROC, ROC = receiver operating characteristic  [...erioada de test)PreciziaSensibilitateaF1Acuratețea|Clasificator XGBoost (probabil...]
+[ro] expanded at first use: RO -> România  [...e și cînd trebuie să reacționăm?DatePrețuri orare | și variabile fundamentale, 20...]

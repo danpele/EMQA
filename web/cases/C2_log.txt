@@ -1,0 +1,21 @@
+EMQA web case C2
+[en] 6 sections, 4 numbered figures, 1 tables; acronyms: TSO, MSE, MAE, SARIMA, ARIMA, NHITS, LSTM, TimesFM, MAPE, CET, ENTSO-E, RMSE, MLP
+[en] expanded at first use: MSE -> mean squared error  [...ctricity consumption, (1) on predictive accuracy (|, MAE,  ) and (2) on the effec...]
+[en] expanded at first use: MAE -> mean absolute error  [...ity consumption, (1) on predictive accuracy (MSE, |,  ) and (2) on the effect of ...]
+[en] expanded at first use: NHITS -> Neural Hierarchical Interpolation for Time Series  [...ted Moving Average), the neural networks N-BEATS, |, LSTM (Long Short-Term Memory...]
+[en] expanded at first use: TimesFM -> Time Series Foundation Model  [... foundation models used zero-shot, Chronos-T5 and |. Look-back 168 hours, horizon...]
+[en] expanded at first use: MAPE -> mean absolute percentage error  [...N-BEATS model has been the most successful”, with | 2.324 % and “the highest coef...]
+[en] expanded at first use: CET -> Central European Time  [...d (MW) in hour   of day  . At gate closure, 12:00 | on day  , we forecast the 24 ...]
+[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [...lfNotebook C2_notebook_EN.ipynb: hourly load from | via energy-charts.info (gener...]
+[en] expanded at first use: RMSE -> root mean squared error  [... value in bold (Bias closest to zero).ModelMAE, MW|, MWMAPE, % Bias, MWGradient b...]
+[en] expanded at first use: MLP -> multilayer perceptron  [...-Bolt (zero-shot)2543604.160.86343Neural network (|)2843934.580.83780Linear regre...]
+[ro] 6 sections, 4 numbered figures, 1 tables; acronyms: OTS, PZU, MSE, MAE, SARIMA, ARIMA, NHITS, LSTM, TimesFM, MAPE, CET, ENTSO-E, RMSE, MLP
+[ro] expanded at first use: MSE -> eroarea pătratică medie  [...omâniei, (1) din punctul de vedere al acurateței (|, MAE,  ) și (2) din punctul d...]
+[ro] expanded at first use: MAE -> eroarea absolută medie  [...ei, (1) din punctul de vedere al acurateței (MSE, |,  ) și (2) din punctul de ved...]
+[ro] expanded at first use: NHITS -> Neural Hierarchical Interpolation for Time Series  [...omponentă sezonieră), rețelele neuronale N-BEATS, |, LSTM (Long Short-Term Memory...]
+[ro] expanded at first use: TimesFM -> Time Series Foundation Model  [...re pe datele românești (zero-shot): Chronos-T5 și |. Fereastra de intrare are 168...]
+[ro] expanded at first use: MAPE -> eroarea procentuală absolută medie  [...ucrării.Cel mai performant model este N-BEATS, cu | 2,324 % și cel mai mare coefi...]
+[ro] expanded at first use: CET -> ora Europei Centrale  [... ora   a zilei  . La închiderea porții, ora 12:00 | în ziua  , prognozăm cele 24 ...]
+[ro] expanded at first use: ENTSO-E -> Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică  [...book_RO.ipynb folosește consumul orar publicat de |, preluat de pe energy-charts....]
+[ro] expanded at first use: RMSE -> rădăcina erorii pătratice medii  [..., valoarea cea mai apropiată de zero).ModelMAE, MW|, MWMAPE, % Abatere, MWGradien...]
+[ro] expanded at first use: MLP -> perceptron multistrat  [...Bolt (zero-shot)2543604,160,86343Rețea neuronală (|)2843934,580,83780Regresie lin...]

@@ -85,6 +85,8 @@
     // web lecture (web/LK.html) and interactive companion (interactive/LK.html), _ro on the Romanian page;
     // their buttons appear only once the file is found on the server (probePages), never as "in preparation"
     const pageOf = (type, l) => `${type}/L${l.num}${LANG === 'ro' ? '_ro' : ''}.html`;
+    // web page of a research case study (web/cases/CK.html, CK_ro.html; built by cases/common/build_web_case.py)
+    const studyPage = s => `web/cases/C${s.num}${LANG === 'ro' ? '_ro' : ''}.html`;
 
     function linkButton(type, l, ok) {
         const label = T.links[type];
@@ -195,14 +197,23 @@
               fs.map(f => `<div class="cf"><h5>${f[LANG]}</h5><div class="cf-tex">${stackTex((LANG === 'ro' && f.tex_ro) || f.tex)}</div></div>`).join('') +
               '</details>'
             : '';
-        const cases = (l.cases || []).length
+        // research case study of the lecture (lecture k <-> Ck; C8 is listed under the lectures it relates to)
+        const studies = (D.studies || []).filter(s => s.lectures.includes(l.id));
+        const study = studies.length
+            ? `<p class="lecture-study"><strong>${studies.length > 1 ? T.studyPlural : T.studyShort}:</strong> ${studies.map(s =>
+                `<a href="${studyPage(s)}">C${s.num}. ${s.title[LANG]}</a>`).join('; ')}</p>` : '';
+        const cases = study + ((l.cases || []).length
             ? `<p class="lecture-cases"><strong>${T.casesShort}:</strong> ${l.cases.map(id => {
                 const c = D.cases.find(x => x.id === id);
-                return c ? `<a href="#case-${id}">${c[LANG].h}</a>` : '';
-            }).join(', ')}</p>` : '';
+                return c ? `<a href="#episode-${id}">${c[LANG].h}</a>` : '';
+            }).join(', ')}</p>` : '');
         const further = (l.further || []).length
             ? `<div class="quantinar-box"><h4>${T.further}</h4><ul>` +
               l.further.map(f => `<li><a href="${f.url}" target="_blank" rel="noopener">${f[LANG]}</a></li>`).join('') + '</ul></div>'
+            : '';
+        const qn = (l.quantinar || []).length
+            ? `<div class="quantinar-box"><h4><img src="assets/logos/qr_logo.png" alt="">${T.quantinar}</h4><ul>` +
+              l.quantinar.map(c => `<li><a href="${c.url}" target="_blank" rel="noopener">${esc(c.title)}</a></li>`).join('') + '</ul></div>'
             : '';
         return `<div class="chapter-card${ready ? '' : ' soon'}" id="lecture-${l.id}">
             <div class="chapter-header"><h3>${T.chapter} ${l.num}: ${l.title[LANG]}</h3><div class="badges">${badge}</div></div>
@@ -213,6 +224,7 @@
                 ${formulas}
                 <div class="chapter-links">${links}</div>
                 ${further}
+                ${qn}
             </div>
         </div>`;
     }
@@ -279,9 +291,35 @@
         return ls.length ? `<p class="case-lecture">${T.usedIn}: ${ls.map(l => `<a href="#lecture-${l.id}">${T.chapter} ${l.num}</a>`).join(', ')}</p>` : '';
     }
 
+    // research case studies C1-C8: one card each, linking to the web page, the brief, the notebook (GitHub, Colab) and the lectures
+    function studyCard(s) {
+        const S = T.study, sfx = LANG === 'ro' ? 'RO' : 'EN';
+        const nb = `cases/${s.folder}/C${s.num}_notebook_${sfx}.ipynb`;
+        const lect = s.lectures.map(id => D.lectures.find(l => l.id === id)).filter(Boolean);
+        const tag = s.extra ? S.extra : `${S.lecture} ${lect[0].num}`;
+        const paper = s.paper
+            ? `<p class="study-paper"><span class="study-k">${S.paper}:</span> ${s.paper.cite} <a href="${s.paper.url}" target="_blank" rel="noopener">${s.paper.link}</a></p>`
+            : `<p class="study-paper"><span class="study-k">${S.paper}:</span> ${S.noPaper}</p>`;
+        const lectures = `<p class="case-lecture">${s.extra ? S.related : S.lecture}: ${lect.map(l =>
+            `<a href="#lecture-${l.id}">${T.chapter} ${l.num}: ${l.title[LANG]}</a>`).join(', ')}</p>`;
+        return `<article class="study-card" id="case-c${s.num}">
+            <div class="study-head"><span class="study-num">C${s.num}</span><span class="study-tag">${tag}</span></div>
+            <h3><a href="${studyPage(s)}">${s.title[LANG]}</a></h3>
+            <p class="study-sum">${s.summary[LANG]}</p>
+            ${paper}
+            <div class="study-links">
+                <a class="btn btn-primary" href="${studyPage(s)}">${S.page}</a>
+                <a class="btn btn-outline" href="cases/${s.folder}/C${s.num}_case_${sfx}.pdf" target="_blank" rel="noopener">${S.brief}</a>
+                <span class="link-group"><a class="btn btn-outline" href="${D.repo}/blob/main/${nb}" target="_blank" rel="noopener">${S.notebook}</a><a class="btn btn-colab" href="${D.colab}${nb}" target="_blank" rel="noopener" title="${S.colab}">Colab</a></span>
+            </div>
+            ${lectures}
+        </article>`;
+    }
+
     function renderCases() {
-        $('cases-grid').innerHTML = D.cases.map(c =>
-            `<div class="info-card case-card" id="case-${c.id}"><h3>${c[LANG].h}</h3>${c[LANG].p.map(p => `<p>${p}</p>`).join('')}` +
+        $('cases-grid').innerHTML = (D.studies || []).map(studyCard).join('');
+        $('episodes-grid').innerHTML = D.cases.map(c =>
+            `<div class="info-card case-card" id="episode-${c.id}"><h3>${c[LANG].h}</h3>${c[LANG].p.map(p => `<p>${p}</p>`).join('')}` +
             (c.quantlet ? `<p class="case-link"><a class="btn btn-outline" href="${c.quantlet}" target="_blank" rel="noopener"><img class="btn-ql" src="assets/logos/ql_logo.png" alt="">${T.caseQuantlet}</a></p>` : '') +
             usedIn(c.id) + `</div>`
         ).join('');

@@ -8,7 +8,7 @@ Keywords: 'hedge ratio, minimum variance, OLS, HAC, block bootstrap, hedge effec
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'day-ahead daily base prices of OPCOM, HUPX and EPEX SPOT via energy-charts.info (data/clean/power_da_prices_daily_cet.csv)'
 

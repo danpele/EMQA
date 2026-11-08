@@ -8,7 +8,7 @@ Keywords: 'SHAP, local explanation, waterfall chart, explainable AI, XGBoost, pr
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved SHAP values, inputs and price scaling of the XGBoost model for that hour (shap_local_results.npz)'
 

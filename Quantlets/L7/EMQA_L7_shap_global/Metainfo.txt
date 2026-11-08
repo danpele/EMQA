@@ -8,7 +8,7 @@ Keywords: 'SHAP, Shapley values, explainable AI, feature importance, XGBoost, gr
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'saved exact SHAP values of the tuned XGBoost on the test year (shap_global_results.npz, from lectures/L7/cache/ml.pkl); RUN_ALL recomputes them from data/clean (prices, load, wind and solar, hydro, nuclear, net imports, EUA)'
 

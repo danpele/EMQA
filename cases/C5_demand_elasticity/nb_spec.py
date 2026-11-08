@@ -52,6 +52,8 @@ def fig_data(lang):
     axes[1].plot(s.index, s.cons_GWh, color=cu.PAL["RO"]); axes[1].set_title(cu.T(lang, "Consumption, GWh per month", "Consumul, GWh pe lună"))
     for a in axes:
         a.axvspan(pd.Timestamp("2022-01-01"), pd.Timestamp("2022-12-31"), color=cu.MUTED, alpha=0.12, lw=0)
+    axes[0].fill_between([], [], color=cu.MUTED, alpha=0.25, lw=0, label=cu.T(lang, "2022 (energy crisis)", "2022 (criza energetică)"))
+    cu.legend_bottom(fig, ncol=1)
     return fig
 cu.save_both(fig_data, "f1_monthly_data")
 '''),
@@ -180,8 +182,8 @@ def fig_hedge(lang):
     ax.plot(hs, sd_cost, color=cu.PAL["RO"], lw=1.8)
     ax.axvline(h_star, color=cu.PAL["c8"], ls="--", lw=1)
     ax.text(h_star, sd_cost.max() * 0.95, "  h* = " + cu.fmt(h_star, 2, lang), color=cu.PAL["c8"], fontsize=9)
-    ax.set_xlabel(cu.T(lang, "Hedge ratio h (share of expected volume bought forward)", "Raportul de acoperire h (partea din volumul așteptat cumpărată la termen)"))
-    ax.set_ylabel(cu.T(lang, "Std. dev. of procurement cost,\nEUR per expected MWh", "Abaterea standard a costului de achiziție,\nEUR pe MWh așteptat"))
+    ax.set_xlabel(cu.T(lang, "Hedge ratio h\n(share of expected volume bought forward)", "Raportul de acoperire h\n(partea din volumul așteptat cumpărată la termen)"))
+    ax.set_ylabel(cu.T(lang, "Std. dev. of procurement cost,\nEUR per expected MWh", "Abaterea standard a costului\nde achiziție, EUR pe MWh așteptat"))
     cu.comma_axis(ax, lang, "x", 1)
     return fig
 cu.save_both(fig_hedge, "f4_hedge_ratio", headline=True)

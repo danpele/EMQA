@@ -8,7 +8,7 @@ Keywords: 'square-root-of-time rule, VaR horizon, mean reversion, variance ratio
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania (OPCOM) and Germany-Luxembourg (EPEX SPOT), EUR/MWh, energy-charts.info (Fraunhofer ISE) via ENTSO-E (cut-off 2026-10-31)'
 

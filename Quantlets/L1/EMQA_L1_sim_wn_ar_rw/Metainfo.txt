@@ -8,7 +8,7 @@ Keywords: 'simulation, white noise, autoregressive process, AR(1), random walk, 
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'None: simulated series (numpy, seed 20261104)'
 

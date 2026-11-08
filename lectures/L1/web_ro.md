@@ -312,7 +312,7 @@ unde $p_t$ este prețul, $\tilde p$ este mediana sa, $\widehat{\mathrm{MAD}}$ es
 @chart asinh_ro
 Histograma tuturor prețurilor pe sfert de oră din România, ianuarie–octombrie 2026, în nivel (EUR/MWh, stînga) și după transformarea asinh (dreapta).
 
-## Cozi groase: variațiile extreme ale țițeiului sînt mult mai frecvente {h=63d13933}
+## Cozi groase: variațiile extreme ale țițeiului sînt mult mai frecvente {h=ded78b77}
 
 „Cozile groase” înseamnă că zilele cu creșteri sau scăderi foarte mari apar mult mai des decît ar permite clopotul lui Gauss. Dovada provine din randamentele logaritmice zilnice ale țițeiului Brent, între 5 ianuarie 2015 și 30 octombrie 2026, fără cele 141 de zile de schimbare a contractului. Conform distribuției normale, variațiile de peste 4 abateri standard ar trebui să apară de 0,18 ori într-un asemenea eșantion; observăm 16. Excesul de aplatizare este 13,98, față de 0 pentru distribuția normală; formulele și testul de normalitate Jarque–Bera (JB) se află în Anexa F (Jarque & Bera, 1980).
 
@@ -323,7 +323,7 @@ Graficul cuantil–cuantil arată același lucru vizual: cuantilele observate se
 @chart tails_brent
 Randamentele logaritmice zilnice ale țițeiului Brent, 5 ianuarie 2015 – 30 octombrie 2026: graficul cuantil–cuantil față de distribuția normală (stînga) și histograma randamentelor standardizate, cu densitățile normală și Student-t (dreapta).
 
-## Perioadele calme și cele agitate apar grupat {h=728e26a4}
+## Perioadele calme și cele agitate apar grupat {h=09fe719b}
 
 O variație mare astăzi face mai probabilă o altă variație mare mîine, chiar dacă sensul ei nu poate fi anticipat. Statistica Ljung–Box testează dacă primele $m$ autocorelații ale unei serii sînt simultan nule:
 
@@ -385,7 +385,7 @@ Autocorelația (stînga) și autocorelația parțială (dreapta) a prețurilor z
 @chart acf_ro_hourly
 Autocorelația prețurilor orare din România în 2024 (T = 8784), pînă la decalajul de 168 de ore, cu banda pentru zgomot alb.
 
-## Prognoza naivă: reperul pe care orice model trebuie să-l depășească {h=1142030f}
+## Prognoza naivă: reperul pe care orice model trebuie să-l depășească {h=222ca816}
 
 Cea mai simplă prognoză rezonabilă spune că prețul de mîine pentru fiecare oră este prețul de azi pentru aceeași oră; luni, sîmbătă și duminică se folosește prețul aceleiași ore din ziua corespunzătoare a săptămînii precedente:
 
@@ -614,7 +614,7 @@ Pentru țițeiul Brent, cel mai mare preț de închidere din 2026 a fost de 118,
 
 @practice stabiliți limitele de risc pe baza valorilor extreme, nu a mediilor.
 
-## Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara {h=2c5526bb}
+## Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara {h=936af8b6}
 
 Piețele din România și Bulgaria sînt cuplate și au de obicei aproape același preț. În orele de seară, între 19:00 și 22:00, ora locală (EET), din aprilie pînă în septembrie, prețul mediu a fost de 171,1 EUR/MWh în România și de 169,7 în Bulgaria în 2025, dar de 215,5 față de 178,0 EUR/MWh în 2026. La amiază, între 11:00 și 15:00, prețurile au rămas apropiate în 2026 (48,1 față de 46,0).
 

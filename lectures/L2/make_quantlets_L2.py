@@ -554,7 +554,7 @@ MFMT = ('import matplotlib.dates as mdates\nfrom matplotlib.ticker import FuncFo
         "def mfmt(ax, step=1):\n"
         "    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))\n"
         "    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +\n"
-        '                                               (f"\\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))\n\n\n'
+        '                                               (f"\\n{mdates.num2date(v).year}" if p == 0 or mdates.num2date(v).month <= step else "")))\n\n\n'
         'TM = TDAYS.to_period("M")\nMONTHS_T = sorted(set(TM))\nxm = [pd.Timestamp(str(mm)) for mm in MONTHS_T]\n\n\n'
         "def bymonth(F):\n    return np.array([np.mean(np.abs(A[TM == mm] - F[TM == mm])) for mm in MONTHS_T])\n")
 
@@ -777,6 +777,7 @@ def q_qra_week():
            'ax.plot(xt, A[pw].ravel(), color="#222222", lw=1.0, label="actual price")\n'
            'ax.set_ylabel("EUR/MWh")\nax.xaxis.set_major_locator(mdates.DayLocator())\n'
            'ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))\n'
+           'ax.set_xlabel(f"{PW:%B %Y}" + (f" - {PW + pd.Timedelta(days=6):%B %Y}" if (PW + pd.Timedelta(days=6)).month != PW.month else "") + ", hours CET", fontsize=10)\n'
            "legend_bottom(fig, ncol=4)\n" + save(n, 0.17))
     ck = [("first day of the week", "str(PW.date())", "weeks.prob", "s"),
           ("last day of the week", "str((PW + pd.Timedelta(days=6)).date())", "weeks.prob_end", "s"),
@@ -880,7 +881,8 @@ def q_coint_daily():
            'axs[1].plot(DLY.index, DLY["RO"] - DLY["HU"], color=PAL["c8"], lw=0.6, label="spread RO - HU")\n'
            'axs[1].axhline(0, color="#222222", lw=0.5)\naxs[1].set_ylabel("EUR/MWh")\naxs[1].set_xlim(DLY.index[0], DLY.index[-1])\n'
            'axs[1].xaxis.set_major_locator(mdates.YearLocator())\naxs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))\n'
-           "legend_bottom(fig, ncol=3)\n" + save(n, 0.15))
+           "legend_bottom(fig, ncol=3)\n"
+           "for ln in fig.legends[0].get_lines():\n    ln.set_linewidth(2.0)\n" + save(n, 0.15))
     ck = [("first day", "str(DLY.index.min().date())", "coint.start", "s"),
           ("mean spread RO - HU", 'co["HU"]["mean_spread"]', "coint.HU.mean_spread", ".2f"),
           ("standard deviation of the spread RO - HU", 'co["HU"]["sd_spread"]', "coint.HU.sd_spread", ".2f"),
@@ -1008,7 +1010,9 @@ def q_stress_week():
            "    ax.plot(xs_, M[k][sw].ravel(), color=COL[k], ls=ls, lw=1.0, label=LAB[k])\n"
            'ax.set_ylabel("EUR/MWh")\nax.xaxis.set_major_locator(mdates.DayLocator())\n'
            'ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{DAYN[mdates.num2date(v).weekday()]} {mdates.num2date(v).day}"))\n'
-           "legend_bottom(fig, ncol=4)\n" + save(n, 0.17))
+           'ax.set_xlabel(f"{SW:%B %Y}" + (f" - {SW + pd.Timedelta(days=6):%B %Y}" if (SW + pd.Timedelta(days=6)).month != SW.month else "") + ", hours CET", fontsize=10)\n'
+           "legend_bottom(fig, ncol=4)\n"
+           "for ln in fig.legends[0].get_lines():\n    ln.set_linewidth(max(ln.get_linewidth(), 1.6))\n" + save(n, 0.17))
     ck = ([("first day of the week", "str(SW.date())", "weeks.stress", "s"),
            ("mean price of the week", "A[sw].mean()", "weeks.stress_mean", ".2f"),
            ("highest hourly price of the week", "A[sw].max()", "weeks.stress_max", ".2f")] +

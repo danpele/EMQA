@@ -8,7 +8,7 @@ Keywords: 'electricity, generation mix, Romania, coal, solar, nuclear, shares, l
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Romanian hourly and daily generation by source (energy-charts.info, ENTSO-E; data/clean/generation_ro_mw_hourly_utc.csv, generation_ro_mw_daily_cet.csv)'
 

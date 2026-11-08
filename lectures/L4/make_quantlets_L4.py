@@ -48,7 +48,7 @@ plt.rcParams.update({
     'text.color': '#222222', 'font.size': 11, 'axes.labelsize': 11, 'legend.fontsize': 10.5,
     'legend.frameon': False, 'lines.linewidth': 1.4, 'font.family': 'DejaVu Sans'})
 PAL = {'RO': '#2a78d6', 'DE_LU': '#eb6834', 'HU': '#1baf7a', 'BG': '#eda100',
-       'c6': '#008300', 'c7': '#6250d6', 'c8': '#e34948'}   # fixed colour per zone / series
+       'c5': '#e87ba4', 'c6': '#008300', 'c7': '#6250d6', 'c8': '#e34948'}   # fixed colour per zone / series
 
 
 def legend_bottom(fig, ncol=4):
@@ -215,9 +215,9 @@ def month_axis(ax, step=1):
     # quarterly ticks fall on Jan/Apr/Jul/Oct, so every January (with its year) gets a label
     ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=range(1, 13, step)) if step > 1 else mdates.MonthLocator())
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +
-                                               (f'\n{mdates.num2date(v).year}' if mdates.num2date(v).month == 1 else '')))"""
+                                               (f'\n{mdates.num2date(v).year}' if mdates.num2date(v).month == 1 or p == 0 else '')))"""
 
-COLM = r"""COL = {'hs': PAL['BG'], 'normal': '#9a9a9a', 't': PAL['c7'], 'fhs': PAL['RO'], 'evt': PAL['DE_LU']}
+COLM = r"""COL = {'hs': PAL['BG'], 'normal': PAL['c5'], 't': PAL['c7'], 'fhs': PAL['RO'], 'evt': PAL['DE_LU']}
 LAB = {'hs': 'HS', 'normal': 'Normal', 't': 'Student-t', 'fhs': 'FHS', 'evt': 'EVT'}"""
 
 SRC_EC = "energy-charts.info (Fraunhofer ISE), OPCOM day-ahead prices for Romania via ENTSO-E"
@@ -368,6 +368,10 @@ ax.plot(gx, stats.norm.sf(gx), color='#222222', ls=':', lw=1.0, label='normal cu
 ax.set_yscale('log')
 ax.set_xlim(u - 0.1, gx[-1] + 0.1)
 ax.set_ylim(stats.norm.sf(gx[-1]) / 3, 0.3)
+yt = [10.0 ** -k for k in range(1, 9, 2) if 10.0 ** -k >= stats.norm.sf(gx[-1]) / 3]
+ax.set_yticks(yt)
+ax.set_yticklabels([f'{v:.{k}f}' for v, k in zip(yt, range(1, 9, 2))])
+ax.minorticks_off()
 ax.set_xlabel('standardised residual $z$')
 ax.set_ylabel('$P(Z > z)$')
 legend_bottom(fig, ncol=3)

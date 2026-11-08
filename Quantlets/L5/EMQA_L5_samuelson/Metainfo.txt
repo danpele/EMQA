@@ -8,7 +8,7 @@ Keywords: 'Samuelson effect, futures volatility, time to maturity, TTF, natural 
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'NYMEX TTF futures, individual contract months, daily closes from Yahoo Finance (data/clean/ttf_futures_contracts_daily.csv)'
 

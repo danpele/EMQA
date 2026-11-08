@@ -94,7 +94,7 @@ QA = {
                     'traded at 148.12 EUR/MWh. Does the downward slope of the curve mean that the market expects spot prices to fall by about 90 EUR/MWh?',
                     'Not exactly. A forward price is the expected spot price plus a risk premium, and part of the gap is seasonal: November and December '
                     '2026 traded at 215.33 and 214.27 EUR/MWh, the first quarter of 2027 at 176.69 and the whole year at 148.12, which also averages '
-                    'the cheap solar summer. Move the slider back: in 2022 the curve sloped down from a crisis spot, and the Cal-23 product (calendar '
+                    'the cheap solar summer. Move the slider back: in 2022 the curve sloped down from a crisis spot, and the Cal-2023 product (calendar '
                     'year 2023) traded at up to 509.18 EUR/MWh, while 2023 delivered 103.74 EUR/MWh on the day-ahead market.'),
   'spreads': ('With the course assumptions (gas plant efficiency 50%, coal 38%), the Romanian clean spark spread was negative in 67 of 138 months. '
               'What happens to this count if the gas plant is a modern combined cycle with an efficiency of 58%?',
@@ -132,7 +132,7 @@ QA = {
                     'Nu întocmai. Prețul forward este prețul spot așteptat plus o primă de risc, iar o parte din diferență este sezonieră: '
                     'noiembrie și decembrie 2026 s-au tranzacționat la 215,33 și 214,27 EUR/MWh, primul trimestru din 2027 la 176,69, iar anul '
                     'întreg la 148,12, care include și vara ieftină, cu producție solară mare. Mutați cursorul înapoi: în 2022, curba cobora de la '
-                    'un spot de criză, iar produsul Cal-23 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 '
+                    'un spot de criză, iar produsul Cal-2023 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 '
                     'media PZU a fost 103,74 EUR/MWh.'),
   'spreads': ('Cu ipotezele din curs (randamentul centralei pe gaz 50%, al celei pe cărbune 38%), spread-ul clean spark din România a fost '
               'negativ în 67 din 138 de luni. Ce se întîmplă cu acest număr dacă centrala pe gaz este un ciclu combinat modern, cu randamentul 58%?',
@@ -293,7 +293,7 @@ def data():
     TC = csv('ttf_futures_contracts_daily.csv', parse_dates=['date']).set_index('date').loc[:END]
     out['ttf'] = {'t': TC.index.strftime('%Y-%m-%d').tolist(), **{c: rnd(TC[c].values, 3) for c in TC.columns}}
 
-    # Black-76 defaults: Cal-27 VWAP of the last two months, latest €STR, expiry 15 December
+    # Black-76 defaults: Cal-2027 VWAP of the last two months, latest €STR, expiry 15 December
     R = csv('ecb_ron_estr_daily.csv', parse_dates=['date']).set_index('date')['estr_pct'].loc[:END].dropna()
     cur = FW[(FW['auction_date'] >= (END - pd.DateOffset(months=2) + pd.Timedelta(days=1)).normalize())
              & (FW['delivery_start'] > END) & (FW['kind'] == 'Y')]

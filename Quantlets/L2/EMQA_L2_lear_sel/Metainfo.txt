@@ -8,7 +8,7 @@ Keywords: 'LEAR, LASSO, variable selection, sparsity, AIC, autoregression, elect
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv); saved LASSO selection of the test year (lear_nz_test.npz, from lectures/L2/analysis_L2.py)'
 

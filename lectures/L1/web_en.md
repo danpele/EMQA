@@ -312,7 +312,7 @@ In January–October 2026, 1,189 of 29,184 Romanian quarter-hours had a price of
 @chart asinh_ro
 Histogram of all Romanian quarter-hour prices, January–October 2026, in levels (EUR/MWh, left) and after the asinh transformation (right).
 
-## Extreme oil moves are far more frequent than a normal curve allows {h=d1e53fbb}
+## Extreme oil moves are far more frequent than a normal curve allows {h=70b01f67}
 
 "Fat tails" means that very large up or down days happen much more often than a bell curve would allow. The evidence comes from Brent daily log returns from 5 January 2015 to 30 October 2026, without the 141 contract-roll days. Under the normal distribution, moves beyond 4 standard deviations should occur 0.18 times in such a sample; we observe 16. The excess kurtosis is 13.98, against 0 for the normal distribution; the formulas and the Jarque–Bera (JB) normality test are in Appendix F (Jarque & Bera, 1980).
 
@@ -323,7 +323,7 @@ The quantile–quantile plot makes the point visually: the observed quantiles de
 @chart tails_brent
 Brent daily log returns, 5 January 2015 to 30 October 2026: quantile–quantile plot against the normal distribution (left) and histogram of standardised returns with normal and Student-t densities (right).
 
-## Calm and turbulent periods come in clusters {h=fedc879c}
+## Calm and turbulent periods come in clusters {h=25d1d0fc}
 
 A big move today makes another big move tomorrow more likely, even if its direction is unpredictable. The Ljung–Box statistic tests whether the first $m$ autocorrelations of a series are jointly zero:
 
@@ -385,7 +385,7 @@ Sample autocorrelation (left) and partial autocorrelation (right) of Romanian da
 @chart acf_ro_hourly
 Sample autocorrelation of Romanian hourly prices in 2024 (T = 8784) up to lag 168 hours, with the white-noise band.
 
-## The benchmark to beat: the naive forecast {h=89f28b3b}
+## The benchmark to beat: the naive forecast {h=1ce24edf}
 
 The simplest sensible forecast says that tomorrow's price for each hour is today's price for that hour, except after weekends, when the same day of the previous week is used:
 
@@ -614,7 +614,7 @@ For Brent, the highest close of 2026 was 118.35 USD/bbl on 31 March 2026, and th
 
 @practice set risk limits on the extremes, not on the averages.
 
-## Case study (f): since spring 2026, Bulgaria's evenings are cheaper {h=171e2351}
+## Case study (f): since spring 2026, Bulgaria's evenings are cheaper {h=df258e5a}
 
 The Romanian and Bulgarian markets are coupled and usually have almost the same price. In the evening hours from 19:00 to 22:00 local time (EET), from April to September, the average price was 171.1 EUR/MWh in Romania and 169.7 in Bulgaria in 2025, but 215.5 against 178.0 EUR/MWh in 2026. At midday, from 11:00 to 15:00, prices stayed close in 2026 (48.1 against 46.0).
 

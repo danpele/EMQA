@@ -364,9 +364,9 @@ def build(ns):
         data=PRICES, saved=None, needs_data=True,
         code=[("## Daily base price and the three samples", r'''DAILY = pd.Series(PM.mean(1).values, index=CAL)       # daily base price = mean of the 24 hourly prices
 fig, ax = plt.subplots(figsize=(6.4, 1.45))
-ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0, label="training (grows each month)")
-ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color=PAL["BG"], alpha=0.28, lw=0, label="validation year: choose hyperparameters")
-ax.axvspan(TEST0, END, color=PAL["DE_LU"], alpha=0.2, lw=0, label="test year (as in Lecture 2)")
+ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color="#d3eee3", lw=0, label="training (grows each month)")
+ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color="#fbe2ad", lw=0, label="validation year: choose hyperparameters")
+ax.axvspan(TEST0, END, color="#dcd7f6", lw=0, label="test year (as in Lecture 2)")
 ax.plot(DAILY.index, DAILY.values, color=PAL["RO"], lw=0.8, label="Romania, daily base price")
 ax.set_ylabel("EUR/MWh")
 ax.set_xlim(CAL[0], END)
@@ -484,7 +484,7 @@ for k, ls, mk in [("aw_lear", "-", "o"), ("xgb", "--", "s"), ("dnn", "-.", "^"),
 ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
 ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +
-                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 or p == 0 else "")))
 legend_bottom(fig, ncol=4)
 save_chart(fig, "monthly_ml", bottom=0.22)''')],
         checks=[("MAE AW-LEAR, EUR/MWh", "acc.aw_lear.mae", ".2f", "mae(M['aw_lear'])"),
@@ -607,13 +607,16 @@ sec["ens_lc"] = sec["aw_lear"] + sec["chr2"]
 fig, ax = plt.subplots(figsize=(6.4, 1.6))
 for k in ["aw_lear", "xgb", "dnn", "bolt", "chr2", "ens_ldx", "ens_lc"]:
     ax.plot(max(sec[k], 1) / 60, mae(M[k]), "o", color=COL[k], ms=6)
-    ax.annotate(LAB[k], (max(sec[k], 1) / 60, mae(M[k])), textcoords="offset points", xytext=(7, 0), fontsize=9.5, va="center")
+    ax.annotate(LAB[k], (max(sec[k], 1) / 60, mae(M[k])), textcoords="offset points",
+                xytext=(7, {"xgb": 4, "dnn": -5}.get(k, 0)), fontsize=9.5, va="center")       # XGBoost and DNN are close
 ax.set_xscale("log")
 ax.set_xlabel("compute time for the test year, minutes on one core (log scale)", fontsize=9.5)
 ax.set_ylabel("MAE\n(EUR/MWh)", fontsize=10)
 xl, yl = ax.get_xlim(), ax.get_ylim()
 ax.set_xlim(xl[0], xl[1] * 12)
 ax.set_ylim(yl[0] - 0.25, yl[1] + 0.15)
+ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: f"{v:g}"))      # 0.1, 1, 10, ... instead of 10^-1, 10^0, ...
+ax.xaxis.set_minor_formatter(plt.FuncFormatter(lambda v, p: ""))
 save_chart(fig, "cost_gain", bottom=0.02)''')],
         checks=[("AW-LEAR, minutes", "cost.aw_lear", ".1f", "sec['aw_lear'] / 60"),
                 ("XGBoost, minutes", "cost.xgb", ".1f", "sec['xgb'] / 60"),
@@ -688,7 +691,7 @@ save_chart(fig, "shap_global", bottom=0.12)''')],
 fig, ax = plt.subplots(figsize=(6.4, 1.5))
 day_h = np.zeros_like(xr, bool)
 day_h[:, 9:17] = True
-for msk, c, lb in [(~day_h, "#5b6fa8", "hours 17-08"), (day_h, PAL["BG"], "hours 09-16 (sun)")]:
+for msk, c, lb in [(~day_h, "#5b6fa8", "hours 17:00-08:00"), (day_h, PAL["BG"], "hours 09:00-16:00 (sun)")]:
     ax.scatter(xr[msk] / 1000, sr[msk], s=1.2, alpha=0.35, color=c, lw=0, label=lb, rasterized=True)
 ax.axhline(0, color="#222222", lw=0.6)
 ax.set_xlabel("wind+solar on d-2, same hour (GW)")
@@ -850,7 +853,7 @@ ax.set_xlim(0.1, 1.0)
 ax.set_ylim(min(0, VCURVE[CUTS >= 0.1].min()) - 3, VCURVE.max() * 1.25)
 ax.axhline(0, color="#222222", lw=0.5)
 ax.set_xlabel("action threshold (probability of a spike)")
-ax.set_ylabel("value\n(10$^3$ EUR/MW)", fontsize=10)
+ax.set_ylabel("value\n(thousand\nEUR/MW)", fontsize=9.5)
 legend_bottom(fig, ncol=3)
 save_chart(fig, "decision", bottom=0.22)''')],
         checks=[("Mean loss of a missed spike L, EUR/MWh", "decision.Lbar", ".1f", "LBAR"),
@@ -887,8 +890,8 @@ for ax, V, Tt, best_, nm in [(axs[0], VAL_DNN, TEST_DNN, BEST_DNN, "DNN"), (axs[
     ax.axhline(LEAR_MAE, color=PAL["RO"], ls="--", lw=1.0, label="AW-LEAR, test year")
     ax.set_ylim(min(LEAR_MAE, Tt.min()) - 0.4, Tt.max() + 0.3)
     ax.set_title(nm, fontsize=10)
-    ax.set_xlabel("MAE, validation year", fontsize=9.5)
-axs[0].set_ylabel("MAE, test year", fontsize=9.5)
+    ax.set_xlabel("MAE, validation year (EUR/MWh)", fontsize=9.5)
+axs[0].set_ylabel("MAE, test year\n(EUR/MWh)", fontsize=9.5)
 legend_bottom(fig, ncol=2)
 save_chart(fig, "snooping", bottom=0.27)''')],
         checks=[("DNN chosen on validation, test MAE", "search.dnn.test_chosen", ".2f", "TEST_DNN[BEST_DNN]"),
@@ -1009,7 +1012,7 @@ for k, ls in [("aw_lear", "-"), ("xgb", "--"), ("chr2", "-.")]:
     axs[0].plot(xs_, FC[k][CWS].ravel(), color=COL[k], ls=ls, lw=1.0, label=LAB[k])
 axs[0].plot(xs_, np.repeat(TH_T[CWS], 24), color="#6b6b6b", lw=0.9, ls=":", label="spike threshold")
 axs[0].set_ylabel("EUR/MWh")
-axs[1].fill_between(xs_, 0, Y_SP[CWS].ravel(), step="mid", color=PAL["c8"], alpha=0.18, lw=0, label="actual spike hour")
+axs[1].fill_between(xs_, 0, Y_SP[CWS].ravel(), step="mid", color="#f7d0d0", lw=0, label="actual spike hour")
 axs[1].plot(xs_, FC["spike_xgb"][CWS].ravel(), color=PAL["BG"], lw=1.1, label="spike probability")
 axs[1].axhline(CUT, color=PAL["DE_LU"], ls="--", lw=0.8, label="C/L")
 axs[1].set_ylim(0, 1)

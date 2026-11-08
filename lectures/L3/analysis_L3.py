@@ -624,7 +624,7 @@ def mfmt(ax, lang, step=1):
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
     M_ = MON_RO if lang == "ro" else MON_EN
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: M_[mdates.num2date(v).month - 1] +
-                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 or p == 0 else "")))
 
 
 C_PCT, C_EUR = PAL["RO"], PAL["c7"]
@@ -672,7 +672,7 @@ for lang in ["en", "ro"]:
     axs[1].set_ylabel("EUR/MWh", fontsize=9.5)
     for ax in axs:
         ax.set_xticks(x)
-        ax.set_xticklabels([f"'{str(y)[2:]}" for y in YEARS], fontsize=9)
+        ax.set_xticklabels([str(y) for y in YEARS], fontsize=8.5, rotation=45, ha="right", rotation_mode="anchor")
     axs[0].set_title(T("std. dev. of the % shocks $\\varepsilon_t$", "abaterea standard, $\\varepsilon_t$ (%)"), fontsize=9.5)
     axs[1].set_title(T("std. dev. of the EUR/MWh shocks $u_t$", "abaterea standard, $u_t$ (EUR/MWh)"), fontsize=9.5)
     out(fig, lang, "vol_units", bottom=0.02)
@@ -705,6 +705,9 @@ for lang in ["en", "ro"]:
     ax.plot(xs, stats.t.pdf(xs / sc, nu_) / sc, color=PAL["DE_LU"], lw=1.2, label=T(f"Student-t, $\\nu$ = {nu_:.1f}", f"Student-t, $\\nu$ = {nu_:.1f}".replace(".", ",")))
     ax.set_yscale("log")
     ax.set_ylim(1e-4, 1)
+    ax.set_yticks([1e-4, 1e-2, 1])
+    ax.set_yticklabels([T(s_, s_.replace(".", ",")) for s_ in ["0.0001", "0.01", "1"]])
+    ax.minorticks_off()
     ax.set_xlabel(T("standardised shock $z_t$", "șocul standardizat $z_t$"), fontsize=9)
     ax.set_ylabel(T("density (log)", "densitatea (log)"), fontsize=9)
     ax._keep_y = True
@@ -850,8 +853,8 @@ for lang in ["en", "ro"]:
     axs[1].plot(hb, z95 * np.sqrt(hb * lrb_), color="#222222", lw=0.8, ls="--")
     axs[1].set_xlabel(T("horizon $h$ (trading days)", "orizontul $h$ (zile de tranzacționare)"), fontsize=9)
     axs[1].set_ylabel("$\\pm$%", fontsize=9)
-    axs[1].set_title(T(f"Brent, {MON_EN[BPEAK.month - 1]} {BPEAK.day}: 90% band over $h$ days",
-                       f"Brent, {BPEAK.day} {MON_RO[BPEAK.month - 1]}: banda de 90% pe $h$ zile"), fontsize=9.5)
+    axs[1].set_title(T(f"Brent, {MON_EN[BPEAK.month - 1]} {BPEAK.day}, {BPEAK.year}: 90% band over $h$ days",
+                       f"Brent, {BPEAK.day} {MON_RO[BPEAK.month - 1]} {BPEAK.year}: banda de 90% pe $h$ zile"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "term_structure", bottom=0.27)
 

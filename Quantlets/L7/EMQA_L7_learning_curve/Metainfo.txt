@@ -8,7 +8,7 @@ Keywords: 'early stopping, learning curve, overfitting, neural network, epochs, 
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved learning curves of the chosen DNN (learning_curve_results.npz, from lectures/L7/cache/ml.pkl)'
 

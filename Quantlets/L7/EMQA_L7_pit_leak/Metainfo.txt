@@ -8,7 +8,7 @@ Keywords: 'look-ahead bias, data leakage, cross-validation, walk-forward evaluat
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved test-year forecasts of the three XGBoost evaluations and of AW-LEAR (pit_leak_results.npz)'
 

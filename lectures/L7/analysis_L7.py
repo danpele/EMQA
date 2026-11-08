@@ -1092,7 +1092,7 @@ def mfmt(ax, lang, step=1):
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
     mon = MON_RO if lang == "ro" else MON_EN
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: mon[mdates.num2date(v).month - 1] +
-                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 else "")))
+                                               (f"\n{mdates.num2date(v).year}" if mdates.num2date(v).month == 1 or p == 0 else "")))
 
 
 DAYN = {"en": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], "ro": ["lun.", "mar.", "mie.", "joi", "vin.", "sîm.", "dum."]}
@@ -1104,11 +1104,11 @@ for lang in ["en", "ro"]:
     L = lambda k: LAB[k][0 if lang == "en" else 1]  # noqa: E731
     # 1 three chronological samples
     fig, ax = plt.subplots(figsize=(6.4, 1.45))
-    ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color=PAL["HU"], alpha=0.12, lw=0,
+    ax.axvspan(CAL[FIRST], VAL0 - pd.Timedelta(days=1), color="#d3eee3", lw=0,
                label=T("training (grows each month)", "antrenare (crește în fiecare lună)"))
-    ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color=PAL["BG"], alpha=0.28, lw=0,
+    ax.axvspan(VAL0, TEST0 - pd.Timedelta(days=1), color="#fbe2ad", lw=0,
                label=T("validation year: choose hyperparameters", "anul de validare: alegerea hiperparametrilor"))
-    ax.axvspan(TEST0, END, color=PAL["DE_LU"], alpha=0.2, lw=0, label=T("test year (as in Lecture 2)", "anul de test (ca în cursul 2)"))
+    ax.axvspan(TEST0, END, color="#dcd7f6", lw=0, label=T("test year (as in Lecture 2)", "anul de test (ca în cursul 2)"))
     ax.plot(DAILY.index, DAILY.values, color=PAL["RO"], lw=0.8, label=T("Romania, daily base price", "România, prețul zilnic de bază"))
     ax.set_ylabel("EUR/MWh")
     ax.set_xlim(CAL[0], END)
@@ -1183,7 +1183,7 @@ for lang in ["en", "ro"]:
     fig, ax = plt.subplots(figsize=(6.4, 1.6))
     for k in ["aw_lear", "xgb", "dnn", "bolt", "chr2", "ens_ldx", "ens_lc"]:
         ax.plot(max(sec[k], 1) / 60, N["acc"][k]["mae"], "o", color=COL[k], ms=6)
-        off = {"aw_lear": (7, 0), "ens_ldx": (7, 0), "ens_lc": (7, 0), "xgb": (7, 0), "dnn": (7, 0), "bolt": (7, 0), "chr2": (7, 0)}[k]
+        off = {"aw_lear": (7, 0), "ens_ldx": (7, 0), "ens_lc": (7, 0), "xgb": (7, 4), "dnn": (7, -5), "bolt": (7, 0), "chr2": (7, 0)}[k]
         ax.annotate(L(k), (max(sec[k], 1) / 60, N["acc"][k]["mae"]), textcoords="offset points", xytext=off, fontsize=9.5, va="center")
     ax.set_xscale("log")
     ax.set_xlabel(T("compute time for the test year, minutes on one core (log scale)", "timpul de calcul pentru anul de test, minute pe un nucleu (scară log.)"), fontsize=9.5)
@@ -1191,6 +1191,8 @@ for lang in ["en", "ro"]:
     xl, yl = ax.get_xlim(), ax.get_ylim()
     ax.set_xlim(xl[0], xl[1] * 12)
     ax.set_ylim(yl[0] - 0.25, yl[1] + 0.15)
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{v:g}".replace(".", "," if lang == "ro" else ".")))
+    ax.xaxis.set_minor_formatter(FuncFormatter(lambda v, p: ""))
     out(fig, lang, "cost_gain", bottom=0.02)
     # 8 SHAP global
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
@@ -1212,7 +1214,7 @@ for lang in ["en", "ro"]:
     xr, sr = XS[:, :, res_j], SH[:, :, res_j]
     day_h = np.zeros_like(xr, bool)
     day_h[:, 9:17] = True
-    for msk, c, lb in [(~day_h, "#5b6fa8", T("hours 17-08", "orele 17-08")), (day_h, PAL["BG"], T("hours 09-16 (sun)", "orele 09-16 (soare)"))]:
+    for msk, c, lb in [(~day_h, "#5b6fa8", T("hours 17:00-08:00", "orele 17:00-08:00")), (day_h, PAL["BG"], T("hours 09:00-16:00 (sun)", "orele 09:00-16:00 (soare)"))]:
         ax.scatter(xr[msk] / 1000, sr[msk], s=1.2, alpha=0.35, color=c, lw=0, label=lb, rasterized=True)
     ax.axhline(0, color="#222222", lw=0.6)
     ax.set_xlabel(T("wind+solar on d-2, same hour (GW)", "producția eoliană și solară din d-2, aceeași oră (GW)"))
@@ -1266,7 +1268,7 @@ for lang in ["en", "ro"]:
     ax.set_ylim(min(0, VCURVE[CUTS >= 0.1].min()) - 3, VCURVE.max() * 1.25)
     ax.axhline(0, color="#222222", lw=0.5)
     ax.set_xlabel(T("action threshold (probability of a spike)", "pragul de reacție (probabilitatea unui vîrf)"))
-    ax.set_ylabel(T("value\n(10$^3$ EUR/MW)", "valoare\n(10$^3$ EUR/MW)"), fontsize=10)
+    ax.set_ylabel(T("value\n(thousand\nEUR/MW)", "valoare\n(mii EUR/MW)"), fontsize=9.5)
     legend_bottom(fig, ncol=3)
     out(fig, lang, "decision", bottom=0.22, also_x=[ax])
     # 14 data snooping
@@ -1279,8 +1281,8 @@ for lang in ["en", "ro"]:
         ax.axhline(LEAR_MAE, color=PAL["RO"], ls="--", lw=1.0, label=T("AW-LEAR, test year", "AW-LEAR, anul de test"))
         ax.set_ylim(min(LEAR_MAE, Tt.min()) - 0.4, Tt.max() + 0.3)
         ax.set_title(nm, fontsize=10)
-        ax.set_xlabel(T("MAE, validation year", "MAE, anul de validare"), fontsize=9.5)
-    axs[0].set_ylabel(T("MAE, test year", "MAE, anul de test"), fontsize=9.5)
+        ax.set_xlabel(T("MAE, validation year (EUR/MWh)", "MAE, anul de validare (EUR/MWh)"), fontsize=9.5)
+    axs[0].set_ylabel(T("MAE, test year\n(EUR/MWh)", "MAE, anul de test\n(EUR/MWh)"), fontsize=9.5)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "snooping", bottom=0.27, also_x=list(axs))
     # 15 look-ahead pitfalls
@@ -1324,7 +1326,7 @@ for lang in ["en", "ro"]:
         axs[0].plot(xs_, M[k][cw].ravel(), color=COL[k], ls=ls, lw=1.0, label=L(k))
     axs[0].plot(xs_, np.repeat(TH_T[cw], 24), color="#6b6b6b", lw=0.9, ls=":", label=T("spike threshold", "pragul de vîrf"))
     axs[0].set_ylabel("EUR/MWh")
-    axs[1].fill_between(xs_, 0, Y_SP[cw].ravel(), step="mid", color=PAL["c8"], alpha=0.18, lw=0, label=T("actual spike hour", "oră cu vîrf"))
+    axs[1].fill_between(xs_, 0, Y_SP[cw].ravel(), step="mid", color="#f7d0d0", lw=0, label=T("actual spike hour", "oră cu vîrf"))
     axs[1].plot(xs_, CS["xgb"][cw].ravel(), color=PAL["BG"], lw=1.1, label=T("spike probability", "probabilitatea vîrfului"))
     axs[1].axhline(C_ACT / LBAR, color=PAL["DE_LU"], ls="--", lw=0.8, label="C/L")
     axs[1].set_ylim(0, 1)

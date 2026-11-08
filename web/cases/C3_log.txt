@@ -1,0 +1,22 @@
+EMQA web case C3
+[en] 6 sections, 4 numbered figures, 2 tables; acronyms: EU, CEE, BET, TTF, DCC-GARCH, GARCH, TVP-VAR, CC, DCC, SNP, SNG, SNN, EODHD, ECB, RO, ICE
+[en] expanded at first use: BET -> Bucharest Exchange Trading, the main index of the Bucharest Stock Exchange  [...ntroduction)?Data. 27 national indices (Romania's | included), generic Brent and ...]
+[en] expanded at first use: TTF -> Title Transfer Facility  [...ania's BET included), generic Brent and European (|) gas futures, Bloomberg, 2010...]
+[en] expanded at first use: CC -> Creative Commons  [...d manuscript; the published article (open access, | BY) may number pages differen...]
+[en] expanded at first use: DCC -> dynamic conditional correlation  [...o each return,  , and standardises it:  .
+Step 2 (|) updates a “quasi-correlation...]
+[en] expanded at first use: EODHD -> EOD Historical Data, a market-data provider  [...dend-adjusted closing prices of SNP, SNG and SNN (|) and Brent in EUR (Yahoo Fina...]
+[en] expanded at first use: ECB -> European Central Bank  [... and SNN (EODHD) and Brent in EUR (Yahoo Finance, |), 06 January 2015 – 04 Novemb...]
+[en] expanded at first use: RO -> Romania  [...2026, 2,860 common trading days; an equal-weight “| energy basket”.
+Classroom imp...]
+[en] expanded at first use: ICE -> Intercontinental Exchange  [...ndex; BET is not in our data.
+(iii) Bucharest and | trading days differ; returns ...]
+[ro] 6 sections, 4 numbered figures, 2 tables; acronyms: UE, ECE, BET, TTF, DCC-GARCH, GARCH, TVP-VAR, CC, DCC, SNP, SNG, SNN, EODHD, BCE, RO, ICE
+[ro] expanded at first use: BET -> Bucharest Exchange Trading, indicele principal al Bursei de Valori București  [...7 de indici bursieri naționali (inclusiv indicele | al Bursei de Valori București...]
+[ro] expanded at first use: TTF -> Title Transfer Facility  [...generice pe Brent și pe gazele naturale europene (|), Bloomberg, 2010–2023; date ...]
+[ro] expanded at first use: CC -> Creative Commons  [... al autorilor; articolul publicat (acces deschis, | BY) poate avea altă paginare....]
+[ro] expanded at first use: EODHD -> EOD Historical Data, furnizor de date de piață  [... pentru dividende ale acțiunilor SNP, SNG și SNN (|) și prețul Brent în EUR (Yaho...]
+[ro] expanded at first use: BCE -> Banca Centrală Europeană  [...NN (EODHD) și prețul Brent în EUR (Yahoo Finance, |), 06.01.2015 – 04.11.2026, 2....]
+[ro] expanded at first use: RO -> România  [...ranzacționare comune; construim un „coș energetic |” cu ponderi egale.
+Față de lu...]
+[ro] expanded at first use: ICE -> Intercontinental Exchange  [...cționare de la Bursa de Valori București și de la | nu coincid; randamentele de d...]

@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261107a">
-<link rel="stylesheet" href="interactive.css?v=20261107a">
+<link rel="stylesheet" href="../assets/site.css?v=20261108a">
+<link rel="stylesheet" href="interactive.css?v=20261108a">
 <script>window.EMQA_LANG = 'ro';</script>
-<link rel="preload" as="script" href="L5.js?v=20261107a">
+<link rel="preload" as="script" href="L5.js?v=20261108a">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261107a", "L5_text_ro.js?v=20261107a", "common.js?v=20261107a"], "L5.js?v=20261107a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261108a", "L5_text_ro.js?v=20261108a", "common.js?v=20261108a"], "L5.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -63,7 +63,7 @@
     <div class="live"><div class="ctls"><div class="ctl"><label for="fc-t">Curba la sfîrșitul lunii: <b id="fc-t-v"></b></label><input type="range" id="fc-t" min="0" max="1" step="1" value="1"></div><div class="ctl"><label for="fc-w">Fereastra licitațiilor (luni): <b id="fc-w-v"></b></label><input type="range" id="fc-w" min="1" max="6" step="1" value="2"></div><button class="btn play" id="fc-play" type="button"></button></div><div class="charts one"><div class="chart" id="fc-chart"></div></div><ul class="out" id="fc-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_fwd_curve" target="_blank" rel="noopener">EMQA_L5_fwd_curve</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_fwd_curve/EMQA_L5_fwd_curve.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> La sfîrșitul lui octombrie 2026, media PZU (piața pentru ziua următoare) din România în octombrie era 239,32 EUR/MWh, iar banda pentru anul calendaristic 2027 se tranzacționa la 148,12 EUR/MWh. Înseamnă panta descendentă a curbei că piața se așteaptă ca prețul spot să scadă cu aproximativ 90 EUR/MWh?</div>
-  <details><summary>Răspuns</summary><p>Nu întocmai. Prețul forward este prețul spot așteptat plus o primă de risc, iar o parte din diferență este sezonieră: noiembrie și decembrie 2026 s-au tranzacționat la 215,33 și 214,27 EUR/MWh, primul trimestru din 2027 la 176,69, iar anul întreg la 148,12, care include și vara ieftină, cu producție solară mare. Mutați cursorul înapoi: în 2022, curba cobora de la un spot de criză, iar produsul Cal-23 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 media PZU a fost 103,74 EUR/MWh.</p></details>
+  <details><summary>Răspuns</summary><p>Nu întocmai. Prețul forward este prețul spot așteptat plus o primă de risc, iar o parte din diferență este sezonieră: noiembrie și decembrie 2026 s-au tranzacționat la 215,33 și 214,27 EUR/MWh, primul trimestru din 2027 la 176,69, iar anul întreg la 148,12, care include și vara ieftină, cu producție solară mare. Mutați cursorul înapoi: în 2022, curba cobora de la un spot de criză, iar produsul Cal-2023 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 media PZU a fost 103,74 EUR/MWh.</p></details>
 </section><h2 class="sec" id="s-spr">Spread-urile: marjele centralelor electrice</h2>
 <section class="blk" id="spreads">
   <h3>Clean spark spread și clean dark spread, lunar</h3>

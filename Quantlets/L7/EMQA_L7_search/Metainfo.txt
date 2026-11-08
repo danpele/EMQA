@@ -8,7 +8,7 @@ Keywords: 'random search, hyperparameter tuning, validation, neural network, XGB
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'hourly Romanian day-ahead prices (OPCOM PZU, via energy-charts.info), data/clean/power_da_prices_hourly_utc.csv; saved validation MAE of the 25 configurations of each model (search_results.npz, from lectures/L7/cache/ml.pkl); RUN_ALL also uses load, wind and solar generation, hydro, nuclear, net imports and the EUA price from data/clean'
 

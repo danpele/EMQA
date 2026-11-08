@@ -69,7 +69,7 @@
   "collar": {
    "source_en": "OPCOM PCCB-LE-flex; ECB (\u20acSTR); Black-76",
    "source_ro": "OPCOM PCCB-LE-flex; BCE (\u20acSTR); Black-76",
-   "period_en": "F = Cal-27 baseload, auctions 2026-09-01 to 2026-10-31",
+   "period_en": "F = Cal-2027 baseload, auctions 2026-09-01 to 2026-10-31",
    "period_ro": "F = banda pentru 2027, licita\u021bii 2026-09-01 - 2026-10-31"
   },
   "case2026": {

@@ -8,7 +8,7 @@ Keywords: 'cross-border flows, interconnection, market coupling, Romania, Bulgar
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'crossborder_ro_mw_hourly_utc.csv: physical flows of Romania per border (MW, + = import), hourly, energy-charts.info / ENTSO-E; power_da_prices_hourly_utc.csv: hourly day-ahead prices of Romania (OPCOM) and Bulgaria (IBEX), EUR/MWh'
 

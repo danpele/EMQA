@@ -8,7 +8,7 @@ Keywords: 'cointegration, error-correction model, gas price, TTF, hydro generati
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Daily day-ahead prices of Romania (power_da_prices_daily_cet.csv); hourly hydro generation of Romania (generation_ro_mw_hourly_utc.csv); monthly TTF gas price (ttf_monthly.csv, World Bank Pink Sheet)'
 

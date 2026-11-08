@@ -80,9 +80,9 @@ def fig_erm(lang):
     ax.plot(erm_m.index + pd.Timedelta(days=14), erm_m, color=cu.PAL["c8"], lw=1.6, label=cu.T(lang, "Monthly (inverse-volatility weights)", "Valori lunare (ponderi invers proporționale cu volatilitatea)"))
     for d, l in EVENTS:
         ax.axvline(pd.Timestamp(d), color=cu.EVENT, lw=0.8, ls=":")
-        ax.text(pd.Timestamp(d), ax.get_ylim()[1] if False else erm.max() * 1.02, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=8, va="bottom")
+        ax.text(pd.Timestamp(d), ax.get_ylim()[1] if False else erm.max() * 1.02, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=9, va="bottom")
     ax.set_yscale("log")
-    ax.set_ylabel(cu.T(lang, "Average LASSO penalty $\\lambda$ (log scale)", "Penalizarea LASSO medie $\\lambda$ (scară logaritmică)"))
+    ax.set_ylabel(cu.T(lang, "Average LASSO penalty $\\lambda$\n(log scale)", "Penalizarea LASSO medie $\\lambda$\n(scară logaritmică)"))
     cu.legend_bottom(fig, ncol=2)
     return fig
 cu.save_both(fig_erm, "f1_risk_meter", headline=True)
@@ -169,7 +169,8 @@ def fig_pv(lang):
     fig, ax = plt.subplots(figsize=(6.6, 3.1))
     ax.bar(mon.index, mon.premium_eur, width=25, color=np.where(mon.premium_eur > 0, cu.PAL["c8"], cu.PAL["HU"]))
     ax.axhline(0, color=cu.INK, lw=0.5)
-    ax.set_ylabel(cu.T(lang, "Load-weighted minus base price,\nEUR/MWh", "Prețul ponderat cu consumul minus\nprețul de bază, EUR/MWh"))
+    ax.set_ylabel(cu.T(lang, "Load-weighted $-$ base\nprice, EUR/MWh", "Preț ponderat cu consumul\n$-$ preț de bază, EUR/MWh"))
+    cu.comma_axis(ax, lang, "y")
     return fig
 cu.save_both(fig_pv, "f3_price_volume")
 '''),
@@ -198,9 +199,10 @@ def fig_hydro(lang):
     fig, ax = plt.subplots(figsize=(4.8, 3.4))
     ax.scatter(H.hydro_TWh, H.price, s=40, color=cu.PAL["RO"], zorder=3)
     for y_, r_ in H.iterrows():
-        ax.annotate(str(y_), (r_.hydro_TWh, r_.price), textcoords="offset points", xytext=(4, 3), fontsize=8)
+        ax.annotate(str(y_), (r_.hydro_TWh, r_.price), textcoords="offset points", fontsize=9,
+                    xytext=(-4, -4) if y_ == 2020 else (4, 3), ha="right" if y_ == 2020 else "left", va="top" if y_ == 2020 else "baseline")
     ax.axvline(P50, color=cu.MUTED, ls="--", lw=0.8)
-    ax.text(P50, H.price.max(), " P50", color=cu.MUTED, fontsize=8, va="top")
+    ax.text(P50, H.price.max(), cu.T(lang, " P50 (median)", " P50 (mediana)"), color=cu.MUTED, fontsize=9, va="top")
     ax.set_xlabel(cu.T(lang, "Romanian hydro output, TWh per year", "Producția hidro a României, TWh pe an"))
     ax.set_ylabel(cu.T(lang, "Average day-ahead price, EUR/MWh", "Prețul mediu PZU, EUR/MWh"))
     cu.comma_axis(ax, lang, "x", 1)

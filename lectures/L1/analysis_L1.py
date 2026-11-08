@@ -584,8 +584,8 @@ TXT = {
            "neg_mh": "Hours", "solar_y": "Solar, RO, TWh (metered)", "rohourly": "RO hourly price, 2024",
            "thr": "Spike threshold Q3 + 3 IQR = {v} EUR/MWh", "level": "Level $p_t$, EUR/MWh", "mtus": "Count",
            "asinh": "Variance-stabilised: asinh", "tv": "transformed value", "allmtu": "RO 15-min prices, Jan-{m} {y}",
-           "qq": "Q-Q plot", "nq": "Normal quantile", "eq": "Empirical", "brent_r": "Brent returns (standardised)",
-           "normal": "Normal", "studt": "Student-t, df = {v}", "dens": "Density (log scale)", "stdr": "standardised return",
+           "qq": "Q-Q plot", "nq": "Normal quantile", "eq": "Empirical\nquantile", "brent_r": "Brent returns (standardised)",
+           "normal": "Normal", "studt": "Student-t, {v} degrees of freedom", "dens": "Density (log scale)", "stdr": "standardised return",
            "ret": "Brent daily log return, %", "vol": "21-day volatility, % a year", "pa": "% a year",
            "wn": "White noise", "ar": "AR(1), $\\phi=0.9$", "rw": "Random walk", "lag": "lag $k$", "sacf": "sample ACF",
            "acf_t": "ACF, RO daily price (level)", "pacf_t": "PACF, RO daily price (level)", "lagd": "lag (days)", "lagh": "lag (hours)",
@@ -600,7 +600,7 @@ TXT = {
            "sum24": "Summer 2024, daily base", "d16": "16 July 2024, hourly", "hcest": "Hour (CEST)",
            "dailyb": "EUR/MWh", "evsp": "RO − BG, 19-22 h EET",
            "bdis": "BG battery discharge", "bch": "BG battery charging", "mw": "MW",
-           "upto": "{y} (to {m})", "nucl": "Nuclear", "naive": "naive", "mae": "MAE\n(EUR/MWh)", "noreport": "no data", "brent_s": "Brent, USD/bbl", "dec_l": "Load and trend, GW", "dec_s": "Seasonal component, GW",
+           "upto": "{y} (to {m})", "nucl": "Nuclear", "naive": "naive", "mae": "MAE, EUR/MWh", "noreport": "no data", "brent_s": "Brent, USD/bbl", "dec_l": "Load and trend, GW", "dec_s": "Seasonal component, GW",
            "zs": {"RO": "RO (OPCOM PZU)", "BG": "BG (IBEX)", "HU": "HU (HUPX)", "DE_LU": "DE-LU (EPEX SPOT)"}},
     "ro": {"load": "Consum", "twh": "TWh pe an", "gen_title": "Producție pe surse, TWh",
            "share": "% din producție", "ytd_title": "ian.-{m}, aceleași ore în ambii ani",
@@ -614,7 +614,7 @@ TXT = {
            "neg_mh": "Ore", "solar_y": "Solar, RO, TWh (măsurat)", "rohourly": "Preț orar RO, 2024",
            "thr": "Prag de vîrf Q3 + 3 IQR = {v} EUR/MWh", "level": "Nivel $p_t$, EUR/MWh", "mtus": "Număr",
            "asinh": "Varianță stabilizată: asinh", "tv": "valoare transformată", "allmtu": "Prețuri RO de 15 min, ian.-{m} {y}",
-           "qq": "Grafic Q-Q", "nq": "Cuantilă normală", "eq": "Empirică", "brent_r": "Brent (standardizat)",
+           "qq": "Grafic Q-Q", "nq": "Cuantilă normală", "eq": "Cuantilă\nempirică", "brent_r": "Brent (standardizat)",
            "normal": "Normală", "studt": "Student-t, {v} grade de libertate", "dens": "Densitate (scară logaritmică)",
            "stdr": "randament standardizat", "ret": "Randament logaritmic zilnic Brent, %", "vol": "Volatilitate 21 de zile, % pe an",
            "pa": "% pe an", "wn": "Zgomot alb", "ar": "AR(1), $\\phi=0{,}9$", "rw": "Mers aleator", "lag": "decalaj $k$",
@@ -629,8 +629,8 @@ TXT = {
            "month_pt": "o lună", "bclose": "Brent, preț de închidere, USD/bbl", "a13": "13 iun.: Israelul atacă Iranul",
            "apk": "maximul", "a24": "24 iun.: armistițiul intră în vigoare", "sum24": "Vara 2024, preț de bază zilnic",
            "d16": "16 iulie 2024, orar", "hcest": "Ora (CEST)", "dailyb": "EUR/MWh",
-           "evsp": "RO − BG, 19-22 EET", "bdis": "Descărcare baterii BG",
-           "bch": "Încărcare baterii BG", "mw": "MW", "upto": "{y} (pînă în {m})", "nucl": "Nuclear", "naive": "naiv", "mae": "MAE\n(EUR/MWh)",
+           "evsp": "RO − BG, orele 19-22 EET", "bdis": "Descărcare baterii BG",
+           "bch": "Încărcare baterii BG", "mw": "MW", "upto": "{y} (pînă în {m})", "nucl": "Nuclear", "naive": "naiv", "mae": "MAE, EUR/MWh",
            "noreport": "fără date", "brent_s": "Brent, USD/bbl", "dec_l": "Consum și trend, GW", "dec_s": "Componenta sezonieră, GW",
            "zs": {"RO": "RO (OPCOM PZU)", "BG": "BG (IBEX)", "HU": "HU (HUPX)", "DE_LU": "DE-LU (EPEX SPOT)"}},
 }
@@ -700,7 +700,7 @@ for lang in ["en", "ro"]:
     T = TXT[lang]
     mlast = (MON_EN if lang == "en" else MON_RO)[END.month - 1]
     # mix
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.5), gridspec_kw={"width_ratios": [1.45, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.5), gridspec_kw={"width_ratios": [2.0, 1]})
     bot = np.zeros(len(full_years))
     for k in ORDER:
         axs[0].bar(full_years, mix.loc[full_years, k].values, bottom=bot, color=SCOL[k], label=T["src"][k], width=0.72,
@@ -708,16 +708,15 @@ for lang in ["en", "ro"]:
         bot += mix.loc[full_years, k].values
     axs[0].plot(full_years, load_twh.loc[full_years], "k_", ms=17, mew=2.2, label=T["load"])
     axs[0].set_ylabel(T["twh"])
-    axs[0].set_xticks(full_years)
-    axs[0].set_xticklabels([str(y)[2:] for y in full_years])
+    ep.year_ticks(axs[0], full_years)
     sh = pd.DataFrame({0: [L[k]["share_prev"] for k in ORDER], 1: [L[k]["share_ytd"] for k in ORDER]}, index=ORDER)
     bot = np.zeros(2)
     for k in ORDER:
         axs[1].bar([0, 1], sh.loc[k].values, bottom=bot, color=SCOL[k], width=0.55, edgecolor="white", lw=0.8)
         for i_ in range(2):
-            if sh.loc[k].values[i_] > 4:
+            if sh.loc[k].values[i_] >= 9:          # label only segments tall enough for the text; dark text on light colours
                 axs[1].text(i_, bot[i_] + sh.loc[k].values[i_] / 2, f"{sh.loc[k].values[i_]:.0f}%", ha="center",
-                            va="center", fontsize=9, color="white")
+                            va="center", fontsize=8.5, color="#222222" if k in ("Solar", "Wind") else "white")
         bot += sh.loc[k].values
     axs[1].set_xticks([0, 1])
     axs[1].set_xticklabels([str(Y - 1), str(Y)])
@@ -753,6 +752,7 @@ for lang in ["en", "ro"]:
     axs[1].bar(range(1, 13), mprof["price_ratio"], color=PAL["RO"], width=0.65, label=T["pratio"])
     axs[1].axhline(1.0, color="#222222", lw=0.8)
     axs[1].set_ylim(0.6, 1.4)
+    axs[1].set_ylabel("ratio" if lang == "en" else "raport")
     axs[1].set_title(T["price_month"])
     for ax in axs:
         month_ticks(ax, lang)
@@ -768,6 +768,7 @@ for lang in ["en", "ro"]:
     ax.axhline(0, color="#222222", lw=0.6)
     ax.set_ylabel("EUR/MWh")
     month_fmt(ax, lang)
+    ax.set_xlim(s24h.index[0] - pd.Timedelta(days=4), s24h.index[-1] + pd.Timedelta(hours=1))
     legend_bottom(fig, ncol=2)
     out(fig, lang, "spikes_ro_2024")
     # negative per year + by hour
@@ -799,8 +800,7 @@ for lang in ["en", "ro"]:
     axs[0].set_title(T["neg_month"], fontsize=10.5)
     sy = [y for y in full_years if y >= 2018]
     axs[1].bar(sy, [mix.loc[y, "Solar"] for y in sy], color=PAL["BG"], width=0.6)
-    axs[1].set_xticks(sy)
-    axs[1].set_xticklabels([str(y)[2:] for y in sy])
+    ep.year_ticks(axs[1], sy)
     axs[1].set_title(T["solar_y"], fontsize=10.5)
     legend_bottom(fig, ncol=4)
     out(fig, lang, "negative_solar")
@@ -817,13 +817,13 @@ for lang in ["en", "ro"]:
     axs[1].set_title(T["asinh"], fontsize=10.5)
     out(fig, lang, "asinh_ro", bottom=0.0, also_x=[axs[1]])
     # tails
-    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.85))
+    fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95))
     zz = (rb - rb.mean()) / rb.std()
     osm, osr = stats.probplot(zz, dist="norm", fit=False)
     axs[0].plot(osm, osr, "o", ms=2.5, color=PAL["RO"], label=T["brent_r"])
     axs[0].plot([-4.5, 4.5], [-4.5, 4.5], color=PAL["c8"], lw=1.2, label=T["normal"])
     axs[0].set_xlabel(T["nq"])
-    axs[0].set_ylabel(T["eq"])
+    axs[0].set_ylabel(T["eq"], fontsize=9.5)
     axs[0].set_title(T["qq"])
     xs = np.linspace(-8, 8, 400)
     sc = np.sqrt(tpar[0] / (tpar[0] - 2))
@@ -838,11 +838,14 @@ for lang in ["en", "ro"]:
     legend_bottom(fig, ncol=3)
     out(fig, lang, "tails_brent")
     # volatility clustering
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 1.75), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 1.8), sharex=True)
     axs[0].plot(rb.index, rb, color=PAL["RO"], lw=0.6, label=T["ret"])
     axs[1].plot(vol.index, vol, color=PAL["DE_LU"], lw=1.0, label=T["vol"])
-    axs[0].set_ylabel("%")
-    axs[1].set_ylabel(T["pa"])
+    axs[0].set_ylabel("%", fontsize=8.5)
+    axs[1].set_ylabel(T["pa"], fontsize=8.5)
+    for ax in axs:
+        ax.yaxis.set_major_locator(plt.MaxNLocator(2))
+    fig.align_ylabels(axs)
     legend_bottom(fig, ncol=2)
     out(fig, lang, "volclust_brent", bottom=0.13)
     # simulation (teaching only)
@@ -858,7 +861,9 @@ for lang in ["en", "ro"]:
         axs[1, j].set_ylim(-0.3, 1.05)
         axs[1, j].set_yticks([0, 1])
         axs[1, j].set_xlabel(T["lag"])
-    axs[1, 0].set_ylabel(T["sacf"])
+    axs[0, 0].set_ylabel("$x_t$", fontsize=9.5)
+    axs[1, 0].set_ylabel("ACF", fontsize=9.5)
+    fig.align_ylabels(axs[:, 0])
     out(fig, lang, "sim_wn_ar_rw", bottom=0.0)
     # ACF / PACF daily
     fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.7))
@@ -934,7 +939,7 @@ for lang in ["en", "ro"]:
     # June 2025
     bw = b.loc["2025-06-02":"2025-07-04"]
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
-    ax.plot(bw.index, bw, color=PAL["RO"], marker="o", ms=4, label=T["bclose"])
+    ax.plot(bw.index, bw, color="#222222", marker="o", ms=3.5, label=T["bclose"])
     # labels sit in free corners of the axes (axes fraction), with a thin leader line to their point
     for dt_, txt, xy_txt, ha in [("2025-06-13", T["a13"], (0.02, 0.90), "left"), (str(win.idxmax().date()), T["apk"], (0.68, 0.93), "left"),
                                  ("2025-06-24", T["a24"], (0.99, 0.10), "right")]:
@@ -947,6 +952,7 @@ for lang in ["en", "ro"]:
         ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"{mdates.num2date(v).day} {MON_RO[mdates.num2date(v).month - 1]}"))
     else:
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%-d %b"))
+    ax.set_xlabel(("June " if lang == "en" else "iunie ") + str(bw.index[0].year), fontsize=10)
     legend_bottom(fig, ncol=1)
     out(fig, lang, "iran_brent", bottom=0.13)
     # separation 2024
@@ -970,7 +976,7 @@ for lang in ["en", "ro"]:
     for z in ["DE_LU", "HU", "BG", "RO"]:
         axs[0].plot(pY.index, pY[z], color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=ZL[z])
     axs[0].set_ylabel("EUR/MWh", fontsize=9.5)
-    axs[1].plot(bY.index, bY, color=PAL["c7"], lw=1.3, label="Brent")
+    axs[1].plot(bY.index, bY, color="#222222", lw=1.3, label="Brent")
     axs[1].set_ylabel("USD/bbl", fontsize=9.5)
     month_fmt(axs[1], lang)
     fig.align_ylabels(axs)
@@ -1080,25 +1086,26 @@ for lang in ["en", "ro"]:
         ax.tick_params(axis="x", labelsize=8)
     out(fig, lang, "cy_extremes", bottom=0.14)
     # naive benchmark: RO, last three years
-    fig, ax = plt.subplots(figsize=(6.4, 1.3))
+    fig, ax = plt.subplots(figsize=(6.4, 1.4))
     yrs_ = [str(y) for y in range(Y - 2, Y + 1)]
     for i_, (k_, lab_, col_) in enumerate([("naive", T["naive"], PAL["RO"]), ("lag1", "d-1", PAL["HU"]), ("lag7", "d-7", PAL["DE_LU"])]):
         ax.bar(np.arange(3) + (i_ - 1) * 0.26, [nv["RO"][y][k_] for y in yrs_], width=0.25, color=col_, label=lab_)
     ax.set_xticks(range(3))
     ax.set_xticklabels([y if y != str(Y) else f"{Y} ({T['ytd']})" for y in yrs_])
-    ax.set_ylabel(T["mae"])
+    ax.text(0, 1.04, T["mae"], transform=ax.transAxes, fontsize=9.5, ha="left", va="bottom")   # unit above the axis
     legend_bottom(fig, ncol=3)
     out(fig, lang, "naive_bar", bottom=0.12)
     # RO-BG evening spread and BG batteries
-    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.0), sharex=True, gridspec_kw={"height_ratios": [1.4, 1]})
+    fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={"height_ratios": [1.4, 1]})
     xi = ev_sp.index.to_timestamp()
     axs[0].bar(xi, ev_sp.values, width=20, color=[PAL["RO"] if v >= 0 else PAL["c8"] for v in ev_sp.values], label=T["evsp"])
     axs[0].axhline(0, color="#222222", lw=0.6)
-    axs[0].set_ylabel("EUR/MWh")
+    axs[0].set_ylabel("EUR/MWh", fontsize=8.5)
     bi = batm.index.to_timestamp()
     axs[1].bar(bi - pd.Timedelta(days=5), batm["battery"].values, width=9, color=PAL["HU"], label=T["bdis"])
     axs[1].bar(bi + pd.Timedelta(days=5), -batm["battery_consumption"].values, width=9, color=PAL["BG"], label=T["bch"])
-    axs[1].set_ylabel(T["mw"])
+    axs[1].set_ylabel(T["mw"], fontsize=8.5)
+    fig.align_ylabels(axs)
     axs[1].set_xlim(pd.Timestamp("2022-12-15"), pd.Timestamp(END) + pd.Timedelta(days=20))
     axs[1].xaxis.set_major_locator(mdates.YearLocator())
     axs[1].xaxis.set_major_formatter(mdates.DateFormatter("%Y"))

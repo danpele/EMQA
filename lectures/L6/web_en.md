@@ -29,7 +29,7 @@ Solar, wind and battery output and electricity consumption (load) come from the 
 
 The period runs from 2019 to 31 Oct 2026, the last complete month. On this page "2026" means Jan–Oct 2026, and "the last 12 months" means Nov 2025 – Oct 2026. Delivery days are defined in Central European Time (CET). Energy is always the mean power in megawatts (MW) multiplied by the duration, so a 15-minute market time unit (MTU) counts 0.25 h.
 
-## Installed solar in Romania grew 2.4 times from 2019 to 2025 {h=bafc4c8f}
+## Installed solar in Romania grew 2.4 times from 2019 to 2025 {h=efb04348}
 
 Installed solar capacity in Romania rose from 1.16 gigawatts (GW) at the end of 2019 to 2.79 GW at the end of 2025, 2.4 times more. Output followed: from January to October, Romanian solar plants produced 2.53 terawatt-hours (TWh) in 2025 and 4.32 TWh in 2026. Measured against consumption, solar covered 2.3% of load in 2019 and 10.2% in 2026.
 

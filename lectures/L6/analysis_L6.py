@@ -676,11 +676,9 @@ for lang in ["en", "ro"]:
     for i, z in enumerate(("RO", "BG", "HU")):
         axs[0].bar(np.array(cy) + (i - 1) * wdt, [N["cap"]["solar"][z][str(y)] for y in cy], width=wdt, color=PAL[z], label=ZN[lang][z])
     axs[0].set_ylabel(T("installed solar\n(GW)", "putere solară\ninstalată (GW)"), fontsize=9)
-    axs[0].set_xticks(cy)
-    axs[0].set_xticklabels([str(y)[2:] for y in cy])
+    ep.year_ticks(axs[0], cy, rotate=True, fontsize=8.5)
     axs[1].bar(range(len(YEARS)), [twh[str(y)]["solar"] for y in YEARS], color=PAL["RO"], width=0.6)
-    axs[1].set_xticks(range(len(YEARS)))
-    axs[1].set_xticklabels([YL[y][2:] if y < Y else YL[y][2:] for y in YEARS])
+    ep.year_ticks(axs[1], YEARS, x=range(len(YEARS)), star=Y, rotate=True, fontsize=8.5)
     axs[1].set_ylabel(T("RO solar output\n(TWh)", "producția solară\nRO (TWh)"), fontsize=9)
     axs[1].text(0.02, 0.92, ytd, transform=axs[1].transAxes, fontsize=8.5)
     legend_bottom(fig, ncol=3)
@@ -731,7 +729,7 @@ for lang in ["en", "ro"]:
     # 5 cannibalisation: monthly capture rate vs solar share of load
     fig, ax = plt.subplots(figsize=(6.4, 1.85))
     for z, mk in (("HU", "s"), ("BG", "^"), ("RO", "o")):
-        ax.scatter(MON[z]["share"], MON[z]["cr"], s=12 if z == "RO" else 8, color=PAL[z], marker=mk, alpha=0.85 if z == "RO" else 0.5,
+        ax.scatter(MON[z]["share"], MON[z]["cr"], s=16 if z == "RO" else 14, color=PAL[z], marker=mk, alpha=0.85 if z == "RO" else 0.65,
                    lw=0, label=ZN[lang][z])
     xx = np.linspace(0, mr["share"].max() * 1.02, 50)
     ax.plot(xx, Rc.params["const"] + Rc.params["share"] * xx, color=PAL["RO"], lw=1.2, label=T("Romania, fit", "România, regresie"))
@@ -739,6 +737,9 @@ for lang in ["en", "ro"]:
     ax.set_xlabel(T("solar output as % of load in the month", "producția solară, % din consumul lunii"))
     ax.set_ylabel(T("solar capture\nrate (%)", "rata de\ncaptare (%)"), fontsize=9)
     legend_bottom(fig, ncol=4)
+    for h_ in fig.legends[-1].legend_handles:          # legend markers readable
+        if hasattr(h_, "set_sizes"):
+            h_.set_sizes([30])
     out(fig, lang, "cannibal", bottom=0.26, also_x=[ax])
 
     # 6 regional solar capture rates
@@ -824,7 +825,7 @@ for lang in ["en", "ro"]:
     axs[0].step(tt, ws["p"], where="post", color=PAL["RO"], lw=0.9, label=T("RO price, 15-min", "prețul RO, 15 minute"))
     ch = ws["net"] < -1e-6
     dc = ws["net"] > 1e-6
-    axs[0].fill_between(tt, ws["p"].min(), ws["p"].max(), where=ch.values, step="post", color=PAL["HU"], alpha=0.25, lw=0,
+    axs[0].fill_between(tt, ws["p"].min(), ws["p"].max(), where=ch.values, step="post", color=PAL["c7"], alpha=0.25, lw=0,
                         label=T("2h battery charging", "bateria de 2 h se încarcă"))
     axs[0].fill_between(tt, ws["p"].min(), ws["p"].max(), where=dc.values, step="post", color=PAL["DE_LU"], alpha=0.3, lw=0,
                         label=T("2h battery discharging", "bateria de 2 h se descarcă"))

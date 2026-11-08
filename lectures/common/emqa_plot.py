@@ -66,6 +66,23 @@ def legend_bottom(fig, handles=None, labels=None, ncol=4, y=0.0):
                    frameon=False, handlelength=2.0, columnspacing=1.2)
 
 
+def year_ticks(ax, years, x=None, star=None, rotate=None, fontsize=None):
+    """Full four-digit year labels (never '15 or 15). `x` = tick positions (default: the years themselves);
+    `star` = a partial year marked with an asterisk; labels are rotated 45 degrees when they would crowd the panel."""
+    years = list(years)
+    x = years if x is None else list(x)
+    lab = [f"{int(y)}" + ("*" if star is not None and int(y) == int(star) else "") for y in years]
+    ax.set_xticks(x)
+    if rotate is None:
+        w_in = ax.get_position().width * ax.figure.get_figwidth()
+        rotate = len(lab) * 0.42 > w_in
+    kw = {"fontsize": fontsize} if fontsize else {}
+    if rotate:
+        ax.set_xticklabels(lab, rotation=45, ha="right", rotation_mode="anchor", **kw)
+    else:
+        ax.set_xticklabels(lab, **kw)
+
+
 def save(fig, path, bottom=0.17):
     fig.tight_layout(rect=(0, bottom, 1, 1))
     fig.savefig(path, transparent=True, bbox_inches="tight")

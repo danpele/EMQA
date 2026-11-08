@@ -29,7 +29,7 @@ Producția solară, eoliană și a bateriilor, precum și consumul de energie el
 
 Perioada analizată începe în 2019 și se încheie la 31 octombrie 2026, ultima lună completă. Pe această pagină, „2026” înseamnă ianuarie–octombrie 2026, iar „ultimele 12 luni” înseamnă noiembrie 2025 – octombrie 2026. Zilele de livrare se definesc după ora Europei Centrale (CET). Energia este întotdeauna puterea medie, în megawați (MW), înmulțită cu durata, astfel încît un interval de tranzacționare (MTU, *market time unit*) de 15 minute contează 0,25 h.
 
-## Puterea solară instalată în România a crescut de 2,4 ori între 2019 și 2025 {h=3e137175}
+## Puterea solară instalată în România a crescut de 2,4 ori între 2019 și 2025 {h=b3c5a26c}
 
 Puterea solară instalată în România a urcat de la 1,16 gigawați (GW) la sfîrșitul anului 2019 la 2,79 GW la sfîrșitul anului 2025, adică de 2,4 ori. Producția a urmat aceeași direcție: între ianuarie și octombrie, parcurile solare din România au produs 2,53 terawați-oră (TWh) în 2025 și 4,32 TWh în 2026. Raportată la consum, producția solară a acoperit 2,3% în 2019 și 10,2% în 2026.
 

@@ -197,7 +197,7 @@ for y in [full_years[0], full_years[-1]]:
 for k in GRP:
     show(f'mix.lfl.{k}.share_prev', f'{k} share, Jan-{MON_EN[END.month - 1]} {Y - 1}, %', L[k]['share_prev'])
     show(f'mix.lfl.{k}.share_ytd', f'{k} share, Jan-{MON_EN[END.month - 1]} {Y}, %', L[k]['share_ytd'])''',
-    ORDER + "\n" + r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.5), gridspec_kw={'width_ratios': [1.45, 1]})
+    ORDER + "\n" + r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 2.5), gridspec_kw={'width_ratios': [2.0, 1]})
 bot = np.zeros(len(full_years))
 for k in ORDER:
     axs[0].bar(full_years, mix.loc[full_years, k].values, bottom=bot, color=SCOL[k], label=k, width=0.72,
@@ -206,15 +206,15 @@ for k in ORDER:
 axs[0].plot(full_years, load_twh.loc[full_years], 'k_', ms=17, mew=2.2, label='Load (consumption)')
 axs[0].set_ylabel('TWh per year')
 axs[0].set_xticks(full_years)
-axs[0].set_xticklabels([str(y)[2:] for y in full_years])
+axs[0].set_xticklabels([str(y) for y in full_years], rotation=45, ha='right', rotation_mode='anchor')
 sh = pd.DataFrame({0: [L[k]['share_prev'] for k in ORDER], 1: [L[k]['share_ytd'] for k in ORDER]}, index=ORDER)
 bot = np.zeros(2)
 for k in ORDER:
     axs[1].bar([0, 1], sh.loc[k].values, bottom=bot, color=SCOL[k], width=0.55, edgecolor='white', lw=0.8)
     for i in range(2):
-        if sh.loc[k].values[i] > 4:
+        if sh.loc[k].values[i] >= 9:          # label only segments tall enough for the text; dark text on light colours
             axs[1].text(i, bot[i] + sh.loc[k].values[i] / 2, f'{sh.loc[k].values[i]:.0f}%', ha='center', va='center',
-                        fontsize=9, color='white')
+                        fontsize=8.5, color='#222222' if k in ('Solar', 'Wind') else 'white')
     bot += sh.loc[k].values
 axs[1].set_xticks([0, 1])
 axs[1].set_xticklabels([str(Y - 1), str(Y)])
@@ -327,6 +327,7 @@ axs[0].set_title('Load and generation, RO')
 axs[1].bar(range(1, 13), mprof['price_ratio'], color=PAL['RO'], width=0.65, label='Price / annual mean (median of years)')
 axs[1].axhline(1.0, color='#222222', lw=0.8)
 axs[1].set_ylim(0.6, 1.4)
+axs[1].set_ylabel('ratio')
 axs[1].set_title('RO day-ahead price by month')
 for ax in axs:
     month_ticks(ax)
@@ -399,7 +400,7 @@ axs[0].set_title('Negative-price hours, RO', fontsize=10.5)
 sy = [y for y in full_years if y >= 2018]
 axs[1].bar(sy, [solar.loc[y] for y in sy], color=PAL['BG'], width=0.6)
 axs[1].set_xticks(sy)
-axs[1].set_xticklabels([str(y)[2:] for y in sy])
+axs[1].set_xticklabels([str(y) for y in sy], rotation=45, ha='right', rotation_mode='anchor')
 axs[1].set_title('Solar, RO, TWh (metered)', fontsize=10.5)
 legend_bottom(fig, ncol=4)''')
 
@@ -523,19 +524,19 @@ show('tails.exkurt', 'excess kurtosis', fl(stats.kurtosis(rb), 2))
 show('tails.t_df', 'fitted Student-t degrees of freedom', fl(tpar[0], 2))
 show('tails.n_4sd', 'days beyond 4 standard deviations', int((rb.abs() > 4 * rb.std()).sum()))
 show('tails.n_4sd_normal', 'expected under the normal', fl(len(rb) * 2 * stats.norm.sf(4), 2))''',
-    r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.85))
+    r'''fig, axs = plt.subplots(1, 2, figsize=(6.4, 1.95))
 zz = (rb - rb.mean()) / rb.std()
 osm, osr = stats.probplot(zz, dist='norm', fit=False)
 axs[0].plot(osm, osr, 'o', ms=2.5, color=PAL['RO'], label='Brent returns (standardised)')
 axs[0].plot([-4.5, 4.5], [-4.5, 4.5], color=PAL['c8'], lw=1.2, label='Normal')
 axs[0].set_xlabel('Normal quantile')
-axs[0].set_ylabel('Empirical')
+axs[0].set_ylabel('Empirical\nquantile', fontsize=9.5)
 axs[0].set_title('Q-Q plot')
 xs = np.linspace(-8, 8, 400)
 sc = np.sqrt(tpar[0] / (tpar[0] - 2))                           # unit-variance Student-t
 axs[1].hist(zz, bins=150, density=True, color=PAL['RO'], alpha=0.55)
 axs[1].plot(xs, stats.norm.pdf(xs), color=PAL['c8'], lw=1.4)
-axs[1].plot(xs, stats.t(tpar[0]).pdf(xs * sc) * sc, color=PAL['c7'], lw=1.4, ls='--', label=f'Student-t, df = {tpar[0]:.1f}')
+axs[1].plot(xs, stats.t(tpar[0]).pdf(xs * sc) * sc, color=PAL['c7'], lw=1.4, ls='--', label=f'Student-t, {tpar[0]:.1f} degrees of freedom')
 axs[1].set_xlim(-6, 6)
 axs[1].set_yscale('log')
 axs[1].set_ylim(1e-4, 1)
@@ -556,11 +557,14 @@ show('tails.lb_r2', 'Ljung-Box Q(10), squared returns', fl(acorr_ljungbox(rb ** 
 show('tails.vol_max', 'highest 21-day volatility, % a year', fl(vol.max(), 1))
 show('tails.vol_max_date', 'month of the highest volatility', vol.idxmax().strftime('%Y-%m'))
 show('tails.vol_median', 'median 21-day volatility, % a year', fl(vol.median(), 1))''',
-    r'''fig, axs = plt.subplots(2, 1, figsize=(6.4, 1.75), sharex=True)
+    r'''fig, axs = plt.subplots(2, 1, figsize=(6.4, 1.8), sharex=True)
 axs[0].plot(rb.index, rb, color=PAL['RO'], lw=0.6, label='Brent daily log return, %')
 axs[1].plot(vol.index, vol, color=PAL['DE_LU'], lw=1.0, label='21-day volatility, % a year')
-axs[0].set_ylabel('%')
-axs[1].set_ylabel('% a year')
+axs[0].set_ylabel('%', fontsize=8.5)
+axs[1].set_ylabel('% a year', fontsize=8.5)
+for ax in axs:
+    ax.yaxis.set_major_locator(plt.MaxNLocator(2))
+fig.align_ylabels(axs)
 legend_bottom(fig, ncol=2)''', bottom=0.13)
 
 add("sim_wn_ar_rw", "Simulated white noise, AR(1) and random walk with their sample ACF",
@@ -596,7 +600,9 @@ for j, (k, col, ttl) in enumerate([('wn', PAL['RO'], 'White noise'), ('ar', PAL[
     axs[1, j].set_ylim(-0.3, 1.05)
     axs[1, j].set_yticks([0, 1])
     axs[1, j].set_xlabel('lag $k$')
-axs[1, 0].set_ylabel('sample ACF')''', bottom=0.0)
+axs[0, 0].set_ylabel('$x_t$', fontsize=9.5)
+axs[1, 0].set_ylabel('ACF', fontsize=9.5)
+fig.align_ylabels(axs[:, 0])''', bottom=0.0)
 
 add("acf_pacf_ro_daily", "ACF and PACF of the Romanian daily day-ahead price",
     "Sample autocorrelation (with Bartlett band) and partial autocorrelation functions of the Romanian daily base "
@@ -682,13 +688,13 @@ for y in [str(v) for v in range(Y - 2, Y + 1)]:
         show(f'naive.RO.{y}.{k}', f'{y}, ' + ('mean price' if k == 'mean' else f'MAE {k}') + ', EUR/MWh', nv[y][k])
 show('naive.RO.n_best', 'years in which the naive rule beats both lags', int(sum(v['naive'] < min(v['lag1'], v['lag7']) for v in nv.values())))
 show('naive.RO.n_years', 'years compared', len(nv))''',
-    r'''fig, ax = plt.subplots(figsize=(6.4, 1.3))
+    r'''fig, ax = plt.subplots(figsize=(6.4, 1.4))
 yrs = [str(y) for y in range(Y - 2, Y + 1)]
 for i, (k, lab, col) in enumerate([('naive', 'naive', PAL['RO']), ('lag1', 'd-1', PAL['HU']), ('lag7', 'd-7', PAL['DE_LU'])]):
     ax.bar(np.arange(3) + (i - 1) * 0.26, [nv[y][k] for y in yrs], width=0.25, color=col, label=lab)
 ax.set_xticks(range(3))
 ax.set_xticklabels([y if y != str(Y) else f'{Y} (YTD)' for y in yrs])
-ax.set_ylabel('MAE\n(EUR/MWh)')
+ax.text(0, 1.04, 'MAE, EUR/MWh', transform=ax.transAxes, fontsize=9.5, ha='left', va='bottom')   # unit above the axis
 legend_bottom(fig, ncol=3)''', bottom=0.12)
 
 add("decomp_load", "Decomposition of Romanian monthly load: classical vs STL",
@@ -820,7 +826,7 @@ show('iran.chg24_peak', 'change peak -> 24 Jun, %', fl((p24 / win.max() - 1) * 1
 show('iran.chg24_12', 'change 12 Jun -> 24 Jun, %', fl((p24 / p12 - 1) * 100, 1))''',
     r'''bw = b.loc['2025-06-02':'2025-07-04']
 fig, ax = plt.subplots(figsize=(6.4, 2.0))
-ax.plot(bw.index, bw, color=PAL['RO'], marker='o', ms=4, label='Brent close, USD/bbl')
+ax.plot(bw.index, bw, color='#222222', marker='o', ms=3.5, label='Brent close, USD/bbl')
 # labels sit in free corners of the axes (axes fraction), with a thin leader line to their point
 for dt, txt, xy_txt, ha in [('2025-06-13', '13 Jun: Israel strikes Iran', (0.02, 0.90), 'left'),
                             (str(win.idxmax().date()), 'peak close', (0.68, 0.93), 'left'),
@@ -831,6 +837,7 @@ ax.set_ylim(bw.min() - 5.5, bw.max() + 3)
 ax.set_ylabel('USD/bbl')
 ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=mdates.MO))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%-d %b'))
+ax.set_xlabel(f'June {bw.index[0].year}', fontsize=10)
 legend_bottom(fig, ncol=1)''', bottom=0.13)
 
 add("separation_2024", "Case study: market separation in summer 2024",
@@ -894,7 +901,7 @@ show('cy.brent.roll_apr', 'Brent, first April day vs end of March (contract roll
 for z in ['DE_LU', 'HU', 'BG', 'RO']:
     axs[0].plot(pY.index, pY[z], color=PAL[z], ls=ZONE_LS[z], lw=1.0, label=z.replace('_', '-'))
 axs[0].set_ylabel('EUR/MWh', fontsize=9.5)
-axs[1].plot(bY.index, bY, color=PAL['c7'], lw=1.3, label='Brent')
+axs[1].plot(bY.index, bY, color='#222222', lw=1.3, label='Brent')
 axs[1].set_ylabel('USD/bbl', fontsize=9.5)
 axs[1].xaxis.set_major_locator(mdates.MonthLocator())
 axs[1].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
@@ -1023,16 +1030,17 @@ for z in ['RO', 'BG']:
 show('bat.bg_first', 'first reported BG battery hour', bat_first.strftime('%Y-%m-%d'))
 show('bat.gap_open', f'first month of {Y} with an evening spread > 15 EUR/MWh',
      next((k.strftime('%Y-%m') for k, v in ev_sp.items() if k.year == Y and v > 15), 'none'))''',
-    r'''fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.0), sharex=True, gridspec_kw={'height_ratios': [1.4, 1]})
+    r'''fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.1), sharex=True, gridspec_kw={'height_ratios': [1.4, 1]})
 xi = ev_sp.index.to_timestamp()
 axs[0].bar(xi, ev_sp.values, width=20, color=[PAL['RO'] if v >= 0 else PAL['c8'] for v in ev_sp.values],
            label='RO − BG, 19-22 h EET')
 axs[0].axhline(0, color='#222222', lw=0.6)
-axs[0].set_ylabel('EUR/MWh')
+axs[0].set_ylabel('EUR/MWh', fontsize=8.5)
 bi = batm.index.to_timestamp()
 axs[1].bar(bi - pd.Timedelta(days=5), batm['battery'].values, width=9, color=PAL['HU'], label='BG battery discharge')
 axs[1].bar(bi + pd.Timedelta(days=5), -batm['battery_consumption'].values, width=9, color=PAL['BG'], label='BG battery charging')
-axs[1].set_ylabel('MW')
+axs[1].set_ylabel('MW', fontsize=8.5)
+fig.align_ylabels(axs)
 axs[1].set_xlim(pd.Timestamp('2022-12-15'), END + pd.Timedelta(days=20))
 axs[1].xaxis.set_major_locator(mdates.YearLocator())
 axs[1].xaxis.set_major_formatter(mdates.DateFormatter('%Y'))

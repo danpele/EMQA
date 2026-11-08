@@ -163,7 +163,7 @@ def yfmt(ax):
 def mfmt(ax, step=1):
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=step))
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: MON[mdates.num2date(v).month - 1] +
-                                               (f'\n{mdates.num2date(v).year}' if mdates.num2date(v).month == 1 else '')))'''
+                                               (f'\n{mdates.num2date(v).year}' if mdates.num2date(v).month == 1 or p == 0 else '')))'''
 
 CRISIS = "CRISIS = (pd.Timestamp('2021-09-01'), pd.Timestamp('2022-12-31'))   # energy crisis, shaded"
 
@@ -314,7 +314,7 @@ axs[1].bar(x, [sd_eur[y] for y in YEARS], color=C_EUR, width=0.65)
 axs[1].set_ylabel('EUR/MWh', fontsize=9.5)
 for ax in axs:
     ax.set_xticks(x)
-    ax.set_xticklabels([f"'{str(y)[2:]}" for y in YEARS], fontsize=9)
+    ax.set_xticklabels([str(y) for y in YEARS], fontsize=8.5, rotation=45, ha='right', rotation_mode='anchor')
 axs[0].set_title(r'std. dev. of the % shocks $\varepsilon_t$', fontsize=9.5)
 axs[1].set_title(r'std. dev. of the EUR/MWh shocks $u_t$', fontsize=9.5)
 fig.tight_layout(rect=(0, 0.02, 1, 1))
@@ -390,6 +390,9 @@ sc = np.sqrt((nu - 2) / nu)          # unit-variance Student-t
 ax.plot(xs, stats.t.pdf(xs / sc, nu) / sc, color=PAL['DE_LU'], lw=1.2, label=f'Student-t, $\\nu$ = {nu:.1f}')
 ax.set_yscale('log')
 ax.set_ylim(1e-4, 1)
+ax.set_yticks([1e-4, 1e-2, 1])
+ax.set_yticklabels(['0.0001', '0.01', '1'])
+ax.minorticks_off()
 ax.set_xlabel('standardised shock $z_t$', fontsize=9)
 ax.set_ylabel('density (log)', fontsize=9)
 legend_bottom(fig, ncol=3)
@@ -831,7 +834,7 @@ axs[1].plot(hb, z95 * np.sqrt(hb * fb[0]), color=PAL['BG'], lw=1.1, ls='-.', lab
 axs[1].plot(hb, z95 * np.sqrt(hb * lrb), color='#222222', lw=0.8, ls='--')
 axs[1].set_xlabel('horizon $h$ (trading days)', fontsize=9)
 axs[1].set_ylabel(r'$\pm$%', fontsize=9)
-axs[1].set_title(f'Brent, {MON[BPEAK.month - 1]} {BPEAK.day}: 90% band over $h$ days', fontsize=9.5)
+axs[1].set_title(f'Brent, {MON[BPEAK.month - 1]} {BPEAK.day}, {BPEAK.year}: 90% band over $h$ days', fontsize=9.5)
 legend_bottom(fig, ncol=2)
 fig.tight_layout(rect=(0, 0.27, 1, 1))
 plt.savefig('term_structure.png', dpi=150, bbox_inches='tight', transparent=True)

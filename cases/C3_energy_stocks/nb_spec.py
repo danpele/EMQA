@@ -40,7 +40,7 @@ print(r.describe().T[["mean", "std", "min", "max"]].round(3))
 '''),
 ("code", r'''
 EVENTS = [("2020-03-09", ("COVID-19 crash", "Criza COVID-19")), ("2022-02-24", ("Invasion of Ukraine", "Invazia Ucrainei")),
-          ("2022-09-01", ("Windfall tax, price caps (RO)", "Supraimpozitare, plafonarea prețurilor (RO)"))]
+          ("2022-09-01", ("Windfall tax, price caps (RO)", "Impozit pe veniturile suplimentare, plafonarea prețurilor (RO)"))]
 def fig_prices(lang):
     fig, ax = plt.subplots(figsize=(8.2, 3.2))
     norm = 100 * px / px.iloc[0]
@@ -48,11 +48,17 @@ def fig_prices(lang):
     labs = {"SNP": "OMV Petrom (SNP)", "SNG": "Romgaz (SNG)", "SNN": "Nuclearelectrica (SNN)", "Brent": cu.T(lang, "Brent (EUR/bbl)", "Brent (EUR/baril)")}
     for c in ["Brent", "SNP", "SNG", "SNN"]:
         ax.plot(norm.index, norm[c], color=cols[c], lw=1.0, label=labs[c])
-    for d, l in EVENTS[:2]:
+    import matplotlib.transforms as mtrans
+    for i_, (d, l) in enumerate(EVENTS[:2]):            # staggered so that the two labels never overlap
         ax.axvline(pd.Timestamp(d), color=cu.EVENT, lw=0.8, ls=":")
-        ax.text(pd.Timestamp(d), ax.get_ylim()[1] * 0.95, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=8, va="top")
-    ax.set_ylabel(cu.T(lang, "Index, first day = 100 (total return)", "Indice, prima zi = 100 (randament total)"))
+        ax.text(pd.Timestamp(d), 0.98 - 0.09 * i_, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=9, va="top",
+                transform=mtrans.blended_transform_factory(ax.transData, ax.transAxes))
+    ax.set_ylabel(cu.T(lang, "Index, first day = 100\n(total return, log scale)", "Indice, prima zi = 100\n(randament total, scară logaritmică)"))
     ax.set_yscale("log")
+    from matplotlib.ticker import FixedLocator, FuncFormatter, NullFormatter
+    ax.yaxis.set_major_locator(FixedLocator([50, 100, 200, 500, 1000, 2000, 5000]))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _p: f"{v:,.0f}".replace(",", "." if lang == "ro" else ",")))
+    ax.yaxis.set_minor_formatter(NullFormatter())
     cu.legend_bottom(fig, ncol=4)
     return fig
 cu.save_both(fig_prices, "f1_prices")
@@ -147,7 +153,7 @@ def fig_dcc(lang):
     ax.plot(rho.index, rho["SNP"], color=cu.PAL["DE_LU"], lw=0.7, alpha=0.8, label=cu.T(lang, "OMV Petrom vs Brent", "OMV Petrom față de Brent"))
     for (d, l), yy_ in zip(EVENTS, [0.78, 0.71, 0.64]):
         ax.axvline(pd.Timestamp(d), color=cu.EVENT, lw=0.8, ls=":")
-        ax.text(pd.Timestamp(d), yy_, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=7.5, va="top", rotation=0)
+        ax.text(pd.Timestamp(d), yy_, " " + cu.T(lang, *l), color=cu.EVENT, fontsize=9, va="top", rotation=0)
     ax.axhline(0, color=cu.INK, lw=0.5)
     ax.set_ylim(-0.2, 0.8)
     ax.set_ylabel(cu.T(lang, "Conditional correlation", "Corelația condiționată"))

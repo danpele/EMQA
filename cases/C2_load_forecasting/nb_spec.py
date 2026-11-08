@@ -56,6 +56,8 @@ def fig_series(lang):
     a.plot(daily.index, daily.values, color=cu.PAL["RO"], lw=1.0, label=cu.T(lang, "Daily mean load", "Consumul mediu zilnic"))
     a.axvspan(split, daily.index.max(), color=cu.MUTED, alpha=0.15, lw=0, label=cu.T(lang, "Test period (last 20 %)", "Perioada de test (ultimele 20 % din date)"))
     a.set_ylabel("MW")
+    import matplotlib.dates as mdates
+    a.xaxis.set_major_locator(mdates.YearLocator()); a.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     b = axes[1]
     prof = load.groupby([load.index.month, load.index.hour]).mean().unstack(0)
     for m, col, lab in [(1, cu.PAL["RO"], ("January", "Ianuarie")), (4, cu.PAL["HU"], ("April", "Aprilie")),
@@ -200,7 +202,7 @@ def fig_bar(lang):
     ax.barh([cu.T(lang, *NAMES[i]) for i in r.index], r.MAPE, color=[COL[i] for i in r.index])
     for k, v in enumerate(r.MAPE):
         ax.text(v + 0.05, k, cu.fmt(v, 2, lang), va="center", fontsize=9)
-    ax.set_xlabel(cu.T(lang, "MAPE on the test period, % (lower is better)", "MAPE în perioada de test, % (valorile mici sînt preferabile)"))
+    ax.set_xlabel(cu.T(lang, "Mean absolute percentage error (MAPE), test period, %", "Eroarea medie absolută procentuală (MAPE), perioada de test, %"))
     cu.comma_axis(ax, lang, "x", 1)
     return fig
 cu.save_both(fig_bar, "f2_mape_by_model", headline=True)
@@ -217,8 +219,7 @@ def fig_week(lang):
         if m_ in fc:
             ax.plot(t, np.concatenate([fc[m_][i] for i in k0]), color=COL[m_], lw=1.1, ls="-" if m_ == best else "--", label=cu.T(lang, *NAMES[m_]))
     ax.set_ylabel("MW")
-    import matplotlib.dates as mdates
-    ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+    cu.day_ticks(ax, lang, interval=2)
     cu.legend_bottom(fig, ncol=3)
     return fig
 cu.save_both(fig_week, "f3_forecast_week")
@@ -229,7 +230,7 @@ def fig_hour(lang):
     for m_ in [best, "SARIMA", "Linear regression", "Naive 48h"]:
         mae_h = np.abs(actual - fc[m_]).mean(axis=0)
         ax.plot(range(24), mae_h, color=COL[m_], lw=1.6 if m_ == best else 1.1, label=cu.T(lang, *NAMES[m_]))
-    ax.set_xlabel(cu.T(lang, "Hour of the forecast day", "Ora din ziua prognozată")); ax.set_ylabel(cu.T(lang, "MAE, MW", "MAE, MW"))
+    ax.set_xlabel(cu.T(lang, "Hour of the forecast day", "Ora din ziua prognozată")); ax.set_ylabel(cu.T(lang, "Mean absolute error\n(MAE), MW", "Eroarea medie absolută\n(MAE), MW"))
     ax.set_xticks(range(0, 24, 3))
     cu.legend_bottom(fig, ncol=2)
     return fig

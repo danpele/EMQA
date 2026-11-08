@@ -51,8 +51,8 @@ def fig_prices(lang):
     ax.axhline(thr, color=cu.EVENT, ls="--", lw=1, label=cu.T(lang, "Spike threshold (P90 of training)", "Pragul de vîrf (P90 din antrenare)"))
     for (a, b), c in [(VAL, cu.PAL["BG"]), (TEST, cu.MUTED)]:
         ax.axvspan(pd.Timestamp(a, tz=d.index.tz), pd.Timestamp(b, tz=d.index.tz), color=c, alpha=0.12, lw=0)
-    ax.text(pd.Timestamp(VAL[0], tz=d.index.tz), d.max() * 0.95, cu.T(lang, " validation", " validare"), fontsize=8)
-    ax.text(pd.Timestamp(TEST[0], tz=d.index.tz), d.max() * 0.95, cu.T(lang, " test", " test"), fontsize=8)
+    ax.text(pd.Timestamp(VAL[0], tz=d.index.tz), d.max() * 0.95, cu.T(lang, " validation", " validare"), fontsize=9)
+    ax.text(pd.Timestamp(TEST[0], tz=d.index.tz), d.max() * 0.95, cu.T(lang, " test", " test"), fontsize=9)
     ax.set_ylabel("EUR/MWh")
     cu.legend_bottom(fig, ncol=2)
     return fig

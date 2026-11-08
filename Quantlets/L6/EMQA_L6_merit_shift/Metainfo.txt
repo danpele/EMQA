@@ -8,7 +8,7 @@ Keywords: 'merit order, supply curve, demand curve, day-ahead market, OPCOM, PZU
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'opcom_pzu_curves.csv: OPCOM PZU aggregated supply and demand curves (price, MW) of two quarter-hours of 2026-10-21; opcom_pzu_curves_meta.json: official clearing prices, cleared quantities and net exports'
 

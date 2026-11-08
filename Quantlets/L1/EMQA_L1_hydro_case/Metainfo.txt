@@ -8,7 +8,7 @@ Keywords: 'hydro, drought, case study, Romania, electricity prices, regression, 
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Romanian hourly generation, daily cross-border flows, daily day-ahead prices (energy-charts.info, ENTSO-E) and monthly TTF gas prices (World Bank); data/clean/generation_ro_mw_hourly_utc.csv, crossborder_ro_mw_daily_cet.csv, power_da_prices_daily_cet.csv, ttf_monthly.csv'
 

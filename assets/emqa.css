@@ -12,8 +12,28 @@
 .lecture-cases a { text-decoration: none; border-bottom: 1px dotted var(--main-blue); }
 .quantinar-box h4 { line-height: 1.35; }
 
-/* case studies */
+/* episodes in the data (short examples) */
 .case-card { scroll-margin-top: 80px; border-left: 4px solid var(--amber); }
+#episodes .info-card { padding: 1.1rem 1.2rem; }
+
+/* research case studies C1-C8: cards linking to web/cases/CK.html */
+.study-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 1.2rem; margin-top: 1rem; }
+.study-card { min-width: 0; display: flex; flex-direction: column; gap: 0.55rem; background: var(--white); border: 1px solid var(--border);
+    border-top: 4px solid var(--main-blue); border-radius: 8px; padding: 1.1rem 1.25rem 1rem; scroll-margin-top: 80px; box-shadow: 0 1px 3px rgba(26, 58, 110, 0.06); }
+.study-head { display: flex; align-items: center; gap: 0.6rem; }
+.study-num { font-weight: 800; color: white; background: var(--main-blue); border-radius: 5px; padding: 0.1rem 0.5rem; font-size: 0.9rem; }
+.study-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ida-red); }
+.study-card h3 { font-size: 1.08rem; line-height: 1.35; margin: 0; }
+.study-card h3 a { color: var(--main-blue); text-decoration: none; }
+.study-card h3 a:hover { text-decoration: underline; }
+.study-sum { font-size: 0.93rem; line-height: 1.55; margin: 0; overflow-wrap: break-word; }
+.study-paper { font-size: 0.82rem; line-height: 1.45; color: #4A5060; margin: 0; overflow-wrap: anywhere; background: #F5F7FB; border-radius: 6px; padding: 0.45rem 0.6rem; }
+.study-k { font-weight: 700; color: var(--main-blue); }
+.study-links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; padding-top: 0.3rem; }
+.study-links .btn { padding: 0.4rem 0.75rem; font-size: 0.85rem; }
+.study-card .case-lecture { margin-top: 0; }
+.lecture-study { margin: 0.2rem 0 0.4rem; font-size: 0.9rem; }
+.lecture-study a { font-weight: 600; text-decoration: none; border-bottom: 1px dotted var(--main-blue); }
 
 /* data table (same look as the BA session table) */
 .table-wrap { overflow-x: auto; }

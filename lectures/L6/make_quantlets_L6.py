@@ -284,10 +284,10 @@ for i, z in enumerate(('RO', 'BG', 'HU')):
     axs[0].bar(np.array(cy) + (i - 1) * wdt, [solar_gw[z][y] for y in cy], width=wdt, color=PAL[z], label=ZN[z])
 axs[0].set_ylabel('installed solar\n(GW)', fontsize=9)
 axs[0].set_xticks(cy)
-axs[0].set_xticklabels([str(y)[2:] for y in cy])
+axs[0].set_xticklabels([str(y) for y in cy], fontsize=8.5, rotation=45, ha='right', rotation_mode='anchor')
 axs[1].bar(range(len(YEARS)), [twh[y]['solar'] for y in YEARS], color=PAL['RO'], width=0.6)
 axs[1].set_xticks(range(len(YEARS)))
-axs[1].set_xticklabels([str(y)[2:] + ('*' if y == Y else '') for y in YEARS])
+axs[1].set_xticklabels([str(y) + ('*' if y == Y else '') for y in YEARS], fontsize=8.5, rotation=45, ha='right', rotation_mode='anchor')
 axs[1].set_ylabel('RO solar output\n(TWh)', fontsize=9)
 axs[1].text(0.02, 0.92, YTD, transform=axs[1].transAxes, fontsize=8.5)
 legend_bottom(fig, ncol=3)
@@ -496,14 +496,17 @@ show_numbers({'cannib.b': fl(Rc.params['share'], 2), 'cannib.se': fl(Rc.bse['sha
               'cannib.BG.b': fl(fit['BG'].params['share'], 2), 'cannib.HU.b': fl(fit['HU'].params['share'], 2)})'''),
      ("code", r'''fig, ax = plt.subplots(figsize=(6.4, 1.85))
 for z, mk in (('HU', 's'), ('BG', '^'), ('RO', 'o')):
-    ax.scatter(MON[z]['share'], MON[z]['cr'], s=12 if z == 'RO' else 8, color=PAL[z], marker=mk,
-               alpha=0.85 if z == 'RO' else 0.5, lw=0, label=ZN[z])
+    ax.scatter(MON[z]['share'], MON[z]['cr'], s=16 if z == 'RO' else 14, color=PAL[z], marker=mk,
+               alpha=0.85 if z == 'RO' else 0.65, lw=0, label=ZN[z])
 xx = np.linspace(0, MON['RO']['share'].max() * 1.02, 50)
 ax.plot(xx, Rc.params['const'] + Rc.params['share'] * xx, color=PAL['RO'], lw=1.2, label='Romania, fit')
 ax.axhline(100, color=INK, lw=0.6, ls='--')
 ax.set_xlabel('solar output as % of load in the month')
 ax.set_ylabel('solar capture\nrate (%)', fontsize=9)
 legend_bottom(fig, ncol=4)
+for h_ in fig.legends[-1].legend_handles:          # legend markers readable
+    if hasattr(h_, 'set_sizes'):
+        h_.set_sizes([30])
 ''' + finish("cannibal", 0.26))])
 
 # =============================================================================
@@ -870,7 +873,7 @@ fig, axs = plt.subplots(2, 1, figsize=(6.4, 2.5), sharex=True, gridspec_kw={'hei
 tt = WEEK.index.tz_localize(None)
 axs[0].step(tt, WEEK['p'], where='post', color=PAL['RO'], lw=0.9, label='RO price, 15-min')
 ch, dc = WEEK['net'] < -1e-6, WEEK['net'] > 1e-6
-axs[0].fill_between(tt, WEEK['p'].min(), WEEK['p'].max(), where=ch.values, step='post', color=PAL['HU'], alpha=0.25, lw=0,
+axs[0].fill_between(tt, WEEK['p'].min(), WEEK['p'].max(), where=ch.values, step='post', color=PAL['c7'], alpha=0.25, lw=0,
                     label='2h battery charging')
 axs[0].fill_between(tt, WEEK['p'].min(), WEEK['p'].max(), where=dc.values, step='post', color=PAL['DE_LU'], alpha=0.3, lw=0,
                     label='2h battery discharging')

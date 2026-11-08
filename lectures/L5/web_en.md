@@ -396,7 +396,7 @@ At $K=F$ with $\sigma$ = 0.220, $d_1$ = 0.039, $\Delta_C$ = 0.514 and $\Delta_P$
 
 @practice the seller of a cap hedges by holding delta MWh forward and rebalancing.
 
-## What each instrument pays for the 2027 band {h=f70c9b5e}
+## What each instrument pays for the 2027 band {h=08542ac8}
 
 The chart compares the effective price a supplier pays for the 2027 band under each strategy, as a function of the forward price at expiry. Unhedged, it pays the market. With the forward, it pays 148.1 EUR/MWh whatever happens. With a cap at 162.9, it pays the market price up to the strike plus a premium of 0.63 EUR/MWh. A collar between 133.3 and 162.9 costs only 0.20 EUR/MWh net, because the sold put finances most of the call, but it gives up the gain below 133.3.
 

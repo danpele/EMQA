@@ -8,7 +8,7 @@ Keywords: 'supplier risk, procurement cost, load-weighted price, risk limit, nor
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'power_da_prices_hourly_utc.csv: hourly day-ahead prices of Romania (OPCOM), EUR/MWh, and generation_ro_mw_hourly_utc.csv: hourly national load of Romania (Transelectrica via ENTSO-E), MW, both from energy-charts.info (Fraunhofer ISE) (cut-off 2026-10-31)'
 

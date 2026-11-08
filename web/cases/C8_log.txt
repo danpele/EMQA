@@ -1,0 +1,12 @@
+EMQA web case C8
+[en] 9 sections, 8 numbered figures, 3 tables; acronyms: RO, HU, BG, DE-LU, PZU, OPCOM, ENTSO-E, TTF, EU, EUA, EEX, PCCB-LE, PCCB-NC, PC-OTC, RON, ECB, DC, PPS, ID, DE, VAT, SRMC, OLS, HAC, VIF, PPA, PICBE, JSES, SSRN, MTU, OTC
+[en] expanded at first use: EU -> European Union  [...s (Title Transfer Facility, World Bank, monthly); | emission allowances (EUA): au...]
+[en] expanded at first use: RON -> Romanian leu  [... PC-OTC and others), converted at the monthly EUR/| rate of the European Central ...]
+[en] expanded at first use: PPA -> power purchase agreement  [...ian batteries: average discharge 88 MW in 10.2026.| design. The market value of t...]
+[en] expanded at first use: SSRN -> Social Science Research Network  [...sticity of demand, Case 5);
+Andrei et al. (2026), | 6872381, doi:10.2139/ssrn.687...]
+[en] expanded at first use: OTC -> over the counter  [...lised bilateral markets; PC-OTC: OPCOM continuous | market; PPA: power purchase a...]
+[ro] 9 sections, 8 numbered figures, 3 tables; acronyms: PPA, RO, HU, BG, DE-LU, PZU, OPCOM, ENTSO-E, TTF, UE, EUA, EEX, PCCB-LE, PCCB-NC, PC-OTC, RON, BCE, DC, PPS, ID, DE, TVA, SRMC, MTU, MCMMP, HAC, VIF, PICBE, JSES, SSRN
+[ro] expanded at first use: RON -> leul românesc  [...C și altele), convertit la cursul mediu lunar EUR/| al Băncii Centrale Europene (...]
+[ro] expanded at first use: SSRN -> Social Science Research Network  [... prețul, Studiul de caz 5);
+Andrei et al. (2026), | 6872381, doi:10.2139/ssrn.687...]

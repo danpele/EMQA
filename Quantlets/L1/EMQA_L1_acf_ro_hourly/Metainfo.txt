@@ -8,7 +8,7 @@ Keywords: 'autocorrelation, ACF, hourly prices, daily seasonality, weekly season
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'Hourly day-ahead prices (energy-charts.info, OPCOM via ENTSO-E; data/clean/power_da_prices_hourly_utc.csv)'
 

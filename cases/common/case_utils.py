@@ -79,16 +79,26 @@ def legend_bottom(fig, ncol=4, y=-0.02, handles=None, labels=None):
                    frameon=False, handlelength=2.0)
 
 
+def day_ticks(ax, lang, interval=2):
+    """Daily date ticks with the full four-digit year: 2024-07-10 (EN), 10.07.2024 (RO)."""
+    import matplotlib.dates as mdates
+    ax.xaxis.set_major_locator(mdates.DayLocator(interval=interval))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m.%Y" if lang == "ro" else "%Y-%m-%d"))
+
+
 def comma_axis(ax, lang, axis="y", nd=None):
-    """Decimal comma on tick labels for Romanian charts."""
+    """Decimal comma on tick labels for Romanian charts. The number of decimals is the one matplotlib
+    chooses for the English chart (same tick labels in both languages); ``nd`` is kept for compatibility."""
     if lang != "ro":
         return
-    from matplotlib.ticker import FuncFormatter
+    from matplotlib.ticker import ScalarFormatter
 
-    def f(v, _pos):
-        s = (f"{v:.{nd}f}" if nd is not None else f"{v:g}")
-        return s.replace("-", "−").replace(".", ",")
-    (ax.yaxis if axis == "y" else ax.xaxis).set_major_formatter(FuncFormatter(f))
+    class _Comma(ScalarFormatter):
+        def __call__(self, v, pos=None):
+            return super().__call__(v, pos).replace(".", ",").replace("-", "−").replace("\u2212", "−")
+    f = _Comma(useOffset=False)
+    f.set_scientific(False)
+    (ax.yaxis if axis == "y" else ax.xaxis).set_major_formatter(f)
 
 
 def save_both(make, name, outdir="fig", show_lang=None, headline=False):

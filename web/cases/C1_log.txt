@@ -1,0 +1,9 @@
+EMQA web case C1
+[en] 6 sections, 4 numbered figures, 2 tables; acronyms: PZU, OPCOM, TSO, DR, ENTSO-E, RF, CET, MAE, RO
+[en] expanded at first use: OPCOM -> the Romanian power and gas market operator  [... market (PZU, Piața pentru Ziua Următoare, run by |) cleared at more than 900 EUR...]
+[en] expanded at first use: CET -> Central European Time  [...le 1. Test accuracy, 01 June 2024 – 31 July 2024 (| delivery days, 1,464 hours; “...]
+[en] expanded at first use: RO -> Romania  [...spike price most in a heatwave evening?DataHourly | prices, load, solar, wind, hy...]
+[ro] 6 sections, 4 numbered figures, 2 tables; acronyms: PZU, OPCOM, OTS, DR, ENTSO-E, RF, CET, MAE, RO
+[ro] expanded at first use: OPCOM -> operatorul pieței de energie electrică și de gaze naturale din România  [...ziua următoare (PZU) din România, administrată de |, prețul de închidere a depăși...]
+[ro] expanded at first use: CET -> ora Europei Centrale  [...de test, 01.06.2024 – 31.07.2024 (zile de livrare |, 1.464 de ore; „previziune pe...]
+[ro] expanded at first use: RO -> România  [...de vîrf într-o seară caniculară?DatePrețuri orare |, consum, producție solară, eo...]

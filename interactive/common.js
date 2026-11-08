@@ -70,7 +70,16 @@ function layout(extra) {
 }
 const ttl = s => ({ text: s, x: 0, xanchor: 'left', font: { size: 12, color: C.navy } });
 const CFG = { displayModeBar: false, responsive: true };
-const plot = (id, tr, lay) => Plotly.react(id, tr, lay, CFG);
+// Romanian month and day names on date axes (Plotly's default locale is English); full four-digit years everywhere
+const RO_LOCALE = { moduleType: 'locale', name: 'ro', dictionary: {}, format: {
+  days: ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sîmbătă'], shortDays: ['dum', 'lun', 'mar', 'mie', 'joi', 'vin', 'sîm'],
+  months: ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'],
+  shortMonths: ['ian.', 'feb.', 'mar.', 'apr.', 'mai', 'iun.', 'iul.', 'aug.', 'sep.', 'oct.', 'nov.', 'dec.'], date: '%d.%m.%Y' } };
+let _locale = false;
+const plot = (id, tr, lay) => {
+  if (LANG === 'ro' && !_locale) { Plotly.register(RO_LOCALE); CFG.locale = 'ro'; _locale = true; }
+  return Plotly.react(id, tr, lay, CFG);
+};
 const out = (id, items) => { $(id).innerHTML = items.map(s => `<li>${s}</li>`).join(''); };
 const vline = (x, color, dash, yref) => ({ type: 'line', xref: 'x', yref: yref || 'paper', x0: x, x1: x, y0: 0, y1: 1, line: { color, width: 1.5, dash: dash || 'solid' } });
 const hline = (y, color, dash) => ({ type: 'line', xref: 'paper', yref: 'y', x0: 0, x1: 1, y0: y, y1: y, line: { color, width: 1.5, dash: dash || 'solid' } });

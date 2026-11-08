@@ -205,8 +205,12 @@ def fig_year(lang):
     ks = list(by_year.columns); w = 0.8 / len(ks)
     for j, k in enumerate(ks):
         ax.bar(by_year.index + (j - len(ks) / 2 + 0.5) * w, by_year[k] / 1000, width=w, color=col(k), label=cu.T(lang, *lbl(k)).replace("$\\alpha$", "α").replace("$\\rightarrow$", "→"))
-    ax.axhline(CAPEX / ann_f / 1000, color=cu.EVENT, ls="--", lw=1, label=cu.T(lang, "Annual profit needed to repay CAPEX (7 %, 15 years)", "Profitul anual necesar pentru recuperarea investiției (7 %, 15 ani)"))
+    ax.axhline(CAPEX / ann_f / 1000, color=cu.EVENT, ls="--", lw=1, label=cu.T(lang, "Annual profit needed to repay the capital expenditure (CAPEX)\n(7 %, 15 years)", "Profitul anual necesar pentru recuperarea\ninvestiției (7 %, 15 ani)"))
     ax.set_ylabel(cu.T(lang, "Profit per year, thousand EUR", "Profitul anual, mii EUR")); ax.set_xticks(by_year.index)
+    last = int(by_year.index.max()); partial = dd.max() < pd.Timestamp(f"{last}-12-31")
+    ax.set_xticklabels([f"{y}*" if (y == last and partial) else str(y) for y in by_year.index])
+    if partial:
+        ax.text(1, 1.0, cu.T(lang, f"* {last}: to {dd.max():%d.%m.%Y}", f"* {last}: pînă la {dd.max():%d.%m.%Y}"), transform=ax.transAxes, ha="right", va="bottom", fontsize=9)
     cu.legend_bottom(fig, ncol=2)
     return fig
 cu.save_both(fig_year, "f4_profit_by_year")

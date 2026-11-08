@@ -8,7 +8,7 @@ Keywords: 'merit order, supply curve, demand curve, day-ahead market, OPCOM, cle
 
 Author: 'Daniel Traian Pele'
 
-Submitted: 'Saturday, 07 November 2026'
+Submitted: 'Sunday, 08 November 2026'
 
 Datafile: 'OPCOM PZU aggregated curves for one day (data/clean/opcom_pzu_curves.csv and opcom_pzu_curves_meta.json)'
 

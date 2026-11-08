@@ -310,6 +310,7 @@ def fig_parity(lang):
         ax.axvspan(17.5, 21.5, color=cu.EVENT, alpha=0.08, lw=0)
         ax.set_xticks(range(0, 24, 3)); ax.set_xlabel(cu.T(lang, "Hour of day (local time)", "Ora din zi (ora locală)"))
         ax.set_ylabel(cu.T(lang, "Hours above parity, %", "Ore peste paritate, %"))
+        ax.text(1, 1.01, cu.T(lang, "* 2026: Jan–Oct", "* 2026: ian.–oct."), transform=ax.transAxes, ha="right", va="bottom", fontsize=10)
         cu.legend_bottom(fig, ncol=3, y=0.0)
     return fig
 cu.save_both(fig_parity, "f12_import_parity")
@@ -351,7 +352,7 @@ CL = {"energy": ("Energy and supply", "Energie și furnizare"), "network": ("Net
       "taxes": ("Taxes and levies (excl. VAT)", "Taxe și contribuții (fără TVA)"), "vat": ("VAT", "TVA")}
 def fig_retail(lang):
     with big(lang):
-        fig, axes = plt.subplots(1, 2, figsize=(11.0, 3.3), sharey=True)
+        fig, axes = plt.subplots(1, 2, figsize=(8.6, 3.5), sharey=True)
         for ax, c, parts, ttl in [(axes[0], ch, ["energy", "network", "taxes", "vat"], ("Households (band DC), incl. VAT", "Consumatori casnici (banda DC), cu TVA")),
                                   (axes[1], cn, ["energy", "network", "taxes"], ("Non-households (band ID), excl. VAT", "Consumatori noncasnici (banda ID), fără TVA"))]:
             x = np.arange(len(ES_GEO)); bottom = np.zeros(len(ES_GEO))
@@ -526,7 +527,8 @@ def fig_sep(lang):
         ax.bar(x - wdt / 2, sep_y.HU, wdt, color=cu.PAL["HU"], label=cu.T(lang, "RO vs HU", "RO față de HU"))
         ax.bar(x + wdt / 2, sep_y.BG, wdt, color=cu.PAL["BG"], label=cu.T(lang, "RO vs BG", "RO față de BG"))
         ax.set_xticks(x); ax.set_xticklabels([str(y) + ("*" if y == 2026 else "") for y in sep_y.index])
-        ax.set_ylabel(cu.T(lang, "Share of MTUs with price gap > 1 EUR/MWh, %", "MTU cu diferență > 1 EUR/MWh, %"), fontsize=10.5)
+        ax.set_ylabel(cu.T(lang, "Market time units (MTUs) with\nprice gap > 1 EUR/MWh, %", "Intervale de piață (MTU) cu\ndiferență > 1 EUR/MWh, %"), fontsize=10.5)
+        ax.text(1, 1.01, cu.T(lang, "* 2026: Jan–Oct", "* 2026: ian.–oct."), transform=ax.transAxes, ha="right", va="bottom", fontsize=10)
         cu.legend_bottom(fig, ncol=2, y=0.0)
     return fig
 cu.save_both(fig_sep, "f8_separation")
@@ -622,11 +624,11 @@ cu.write_table(treg, "regression",
 '''),
 ("code", r'''
 WL = {"resid": ("Residual\nload", "Consum\nrezidual"), "hydro": ("Hydro", "Hidro"), "nuclear": ("Nuclear", "Nuclear"),
-      "netimp": ("Net\nimports", "Import\nnet"), "srmc": ("Gas\nSRMC", "SRMC\ngaze"), "calendar": ("Month\nmix", "Luni"),
-      "unexplained": ("Unex-\nplained", "Neexpli-\ncat")}
+      "netimp": ("Net\nimports", "Import\nnet"), "srmc": ("Gas\nSRMC", "SRMC\ngaze"), "calendar": ("Month\nmix", "Structura\nlunilor"),
+      "unexplained": ("Not\nexplained", "Rest\nneexplicat")}
 def fig_waterfall(lang):
     with big(lang):
-        fig, ax = plt.subplots(figsize=(7.4, 3.9))
+        fig, ax = plt.subplots(figsize=(8.6, 3.9))
         keys = ["srmc", "nuclear", "hydro", "resid", "netimp", "calendar", "unexplained"]
         labels = [cu.T(lang, "Jan-Oct\n2024", "ian.–oct.\n2024")] + [cu.T(lang, *WL[k]) for k in keys] + [cu.T(lang, "Jan-Oct\n2026", "ian.–oct.\n2026")]
         ax.bar(0, pA, color=cu.MUTED, width=0.62)
@@ -642,7 +644,7 @@ def fig_waterfall(lang):
         ax.plot([len(keys) + 0.31 - 0.38, len(keys) + 0.69], [level, level], color=INKL, lw=0.6)
         for xi, v in [(0, pA), (len(keys) + 1, pB)]:
             ax.text(xi, v + 2, cu.fmt(v, 1, lang), ha="center", fontsize=10, fontweight="bold")
-        ax.set_xticks(range(len(labels))); ax.set_xticklabels(labels, fontsize=10)
+        ax.set_xticks(range(len(labels))); ax.set_xticklabels(labels, fontsize=9.5)
         ax.set_ylabel(cu.T(lang, "Mean RO day-ahead price, EUR/MWh", "Prețul mediu PZU, EUR/MWh"))
         ax.set_ylim(0, peak * 1.12)
         cu.comma_axis(ax, lang)

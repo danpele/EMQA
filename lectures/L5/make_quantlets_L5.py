@@ -327,7 +327,7 @@ fig, ax = plt.subplots(figsize=(6.4, 2.1))
 sm_ = SPOT_M.loc['2020-01-01':'2022-12-01']
 ax.plot(sm_.index + pd.Timedelta(days=14), sm_.values, color=PAL['RO'], lw=1.4, label='Romania, monthly mean day-ahead')
 ax.scatter(c22['auction_date'], c22['price_eur_mwh'], s=9, color=PAL['DE_LU'], zorder=3,
-           label='forward for Cal-22 baseload, one auction')
+           label='forward for Cal-2022 baseload, one auction')
 ax.hlines(S22, pd.Timestamp('2022-01-01'), pd.Timestamp('2022-12-31'), color='#222222', lw=1.2, ls='--', label='realised 2022 average')
 ax.hlines(F22, pd.Timestamp('2022-01-01'), pd.Timestamp('2022-12-31'), color=PAL['DE_LU'], lw=1.2, ls='--',
           label='volume-weighted forward')
@@ -341,7 +341,7 @@ legend_bottom(fig, ncol=2)
 
 def q_cal_by_trade():
     q = Quantlet(5, "cal_by_trade",
-                 "Prices of the calendar-year baseload forward contracts on OPCOM (Cal-21 to Cal-27) by auction date, with the "
+                 "Prices of the calendar-year baseload forward contracts on OPCOM (Cal-2021 to Cal-2027) by auction date, with the "
                  "realised mean day-ahead price of each delivered year as a thick line; " + period("cal_by_trade") +
                  ". Shows how the forward curve moves with the trade date.",
                  "forward curve, calendar-year baseload, OPCOM, trade date, realised spot, Romania, electricity",
@@ -361,13 +361,16 @@ for y, g in CY.groupby('dy'):
 cols_ = [PAL['RO'], PAL['HU'], PAL['DE_LU'], PAL['c7'], PAL['BG'], PAL['c5'], PAL['c6']]
 for i, y in enumerate([y for y in sorted(calt) if y <= END.year + 1]):
     g = CY[CY['dy'] == y]
-    ax.scatter(g['auction_date'], g['price_eur_mwh'], s=7, color=cols_[i % len(cols_)], label=f'Cal-{str(y)[2:]}')
+    ax.scatter(g['auction_date'], g['price_eur_mwh'], s=7, color=cols_[i % len(cols_)], label=f'Cal-{y}')
     if not np.isnan(calt[y]['realised']) and y <= END.year - 1:
         ax.hlines(calt[y]['realised'], pd.Timestamp(f'{y}-01-01'), pd.Timestamp(f'{y}-12-31'), color=cols_[i % len(cols_)], lw=2.0)
 ax.set_ylabel('EUR/MWh')
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-legend_compact(fig, ncol=7)
+legend_compact(fig, ncol=4)
+for h_ in fig.legends[-1].legend_handles:          # legend markers readable
+    if hasattr(h_, 'set_sizes'):
+        h_.set_sizes([30])
 ''' + save_cell("cal_by_trade", 0.2))
     return q
 
@@ -686,7 +689,7 @@ ax.plot(PF.index, PF['f_load'], marker='o', ms=3.5, color=PAL['RO'], lw=1.3, lab
 ax.plot(PF.index, PF['f_solar'], marker='s', ms=3.5, color=PAL['BG'], lw=1.3, label='solar capture / baseload price')
 ax.axhline(1, color='#222222', lw=0.6)
 ax.set_xticks(PF.index)
-ax.set_xticklabels([str(y)[2:] + ('*' if y == END.year else '') for y in PF.index])    # * = to the cut-off
+ax.set_xticklabels([str(y) + ('*' if y == END.year else '') for y in PF.index], fontsize=9.5)    # * = to the cut-off
 ax.set_ylabel('ratio')
 legend_bottom(fig, ncol=2)
 ''' + save_cell("shape", 0.2))
@@ -739,13 +742,13 @@ legend_bottom(fig, ncol=2)
 def q_collar():
     y1 = int(END[:4]) + 1
     q = Quantlet(5, "collar",
-                 f"Effective price paid for the Romanian Cal-{str(y1)[2:]} baseload band as a function of the forward price at "
+                 f"Effective price paid for the Romanian Cal-{y1} baseload band as a function of the forward price at "
                  "expiry: unhedged, forward, cap (call bought at K = 1.1 F) and collar 0.9 F - 1.1 F, with Black-76 premia "
                  "from real inputs (F = OPCOM VWAP, volatility of the calendar forwards, euro short-term rate); "
                  + period("collar") + ".",
                  "Black-76, option pricing, cap, collar, call option, put option, hedging, forward, OPCOM, Romania",
                  DFW + "; ECB euro short-term rate (data/clean/ecb_ron_estr_daily.csv)",
-                 title=f"Effective price of the Cal-{str(y1)[2:]} band with forward, cap and collar")
+                 title=f"Effective price of the Cal-{y1} band with forward, cap and collar")
     q.md("What each instrument pays for next year's band: inputs of the Black-76 model taken from real data.")
     q.code(STYLE).code(LOAD_PD).code(LOAD_FW).code(CY_CELL).code(CURVE).code(BLACK76)
     q.code(r'''def cal_vol(g, max_gap=30):
@@ -803,7 +806,7 @@ def q_case2026():
     y = int(END[:4])
     q = Quantlet(5, "case2026",
                  f"Case study {y}: monthly cost of 1 MW of baseload for a Romanian supplier, {y}-01 to {END[:7]}, with four "
-                 f"strategies: unhedged (realised day-ahead monthly mean), 100% forward Cal-{str(y)[2:]} (OPCOM VWAP), 50% "
+                 f"strategies: unhedged (realised day-ahead monthly mean), 100% forward Cal-{y} (OPCOM VWAP), 50% "
                  "forward + 50% spot, and monthly caps at K bought in December of the previous year (Black-76 premium with the "
                  "terminal volatility of one-month-ahead forwards and the euro short-term rate).",
                  "case study, hedging strategy, forward, cap, Black-76, supplier, cost of energy, OPCOM, Romania",
@@ -850,7 +853,7 @@ show('saving of the caps vs spot, EUR per MW', eur['spot'] - eur['cap'], 'case.s
 fig, ax = plt.subplots(figsize=(6.4, 2.1))
 xm = STRAT.index + pd.Timedelta(days=14)
 ax.plot(xm, STRAT['spot'], marker='o', ms=3.5, color='#9a9a9a', lw=1.3, label='unhedged (spot)')
-ax.plot(xm, STRAT['fwd'], color=PAL['HU'], lw=1.6, label=f'100% forward Cal-{str(END.year)[2:]}')
+ax.plot(xm, STRAT['fwd'], color=PAL['HU'], lw=1.6, label=f'100% forward Cal-{END.year}')
 ax.plot(xm, STRAT['half'], color=PAL['RO'], lw=1.2, ls=':', label='50% forward + 50% spot')
 ax.plot(xm, STRAT['cap'], color=PAL['DE_LU'], lw=1.3, ls='--', marker='s', ms=3, label='monthly caps at K')
 ax.set_ylabel('cost, EUR/MWh')
