@@ -197,16 +197,14 @@ Diferența relevantă este cea față de Germania și este concentrată în orel
   (PCCB-LE, PCCB-NC, PC-OTC, PCSU, PMC, PCCB-LE-Flex), lei/MWh, converted to EUR at the ECB monthly average EUR/RON rate.
 * **Balancing:** Transelectrica single final imbalance prices, 15-minute intervals, October 2023 - September 2026 (latest settlement run of each month).
   Blank cells of the published files are left missing.
-* **Import parity:** JAO capacity-auction results need an API key (HTTP 401), so the cost of cross-border capacity is not observed.
-  Under implicit day-ahead allocation the capacity is free when the interconnector is not congested; we therefore use the cheaper of the HU and BG day-ahead prices as the import-parity price
+* **Import parity:** under implicit day-ahead allocation the capacity is free when the interconnector is not congested; we therefore use the cheaper of the HU and BG day-ahead prices as the import-parity price
   and read RO prices above it as hours with a congested import border (the gap is the implicit congestion rent).""",
 """Date suplimentare de piață (descărcate de `download_c8_data.py` în `data_c8/`, cu adresa și data în `data_c8/download_log.json`):
 * **Contracte la termen:** indicele OPCOM ROPEX_FM, prețul mediu ponderat cu volumul al tuturor contractelor *aflate în livrare* în luna M pe piețele la termen administrate de OPCOM
   (PCCB-LE, PCCB-NC, PC-OTC, PCSU, PMC, PCCB-LE-Flex), lei/MWh, convertit în EUR la cursul mediu lunar EUR/RON al BCE.
 * **Echilibrare:** prețurile finale unice de dezechilibru publicate de Transelectrica, intervale de 15 minute, octombrie 2023 – septembrie 2026 (cea mai recentă decontare a fiecărei luni).
   Celulele goale din fișierele publicate rămîn valori lipsă.
-* **Paritatea de import:** rezultatele licitațiilor de capacitate JAO cer o cheie de acces (HTTP 401), deci costul capacității transfrontaliere nu este observat.
-  În alocarea implicită din piața pentru ziua următoare, capacitatea nu costă nimic cînd interconexiunea nu este congestionată; folosim, de aceea, prețul mai mic dintre HU și BG ca preț de paritate a importului
+* **Paritatea de import:** în alocarea implicită din piața pentru ziua următoare, capacitatea nu costă nimic cînd interconexiunea nu este congestionată; folosim, de aceea, prețul mai mic dintre HU și BG ca preț de paritate a importului
   și interpretăm orele în care prețul din România îl depășește drept ore cu frontieră de import congestionată (diferența este renta de congestie implicită)."""),
 ("code", r'''
 C8 = "data_c8"
