@@ -327,15 +327,19 @@
 
     const loc = v => (v && typeof v === 'object') ? v[LANG] : v;
 
+    const fileLink = f => `<a href="data/clean/${encodeURIComponent(f)}" download><code>${esc(f)}</code></a>`;
     function renderData() {
         const d = D.data;
         $('data-intro').innerHTML = d.intro[LANG];
         const head = T.dataCols.map(h => `<th>${h}</th>`).join('');
         $('data-table').innerHTML = `<table class="sessions data-table"><thead><tr>${head}</tr></thead><tbody>` +
-            d.series.map(s => `<tr><td>${s.name[LANG]}<br><code>${esc(s.file)}</code></td><td>${s.freq[LANG]}</td>` +
+            d.series.map(s => `<tr><td>${s.name[LANG]}<br>${fileLink(s.file)}</td><td>${s.freq[LANG]}</td>` +
                 `<td class="c">${loc(s.coverage)}</td><td>${loc(s.units)}</td>` +
                 `<td><a href="${s.href}" target="_blank" rel="noopener">${s.source}</a>${s.note ? `<br><span class="muted-note">${s.note[LANG]}</span>` : ''}</td></tr>`).join('') +
             '</tbody></table>';
+        $('data-files').innerHTML = `<h3 class="sub">${T.dataFiles}</h3><ul class="data-files">` +
+            d.files.map(f => `<li>${fileLink(f.file)} <span class="muted-note">${LANG === 'ro' ? f.size.replace(".", ",") : f.size}</span></li>`).join('') +
+            `</ul><p><a href="https://github.com/danpele/EMQA/tree/main/data/clean" target="_blank" rel="noopener">${T.dataRepo} ↗</a></p>`;
         $('data-licence').innerHTML = d.licence[LANG];
     }
 
@@ -364,7 +368,9 @@
                 <div><strong>${r[LANG][0]}</strong><p>${r[LANG][1]}</p></div>
             </a>`
         ).join('');
-        $('bibliography').innerHTML = D.bibliography.map(b => `<li>${b}</li>`).join('');
+        $('bibliography').innerHTML = D.bibliography.map(g =>
+            `<h4 class="biblio-group">${g.h[LANG]} <span class="muted-note">(${g.items.length})</span></h4>` +
+            `<ol class="biblio">${g.items.map(b => `<li>${b}</li>`).join('')}</ol>`).join('');
         $('abbreviations').innerHTML = D.abbreviations.map(([a, en, ro]) =>
             `<div class="abbr-row"><dt>${a}</dt><dd>${LANG === 'ro' && ro ? ro : en}</dd></div>`).join('');
     }
