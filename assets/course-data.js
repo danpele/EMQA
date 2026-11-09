@@ -188,16 +188,16 @@
         // ---------------------------------------------------------------
         overview: {
             en: [
-                { h: 'Course', p: ['Energy Markets Quantitative Analysis (EMQA)', 'Energy MBA (Master of Business Administration) programme, Bucharest University of Economic Studies (ASE)', 'TODO: year of study, semester, academic year 2026/2027'] },
+                { h: 'Course', p: ['Energy Markets Quantitative Analysis (EMQA)', 'Energy MBA (Master of Business Administration) programme, Bucharest University of Economic Studies (ASE)', 'Part of the course Data analysis and decision making, academic year 2026/2027'] },
                 { h: 'Goal', p: ['Quantitative methods for decisions in energy markets: forecasting prices, measuring volatility and risk, pricing and hedging with derivatives.', 'Every method is applied to real Romanian and European Union (EU) data.'] },
-                { h: 'Schedule', p: ['Seven lectures', 'TODO: dates, times and room of the seven lectures'] },
+                { h: 'Schedule', p: ['Course period: 3–7 February 2027', 'Thursday, 4 February 2027, 18:00–21:00, online', 'Friday, 5 February 2027, 16:30–21:00, on campus (ASE)', 'Grades within two weeks after the end of the course'] },
                 { h: 'Assessment', p: ['TODO: components and weights of the final grade', 'Team project and AI policy: <a href="#project">see the Project section</a>'] },
                 { h: 'Tools', p: ['Python, Jupyter / Google Colab', 'GitHub: slides, notebooks, code and data'] }
             ],
             ro: [
-                { h: 'Curs', p: ['Energy Markets Quantitative Analysis (EMQA) - Analiza cantitativă a piețelor de energie', 'Programul Energy MBA (Master of Business Administration), Academia de Studii Economice din București (ASE)', 'TODO: anul de studiu, semestrul, anul universitar 2026/2027'] },
+                { h: 'Curs', p: ['Energy Markets Quantitative Analysis (EMQA) - Analiza cantitativă a piețelor de energie', 'Programul Energy MBA (Master of Business Administration), Academia de Studii Economice din București (ASE)', 'Parte a cursului Data analysis and decision making, anul universitar 2026/2027'] },
                 { h: 'Scop', p: ['Metode cantitative pentru decizii pe piețele de energie: prognoza prețurilor, măsurarea volatilității și a riscului, evaluarea instrumentelor derivate și acoperirea riscului.', 'Fiecare metodă se aplică pe date reale din România și din Uniunea Europeană (UE).'] },
-                { h: 'Program', p: ['Șapte cursuri', 'TODO: datele, orele și sala celor șapte cursuri'] },
+                { h: 'Program', p: ['Perioada cursului: 3–7 februarie 2027', 'Joi, 4 februarie 2027, 18:00–21:00, online', 'Vineri, 5 februarie 2027, 16:30–21:00, în campus (ASE)', 'Notele se comunică în cel mult două săptămîni de la încheierea cursului'] },
                 { h: 'Evaluare', p: ['TODO: componentele și ponderile notei finale', 'Proiectul de echipă și regulile privind AI: <a href="#project">secțiunea Proiect</a>'] },
                 { h: 'Instrumente', p: ['Python, Jupyter / Google Colab', 'GitHub: slide-uri, notebook-uri, cod și date'] }
             ]
