@@ -76,7 +76,7 @@ XML & format de fișier de date Extensible Markup Language\\\end{tabular}}\end{c
 
 % END-ABBR
 
-\begin{frame}{Lucrăm numai cu date reale: prețuri, producție, oferte și putere instalată}
+\begin{frame}{Sursele datelor: prețuri, producție, oferte și putere instalată}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.95}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.30\textwidth}p{0.15\textwidth}p{0.50\textwidth}@{}}\toprule
@@ -157,7 +157,7 @@ Puterea instalată & anuală & ENTSO-E prin energy-charts.info \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Sensfuß, Ragwitz \& Genoese, 2008, ENPOL)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Ofertele din România: +40 MW la preț zero coboară amiaza sub 50 EUR/MWh}
+\begin{frame}{Ofertele PZU: 40 MW la preț zero reduc prețul de amiază sub 50 EUR/MWh}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.451\textheight,keepaspectratio]{charts/ro/merit_shift.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: OPCOM, curbele agregate PZU (XML), calcule proprii. Date: ziua de livrare 2026-10-21; fluxurile transfrontaliere, blocurile și ordinele orare rămîn la valorile acceptate.}
@@ -280,7 +280,7 @@ Puterea instalată & anuală & ENTSO-E prin energy-charts.info \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hirth, 2013, ENEECO; Hirth, Ueckerdt \& Edenhofer, 2016, Energy J.)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{România, an de an}
+\subsection{Ratele de captare din România, pe ani}
 
 \begin{frame}{Rata de captare a solarului în România a scăzut de la 104\% în 2019 la 59\% în 2025}
 \footnotesize
@@ -480,7 +480,7 @@ Anul & $B$ & CP solar & CR solar, \% & $B-\mathrm{CP}$ & CP eolian & CR eolian, 
 
 \section{Profilul zilnic și diferențele de preț}
 
-\begin{frame}{Primăvara, prețul mediu: 23{,}0 EUR/MWh la amiază, 208{,}3 seara}
+\begin{frame}{Prețurile medii de primăvară: 23{,}0 la amiază, 208{,}3 EUR/MWh seara}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.491\textheight,keepaspectratio]{charts/ro/shape15.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM pentru România, prin ENTSO-E. Date: ultimele 12 luni, 2025-11-01 - 2026-10-31, prețuri pe 15 minute, ora CET; iarna = dec.-feb., primăvara = mar.-mai, vara = iun.-aug., toamna = sep.-nov..}
@@ -632,7 +632,7 @@ Anul & $B$ & CP solar & CR solar, \% & $B-\mathrm{CP}$ & CP eolian & CR eolian, 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \& Petukhina, 2026, \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; prezentarea lui C.\,O.\ Cepoi la AIDA 2026, București, 3 iunie 2026: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{diapozitive})}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{15 minute, autocanibalizare, regiunea}
+\subsection{Prețurile pe 15 minute, autocanibalizarea și concurența regională}
 
 \begin{frame}{Prețurile pe 15 minute au crescut cu 14{,}5\% venitul unei baterii de 1 oră, în aceleași zile}
 \footnotesize
@@ -745,9 +745,9 @@ Anul & $B$ & CP solar & CR solar, \% & $B-\mathrm{CP}$ & CP eolian & CR eolian, 
 \end{frame}
 
 
-\section{Studii de caz: aprilie 2026; vara 2026}
+\section{Studii de caz: aprilie 2026 și vara 2026}
 
-\subsection{aprilie 2026: cele mai multe ore cu preț negativ}
+\subsection{Luna cu cele mai multe ore cu preț negativ: aprilie 2026}
 
 \begin{frame}{Studiu de caz: în săptămîna din 20 aprilie 2026, România a avut 24 de ore cu preț negativ, iar rata de captare solară a fost 42\%}
 \footnotesize
@@ -764,7 +764,7 @@ Anul & $B$ & CP solar & CR solar, \% & $B-\mathrm{CP}$ & CP eolian & CR eolian, 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; program cu informație perfectă)}\hfill\qlink{EMQA\_L6\_case\_week}{Quantlets/L6/EMQA_L6_case_week}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiu de caz: ce a însemnat luna aprilie 2026 pentru fiecare participant la piață}
+\begin{frame}{Studiu de caz: implicațiile lunii aprilie 2026 pentru fiecare participant la piață}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item \textbf{Dezvoltatorul solar}: rata de captare 49{,}4\% (47{,}2 față de 95{,}6 EUR/MWh)
@@ -793,7 +793,7 @@ Anul & $B$ & CP solar & CR solar, \% & $B-\mathrm{CP}$ & CP eolian & CR eolian, 
 
 \subsection{Vara 2026: România și Bulgaria}
 
-\begin{frame}{Vara 2026: export la prînz, import seara din Bulgaria}
+\begin{frame}{Studiu de caz: exporturi la prînz și importuri din Bulgaria seara, vara 2026}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.425\textheight,keepaspectratio]{charts/ro/rogb_summer.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE): fluxurile fizice transfrontaliere ale României (ENTSO-E); prețurile pentru ziua următoare OPCOM (RO) și IBEX (BG). Date: medii orare, 2026-06-01 - 2026-08-31; granițele cu Moldova și Ucraina sînt raportate doar parțial.}

@@ -1,5 +1,5 @@
-TITLE = ("Case 8 - Why is electricity expensive in Romania? A data-based, non-causal decomposition",
-         "Studiul de caz 8 - De ce este scumpă energia electrică în România? O descompunere pe date, fără pretenții cauzale")
+TITLE = ("Case 8 - Determinants of high electricity prices in Romania: a data-based, non-causal decomposition",
+         "Studiul de caz 8 - Factorii care explică prețul ridicat al energiei electrice în România: o descompunere pe date, fără interpretare cauzală")
 
 CELLS = [
 ("md",
@@ -784,9 +784,9 @@ def L(k, nd=1, lang="en", sign=False):
 for lang in ("en", "ro"):
     t = lambda en, ro: ro if lang == "ro" else en
     lines = [
-        t(f"\\textbf{{Why is power expensive in Romania?}} Jan--Oct 2026: RO day-ahead {L('roTwentySix',1,lang)} EUR/MWh, "
+        t(f"\\textbf{{High power prices in Romania.}} Jan--Oct 2026: RO day-ahead {L('roTwentySix',1,lang)} EUR/MWh, "
           f"{L('premDETwentySix',1,lang)} above Germany but {L('premHUTwentySix',1,lang)} vs Hungary --- a regional, not a national, premium.",
-          f"\\textbf{{De ce este scumpă energia în România?}} Ianuarie--octombrie 2026: PZU {L('roTwentySix',1,lang)} EUR/MWh, "
+          f"\\textbf{{Prețul ridicat al energiei în România.}} Ianuarie--octombrie 2026: PZU {L('roTwentySix',1,lang)} EUR/MWh, "
           f"cu {L('premDETwentySix',1,lang)} peste Germania, dar {L('premHUTwentySix',1,lang)} față de Ungaria --- o primă regională, nu națională."),
         t(f"The average premium over Germany is largest in the evening: {L('eveDETwentySix',1,lang)} EUR/MWh at {nums['eveA']}--{nums['eveB']} h vs {L('midDETwentySix',1,lang)} at {nums['midA']}--{nums['midB']} h; RO exports at noon and imports in the evening.",
           f"Prima față de Germania apare mai ales seara: {L('eveDETwentySix',1,lang)} EUR/MWh între orele {nums['eveA']} și {nums['eveB']}, față de {L('midDETwentySix',1,lang)} între {nums['midA']} și {nums['midB']}; România exportă la prînz și importă seara."),

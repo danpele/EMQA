@@ -18,7 +18,7 @@ Directorul de achiziții de energie trebuie să decidă \textbf{cînd să reacț
 Iar consiliul de administrație dorește să știe \textbf{de ce} modelul emite alerta, înainte de a-i acorda încredere.}
 \end{scenario}
 
-\section{\T{What the paper did}{Lucrarea de referință}}
+\section{\T{The reference paper}{Lucrarea de referință}}
 \textbf{\T{Question.}{Întrebarea de cercetare.}} \T{Can explainable artificial intelligence (XAI) identify the drivers of price spikes in the Romanian day-ahead market; is the residual load forecast a primary predictor; and can an operational early-warning system be built from interpretable balance indicators (p.~4821)?}%
 {Poate inteligența artificială explicabilă (XAI, \emph{explainable artificial intelligence}) să identifice factorii vîrfurilor de preț de pe piața pentru ziua următoare din România? Este prognoza consumului rezidual una dintre principalele variabile explicative? Se poate construi un sistem operațional de avertizare timpurie pe baza unor indicatori de echilibru ușor de interpretat (p.~4821)?}
 
@@ -72,7 +72,7 @@ Măsurile de calitate: precizia $=TP/(TP+FP)$ (proporția alertelor care au fost
 {Folosiți modelul pentru a ordona orele după probabilitatea unui vîrf și pentru a explica aceste probabilități; stabiliți pragul de reacție pe baza propriilor costuri ($C/L$); recalibrați pragurile atunci cînd se schimbă regimul pieței.}
 \end{decision}
 
-\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\section{\T{Replication on the course data}{Replicare pe datele cursului}}
 \T{Notebook \texttt{C7\_notebook\_EN.ipynb}: hourly prices, load, solar, wind, hydro, gas and net imports (energy-charts.info). Training 2023--2024, validation January--June 2025, test July 2025 -- October 2026 (\NnTest\ hours).
 Spike threshold: \Nthr\ EUR/MWh (P90 of training; paper: 149.99). Spike share: \NspikeTrain\,\% in training, \NspikeVal\,\% in validation, \NspikeTest\,\% in the test period.
 Classroom implementation: our data contain no day-ahead forecasts, so the main models use only the information available at gate closure (12:00 CET on $d-1$): prices up to $d-1$ and the realised load, solar, wind, hydro, gas and imports of $d-2$ (day $d-1$ is not yet metered); a second XGBoost classifier with the actual fundamentals of the delivery hour (perfect foresight) is shown for comparison only. No weather or fuels; a longer sample with a different regime.}%

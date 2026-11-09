@@ -184,7 +184,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "The inverse hyperbolic sine allows negative prices but explodes near zero just like the logarithm, so it does not solve the problem; dropping days would discard real data."
             },
             "ro": {
-                "title": "Prețuri lîngă zero",
+                "title": "Prețuri apropiate de zero",
                 "text": "În zona de ofertare Germania–Luxemburg (DE-LU), o trecere de la 0,95 la 92,91 euro pe megawatt-oră (EUR/MWh) de la o zi la alta a dat o variație logaritmică $r_t$ de 458%. Ce concluzie trage cursul?",
                 "options": [
                     "Trecem la sinusul hiperbolic invers, care rezolvă problema prețurilor apropiate de zero",
@@ -373,7 +373,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "Near 1, $\\ln(\\alpha+\\beta)$ is almost $-(1-\\alpha-\\beta)$, so the half-life scales with $1/(1-\\alpha-\\beta)$: from 0.027 to 0.008 the gap shrinks more than three times."
             },
             "ro": {
-                "title": "Sensibilitatea lîngă 1",
+                "title": "Sensibilitatea în apropierea valorii 1",
                 "text": "Persistența crește de la 0,973 pentru Brent la 0,992 pentru certificatul de emisii al Uniunii Europene (UE), EU Allowance (EUA). Ce se întîmplă cu timpul de înjumătățire al unui șoc de volatilitate?",
                 "options": [
                     "Crește cu circa 2%, la fel ca persistența",
@@ -454,7 +454,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "The GJR curve is asymmetric by design. The values 30.3 and 23.7 are in percent, for a 40% shock, where the order is reversed."
             },
             "ro": {
-                "title": "Cumpărătorul după 61 EUR",
+                "title": "Cumpărătorul după o variație de 61 EUR",
                 "text": "Ieri prețul din România s-a modificat cu 61 de euro pe megawatt-oră (EUR/MWh), adică circa două abateri standard de lungă durată. Conform curbei de impact a șocurilor (*news impact curve*) din modelul Glosten–Jagannathan–Runkle (GJR), cît este $\\sigma$ de mîine?",
                 "options": [
                     "30,6 EUR/MWh după o creștere și 37,6 după o scădere",

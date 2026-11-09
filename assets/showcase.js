@@ -67,8 +67,8 @@
    "src": "Quantlets/L1/EMQA_L1_asinh_ro/asinh_ro.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_asinh_ro",
    "q": "EMQA_L1_asinh_ro",
-   "en": "Prices can be zero or negative: use differences or asinh",
-   "ro": "Prețul poate fi nul sau negativ: folosiți diferențe sau asinh"
+   "en": "Transformations for zero and negative prices: differences and asinh",
+   "ro": "Transformări pentru prețuri nule sau negative: diferențe și asinh"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_tails_brent/tails_brent.png",
@@ -116,15 +116,15 @@
    "src": "Quantlets/L1/EMQA_L1_decomp_load/decomp_load.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_decomp_load",
    "q": "EMQA_L1_decomp_load",
-   "en": "Decomposition splits a series into trend, season and the rest",
+   "en": "Decomposition: trend, seasonal and remainder components",
    "ro": "Descompunerea: trend, sezonalitate și componenta reziduală"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_smooth_brent/smooth_brent.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_smooth_brent",
    "q": "EMQA_L1_smooth_brent",
-   "en": "Exponential smoothing: recent data count more",
-   "ro": "Netezirea exponențială: datele recente cîntăresc mai mult"
+   "en": "Exponential smoothing: higher weights on recent observations",
+   "ro": "Netezirea exponențială: ponderi mai mari pentru observațiile recente"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_hydro_case/hydro_case.png",
@@ -137,8 +137,8 @@
    "src": "Quantlets/L1/EMQA_L1_iran_brent/iran_brent.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_iran_brent",
    "q": "EMQA_L1_iran_brent",
-   "en": "Case study (b): Brent +7% in a day, then back below the pre-war price",
-   "ro": "Studiul de caz (b): Brent, +7% într-o zi, apoi sub nivelul inițial"
+   "en": "Case study (b): one-day 7% rise in Brent and its reversal",
+   "ro": "Studiul de caz (b): creșterea Brent cu 7% într-o zi și revenirea"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_separation_2024/separation_2024.png",
@@ -158,15 +158,15 @@
    "src": "Quantlets/L1/EMQA_L1_cy_prices/cy_prices.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_cy_prices",
    "q": "EMQA_L1_cy_prices",
-   "en": "Case study (e): 2026 prices climbed; oil jumped in March",
-   "ro": "Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie"
+   "en": "Case study (e): rising prices in 2026 and the oil price jump in March",
+   "ro": "Studiul de caz (e): creșterea prețurilor și saltul țițeiului din martie"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_cy_generation/cy_generation.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_cy_generation",
    "q": "EMQA_L1_cy_generation",
-   "en": "Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025",
-   "ro": "Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025"
+   "en": "Case study (e): two Cernavodă outages and lower hydro output than in 2025",
+   "ro": "Studiul de caz (e): opririle de la Cernavodă și scăderea producției hidro"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_cy_extremes/cy_extremes.png",
@@ -179,8 +179,8 @@
    "src": "Quantlets/L1/EMQA_L1_bg_battery/bg_battery.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_bg_battery",
    "q": "EMQA_L1_bg_battery",
-   "en": "Case study (f): since spring 2026, Bulgaria's evenings are cheaper",
-   "ro": "Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara"
+   "en": "Case study (f): lower evening prices in Bulgaria since spring 2026",
+   "ro": "Studiul de caz (f): prețuri de seară mai mici în Bulgaria din primăvara lui 2026"
   }
  ],
  "l2": [
@@ -202,8 +202,8 @@
    "src": "Quantlets/L2/EMQA_L2_mape_fail/mape_fail.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_mape_fail",
    "q": "EMQA_L2_mape_fail",
-   "en": "Why percentage errors fail near zero and negative prices",
-   "ro": "Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative"
+   "en": "Limitations of percentage errors near zero and negative prices",
+   "ro": "Limitele erorilor procentuale la prețuri apropiate de zero sau negative"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_dm_matrix/dm_matrix.png",
@@ -244,7 +244,7 @@
    "src": "Quantlets/L2/EMQA_L2_windows/windows.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_windows",
    "q": "EMQA_L2_windows",
-   "en": "Averaging across windows beats the best single window",
+   "en": "Averaging across windows is more accurate than the best single window",
    "ro": "Media pe ferestre este mai precisă decît cea mai bună fereastră"
   },
   {
@@ -344,15 +344,15 @@
    "src": "Quantlets/L3/EMQA_L3_vol_units/vol_units.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_vol_units",
    "q": "EMQA_L3_vol_units",
-   "en": "The crisis: same volatility in percent, 4 times higher in EUR/MWh",
-   "ro": "Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh"
+   "en": "Volatility in 2022: similar in percent, 4 times higher in EUR/MWh",
+   "ro": "Volatilitatea din 2022: similară în procente, de 4 ori mai mare în EUR/MWh"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_cond_vol/cond_vol.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_cond_vol",
    "q": "EMQA_L3_cond_vol",
    "en": "GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh",
-   "ro": "GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh"
+   "ro": "GARCH: salturi scurte în procente, creștere persistentă în EUR/MWh"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_halflife/halflife.png",
@@ -379,8 +379,8 @@
    "src": "Quantlets/L3/EMQA_L3_ms_regime/ms_regime.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_ms_regime",
    "q": "EMQA_L3_ms_regime",
-   "en": "The crisis was one long turbulent regime; 2026 moves in and out",
-   "ro": "Criza a fost un regim agitat lung; 2026 alternează între regimuri"
+   "en": "Volatility regimes during the crisis and in 2026",
+   "ro": "Regimurile de volatilitate în timpul crizei și în 2026"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_rv_solar/rv_solar.png",
@@ -516,15 +516,15 @@
    "src": "Quantlets/L5/EMQA_L5_cal_by_trade/cal_by_trade.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_cal_by_trade",
    "q": "EMQA_L5_cal_by_trade",
-   "en": "The curve moves: yearly forwards by trade date vs realised",
-   "ro": "Curba se mișcă: prețurile anuale, după data tranzacției"
+   "en": "Yearly forward prices by trade date and realised spot prices",
+   "ro": "Prețurile forward anuale, după data tranzacției, și prețurile spot realizate"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_premium/premium.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_premium",
    "q": "EMQA_L5_premium",
-   "en": "Month by month, forward minus spot swings both ways",
-   "ro": "Lună de lună, diferența forward minus spot are ambele semne"
+   "en": "Monthly difference between forward and spot prices",
+   "ro": "Diferența lunară dintre prețul forward și prețul spot"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_spreads/spreads.png",
@@ -537,8 +537,8 @@
    "src": "Quantlets/L5/EMQA_L5_spark_hourly/spark_hourly.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_spark_hourly",
    "q": "EMQA_L5_spark_hourly",
-   "en": "Sorted hourly spreads: the value lies in the best hours",
-   "ro": "Marjele orare ordonate: valoarea stă în orele cele mai bune"
+   "en": "Sorted hourly spreads: value concentrated in the best hours",
+   "ro": "Marjele orare ordonate: valoarea concentrată în orele cele mai bune"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_hedge_scatter/hedge_scatter.png",
@@ -565,21 +565,21 @@
    "src": "Quantlets/L5/EMQA_L5_samuelson/samuelson.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_samuelson",
    "q": "EMQA_L5_samuelson",
-   "en": "Near contracts move more: the Samuelson effect in TTF",
-   "ro": "Contractele apropiate de livrare variază mai mult: efectul Samuelson"
+   "en": "The Samuelson effect in TTF: higher volatility of near contracts",
+   "ro": "Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_collar/collar.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_collar",
    "q": "EMQA_L5_collar",
-   "en": "What each instrument pays for the 2027 band",
+   "en": "Effective price of the 2027 band by instrument",
    "ro": "Prețul efectiv al benzii pentru 2027 cu fiecare instrument"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_case2026/case2026.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_case2026",
    "q": "EMQA_L5_case2026",
-   "en": "Case study: in 2026 the forward beat the spot in 6 of 10 months",
+   "en": "Case study: in 2026 the forward was cheaper than spot in 6 of 10 months",
    "ro": "Studiul de caz: în 2026, forward-ul a fost mai ieftin în 6 din 10 luni"
   }
  ],
@@ -595,8 +595,8 @@
    "src": "Quantlets/L6/EMQA_L6_merit_shift/merit_shift.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_merit_shift",
    "q": "EMQA_L6_merit_shift",
-   "en": "On the Romanian order book alone, 40 MW more at zero price pushes midday below 50 EUR/MWh",
-   "ro": "Ofertele din România: +40 MW la preț zero coboară amiaza sub 50 EUR/MWh"
+   "en": "Romanian order book: 40 MW more at zero price lowers the midday price below 50 EUR/MWh",
+   "ro": "Ofertele PZU: 40 MW la preț zero reduc prețul de amiază sub 50 EUR/MWh"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_resid_price/resid_price.png",
@@ -644,8 +644,8 @@
    "src": "Quantlets/L6/EMQA_L6_shape15/shape15.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_shape15",
    "q": "EMQA_L6_shape15",
-   "en": "Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening",
-   "ro": "Primăvara, prețul mediu: 23,0 EUR/MWh la amiază, 208,3 seara"
+   "en": "Spring quarter-hour prices: 23.0 at midday, 208.3 EUR/MWh in the evening",
+   "ro": "Prețurile medii de primăvară: 23,0 la amiază, 208,3 EUR/MWh seara"
   },
   {
    "src": "Quantlets/L6/EMQA_L6_spreads/spreads.png",
@@ -686,8 +686,8 @@
    "src": "Quantlets/L6/EMQA_L6_rogb_summer/rogb_summer.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_rogb_summer",
    "q": "EMQA_L6_rogb_summer",
-   "en": "Summer 2026: midday exports, evening imports from Bulgaria",
-   "ro": "Vara 2026: export la prînz, import seara din Bulgaria"
+   "en": "Case study: midday exports and evening imports from Bulgaria, summer 2026",
+   "ro": "Studiu de caz: exporturi la prînz și importuri din Bulgaria seara, vara 2026"
   }
  ],
  "l7": [
@@ -702,8 +702,8 @@
    "src": "Quantlets/L7/EMQA_L7_learning_curve/learning_curve.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_learning_curve",
    "q": "EMQA_L7_learning_curve",
-   "en": "Early stopping: stop when the error on recent days stops falling",
-   "ro": "Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade"
+   "en": "Early stopping based on the error on recent days",
+   "ro": "Oprirea timpurie pe baza erorii din zilele recente"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_search/search.png",
@@ -716,43 +716,43 @@
    "src": "Quantlets/L7/EMQA_L7_foundation_hour/foundation_hour.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_foundation_hour",
    "q": "EMQA_L7_foundation_hour",
-   "en": "Chronos-2 beats AW-LEAR in every hour of the day",
+   "en": "Chronos-2 is more accurate than AW-LEAR in every hour of the day",
    "ro": "Chronos-2 este mai precis decît AW-LEAR în fiecare oră a zilei"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_dm_matrix/dm_matrix.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_dm_matrix",
    "q": "EMQA_L7_dm_matrix",
-   "en": "DM tests: combinations with ML beat AW-LEAR significantly",
-   "ro": "Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR"
+   "en": "DM tests: combinations with ML significantly outperform AW-LEAR",
+   "ro": "Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_combo_weight/combo_weight.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_combo_weight",
    "q": "EMQA_L7_combo_weight",
-   "en": "Averaging works because the errors are not identical",
-   "ro": "Media funcționează pentru că erorile nu sînt identice"
+   "en": "Forecast averaging and the differences between model errors",
+   "ro": "Medierea prognozelor și diferențele dintre erorile modelelor"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_monthly_ml/monthly_ml.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_monthly_ml",
    "q": "EMQA_L7_monthly_ml",
-   "en": "Month by month, the combination beats AW-LEAR in 10 of 12 months",
-   "ro": "Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni"
+   "en": "The combination outperforms AW-LEAR in 10 of 12 months",
+   "ro": "Combinația este mai precisă decît AW-LEAR în 10 din 12 luni"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_cost_gain/cost_gain.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_cost_gain",
    "q": "EMQA_L7_cost_gain",
-   "en": "Compute cost: daily LEAR is the expensive model, ML costs minutes",
-   "ro": "Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute"
+   "en": "Computational cost of daily LEAR and of the ML models",
+   "ro": "Costul de calcul al modelului LEAR zilnic și al modelelor ML"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_shap_global/shap_global.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_shap_global",
    "q": "EMQA_L7_shap_global",
-   "en": "What drives the trees: yesterday's price at the same hour",
-   "ro": "Ce determină prognoza arborilor: prețul de ieri, la aceeași oră"
+   "en": "Main input of the tree models: yesterday's price at the same hour",
+   "ro": "Principala variabilă a modelelor cu arbori: prețul de ieri, la aceeași oră"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_shap_res/shap_res.png",
@@ -821,8 +821,8 @@
    "src": "Quantlets/L7/EMQA_L7_pit_retrain/pit_retrain.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_pit_retrain",
    "q": "EMQA_L7_pit_retrain",
-   "en": "Retraining: a model frozen for a year loses 4.2%",
-   "ro": "Reestimarea: un model neactualizat un an pierde 4,2%"
+   "en": "Retraining: accuracy loss of 4.2% after a year without updating",
+   "ro": "Reestimarea: pierdere de precizie de 4,2% după un an fără actualizare"
   }
  ]
 };

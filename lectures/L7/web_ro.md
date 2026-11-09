@@ -100,7 +100,7 @@ Pentru a decide cînd ne oprim (*early stopping*), rețeaua este antrenată pe p
 
 @practice regula de oprire folosește numai zile din trecut: face parte din model și se verifică la fel ca restul.
 
-## Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade {h=a8a5848b}
+## Oprirea timpurie pe baza erorii din zilele recente {h=68754445}
 
 Graficul arată curba de învățare pentru reestimarea din octombrie 2026. Eroarea pe zilele de antrenare continuă să scadă, dar eroarea pe ultimele 15% din zile atinge minimul la epoca 51, la 24,50 EUR/MWh, iar antrenarea se oprește la epoca 76.
 
@@ -181,7 +181,7 @@ Cuantilele din @eq:chronos dau și un interval de prognoză. Intervalul 10%–90
 @chart foundation_hour
 MAE pe ore ale zilei în anul de test, pentru Chronos-2, Chronos-Bolt și AW-LEAR.
 
-## AIDA 2026: DNN întrece LEAR, modelele preantrenate concurează {h=6a82de0f}
+## AIDA 2026: rețele neuronale profunde, LEAR și modele preantrenate {h=2bcaff46}
 
 La conferința AIDA 2026 (Academia de Studii Economice din București, iunie 2026), conferința invitată a lui Rafał Weron ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf)) a urmărit evoluția modelelor pentru prețul energiei electrice, de la modelele ARX și medierea pe ferestre de calibrare la LEAR și apoi la rețelele neuronale profunde și interpretabile. Rezultatele și cifrele de mai jos sînt cele de pe diapozitivele conferinței.
 
@@ -236,7 +236,7 @@ Tabelul reunește toate modelele, în anul de test. RMSE penalizează erorile ma
 
 Se desprind trei concluzii. Calibrate, rețeaua DNN și XGBoost sînt mai bune decît versiunile lor din cursul 2, dar, luate separat, rămîn puțin în urma modelului AW-LEAR. Chronos-2, fără antrenare, este cel mai bun model individual, cu 7,6% sub AW-LEAR. Iar orice combinație care amestecă învățarea automată cu modelele statistice este semnificativ mai precisă decît AW-LEAR.
 
-## Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR {h=fd3fa090}
+## Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR {h=32e9ba78}
 
 Graficul este o matrice de teste DM unilaterale pe cele 365 de zile ale anului de test: fiecare celulă dă valoarea p a testului că modelul de pe rînd este mai precis decît modelul de pe coloană. Valorile p mici marchează cîștiguri greu de pus pe seama întîmplării.
 
@@ -245,7 +245,7 @@ Combinația AW-LEAR + DNN + XGBoost este mai precisă decît AW-LEAR ($p$ = 0,00
 @chart dm_matrix
 Matricea valorilor p ale testelor DM unilaterale între toate modelele, în anul de test (modelul de pe rînd mai precis decît cel de pe coloană).
 
-## Media funcționează pentru că erorile nu sînt identice {h=e7a47eac}
+## Medierea prognozelor și diferențele dintre erorile modelelor {h=589ed375}
 
 De ce media a două modele le depășește pe amîndouă? Pentru două erori de prognoză $e_1$ și $e_2$, cu abaterile standard $\sigma_1$, $\sigma_2$ și corelația $\rho$,
 
@@ -260,7 +260,7 @@ Graficul arată MAE a combinației în funcție de ponderea dată modelului de �
 @chart combo_weight
 MAE în anul de test a combinației dintre AW-LEAR și un model de învățare automată, în funcție de ponderea acestuia din urmă; ponderile egale și ponderea optimă văzută ulterior sînt marcate.
 
-## Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni {h=b5d91b2f}
+## Combinația este mai precisă decît AW-LEAR în 10 din 12 luni {h=dcfd259c}
 
 O medie anuală poate ascunde luni în care un model este mult mai slab. Graficul arată MAE a fiecărui model în fiecare lună a anului de test. Luate separat, XGBoost și rețeaua DNN depășesc AW-LEAR fiecare doar în 3 luni; în medie cu acesta, în 10 luni.
 
@@ -271,7 +271,7 @@ Toate modelele greșesc mai mult în aceleași luni, ianuarie, iunie și octombr
 @chart monthly_ml
 MAE lunară în anul de test pentru AW-LEAR, rețeaua DNN, XGBoost și combinația lor.
 
-## Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute {h=31fd863a}
+## Costul de calcul al modelului LEAR zilnic și al modelelor ML {h=e767e66f}
 
 Acuratețea este doar jumătate din alegerea unui model; cealaltă jumătate este costul. Pe tot anul de test, pe un singur nucleu, AW-LEAR are nevoie de 87,6 minute, pentru că este reestimat pentru 365 de zile $\times$ 3 ferestre $\times$ 24 de ore. XGBoost are nevoie de 2,6 minute, rețeaua DNN de 2,7, iar Chronos-2 de numai 0,3, fiindcă nu este antrenat niciodată.
 
@@ -304,7 +304,7 @@ Valorile Shapley sînt singura împărțire echitabilă în sensul teoriei jocur
 
 @practice cereți explicația fiecărei alerte, nu doar un clasament global.
 
-## Ce determină prognoza arborilor: prețul de ieri, la aceeași oră {h=5c700531}
+## Principala variabilă a modelelor cu arbori: prețul de ieri, la aceeași oră {h=90c93dde}
 
 Graficul ordonează variabilele modelului XGBoost după media valorii absolute SHAP, $|\phi|$, în anul de test. Pe primele locuri se află prețul din $d-1$, aceeași oră, cu 32,9% din media $|\phi|$, prețul din $d-7$, aceeași oră, cu 15,6%, și ziua săptămînii, cu 9,3%.
 
@@ -341,7 +341,7 @@ Pentru rețeaua DNN, amestecarea prețurilor din $d-1$ crește MAE cu 22,82 EUR/
 @chart perm_dnn
 Importanța prin permutare a blocurilor de variabile ale rețelei DNN în anul de test, creșterea MAE în EUR/MWh, 5 permutări.
 
-## Finanțele energiei folosesc învățarea automată, dar rar o explică {h=929f4242}
+## Învățarea automată în finanțele energiei: o analiză sistematică a literaturii {h=f098c797}
 
 La aceeași conferință, Roxana Clodnitchi ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf)) a prezentat o analiză sistematică a literaturii despre inteligența artificială (AI) în finanțele energiei ([Anagnoste et al., 2025](https://doi.org/10.1016/j.esr.2025.101833)). Au fost examinate circa 700 de articole din Web of Science, iar 232 de articole evaluate colegial, din perioada 2020–2025, au fost reținute și grupate pe șase piloni ai finanțelor energiei. Cifrele de mai jos sînt cele de pe diapozitive.
 
@@ -372,7 +372,7 @@ Prețurile mai mici sau egale cu zero sînt evenimentul opus: 255 de ore, în 53
 @chart events_hour
 Ponderea zilelor din anul de test cu vîrf de preț și cu preț mai mic sau egal cu zero, pe ore ale zilei.
 
-## Clasificarea vîrfurilor: o prognoză bună de preț le detectează deja {h=f2d878e5}
+## Clasificatorii de vîrfuri și detectarea vîrfurilor din prognozele de preț {h=d26f97ba}
 
 Un clasificator dă probabilitatea ca o oră să fie un vîrf; judecăm cît de bine ordonează orele și cît de corecte sînt probabilitățile lui:
 
@@ -503,7 +503,7 @@ Pe datele noastre, cea mai bună dintre cele 25 de setări DNN pe anul de test t
 
 @practice cînd vi se arată cel mai bun dintre multe modele, cereți valoarea p a testului RC sau SPA.
 
-## Reestimarea: un model neactualizat un an pierde 4,2% {h=094d9807}
+## Reestimarea: pierdere de precizie de 4,2% după un an fără actualizare {h=acb2d5fa}
 
 Piețele se schimbă, așa că un model trebuie reestimat. Graficul compară modelul XGBoost reestimat lunar cu o versiune estimată o singură dată, înaintea anului de test, și cu o versiune estimată pe o fereastră glisantă scurtă. Modelul neactualizat are MAE 24,25, cu 4,2% mai slab. Pierderea crește în timp: +0,15 EUR/MWh în primele 3 luni și +3,70 în ultimele 3.
 
@@ -514,7 +514,7 @@ O fereastră glisantă scurtă, de 365 de zile, este chiar mai slabă (MAE 25,59
 @chart pit_retrain
 MAE a modelului XGBoost în anul de test, cu reestimare lunară pe tot istoricul, estimat o singură dată și cu fereastră glisantă de 365 de zile, plus diferența lunară a modelului neactualizat.
 
-## Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate {h=bcc79b5d}
+## Testul privind informația din viitor: prognozele recalculate fără datele viitoare rămîn neschimbate {h=d9d8d2d3}
 
 Un test simplu arată dacă un flux de prelucrare a datelor folosește, fără să vrea, informație din viitor. Pentru prima zi din fiecare dintre cele 12 luni de test, toate datele de după ora 12:00 din ziua $d-1$ sînt șterse, apoi înlocuite cu 10 000 EUR/MWh. XGBoost, rețeaua DNN și clasificatorul de vîrfuri sînt reestimate și trebuie să dea aceleași prognoze.
 
@@ -537,7 +537,7 @@ Validarea încrucișată cu amestecare, intrările din aceeași zi și alegerea 
 
 Cursul se încheie cu cinci întrebări cu care se poate confrunta un manager, o sinteză a rezultatelor, cercetările grupului nostru și resurse pentru studiu suplimentar.
 
-## Verifică-te {h=7fff39a1}
+## Întrebări de autoevaluare {h=7fff39a1}
 
 1. Un start-up prezintă o rețea neuronală cu rMAE 0,70 pentru România, testată prin validare încrucișată cu 5 subeșantioane amestecate. Ce cereți? Răspuns: o testare cronologică pe un an neatins, cu intrări cunoscute la ora 12:00 în ziua $d-1$. Pe datele noastre, doar amestecarea a făcut XGBoost să pară cu 5,4% mai bun.
 2. Chronos-2 are cea mai mică MAE dintre modelele individuale, iar combinația AW-LEAR + Chronos-2 are aceeași MAE. Pe care o puneți în producție? Răspuns: combinația. Are aceeași acuratețe (DM: $p$ = 0,491), dar dacă modelul preantrenat se degradează sau devine indisponibil, LEAR asigură în continuare jumătate din prognoză.
@@ -594,7 +594,7 @@ $$ \theta_k=\theta_{k-1}-\eta\,\frac{m_k/(1-\beta_1^k)}{\sqrt{v_k/(1-\beta_2^k)}
 
 unde $g_k$ este gradientul pe grupul de zile $k$, $m_k$ și $v_k$ mediile mobile ale gradientului și ale pătratului său, $\eta$ rata de învățare, iar $\beta_1=0{,}9$, $\beta_2=0{,}999$, $\varepsilon=10^{-8}$ sînt valorile implicite. Penalizarea ponderilor adaugă $\lambda\theta$ la $g_k$, o penalizare pătratică, aici cu $\lambda$ = $10^{-5}$.
 
-## Anexa B: de ce valoarea optimă a unei frunze este −G/(H+λ) {h=50ba5188}
+## Anexa B: derivarea valorii optime a unei frunze, −G/(H+λ) {h=c0fa2867}
 
 XGBoost aproximează funcția de pierdere în jurul prognozei curente $F_{m-1}$ printr-o dezvoltare Taylor de ordinul doi:
 

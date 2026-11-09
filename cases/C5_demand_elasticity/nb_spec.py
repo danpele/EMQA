@@ -1,5 +1,5 @@
-TITLE = ("Case 5 - Does demand react to price? Elasticity, causality and the supplier's hedge ratio",
-         "Studiul de caz 5 - Reacționează cererea la preț? Elasticitatea, cauzalitatea și raportul de acoperire al furnizorului")
+TITLE = ("Case 5 - Price response of electricity demand: elasticity, causality and the supplier's hedge ratio",
+         "Studiul de caz 5 - Reacția cererii de energie electrică la preț: elasticitatea, cauzalitatea și raportul de acoperire al furnizorului")
 
 CELLS = [
 ("md",

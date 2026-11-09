@@ -389,7 +389,7 @@ def q_mape_fail():
             "MAPE, percentage error, negative prices, forecast evaluation, LEAR, LASSO, electricity price forecasting, Romania",
             "Hourly day-ahead prices of Romania; hourly load, wind and solar of Romania (generation_ro_mw_hourly_utc.csv); "
             "saved LEAR forecasts of the test year (forecasts_test.csv, from lectures/L2/analysis_L2.py)",
-            "Why percentage errors fail near zero and negative prices")
+            "Limitations of percentage errors near zero and negative prices")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md(LEAR_MD)
     q.code(forecast_block(n, helpers=True) +
@@ -650,7 +650,7 @@ def q_windows():
             "calibration window, averaging across windows, forecast combination, ARX, LEAR, MAE, electricity price forecasting, Romania",
             "Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania; saved LEAR forecasts of the "
             "test year (forecasts_test.csv, from lectures/L2/analysis_L2.py)",
-            "Averaging across windows beats the best single window")
+            "Averaging across windows is more accurate than the best single window")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md("## Expert ARX forecasts\n\n" + ARX_MD).code(ARX_FUNCS).code(ARX_RUN)
     q.md(LEAR_MD)

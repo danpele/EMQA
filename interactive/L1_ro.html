@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
-<p class="toc"><a href="#s-mkt">Piețele de energie electrică din România și Europa</a> · <a href="#s-facts">Datele din energie și faptele stilizate</a> · <a href="#s-tool">Instrumente pentru serii de timp</a></p>
+<p class="toc"><a href="#s-mkt">Piețele de energie electrică din România și Europa</a> · <a href="#s-facts">Date din energie și fapte stilizate</a> · <a href="#s-tool">Instrumente de analiză a seriilor de timp</a></p>
 <h2 class="sec" id="s-mkt">Piețele de energie electrică din România și Europa</h2>
 <section class="blk" id="merit-order">
   <h3>Ordinea de merit pe curbele reale OPCOM, 21 octombrie 2026</h3>
@@ -64,7 +64,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> La amiază, pe 21 octombrie 2026, PZU (piața pentru ziua următoare) s-a închis la 152,23 EUR/MWh, cu aproximativ 2,8 GW pe curbele publicate. Cîtă ofertă suplimentară la preț zero aduce prețul de la amiază aproape de zero: circa 50 MW, 500 MW sau 2.000 MW?</div>
   <details><summary>Răspuns</summary><p>Circa 50 MW. Lîngă punctul de intersecție, curba cererii este aproape verticală: cumpărătorii cer aproximativ 2.816 MW la 152 EUR/MWh și doar cu circa 11 MW mai mult la 0 EUR/MWh. Cu 25 MW de ofertă în plus, curbele publicate se intersectează la 131,40 EUR/MWh, iar cu 50 MW la 0,68 EUR/MWh. În intervalul de seară, curbele se intersectează pe un segment vertical (orice preț între 206,49 și 247,00 EUR/MWh închide 3.423 MW; prețul oficial este 244,00 EUR/MWh), iar 300 MW la preț zero duc prețul la 0. Cererea inelastică la preț explică de ce o oră însorită poate face prețul negativ.</p></details>
-</section><h2 class="sec" id="s-facts">Datele din energie și faptele stilizate</h2>
+</section><h2 class="sec" id="s-facts">Date din energie și fapte stilizate</h2>
 <section class="blk" id="daily-prices">
   <h3>Prețurile au crescut puternic în 2021–2022 și nu au mai revenit la vechiul nivel</h3>
   <div class="pair">
@@ -96,15 +96,15 @@
   <details><summary>Răspuns</summary><p>În jurul amiezii, cînd producția solară este maximă: în 2025, 95% dintre orele cu preț negativ sînt între 10:00 și 16:00, cel mai des la 13:00. Din 2024, 84% dintre ele cad în weekend, iar din 2023 aproximativ jumătate în aprilie și mai (cifrele din curs). Ridicați pragul la 0 EUR/MWh și peste: numărul orelor foarte ieftine crește mai repede decît cel al orelor strict negative.</p></details>
 </section>
 <section class="blk" id="asinh">
-  <h3>Prețul poate fi nul sau negativ: folosiți diferențe sau asinh</h3>
+  <h3>Transformări pentru prețuri nule sau negative: diferențe și asinh</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=31" target="_blank" rel="noopener"><img src="slides/L1_asinh_ro_ro.jpg" alt="Slide-ul 31: Prețul poate fi nul sau negativ: folosiți diferențe sau asinh" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=31" target="_blank" rel="noopener"><img src="slides/L1_asinh_ro_ro.jpg" alt="Slide-ul 31: Transformări pentru prețuri nule sau negative: diferențe și asinh" loading="lazy"></a>
       <figcaption>Slide-ul 31</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="as-c">Scala transformării, c (multipli ai abaterii absolute mediane, MAD): <b id="as-c-v"></b></label><input type="range" id="as-c" min="0.1" max="5" step="0.1" value="1"></div><div class="ctl"><label for="as-y">Anul (prețuri orare, România)</label><select id="as-y"><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected>2025</option><option value="2026">2026</option></select></div><button class="btn play" id="as-play" type="button"></button></div><div class="charts "><div class="chart" id="as-raw"></div><div class="chart" id="as-tr"></div></div><ul class="out" id="as-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_asinh_ro" target="_blank" rel="noopener">EMQA_L1_asinh_ro</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_asinh_ro/EMQA_L1_asinh_ro.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Prețurile orare au o coadă dreaptă lungă și, din 2023, valori negative. De ce nu luăm pur și simplu logaritmul?</div>
   <details><summary>Răspuns</summary><p>Logaritmul nu este definit pentru prețuri zero sau negative. Sinusul hiperbolic invers, asinh((p − mediana)/(c·MAD)), unde MAD este abaterea absolută mediană, se comportă ca un logaritm în cozi și aproape liniar lîngă mediană, și acceptă orice semn. Pentru România în 2025, c = 1 reduce asimetria de la 0,90 la 0,09 și excesul de kurtosis de la 4,24 la −0,24; un c mai mic comprimă și mai mult cozile (exces de kurtosis negativ), un c mai mare lasă seria mai aproape de prețurile brute.</p></details>
-</section><h2 class="sec" id="s-tool">Instrumente pentru serii de timp</h2>
+</section><h2 class="sec" id="s-tool">Instrumente de analiză a seriilor de timp</h2>
 <section class="blk" id="acf-hourly">
   <h3>Autocorelația prețurilor la decalaje de o zi și de o săptămînă</h3>
   <div class="pair">

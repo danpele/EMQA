@@ -1,5 +1,5 @@
-TITLE = ("Case 3 - Do Romanian energy stocks move with oil and gas? Time-varying correlation and hedging",
-         "Studiul de caz 3 - Evoluează acțiunile companiilor energetice românești în același sens cu petrolul și gazele? Corelația variabilă în timp și acoperirea riscului")
+TITLE = ("Case 3 - Romanian energy stocks, oil and gas: time-varying correlation and hedging",
+         "Studiul de caz 3 - Acțiunile companiilor energetice românești, petrolul și gazele: corelația variabilă în timp și acoperirea riscului")
 
 CELLS = [
 ("md",

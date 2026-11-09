@@ -26,10 +26,10 @@ BLOCKS = [('var-es', 'tails', 'risk', 've'),
 
 SECTIONS = {
  'en': dict(risk='Price risk: losses, quantiles, VaR and ES', est='Estimating VaR and ES: four methods',
-            bt='Backtesting VaR and ES', coll='From quantiles to margins, guarantees and limits',
+            bt='Backtesting VaR and ES', coll='Margins, guarantees and position limits',
             pos='Price risk for suppliers and producers'),
  'ro': dict(risk='Riscul de preț: pierderi, cuantile, VaR și ES', est='Estimarea VaR și ES: patru metode',
-            bt='Testarea retrospectivă a VaR și ES', coll='De la cuantile la marje, garanții și limite',
+            bt='Testarea retrospectivă a VaR și ES', coll='Marje, garanții și limite de poziție',
             pos='Riscul de preț pentru furnizori și producători'),
 }
 

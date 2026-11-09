@@ -22,7 +22,7 @@ Mai întîi stabilim cum se măsoară volatilitatea, în procente sau în euro p
 
 Înainte de orice model, două alegeri stabilesc ce înseamnă „volatilitate” pentru energia electrică: unitatea în care măsurăm variația prețului, procente sau euro pe megawatt-oră, și ceea ce eliminăm din variație pentru că este cunoscut dinainte, adică efectul zilei din săptămînă. Secțiunea face ambele alegeri pe datele din România și descrie faptele stilizate pe care modelele din secțiunile următoare trebuie să le reproducă: gruparea volatilității, cozile groase și o volatilitate în bani care crește odată cu nivelul prețului.
 
-## Folosim numai date reale: energie, combustibili, carbon, acțiuni {h=d4880793}
+## Sursele datelor: energie electrică, combustibili, carbon și acțiuni energetice {h=122bad76}
 
 Cursul folosește numai date reale, descărcate din surse publice. Seria principală este prețul pe PZU din România (RO); pentru comparație folosim Ungaria (HU) și zona de ofertare Germania–Luxemburg (DE-LU). Prețurile provin de la OPCOM, de la bursa de energie din Ungaria (HUPX) și de la EPEX SPOT și sînt preluate de la Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E), prin energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE). Datele de energie electrică sînt zilnice și orare și acoperă perioada 1 ianuarie 2019 – 31 octombrie 2026, ultima lună completă: 2 861 de zile de livrare, după ora Europei Centrale (CET), fără zile lipsă.
 
@@ -110,7 +110,7 @@ Graficul arată, pe scară logaritmică, densitatea șocurilor standardizate cu 
 @chart tails
 Densitatea șocurilor standardizate cu GARCH, $z_t$, ale prețului din România (bare, scară logaritmică), împreună cu densitatea normală (linie întreruptă) și densitatea Student cu $\nu$ = 4,3.
 
-## Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh {h=ad13068f}
+## Volatilitatea din 2022: similară în procente, de 4 ori mai mare în EUR/MWh {h=563fd144}
 
 Alegerea unității de măsură nu este un detaliu tehnic. Graficul arată, an cu an, abaterea standard a șocurilor în procente și în EUR/MWh. În procente, anul 2022, anul crizei energetice, nu a fost mai volatil decît 2019: 18,5% față de 18,7%, un raport de 0,99. În EUR/MWh, aceiași ani dau 11,2 față de 45,8, un raport de 4,1, deoarece prețul mediu a crescut de la 50 la 265 EUR/MWh.
 
@@ -183,7 +183,7 @@ Modelul Student cîștigă detașat, cu un BIC mult mai mic. Diferența nu este 
 
 @practice Folosiți șocuri de tip Student: cu șocuri normale, limitele rămîn largi prea mult timp.
 
-## GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh {h=b1d7ec96}
+## GARCH: salturi scurte în procente, creștere persistentă în EUR/MWh {h=14721c04}
 
 Graficul arată volatilitatea condiționată zilnică $\hat\sigma_t$ a celor două modele GARCH(1,1)-t pe întreaga perioadă. În procente, volatilitatea este formată din salturi scurte, peste un nivel de bază destul de stabil; cel mai mare salt, 156% pe zi, a avut loc la 26 decembrie 2023, imediat după scăderea de Crăciun, și a dispărut în cîteva zile. În EUR/MWh imaginea este a unui platou lung: volatilitatea a crescut pe parcursul anului 2021, a atins maximul de 85,7 EUR/MWh la 4 septembrie 2022, în plină criză, și a scăzut lent în 2023. Minimul, 8,8 EUR/MWh, a fost înregistrat la 6 iulie 2019, iar la sfîrșitul perioadei valoarea era 27,4.
 
@@ -268,7 +268,7 @@ Regresia lui $\ln\hat\sigma_m(u)$ pe $\ln\bar P_m$, unde $\hat\sigma_m(u)$ este 
 @chart vol_level
 Abaterea standard lunară a șocurilor în EUR/MWh în funcție de prețul mediu lunar, ambele pe scară logaritmică, colorate după an, cu dreapta de regresie log-log.
 
-## Cozile groase contează mai mult decît asimetria {h=cc519e5b}
+## Importanța relativă a cozilor groase și a asimetriei {h=aa8933aa}
 
 Tabelul pune alături cele șase modele: trei ecuații ale varianței (GARCH, GJR, EGARCH), fiecare cu șocuri normale și cu șocuri Student, în ambele unități de măsură. Pentru fiecare dă persistența, BIC și valoarea $p$ a testului Ljung–Box pentru pătratele șocurilor standardizate, $z_t^2$.
 
@@ -307,7 +307,7 @@ Pentru fiecare zi, modelul dă probabilitatea regimului agitat. Pe șocurile în
 
 @practice O probabilitate a regimului agitat peste 0,5 cere revizuirea acoperirii riscului și a garanțiilor.
 
-## Criza a fost un regim agitat lung; 2026 alternează între regimuri {h=b4a50786}
+## Regimurile de volatilitate în timpul crizei și în 2026 {h=ca5733e2}
 
 Graficul pune prețul de bază zilnic deasupra probabilității netezite a regimului agitat. Criza energetică apare ca un singur bloc lung: cel mai lung episod agitat a durat de la 15 iunie 2022 pînă la 31 ianuarie 2023, adică 231 de zile. Înainte de criză, regimul calm a dominat aproape complet, iar după ea modelul intră și iese din regimul agitat pentru perioade mai scurte.
 
@@ -409,7 +409,7 @@ Cadrul de evaluare: anul de test este 1 noiembrie 2025 – 31 octombrie 2026, ia
 
 @practice Cereți furnizorului modelului de risc valoarea QLIKE pe zilele dumneavoastră, în afara eșantionului.
 
-## Modelele GARCH sînt mai precise decît varianța istorică {h=75be9035}
+## Prognozele de tip GARCH comparate cu volatilitatea istorică pe 30 de zile {h=ae26c3fc}
 
 Tabelul compară prognozele varianței pentru ziua următoare date de cinci modele pe cele 365 de zile ale anului de test: varianța istorică pe 30 de zile, o medie mobilă cu ponderi exponențiale (EWMA), ca în RiskMetrics (1996), și cele trei modele GARCH cu șocuri Student.
 
@@ -494,7 +494,7 @@ Graficul transformă prognoza pe mai mulți pași din @eq:multistep în limite. 
 @chart term_structure
 Stînga: prognoza GARCH-t a valorii zilnice $\sigma$ pentru prețul din România, în funcție de numărul de zile înainte, cu nivelul de lungă durată (linie întreruptă); dreapta: banda de 90% pentru Brent pe $h$ zile de tranzacționare, la 9 aprilie 2026, GARCH-t față de $\sigma$ de azi $\times\sqrt{h}$.
 
-## Studiul de caz C3: acțiunile energetice, slab corelate cu petrolul {h=dfc588d5}
+## Studiul de caz C3: legătura slabă dintre acțiunile energetice românești și petrol {h=f1f1426c}
 
 Studiul de caz C3 pornește de la o lucrare a grupului nostru, Grecu, Cramer, Pele & Lessmann (2025). Lucrarea folosește indicii bursieri ai celor 27 de state ale Uniunii Europene și contractele futures pe Brent și TTF din perioada 2010–2023. Ea estimează volatilitatea fiecărei serii cu un model GARCH, apoi o corelație condiționată dinamică (DCC) între fiecare indice și prețurile energiei pentru fiecare zi și, în final, un model Markov pentru regimurile acestei corelații. Rezultatele arată că corelația cu petrolul este în general între 0 și 0,4, că Europa Centrală și de Est (ECE) este regiunea cel mai slab corelată și că regimurile corelației persistă cu probabilități de peste 98%.
 
@@ -510,7 +510,7 @@ Replicarea noastră aplică aceeași metodă pentru trei acțiuni energetice rom
 
 Recapitularea verifică ideile principale prin cinci întrebări scurte, rezumă cursul și trimite la cercetările grupului nostru și la lecturi suplimentare.
 
-## Verifică-te {h=eeb091f5}
+## Întrebări de autoevaluare {h=eeb091f5}
 
 1. Pentru Brent, GARCH(1,1)-t dă $\hat\alpha+\hat\beta$ = 0,973. După un șoc, în cît timp dispare jumătate din varianța suplimentară? Răspuns: din @eq:halflife, $h_{1/2}=\ln 0{,}5/\ln 0{,}973$ = 25,6 zile lucrătoare, circa 5 săptămîni: limitele rămîn mai largi săptămîni întregi, nu cîteva zile.
 2. În 2022, volatilitatea procentuală a prețului din România a fost aceeași ca în 2019. S-a schimbat riscul unei poziții deschise de 10 MW a unui furnizor? Răspuns: da. Poziția cîștigă sau pierde în euro, iar volatilitatea șocurilor în EUR/MWh a crescut de 4,1 ori, odată cu nivelul prețului.

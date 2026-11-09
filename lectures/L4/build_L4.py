@@ -161,7 +161,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: the prices and positions we measure", "Lucrăm numai cu date reale: prețurile și pozițiile analizate"), table(
+    D.frame(t("Data sources: prices and positions analysed", "Sursele datelor: prețurile și pozițiile analizate"), table(
         "@{}p{0.40\\textwidth}p{0.11\\textwidth}p{0.44\\textwidth}@{}",
         [t("Series", "Seria"), t("Frequency", "Frecvența"), t("Source", "Sursa")],
         [[t("Day-ahead base price of Romania (RO), Piața pentru Ziua Următoare (PZU), and of the Germany--Luxembourg zone (DE-LU)",
@@ -485,8 +485,8 @@ def build(lang, H=None):
     def prow(m):
         return [MN[m]] + [heat(abs(BT[z][m]["a99"][f"rate_{p}"] - 1), 0, 4, True, fmt(BT[z][m]["a99"][f"rate_{p}"], ".2f", lang))
                           for z in ["RO", "DE_LU"] for p in ["calm", "crisis", "after"]]
-    D.frame(t("In 2021--2022 every method failed; since 2023 the filtered ones are back near 1\\%",
-              "În 2021--2022 toate metodele au eșuat; din 2023, metodele filtrate au revenit aproape de 1\\%"),
+    D.frame(t("Exceedance rates by method in 2021--2022 and since 2023",
+              "Frecvența depășirilor, pe metode, în 2021--2022 și după 2023"),
             "\\begin{center}" + table("@{}lrrrrrr@{}", [t("99\\% VaR, \\% of days", "VaR 99\\%, \\% din zile"),
                                                        "RO 17--20", "RO 21--22", "RO 23--26", "DE-LU 17--20", "DE-LU 21--22", "DE-LU 23--26"],
                                       [prow(m) for m in METHODS], size="footnotesize", stretch="1.2") + "\\end{center}\\vspace{-1mm}" +
@@ -542,7 +542,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Pele, Bolovăneanu, Ginavar, Lessmann \\& Härdle, AIDA, ASE, 4 June 2026)", "(Pele, Bolovăneanu, Ginavar, Lessmann \\& Härdle, AIDA, ASE, 4 iunie 2026)"))
 
     # ------------------------------------------------------------------ 4 collateral and limits
-    D.section(t("From quantiles to margins, guarantees and limits", "De la cuantile la marje, garanții și limite"))
+    D.section(t("Margins, guarantees and position limits", "Marje, garanții și limite de poziție"))
     D.subsection(t("Exchange margins", "Marjele la bursă"))
     D.concept(t("Exchange margins: initial margin as a VaR, variation margin paid daily", "Marjele la bursă: marja inițială ca VaR, marja de variație plătită zilnic"),
               t("The clearing house holds a deposit that covers a 99\\% two-day loss and settles gains and losses in cash every evening.",
@@ -564,7 +564,7 @@ def build(lang, H=None):
                 "producătorul acoperit cîștigă mai tîrziu din vînzarea fizică, dar plătește marja azi."),
               tryit=NB + " \\S5", cite=t("(EU Delegated Regulation 153/2013; ICE Futures Europe)", "(Regulamentul delegat (UE) 153/2013; ICE Futures Europe)"), wl="0.45", wr="0.52")
 
-    D.frame(t("In 2022, well-hedged energy companies ran short of cash for margins", "În 2022, companii energetice bine acoperite la risc au rămas fără lichidități pentru marje"), it(
+    D.frame(t("Margin calls and liquidity shortfalls of hedged energy companies in 2022", "Apelurile în marjă și lipsa de lichidități a companiilor energetice acoperite la risc în 2022"), it(
         t(("\\textbf{What happened}, according to the European Central Bank (ECB), November 2022",
            "TTF gas futures reached 227 EUR/MWh on 7 March 2022, about 12 times the level of early 2021",
            "by mid-2022 about twice as much initial margin was posted as in late 2021",
@@ -822,7 +822,7 @@ def build(lang, H=None):
                    "În ultimele 250 de zile, VaR de 99\\% a fost depășită de 7 ori; în ce zonă a semaforului se află modelul și ce arată testul Kupiec?"),
                  t("Yellow (5--9); LR$_{uc}$ = @{quiz.k7_lr|.2f}, $p$ = @{quiz.k7_p|.3f}: rejected at 5\\%; recalibrate (e.g.\\ move from HS to FHS) and keep watching.",
                    "Zona galbenă (5--9); LR$_{uc}$ = @{quiz.k7_lr|.2f}, $p$ = @{quiz.k7_p|.3f}: ipoteza este respinsă la pragul de 5\\%; recalibrați modelul (de exemplu, treceți de la HS la FHS) și continuați monitorizarea."))
-    D.quiz_frame(t("ten days", "zece zile"),
+    D.quiz_frame(t("ten-day VaR", "VaR pe zece zile"),
                  t("Your chief financial officer computes the 10-day VaR as $\\sqrt{10}$ times the 1-day VaR; is that prudent or wasteful for power?",
                    "Directorul financiar calculează VaR pe 10 zile ca $\\sqrt{10}$ înmulțit cu VaR pe o zi; este o abordare prudentă sau risipitoare pentru energie?"),
                  t("Wasteful: power prices revert, and the empirical 10-day 99\\% quantile is only @{horizon.ro10|.2f} times the 1-day one in Romania, not @{horizon.sqrt10|.2f}.",

@@ -1,5 +1,5 @@
-TITLE = ("Case 1 - The summer-2024 price crisis: which intervention would have helped?",
-         "Studiul de caz 1 - Criza prețurilor din vara anului 2024: ce intervenție ar fi fost eficientă?")
+TITLE = ("Case 1 - The summer-2024 price crisis and the effectiveness of emergency interventions",
+         "Studiul de caz 1 - Criza prețurilor din vara anului 2024 și eficiența intervențiilor de urgență")
 
 CELLS = [
 ("md",

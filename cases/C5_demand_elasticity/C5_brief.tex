@@ -2,8 +2,8 @@
 \input{numbers_\lang}
 \renewcommand{\emqacase}{\T{Research case 5 (Lecture 5)}{Studiul de caz 5 (cursul 5)}}
 \begin{document}
-\emqatitle{\T{Case 5: Does demand react to price? Elasticity, causality and the supplier's hedge ratio}%
-                {Studiul de caz 5: Reacționează cererea la preț? Elasticitatea, cauzalitatea și raportul de acoperire al furnizorului}}%
+\emqatitle{\T{Case 5: Price response of electricity demand --- elasticity, causality and the supplier's hedge ratio}%
+                {Studiul de caz 5: Reacția cererii de energie electrică la preț --- elasticitatea, cauzalitatea și raportul de acoperire al furnizorului}}%
           {\T{Based on}{Studiu bazat pe lucrarea} Proșcanu, Proșcanu \& Pele (2025), \emph{The price elasticity of electricity demand in Romania},
            Journal of Social and Economic Statistics 14(2), 131--141, \href{https://doi.org/10.2478/jses-2025-0009}{doi:10.2478/jses-2025-0009}}
 
@@ -23,7 +23,7 @@ Dacă clienții și-ar reduce consumul atunci cînd prețurile cresc brusc, o ac
 {\small\T{\textbf{Why this paper for Lecture 5.} The elasticity is an input to the hedge ratio and to the volume clauses of supply contracts and PPAs. Complementary research of our group, Shahar, Lessmann \& Pele (2025, \href{https://arxiv.org/abs/2507.12331}{arXiv 2507.12331}), finds that US retail liberalisation lowered residential prices by about 7\,\% in the short term --- a market-design perspective based on US state data; this case focuses on Romanian procurement.}%
 {\textbf{De ce această lucrare la cursul 5.} Elasticitatea este o mărime de intrare pentru stabilirea raportului de acoperire și a clauzelor de volum din contractele de furnizare și din PPA-uri. Cercetarea complementară a grupului nostru, Shahar, Lessmann și Pele (2025, \href{https://arxiv.org/abs/2507.12331}{arXiv 2507.12331}), arată că liberalizarea pieței cu amănuntul din SUA a redus prețurile pentru consumatorii casnici cu aproximativ 7\,\% pe termen scurt --- o perspectivă asupra organizării pieței, pe date din statele americane; acest studiu de caz se concentrează pe achizițiile de energie din România.}}
 
-\section{\T{What the paper did}{Lucrarea de referință}}
+\section{\T{The reference paper}{Lucrarea de referință}}
 \textbf{\T{Question.}{Întrebarea de cercetare.}} \T{What is the causal relationship between electricity consumption and price in Romania, and how elastic is consumption to price (Abstract; p.~134)?}%
 {Care este relația de cauzalitate dintre consumul de energie electrică și preț în România și cît de elastic este consumul în raport cu prețul (rezumat; p.~134)?}
 
@@ -69,7 +69,7 @@ Pentru acoperirea riscului, costul furnizorului pe MWh așteptat este $Q_tP_t-h\
 {La o elasticitate apropiată de zero, volumul nu scade atunci cînd prețul crește brusc: nu există o acoperire naturală, iar un furnizor cu contracte la preț fix ar trebui să cumpere la termen aproape 100\,\% din volumul așteptat.}
 \end{decision}
 
-\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\section{\T{Replication on the course data}{Replicare pe datele cursului}}
 \T{Notebook \texttt{C5\_notebook\_EN.ipynb}: hourly ENTSO-E load summed to GWh per month and hourly day-ahead prices averaged per month (energy-charts.info), January 2019 -- December 2024, \NnMonths\ months --- the paper's sample;
 monthly TTF gas (World Bank) as instrument. Our mean price is \NmeanPrice\ EUR/MWh (paper: 112.13), maximum \NmaxPrice\ (paper: 490.80).}%
 {Notebook-ul \texttt{C5\_notebook\_RO.ipynb} folosește consumul orar ENTSO-E, însumat lunar în GWh, și media lunară a prețurilor orare de pe piața pentru ziua următoare (energy-charts.info), ianuarie 2019 -- decembrie 2024, adică \NnMonths\ de luni --- eșantionul lucrării;

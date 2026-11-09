@@ -22,7 +22,7 @@ The discipline matters as much as the models. A backtest that uses information w
 
 Before any model is estimated, the forecasting problem has to be defined precisely: which prices are forecast, at what moment, with which information, and against which benchmark the result is judged. This section fixes the timing of the day-ahead auction, the split of the data into calibration, burn-in and test periods, the naive benchmark, the error measures and the statistical test used to compare models.
 
-## Real data only: what we forecast and with what {h=22dea431}
+## Forecast target and data sources {h=f5d32c38}
 
 The target of the lecture is the hourly day-ahead price of the Romanian bidding zone (RO) on the PZU, published by OPCOM and downloaded through energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE), which takes it from the European Network of Transmission System Operators for Electricity (ENTSO-E). The explanatory series are the hourly and daily load, wind and solar, hydro and nuclear generation and cross-border flows from ENTSO-E (Transelectrica data for Romania); the price of carbon, proxied by the SparkChange physical European Union (EU) emission allowance (EUA) exchange-traded commodity (ETC) from Yahoo Finance; the prices of the neighbouring zones, Hungary (HU) from the Hungarian Power Exchange (HUPX) and the Germany–Luxembourg bidding zone (DE-LU) from the EPEX SPOT power exchange (EPEX); and the monthly gas price at the Dutch Title Transfer Facility (TTF) from the World Bank Pink Sheet.
 
@@ -46,7 +46,7 @@ The object of the exercise is therefore the 24 hourly prices of the Romanian PZU
 
 @practice the same rule binds a real trading desk: a model that breaks it cannot be run at 12:00.
 
-## At 12:00 CET on d-1 you know prices to d-1, metered data to d-2 {h=3075c5aa}
+## Information set at 12:00 CET on day $d-1$ {h=d12acec5}
 
 The slide draws the information set on a time line. The prices of day $d-1$ were published around 13:00 on day $d-2$. The last complete metered day is $d-2$, which ends at midnight before the trading day. At 12:00 on $d-1$ the forecast and the bids for day $d$ are sent, and the 24 hourly (96 quarter-hour) prices of day $d$ are what has to be forecast.
 
@@ -116,7 +116,7 @@ The MAE is in EUR/MWh and is easy to explain; the RMSE squares the errors and th
 
 @practice report MAE in EUR/MWh to the desk and rMAE to management, on the same hours.
 
-## Why percentage errors fail near zero and negative prices {h=221ecc30}
+## Limitations of percentage errors near zero and negative prices {h=791519be}
 
 The mean absolute percentage error (MAPE) is popular in business reports, but it does not work for electricity prices:
 
@@ -185,7 +185,7 @@ The coefficients of load and of wind and solar stay close to zero in every hour.
 @chart arx_coef
 Mean ARX(728) coefficients by hour (CET) over the 365 daily fits of the test year, for the prices of $d-1$, $d-2$ and $d-7$, the load and the wind + solar generation.
 
-## Fundamentals lagged by two days add almost nothing {h=12377893}
+## Small contribution of fundamentals lagged by two days {h=26602a9b}
 
 The table compares three versions of ARX(728) on the test year. With prices and calendar only, the MAE is 22.63 EUR/MWh. Adding the load and wind + solar generation of $d-2$ gives 22.72, and adding also hydro, nuclear, net imports and the EUA of $d-2$ leaves the MAE at 22.72. The fundamentals do not improve the forecast.
 
@@ -270,7 +270,7 @@ On our data the MAE of ARX is 24.44 EUR/MWh with a 56-day window, 23.41 with 112
 
 @practice when the market changes regime (2022, 2024), short windows react first; keep them in the average.
 
-## Averaging across windows beats the best single window {h=53fdc776}
+## Averaging across windows is more accurate than the best single window {h=93ec6179}
 
 The chart shows the MAE of each calibration window for ARX and LEAR, with the averaged forecast as the last bar of each panel and the naive benchmark of 27.82 EUR/MWh as a dotted line. For ARX, the averaged forecast AW-ARX has MAE 22.30 EUR/MWh, below the best single window, ARX(714), at 22.68.
 
@@ -507,7 +507,7 @@ The second is a supplier with a flexible process of four hours that can be place
 @chart battery
 Left: battery profit over the test year in thousand EUR per MW for each forecast and for perfect foresight; right: average price paid by the flexible buyer in EUR/MWh, with the fixed 8–12 h block for comparison.
 
-## A forecasting desk checklist, and our leakage self-check {h=31b05547}
+## Forecasting checklist and a test for the use of future information {h=1b60c766}
 
 Before trusting a backtest, a forecasting desk should check three things: every input was public before 12:00 CET on $d-1$; scalers, transformations, the penalty $\lambda$ and any thresholds were fitted in the calibration window only; and validation was chronological, with the test year touched once. Then the report should give the MAE and rMAE against naive, the DM p-values and the coverage of the intervals, by month and by hour, not only one annual number.
 
@@ -538,7 +538,7 @@ Accuracy varies strongly by month and every model lags a sudden jump in level by
 
 The wrap-up tests the main ideas with five short questions, summarises the lecture and lists the research of our group and further reading.
 
-## Check yourself {h=da342e67}
+## Self-assessment questions {h=da342e67}
 
 1. It is Sunday, 11:30 CET, and you must forecast Monday at 19:00 with the naive benchmark. Which price do you use? Answer: the price of the previous Monday at 19:00 ($d-7$). On our test year this beats the most recent price on Mondays, Saturdays and Sundays (MAE 29.87 against 33.48 EUR/MWh).
 2. A vendor reports rMAE 0.55 for Romania and uses the realised load of day $d-1$ as a regressor. Do you buy? Answer: no. At 12:00 on $d-1$ that day is not yet metered, so the backtest leaks information. Ask for a rerun with data up to $d-2$ (or with published day-ahead forecasts); our honest best is rMAE 0.795.

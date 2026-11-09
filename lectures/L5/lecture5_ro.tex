@@ -96,7 +96,7 @@ VWAP & prețul mediu ponderat cu volumul\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Folosim numai date reale: forward, spot, gaze, carbon}
+\begin{frame}{Sursele datelor: contracte forward, prețuri spot, gaze naturale și carbon}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.95}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.37\textwidth}p{0.11\textwidth}p{0.47\textwidth}@{}}\toprule
@@ -279,7 +279,7 @@ Carbon (EUA); cursul EUR/RON; rata pe termen scurt a euro (€STR) & zilnică & 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; Hull, 2022)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Contractele futures se decontează zilnic, deci cer lichiditate}
+\begin{frame}{Decontarea zilnică a contractelor futures și nevoia de lichiditate a acoperirii}
 \footnotesize
 \intuition{Forward-ul se decontează o dată, la livrare; deținătorul unui contract futures plătește sau încasează zilnic variația prețului.}
 \begin{columns}[T,onlytextwidth]
@@ -325,7 +325,7 @@ Carbon (EUA); cursul EUR/RON; rata pe termen scurt a euro (€STR) & zilnică & 
 
 \subsection{Curba prețurilor forward}
 
-\begin{frame}{Forward-ul gazelor reflectă costul de stocare; al energiei, nu}
+\begin{frame}{Prețurile forward și costul de stocare: gaze naturale și energie electrică}
 \footnotesize
 \intuition{Gazele se pot stoca, deci prețul lor forward este legat de spot prin costul de deținere; energia electrică nu, deci prețul ei forward este prețul spot așteptat plus o primă de risc.}
 \begin{columns}[T,onlytextwidth]
@@ -376,7 +376,7 @@ Carbon (EUA); cursul EUR/RON; rata pe termen scurt a euro (€STR) & zilnică & 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM)}\hfill\qlink{EMQA\_L5\_fwd\_curve}{Quantlets/L5/EMQA_L5_fwd_curve}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Curba se mișcă: prețurile anuale, după data tranzacției}
+\begin{frame}{Prețurile forward anuale, după data tranzacției, și prețurile spot realizate}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.477\textheight,keepaspectratio]{charts/ro/cal_by_trade.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: OPCOM (rezultatele PCCB-LE-flex; prețuri PZU, prin energy-charts.info); BCE. Date: licitații pentru ani calendaristici, pînă la 2026-10-31; linia groasă = media realizată.}
@@ -429,7 +429,7 @@ Carbon (EUA); cursul EUR/RON; rata pe termen scurt a euro (€STR) & zilnică & 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bessembinder \& Lemmon, 2002; Redl et al., 2009)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Lună de lună, diferența forward minus spot are ambele semne}
+\begin{frame}{Diferența lunară dintre prețul forward și prețul spot}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.556\textheight,keepaspectratio]{charts/ro/premium.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: OPCOM (rezultatele PCCB-LE-flex; prețuri PZU, prin energy-charts.info); BCE. Date: 30 de luni de livrare, 2020-08 - 2026-08.}
@@ -565,7 +565,7 @@ Carbon (EUA); cursul EUR/RON; rata pe termen scurt a euro (€STR) & zilnică & 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Deng et al., 2001; Eydeland \& Wolyniec, 2003)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Marjele orare ordonate: valoarea stă în orele cele mai bune}
+\begin{frame}{Marjele orare ordonate: valoarea concentrată în orele cele mai bune}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.521\textheight,keepaspectratio]{charts/ro/spark_hourly.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info; Banca Mondială (TTF, cărbune); EEX și SparkChange ETC (EUA); BCE. Date: 2025-11-01 - 2026-10-31, date orare.}
@@ -845,7 +845,7 @@ Germania & 0{,}875 & 0{,}049 & [0{,}73; 1{,}01] & 0{,}80 & 0{,}91 & 81{,}1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM; Yahoo Finance)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Contractele apropiate de livrare variază mai mult: efectul Samuelson}
+\begin{frame}{Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.515\textheight,keepaspectratio]{charts/ro/samuelson.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance, contracte futures NYMEX TTF. Date: prețuri zilnice pînă la 2026-10-31, fereastră mobilă de 60 de zile.}
@@ -953,7 +953,7 @@ Germania & 0{,}875 & 0{,}049 & [0{,}73; 1{,}01] & 0{,}80 & 0{,}91 & 81{,}1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; OPCOM)}\hfill\qlink{EMQA\_L5\_case2026}{Quantlets/L5/EMQA_L5_case2026}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiul de caz: forward-ul a redus costul și riscul, iar plafonul doar riscul}
+\begin{frame}{Studiul de caz: efectul contractului forward și al plafonului asupra costului și riscului}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}

@@ -2,8 +2,8 @@
 \input{numbers_\lang}
 \renewcommand{\emqacase}{\T{Research case 3 (Lecture 3)}{Studiul de caz 3 (cursul 3)}}
 \begin{document}
-\emqatitle{\T{Case 3: Do Romanian energy stocks move with oil? Time-varying correlation and hedging}%
-                {Studiul de caz 3: Evoluează acțiunile companiilor energetice românești în același sens cu petrolul? Corelația variabilă în timp și acoperirea riscului}}%
+\emqatitle{\T{Case 3: Romanian energy stocks and oil --- time-varying correlation and hedging}%
+                {Studiul de caz 3: Acțiunile companiilor energetice românești și petrolul --- corelația variabilă în timp și acoperirea riscului}}%
           {\T{Based on}{Studiu bazat pe lucrarea} Grecu, Cramer, Pele \& Lessmann (2025), \emph{The link between energy prices and stock markets in European Union countries},
            North American Journal of Economics and Finance 78, 102420, \href{https://doi.org/10.1016/j.najef.2025.102420}{doi:10.1016/j.najef.2025.102420}}
 
@@ -20,7 +20,7 @@ După șocurile de pe piața petrolului din 2020 și 2022, comitetul de risc for
 De răspuns depinde dacă comitetul aprobă un program de acoperire a riscului cu instrumente pe mărfuri sau se bazează pe diversificare.}
 \end{scenario}
 
-\section{\T{What the paper did}{Lucrarea de referință}}
+\section{\T{The reference paper}{Lucrarea de referință}}
 \textbf{\T{Question.}{Întrebarea de cercetare.}} \T{How do changes in oil and gas prices influence the returns of the main stock indices of the 27 European Union (EU) countries, and does the link differ by region (Central and Eastern Europe, CEE; North; South; West) and by industrial development (Abstract; Introduction)?}%
 {Cum influențează variațiile prețurilor petrolului și gazelor naturale randamentele principalilor indici bursieri din cele 27 de state ale Uniunii Europene (UE) și diferă această legătură în funcție de regiune (Europa Centrală și de Est, ECE; Nord; Sud; Vest) și de nivelul de industrializare (rezumat; introducere)?}
 
@@ -70,7 +70,7 @@ Pentru acoperirea riscului, vînzarea a $h$ unități de Brent pentru fiecare un
 {Acoperirea riscului este eficientă numai dacă corelația este ridicată \emph{și} stabilă. La o corelație de 0,1--0,2, chiar și acoperirea optimă elimină cel mult $\rho^2\approx1$--4\,\% din varianță --- un cîștig care nu justifică apelurile în marjă și riscul de bază.}
 \end{decision}
 
-\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\section{\T{Replication on the course data}{Replicare pe datele cursului}}
 \T{Notebook \texttt{C3\_notebook\_EN.ipynb}: dividend-adjusted closing prices of SNP, SNG and SNN (EODHD) and Brent in EUR (Yahoo Finance, ECB), \Nstart\ -- \Nend, \NnObs\ common trading days; an equal-weight ``RO energy basket''.
 Classroom implementation: three companies instead of 27 indices; 2015--2026 instead of 2010--2023; monthly TTF (World Bank) for gas, because daily TTF is not free.}%
 {Notebook-ul \texttt{C3\_notebook\_RO.ipynb} folosește prețurile de închidere ajustate pentru dividende ale acțiunilor SNP, SNG și SNN (EODHD) și prețul Brent în EUR (Yahoo Finance, BCE), \Nstart\ -- \Nend, \NnObs\ de zile de tranzacționare comune; construim un „coș energetic RO” cu ponderi egale.

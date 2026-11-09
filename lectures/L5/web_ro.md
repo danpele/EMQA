@@ -22,7 +22,7 @@ Cursul folosește numai date reale: 2 298 de licitații forward ale operatorului
 
 Fiecare firmă din sectorul energiei are o poziție de preț, iar criza din 2021–2022 a arătat în România cît de mari pot fi cîștigurile și pierderile celor acoperiți sau neacoperiți. Secțiunea definește expunerile și măsoară lecția crizei pe prețurile reale ale licitațiilor.
 
-## Folosim numai date reale: forward, spot, gaze, carbon {h=478c423f}
+## Sursele datelor: contracte forward, prețuri spot, gaze naturale și carbon {h=7e761e1e}
 
 Toate cifrele din curs provin din date descărcate. Contractele forward sînt rezultatele pieței centralizate a contractelor bilaterale cu licitație extinsă (PCCB-LE) a OPCOM: 2 298 de licitații, cu 83,7 TWh, între 12 mai 2020 și 28 octombrie 2026. Prețurile spot sînt prețurile orare de pe Piața pentru Ziua Următoare (PZU) pentru România (RO), Ungaria (HU) și zona de ofertare Germania–Luxemburg (DE-LU), publicate de OPCOM, de bursa de energie din Ungaria (HUPX) și de bursa europeană de energie (EPEX SPOT) și preluate prin energy-charts.info, platforma Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE), din datele Rețelei europene a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E).
 
@@ -93,7 +93,7 @@ unde $\bar S^{\text{ref}}$ este indicele de decontare al contractului futures (d
 
 @practice contracte fizice, pentru energie livrată în România; contracte financiare, pentru o piață lichidă, cu riscul de bază asumat.
 
-## Contractele futures se decontează zilnic, deci cer lichiditate {h=f161ee0f}
+## Decontarea zilnică a contractelor futures și nevoia de lichiditate a acoperirii {h=436fe2a2}
 
 Forward-ul se decontează o singură dată, la livrare; deținătorul unui contract futures plătește sau încasează zilnic variația prețului. Plata zilnică este marja de variație (VM):
 
@@ -116,7 +116,7 @@ Volumul a urcat la 27,3 TWh în 2021 și s-a prăbușit în 2022–2023, cînd p
 @chart fw_volume
 Energia contractată anual în licitațiile forward OPCOM, în TWh, pe tipuri de produs (an calendaristic, semestru, trimestru, lună, alte perioade); anul 2026 pînă la data-limită.
 
-## Forward-ul gazelor reflectă costul de stocare; al energiei, nu {h=273f2c81}
+## Prețurile forward și costul de stocare: gaze naturale și energie electrică {h=a3ad97aa}
 
 Gazele se pot stoca, deci prețul lor forward este legat de spot prin costul de deținere; energia electrică nu se poate stoca, deci prețul ei forward este prețul spot așteptat plus o primă de risc (*risk premium*):
 
@@ -139,7 +139,7 @@ Graficul pune curba alături de spotul lunar realizat în ultimii doi ani, ceea 
 @chart fwd_curve
 Media lunară realizată a prețului PZU în România (linie în trepte) și prețurile forward pentru fiecare perioadă de livrare (segmente orizontale: lună, trimestru, semestru, an); linia verticală punctată marchează data-limită.
 
-## Curba se mișcă: prețurile anuale, după data tranzacției {h=68918147}
+## Prețurile forward anuale, după data tranzacției, și prețurile spot realizate {h=77794a08}
 
 Prețul forward este prețul certitudinii, nu o prognoză care nimerește prețul realizat. Graficul arată fiecare licitație a produselor anuale la data tranzacției, iar media realizată a anului ca linie groasă. Pentru 2021, VWAP-ul a fost 51,3 EUR/MWh, iar spotul realizat 111,4; pentru 2023, forward-ul a avut media 172,5 față de 103,7 realizat, pentru că a fost cumpărat în plină criză; pentru 2025, cele două au fost apropiate: 102,1 față de 108,2 EUR/MWh.
 
@@ -162,7 +162,7 @@ Pentru 30 de luni de livrare cumpărate cu o lună înainte, prima medie este +5
 
 @practice acoperirea este, în medie, ieftină; costul ei real este cîștigul la care renunțați.
 
-## Lună de lună, diferența forward minus spot are ambele semne {h=c9fe9529}
+## Diferența lunară dintre prețul forward și prețul spot {h=aa30600a}
 
 Graficul arată prima din @eq:premium pentru fiecare dintre cele 30 de luni de livrare. Mediana ei este −0,2 EUR/MWh, aproape de zero. Valorile negative mari reflectă creșterile neașteptate de preț din 2021–2022, cînd spotul a urcat mult peste ce evaluase forward-ul cu o lună înainte; ele nu sînt o primă negativă sistematică pe care un cumpărător să se poată baza.
 
@@ -228,7 +228,7 @@ unde $CSS_h$ este clean spark spread al orei $h$, pentru 1 MW, cu gazele și EUA
 
 @practice evaluați o centrală pe gaze sau o baterie ca opțiuni, nu ca marjă medie înmulțită cu 8 760 h.
 
-## Marjele orare ordonate: valoarea stă în orele cele mai bune {h=a651d103}
+## Marjele orare ordonate: valoarea concentrată în orele cele mai bune {h=25750d4f}
 
 Dacă ordonăm descrescător marjele orare din ultimele 12 luni, obținem o curbă de durată. Aria de deasupra lui zero este valoarea opțiunii de a funcționa: ea se cîștigă într-o minoritate de ore foarte profitabile. La aceleași prețuri ale gazelor și carbonului, România are mai multe ore profitabile decît Germania.
 
@@ -371,7 +371,7 @@ Diferențele au explicații clare. Un an este media a 8 760 de ore și este mult
 
 @practice alegeți volatilitatea potrivită activului suport: an, trimestru sau lună.
 
-## Contractele apropiate de livrare variază mai mult: efectul Samuelson {h=c519e1d5}
+## Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate {h=cc28a6cd}
 
 Contractele apropiate de livrare reacționează mai puternic la știri decît cele îndepărtate, pentru că un șoc asupra ofertei de azi afectează complet luna apropiată și doar parțial pe cea îndepărtată (Samuelson, 1965). Graficul compară volatilitatea pe 60 de zile a două contracte TTF. Între 1 noiembrie 2025 și 31 octombrie 2026, contractul pentru decembrie 2026 a avut o volatilitate anualizată de 63%, iar cel pentru mai 2027 de 48%. În 2022, în vîrful crizei, ambele au fost în jur de 66%.
 
@@ -437,7 +437,7 @@ Graficul arată costul lunar al fiecărei strategii. Prețurile au crescut în c
 @chart case2026
 Costul lunar pentru 1 MW în bandă în 2026, în EUR/MWh, cu patru strategii: fără acoperire (spot), 100% forward, 50% forward și 50% spot, plafoane lunare la prețul de exercitare $K$.
 
-## Studiul de caz: forward-ul a redus costul și riscul, iar plafonul doar riscul {h=c67a5902}
+## Studiul de caz: efectul contractului forward și al plafonului asupra costului și riscului {h=ca2e14ac}
 
 Tabelul rezumă cele patru strategii, ponderate cu numărul de ore al fiecărei luni.
 
@@ -483,7 +483,7 @@ Cursul poate fi rezumat într-o politică de acoperire cu patru componente:
 
 Recapitularea verifică principalele instrumente ale cursului pe cifre reale din România și propune lecturi suplimentare.
 
-## Verifică-te {h=066a0a98}
+## Întrebări de autoevaluare {h=066a0a98}
 
 1. Un furnizor din România și-a acoperit luna iulie 2024 cu contracte futures germane în bandă, cumpărate la prețul $F$. Media lunii a fost 67,7 EUR/MWh în Germania și 145,1 în România. Cît a plătit pe MWh? Răspuns: a cumpărat la 145,1 în România și a primit din contractul futures diferența dintre 67,7 și $F$, deci costul net a fost $F$ + 77,4 EUR/MWh, cea mai mare bază lunară din datele noastre.
 2. Estimarea noastră pentru Ungaria este $h^{*}$ = 0,966, cu intervalul bootstrap [0,93; 1,03]. Cîți MW de contracte futures din Ungaria acoperă o expunere de 20 MW? Răspuns: 20 × 0,966 = 19,3 MW; deoarece valoarea 1 se află în interval, o acoperire integrală ($h=1$), de 20 MW, este la fel de bună din punct de vedere statistic.

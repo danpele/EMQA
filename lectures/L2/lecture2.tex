@@ -91,7 +91,7 @@ VST & variance-stabilising transformation\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data only: what we forecast and with what}
+\begin{frame}{Forecast target and data sources}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.93}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.36\textwidth}p{0.12\textwidth}p{0.47\textwidth}@{}}\toprule
@@ -194,7 +194,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 
 \subsection{Information set and horizons}
 
-\begin{frame}{At 12:00 CET on $d-1$ you know prices to $d-1$, metered data to $d-2$}
+\begin{frame}{Information set at 12:00 CET on day $d-1$}
 \footnotesize
 
 \begin{center}
@@ -364,7 +364,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Why percentage errors fail near zero and negative prices}
+\begin{frame}{Limitations of percentage errors near zero and negative prices}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.419\textheight,keepaspectratio]{charts/en/mape_fail.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: test year 2025-11-01 to 2026-10-31, 8760 hours.}
@@ -487,7 +487,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, ARX(728))}\hfill\qlink{EMQA\_L2\_arx\_coef}{Quantlets/L2/EMQA_L2_arx_coef}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Fundamentals lagged by two days add almost nothing}
+\begin{frame}{Small contribution of fundamentals lagged by two days}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -640,7 +640,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hubicka, Marcjasz \& Weron, 2019; Marcjasz, Serafin \& Weron, 2018)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Averaging across windows beats the best single window}
+\begin{frame}{Averaging across windows is more accurate than the best single window}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.466\textheight,keepaspectratio]{charts/en/windows.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: test year 2025-11-01 to 2026-10-31.}
@@ -1076,7 +1076,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; round-trip efficiency 90\% assumed)}\hfill\qlink{EMQA\_L2\_battery}{Quantlets/L2/EMQA_L2_battery}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{A forecasting desk checklist, and our leakage self-check}
+\begin{frame}{Forecasting checklist and a test for the use of future information}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

@@ -427,7 +427,7 @@ save_chart(fig, "search", bottom=0.27)''')],
     # ------------------------------------------------------------------ 3 learning_curve
     cv = ns["_curve"]
     Q["learning_curve"] = dict(
-        title="Early stopping: stop when the error on recent days stops falling",
+        title="Early stopping based on the error on recent days",
         desc=("Learning curves of the chosen deep neural network (DNN), refit for the last test month "
               f"({J['curve']['month']}, seed 1): MAE in EUR/MWh on the first 85% of the training days and on the last 15% "
               "(chronological early-stopping block), by epoch, with the epoch kept. Romanian day-ahead prices from "
@@ -460,7 +460,7 @@ save_chart(fig, "learning_curve", bottom=0.22)''')],
     # ------------------------------------------------------------------ 4 monthly_ml
     MAEFN = "def mae(F):\n    return np.mean(np.abs(A - F))"
     Q["monthly_ml"] = dict(
-        title="Month by month, the combination beats AW-LEAR",
+        title="Monthly accuracy of the combination and of AW-LEAR",
         desc=("Monthly mean absolute error (MAE, EUR/MWh) of AW-LEAR (Lecture 2 benchmark), the tuned XGBoost, the tuned deep neural network "
               f"(DNN) and their equal-weight combination LEAR+DNN+XGBoost on the Romanian day-ahead prices, {test}, monthly refits."),
         kw="forecast combination, ensemble, LEAR, XGBoost, neural network, MAE by month, electricity price forecasting, Romania",
@@ -498,7 +498,7 @@ save_chart(fig, "monthly_ml", bottom=0.22)''')],
 
     # ------------------------------------------------------------------ 5 dm_matrix
     Q["dm_matrix"] = dict(
-        title="DM tests: combinations with ML beat AW-LEAR significantly",
+        title="DM tests: combinations with ML significantly outperform AW-LEAR",
         desc=("Matrix of one-sided Diebold-Mariano (DM) p-values (H1: the column model is more accurate than the row model; loss = daily "
               "mean absolute error; Newey-West variance, 7 lags) for 11 forecasts of the Romanian day-ahead price: naive, AW-LEAR, the "
               "Lecture 2 ensemble, XGBoost, DNN, Chronos-Bolt, Chronos-2 and four combinations; "
@@ -551,7 +551,7 @@ save_chart(fig, "dm_matrix", bottom=0.0)''')],
 
     # ------------------------------------------------------------------ 6 combo_weight
     Q["combo_weight"] = dict(
-        title="Averaging works because the errors are not identical",
+        title="Forecast averaging and the differences between model errors",
         desc=("Mean absolute error of the combination w x (machine-learning forecast) + (1 - w) x AW-LEAR for w from 0 to 1, with XGBoost "
               "and with the DNN, and the equal-weight point actually used. Illustration only: the weight is not chosen on the test year. "
               f"Romanian day-ahead prices, {test}."),
@@ -582,7 +582,7 @@ save_chart(fig, "combo_weight", bottom=0.22)''')],
     # ------------------------------------------------------------------ 7 cost_gain
     sec = ns["sec"]
     Q["cost_gain"] = dict(
-        title="Compute cost: daily LEAR is the expensive model, ML costs minutes",
+        title="Computational cost of daily LEAR and of the ML models",
         desc=("Compute time for the whole test year (minutes on one core, log scale) against the mean absolute error of AW-LEAR, XGBoost, "
               "the DNN, Chronos-Bolt, Chronos-2 and two combinations; times measured on one core of the author's 18-core laptop. "
               f"Romanian day-ahead prices, {test}."),
@@ -633,7 +633,7 @@ save_chart(fig, "cost_gain", bottom=0.02)''')],
     xgb_runall = '''SH = np.concatenate([r["shap"] for r in res_xgb], 0)       # exact SHAP values, 365 days x 24 hours x (20 features + bias)
 XS = np.concatenate([r["X"] for r in res_xgb], 0)'''
     Q["shap_global"] = dict(
-        title="What drives the trees: yesterday's price at the same hour",
+        title="Main input of the tree models: yesterday's price at the same hour",
         desc=("Share of the mean absolute SHAP value of the 10 most important of the 20 inputs of the tuned XGBoost model, coloured by "
               "group (prices, load, wind+solar, other fundamentals, calendar); exact tree SHAP values on the "
               f"{test}, 8760 hours, XGBoost refitted monthly, Romanian day-ahead prices."),
@@ -943,7 +943,7 @@ save_chart(fig, "pit_leak", bottom=0.2)''')],
 
     # ------------------------------------------------------------------ 16 pit_retrain
     Q["pit_retrain"] = dict(
-        title="Retraining: a model frozen for a year loses accuracy",
+        title="Retraining: accuracy loss of a model not updated for a year",
         desc=("Test-year MAE of the tuned XGBoost by retraining frequency (monthly, quarterly, once before the test year) and window "
               f"(all past days, last 730 or 365 days), against AW-LEAR. Romanian day-ahead prices, {test}."),
         kw="retraining frequency, rolling window, expanding window, concept drift, XGBoost, electricity price forecasting, model maintenance",
@@ -1092,7 +1092,7 @@ save_chart(fig, "shap_local", bottom=0.17)''')],
 
     # ------------------------------------------------------------------ 19 foundation_hour
     Q["foundation_hour"] = dict(
-        title="Chronos-2 beats AW-LEAR in every hour of the day",
+        title="Chronos-2 is more accurate than AW-LEAR in every hour of the day",
         desc=("Mean absolute error by hour of the day (CET) of the naive model, AW-LEAR and two pretrained time-series foundation models "
               "used zero-shot (Chronos-Bolt small and Chronos-2; context = the last 2048 hourly prices up to the end of d-1). Romanian "
               f"day-ahead prices, {test}."),

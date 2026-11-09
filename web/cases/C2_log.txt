@@ -6,7 +6,7 @@ EMQA web case C2
 [en] expanded at first use: TimesFM -> Time Series Foundation Model  [... foundation models used zero-shot, Chronos-T5 and |. Look-back 168 hours, horizon...]
 [en] expanded at first use: MAPE -> mean absolute percentage error  [...N-BEATS model has been the most successful”, with | 2.324 % and “the highest coef...]
 [en] expanded at first use: CET -> Central European Time  [...d (MW) in hour   of day  . At gate closure, 12:00 | on day  , we forecast the 24 ...]
-[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [...lfNotebook C2_notebook_EN.ipynb: hourly load from | via energy-charts.info (gener...]
+[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [...taNotebook C2_notebook_EN.ipynb: hourly load from | via energy-charts.info (gener...]
 [en] expanded at first use: RMSE -> root mean squared error  [... value in bold (Bias closest to zero).ModelMAE, MW|, MWMAPE, % Bias, MWGradient b...]
 [en] expanded at first use: MLP -> multilayer perceptron  [...-Bolt (zero-shot)2543604.160.86343Neural network (|)2843934.580.83780Linear regre...]
 [ro] 6 sections, 4 numbered figures, 1 tables; acronyms: OTS, PZU, MSE, MAE, SARIMA, ARIMA, NHITS, LSTM, TimesFM, MAPE, CET, ENTSO-E, RMSE, MLP

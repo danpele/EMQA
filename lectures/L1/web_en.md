@@ -20,7 +20,7 @@ The lecture uses only real data, downloaded on 4 November 2026 and cut off at 31
 
 The price of electricity in Romania is set by a single daily auction that is coupled with the rest of Europe and, since October 2025, clears every quarter-hour. This section explains the auction, the merit order, the sequence of markets around a delivery day, the institutions that set the rules, market coupling and the Romanian generation mix.
 
-## Real data only: sources and sample period {h=2a7859bf}
+## Data sources and sample period {h=ab6fa9f1}
 
 Every number and chart in this lecture comes from downloaded data. Prices come from four exchanges: OPCOM for Romania, the Independent Bulgarian Energy Exchange (IBEX), the Hungarian Power Exchange (HUPX) and the European Power Exchange (EPEX SPOT) for Germany; they are collected through the European Network of Transmission System Operators for Electricity (ENTSO-E) and republished by energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE).
 
@@ -65,7 +65,7 @@ At midday, 2,333 MW were offered at zero or negative prices, mostly solar, wind,
 @chart merit_opcom
 Aggregated PZU supply and demand curves (price in EUR/MWh against cumulative quantity in GW) for a midday and an evening quarter-hour of 21 October 2026, with the clearing point marked on each.
 
-## One delivery day, step by step {h=7cf2f27e}
+## Trading stages for one delivery day {h=8eabe7d5}
 
 The day-ahead auction is only one of four steps in the life of a delivery day. First, weeks to years ahead, energy is bought and sold forward, on the OPCOM centralised markets or in bilateral over-the-counter (OTC) deals. Second, on day $d-1$, bids are sent to the PZU before gate closure at 12:00 Central European Time (CET), which is 13:00 in Bucharest; the results are published early in the afternoon. Third, on $d-1$ and on $d$, positions are corrected in intraday auctions (IDA) and in continuous intraday trading until shortly before delivery. Fourth, on day $d$, in real time, Transelectrica, the transmission system operator (TSO), balances the grid, and every deviation from the notified schedule is settled per 15 minutes as imbalance.
 
@@ -73,7 +73,7 @@ Two practical details matter for data work. Romania runs on Eastern European Tim
 
 @practice a trader hedges forward, bids on PZU before 13:00 Bucharest time, fixes forecast errors intraday and pays what is left as imbalance.
 
-## Who sets the rules: operators, regulators, price limits, disclosure {h=5b1222a6}
+## Market institutions: operators, regulators, price limits, disclosure {h=d2930c89}
 
 Three Romanian institutions shape the market. OPCOM is the Nominated Electricity Market Operator (NEMO) and runs the PZU and the intraday market. Transelectrica, the TSO, runs the grid in real time and settles imbalances. The Romanian Energy Regulatory Authority (ANRE) sets the national rules and licenses market participants.
 
@@ -221,7 +221,7 @@ This is the "duck curve": solar generation fills the middle of the day, lowers t
 @chart profile_intraday
 Mean day-ahead price (EUR/MWh) for each hour of the day (CET), calendar years 2019 and 2025, one panel per zone.
 
-## Weekends are cheaper {h=7a12f07c}
+## Weekly seasonality: lower prices at weekends {h=ce2e4468}
 
 Factories and offices consume less on weekends, so fewer plants are needed and the price drops. The weekly profile is measured as
 
@@ -299,7 +299,7 @@ Romania had no negative prices before 2023, while Germany had them every year, b
 
 @practice in reports to the board, write "687 quarter-hours (171.75 h)", never a bare number.
 
-## Prices can be zero or negative: use differences or asinh {h=6713190d}
+## Transformations for zero and negative prices: differences and asinh {h=20af0524}
 
 Percentage changes and logarithms need a positive price, so they fail precisely in the hours that matter most for solar and storage. A transformation that accepts any sign keeps the zero and negative hours (Uniejewski, Weron & Ziel, 2018):
 
@@ -434,7 +434,7 @@ The Romanian and Brent levels are consistent with a unit root (not rejected, whi
 
 @practice model price *changes* (or transformed prices) and put seasonality in explicitly.
 
-## Decomposition splits a series into trend, season and the rest {h=e3e6bc12}
+## Decomposition: trend, seasonal and remainder components {h=b917502e}
 
 A seasonal series can be written as the sum of three components:
 
@@ -449,7 +449,7 @@ The chart applies both to Romanian monthly mean load from January 2016 to Decemb
 @chart decomp_load
 Romanian monthly mean load, January 2016 to December 2025 (GW): observed series with the classical and STL trends (top) and the classical and STL seasonal components (bottom).
 
-## Exponential smoothing: recent data count more {h=c8c38e31}
+## Exponential smoothing: higher weights on recent observations {h=ab3402b9}
 
 The smoothed level is an average of all past values, with weights that shrink geometrically:
 
@@ -501,7 +501,7 @@ One TWh more hydro in a month goes with a price lower by 19.55 EUR/MWh on averag
 
 @practice hydro producers and traders watch reservoir levels as a leading indicator of the PZU price.
 
-## Case study (b): Brent +7% in a day, then back below the pre-war price {h=fd5196f1}
+## Case study (b): one-day 7% rise in Brent and its reversal {h=0626b10d}
 
 In June 2025 the Brent price reacted sharply to the war between Israel and Iran. On 12 June 2025 Brent closed at 69.36 USD/bbl; on 13 June, the day Israel struck Iran, it closed at 74.23, a rise of 7.0% in one day, or 4.3 standard deviations of the 2024 daily returns. The price peaked at 77.01 on 20 June 2025. On 24 June, with a ceasefire in effect, it closed at 67.14, which is 12.8% below the peak and 3.2% below the level of 12 June.
 
@@ -542,7 +542,7 @@ The right panel shows the driver behind the trend: metered solar output rose fro
 @chart negative_solar
 Romanian negative-price hours by calendar month, January 2023 to October 2026 (left), and annual metered solar generation in Romania in TWh, 2018–2025 (right).
 
-## Case study (d): what accompanies negative-price days {h=7cfabd39}
+## Case study (d): factors associated with negative-price days {h=9233513d}
 
 To describe the conditions on days with at least one negative quarter-hour, we estimate a logit model. It describes the realised conditions; it does not forecast for bidding, since the explanatory variables are only known after the fact.
 
@@ -554,7 +554,7 @@ In plain words: each extra GW of residual load multiplies the odds of a negative
 
 @practice curtailment of renewables is most likely on spring weekends with full reservoirs.
 
-## Case study (e): 2026 prices climbed; oil jumped in March {h=565d23c8}
+## Case study (e): rising prices in 2026 and the oil price jump in March {h=999d4a98}
 
 In January–October 2026 the average Romanian price was 137.45 EUR/MWh, 29.8% above the same months of 2025. The rise accelerated at the end of the period: in October the average was 239.3 EUR/MWh, against 121.9 a year earlier.
 
@@ -565,7 +565,7 @@ Oil moved the same way. The monthly average of Brent rose from 64.77 to 108.34 U
 @chart cy_prices
 Daily base prices in the four zones (EUR/MWh, top) and Brent close (USD/bbl, bottom), 1 January to 31 October 2026.
 
-## Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025 {h=479ea9bb}
+## Case study (e): two Cernavodă outages and lower hydro output than in 2025 {h=f4559e4b}
 
 Domestic supply fell at the same time. Romanian nuclear output was 0 MW on 19 days in May, according to the data, and again from August: Unit 1 of the Cernavodă plant was shut at the end of July and Unit 2 on 13 August, because of the low level of the Danube, which provides its cooling water. September nuclear output was not reported. Over January–October, nuclear output fell by 31.3% on the hours reported in both years, which is a lower bound for the true fall.
 
@@ -576,7 +576,7 @@ Hydro output was 14.7% lower than in 2025 in August–October, while solar outpu
 @chart cy_generation
 Monthly mean Romanian generation from nuclear, hydro and solar (GW) in 2025 and in 2026 up to October, on reported hours.
 
-## Case study (e): 2026 drivers: price up about 30%, supply down {h=329169f4}
+## Case study (e): prices about 30% higher and lower supply in 2026 {h=9e78d449}
 
 The table puts the drivers of 2026 side by side, for January–October of each year.
 
@@ -614,7 +614,7 @@ For Brent, the highest close of 2026 was 118.35 USD/bbl on 31 March 2026, and th
 
 @practice set risk limits on the extremes, not on the averages.
 
-## Case study (f): since spring 2026, Bulgaria's evenings are cheaper {h=df258e5a}
+## Case study (f): lower evening prices in Bulgaria since spring 2026 {h=b848d4c3}
 
 The Romanian and Bulgarian markets are coupled and usually have almost the same price. In the evening hours from 19:00 to 22:00 local time (EET), from April to September, the average price was 171.1 EUR/MWh in Romania and 169.7 in Bulgaria in 2025, but 215.5 against 178.0 EUR/MWh in 2026. At midday, from 11:00 to 15:00, prices stayed close in 2026 (48.1 against 46.0).
 
@@ -633,7 +633,7 @@ The case studies show the same facts at work: water, nuclear outages, oil, netwo
 
 The wrap-up checks two skills of the lecture, counting negative prices and reading an autocorrelation, summarises the main messages, presents related research from our group and points to further resources.
 
-## Check yourself {h=35dad1ff}
+## Self-assessment questions {h=35dad1ff}
 
 1. In a month after 1 October 2025, 48 of Romania's quarter-hour prices were negative, and a board member asks how many negative hours there were. What do you answer?
    Answer: $48\times15/60=12$ hour-equivalents. Saying 48 "hours" overstates the duration by a factor of 4 compared with earlier, hourly years. The best answer is "48 quarter-hours (12 hours)".

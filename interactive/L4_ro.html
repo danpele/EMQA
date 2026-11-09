@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Factorul de risc este variația zilnică a prețului de bază PZU din România, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): o creștere este o pierdere pentru un furnizor care cumpără pe piața pentru ziua următoare. VaR (Value at Risk, valoarea la risc) este o cuantilă a pierderii, ES (Expected Shortfall, pierderea așteptată în coadă) media pierderilor de dincolo de ea. Butonul ▶ modifică parametrul principal pas cu pas.</p>
-<p class="toc"><a href="#s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</a> · <a href="#s-est">Estimarea VaR și ES: patru metode</a> · <a href="#s-bt">Testarea retrospectivă a VaR și ES</a> · <a href="#s-coll">De la cuantile la marje, garanții și limite</a> · <a href="#s-pos">Riscul de preț pentru furnizori și producători</a></p>
+<p class="toc"><a href="#s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</a> · <a href="#s-est">Estimarea VaR și ES: patru metode</a> · <a href="#s-bt">Testarea retrospectivă a VaR și ES</a> · <a href="#s-coll">Marje, garanții și limite de poziție</a> · <a href="#s-pos">Riscul de preț pentru furnizori și producători</a></p>
 <h2 class="sec" id="s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</h2>
 <section class="blk" id="var-es">
   <h3>Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală</h3>
@@ -94,7 +94,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Pe 250 de zile, un model VaR de 99% corect este în zona verde (cel mult 4 depășiri) în 89,2% din timp. În ce proporție din zile este modelul normal în zona roșie (10 sau mai multe)?</div>
   <details><summary>Răspuns</summary><p>În 29,5% din zile de cînd fereastra de testare s-a umplut (din septembrie 2017), față de 6,2% pentru FHS și 2,8% pentru EVT; un model corect ar fi în zona roșie doar 0,025% din timp. Zonele sînt cuantile binomiale: verde cît timp probabilitatea cumulată a numărului de depășiri într-o lege Binomial(n, 1%) este sub 95%, roșu de la 99,99%. Schimbați fereastra pentru a vedea cum se scalează pragurile cu n.</p></details>
-</section><h2 class="sec" id="s-coll">De la cuantile la marje, garanții și limite</h2>
+</section><h2 class="sec" id="s-coll">Marje, garanții și limite de poziție</h2>
 <section class="blk" id="horizon">
   <h3>Regula rădăcinii pătrate a timpului supraestimează riscul pe 10 zile</h3>
   <div class="pair">

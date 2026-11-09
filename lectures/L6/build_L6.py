@@ -133,8 +133,8 @@ def build(lang, H=None):
         f"\\begin{{column}}{{0.49\\textwidth}}{abcol(ab[i * hh:(i + 1) * hh])}\\end{{column}}\n" for i in range(2)) + "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: prices, generation, order books, installed capacity",
-              "Lucrăm numai cu date reale: prețuri, producție, oferte și putere instalată"), table(
+    D.frame(t("Data sources: prices, generation, order books and installed capacity",
+              "Sursele datelor: prețuri, producție, oferte și putere instalată"), table(
         "@{}p{0.30\\textwidth}p{0.15\\textwidth}p{0.50\\textwidth}@{}",
         [t("Series", "Seria"), t("Frequency", "Frecvența"), t("Source", "Sursa")],
         [[t("Day-ahead prices: Romania (RO), Bulgaria (BG), Hungary (HU), Germany--Luxembourg (DE-LU)",
@@ -162,7 +162,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 1 merit order
     D.section(t("Renewables and the merit order", "Sursele regenerabile și ordinea de merit"))
-    D.subsection(t("The solar boom", "Creșterea producției solare"))
+    D.subsection(t("Growth of solar generation", "Creșterea producției solare"))
     D.chart(t("Installed solar in Romania grew @{cap.solar_ro_x|.1f} times from 2019 to @{cap.last_year}",
               "Puterea solară instalată în România a crescut de @{cap.solar_ro_x|.1f} ori între 2019 și @{cap.last_year}"), "solar_growth", [
         t(("\\textbf{Romanian solar output, Jan--Oct}: @{twh_lfl.2025.solar|.2f} TWh in @{YP}, @{twh_lfl.2026.solar|.2f} TWh in @{Y}",
@@ -195,8 +195,8 @@ def build(lang, H=None):
                 "cu cît curba locală este mai abruptă, cu atît un parc nou își modifică mai mult propriul preț."),
               tryit=NB + " \\S2", cite="(Sensfuß, Ragwitz \\& Genoese, 2008, ENPOL)", wl="0.50", wr="0.47")
 
-    D.figframe(t("On the Romanian order book alone, @{merit.mid.x_below50} MW more at zero price pushes midday below 50 EUR/MWh",
-                 "Ofertele din România: +@{merit.mid.x_below50} MW la preț zero coboară amiaza sub 50 EUR/MWh"),
+    D.figframe(t("Romanian order book: @{merit.mid.x_below50} MW more at zero price lowers the midday price below 50 EUR/MWh",
+                 "Ofertele PZU: @{merit.mid.x_below50} MW la preț zero reduc prețul de amiază sub 50 EUR/MWh"),
                None, None, "merit_shift", [
                    t(("\\textbf{Midday}: +25 MW at zero price, @{merit.mid.price|.2f} $\\to$ @{merit.mid.sup.25|.2f} EUR/MWh",
                       "evening: @{merit.eve.net_imp|,.0f} MW of net imports deepen the curve; @{merit.eve.x_below50} MW are needed for the same fall",
@@ -291,7 +291,7 @@ def build(lang, H=None):
                 "prețul unui contract pe termen lung pentru energie solară (PPA) pornește de la prețul capturat, nu de la prețul de bază."),
               tryit=NB + " \\S4", cite="(Hirth, 2013, ENEECO; Hirth, Ueckerdt \\& Edenhofer, 2016, Energy J.)", wl="0.50", wr="0.47")
 
-    D.subsection(t("Romania, year by year", "România, an de an"))
+    D.subsection(t("Capture rates in Romania by year", "Ratele de captare din România, pe ani"))
     D.chart(t("Solar's capture rate in Romania fell from @{capt.RO.solar.2019.crp|.0f}\\% in 2019 to @{capt.RO.solar.2025.crp|.0f}\\% in 2025",
               "Rata de captare a solarului în România a scăzut de la @{capt.RO.solar.2019.crp|.0f}\\% în 2019 la @{capt.RO.solar.2025.crp|.0f}\\% în 2025"), "capture_rates", [
         t(("\\textbf{Solar}: the fall starts in 2023, with the growth of output", "@{Y}: @{capt.RO.solar.2026.crp|.1f}\\%, while output rose @{twh_lfl.solar_chg|.0f}\\% on the same months of @{YP}",
@@ -431,8 +431,8 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 4 intraday shape and spreads
     D.section(t("Intraday shape and price spreads", "Profilul zilnic și diferențele de preț"))
-    D.chart(t("Spring quarter-hours: @{shape.spring.min|.1f} EUR/MWh at midday, @{shape.spring.max|.1f} in the evening",
-              "Primăvara, prețul mediu: @{shape.spring.min|.1f} EUR/MWh la amiază, @{shape.spring.max|.1f} seara"), "shape15", [
+    D.chart(t("Spring quarter-hour prices: @{shape.spring.min|.1f} at midday, @{shape.spring.max|.1f} EUR/MWh in the evening",
+              "Prețurile medii de primăvară: @{shape.spring.min|.1f} la amiază, @{shape.spring.max|.1f} EUR/MWh seara"), "shape15", [
         t(("\\textbf{The solar valley}: spring minimum at @{shape.spring.min_t}, maximum at @{shape.spring.max_t} CET",
            "maximum minus minimum: spring @{shape.spring.range|.0f}, summer @{shape.summer.range|.0f}, winter only @{shape.winter.range|.0f} EUR/MWh"),
           ("\\textbf{„Valea” solară}: primăvara, minimul este la @{shape.spring.min_t}, iar maximul la @{shape.spring.max_t} CET",
@@ -542,7 +542,7 @@ def build(lang, H=None):
                                "(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \\& Petukhina, 2026, \\href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; prezentarea lui C.\\,O.\\ Cepoi la AIDA 2026, București, 3 iunie 2026: "
                                "\\href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{diapozitive})"))
 
-    D.subsection(t("15 minutes, self-cannibalisation, the region", "15 minute, autocanibalizare, regiunea"))
+    D.subsection(t("15-minute prices, self-cannibalisation and regional competition", "Prețurile pe 15 minute, autocanibalizarea și concurența regională"))
     D.concept(t("15-minute prices raised a 1-hour battery's revenue by @{bat.ltm.1.gain15|.1f}\\% on the same days",
                 "Prețurile pe 15 minute au crescut cu @{bat.ltm.1.gain15|.1f}\\% venitul unei baterii de 1 oră, în aceleași zile"),
               t("Any hourly schedule can be run on quarter-hours, so finer prices can only add revenue.",
@@ -609,8 +609,8 @@ def build(lang, H=None):
               tryit=NB + " \\S8", cite="(Cole \\& Karmakar, 2023, NREL; Schmidt et al., 2019, Joule)", wl="0.47", wr="0.50")
 
     # ------------------------------------------------------------------ 6 case study
-    D.section(t("Case studies: @{case.month|ym}; summer @{rogb.year}", "Studii de caz: @{case.month|ym}; vara @{rogb.year}"))
-    D.subsection(t("@{case.month|ym}: the most negative hours", "@{case.month|ym}: cele mai multe ore cu preț negativ"))
+    D.section(t("Case studies: @{case.month|ym} and summer @{rogb.year}", "Studii de caz: @{case.month|ym} și vara @{rogb.year}"))
+    D.subsection(t("Month with the most negative-price hours: @{case.month|ym}", "Luna cu cele mai multe ore cu preț negativ: @{case.month|ym}"))
     D.chart(t("Case study: in the week of @{case.week|date}, Romania had @{case.week_neg_h|.0f} negative hours and solar captured @{case.week_cr|.0f}\\%",
               "Studiu de caz: în săptămîna din @{case.week|date}, România a avut @{case.week_neg_h|.0f} " + de("case.week_neg_h") +
               "ore cu preț negativ, iar rata de captare solară a fost @{case.week_cr|.0f}\\%"), "case_week", [
@@ -623,8 +623,8 @@ def build(lang, H=None):
               "aceeași săptămînă însorită este cea mai slabă pentru un parc solar și una dintre cele mai bune pentru o baterie."),
         tryit=NB + " \\S9", cite=t("(" + OWN + "; schedule with perfect foresight)", "(" + OWN + "; program cu informație perfectă)"))
 
-    D.frame(t("Case study: what @{case.month|ym} meant for each player in the Romanian market",
-              "Studiu de caz: ce a însemnat luna @{case.month|ym} pentru fiecare participant la piață"), it(
+    D.frame(t("Case study: implications of @{case.month|ym} for each participant in the Romanian market",
+              "Studiu de caz: implicațiile lunii @{case.month|ym} pentru fiecare participant la piață"), it(
         t(("\\textbf{Solar developer}: capture rate @{case.cr_solar|.1f}\\% (@{case.cp_solar|.1f} vs @{case.base|.1f} EUR/MWh)",
            "@{case.e_neg_pct|.1f}\\% of output at negative prices; decision: storage on site, or a PPA that prices the solar profile"),
           ("\\textbf{Dezvoltatorul solar}: rata de captare @{case.cr_solar|.1f}\\% (@{case.cp_solar|.1f} față de @{case.base|.1f} EUR/MWh)",
@@ -641,8 +641,8 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 6b case study: summer, Romania and Bulgaria
     D.subsection(t("Summer @{rogb.year}: Romania and Bulgaria", "Vara @{rogb.year}: România și Bulgaria"))
-    D.chart(t("Summer @{rogb.year}: midday exports, evening imports from Bulgaria",
-              "Vara @{rogb.year}: export la prînz, import seara din Bulgaria"), "rogb_summer", [
+    D.chart(t("Case study: midday exports and evening imports from Bulgaria, summer @{rogb.year}",
+              "Studiu de caz: exporturi la prînz și importuri din Bulgaria seara, vara @{rogb.year}"), "rogb_summer", [
         t(("\\textbf{Midday: Romania exports}, @{rogb.exp_mw|,.0f} MW net at 12:00 on all borders",
            "mostly to Hungary (@{rogb.hu_mid_mw|,.0f} MW) and Serbia (@{rogb.rs_mid_mw|,.0f} MW); to Bulgaria on only @{rogb.n_days_mid} of @{rogb.n_days} days (12:00--15:00)"),
           ("\\textbf{La prînz România exportă}: @{rogb.exp_mw|,.0f} MW net la ora 12, pe toate granițele",

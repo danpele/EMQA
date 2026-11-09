@@ -442,7 +442,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 3,
             "en": {
-                "title": "What LEAR keeps",
+                "title": "Variables retained by LEAR",
                 "text": "Over the 365 daily fits of LEAR(728) (the LASSO-estimated autoregression, 728-day window), which statement matches the selection heat map?",
                 "options": [
                     "The load regressors of $d-2$ are kept in most fits, especially in the evening",
@@ -454,7 +454,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "Fundamentals observed two days before delivery carry little information that is not already in the price of $d-1$, so the penalty switches most of them off; real gains need forecasts of the fundamentals for day $d$."
             },
             "ro": {
-                "title": "Ce păstrează LEAR",
+                "title": "Variabilele păstrate de LEAR",
                 "text": "În cele 365 de estimări zilnice ale LEAR(728) (autoregresia estimată cu LASSO, fereastră de 728 de zile), ce afirmație corespunde hărții termice a selecției?",
                 "options": [
                     "Regresorii de consum din $d-2$ rămîn în majoritatea estimărilor, mai ales seara",
@@ -616,7 +616,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "C2 applies the same gate-closure rule as the lecture, with load metered up to $d-2$, so no future data are used. The difference comes from the nature of the two series."
             },
             "ro": {
-                "title": "Consum versus preț",
+                "title": "Prognoza consumului și prognoza prețului",
                 "text": "În studiul de caz C2 despre consumul orar din România, eroarea procentuală absolută medie (MAPE) este 4,09% pentru gradient boosting, 4,85% pentru o regresie liniară și 10,17% pentru modelul naiv. Pentru prețuri, învățarea automată luată separat rămîne în urma modelelor liniare. De ce această diferență?",
                 "options": [
                     "Datele de consum acoperă un istoric mult mai lung decît datele de preț",
@@ -631,7 +631,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 3,
             "en": {
-                "title": "The hardest hour",
+                "title": "Hour with the largest errors",
                 "text": "Looking at the mean absolute error (MAE) by hour on the test year, where are AW-LEAR (LEAR, the LASSO-estimated autoregression, averaged across calibration windows) errors largest?",
                 "options": [
                     "At 3 h Central European Time (CET), in the night, when liquidity is lowest",
@@ -643,7 +643,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "The evening ramp is where the money is lost; the lecture advises putting the best analyst on the evening hours and hedging them."
             },
             "ro": {
-                "title": "Ora cea mai dificilă",
+                "title": "Ora cu cele mai mari erori",
                 "text": "Privind eroarea absolută medie (MAE) pe ore în anul de test, unde sînt cele mai mari erorile AW-LEAR (LEAR, autoregresia estimată cu LASSO, mediată pe ferestre de calibrare)?",
                 "options": [
                     "La ora 3, ora Europei Centrale (CET), noaptea, cînd lichiditatea este cea mai mică",
@@ -928,7 +928,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 3,
             "en": {
-                "title": "A too-good vendor backtest",
+                "title": "An implausibly accurate vendor backtest",
                 "text": "A vendor reports a relative mean absolute error (rMAE) of 0.55 for Romanian day-ahead prices and uses the realised load of day $d-1$ as a regressor. The best honest model of the lecture reaches 0.795. What do you do?",
                 "options": [
                     "Buy it: an rMAE of 0.55 is far better than any model of the lecture",
@@ -940,7 +940,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "The impressive number is a symptom of leakage, not of skill. Ask for a rolling backtest that obeys the 12:00 rule, with scalers and penalties fitted in the calibration window only, as the lecture's own leakage self-check does."
             },
             "ro": {
-                "title": "O testare prea bună a furnizorului",
+                "title": "O testare retrospectivă neverosimil de bună a unui furnizor",
                 "text": "Un furnizor de prognoze raportează pentru prețurile pe Piața pentru Ziua Următoare (PZU) din România o eroare absolută medie relativă (rMAE) de 0,55, dar folosește ca regresor consumul realizat în ziua $d-1$. Cel mai bun model corect din curs ajunge la 0,795. Ce faceți?",
                 "options": [
                     "Cumpărați prognoza: o rMAE de 0,55 este mult mai bună decît orice model din curs",

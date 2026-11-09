@@ -92,7 +92,7 @@ VaR & value at risk\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data: Romanian power, fuels, carbon and energy shares}
+\begin{frame}{Data sources: Romanian power, fuels, carbon and energy shares}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.88}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.40\textwidth}p{0.11\textwidth}p{0.44\textwidth}@{}}\toprule
@@ -118,7 +118,7 @@ Shares on the Bucharest Stock Exchange (BVB): OMV Petrom (SNP), Hidroelectrica (
 
 \section{Measuring volatility}
 
-\subsection{Percent or EUR/MWh}
+\subsection{Volatility in percent and in EUR/MWh}
 
 \begin{frame}{Definition of volatility}
 \footnotesize
@@ -252,7 +252,7 @@ Shares on the Bucharest Stock Exchange (BVB): OMV Petrom (SNP), Hidroelectrica (
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation; Bollerslev, 1987, RESTAT)}\hfill\qlink{EMQA\_L3\_tails}{Quantlets/L3/EMQA_L3_tails}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The crisis: same volatility in percent, 4 times higher in EUR/MWh}
+\begin{frame}{Volatility in 2022: similar in percent, 4 times higher in EUR/MWh}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.477\textheight,keepaspectratio]{charts/en/vol_units.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: residuals of the mean equation, 2019-01-01 to 2026-10-31.}
@@ -507,7 +507,7 @@ OMV Petrom & 0.934 & 10.2 & trading days \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Knittel \& Roberts, 2005, ENEECO; own estimation)}\hfill\qlink{EMQA\_L3\_vol\_level}{Quantlets/L3/EMQA_L3_vol_level}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Fat tails matter more than asymmetry}
+\begin{frame}{Relative importance of fat tails and asymmetry}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrr@{}}\toprule
@@ -568,7 +568,7 @@ EGARCH, Student & 0.831 & \cellcolor{Forest!54}24\,219.2 & 0.532 & 0.995 & \cell
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hamilton, 1989, Econometrica)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The crisis was one long turbulent regime; 2026 moves in and out}
+\begin{frame}{Volatility regimes during the crisis and in 2026}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.485\textheight,keepaspectratio]{charts/en/ms_regime.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (OPCOM, via ENTSO-E); own estimates. Data: two-regime Markov-switching model on EUR/MWh shocks, 2019-01-01 to 2026-10-31.}
@@ -750,7 +750,7 @@ whole sample & 0.746 & 2.4 & 0.994 & 113.5 & 27.6 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Patton, 2011, JOE; Hansen \& Lunde, 2005, JAE)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{GARCH-type forecasts beat the 30-day history, significantly in EUR}
+\begin{frame}{GARCH-type forecasts compared with 30-day historical volatility}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrr@{}}\toprule
@@ -794,7 +794,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L3\_fc\_test}{Quantlets/L3/EMQA_L3_fc_test}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Weeks ahead, volatility returns to its long-run level}
+\begin{frame}{Over several weeks, volatility returns to its long-run level}
 \footnotesize
 \intuition{High volatility is expected to fall and low volatility to rise, so $\sigma\sqrt{h}$ misstates the risk over $h$ days.}
 \begin{columns}[T,onlytextwidth]
@@ -887,7 +887,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation)}\hfill\qlink{EMQA\_L3\_term\_structure}{Quantlets/L3/EMQA_L3_term_structure}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study C3: Romanian energy shares are weakly tied to oil}
+\begin{frame}{Case study C3: weak link between Romanian energy shares and oil}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{What the paper did} (Grecu, Cramer, Pele \& Lessmann, 2025)

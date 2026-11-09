@@ -188,7 +188,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: sources and sample period", "Numai date reale: surse și perioadă acoperită"), note(t("Exchanges: Romanian electricity and gas market operator (OPCOM), Independent Bulgarian Energy Exchange (IBEX), "
+    D.frame(t("Data sources and sample period", "Sursele datelor și perioada analizată"), note(t("Exchanges: Romanian electricity and gas market operator (OPCOM), Independent Bulgarian Energy Exchange (IBEX), "
                "Hungarian Power Exchange (HUPX), European Power Exchange (EPEX SPOT); European Network of Transmission System "
                "Operators for Electricity (ENTSO-E).",
                "Burse: operatorul pieței de energie electrică și gaze naturale din România (OPCOM), bursa independentă de energie din "
@@ -283,7 +283,7 @@ def build(lang, H=None):
                cite=t("(OPCOM, PZU aggregated curves)", "(OPCOM, curbele agregate PZU)"))
 
     tl = t
-    D.frame(t("One delivery day, step by step", "Etapele tranzacționării pentru o zi de livrare"), """
+    D.frame(t("Trading stages for one delivery day", "Etapele tranzacționării pentru o zi de livrare"), """
 \\begin{center}
 \\begin{tikzpicture}[x=1cm,y=1cm,
   box/.style={draw=MainBlue,fill=BlockGray,rounded corners=2pt,align=center,text width=3.05cm,minimum height=1.3cm,font=\\scriptsize}]
@@ -317,8 +317,8 @@ def build(lang, H=None):
                                 "(ora Bucureștiului), corectează erorile pe piața intrazilnică și decontează dezechilibrul rămas.")),
         "footnotesize", cite="(Maciejowska, Uniejewski \\& Weron, 2023, Oxford Res.\\ Enc.; OPCOM; Transelectrica)")
 
-    D.frame(t("Who sets the rules: operators, regulators, price limits, disclosure",
-              "Cine stabilește regulile: operatori, reglementatori, limite de preț, transparență"), it(
+    D.frame(t("Market institutions: operators, regulators, price limits, disclosure",
+              "Instituțiile pieței: operatori, reglementatori, limite de preț, transparență"), it(
         (t("\\textbf{Who is who}", "\\textbf{Cine ce face}"),
          t("OPCOM: the Nominated Electricity Market Operator (NEMO); it runs PZU and the intraday market",
            "OPCOM: operatorul desemnat al pieței de energie electrică (NEMO); administrează PZU și piața intrazilnică"),
@@ -422,7 +422,7 @@ def build(lang, H=None):
         t("always ask ``hours or quarter-hours?'' before comparing years.",
           "întrebați mereu „ore sau sferturi de oră?” înainte de a compara anii între ei."),
         tryit=NB + " \\S1", cite=t("(OPCOM, 1 Oct 2025)", "(OPCOM, 1 oct. 2025)"))
-    D.subsection(t("What Romania generates", "Ce produce România"))
+    D.subsection(t("Electricity generation in Romania", "Producția de energie electrică în România"))
     D.chart(t("Romania's generation mix: hydro, nuclear, gas, coal and growing solar",
               "Mixul de producție al României: hidro, nuclear, gaze, cărbune și solar în creștere"), "mix_ro_annual", [
         t("Hydro = run-of-river (RoR) + reservoir, coal = lignite + hard coal; black bar = consumption, above the stack it means "
@@ -622,7 +622,7 @@ def build(lang, H=None):
     days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     dlab = days if not ro else ["Lu", "Ma", "Mi", "Jo", "Vi", "Sî", "Du"]
     D.concept(
-        t("Weekends are cheaper", "La sfîrșit de săptămînă, energia este mai ieftină"),
+        t("Weekly seasonality: lower prices at weekends", "Sezonalitatea săptămînală: prețuri mai mici la sfîrșit de săptămînă"),
         t("Factories and offices consume less on weekends, so fewer plants are needed and the price drops.",
           "În weekend, fabricile și birourile consumă mai puțin, sînt necesare mai puține centrale și prețul scade."),
         "\\[ \\hat s_j=\\frac1W\\sum_{w=1}^{W}\\Big(\\underbrace{p_{w,j}}_{" + t("\\text{day }j\\text{ of week }w", "\\text{ziua }j\\text{ din săptămîna }w") +
@@ -716,7 +716,7 @@ def build(lang, H=None):
 
     D.subsection(t("Distribution and volatility", "Distribuția prețurilor și volatilitatea"))
     D.figframe(
-        t("Prices can be zero or negative: use differences or asinh", "Prețul poate fi nul sau negativ: folosiți diferențe sau asinh"),
+        t("Transformations for zero and negative prices: differences and asinh", "Transformări pentru prețuri nule sau negative: diferențe și asinh"),
         t("Percentage changes need a positive price, but asinh is defined for any sign.",
           "Variațiile procentuale presupun un preț pozitiv, dar asinh este definită pentru orice semn."),
         "\\[ y_t=\\operatorname{asinh}(x_t)=\\ln\\big(x_t+\\sqrt{x_t^2+1}\\big),\\quad x_t=\\frac{p_t-\\tilde p}{\\widehat{\\mathrm{MAD}}},"
@@ -895,7 +895,7 @@ def build(lang, H=None):
         cite=t("(own computation; constant only; ADF lags by AIC; 5\\% level)", "(calcule proprii; numai constantă; decalaje ADF după AIC; prag de 5\\%)"))
 
     D.figframe(
-        t("Decomposition splits a series into trend, season and the rest", "Descompunerea: trend, sezonalitate și componenta reziduală"),
+        t("Decomposition: trend, seasonal and remainder components", "Descompunerea: trend, sezonalitate și componenta reziduală"),
         t("Seasonal--Trend decomposition using Loess (STL) lets the season evolve.",
           "Descompunerea sezonieră și de trend prin regresie locală (STL) lasă sezonul să evolueze."),
         "\\[ x_t=T_t+S_t+R_t\\qquad(" + t("\\text{trend + season + remainder}", "\\text{trend + sezon + rest}") + ") \\]",
@@ -909,7 +909,7 @@ def build(lang, H=None):
         tryit=NB + " \\S8", cite="(Cleveland et al., 1990, JOS; Hyndman \\& Athanasopoulos, 2021)", height="0.60\\textheight")
 
     D.figframe(
-        t("Exponential smoothing: recent data count more", "Netezirea exponențială: datele recente cîntăresc mai mult"),
+        t("Exponential smoothing: higher weights on recent observations", "Netezirea exponențială: ponderi mai mari pentru observațiile recente"),
         t("The smoothed level averages all past values, with weights shrinking geometrically.",
           "Nivelul netezit: medie ponderată a valorilor trecute, cu ponderi care scad geometric."),
         "\\[ \\ell_t=\\underbrace{\\alpha x_t}_{" + t("\\text{news}", "\\text{informația nouă}") + "}+\\underbrace{(1-\\alpha)\\ell_{t-1}}_{" +
@@ -962,7 +962,7 @@ def build(lang, H=None):
           "producătorii hidro și traderii urmăresc nivelul lacurilor ca indicator anticipativ al prețului PZU."),
         tryit=NB + " \\S10a", cite=t("(own estimation; Newey--West standard errors)", "(estimare proprie; erori standard Newey--West)"), wl="0.50", wr="0.47")
     D.subsection(t("(b) The June 2025 oil shock", "(b) Șocul petrolier din iunie 2025"))
-    D.chart(t("Case study (b): Brent +7\\% in a day, then back below the pre-war price", "Studiul de caz (b): Brent, +7\\% într-o zi, apoi sub nivelul inițial"),
+    D.chart(t("Case study (b): one-day 7\\% rise in Brent and its reversal", "Studiul de caz (b): creșterea Brent cu 7\\% într-o zi și revenirea"),
             "iran_brent", [
         t("Close 12 Jun 2025 @{iran.p12|.2f} $\\to$ 13 Jun (Israel strikes Iran) @{iran.p13|.2f}: \\textbf{@{iran.chg13|+.1f}\\%} "
           "(@{iran.z13|.1f} standard deviations of 2024 daily returns); peak @{iran.peak|.2f} on @{iran.peak_date|date}; 24 Jun (ceasefire in effect) "
@@ -1034,7 +1034,7 @@ def build(lang, H=None):
                                    (t("Hydro, GW", "Hidro, GW"), "hydro"), ("Weekend", "wkend")] +
                     [(t("Year ", "Anul ") + k[1:], k) for k in lg if k.startswith("y")]], size="footnotesize", stretch="1.1")
     D.concept(
-        t("Case study (d): what accompanies negative-price days",
+        t("Case study (d): factors associated with negative-price days",
           "Studiul de caz (d): factorii asociați zilelor cu prețuri negative"),
         t("We describe the realised conditions on days with at least one negative quarter-hour; this describes, it does not forecast for bidding.",
           "Descriem condițiile efectiv înregistrate în zilele cu cel puțin un sfert de oră cu preț negativ; modelul descrie condițiile observate, fără a oferi prognoze pentru licitare."),
@@ -1057,8 +1057,8 @@ def build(lang, H=None):
           "regenerabilele sînt limitate cel mai probabil în weekendurile de primăvară, cu lacuri pline."),
         tryit=NB + " \\S10d", cite=t("(own estimation, logit; energy-charts.info)", "(estimare proprie, logit; energy-charts.info)"),
         wl="0.61" if ro else "0.57", wr="0.36" if ro else "0.40")
-    D.subsection(t("(e) @{Y} so far", "(e) Anul @{Y} pînă acum"))
-    D.chart(t("Case study (e): @{Y} prices climbed; oil jumped in March", "Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie"), "cy_prices", [
+    D.subsection(t("(e) Market developments in @{Y}", "(e) Evoluția pieței în @{Y}"))
+    D.chart(t("Case study (e): rising prices in @{Y} and the oil price jump in March", "Studiul de caz (e): creșterea prețurilor și saltul țițeiului din martie"), "cy_prices", [
         t(jan_last + " @{Y}: Romania @{cy.mean.RO|.2f} EUR/MWh (@{cy.chg.RO|+.1f}\\%); " + mlast + " @{cy.lm.RO|.1f} vs @{cy.lm_prev.RO|.1f} a year earlier.",
           jan_last + " @{Y}: România @{cy.mean.RO|.2f} EUR/MWh (@{cy.chg.RO|+.1f}\\%); în " + mlast + ", @{cy.lm.RO|.1f}, față de "
           "@{cy.lm_prev.RO|.1f} cu un an înainte."),
@@ -1071,7 +1071,7 @@ def build(lang, H=None):
               "bugetele stabilite în ianuarie s-au dovedit mult prea mici."),
         tryit=NB + " \\S10e", cite=t("(energy-charts.info; Yahoo Finance BZ=F; cut-off @{cutoff.end|date})", "(energy-charts.info; Yahoo Finance BZ=F; date pînă la @{cutoff.end|date})"))
 
-    D.chart(t("Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025", "Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025"), "cy_generation", [
+    D.chart(t("Case study (e): two Cernavodă outages and lower hydro output than in 2025", "Studiul de caz (e): opririle de la Cernavodă și scăderea producției hidro"), "cy_generation", [
         t("Nuclear 0 MW on @{nuclear.may_zero_days} days in May and from August (low Danube); " + jan_last +
           " @{mix.lfl.Nuclear.chg|+.1f}\\% on hours reported in both years (lower bound).",
           "Nuclear 0 MW în @{nuclear.may_zero_days} " + de("nuclear.may_zero_days") + "zile din mai și din august (Dunărea scăzută); " + jan_last +
@@ -1095,7 +1095,7 @@ def build(lang, H=None):
             [t("RO nuclear, TWh$^{*}$", "Nuclear RO, TWh$^{*}$"), f("mix.lfl.Nuclear.prev", ".2f"), f("mix.lfl.Nuclear.ytd", ".2f"), chg_cell("mix.lfl.Nuclear.chg", False)],
             [t("RO solar, TWh", "Solar RO, TWh"), f("mix.lfl.Solar.prev", ".2f"), f("mix.lfl.Solar.ytd", ".2f"), chg_cell("mix.lfl.Solar.chg", False)],
             [t("RO net imports, TWh", "Import net RO, TWh"), f("mix.lfl_imp.prev", ".2f"), f("mix.lfl_imp.ytd", ".2f"), ""]]
-    D.frame(t("Case study (e): @{Y} drivers --- price up about 30\\%, supply down", "Studiul de caz (e): prețuri cu circa 30\\% mai mari, ofertă mai mică"),
+    D.frame(t("Case study (e): prices about 30\\% higher and lower supply in @{Y}", "Studiul de caz (e): prețuri cu circa 30\\% mai mari și ofertă mai mică în @{Y}"),
             "\\begin{center}" + table("@{}lrrr@{}", [jan_last, "@{YP}", "@{Y}", t("\\% chg", "var. \\%")], rows, size="small", stretch="1.08") + "\\end{center}" +
             "\n\\vspace{-3mm}" + note(t("Green = favourable for a consumer, red = unfavourable; cut-off @{cutoff.end|date}.",
                                         "Verde = favorabil pentru consumator, roșu = nefavorabil; date pînă la @{cutoff.end|date}."),
@@ -1129,8 +1129,8 @@ def build(lang, H=None):
 
     D.subsection(t("(f) Romania, Bulgaria and batteries", "(f) România, Bulgaria și bateriile"))
     bt = N["bat"]
-    D.chart(t("Case study (f): since spring @{Y}, Bulgaria's evenings are cheaper",
-              "Studiul de caz (f): din primăvara lui @{Y}, Bulgaria are prețuri mai mici seara"), "bg_battery", [
+    D.chart(t("Case study (f): lower evening prices in Bulgaria since spring @{Y}",
+              "Studiul de caz (f): prețuri de seară mai mici în Bulgaria din primăvara lui @{Y}"), "bg_battery", [
         t("Evenings 19:00--22:00 local time (EET), Apr--Sep, RO vs BG; @{bat.evening.2025.RO|.1f} vs @{bat.evening.2025.BG|.1f} EUR/MWh (2025), "
           "@{bat.evening.@{Y}.RO|.1f} vs @{bat.evening.@{Y}.BG|.1f} (@{Y}); middays 11:00--15:00 close in @{Y} (@{bat.midday.@{Y}.RO|.1f} vs "
           "@{bat.midday.@{Y}.BG|.1f}).",

@@ -156,7 +156,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: Romanian forwards, spot prices, gas, carbon", "Folosim numai date reale: forward, spot, gaze, carbon"), table(
+    D.frame(t("Data sources: Romanian forwards, spot prices, gas and carbon", "Sursele datelor: contracte forward, prețuri spot, gaze naturale și carbon"), table(
         "@{}p{0.37\\textwidth}p{0.11\\textwidth}p{0.47\\textwidth}@{}",
         [t("Series", "Seria"), t("Frequency", "Frecvența"), t("Source", "Sursa")],
         [[t("Romanian forward contracts: @{data.fw_n|,d} auctions, @{data.fw_twh|.1f} TWh",
@@ -270,7 +270,7 @@ def build(lang, H=None):
                 "contracte fizice, pentru energie livrată în România; contracte financiare, pentru o piață lichidă, cu riscul de bază asumat."),
               cite="(OPCOM; Hull, 2022)", wl="0.55", wr="0.42")
 
-    D.concept(t("Futures are marked to market daily: the hedge needs cash", "Contractele futures se decontează zilnic, deci cer lichiditate"),
+    D.concept(t("Daily settlement of futures and the liquidity needs of a hedge", "Decontarea zilnică a contractelor futures și nevoia de lichiditate a acoperirii"),
               t("A forward settles once at delivery; a future pays or collects every day's price change.",
                 "Forward-ul se decontează o dată, la livrare; deținătorul unui contract futures plătește sau încasează zilnic variația prețului."),
               "\\[ \\underbrace{VM_t=Q(F_t-F_{t-1})}_{\\text{" + t("variation margin", "marja de variație") + "}},\\qquad \\sum_{t=1}^{T}VM_t=Q(F_T-F_0) \\]" +
@@ -294,7 +294,7 @@ def build(lang, H=None):
         tryit=NB + " \\S1", cite=t("(own computation; OPCOM)", "(calcule proprii; OPCOM)"))
 
     D.subsection(t("The forward curve", "Curba prețurilor forward"))
-    D.concept(t("Storable gas follows the cost of carry; power does not", "Forward-ul gazelor reflectă costul de stocare; al energiei, nu"),
+    D.concept(t("Forward prices and the cost of carry: gas and power", "Prețurile forward și costul de stocare: gaze naturale și energie electrică"),
               t("Gas can be stored, which ties forward to spot; power cannot, so its forward is an expectation plus a risk premium.",
                 "Gazele se pot stoca, deci prețul lor forward este legat de spot prin costul de deținere; energia electrică nu, deci prețul ei forward este prețul spot așteptat plus o primă de risc."),
               "\\[ \\underbrace{F_{t,T}=S_te^{(r+u-y)(T-t)}}_{\\text{" + t("storable", "stocabil") + "}},\\qquad "
@@ -318,7 +318,7 @@ def build(lang, H=None):
                                          "o ofertă pentru " + Y1 + " pornește de la @{curve.cal_next.F|.0f} EUR/MWh, nu de la spotul din octombrie."),
         tryit=NB + " \\S3", cite=t("(own computation; OPCOM)", "(calcule proprii; OPCOM)"))
 
-    D.chart(t("The curve moves: yearly forwards by trade date vs realised", "Curba se mișcă: prețurile anuale, după data tranzacției"), "cal_by_trade", [
+    D.chart(t("Yearly forward prices by trade date and realised spot prices", "Prețurile forward anuale, după data tranzacției, și prețurile spot realizate"), "cal_by_trade", [
         t("2021: VWAP @{cal.2021.vwap|.1f}, realised @{cal.2021.realised|.1f}; 2023: @{cal.2023.vwap|.1f} vs @{cal.2023.realised|.1f}; 2025: @{cal.2025.vwap|.1f} vs @{cal.2025.realised|.1f} EUR/MWh.",
           "2021: VWAP @{cal.2021.vwap|.1f}, realizat @{cal.2021.realised|.1f}; 2023: @{cal.2023.vwap|.1f} față de @{cal.2023.realised|.1f}; 2025: @{cal.2025.vwap|.1f} față de @{cal.2025.realised|.1f} EUR/MWh.")],
         height="0.58\\textheight", job=t("the forward is the price of certainty, not a forecast to rely on in a crisis.",
@@ -343,7 +343,7 @@ def build(lang, H=None):
                 "acoperirea este, în medie, ieftină; costul ei real este cîștigul la care renunțați."),
               tryit=NB + " \\S3", cite="(Bessembinder \\& Lemmon, 2002; Redl et al., 2009)", wl="0.50", wr="0.47")
 
-    D.chart(t("Month by month, forward minus spot swings both ways", "Lună de lună, diferența forward minus spot are ambele semne"), "premium", [
+    D.chart(t("Monthly difference between forward and spot prices", "Diferența lunară dintre prețul forward și prețul spot"), "premium", [
         t("Median @{prem.m1.median|+.1f} EUR/MWh; the deep negative bars are 2021--2022 surprises, not a stable discount.",
           "Mediana: @{prem.m1.median|+.1f} EUR/MWh; valorile negative mari reflectă creșterile neașteptate de preț din 2021--2022, nu o primă negativă sistematică.")],
         height="0.60\\textheight", job=t("judge a hedge by the risk it removed, not by its ex-post profit.",
@@ -412,7 +412,7 @@ def build(lang, H=None):
                 "evaluați o centrală pe gaze sau o baterie ca opțiuni, nu ca marjă medie înmulțită cu 8\\,760 h."),
               tryit=NB + " \\S4", cite="(Deng et al., 2001; Eydeland \\& Wolyniec, 2003)", wl="0.52", wr="0.45")
 
-    D.chart(t("Sorted hourly spreads: the value lies in the best hours", "Marjele orare ordonate: valoarea stă în orele cele mai bune"), "spark_hourly", [
+    D.chart(t("Sorted hourly spreads: value concentrated in the best hours", "Marjele orare ordonate: valoarea concentrată în orele cele mai bune"), "spark_hourly", [
         t("The area above zero is the option value; at equal gas and carbon prices Romania has more profitable hours than Germany.",
           "Aria de deasupra lui zero este valoarea opțiunii; la aceleași prețuri ale gazelor și carbonului, România are mai multe ore profitabile decît Germania.")],
         height="0.60\\textheight", job=t("hedge a flexible plant with peak products, not with a band.",
@@ -560,7 +560,7 @@ def build(lang, H=None):
                    "alegeți volatilitatea potrivită activului suport: an, trimestru sau lună."), NB + " \\S6"),
         "footnotesize", cite=t("(own computation; OPCOM; Yahoo Finance)", "(calcule proprii; OPCOM; Yahoo Finance)"))
 
-    D.chart(t("Near contracts move more: the Samuelson effect in TTF", "Contractele apropiate de livrare variază mai mult: efectul Samuelson"), "samuelson", [
+    D.chart(t("The Samuelson effect in TTF: higher volatility of near contracts", "Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate"), "samuelson", [
         t("@{sam.w_from|date} -- @{sam.w_to|date}: December " + Y + " @{sam.2026-12.v12|.0f}\\%, May " + Y1 + " @{sam.2027-05.v12|.0f}\\% a year; in 2022 both near @{sam.2026-12.v22|.0f}\\%.",
           "Volatilitatea anualizată, @{sam.w_from|date} -- @{sam.w_to|date}: contractul pentru decembrie " + Y + " -- @{sam.2026-12.v12|.0f}\\%, cel pentru mai " + Y1 + " -- @{sam.2027-05.v12|.0f}\\%; în 2022, ambele în jur de @{sam.2026-12.v22|.0f}\\%.")],
         height="0.60\\textheight", job=t("an option close to delivery needs a higher volatility.",
@@ -585,7 +585,7 @@ def build(lang, H=None):
                 "vînzătorul plafonului se acoperă deținînd contracte forward într-o cantitate egală cu delta, pe care o ajustează periodic."),
               tryit=NB + " \\S6", cite="(Black, 1976; Hull, 2022)", wl="0.52", wr="0.45")
 
-    D.chart(t("What each instrument pays for the " + Y1 + " band", "Prețul efectiv al benzii pentru " + Y1 + " cu fiecare instrument"), "collar", [
+    D.chart(t("Effective price of the " + Y1 + " band by instrument", "Prețul efectiv al benzii pentru " + Y1 + " cu fiecare instrument"), "collar", [
         t("Forward @{bs.F|.1f}; cap at @{bs.K110|.1f} costs @{bs.c.call110|.2f}; collar @{bs.K90|.1f} -- @{bs.K110|.1f} costs @{bs.c.collar|.2f} EUR/MWh; spikes and monthly averages (Asian options) break Black-76.",
           "Forward @{bs.F|.1f}; plafonul la @{bs.K110|.1f} costă @{bs.c.call110|.2f}; collarul @{bs.K90|.1f} -- @{bs.K110|.1f} costă @{bs.c.collar|.2f} EUR/MWh; salturile și mediile lunare (opțiuni asiatice) încalcă ipotezele Black-76.")],
         height="0.58\\textheight", job=t("a near-zero-cost collar lets a supplier sell a capped retail price.",
@@ -614,7 +614,7 @@ def build(lang, H=None):
                                 "comitetul de risc al unui furnizor ar trebui să vadă lunar exact acest calcul."), NB + " \\S7"),
         "footnotesize", cite=t("(own computation; OPCOM)", "(calcule proprii; OPCOM)"))
 
-    D.chart(t("Case study: in " + Y + " the forward beat the spot in @{case.n_fwd_win} of @{case.months} months", "Studiul de caz: în " + Y + ", forward-ul a fost mai ieftin în @{case.n_fwd_win} din @{case.months} luni"), "case2026", [
+    D.chart(t("Case study: in " + Y + " the forward was cheaper than spot in @{case.n_fwd_win} of @{case.months} months", "Studiul de caz: în " + Y + ", forward-ul a fost mai ieftin în @{case.n_fwd_win} din @{case.months} luni"), "case2026", [
         t("Spot peak @{case.spot.max|.1f} EUR/MWh in @{case.spot_max_ym|ym}; the caps paid out in @{case.n_cap_pay} of @{case.months} months.",
           "Prețul spot a atins @{case.spot.max|.1f} EUR/MWh în @{case.spot_max_ym|ym}; plafoanele s-au exercitat în @{case.n_cap_pay} din @{case.months} luni.")],
         height="0.60\\textheight", job=t("a cap costs its premium every month, also when it pays nothing.",
@@ -624,7 +624,7 @@ def build(lang, H=None):
     def crow(k, lab):
         c = cs[k]
         return [lab, fmt(c["mean"], ".1f", lang), fmt(c["sd"], ".1f", lang), fmt(c["max"], ".1f", lang), fmt(c["eur_mw"], ",.0f", lang)]
-    D.frame(t("Case study: the forward reduced cost and risk, the cap reduced risk", "Studiul de caz: forward-ul a redus costul și riscul, iar plafonul doar riscul"), cols(
+    D.frame(t("Case study: effect of the forward and the cap on cost and risk", "Studiul de caz: efectul contractului forward și al plafonului asupra costului și riscului"), cols(
         table("@{}lrrrr@{}", [t("EUR/MWh", "EUR/MWh"), t("mean", "media"), t("st.\\ dev.", "abat.\\ std."), t("worst", "maxim"), t("EUR/MW", "EUR/MW")],
               [crow("spot", t("spot", "spot")), crow("fwd", t("100\\% forward", "100\\% forward")),
                crow("half", t("50\\% forward", "50\\% forward")), crow("cap", t("caps", "plafoane"))], size="footnotesize", stretch="1.25") +
@@ -639,7 +639,7 @@ def build(lang, H=None):
                                      "stabiliți ponderea acoperită prin politică (de exemplu 60--80\\%, eșalonat), nu după o opinie despre prețuri."), NB + " \\S7"),
         "footnotesize", cite=OWN)
 
-    D.frame(t("The producer's side, and the summer 2024 spike", "Perspectiva producătorului și saltul de preț din vara lui 2024"), it(
+    D.frame(t("The producer's perspective and the summer 2024 price spike", "Perspectiva producătorului și saltul de preț din vara lui 2024"), it(
         t(("\\textbf{Producer, 2025}", "@{prod.n25} auctions, VWAP @{prod.F25|.1f} vs realised @{prod.S25|.1f} EUR/MWh",
            "selling forward earned @{prod.loss|.1f} EUR/MWh less than spot (@{prod.loss_mw|,.0f} EUR per MW-year), the price of a fixed revenue",
            "in 2022 the same decision cost @{prod.loss22|.1f} EUR/MWh"),

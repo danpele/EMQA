@@ -25,8 +25,8 @@ BLOCKS = [('merit-order', 'merit_opcom', 'mkt', 'mo'),
 
 SECTIONS = {
  'en': dict(mkt='Power markets in Romania and Europe', facts='Energy data and stylized facts', tool='Time-series methods'),
- 'ro': dict(mkt='Piețele de energie electrică din România și Europa', facts='Datele din energie și faptele stilizate',
-            tool='Instrumente pentru serii de timp'),
+ 'ro': dict(mkt='Piețele de energie electrică din România și Europa', facts='Date din energie și fapte stilizate',
+            tool='Instrumente de analiză a seriilor de timp'),
 }
 
 L = {

@@ -20,7 +20,7 @@ Cursul folosește numai date reale, descărcate la 4 noiembrie 2026, pînă la 3
 
 Prețul energiei electrice din România se stabilește printr-o singură licitație zilnică, cuplată cu restul Europei, care din octombrie 2025 produce un preț pentru fiecare sfert de oră. Secțiunea prezintă licitația, ordinea de merit, etapele tranzacționării pentru o zi de livrare, instituțiile care stabilesc regulile, cuplarea piețelor și mixul de producție al României.
 
-## Numai date reale: surse și perioadă acoperită {h=1b3bac7b}
+## Sursele datelor și perioada analizată {h=54b88c17}
 
 Toate cifrele și graficele acestui curs provin din date descărcate. Prețurile provin de la patru burse: OPCOM pentru România, bursa independentă de energie din Bulgaria (IBEX), bursa de energie din Ungaria (HUPX) și European Power Exchange (EPEX SPOT) pentru Germania; ele sînt colectate prin Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E) și republicate de energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE).
 
@@ -73,7 +73,7 @@ Două detalii practice contează în lucrul cu datele. România folosește ora E
 
 @practice traderul își acoperă riscul la termen, licitează pe PZU pînă la ora 13:00 (ora Bucureștiului), corectează erorile pe piața intrazilnică și decontează dezechilibrul rămas.
 
-## Cine stabilește regulile: operatori, reglementatori, limite de preț, transparență {h=8354df6f}
+## Instituțiile pieței: operatori, reglementatori, limite de preț, transparență {h=adfe0b0e}
 
 Trei instituții din România dau forma pieței. OPCOM este operatorul desemnat al pieței de energie electrică (NEMO) și administrează PZU și piața intrazilnică. Transelectrica, în calitate de TSO, conduce sistemul în timp real și decontează dezechilibrele. Autoritatea Națională de Reglementare în Domeniul Energiei (ANRE) stabilește regulile la nivel național și licențiază participanții la piață.
 
@@ -221,7 +221,7 @@ Aceasta este „curba în formă de rață” (*duck curve*): producția solară
 @chart profile_intraday
 Prețul mediu pentru ziua următoare (EUR/MWh) pe ore ale zilei (CET), în anii 2019 și 2025, cîte un panou pentru fiecare zonă.
 
-## La sfîrșit de săptămînă, energia este mai ieftină {h=e1e20267}
+## Sezonalitatea săptămînală: prețuri mai mici la sfîrșit de săptămînă {h=d28a9bbb}
 
 În weekend, fabricile și birourile consumă mai puțin, sînt necesare mai puține centrale și prețul scade. Profilul săptămînal se măsoară astfel:
 
@@ -299,7 +299,7 @@ România nu a avut prețuri negative înainte de 2023, în timp ce Germania le-a
 
 @practice în rapoartele către conducere scrieți „687 de sferturi de oră (171,75 h)”, nu un număr fără unitate.
 
-## Prețul poate fi nul sau negativ: folosiți diferențe sau asinh {h=7618fe91}
+## Transformări pentru prețuri nule sau negative: diferențe și asinh {h=c9f51c19}
 
 Variațiile procentuale și logaritmii presupun un preț pozitiv, deci eșuează tocmai în orele cele mai importante pentru producția solară și pentru stocare. O transformare definită pentru orice semn păstrează orele cu preț nul sau negativ (Uniejewski, Weron & Ziel, 2018):
 
@@ -449,7 +449,7 @@ Graficul aplică ambele metode consumului mediu lunar al României, între ianua
 @chart decomp_load
 Consumul mediu lunar al României, ianuarie 2016 – decembrie 2025 (GW): seria observată, cu trendul clasic și trendul STL (sus), și componentele sezoniere clasică și STL (jos).
 
-## Netezirea exponențială: datele recente cîntăresc mai mult {h=88f1ebe7}
+## Netezirea exponențială: ponderi mai mari pentru observațiile recente {h=c2e47108}
 
 Nivelul netezit este o medie a tuturor valorilor trecute, cu ponderi care scad geometric:
 
@@ -501,7 +501,7 @@ Un TWh hidro în plus într-o lună este asociat, în medie, cu un preț mai mic
 
 @practice producătorii hidro și traderii urmăresc nivelul lacurilor ca indicator anticipativ al prețului PZU.
 
-## Studiul de caz (b): Brent, +7% într-o zi, apoi sub nivelul inițial {h=fdf19f2e}
+## Studiul de caz (b): creșterea Brent cu 7% într-o zi și revenirea {h=fd8b2604}
 
 În iunie 2025, prețul țițeiului Brent a reacționat puternic la războiul dintre Israel și Iran. La 12 iunie 2025, Brent s-a închis la 69,36 USD/bbl; la 13 iunie, ziua în care Israelul a atacat Iranul, s-a închis la 74,23, o creștere de 7,0% într-o singură zi, adică 4,3 abateri standard ale randamentelor zilnice din 2024. Maximul a fost atins la 20 iunie 2025, la 77,01. La 24 iunie, cu armistițiul în vigoare, prețul de închidere a fost de 67,14, cu 12,8% sub maxim și cu 3,2% sub nivelul din 12 iunie.
 
@@ -554,7 +554,7 @@ Interpretarea este simplă: fiecare GW în plus de consum rezidual înmulțește
 
 @practice regenerabilele sînt limitate cel mai probabil în weekendurile de primăvară, cu lacuri pline.
 
-## Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie {h=a6bc21f0}
+## Studiul de caz (e): creșterea prețurilor și saltul țițeiului din martie {h=c288dea0}
 
 În ianuarie–octombrie 2026, prețul mediu din România a fost de 137,45 EUR/MWh, cu 29,8% peste aceleași luni din 2025. Creșterea s-a accelerat spre sfîrșitul perioadei: în octombrie, media a fost de 239,3 EUR/MWh, față de 121,9 cu un an înainte.
 
@@ -565,7 +565,7 @@ Interpretarea este simplă: fiecare GW în plus de consum rezidual înmulțește
 @chart cy_prices
 Prețurile zilnice în bandă în cele patru zone (EUR/MWh, sus) și prețul de închidere Brent (USD/bbl, jos), 1 ianuarie – 31 octombrie 2026.
 
-## Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025 {h=64d1ca94}
+## Studiul de caz (e): opririle de la Cernavodă și scăderea producției hidro {h=c73a8c8b}
 
 În același timp, oferta internă a scăzut. Producția nucleară a României a fost de 0 MW în 19 zile din mai, conform datelor, și din nou începînd din august: unitatea 1 a centralei de la Cernavodă a fost oprită la sfîrșitul lui iulie, iar unitatea 2 la 13 august, din cauza nivelului scăzut al Dunării, din care provine apa de răcire. Datele pentru septembrie nu sînt raportate. În ianuarie–octombrie, producția nucleară a scăzut cu 31,3% pe orele raportate în ambii ani, o limită inferioară a scăderii reale.
 
@@ -576,7 +576,7 @@ Producția hidro a fost cu 14,7% mai mică decît în 2025 în august–octombri
 @chart cy_generation
 Producția medie lunară a României din surse nucleare, hidro și solare (GW) în 2025 și în 2026 pînă în octombrie, pe orele raportate.
 
-## Studiul de caz (e): prețuri cu circa 30% mai mari, ofertă mai mică {h=79ab4423}
+## Studiul de caz (e): prețuri cu circa 30% mai mari și ofertă mai mică în 2026 {h=af5eba04}
 
 Tabelul pune alături factorii din 2026, pentru ianuarie–octombrie din fiecare an.
 
@@ -614,7 +614,7 @@ Pentru țițeiul Brent, cel mai mare preț de închidere din 2026 a fost de 118,
 
 @practice stabiliți limitele de risc pe baza valorilor extreme, nu a mediilor.
 
-## Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara {h=936af8b6}
+## Studiul de caz (f): prețuri de seară mai mici în Bulgaria din primăvara lui 2026 {h=6f4c5aaf}
 
 Piețele din România și Bulgaria sînt cuplate și au de obicei aproape același preț. În orele de seară, între 19:00 și 22:00, ora locală (EET), din aprilie pînă în septembrie, prețul mediu a fost de 171,1 EUR/MWh în România și de 169,7 în Bulgaria în 2025, dar de 215,5 față de 178,0 EUR/MWh în 2026. La amiază, între 11:00 și 15:00, prețurile au rămas apropiate în 2026 (48,1 față de 46,0).
 
@@ -633,7 +633,7 @@ Studiile de caz arată aceleași fapte în acțiune: apa, opririle centralei nuc
 
 Recapitularea verifică două competențe ale cursului, numărarea prețurilor negative și citirea unei autocorelații, sintetizează mesajele principale, prezintă cercetările grupului nostru pe aceeași temă și indică resurse suplimentare.
 
-## Verifică-te {h=dea1bc7b}
+## Întrebări de autoevaluare {h=dea1bc7b}
 
 1. Într-o lună de după 1 octombrie 2025, 48 de prețuri pe sfert de oră din România au fost negative, iar un membru al consiliului de administrație vă întreabă cîte ore cu preț negativ au fost. Ce îi răspundeți?
    Răspuns: $48\times15/60=12$ ore echivalente. Dacă spuneți „48 de ore”, supraevaluați durata de 4 ori față de anii anteriori, cu intervale orare. Formularea corectă este „48 de sferturi de oră (12 ore)”.

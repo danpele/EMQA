@@ -94,7 +94,7 @@ VaR & valoarea expusă la risc (value at risk)\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Folosim numai date reale: energie, combustibili, carbon, acțiuni}
+\begin{frame}{Sursele datelor: energie electrică, combustibili, carbon și acțiuni energetice}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.88}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.40\textwidth}p{0.11\textwidth}p{0.44\textwidth}@{}}\toprule
@@ -120,7 +120,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 
 \section{Măsurarea volatilității}
 
-\subsection{În procente sau în EUR/MWh}
+\subsection{Volatilitatea în procente și în EUR/MWh}
 
 \begin{frame}{Definiția volatilității}
 \footnotesize
@@ -254,7 +254,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie; Bollerslev, 1987, RESTAT)}\hfill\qlink{EMQA\_L3\_tails}{Quantlets/L3/EMQA_L3_tails}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Criza: aceeași volatilitate în procente, de 4 ori mai mare în EUR/MWh}
+\begin{frame}{Volatilitatea din 2022: similară în procente, de 4 ori mai mare în EUR/MWh}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.430\textheight,keepaspectratio]{charts/ro/vol_units.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
@@ -371,7 +371,7 @@ $\hat\nu$ & -- & 4{,}27 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bollerslev, 1987, RESTAT)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh}
+\begin{frame}{GARCH: salturi scurte în procente, creștere persistentă în EUR/MWh}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.515\textheight,keepaspectratio]{charts/ro/cond_vol.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii. Date: GARCH(1,1)-t, 2019-01-01 - 2026-10-31.}
@@ -509,7 +509,7 @@ OMV Petrom & 0{,}934 & 10{,}2 & zile lucrătoare \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Knittel \& Roberts, 2005, ENEECO; estimare proprie)}\hfill\qlink{EMQA\_L3\_vol\_level}{Quantlets/L3/EMQA_L3_vol_level}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Cozile groase contează mai mult decît asimetria}
+\begin{frame}{Importanța relativă a cozilor groase și a asimetriei}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrrr@{}}\toprule
@@ -570,7 +570,7 @@ EGARCH, Student & 0{,}831 & \cellcolor{Forest!54}24\,219{,}2 & 0{,}532 & 0{,}995
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hamilton, 1989, Econometrica)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Criza a fost un regim agitat lung; 2026 alternează între regimuri}
+\begin{frame}{Regimurile de volatilitate în timpul crizei și în 2026}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.445\textheight,keepaspectratio]{charts/ro/ms_regime.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii. Date: model Markov cu două regimuri, pe șocurile în EUR/MWh, 2019-01-01 - 2026-10-31.}
@@ -749,7 +749,7 @@ GARCH(1,1)-t pe & $\hat\alpha+\hat\beta$ (\%) & $h_{1/2}$ (\%) & $\hat\alpha+\ha
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Patton, 2011, JOE; Hansen \& Lunde, 2005, JAE)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Modelele GARCH sînt mai precise decît varianța istorică}
+\begin{frame}{Prognozele de tip GARCH comparate cu volatilitatea istorică pe 30 de zile}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.05}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrr@{}}\toprule
@@ -886,7 +886,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie)}\hfill\qlink{EMQA\_L3\_term\_structure}{Quantlets/L3/EMQA_L3_term_structure}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiul de caz C3: acțiunile energetice, slab corelate cu petrolul}
+\begin{frame}{Studiul de caz C3: legătura slabă dintre acțiunile energetice românești și petrol}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Ce a făcut lucrarea} (Grecu, Cramer, Pele \& Lessmann, 2025)

@@ -25,7 +25,7 @@ BLOCKS = [('forward-curve', 'fwd_curve', 'fwd', 'fc'),
 SECTIONS = {
  'en': dict(fwd='Forwards, futures and the forward curve', spr='Spreads: the margins of power plants',
             hedge='Hedge ratio, basis risk and shape risk', opt='Options on energy'),
- 'ro': dict(fwd='Contracte forward, futures și curba forward', spr='Spread-urile: marjele centralelor electrice',
+ 'ro': dict(fwd='Contracte forward, futures și curba forward', spr='Marjele centralelor electrice',
             hedge='Raportul de acoperire, riscul de bază și riscul de profil', opt='Opțiuni pe energie'),
 }
 

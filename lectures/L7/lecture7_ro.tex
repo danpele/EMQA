@@ -283,7 +283,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kingma \& Ba, 2015, ICLR; Srivastava et al., 2014, JMLR)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade}
+\begin{frame}{Oprirea timpurie pe baza erorii din zilele recente}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.470\textheight,keepaspectratio]{charts/ro/learning_curve.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: rețeaua DNN aleasă, reestimarea pentru 2026-10, inițializarea 1.}
@@ -431,7 +431,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_foundation\_hour}{Quantlets/L7/EMQA_L7_foundation_hour}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{AIDA 2026: DNN întrece LEAR, modelele preantrenate concurează}
+\begin{frame}{AIDA 2026: rețele neuronale profunde, LEAR și modele preantrenate}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -534,7 +534,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR}
+\begin{frame}{Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.502\textheight,keepaspectratio]{charts/ro/dm_matrix.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 365 de zile; valori p unilaterale.}
@@ -549,7 +549,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; teste DM unilaterale)}\hfill\qlink{EMQA\_L7\_dm\_matrix}{Quantlets/L7/EMQA_L7_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Media funcționează pentru că erorile nu sînt identice}
+\begin{frame}{Medierea prognozelor și diferențele dintre erorile modelelor}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.408\textheight,keepaspectratio]{charts/ro/combo_weight.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31; ilustrare, ponderea nu se alege pe anul de test.}
@@ -565,7 +565,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; calcule proprii)}\hfill\qlink{EMQA\_L7\_combo\_weight}{Quantlets/L7/EMQA_L7_combo_weight}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni}
+\begin{frame}{Combinația este mai precisă decît AW-LEAR în 10 din 12 luni}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.443\textheight,keepaspectratio]{charts/ro/monthly_ml.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
@@ -581,7 +581,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_monthly\_ml}{Quantlets/L7/EMQA_L7_monthly_ml}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute}
+\begin{frame}{Costul de calcul al modelului LEAR zilnic și al modelelor ML}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.454\textheight,keepaspectratio]{charts/ro/cost_gain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31; un nucleu de procesor.}
@@ -634,7 +634,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Shapley, 1953; Lundberg et al., 2020, Nat.\ Mach.\ Intell.)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Ce determină prognoza arborilor: prețul de ieri, la aceeași oră}
+\begin{frame}{Principala variabilă a modelelor cu arbori: prețul de ieri, la aceeași oră}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.529\textheight,keepaspectratio]{charts/ro/shap_global.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
@@ -682,7 +682,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; calcule proprii)}\hfill\qlink{EMQA\_L7\_perm\_dnn}{Quantlets/L7/EMQA_L7_perm_dnn}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Finanțele energiei folosesc învățarea automată, dar rar o explică}
+\begin{frame}{Învățarea automată în finanțele energiei: o analiză sistematică a literaturii}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}
@@ -737,7 +737,7 @@ Ansamblul de 5 (cu Chronos-2) & \cellcolor{Forest!50}21{,}12 & \cellcolor{Forest
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_events\_hour}{Quantlets/L7/EMQA_L7_events_hour}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Clasificarea vîrfurilor: o prognoză bună de preț le detectează deja}
+\begin{frame}{Clasificatorii de vîrfuri și detectarea vîrfurilor din prognozele de preț}
 \footnotesize
 \intuition{Un clasificator dă probabilitatea ca o oră să fie un vîrf; judecăm cît de bine ordonează orele și cît de corecte sînt probabilitățile lui.}
 \begin{columns}[T,onlytextwidth]
@@ -951,7 +951,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(diapozitivele AIDA 2026; lucrări: \href{https://doi.org/10.1111/1468-0262.00152}{White, 2000}; \href{https://doi.org/10.1198/073500105000000063}{Hansen, 2005}; \href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{Romano \& Wolf, 2005}; \href{https://doi.org/10.1016/j.jempfin.2010.01.001}{Hsu et al., 2010})}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Reestimarea: un model neactualizat un an pierde 4{,}2\%}
+\begin{frame}{Reestimarea: pierdere de precizie de 4{,}2\% după un an fără actualizare}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/pit_retrain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de test 2025-11-01 - 2026-10-31.}
@@ -967,7 +967,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_pit\_retrain}{Quantlets/L7/EMQA_L7_pit_retrain}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate}
+\begin{frame}{Testul privind informația din viitor: prognozele recalculate fără datele viitoare rămîn neschimbate}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}
@@ -1018,7 +1018,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Test 2: ce model puneți în producție}
+\begin{frame}{Test 2: alegerea modelului pentru producție}
 \small
 \begin{itemize}
   \item Chronos-2 are cea mai mică MAE dintre modelele individuale
@@ -1247,7 +1247,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kingma \& Ba, 2015, ICLR; Hastie et al., 2009)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Anexa B: de ce valoarea optimă a unei frunze este $-G/(H+\lambda)$}
+\begin{frame}{Anexa B: derivarea valorii optime a unei frunze, $-G/(H+\lambda)$}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

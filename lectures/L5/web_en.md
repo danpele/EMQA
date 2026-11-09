@@ -22,7 +22,7 @@ The lecture uses only real data: 2,298 forward auctions of the Romanian electric
 
 Every firm in the power chain holds a price position, and the 2021–2022 crisis showed in Romania how large the gains and losses of being hedged or unhedged can be. This section defines the exposures and measures the lesson on real auction prices.
 
-## Real data only: Romanian forwards, spot prices, gas, carbon {h=407ae887}
+## Data sources: Romanian forwards, spot prices, gas and carbon {h=a214a891}
 
 Every number in the lecture comes from downloaded data. The forward contracts are the results of the OPCOM centralised market for bilateral contracts with extended auctions (PCCB-LE): 2,298 auctions with 83.7 TWh, from 12 May 2020 to 28 Oct 2026. Spot prices are the hourly prices of the day-ahead market, Piața pentru Ziua Următoare (PZU), for Romania (RO), Hungary (HU) and the Germany–Luxembourg bidding zone (DE-LU), published by OPCOM, the Hungarian Power Exchange (HUPX) and the European Power Exchange (EPEX SPOT), and collected through energy-charts.info of the Fraunhofer Institute for Solar Energy Systems (ISE) from the European Network of Transmission System Operators for Electricity (ENTSO-E).
 
@@ -93,7 +93,7 @@ In Romania, physical contracts are traded in the OPCOM PCCB-LE auctions and on t
 
 @practice physical when you need MWh in Romania; cash-settled when you need liquidity and can carry the basis.
 
-## Futures are marked to market daily: the hedge needs cash {h=0fa31ae7}
+## Daily settlement of futures and the liquidity needs of a hedge {h=c8390475}
 
 A forward settles once, at delivery; a future pays or collects every day's price change. The daily payment is the variation margin (VM):
 
@@ -116,7 +116,7 @@ Volume rose to 27.3 TWh in 2021 and collapsed in 2022–2023, when price caps an
 @chart fw_volume
 Energy contracted per year in OPCOM forward auctions, in TWh, split by product (calendar year, half-year, quarter, month, other periods); 2026 runs to the cut-off.
 
-## Storable gas follows the cost of carry; power does not {h=28309635}
+## Forward prices and the cost of carry: gas and power {h=4b51a50f}
 
 Gas can be stored, which ties its forward price to the spot through the cost of carrying it; power cannot be stored, so its forward is the expected spot plus a risk premium:
 
@@ -139,7 +139,7 @@ The chart places the curve next to the realised monthly spot of the previous two
 @chart fwd_curve
 The realised monthly mean day-ahead price in Romania (step line) and the forward prices for each delivery period (horizontal segments: month, quarter, half-year, year); the dotted vertical line marks the cut-off.
 
-## The curve moves: yearly forwards by trade date vs realised {h=5fd5e256}
+## Yearly forward prices by trade date and realised spot prices {h=6fa66cd9}
 
 A forward is the price of certainty, not a forecast that reliably hits the realised price. The chart shows every auction of each calendar-year product on its trade date, and the realised mean of the year as a thick line. For 2021 the VWAP was 51.3 EUR/MWh and the realised spot 111.4; for 2023 the forward averaged 172.5 against a realised 103.7, because it was bought at the height of the crisis; for 2025 the two were close, 102.1 against 108.2 EUR/MWh.
 
@@ -162,7 +162,7 @@ Over 30 delivery months bought one month ahead, the mean premium is +5.2 EUR/MWh
 
 @practice hedging is cheap on average; its real cost is the upside you give up.
 
-## Month by month, forward minus spot swings both ways {h=be963982}
+## Monthly difference between forward and spot prices {h=0cb521b5}
 
 The chart shows the premium of @eq:premium for each of the 30 delivery months. Its median is −0.2 EUR/MWh, close to zero. The deep negative bars are the surprises of 2021–2022, when the spot rose far above what the forward had priced a month earlier; they are not a stable discount that a buyer could count on.
 
@@ -228,7 +228,7 @@ Over the last 12 months, the hourly spread in Romania was positive in 58% of hou
 
 @practice value a gas plant or a battery as options, never as a mean spread times 8,760 h.
 
-## Sorted hourly spreads: the value lies in the best hours {h=fac02d02}
+## Sorted hourly spreads: value concentrated in the best hours {h=9c0b4701}
 
 Sorting the hourly spreads of the last 12 months from the highest to the lowest gives a duration curve. The area above zero is the value of the option to run: it is earned in a minority of very profitable hours. At equal gas and carbon prices, Romania has more profitable hours than Germany.
 
@@ -371,7 +371,7 @@ They differ for good reasons. A year averages 8,760 hours and is far calmer than
 
 @practice match the volatility to the underlying: year, quarter or month.
 
-## Near contracts move more: the Samuelson effect in TTF {h=c6431efb}
+## The Samuelson effect in TTF: higher volatility of near contracts {h=8a934174}
 
 Contracts close to delivery react more to news than distant ones, because a shock to today's supply affects the near month fully and the distant month only partly (Samuelson, 1965). The chart compares the 60-day volatility of two TTF contracts. From 1 Nov 2025 to 31 Oct 2026 the December 2026 contract had an annualised volatility of 63%, the May 2027 contract 48%. In 2022, at the peak of the crisis, both were near 66%.
 
@@ -396,7 +396,7 @@ At $K=F$ with $\sigma$ = 0.220, $d_1$ = 0.039, $\Delta_C$ = 0.514 and $\Delta_P$
 
 @practice the seller of a cap hedges by holding delta MWh forward and rebalancing.
 
-## What each instrument pays for the 2027 band {h=08542ac8}
+## Effective price of the 2027 band by instrument {h=6321129c}
 
 The chart compares the effective price a supplier pays for the 2027 band under each strategy, as a function of the forward price at expiry. Unhedged, it pays the market. With the forward, it pays 148.1 EUR/MWh whatever happens. With a cap at 162.9, it pays the market price up to the strike plus a premium of 0.63 EUR/MWh. A collar between 133.3 and 162.9 costs only 0.20 EUR/MWh net, because the sold put finances most of the call, but it gives up the gain below 133.3.
 
@@ -428,7 +428,7 @@ For each strategy the case study reports the mean cost, its month-to-month stand
 
 @practice a supplier's risk committee should see exactly this table every month.
 
-## Case study: in 2026 the forward beat the spot in 6 of 10 months {h=7387163c}
+## Case study: in 2026 the forward was cheaper than spot in 6 of 10 months {h=400ea435}
 
 The chart shows the monthly cost of each strategy. Prices rose during the year, and the spot reached its peak of 239.3 EUR/MWh in October 2026; in 6 of the 10 months the forward was cheaper than the spot. The caps paid out in 5 of 10 months, when the monthly spot exceeded the strike, but their premium was paid every month.
 
@@ -437,7 +437,7 @@ The chart shows the monthly cost of each strategy. Prices rose during the year, 
 @chart case2026
 Monthly cost of 1 MW of baseload in 2026, in EUR/MWh, for four strategies: unhedged (spot), 100% forward, 50% forward and 50% spot, and monthly caps at strike $K$.
 
-## Case study: the forward reduced cost and risk, the cap reduced risk {h=77af9ffa}
+## Case study: effect of the forward and the cap on cost and risk {h=fbceba9f}
 
 The table summarises the four strategies, weighted by the hours of each month.
 
@@ -454,7 +454,7 @@ This is not a general verdict. In 2026 prices rose after the hedge was placed; i
 
 @practice set the hedged share by policy (e.g. 60–80% bought in layers), not by a price view.
 
-## The producer's side, and the summer 2024 spike {h=e1e9a703}
+## The producer's perspective and the summer 2024 price spike {h=8963bcc4}
 
 For a producer the picture is reversed. In 2025, 101 auctions sold the band at a VWAP of 102.1 EUR/MWh, while the spot averaged 108.2: selling forward earned 6.0 EUR/MWh less than the spot, or 52,797 EUR per MW-year. That is the price of a fixed revenue. In 2022 the same decision cost 187.9 EUR/MWh.
 
@@ -483,7 +483,7 @@ In 2026 the forward cut both the cost and the risk of a Romanian supplier, and c
 
 The wrap-up tests the main tools of the lecture on real Romanian numbers and lists further reading.
 
-## Check yourself {h=9f5c4246}
+## Self-assessment questions {h=9f5c4246}
 
 1. A Romanian supplier hedged July 2024 with German baseload futures bought at $F$. July averaged 67.7 EUR/MWh in Germany and 145.1 in Romania. What did it pay per MWh? Answer: it bought at 145.1 in Romania and received from the future the difference between 67.7 and $F$, so its net cost was $F$ + 77.4 EUR/MWh, the largest monthly basis in our data.
 2. Our estimate for Hungary is $h^{*}$ = 0.966 with a bootstrap interval [0.93; 1.03]. A 20 MW exposure needs how many MW of Hungarian futures? Answer: 20 × 0.966 = 19.3 MW; since 1 lies inside the interval, a one-for-one hedge of 20 MW is statistically as good.

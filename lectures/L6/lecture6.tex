@@ -74,7 +74,7 @@ XML & Extensible Markup Language (data file format)\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data only: prices, generation, order books, installed capacity}
+\begin{frame}{Data sources: prices, generation, order books and installed capacity}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.95}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.30\textwidth}p{0.15\textwidth}p{0.50\textwidth}@{}}\toprule
@@ -102,7 +102,7 @@ Installed capacity & yearly & ENTSO-E via energy-charts.info \\
 
 \section{Renewables and the merit order}
 
-\subsection{The solar boom}
+\subsection{Growth of solar generation}
 
 \begin{frame}{Installed solar in Romania grew 2.4 times from 2019 to 2025}
 \footnotesize
@@ -155,7 +155,7 @@ Installed capacity & yearly & ENTSO-E via energy-charts.info \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Sensfuß, Ragwitz \& Genoese, 2008, ENPOL)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{On the Romanian order book alone, 40 MW more at zero price pushes midday below 50 EUR/MWh}
+\begin{frame}{Romanian order book: 40 MW more at zero price lowers the midday price below 50 EUR/MWh}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.406\textheight,keepaspectratio]{charts/en/merit_shift.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM, PZU aggregated curves (XML), own computation. Data: delivery day 2026-10-21; cross-border flows, blocks and hourly orders held at their accepted values.}
@@ -278,7 +278,7 @@ Installed capacity & yearly & ENTSO-E via energy-charts.info \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hirth, 2013, ENEECO; Hirth, Ueckerdt \& Edenhofer, 2016, Energy J.)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{Romania, year by year}
+\subsection{Capture rates in Romania by year}
 
 \begin{frame}{Solar's capture rate in Romania fell from 104\% in 2019 to 59\% in 2025}
 \footnotesize
@@ -478,7 +478,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 
 \section{Intraday shape and price spreads}
 
-\begin{frame}{Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening}
+\begin{frame}{Spring quarter-hour prices: 23.0 at midday, 208.3 EUR/MWh in the evening}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.533\textheight,keepaspectratio]{charts/en/shape15.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: last 12 months 2025-11-01 to 2026-10-31, 15-min prices, CET; winter = Dec-Feb, spring = Mar-May, summer = Jun-Aug, autumn = Sep-Nov.}
@@ -629,7 +629,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Andrei, Cepoi, Dumitrescu, Lessmann, Luchian, Pele \& Petukhina, 2026, \href{https://doi.org/10.2139/ssrn.6872381}{doi:10.2139/ssrn.6872381}; talk by C.\,O.\ Cepoi at AIDA 2026, Bucharest, 3 June 2026: \href{https://github.com/danpele/EMQA/blob/main/resources/aida2026/cepoi_battery_arbitrage.pdf}{slides})}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{15 minutes, self-cannibalisation, the region}
+\subsection{15-minute prices, self-cannibalisation and regional competition}
 
 \begin{frame}{15-minute prices raised a 1-hour battery's revenue by 14.5\% on the same days}
 \footnotesize
@@ -742,9 +742,9 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \end{frame}
 
 
-\section{Case studies: Apr 2026; summer 2026}
+\section{Case studies: Apr 2026 and summer 2026}
 
-\subsection{Apr 2026: the most negative hours}
+\subsection{Month with the most negative-price hours: Apr 2026}
 
 \begin{frame}{Case study: in the week of 20 Apr 2026, Romania had 24 negative hours and solar captured 42\%}
 \footnotesize
@@ -761,7 +761,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; schedule with perfect foresight)}\hfill\qlink{EMQA\_L6\_case\_week}{Quantlets/L6/EMQA_L6_case_week}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study: what Apr 2026 meant for each player in the Romanian market}
+\begin{frame}{Case study: implications of Apr 2026 for each participant in the Romanian market}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item \textbf{Solar developer}: capture rate 49.4\% (47.2 vs 95.6 EUR/MWh)
@@ -790,7 +790,7 @@ Year & $B$ & Solar CP & Solar CR, \% & $B-\mathrm{CP}$ & Wind CP & Wind CR, \% &
 
 \subsection{Summer 2026: Romania and Bulgaria}
 
-\begin{frame}{Summer 2026: midday exports, evening imports from Bulgaria}
+\begin{frame}{Case study: midday exports and evening imports from Bulgaria, summer 2026}
 \footnotesize
 \begin{center}\includegraphics[width=\textwidth,height=0.430\textheight,keepaspectratio]{charts/en/rogb_summer.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE): cross-border physical flows of Romania (ENTSO-E); day-ahead prices of OPCOM (RO) and IBEX (BG). Data: hourly means, 2026-06-01 to 2026-08-31; Moldova and Ukraine borders only partly reported.}

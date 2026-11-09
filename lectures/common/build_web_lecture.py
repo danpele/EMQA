@@ -47,7 +47,7 @@ VER = '20261109m'
 L = {
     'en': dict(course='Energy Markets Quantitative Analysis', lecture='Lecture', back='Course site', site='../index.html#chapters',
                pdf='Slides (PDF)', nb='Notebook', colab='Open in Colab', ql='Quantlets', toc='Contents', intro='Introduction',
-               goals='What you will be able to do', plan='Lecture plan', synth='Section summary', practice='In practice',
+               goals='Learning outcomes', plan='Lecture plan', synth='Section summary', practice='In practice',
                src='Source', abbr='Abbreviations', slide='Slide {n} in the PDF', bib='References', author='Prof. dr. Daniel Traian PELE',
                inst=['Bucharest University of Economic Studies, Department of Statistics and Econometrics',
                      'Romanian Academy, Institute for Economic Forecasting'],
@@ -55,7 +55,7 @@ L = {
                chart_alt='Chart'),
     'ro': dict(course='Analiza cantitativă a piețelor de energie', lecture='Cursul', back='Site-ul cursului', site='../index_ro.html#chapters',
                pdf='Slide-uri (PDF)', nb='Notebook', colab='Deschide în Colab', ql='Quantlets', toc='Cuprins', intro='Introducere',
-               goals='Ce veți ști să faceți', plan='Planul cursului', synth='Sinteza secțiunii', practice='În practică',
+               goals='Rezultatele învățării', plan='Planul cursului', synth='Sinteza secțiunii', practice='În practică',
                src='Sursa', abbr='Abrevieri', slide='Slide-ul {n} în PDF', bib='Bibliografie', author='Prof. dr. Daniel Traian PELE',
                inst=['Academia de Studii Economice din București, Departamentul de Statistică și Econometrie',
                      'Academia Română, Institutul de Prognoză Economică'],

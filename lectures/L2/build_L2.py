@@ -173,7 +173,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: what we forecast and with what", "Prognozăm prețul orar PZU din România, numai cu date reale"), table(
+    D.frame(t("Forecast target and data sources", "Variabila prognozată și sursele datelor"), table(
         "@{}p{0.36\\textwidth}p{0.12\\textwidth}p{0.47\\textwidth}@{}",
         [t("Series", "Seria"), t("Frequency", "Frecvența"), t("Source", "Sursa")],
         [[t("Target: day-ahead price of Romania (RO), Piața pentru Ziua Următoare (PZU)",
@@ -269,8 +269,8 @@ def build(lang, H=None):
         "footnotesize", cite="(NEMO Committee, 2025; Lago et al., 2021, APEN)")
     D.subsection(t("Information set and horizons", "Informațiile disponibile și orizontul"))
     tl = t
-    D.frame(t("At 12:00 CET on $d-1$ you know prices to $d-1$, metered data to $d-2$",
-              "Prognoza zilei $d$ folosește doar datele cunoscute la 12:00 CET în ziua $d-1$"), """
+    D.frame(t("Information set at 12:00 CET on day $d-1$",
+              "Informația disponibilă la 12:00 CET în ziua $d-1$"), """
 \\begin{center}
 \\begin{tikzpicture}[x=1cm,y=1cm]
 \\draw[-{Latex},thick,MainBlue] (0,0) -- (14.3,0);
@@ -393,8 +393,8 @@ def build(lang, H=None):
                 "raportați biroului de tranzacționare MAE în EUR/MWh, iar conducerii rMAE, calculate pe aceleași ore."),
               tryit=NB + " \\S2", cite="(Hyndman \\& Koehler, 2006, IJF; Lago et al., 2021, APEN)", wl="0.49", wr="0.48")
 
-    D.figframe(t("Why percentage errors fail near zero and negative prices",
-                 "Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative"),
+    D.figframe(t("Limitations of percentage errors near zero and negative prices",
+                 "Limitele erorilor procentuale la prețuri apropiate de zero sau negative"),
                None, None, "mape_fail", [
                    t("Mean absolute percentage error (MAPE) $=\\tfrac1N\\sum|e_{d,h}|/|P_{d,h}|$; for AW-LEAR @{mape.aw_lear|,.1f}\\%, or @{mape.aw_lear_excl5|.1f}\\% without the @{mape.n_small} hours with $|P|<5$ EUR/MWh.",
                      "Eroarea procentuală absolută medie (MAPE) $=\\tfrac1N\\sum|e_{d,h}|/|P_{d,h}|$; AW-LEAR: @{mape.aw_lear|,.1f}\\%, dar doar @{mape.aw_lear_excl5|.1f}\\% fără cele @{mape.n_small} " + de("mape.n_small") + "ore cu $|P|<5$ EUR/MWh."),
@@ -471,7 +471,7 @@ def build(lang, H=None):
 
     def r3(k, lab):
         return [lab, f"@{{acc.{k}.mae|.2f}}", f"@{{acc.{k}.rmse|.2f}}", f"@{{acc.{k}.rmae|.3f}}"]
-    D.frame(t("Fundamentals lagged by two days add almost nothing", "Variabilele fundamentale din ziua $d-2$ aproape că nu îmbunătățesc prognoza"), cols(
+    D.frame(t("Small contribution of fundamentals lagged by two days", "Contribuția redusă a variabilelor fundamentale din ziua $d-2$"), cols(
         table("@{}p{0.52\\linewidth}rrr@{}", [t("ARX(728), test year", "ARX(728), anul de test"), "MAE", "RMSE", "rMAE"], [
             r3("arx728_noexog", t("prices and calendar only", "numai prețuri și calendar")),
             r3("arx728", t("+ load, wind + solar of $d-2$", "+ consum, producție eoliană și solară din $d-2$")),
@@ -571,7 +571,7 @@ def build(lang, H=None):
                 "cînd piața își schimbă regimul (2022, 2024), ferestrele scurte reacționează primele; păstrați-le în medie."),
               tryit=NB + " \\S5", cite="(Hubicka, Marcjasz \\& Weron, 2019; Marcjasz, Serafin \\& Weron, 2018)", wl="0.52", wr="0.45")
 
-    D.chart(t("Averaging across windows beats the best single window", "Media pe ferestre este mai precisă decît cea mai bună fereastră"), "windows", [
+    D.chart(t("Averaging across windows is more accurate than the best single window", "Media pe ferestre este mai precisă decît cea mai bună fereastră"), "windows", [
         t("AW-ARX @{acc.aw_arx.mae|.2f} vs the best single window ARX(714) @{acc.arx714.mae|.2f}; dotted line = naive @{acc.naive.mae|.2f} EUR/MWh.",
           "MAE: AW-ARX @{acc.aw_arx.mae|.2f}, față de @{acc.arx714.mae|.2f} pentru cea mai bună fereastră, ARX(714); linia punctată = modelul naiv, @{acc.naive.mae|.2f} EUR/MWh.")],
         height="0.55\\textheight", job=t("you do not need to know the right window in advance; average a short and a long one.",
@@ -845,7 +845,7 @@ def build(lang, H=None):
         tryit=NB + " \\S9", cite=t("(own computation; round-trip efficiency 90\\% assumed)", "(calcule proprii; randament de încărcare--descărcare presupus: 90\\%)"))
 
     lk = N["leak"]
-    D.frame(t("A forecasting desk checklist, and our leakage self-check", "O prognoză se acceptă numai după o listă de verificări; testul nostru arată că nu folosim informație din viitor"), cols(
+    D.frame(t("Forecasting checklist and a test for the use of future information", "Lista de verificări a prognozei și testul privind folosirea informației din viitor"), cols(
         it((t("\\textbf{Before you trust a backtest}", "\\textbf{Înainte să aveți încredere într-o testare retrospectivă}"),
             t("every input public before 12:00 CET on $d-1$", "fiecare variabilă de intrare este publicată înainte de ora 12:00 CET din ziua $d-1$"),
             t("scalers, transforms, $\\lambda$ and thresholds fitted in the window only", "standardizările, transformările, $\\lambda$ și pragurile se estimează numai pe fereastra de calibrare"),

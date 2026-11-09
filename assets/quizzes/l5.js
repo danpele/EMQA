@@ -766,7 +766,7 @@ window.EMQA_DATA.quizzes['l5'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Which volatility to use",
+                "title": "Choice of volatility for option pricing",
                 "text": "Three volatility estimates from real data give 0.220 (Romanian yearly forwards, 49 pairs of auction days), 0.499 (the January 2027 gas future on the Dutch Title Transfer Facility, TTF) and 0.668 (the realised monthly average against the forward bought before it). Why do they differ so much?",
                 "options": [
                     "A year averages 8,760 hours and is far calmer than a month, and gas had its own crisis in 2026",
@@ -778,7 +778,7 @@ window.EMQA_DATA.quizzes['l5'] = {
                 "incorrectExplanation": "The estimates are not mistakes; the yearly one divides the squared log changes by the time between auctions, precisely because auctions are irregular. With no free implied volatility for Romania, the choice is a modelling decision, and generalised autoregressive conditional heteroskedasticity (GARCH) models (Lecture 3) can forecast it."
             },
             "ro": {
-                "title": "Ce volatilitate folosim",
+                "title": "Alegerea volatilității pentru evaluarea opțiunilor",
                 "text": "Trei estimări ale volatilității pe date reale dau 0,220 (contractele forward anuale din România, 49 de perechi de zile cu licitații), 0,499 (contractul futures pe gaze pentru ianuarie 2027 la Title Transfer Facility, TTF, hubul olandez) și 0,668 (media lunară realizată față de prețul forward cumpărat înainte). De ce diferă atît de mult?",
                 "options": [
                     "Un an este media a 8 760 de ore și este mult mai stabil decît o lună, iar gazele trec printr-o criză proprie în 2026",

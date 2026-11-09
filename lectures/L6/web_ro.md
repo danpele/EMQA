@@ -21,7 +21,7 @@ Toate cifrele provin din date reale, descărcate: prețuri orare și pe 15 minut
 
 Secțiunea măsoară cu cît reduc producția solară și cea eoliană prețul din PZU, întîi pe curbele reale de ofertă și de cerere dintr-o zi, apoi cu o regresie pe aproape patru ani de date orare. Punctul de plecare este creșterea puterii solare instalate, care face întrebarea urgentă.
 
-## Lucrăm numai cu date reale: prețuri, producție, oferte și putere instalată {h=f99b44c2}
+## Sursele datelor: prețuri, producție, oferte și putere instalată {h=6d823200}
 
 Cursul folosește exclusiv date reale. Prețurile pentru ziua următoare acoperă patru zone de ofertare: România (RO), Bulgaria (BG), Ungaria (HU) și zona Germania–Luxemburg (DE-LU). Ele sînt stabilite de operatorul pieței de energie electrică și de gaze naturale din România (OPCOM), de bursa independentă de energie din Bulgaria (IBEX), de bursa de energie din Ungaria (HUPX) și de bursa europeană de energie EPEX SPOT (EPEX) și sînt preluate prin energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE). Prețurile sînt orare, iar de la 1 octombrie 2025 sînt stabilite pentru fiecare sfert de oră.
 
@@ -56,7 +56,7 @@ Relația @eq:slope arată că efectul depinde de forma curbelor în jurul prețu
 
 @practice cu cît curba locală este mai abruptă, cu atît un parc nou își modifică mai mult propriul preț.
 
-## Ofertele din România: +40 MW la preț zero coboară amiaza sub 50 EUR/MWh {h=4c38f375}
+## Ofertele PZU: 40 MW la preț zero reduc prețul de amiază sub 50 EUR/MWh {h=24af0515}
 
 Graficul aplică relația @eq:merit pe curbele reale din 21 octombrie 2026. La amiază, numai 25 MW în plus la preț zero coboară prețul de la 152,23 la 131,40 EUR/MWh, iar 40 MW îl duc sub 50 EUR/MWh. Seara, pentru aceeași scădere sînt necesari 225 MW, deoarece importul net de 1 054 MW adîncește curba.
 
@@ -252,7 +252,7 @@ Producătorii ofertează sub zero cînd sprijinul sau costul repornirii fac opri
 
 Prețurile mici de la amiază și cele mari de seară formează un profil zilnic al prețului. Secțiunea citește acest profil pe prețurile la 15 minute, definește diferența zilnică de preț din care cîștigă o baterie și o compară între România și vecinii ei.
 
-## Primăvara, prețul mediu: 23,0 EUR/MWh la amiază, 208,3 seara {h=c33886eb}
+## Prețurile medii de primăvară: 23,0 la amiază, 208,3 EUR/MWh seara {h=387acf26}
 
 Graficul arată prețul mediu al fiecărui sfert de oră din zi în ultimele 12 luni, separat pe anotimpuri. Primăvara, profilul formează o „vale” solară adîncă: minimul, 23,0 EUR/MWh, apare la 12:45 CET, iar maximul, 208,3 EUR/MWh, la 19:45 CET, după apus, cînd cererea este încă mare.
 
@@ -395,7 +395,7 @@ Pentru o baterie de 2 ore, în ultimele 12 luni, informația perfectă justific�
 
 O baterie de 2 ore a cîștigat 111,2 mii EUR pe MW în ultimele 12 luni cu informație perfectă și circa 85% din această sumă cu o regulă simplă. Prețurile pe 15 minute adaugă venit, bateriile noi erodează diferența de preț, iar la 8% pe 15 ani venitul justifică cel mult 808 EUR pe kW.
 
-# Studii de caz: aprilie 2026; vara 2026
+# Studii de caz: aprilie 2026 și vara 2026
 
 Două studii de caz aplică instrumentele cursului pe episoade reale: aprilie 2026, luna cu cele mai multe ore cu preț negativ, și vara lui 2026, cînd România a exportat la amiază și a importat seara din Bulgaria.
 
@@ -410,7 +410,7 @@ Pentru solar, săptămîna a fost slabă: prețul capturat a fost 37,0 EUR/MWh, 
 @chart case_week
 Prețul PZU pe 15 minute, cu intervalele de încărcare și de descărcare ale unei baterii de 2 ore (sus), și producția solară și eoliană, în GW (jos), 20–26 aprilie 2026, ora CET.
 
-## Studiu de caz: ce a însemnat luna aprilie 2026 pentru fiecare participant la piață {h=7c2d6136}
+## Studiu de caz: implicațiile lunii aprilie 2026 pentru fiecare participant la piață {h=1b3b7367}
 
 Aprilie 2026 a avut 67 de ore cu preț negativ, cele mai multe dintre toate lunile. Aceeași lună a însemnat lucruri diferite pentru participanții la piață:
 
@@ -420,7 +420,7 @@ Aprilie 2026 a avut 67 de ore cu preț negativ, cele mai multe dintre toate luni
 - **Furnizorul și consumatorul industrial**: 67 de ore cu preț negativ. Mutarea consumului la amiază, primăvara, este plătită.
 - **Transelectrica**: după apus, creșterea cererii nete și interconexiunile fixează prețul.
 
-## Vara 2026: export la prînz, import seara din Bulgaria {h=98a57394}
+## Studiu de caz: exporturi la prînz și importuri din Bulgaria seara, vara 2026 {h=a93587ae}
 
 Graficul arată fluxurile transfrontaliere medii pe ore ale României și prețurile din România și Bulgaria între 1 iunie și 31 august 2026; fluxurile pozitive înseamnă import în România. La prînz, România exportă: 960 MW net la ora 12, pe toate granițele, mai ales spre Ungaria (857 MW) și Serbia (367 MW). Spre Bulgaria a exportat între 12:00 și 15:00 doar în 43 din cele 92 de zile.
 
@@ -439,7 +439,7 @@ Fluxul mediu pe ore din zi, fluxul net al României pe toate granițele și flux
 
 Recapitularea verifică ideile principale prin patru întrebări, rezumă cursul, prezintă cercetările grupului nostru pe aceeași temă și indică resurse pentru studiu suplimentar.
 
-## Verifică-te {h=860194f9}
+## Întrebări de autoevaluare {h=860194f9}
 
 1. Vi se oferă un PPA solar la prețul de bază din 2025, de 108 EUR/MWh. Cît obține de fapt profilul solar? Răspuns: aproximativ 64 EUR/MWh în 2025, pentru că rata de captare a fost 59%. Cumpărătorul care plătește prețul de bază pentru profilul solar plătește o primă mare.
 2. De la 1 octombrie 2025, România a avut 687 de sferturi de oră cu preț negativ. Cîte ore cu preț negativ raportați? Răspuns: 171,75 ore echivalente, pentru că fiecare sfert de oră contează 0,25 h, nu 687 de ore.

@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Butonul ▶ modifică parametrul principal pas cu pas. Sub fiecare figură: o sinteză numerică, o întrebare pentru sală și Quantlet-ul cu codul figurii.</p>
-<p class="toc"><a href="#s-fwd">Contracte forward, futures și curba forward</a> · <a href="#s-spr">Spread-urile: marjele centralelor electrice</a> · <a href="#s-hedge">Raportul de acoperire, riscul de bază și riscul de profil</a> · <a href="#s-opt">Opțiuni pe energie</a></p>
+<p class="toc"><a href="#s-fwd">Contracte forward, futures și curba forward</a> · <a href="#s-spr">Marjele centralelor electrice</a> · <a href="#s-hedge">Raportul de acoperire, riscul de bază și riscul de profil</a> · <a href="#s-opt">Opțiuni pe energie</a></p>
 <h2 class="sec" id="s-fwd">Contracte forward, futures și curba forward</h2>
 <section class="blk" id="forward-curve">
   <h3>Curba forward din România coboară de la un spot ridicat</h3>
@@ -64,7 +64,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> La sfîrșitul lui octombrie 2026, media PZU (piața pentru ziua următoare) din România în octombrie era 239,32 EUR/MWh, iar banda pentru anul calendaristic 2027 se tranzacționa la 148,12 EUR/MWh. Înseamnă panta descendentă a curbei că piața se așteaptă ca prețul spot să scadă cu aproximativ 90 EUR/MWh?</div>
   <details><summary>Răspuns</summary><p>Nu întocmai. Prețul forward este prețul spot așteptat plus o primă de risc, iar o parte din diferență este sezonieră: noiembrie și decembrie 2026 s-au tranzacționat la 215,33 și 214,27 EUR/MWh, primul trimestru din 2027 la 176,69, iar anul întreg la 148,12, care include și vara ieftină, cu producție solară mare. Mutați cursorul înapoi: în 2022, curba cobora de la un spot de criză, iar produsul Cal-2023 (anul calendaristic 2023) s-a tranzacționat pînă la 509,18 EUR/MWh, în timp ce în 2023 media PZU a fost 103,74 EUR/MWh.</p></details>
-</section><h2 class="sec" id="s-spr">Spread-urile: marjele centralelor electrice</h2>
+</section><h2 class="sec" id="s-spr">Marjele centralelor electrice</h2>
 <section class="blk" id="spreads">
   <h3>Clean spark spread și clean dark spread, lunar</h3>
   <div class="pair">
@@ -96,9 +96,9 @@
   <details><summary>Răspuns</summary><p>Mai volatilă: abaterea standard a bazei lunare RO–HU crește de la 2,82 EUR/MWh înainte de 2021 la 5,77 EUR/MWh din 2021, iar a bazei RO–DE de la 7,61 la 18,23 EUR/MWh. În același timp, România și Ungaria au încă exact același preț în multe ore (panoul din dreapta): o bază de obicei nulă, dar ocazional mare, este riscul tipic lăsat de o acoperire printr-o altă zonă.</p></details>
 </section><h2 class="sec" id="s-opt">Opțiuni pe energie</h2>
 <section class="blk" id="samuelson">
-  <h3>Contractele apropiate de livrare variază mai mult: efectul Samuelson</h3>
+  <h3>Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L5_samuelson_ro.jpg" alt="Slide-ul 37: Contractele apropiate de livrare variază mai mult: efectul Samuelson" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L5_samuelson_ro.jpg" alt="Slide-ul 37: Efectul Samuelson pe TTF: volatilitatea mai mare a contractelor apropiate" loading="lazy"></a>
       <figcaption>Slide-ul 37</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="sm-c"><span class="lbl">Contracte TTF</span><div class="tgs"><label class="tg"><input type="checkbox" name="sm-c" value="2026-12" checked> dec 2026</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-01"> ian 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-02"> feb 2027</label><label class="tg"><input type="checkbox" name="sm-c" value="2027-05" checked> mai 2027</label></div></div><div class="ctl"><label for="sm-w">Fereastra volatilității (zile de tranzacționare): <b id="sm-w-v"></b></label><input type="range" id="sm-w" min="20" max="250" step="10" value="60"></div><button class="btn play" id="sm-play" type="button"></button></div><div class="charts one"><div class="chart" id="sm-chart"></div></div><ul class="out" id="sm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_samuelson" target="_blank" rel="noopener">EMQA_L5_samuelson</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_samuelson/EMQA_L5_samuelson.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>

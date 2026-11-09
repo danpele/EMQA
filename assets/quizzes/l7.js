@@ -91,7 +91,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Why random search",
+                "title": "Advantages of random search",
                 "text": "Hyperparameters are chosen by trying 24 random settings plus the Lecture 2 setting for each model. Why random draws rather than a full grid (Bergstra and Bengio, 2012)?",
                 "options": [
                     "Random draws guarantee that the global optimum of the validation error is found",
@@ -103,7 +103,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "Random search gives no guarantee of a global optimum, and it still needs a validation sample: a search without one is not a search but a leak. Its advantage is efficiency when only a few settings matter."
             },
             "ro": {
-                "title": "De ce căutare aleatoare",
+                "title": "Avantajele căutării aleatoare",
                 "text": "Hiperparametrii se aleg încercînd 24 de setări aleatoare plus setarea din cursul 2, pentru fiecare model. De ce extrageri aleatoare și nu o grilă completă (Bergstra și Bengio, 2012)?",
                 "options": [
                     "Extragerile aleatoare garantează găsirea optimului global al erorii de validare",
@@ -388,7 +388,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Combination beats the benchmark",
+                "title": "Combination compared with the benchmark",
                 "text": "One-sided Diebold–Mariano (DM) tests against AW-LEAR, the Lasso-estimated autoregressive (LEAR) model averaged across calibration windows, give $p = 0.944$ for the tuned deep neural network (DNN), $p = 0.984$ for tuned eXtreme Gradient Boosting (XGBoost) and $p = 0.001$ for the average AW-LEAR + DNN + XGBoost. What is the correct reading?",
                 "options": [
                     "The machine learning models are useless, since neither beats AW-LEAR alone",
@@ -400,7 +400,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "In a one-sided test that the model is more accurate than AW-LEAR, a large p-value means no evidence of a gain. Adding models helps only when their errors differ: adding AW-LEAR to Chronos-2 changed nothing ($p = 0.491$)."
             },
             "ro": {
-                "title": "Combinația întrece reperul",
+                "title": "Combinația comparată cu reperul",
                 "text": "Testele Diebold–Mariano (DM) unilaterale față de AW-LEAR, modelul autoregresiv estimat cu Lasso (LEAR) mediat pe mai multe ferestre de calibrare, dau $p = 0{,}944$ pentru rețeaua neuronală profundă (DNN) calibrată, $p = 0{,}984$ pentru eXtreme Gradient Boosting (XGBoost) calibrat și $p = 0{,}001$ pentru media AW-LEAR + DNN + XGBoost. Care este interpretarea corectă?",
                 "options": [
                     "Modelele de învățare automată sînt inutile, fiindcă niciunul nu întrece singur AW-LEAR",
@@ -496,7 +496,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Why AW-LEAR costs most",
+                "title": "Computational cost of AW-LEAR",
                 "text": "Over the test year, on one processor core, AW-LEAR (the Lasso-estimated autoregressive (LEAR) model averaged across calibration windows) takes 87.6 minutes, against 2.6 for eXtreme Gradient Boosting (XGBoost), 2.7 for the deep neural network (DNN) and 0.3 for Chronos-2. Why is the statistical benchmark the expensive model?",
                 "options": [
                     "It is fitted once per test hour, 8,760 times in total",
@@ -508,7 +508,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "LEAR has at most 247 coefficients per hour, against 141,336 parameters in the DNN: its cost comes from how often it is refitted, not from its size. Compare models on error per euro of total cost of ownership, not on error alone."
             },
             "ro": {
-                "title": "De ce AW-LEAR costă cel mai mult",
+                "title": "Costul de calcul al AW-LEAR",
                 "text": "Pe tot anul de test, pe un singur nucleu, AW-LEAR (modelul autoregresiv estimat cu Lasso (LEAR) mediat pe mai multe ferestre de calibrare) are nevoie de 87,6 minute, față de 2,6 pentru eXtreme Gradient Boosting (XGBoost), 2,7 pentru rețeaua neuronală profundă (DNN) și 0,3 pentru Chronos-2. De ce este modelul statistic de referință cel scump?",
                 "options": [
                     "Este estimat o dată pentru fiecare oră de test, de 8 760 de ori în total",
@@ -874,7 +874,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Same-day inputs as a leak",
+                "title": "Same-day inputs and information leakage",
                 "text": "If the load and the wind and solar generation (renewable energy sources, RES) of day $d$ are used as inputs, the mean absolute error (MAE) of eXtreme Gradient Boosting (XGBoost) falls from 23.26 to 22.55 EUR/MWh. How should this 3.1% gain be read?",
                 "options": [
                     "As a genuine gain, since load and RES are fundamentals of the market",
@@ -886,7 +886,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "The issue is not the relevance of load and RES but their timing. Ask every vendor for a walk-forward test with each input time-stamped at gate closure."
             },
             "ro": {
-                "title": "Intrările din aceeași zi",
+                "title": "Intrările din aceeași zi și informația din viitor",
                 "text": "Dacă se folosesc drept intrări consumul și producția eoliană și solară (surse regenerabile de energie, RES) din ziua $d$, eroarea absolută medie (MAE) a modelului eXtreme Gradient Boosting (XGBoost) scade de la 23,26 la 22,55 EUR/MWh. Cum trebuie citit acest cîștig de 3,1%?",
                 "options": [
                     "Ca un cîștig real, fiindcă consumul și RES sînt variabile fundamentale ale pieței",
@@ -901,7 +901,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Leakage self-check",
+                "title": "Test for information leakage",
                 "text": "For the first day of each test month, all data after 12:00 on $d-1$ are replaced by 10,000 EUR/MWh and the models are refitted. Which result shows that the pipeline is clean?",
                 "options": [
                     "The forecasts are unchanged: identical for the trees and the spike classifier, and within 0.001 EUR/MWh for the deep neural network (DNN)",
@@ -913,7 +913,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "Any change in the forecasts would mean that future data leak into the inputs or the fit. The check belongs in every model review, for statistical and machine learning models alike."
             },
             "ro": {
-                "title": "Testul de scurgere a informației",
+                "title": "Testul privind informația din viitor",
                 "text": "Pentru prima zi din fiecare lună de test, toate datele de după ora 12:00 din ziua $d-1$ sînt înlocuite cu 10 000 EUR/MWh, iar modelele sînt reestimate. Ce rezultat arată că fluxul de date este curat?",
                 "options": [
                     "Prognozele nu se schimbă: sînt identice pentru arbori și pentru clasificatorul de vîrfuri, iar pentru rețeaua neuronală profundă (DNN) diferă cu mai puțin de 0,001 EUR/MWh",

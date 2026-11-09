@@ -61,14 +61,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 2,
             "en": {
-                "title": "From quantile to euros",
+                "title": "Converting a quantile into euros",
                 "text": "On the last 365 days, the 99% quantile of the daily change of the Romanian day-ahead price is 86.63 EUR per megawatt-hour (EUR/MWh). What is, approximately, the 99% value-at-risk (VaR) of a 100 megawatt (MW) flat position?",
                 "options": ["About 8,663 EUR", "About 20,792 EUR", "About 207,922 EUR", "About 2,079,216 EUR"],
                 "correctExplanation": "100 MW flat is 2,400 MWh per day, and 86.63 × 2,400 ≈ 207,900 EUR; the lecture reports a VaR$_{0.99}$ of 207,922 EUR, computed from the unrounded quantile.",
                 "incorrectExplanation": "The VaR in EUR is the quantile in EUR/MWh times the daily volume, $Q\\cdot 24$ = 2,400 MWh. Multiplying only by 100 MW, or by 240, misses the hours of the day."
             },
             "ro": {
-                "title": "De la cuantilă la euro",
+                "title": "Transformarea cuantilei în euro",
                 "text": "Pe ultimele 365 de zile, cuantila de 99% a variației zilnice a prețului de pe piața pentru ziua următoare (PZU) din România este 86,63 EUR pe megawatt-oră (EUR/MWh). Cît este, aproximativ, valoarea la risc (VaR) de 99% pentru o poziție de 100 de megawați (MW) în bandă?",
                 "options": ["Circa 8 663 EUR", "Circa 20 792 EUR", "Circa 207 922 EUR", "Circa 2 079 216 EUR"],
                 "correctExplanation": "100 MW în bandă înseamnă 2 400 MWh pe zi, iar 86,63 × 2 400 ≈ 207 900 EUR; cursul raportează o VaR$_{0,99}$ de 207 922 EUR, calculată din cuantila nerotunjită.",
@@ -78,14 +78,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Why FRTB prefers ES",
+                "title": "ES in the FRTB framework",
                 "text": "Why does the Fundamental Review of the Trading Book (FRTB), the Basel market-risk rules, use expected shortfall (ES) at 97.5% instead of value-at-risk (VaR) at 99%?",
                 "options": ["ES is easier to backtest by counting exceedances than VaR", "ES at 97.5% is always smaller, so banks need less capital", "ES does not depend on the shape of the loss distribution", "ES measures the average loss beyond VaR and is subadditive, so diversification never adds risk"],
                 "correctExplanation": "ES is a coherent risk measure (Artzner et al., 1999): $\\text{ES}(L_1+L_2)\\le\\text{ES}(L_1)+\\text{ES}(L_2)$, while VaR may break this property. It also looks at the size of the bad days, not only at their frequency.",
                 "incorrectExplanation": "ES is actually harder to backtest, since it cannot be checked by counting. For a normal curve ES$_{0.975}$ = $\\mu$ + 2.338$\\sigma$, almost equal to VaR$_{0.99}$ = $\\mu$ + 2.326$\\sigma$, so the switch is about coherence, not about lower capital."
             },
             "ro": {
-                "title": "De ce preferă FRTB ES",
+                "title": "ES în cadrul FRTB",
                 "text": "De ce folosește revizuirea fundamentală a portofoliului de tranzacționare (FRTB), adică regulile Basel pentru riscul de piață, deficitul așteptat (ES) de 97,5% în locul valorii la risc (VaR) de 99%?",
                 "options": ["ES se testează retrospectiv mai ușor decît VaR, prin numărarea depășirilor", "ES de 97,5% este întotdeauna mai mic, deci băncile au nevoie de mai puțin capital", "ES nu depinde de forma repartiției pierderilor", "ES măsoară pierderea medie de dincolo de VaR și este subaditiv, deci diversificarea nu adaugă niciodată risc"],
                 "correctExplanation": "ES este o măsură coerentă a riscului (Artzner et al., 1999): $\\text{ES}(L_1+L_2)\\le\\text{ES}(L_1)+\\text{ES}(L_2)$, în timp ce VaR poate încălca această proprietate. În plus, ES ține seama de mărimea zilelor proaste, nu doar de frecvența lor.",
@@ -163,14 +163,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 2,
             "en": {
-                "title": "The weakness of HS",
+                "title": "Limitation of HS",
                 "text": "Historical simulation (HS) is the default in many energy companies. In the 2017–2026 backtest its 99% value-at-risk (VaR) was exceeded on 2.04% of days. What is its main weakness?",
                 "options": ["It assumes that price changes follow a normal curve", "It cannot be computed when prices are negative", "It is slow: a new regime needs months to fill the window, and a crisis day drops out on a fixed date, so VaR jumps down for no market reason", "It overreacts to yesterday's change, because it weights recent days more heavily"],
                 "correctExplanation": "In HS every day of the window counts with full weight for 365 days and then disappears at once. The model therefore lags the market when a crisis begins and drops its VaR on a date that has nothing to do with the market.",
                 "incorrectExplanation": "HS uses no distribution and works on price changes, which are defined for negative prices; it weights all days equally. Its problem is speed, which is exactly what filtered historical simulation fixes."
             },
             "ro": {
-                "title": "Punctul slab al HS",
+                "title": "Limita metodei HS",
                 "text": "Simularea istorică (HS) este metoda implicită în multe companii energetice. La testarea retrospectivă 2017–2026, valoarea la risc (VaR) de 99% obținută prin HS a fost depășită în 2,04% din zile. Care este principalul ei punct slab?",
                 "options": ["Presupune că variațiile prețului urmează repartiția normală", "Nu poate fi calculată cînd prețurile sînt negative", "Este lentă: un regim nou are nevoie de luni pentru a umple fereastra, iar o zi de criză iese din fereastră la o dată fixă, astfel că VaR scade fără vreun motiv de piață", "Reacționează excesiv la variația de ieri, pentru că dă o pondere mai mare zilelor recente"],
                 "correctExplanation": "În HS, fiecare zi din fereastră contează cu pondere întreagă timp de 365 de zile, apoi dispare brusc. Modelul reacționează deci cu întîrziere la începutul unei crize și își reduce VaR la o dată care nu are nicio legătură cu piața.",
@@ -197,14 +197,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "How FHS works",
+                "title": "Mechanism of FHS",
                 "text": "How does filtered historical simulation (FHS) build tomorrow's value-at-risk (VaR)?",
                 "options": ["It sorts the last 365 raw price changes and reads their empirical quantile", "It fits a normal curve to the last year of changes and reads its quantile", "It fits a generalised Pareto curve to the largest losses only", "It divides past changes by their generalised autoregressive conditional heteroskedasticity (GARCH) volatility and rescales the standardised shocks by today's volatility"],
                 "correctExplanation": "FHS takes the shape of the tail from history and the scale from the present: $\\text{VaR}^{\\text{FHS}}_{\\alpha,t}=\\mu_{d(t)}+\\sigma_t\\,\\hat q_\\alpha(z)$. In the backtest its 99% VaR was exceeded on 1.51% of days, and its 95% VaR passed the Kupiec test ($p$ = 0.120).",
                 "incorrectExplanation": "Sorting raw changes is plain historical simulation, fitting a curve is the parametric approach, and the Pareto tail is extreme value theory. FHS combines a GARCH volatility with the empirical quantile of standardised shocks."
             },
             "ro": {
-                "title": "Cum funcționează FHS",
+                "title": "Mecanismul FHS",
                 "text": "Cum construiește simularea istorică filtrată (FHS) valoarea la risc (VaR) pentru ziua de mîine?",
                 "options": ["Ordonează ultimele 365 de variații brute ale prețului și citește cuantila lor empirică", "Ajustează o repartiție normală pe variațiile din ultimul an și citește cuantila ei", "Ajustează o curbă Pareto generalizată numai pe cele mai mari pierderi", "Împarte variațiile trecute la volatilitatea lor din modelul autoregresiv generalizat cu heteroscedasticitate condiționată (GARCH) și înmulțește șocurile standardizate cu volatilitatea de azi"],
                 "correctExplanation": "FHS ia forma cozii din istorie și scala din prezent: $\\text{VaR}^{\\text{FHS}}_{\\alpha,t}=\\mu_{d(t)}+\\sigma_t\\,\\hat q_\\alpha(z)$. La testarea retrospectivă, VaR de 99% a fost depășită în 1,51% din zile, iar VaR de 95% a trecut testul Kupiec ($p$ = 0,120).",
@@ -265,14 +265,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Closest in the crisis",
+                "title": "Most accurate method in the crisis",
                 "text": "Between 1 Jul 2021 and 30 Jun 2023 (730 days), a correct 99% value-at-risk (VaR) should have been exceeded 7.3 times on Romanian prices. Which method came closest?",
                 "options": ["Historical simulation (HS), with 28 exceedances", "The normal curve, with 45 exceedances", "Extreme value theory (EVT), with 17 exceedances", "The Student-t curve, with 29 exceedances"],
                 "correctExplanation": "EVT had 17 exceedances and filtered historical simulation (FHS) 19. No method was right, but the filtered ones, which follow the generalised autoregressive conditional heteroskedasticity (GARCH) volatility, adapted within days.",
                 "incorrectExplanation": "HS and the normal VaR waited for their windows to fill with crisis days, so they collected 28 and 45 exceedances. In a crisis, a model that reacts within days protects the cash."
             },
             "ro": {
-                "title": "Cel mai aproape în criză",
+                "title": "Metoda cea mai precisă în criză",
                 "text": "Între 1 iulie 2021 și 30 iunie 2023 (730 de zile), o valoare la risc (VaR) corectă de 99% ar fi trebuit depășită de 7,3 ori pe prețurile din România. Care metodă s-a apropiat cel mai mult?",
                 "options": ["Simularea istorică (HS), cu 28 de depășiri", "Repartiția normală, cu 45 de depășiri", "Teoria valorilor extreme (EVT), cu 17 depășiri", "Repartiția Student-t, cu 29 de depășiri"],
                 "correctExplanation": "EVT a avut 17 depășiri, iar simularea istorică filtrată (FHS) 19. Nicio metodă nu a fost corectă, dar metodele filtrate, care urmează volatilitatea din modelul autoregresiv generalizat cu heteroscedasticitate condiționată (GARCH), s-au adaptat în cîteva zile.",

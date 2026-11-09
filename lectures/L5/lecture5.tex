@@ -94,7 +94,7 @@ VWAP & volume-weighted average price\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data only: Romanian forwards, spot prices, gas, carbon}
+\begin{frame}{Data sources: Romanian forwards, spot prices, gas and carbon}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.95}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.37\textwidth}p{0.11\textwidth}p{0.47\textwidth}@{}}\toprule
@@ -277,7 +277,7 @@ Carbon (EUA); EUR/RON; euro short-term rate (€STR) & daily & European Energy E
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM; Hull, 2022)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Futures are marked to market daily: the hedge needs cash}
+\begin{frame}{Daily settlement of futures and the liquidity needs of a hedge}
 \footnotesize
 \intuition{A forward settles once at delivery; a future pays or collects every day's price change.}
 \begin{columns}[T,onlytextwidth]
@@ -323,7 +323,7 @@ Carbon (EUA); EUR/RON; euro short-term rate (€STR) & daily & European Energy E
 
 \subsection{The forward curve}
 
-\begin{frame}{Storable gas follows the cost of carry; power does not}
+\begin{frame}{Forward prices and the cost of carry: gas and power}
 \footnotesize
 \intuition{Gas can be stored, which ties forward to spot; power cannot, so its forward is an expectation plus a risk premium.}
 \begin{columns}[T,onlytextwidth]
@@ -373,7 +373,7 @@ Carbon (EUA); EUR/RON; euro short-term rate (€STR) & daily & European Energy E
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM)}\hfill\qlink{EMQA\_L5\_fwd\_curve}{Quantlets/L5/EMQA_L5_fwd_curve}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The curve moves: yearly forwards by trade date vs realised}
+\begin{frame}{Yearly forward prices by trade date and realised spot prices}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.485\textheight,keepaspectratio]{charts/en/cal_by_trade.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB. Data: calendar-year baseload auctions to 2026-10-31; thick line = realised mean.}
@@ -426,7 +426,7 @@ Carbon (EUA); EUR/RON; euro short-term rate (€STR) & daily & European Energy E
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bessembinder \& Lemmon, 2002; Redl et al., 2009)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Month by month, forward minus spot swings both ways}
+\begin{frame}{Monthly difference between forward and spot prices}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.530\textheight,keepaspectratio]{charts/en/premium.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB. Data: 30 delivery months, 2020-08 to 2026-08.}
@@ -562,7 +562,7 @@ Carbon (EUA); EUR/RON; euro short-term rate (€STR) & daily & European Energy E
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Deng et al., 2001; Eydeland \& Wolyniec, 2003)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Sorted hourly spreads: the value lies in the best hours}
+\begin{frame}{Sorted hourly spreads: value concentrated in the best hours}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.529\textheight,keepaspectratio]{charts/en/spark_hourly.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info; World Bank (TTF, coal); EEX and SparkChange ETC (EUA); ECB. Data: 2025-11-01 to 2026-10-31, hourly.}
@@ -842,7 +842,7 @@ Germany & 0.875 & 0.049 & [0.73; 1.01] & 0.80 & 0.91 & 81.1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM; Yahoo Finance)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Near contracts move more: the Samuelson effect in TTF}
+\begin{frame}{The Samuelson effect in TTF: higher volatility of near contracts}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.568\textheight,keepaspectratio]{charts/en/samuelson.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance, NYMEX TTF futures. Data: daily closes to 2026-10-31, rolling 60 trading days.}
@@ -891,7 +891,7 @@ Germany & 0.875 & 0.049 & [0.73; 1.01] & 0.80 & 0.91 & 81.1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Black, 1976; Hull, 2022)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{What each instrument pays for the 2027 band}
+\begin{frame}{Effective price of the 2027 band by instrument}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.477\textheight,keepaspectratio]{charts/en/collar.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM PCCB-LE-flex; ECB (€STR); Black-76. Data: F = Cal-2027 baseload, auctions 2026-09-01 to 2026-10-31.}
@@ -935,7 +935,7 @@ Germany & 0.875 & 0.049 & [0.73; 1.01] & 0.80 & 0.91 & 81.1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study: in 2026 the forward beat the spot in 6 of 10 months}
+\begin{frame}{Case study: in 2026 the forward was cheaper than spot in 6 of 10 months}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.564\textheight,keepaspectratio]{charts/en/case2026.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: OPCOM (PCCB-LE-flex results; day-ahead prices via energy-charts.info); ECB. Data: 2026-01 to 2026-10; 1 MW baseload.}
@@ -950,7 +950,7 @@ Germany & 0.875 & 0.049 & [0.73; 1.01] & 0.80 & 0.91 & 81.1\% \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM)}\hfill\qlink{EMQA\_L5\_case2026}{Quantlets/L5/EMQA_L5_case2026}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study: the forward reduced cost and risk, the cap reduced risk}
+\begin{frame}{Case study: effect of the forward and the cap on cost and risk}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -984,7 +984,7 @@ caps & 133.6 & 13.9 & 148.5 & 975\,020 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The producer's side, and the summer 2024 spike}
+\begin{frame}{The producer's perspective and the summer 2024 price spike}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Producer, 2025}

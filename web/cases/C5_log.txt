@@ -3,7 +3,7 @@ EMQA web case C5
 [en] expanded at first use: US -> United States  [...n &amp; Pele (2025, arXiv 2507.12331), finds that | retail liberalisation lowered...]
 [en] expanded at first use: ARMA -> autoregressive moving average  [...ion of log consumption on log price with seasonal | errors (SARIMA: AR(1), SAR(12...]
 [en] expanded at first use: SARIMA -> seasonal ARIMA  [...nsumption on log price with seasonal ARMA errors (|: AR(1), SAR(12), MA(1), SMA(1...]
-[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [... it yourselfNotebook C5_notebook_EN.ipynb: hourly | load summed to GWh per month ...]
+[en] expanded at first use: ENTSO-E -> European Network of Transmission System Operators for Electricity  [... course dataNotebook C5_notebook_EN.ipynb: hourly | load summed to GWh per month ...]
 [en] expanded at first use: TTF -> Title Transfer Facility  [...ber 2024, 72 months — the paper's sample;
 monthly | gas (World Bank) as instrumen...]
 [en] expanded at first use: OLS -> ordinary least squares  [...3.15Ours: same specification0.06440.01823.53Ours: | + month dummies 0.02130.0134 ...]

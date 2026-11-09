@@ -64,7 +64,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Evening needs more megawatts",
+                "title": "Megawatts needed in the evening",
                 "text": "On the OPCOM (Romanian market operator) curves of 21 Oct 2026, 40 MW (megawatts) more at zero price push the midday price below 50 EUR/MWh (euro per megawatt-hour). How many MW does the same fall require in the evening, and why?",
                 "options": [
                     "40 MW, because the merit-order effect does not depend on the time of day",
@@ -76,7 +76,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "The effect depends on the depth of the curves near the price. The evening book was much deeper, thanks to imports, so 225 MW were needed; 1,054 MW is the size of the net imports, not the volume needed for the fall."
             },
             "ro": {
-                "title": "Seara sînt necesari mai mulți MW",
+                "title": "Puterea necesară seara",
                 "text": "Pe curbele OPCOM (operatorul pieței din România) din 21 octombrie 2026, 40 MW (megawați) în plus la preț zero duc prețul de la amiază sub 50 EUR/MWh (euro pe megawatt-oră). Cîți MW sînt necesari seara pentru aceeași scădere și de ce?",
                 "options": [
                     "40 MW, pentru că efectul ordinii de merit nu depinde de ora din zi",
@@ -91,7 +91,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Order-book effect is an upper bound",
+                "title": "Order-book effect as an upper bound",
                 "text": "On the OPCOM (Romanian market operator) curves of 21 Oct 2026, 25 MW (megawatts) more at zero price lower the midday price from 152.23 to 131.40 EUR/MWh (euro per megawatt-hour). Is this what a new 25 MW solar park does to the Romanian price?",
                 "options": [
                     "Yes: the order book is the real market, so the recomputation gives the exact effect",
@@ -103,7 +103,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "The order-book exercise is an upper bound: it shows how thin the purely local midday book is. Interconnectors give the midday price its depth, so a real 25 MW park moves the price far less."
             },
             "ro": {
-                "title": "Ofertele locale: limită superioară",
+                "title": "Efectul calculat pe ofertele locale ca limită superioară",
                 "text": "Pe curbele OPCOM (operatorul pieței din România) din 21 octombrie 2026, 25 MW (megawați) în plus la preț zero coboară prețul de la amiază de la 152,23 la 131,40 EUR/MWh (euro pe megawatt-oră). Acesta este efectul unui parc solar nou de 25 MW asupra prețului din România?",
                 "options": [
                     "Da: ofertele sînt piața reală, deci recalcularea dă efectul exact",
@@ -307,7 +307,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Why wind is not cannibalised",
+                "title": "Capture rate of wind",
                 "text": "In Jan–Oct 2026 Romanian wind had a capture rate (CR) of 103.0%, while solar had 61.9%. Which explanation does the lecture give?",
                 "options": [
                     "Wind receives a support payment per MWh (megawatt-hour) that is included in its capture price",
@@ -319,7 +319,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "The capture rate uses only market prices weighted by output, so support payments and switching off do not explain it. The difference is the timing of output: solar is concentrated at midday, wind is not."
             },
             "ro": {
-                "title": "De ce eolianul nu e canibalizat",
+                "title": "Rata de captare a producției eoliene",
                 "text": "În ianuarie–octombrie 2026, eolianul din România a avut o rată de captare (CR) de 103,0%, iar solarul de 61,9%. Ce explicație dă cursul?",
                 "options": [
                     "Eolianul primește un sprijin pe MWh (megawatt-oră), inclus în prețul său capturat",
@@ -469,7 +469,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Bulgarian rate rose in 2026",
+                "title": "Bulgarian capture rate in 2026",
                 "text": "In 2026 the Bulgarian solar capture rate (CR) rose to 77.1%, from 68.6% in 2025, at the same time as the Bulgarian battery fleet grew. Which mechanism does the lecture consider plausible?",
                 "options": [
                     "Batteries charging at midday add demand exactly when solar produces and lift the midday price",
@@ -481,7 +481,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "Batteries charge, not discharge, at midday, and the solar capture price is weighted by solar output, which is mostly at midday; the link is extra midday demand, not evening prices."
             },
             "ro": {
-                "title": "Rata bulgărească a urcat în 2026",
+                "title": "Rata de captare din Bulgaria în 2026",
                 "text": "În 2026, rata de captare (CR) solară din Bulgaria a urcat la 77,1%, de la 68,6% în 2025, în paralel cu extinderea bateriilor bulgărești. Ce mecanism consideră cursul plauzibil?",
                 "options": [
                     "Bateriile care se încarcă la amiază adaugă cerere exact cînd produce solarul și ridică prețul de la prînz",
@@ -550,7 +550,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Who bids below zero",
+                "title": "Producers that bid below zero",
                 "text": "According to the lecture, which two groups of producers bid below zero on the day-ahead market?",
                 "options": [
                     "Gas plants at night and coal plants in summer",
@@ -562,7 +562,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "A merchant solar park without support has $b_i\\approx 0$ and should stop as soon as the price turns negative. Negative bids need a per-MWh payment or a high cost of stopping."
             },
             "ro": {
-                "title": "Cine ofertează sub zero",
+                "title": "Producătorii care ofertează sub zero",
                 "text": "Potrivit cursului, care sînt cele două categorii de producători care ofertează sub zero în piața pentru ziua următoare?",
                 "options": [
                     "Centralele pe gaze noaptea și cele pe cărbune vara",
@@ -1009,7 +1009,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 0,
             "en": {
-                "title": "April 2026 for each player",
+                "title": "April 2026 for each market participant",
                 "text": "Case study: April 2026 had 67 negative hours, the most of any month. Which pairing of player and outcome matches the lecture?",
                 "options": [
                     "Solar developer: capture rate 49.4%, with 17.9% of output at negative prices; wind developer: capture rate 97.8%",
@@ -1021,7 +1021,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "In Romania wind is not the cannibalised technology; the battery earned above its average (325 against 305), and a flexible supplier or consumer is paid to consume in negative hours."
             },
             "ro": {
-                "title": "Aprilie 2026 pentru participanți",
+                "title": "Aprilie 2026 pentru fiecare participant la piață",
                 "text": "Studiu de caz: aprilie 2026 a avut 67 de ore cu preț negativ, cele mai multe dintre toate lunile. Care asociere între participant și rezultat corespunde cursului?",
                 "options": [
                     "Dezvoltatorul solar: rată de captare 49,4%, cu 17,9% din producție la prețuri negative; dezvoltatorul eolian: rată de captare 97,8%",

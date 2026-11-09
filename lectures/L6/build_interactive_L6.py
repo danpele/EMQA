@@ -33,7 +33,7 @@ BLOCKS = [('resid-price', 'resid_price', 'merit', 'rp'),
 SECTIONS = {
  'en': dict(merit='Renewables and the merit order', capt='Capture prices and cannibalisation', neg='Negative prices',
             bat='The economics of a battery', case='Case study: summer 2026, Romania and Bulgaria'),
- 'ro': dict(merit='Sursele regenerabile și ordinea de merit', capt='Prețuri de captură și canibalizare', neg='Prețuri negative',
+ 'ro': dict(merit='Sursele regenerabile și ordinea de merit', capt='Prețul capturat și canibalizarea', neg='Prețurile negative',
             bat='Economia unei baterii', case='Studiu de caz: vara lui 2026, România și Bulgaria'),
 }
 

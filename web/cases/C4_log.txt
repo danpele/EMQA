@@ -11,7 +11,7 @@ the...]
 [en] expanded at first use: TVP-VAR -> time-varying parameter vector autoregression  [... moves from   pp before the war to   pp after it (|, Section 4.1.2), while transm...]
 [en] expanded at first use: AUC -> area under the ROC curve, ROC = receiver operating characteristic  [...of high energy-sector volatility: EFRM + CISS has | 0.731, EFRM alone 0.708, CISS...]
 [en] expanded at first use: LASSO -> Least Absolute Shrinkage and Selection Operator  [... loss that targets the 5 % quantile, and   is the | penalty that sets weak links ...]
-[en] expanded at first use: RO-ERM -> energy risk meter for Romanian companies  [... it yourselfNotebook C4_notebook_EN.ipynb: (A) a “|” from OMV Petrom, Romgaz and ...]
+[en] expanded at first use: RO-ERM -> energy risk meter for Romanian companies  [... course dataNotebook C4_notebook_EN.ipynb: (A) a “|” from OMV Petrom, Romgaz and ...]
 [en] expanded at first use: EODHD -> EOD Historical Data, a market-data provider  [...ross the three companies.Source: our estimates on | and Yahoo Finance data, April...]
 [en] expanded at first use: GACV -> generalised approximate cross-validation  [...y alone reaches 0.612. With only four covariates, | chooses (almost) no penalty i...]
 [ro] 6 sections, 4 numbered figures, 2 tables; acronyms: UE, TTF, VSTOXX, LSEG, GPRD, CDS, BCE, CISS, EFRM, TVP-VAR, AUC, ROC, LASSO, RO-ERM, EODHD, GACV, SNP, SNG, SNN

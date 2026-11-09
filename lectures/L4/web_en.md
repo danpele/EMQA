@@ -21,7 +21,7 @@ The data are real and downloaded: the day-ahead base prices of Romania and of th
 
 The risk of an energy position sits in the daily change of the price, and VaR and ES are two ways of summarising the bad tail of that change. This section defines the loss, the two risk measures and shows on Romanian data why a limit built on the normal curve fails.
 
-## Real data only: the prices and positions we measure {h=d931a829}
+## Data sources: prices and positions analysed {h=1ca32c42}
 
 The main series is the day-ahead base price of Romania (RO) on the PZU, run by the Romanian electricity and gas market operator (OPCOM), with the price of the Germany–Luxembourg bidding zone (DE-LU) from the EPEX SPOT power exchange (EPEX) for comparison. Both come from the European Network of Transmission System Operators for Electricity (ENTSO-E) through energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE), at daily and hourly frequency. The Romanian load, from ENTSO-E (Transelectrica data), gives the hourly shape of a supplier's portfolio. Two further series show how risk turns into cash: the front-month Brent crude oil futures, a margined contract, from Yahoo Finance (BZ=F), and the monthly gas price at the Dutch Title Transfer Facility (TTF), from the World Bank Pink Sheet.
 
@@ -253,7 +253,7 @@ The chart follows the zone of each method day by day through the backtest. The n
 @chart traffic
 Basel traffic-light zone of each method's 99% VaR (count of exceedances in the last 250 days), Romania, backtest 2017–2026.
 
-## In 2021–2022 every method failed; since 2023 the filtered ones are back near 1% {h=97e5b52e}
+## Exceedance rates by method in 2021–2022 and since 2023 {h=fba97d02}
 
 Splitting the backtest into three periods shows where the failures come from. The table gives the share of days above the 99% VaR, in percent, for Romania and Germany–Luxembourg.
 
@@ -297,7 +297,7 @@ As a diagnosis, $\hat q_V$ ranges from −0.007, for a model that is too prudent
 
 @practice after a failed backtest, widen VaR by the conformal shift and keep testing for clusters.
 
-# From quantiles to margins, guarantees and limits
+# Margins, guarantees and position limits
 
 The quantiles of the previous sections become cash and limits in three places: the margins of an exchange, the guarantee of the day-ahead market and the position limits of a trading desk. This section shows how each is computed and why a well-hedged company can still run out of cash.
 
@@ -313,7 +313,7 @@ The rules come from the European Market Infrastructure Regulation (EMIR) and its
 
 @practice a hedged producer gains on the physical sale later, but pays the margin today.
 
-## In 2022, well-hedged energy companies ran short of cash for margins {h=425c300d}
+## Margin calls and liquidity shortfalls of hedged energy companies in 2022 {h=85f6d45d}
 
 The European Central Bank (ECB) described what happened in November 2022. TTF gas futures reached 227 EUR/MWh on 7 March 2022, about 12 times the level of early 2021. By mid-2022 about twice as much initial margin was posted as in late 2021. The firms hurt were mostly utilities and producers that had sold forward: hedgers, not speculators. Their physical position gained value, but the gain would arrive only at delivery, while the margin had to be paid in cash immediately.
 
@@ -464,7 +464,7 @@ The lecture can be condensed into four steps for a risk desk.
 
 The wrap-up tests the main ideas with five short questions, summarises the lecture and points to the research of our group and to further reading.
 
-## Check yourself {h=a1f237cd}
+## Self-assessment questions {h=a1f237cd}
 
 1. Your 99% one-day VaR for 100 MW is 162 thousand EUR. What does it promise, and what does it not say? Answer: on about 1 day in 100 the loss should exceed it. It says nothing about how large the loss is on those days, which is what ES (162 thousand EUR at 97.5%) measures.
 2. Over the last 250 days your 99% VaR was exceeded 7 times. What zone is it in, and what does Kupiec say? Answer: the yellow zone (5–9). The Kupiec test gives $\text{LR}_{uc}$ = 5.50 and $p$ = 0.019, so the model is rejected at 5%. Recalibrate it, for example by moving from HS to FHS, and keep watching.

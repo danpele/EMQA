@@ -96,7 +96,7 @@ YTD & year to date\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data only: sources and sample period}
+\begin{frame}{Data sources and sample period}
 \small
 
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
@@ -202,7 +202,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, PZU aggregated curves)}\hfill\qlink{EMQA\_L1\_merit\_opcom}{Quantlets/L1/EMQA_L1_merit_opcom}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{One delivery day, step by step}
+\begin{frame}{Trading stages for one delivery day}
 \footnotesize
 
 \begin{center}
@@ -232,7 +232,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Who sets the rules: operators, regulators, price limits, disclosure}
+\begin{frame}{Market institutions: operators, regulators, price limits, disclosure}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Who is who}
@@ -360,7 +360,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 1 Oct 2025)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{What Romania generates}
+\subsection{Electricity generation in Romania}
 
 \begin{frame}{Romania's generation mix: hydro, nuclear, gas, coal and growing solar}
 \small
@@ -593,7 +593,7 @@ DE-LU & \cellcolor{Forest!55}11.5 & \cellcolor{Forest!54}11.9 & \cellcolor{Fores
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; hourly day-ahead prices)}\hfill\qlink{EMQA\_L1\_profile\_intraday}{Quantlets/L1/EMQA_L1_profile_intraday}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Weekends are cheaper}
+\begin{frame}{Weekly seasonality: lower prices at weekends}
 \footnotesize
 \intuition{Factories and offices consume less on weekends, so fewer plants are needed and the price drops.}
 \begin{columns}[T,onlytextwidth]
@@ -726,7 +726,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 
 \subsection{Distribution and volatility}
 
-\begin{frame}{Prices can be zero or negative: use differences or asinh}
+\begin{frame}{Transformations for zero and negative prices: differences and asinh}
 \small
 \intuition{Percentage changes need a positive price, but asinh is defined for any sign.}
 \vspace{-1mm}\[ y_t=\operatorname{asinh}(x_t)=\ln\big(x_t+\sqrt{x_t^2+1}\big),\quad x_t=\frac{p_t-\tilde p}{\widehat{\mathrm{MAD}}},\quad \operatorname{asinh}(x)\approx\operatorname{sign}(x)\ln(2|x|)\ \text{for large } |x| \]\vspace{-2mm}
@@ -916,7 +916,7 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; constant only; ADF lags by AIC; 5\% level)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Decomposition splits a series into trend, season and the rest}
+\begin{frame}{Decomposition: trend, seasonal and remainder components}
 \small
 \intuition{Seasonal--Trend decomposition using Loess (STL) lets the season evolve.}
 \vspace{-1mm}\[ x_t=T_t+S_t+R_t\qquad(\text{trend + season + remainder}) \]\vspace{-2mm}
@@ -933,7 +933,7 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)}\hfill\qlink{EMQA\_L1\_decomp\_load}{Quantlets/L1/EMQA_L1_decomp_load}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Exponential smoothing: recent data count more}
+\begin{frame}{Exponential smoothing: higher weights on recent observations}
 \small
 \intuition{The smoothed level averages all past values, with weights shrinking geometrically.}
 \vspace{-1mm}\[ \ell_t=\underbrace{\alpha x_t}_{\text{news}}+\underbrace{(1-\alpha)\ell_{t-1}}_{\text{memory}},\qquad \alpha=1-2^{-1/h} \]\vspace{-2mm}
@@ -1012,7 +1012,7 @@ TTF & 1.89 & 0.06 & 34.16 \\
 
 \subsection{(b) The June 2025 oil shock}
 
-\begin{frame}{Case study (b): Brent +7\% in a day, then back below the pre-war price}
+\begin{frame}{Case study (b): one-day 7\% rise in Brent and its reversal}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.425\textheight,keepaspectratio]{charts/en/iran_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: Yahoo Finance (BZ=F). Data: 2025-06-02 to 2025-07-04, trading days.}
@@ -1106,7 +1106,7 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_negative\_solar}{Quantlets/L1/EMQA_L1_negative_solar}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study (d): what accompanies negative-price days}
+\begin{frame}{Case study (d): factors associated with negative-price days}
 \footnotesize
 \intuition{We describe the realised conditions on days with at least one negative quarter-hour; this describes, it does not forecast for bidding.}
 \begin{columns}[T,onlytextwidth]
@@ -1138,9 +1138,9 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation, logit; energy-charts.info)}\hfill\tryit{notebook \S10d}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{(e) 2026 so far}
+\subsection{(e) Market developments in 2026}
 
-\begin{frame}{Case study (e): 2026 prices climbed; oil jumped in March}
+\begin{frame}{Case study (e): rising prices in 2026 and the oil price jump in March}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.442\textheight,keepaspectratio]{charts/en/cy_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (exchange prices via ENTSO-E); Yahoo Finance (BZ=F). Data: 2026-01-01 to 2026-10-31, daily.}
@@ -1160,7 +1160,7 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; Yahoo Finance BZ=F; cut-off 31 Oct 2026)}\hfill\qlink{EMQA\_L1\_cy\_prices}{Quantlets/L1/EMQA_L1_cy_prices}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study (e): Cernavodă nuclear plant offline twice, hydro below 2025}
+\begin{frame}{Case study (e): two Cernavodă outages and lower hydro output than in 2025}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.476\textheight,keepaspectratio]{charts/en/cy_generation.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: monthly means of reported hours, 2025-01 to 2026-10.}
@@ -1176,7 +1176,7 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Nuclearelectrica, 29 Jul 2026; World Nuclear News, 30 Jul 2026; CNCAN, 9 Sep 2026)}\hfill\qlink{EMQA\_L1\_cy\_generation}{Quantlets/L1/EMQA_L1_cy_generation}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study (e): 2026 drivers --- price up about 30\%, supply down}
+\begin{frame}{Case study (e): prices about 30\% higher and lower supply in 2026}
 \small
 \begin{center}{\small\renewcommand{\arraystretch}{1.08}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrr@{}}\toprule
@@ -1234,7 +1234,7 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
 
 \subsection{(f) Romania, Bulgaria and batteries}
 
-\begin{frame}{Case study (f): since spring 2026, Bulgaria's evenings are cheaper}
+\begin{frame}{Case study (f): lower evening prices in Bulgaria since spring 2026}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.401\textheight,keepaspectratio]{charts/en/bg_battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2023-01 to 2026-10, local time; BG battery series reported from 2026-09-10.}

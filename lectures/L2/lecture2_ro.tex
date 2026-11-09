@@ -113,7 +113,7 @@ VST & transformare de stabilizare a varianței\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Prognozăm prețul orar PZU din România, numai cu date reale}
+\begin{frame}{Variabila prognozată și sursele datelor}
 \footnotesize
 {\scriptsize\renewcommand{\arraystretch}{0.93}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{0.36\textwidth}p{0.12\textwidth}p{0.47\textwidth}@{}}\toprule
@@ -216,7 +216,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
 
 \subsection{Informațiile disponibile și orizontul}
 
-\begin{frame}{Prognoza zilei $d$ folosește doar datele cunoscute la 12:00 CET în ziua $d-1$}
+\begin{frame}{Informația disponibilă la 12:00 CET în ziua $d-1$}
 \footnotesize
 
 \begin{center}
@@ -386,7 +386,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Koehler, 2006, IJF; Lago et al., 2021, APEN)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative}
+\begin{frame}{Limitele erorilor procentuale la prețuri apropiate de zero sau negative}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.403\textheight,keepaspectratio]{charts/ro/mape_fail.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețuri OPCOM; consum, producție eoliană și solară: ENTSO-E (date Transelectrica). Date: anul de test 2025-11-01 - 2026-10-31, 8760 de ore.}
@@ -509,7 +509,7 @@ Piețe vecine: Ungaria (HU), Germania--Luxemburg (DE-LU); gaze naturale: hubul o
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, ARX(728))}\hfill\qlink{EMQA\_L2\_arx\_coef}{Quantlets/L2/EMQA_L2_arx_coef}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Variabilele fundamentale din ziua $d-2$ aproape că nu îmbunătățesc prognoza}
+\begin{frame}{Contribuția redusă a variabilelor fundamentale din ziua $d-2$}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -1109,7 +1109,7 @@ Ansamblu de 4 modele & \cellcolor{Forest!55}22{,}13 & \cellcolor{Forest!55}35{,}
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii; randament de încărcare--descărcare presupus: 90\%)}\hfill\qlink{EMQA\_L2\_battery}{Quantlets/L2/EMQA_L2_battery}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{O prognoză se acceptă numai după o listă de verificări; testul nostru arată că nu folosim informație din viitor}
+\begin{frame}{Lista de verificări a prognozei și testul privind folosirea informației din viitor}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

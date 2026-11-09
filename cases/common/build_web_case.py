@@ -75,7 +75,7 @@ CASE = {
 L = {
     'en': dict(course='Energy Markets Quantitative Analysis', back='Course site', site='../../index.html#cases', case='Case study',
                lecture='Lecture', brief='Case brief (PDF)', nb='Notebook', colab='Open in Colab', toc='Contents',
-               question='The business question', intuition='Intuition first', decision='In practice', figure='Figure', table='Table',
+               question='The business question', intuition='Intuition of the method', decision='In practice', figure='Figure', table='Table',
                src='Source', glance=['Question', 'Data', 'Method', 'Result', 'Decision'], author='Prof. dr. Daniel Traian PELE',
                inst=['Bucharest University of Economic Studies, Department of Statistics and Econometrics',
                      'Romanian Academy, Institute for Economic Forecasting'],

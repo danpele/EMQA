@@ -98,7 +98,7 @@ YTD & de la începutul anului\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Numai date reale: surse și perioadă acoperită}
+\begin{frame}{Sursele datelor și perioada analizată}
 \small
 
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
@@ -234,7 +234,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Maciejowska, Uniejewski \& Weron, 2023, Oxford Res.\ Enc.; OPCOM; Transelectrica)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Cine stabilește regulile: operatori, reglementatori, limite de preț, transparență}
+\begin{frame}{Instituțiile pieței: operatori, reglementatori, limite de preț, transparență}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Cine ce face}
@@ -362,7 +362,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 1 oct. 2025)}\hfill\tryit{notebook-ul Jupyter \S1}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{Ce produce România}
+\subsection{Producția de energie electrică în România}
 
 \begin{frame}{Mixul de producție al României: hidro, nuclear, gaze, cărbune și solar în creștere}
 \small
@@ -595,7 +595,7 @@ DE-LU & \cellcolor{Forest!55}11{,}5 & \cellcolor{Forest!54}11{,}9 & \cellcolor{F
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; prețuri orare PZU)}\hfill\qlink{EMQA\_L1\_profile\_intraday}{Quantlets/L1/EMQA_L1_profile_intraday}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{La sfîrșit de săptămînă, energia este mai ieftină}
+\begin{frame}{Sezonalitatea săptămînală: prețuri mai mici la sfîrșit de săptămînă}
 \footnotesize
 \intuition{În weekend, fabricile și birourile consumă mai puțin, sînt necesare mai puține centrale și prețul scade.}
 \begin{columns}[T,onlytextwidth]
@@ -725,7 +725,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 
 \subsection{Distribuția prețurilor și volatilitatea}
 
-\begin{frame}{Prețul poate fi nul sau negativ: folosiți diferențe sau asinh}
+\begin{frame}{Transformări pentru prețuri nule sau negative: diferențe și asinh}
 \small
 \intuition{Variațiile procentuale presupun un preț pozitiv, dar asinh este definită pentru orice semn.}
 \vspace{-1mm}\[ y_t=\operatorname{asinh}(x_t)=\ln\big(x_t+\sqrt{x_t^2+1}\big),\quad x_t=\frac{p_t-\tilde p}{\widehat{\mathrm{MAD}}},\quad \operatorname{asinh}(x)\approx\operatorname{sign}(x)\ln(2|x|)\ \text{pentru } |x| \]\vspace{-2mm}
@@ -932,7 +932,7 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Cleveland et al., 1990, JOS; Hyndman \& Athanasopoulos, 2021)}\hfill\qlink{EMQA\_L1\_decomp\_load}{Quantlets/L1/EMQA_L1_decomp_load}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Netezirea exponențială: datele recente cîntăresc mai mult}
+\begin{frame}{Netezirea exponențială: ponderi mai mari pentru observațiile recente}
 \small
 \intuition{Nivelul netezit: medie ponderată a valorilor trecute, cu ponderi care scad geometric.}
 \vspace{-1mm}\[ \ell_t=\underbrace{\alpha x_t}_{\text{informația nouă}}+\underbrace{(1-\alpha)\ell_{t-1}}_{\text{memoria}},\qquad \alpha=1-2^{-1/h} \]\vspace{-2mm}
@@ -1011,7 +1011,7 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 
 \subsection{(b) Șocul petrolier din iunie 2025}
 
-\begin{frame}{Studiul de caz (b): Brent, +7\% într-o zi, apoi sub nivelul inițial}
+\begin{frame}{Studiul de caz (b): creșterea Brent cu 7\% într-o zi și revenirea}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.416\textheight,keepaspectratio]{charts/ro/iran_brent.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: Yahoo Finance (BZ=F). Date: 2025-06-02 - 2025-07-04, zile de tranzacționare.}
@@ -1137,9 +1137,9 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimare proprie, logit; energy-charts.info)}\hfill\tryit{notebook-ul Jupyter \S10d}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{(e) Anul 2026 pînă acum}
+\subsection{(e) Evoluția pieței în 2026}
 
-\begin{frame}{Studiul de caz (e): prețuri în creștere, saltul prețului țițeiului în martie}
+\begin{frame}{Studiul de caz (e): creșterea prețurilor și saltul țițeiului din martie}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/cy_prices.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (prețurile burselor, prin ENTSO-E); Yahoo Finance (BZ=F). Date: 2026-01-01 - 2026-10-31, zilnic.}
@@ -1159,7 +1159,7 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; Yahoo Finance BZ=F; date pînă la 31 octombrie 2026)}\hfill\qlink{EMQA\_L1\_cy\_prices}{Quantlets/L1/EMQA_L1_cy_prices}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiul de caz (e): Cernavodă oprită de două ori, hidro sub 2025}
+\begin{frame}{Studiul de caz (e): opririle de la Cernavodă și scăderea producției hidro}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.466\textheight,keepaspectratio]{charts/ro/cy_generation.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: medii lunare pe orele raportate, 2025-01 - 2026-10.}
@@ -1175,7 +1175,7 @@ TTF & 1{,}89 & 0{,}06 & 34{,}16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Nuclearelectrica, 29 iul. 2026; World Nuclear News, 30 iul. 2026; CNCAN, 9 sep. 2026)}\hfill\qlink{EMQA\_L1\_cy\_generation}{Quantlets/L1/EMQA_L1_cy_generation}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiul de caz (e): prețuri cu circa 30\% mai mari, ofertă mai mică}
+\begin{frame}{Studiul de caz (e): prețuri cu circa 30\% mai mari și ofertă mai mică în 2026}
 \small
 \begin{center}{\small\renewcommand{\arraystretch}{1.08}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrr@{}}\toprule
@@ -1233,7 +1233,7 @@ Import net RO, TWh & 3{,}67 & 2{,}51 &  \\
 
 \subsection{(f) România, Bulgaria și bateriile}
 
-\begin{frame}{Studiul de caz (f): din primăvara lui 2026, Bulgaria are prețuri mai mici seara}
+\begin{frame}{Studiul de caz (f): prețuri de seară mai mici în Bulgaria din primăvara lui 2026}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.354\textheight,keepaspectratio]{charts/ro/bg_battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); ENTSO-E (date Transelectrica pentru România). Date: 2023-01 - 2026-10, ora locală; seria bateriilor BG raportată din 2026-09-10.}

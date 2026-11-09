@@ -21,7 +21,7 @@ All numbers come from real, downloaded data: hourly and 15-minute day-ahead pric
 
 This section measures how much solar and wind lower the Romanian day-ahead price, first on the real supply and demand curves of one day and then with a regression on almost four years of hourly data. It starts with the growth of solar capacity that makes the question urgent.
 
-## Real data only: prices, generation, order books, installed capacity {h=d8d529ab}
+## Data sources: prices, generation, order books and installed capacity {h=bd3551e8}
 
 The lecture uses only real data. Day-ahead prices come for four bidding zones: Romania (RO), Bulgaria (BG), Hungary (HU) and the Germany–Luxembourg zone (DE-LU). They are set by the Romanian electricity and gas market operator (OPCOM), the Independent Bulgarian Energy Exchange (IBEX), the Hungarian Power Exchange (HUPX) and the EPEX SPOT power exchange (EPEX), and are taken through energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE). Prices are hourly, and every 15 minutes from 1 Oct 2025.
 
@@ -56,7 +56,7 @@ Equation @eq:slope says that the effect depends on the shape of the curves near 
 
 @practice the steeper the local curve, the more a new park moves its own price.
 
-## On the Romanian order book alone, 40 MW more at zero price pushes midday below 50 EUR/MWh {h=3aceae55}
+## Romanian order book: 40 MW more at zero price lowers the midday price below 50 EUR/MWh {h=e920df98}
 
 The chart applies @eq:merit to the real curves of 21 Oct 2026. At midday, adding only 25 MW at zero price lowers the price from 152.23 to 131.40 EUR/MWh, and 40 MW push it below 50 EUR/MWh. In the evening the same fall requires 225 MW, because 1,054 MW of net imports make the curve deeper.
 
@@ -252,7 +252,7 @@ Producers bid below zero when support or restart costs make stopping expensive. 
 
 Low midday prices and high evening prices create a daily price shape. This section reads that shape on 15-minute prices, defines the daily spread that a battery earns, and compares it across Romania and its neighbours.
 
-## Spring quarter-hours: 23.0 EUR/MWh at midday, 208.3 in the evening {h=593a9e2f}
+## Spring quarter-hour prices: 23.0 at midday, 208.3 EUR/MWh in the evening {h=fd6607e6}
 
 The chart shows the mean price of each quarter-hour of the day in the last 12 months, separately for each season. In spring the profile forms a deep "solar valley": the minimum, 23.0 EUR/MWh, falls at 12:45 CET and the maximum, 208.3 EUR/MWh, at 19:45 CET, when the sun has set and demand is still high.
 
@@ -395,7 +395,7 @@ For a 2-hour battery in the last 12 months, perfect foresight supports at most 9
 
 A 2-hour battery earned 111.2 thousand EUR per MW in the last 12 months with perfect foresight, and about 85% of that with a simple rule. 15-minute prices add revenue, new batteries erode the spread, and at 8% over 15 years the revenue supports at most 808 EUR per kW.
 
-# Case studies: Apr 2026; summer 2026
+# Case studies: Apr 2026 and summer 2026
 
 Two case studies apply the tools of the lecture to real episodes: April 2026, the month with the most negative hours, and summer 2026, when Romania exported at midday and imported from Bulgaria in the evening.
 
@@ -410,7 +410,7 @@ For solar the week was poor: its capture price was 37.0 EUR/MWh against a baselo
 @chart case_week
 Romanian 15-minute day-ahead price with the charging and discharging intervals of a 2-hour battery (top) and solar and wind output in GW (bottom), 20–26 Apr 2026, CET.
 
-## Case study: what Apr 2026 meant for each player in the Romanian market {h=7983a592}
+## Case study: implications of Apr 2026 for each participant in the Romanian market {h=2f58084b}
 
 April 2026 had 67 negative hours, the most of any month. The same month meant different things to different players:
 
@@ -420,7 +420,7 @@ April 2026 had 67 negative hours, the most of any month. The same month meant di
 - **Supplier and industrial consumer**: 67 negative hours. Moving consumption to spring middays is paid.
 - **Transelectrica**: after sunset, the evening ramp and the interconnectors set the price.
 
-## Summer 2026: midday exports, evening imports from Bulgaria {h=123a3cd2}
+## Case study: midday exports and evening imports from Bulgaria, summer 2026 {h=3d094a70}
 
 The chart shows the mean hourly cross-border flows of Romania and the prices of Romania and Bulgaria between 1 Jun and 31 Aug 2026; positive flows are imports into Romania. At midday Romania exports: 960 MW net at 12:00 across all borders, mostly to Hungary (857 MW) and Serbia (367 MW). It exported to Bulgaria between 12:00 and 15:00 on only 43 of the 92 days.
 
@@ -439,7 +439,7 @@ In a sunny spring week, the same prices that cut the capture rate of solar to 42
 
 The wrap-up checks the main ideas with four questions, summarises the lecture, presents related research from our group and lists resources for further study.
 
-## Check yourself {h=48dd23b6}
+## Self-assessment questions {h=48dd23b6}
 
 1. A solar PPA is offered at the 2025 baseload forward of 108 EUR/MWh. What does the solar profile really earn? Answer: about 64 EUR/MWh in 2025, because the capture rate was 59%. A buyer who pays the baseload price for the solar profile pays a large premium.
 2. Since 1 October 2025, Romania has had 687 negative quarter-hours. How many negative hours do you report? Answer: 171.75 hour-equivalents, since each quarter-hour counts 0.25 h, not 687 hours.

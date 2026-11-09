@@ -21,7 +21,7 @@ Datele sînt reale și descărcate: prețul de bază pentru ziua următoare din 
 
 Riscul unei poziții pe piața de energie se află în variația zilnică a prețului, iar VaR și ES sînt două moduri de a rezuma coada nefavorabilă a acestei variații. Secțiunea definește pierderea și cele două măsuri de risc și arată, pe datele din România, de ce eșuează o limită calculată cu repartiția normală.
 
-## Lucrăm numai cu date reale: prețurile și pozițiile analizate {h=cdfe1810}
+## Sursele datelor: prețurile și pozițiile analizate {h=c0d7523b}
 
 Seria principală este prețul de bază de pe PZU din România (RO), administrată de operatorul pieței de energie electrică și de gaze naturale din România (OPCOM); pentru comparație folosim prețul din zona de ofertare Germania–Luxemburg (DE-LU), de la bursa europeană de energie EPEX SPOT (EPEX). Ambele provin de la Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E), prin energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE), cu frecvență zilnică și orară. Consumul național al României, de la ENTSO-E (date Transelectrica), dă profilul orar al portofoliului unui furnizor. Alte două serii arată cum se transformă riscul în numerar: contractul futures pe țițeiul Brent cu scadența cea mai apropiată, un contract cu marjă, de pe Yahoo Finance (BZ=F), și prețul lunar al gazelor la hubul olandez Title Transfer Facility (TTF), din Pink Sheet-ul Băncii Mondiale.
 
@@ -253,7 +253,7 @@ Graficul urmărește zi de zi zona fiecărei metode pe toată perioada de testar
 @chart traffic
 Zona din semaforul Basel pentru VaR de 99% a fiecărei metode (numărul depășirilor din ultimele 250 de zile), România, testare retrospectivă 2017–2026.
 
-## În 2021–2022 toate metodele au eșuat; din 2023, metodele filtrate au revenit aproape de 1% {h=ccbd11fe}
+## Frecvența depășirilor, pe metode, în 2021–2022 și după 2023 {h=fb89a9d6}
 
 Împărțirea perioadei de testare în trei subperioade arată de unde provin eșecurile. Tabelul dă proporția zilelor în care pierderea a depășit VaR de 99%, în procente, pentru România și Germania–Luxemburg.
 
@@ -297,7 +297,7 @@ Ca diagnostic, $\hat q_V$ variază între −0,007, pentru un model prea prudent
 
 @practice după un test eșuat, lărgiți VaR cu deplasarea conformală și testați în continuare gruparea depășirilor.
 
-# De la cuantile la marje, garanții și limite
+# Marje, garanții și limite de poziție
 
 Cuantilele din secțiunile anterioare devin numerar și limite în trei locuri: marjele cerute de bursă, garanția de pe PZU și limitele de poziție ale biroului de tranzacționare. Secțiunea arată cum se calculează fiecare și de ce o companie bine acoperită la risc poate rămîne totuși fără lichidități.
 
@@ -313,7 +313,7 @@ Regulile provin din Regulamentul privind infrastructura pieței europene (EMIR) 
 
 @practice producătorul acoperit cîștigă mai tîrziu din vînzarea fizică, dar plătește marja azi.
 
-## În 2022, companii energetice bine acoperite la risc au rămas fără lichidități pentru marje {h=f377a636}
+## Apelurile în marjă și lipsa de lichidități a companiilor energetice acoperite la risc în 2022 {h=b38a254a}
 
 Banca Centrală Europeană (BCE) a descris ce s-a întîmplat în noiembrie 2022. Contractele futures pe gaze TTF au atins 227 EUR/MWh la 7 martie 2022, de circa 12 ori nivelul de la începutul anului 2021. La jumătatea anului 2022 se depunea o marjă inițială de aproximativ două ori mai mare decît la sfîrșitul anului 2021. Companiile afectate au fost mai ales utilitățile și producătorii care vînduseră la termen: firme care se acopereau la risc, nu speculatori. Poziția lor fizică se apreciase, dar cîștigul urma să vină abia la livrare, în timp ce marja trebuia plătită imediat, în numerar.
 
@@ -464,7 +464,7 @@ Cursul poate fi rezumat în patru pași pentru un birou de risc.
 
 Recapitularea verifică ideile principale prin cinci întrebări scurte, rezumă cursul și trimite la cercetările grupului nostru și la lecturi suplimentare.
 
-## Verifică-te {h=2a7eb881}
+## Întrebări de autoevaluare {h=2a7eb881}
 
 1. VaR de 99% pe o zi, pentru 100 MW, este de 162 de mii EUR. Ce promite această cifră și ce nu spune? Răspuns: în aproximativ o zi din 100, pierderea ar trebui să o depășească. Cifra nu spune nimic despre mărimea pierderii în acele zile, pe care o măsoară ES (162 de mii EUR la 97,5%).
 2. În ultimele 250 de zile, VaR de 99% a fost depășită de 7 ori. În ce zonă a semaforului se află modelul și ce arată testul Kupiec? Răspuns: în zona galbenă (5–9). Testul Kupiec dă $\text{LR}_{uc}$ = 5,50 și $p$ = 0,019, deci ipoteza este respinsă la pragul de 5%. Recalibrați modelul, de exemplu trecînd de la HS la FHS, și continuați monitorizarea.

@@ -22,7 +22,7 @@ Disciplina contează la fel de mult ca modelele. O testare retrospectivă care f
 
 Înainte de a estima orice model, problema de prognoză trebuie definită exact: ce prețuri prognozăm, în ce moment, cu ce informații și față de ce reper judecăm rezultatul. Secțiunea fixează calendarul licitației PZU, împărțirea datelor în calibrare, rodaj și test, modelul naiv de referință, măsurile erorii și testul statistic folosit pentru compararea modelelor.
 
-## Prognozăm prețul orar PZU din România, numai cu date reale {h=05e1aa4b}
+## Variabila prognozată și sursele datelor {h=cf02d684}
 
 Variabila prognozată este prețul orar PZU al zonei de ofertare România (RO), publicat de OPCOM și descărcat prin energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE), care îl preia de la Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E). Variabilele explicative sînt consumul, producția eoliană, solară, hidro și nucleară și fluxurile transfrontaliere, orare și zilnice, de la ENTSO-E (date Transelectrica pentru România); prețul certificatului de emisii (EUA) al Uniunii Europene (UE), aproximat prin titlul SparkChange tranzacționat la bursă și garantat fizic cu certificate EUA (ETC), din Yahoo Finance; prețurile piețelor vecine, Ungaria (HU), de la bursa de energie din Ungaria (HUPX), și zona de ofertare Germania–Luxemburg (DE-LU), de la bursa europeană de energie EPEX SPOT (EPEX); în fine, prețul lunar al gazelor la hubul olandez Title Transfer Facility (TTF), din Pink Sheet al Băncii Mondiale.
 
@@ -46,7 +46,7 @@ Obiectul exercițiului sînt, așadar, cele 24 de prețuri orare PZU din Români
 
 @practice aceeași regulă se aplică oricărui birou de tranzacționare: un model care o încalcă nu poate fi rulat la 12:00.
 
-## Prognoza zilei d folosește doar datele cunoscute la 12:00 CET în ziua d-1 {h=12fe9510}
+## Informația disponibilă la 12:00 CET în ziua $d-1$ {h=28f20f1e}
 
 Slide-ul desenează pe o axă a timpului informația disponibilă. Prețurile zilei $d-1$ au fost publicate în jurul orei 13:00 din ziua $d-2$. Ultima zi măsurată complet este $d-2$, care se încheie la miezul nopții dinaintea zilei licitației. La 12:00 în ziua $d-1$ se trimit ofertele pentru ziua $d$, iar de prognozat sînt cele 24 de prețuri orare (96 pe sfert de oră) ale zilei $d$.
 
@@ -116,7 +116,7 @@ MAE se exprimă în EUR/MWh și se explică ușor; RMSE ridică erorile la pătr
 
 @practice raportați biroului de tranzacționare MAE în EUR/MWh, iar conducerii rMAE, calculate pe aceleași ore.
 
-## Erorile procentuale nu funcționează la prețuri apropiate de zero sau negative {h=83746df4}
+## Limitele erorilor procentuale la prețuri apropiate de zero sau negative {h=f94ec652}
 
 Eroarea procentuală absolută medie (MAPE) este populară în rapoartele de afaceri, dar nu funcționează pentru prețurile energiei electrice:
 
@@ -185,7 +185,7 @@ Coeficienții consumului și ai producției eoliene și solare rămîn apropiaț
 @chart arx_coef
 Coeficienții medii ai modelului ARX(728), pe ore (CET), pe cele 365 de estimări zilnice din anul de test, pentru prețurile din $d-1$, $d-2$ și $d-7$, consum și producția eoliană și solară.
 
-## Variabilele fundamentale din ziua d-2 aproape că nu îmbunătățesc prognoza {h=46d1e3f9}
+## Contribuția redusă a variabilelor fundamentale din ziua $d-2$ {h=ee6cfe59}
 
 Tabelul compară trei variante ale modelului ARX(728) în anul de test. Numai cu prețuri și calendar, MAE este 22,63 EUR/MWh. Adăugînd consumul și producția eoliană și solară din $d-2$, MAE devine 22,72, iar adăugînd și producția hidro, cea nucleară, importul net și EUA din $d-2$, MAE rămîne 22,72. Variabilele fundamentale nu îmbunătățesc prognoza.
 
@@ -507,7 +507,7 @@ Al doilea este un furnizor cu un proces flexibil de 4 ore, care poate fi plasat 
 @chart battery
 Stînga: profitul bateriei în anul de test, în mii EUR pe MW, pentru fiecare prognoză și pentru informația perfectă; dreapta: prețul mediu plătit de cumpărătorul flexibil, în EUR/MWh, cu blocul fix 8–12 pentru comparație.
 
-## O prognoză se acceptă numai după o listă de verificări; testul nostru arată că nu folosim informație din viitor {h=632bc1ff}
+## Lista de verificări a prognozei și testul privind folosirea informației din viitor {h=4b19b24a}
 
 Înainte de a avea încredere într-o testare retrospectivă, un birou de prognoză trebuie să verifice trei lucruri: fiecare variabilă de intrare a fost publicată înainte de ora 12:00 CET din ziua $d-1$; standardizările, transformările, penalizarea $\lambda$ și eventualele praguri s-au estimat numai pe fereastra de calibrare; validarea a fost cronologică, iar anul de test a fost folosit o singură dată. Raportul trebuie să conțină apoi MAE și rMAE față de modelul naiv, valorile $p$ ale testelor DM și acoperirea intervalelor, pe luni și pe ore, nu doar o cifră anuală.
 
@@ -538,7 +538,7 @@ Acuratețea variază mult de la o lună la alta, iar toate modelele reacționeaz
 
 Recapitularea verifică ideile principale prin cinci întrebări scurte, rezumă cursul și prezintă cercetările grupului nostru și lecturile suplimentare.
 
-## Verifică-te {h=f723684f}
+## Întrebări de autoevaluare {h=f723684f}
 
 1. Este duminică, ora 11:30 CET, și trebuie să prognozați cu modelul naiv prețul de luni pentru ora 19:00. Ce preț folosiți? Răspuns: prețul de luni trecută, ora 19:00 ($d-7$). În anul de test, pentru zilele de luni, sîmbătă și duminică, această regulă este mai precisă decît prețul din ziua precedentă (MAE 29,87 față de 33,48 EUR/MWh).
 2. Un furnizor de prognoze raportează rMAE 0,55 pentru România, dar folosește ca regresor consumul realizat în ziua $d-1$. Cumpărați prognoza? Răspuns: nu. La ora 12:00 din ziua $d-1$, consumul acelei zile nu este încă măsurat, deci testarea folosește informație din viitor. Cereți o nouă testare cu date pînă în ziua $d-2$ (sau cu prognozele publicate de TSO); cel mai bun rezultat corect al nostru este rMAE 0,795.

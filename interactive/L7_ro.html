@@ -53,12 +53,12 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din rezultatele salvate ale Quantlet-urilor (prognozele anului de test 1 noiembrie 2025 – 31 octombrie 2026) și din prețurile românești pentru ziua următoare. Butonul ▶ modifică parametrul principal pas cu pas. Abrevieri: MAE = eroarea absolută medie (mean absolute error); DNN = rețea neuronală adîncă (deep neural network); XGBoost = extreme gradient boosting; LEAR = model autoregresiv estimat cu LASSO (least absolute shrinkage and selection operator); AW-LEAR / AW-ARX = media prognozelor LEAR / ARX (model autoregresiv cu variabile exogene) pe mai multe ferestre de calibrare; GBM = gradient boosting machine; MLP = perceptron multistrat; DM = testul Diebold–Mariano; ROC = receiver operating characteristic (curba caracteristică de operare); AUC = aria de sub curba ROC.</p>
-<p class="toc"><a href="#s-dnn">Rețele neuronale adînci</a> · <a href="#s-cmp">Compararea modelelor, combinarea lor și costul de calcul</a> · <a href="#s-fm">Gradient boosting și modele fundație</a> · <a href="#s-spk">Salturi de preț, prețuri negative și un studiu de caz</a></p>
-<h2 class="sec" id="s-dnn">Rețele neuronale adînci</h2>
+<p class="toc"><a href="#s-dnn">Rețele neuronale profunde</a> · <a href="#s-cmp">Compararea modelelor, combinarea lor și costul de calcul</a> · <a href="#s-fm">Gradient boosting și modele fundaționale</a> · <a href="#s-spk">Vîrfuri de preț, prețuri negative și un studiu de caz</a></p>
+<h2 class="sec" id="s-dnn">Rețele neuronale profunde</h2>
 <section class="blk" id="early-stopping">
-  <h3>Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade</h3>
+  <h3>Oprirea timpurie pe baza erorii din zilele recente</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=13" target="_blank" rel="noopener"><img src="slides/L7_learning_curve_ro.jpg" alt="Slide-ul 13: Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=13" target="_blank" rel="noopener"><img src="slides/L7_learning_curve_ro.jpg" alt="Slide-ul 13: Oprirea timpurie pe baza erorii din zilele recente" loading="lazy"></a>
       <figcaption>Slide-ul 13</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="lc-p">Răbdarea: epoci fără îmbunătățire pînă la oprire: <b id="lc-p-v"></b></label><input type="range" id="lc-p" min="1" max="30" step="1" value="25"></div><button class="btn play" id="lc-play" type="button"></button></div><div class="charts one"><div class="chart" id="lc-chart"></div></div><ul class="out" id="lc-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_learning_curve" target="_blank" rel="noopener">EMQA_L7_learning_curve</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L7/EMQA_L7_learning_curve/EMQA_L7_learning_curve.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
@@ -66,9 +66,9 @@
   <details><summary>Răspuns</summary><p>Nu. Eroarea de antrenare continuă să scadă, pînă la 23,06 EUR/MWh în epoca 76, dar eroarea pe zilele recente este minimă în epoca 51 (24,50 EUR/MWh) și ajunge la 25,07 EUR/MWh în epoca 76: după epoca 51, rețeaua memorează trecutul. Cu o răbdare scurtă, căutarea se oprește prea devreme: cu 5 epoci se oprește în epoca 30 și păstrează epoca 25 (24,91 EUR/MWh).</p></details>
 </section><h2 class="sec" id="s-cmp">Compararea modelelor, combinarea lor și costul de calcul</h2>
 <section class="blk" id="monthly-mae">
-  <h3>Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni</h3>
+  <h3>Combinația este mai precisă decît AW-LEAR în 10 din 12 luni</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=26" target="_blank" rel="noopener"><img src="slides/L7_monthly_ml_ro.jpg" alt="Slide-ul 26: Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=26" target="_blank" rel="noopener"><img src="slides/L7_monthly_ml_ro.jpg" alt="Slide-ul 26: Combinația este mai precisă decît AW-LEAR în 10 din 12 luni" loading="lazy"></a>
       <figcaption>Slide-ul 26</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="mm-m"><span class="lbl">Modele</span><div class="tgs"><label class="tg"><input type="checkbox" name="mm-m" value="naive"> Naiv</label><label class="tg"><input type="checkbox" name="mm-m" value="aw_lear" checked> AW-LEAR</label><label class="tg"><input type="checkbox" name="mm-m" value="xgb" checked> XGBoost</label><label class="tg"><input type="checkbox" name="mm-m" value="dnn" checked> DNN</label><label class="tg"><input type="checkbox" name="mm-m" value="chr2"> Chronos-2</label><label class="tg"><input type="checkbox" name="mm-m" value="ens_ldx" checked> AW-LEAR + DNN + XGBoost</label></div></div><div class="ctl"><label for="mm-v">Afișare</label><select id="mm-v"><option value="lev" selected>MAE lunar (EUR/MWh)</option><option value="rel">Diferența față de AW-LEAR (EUR/MWh)</option></select></div></div><div class="charts one"><div class="chart" id="mm-chart"></div></div><ul class="out" id="mm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_monthly_ml" target="_blank" rel="noopener">EMQA_L7_monthly_ml</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L7/EMQA_L7_monthly_ml/EMQA_L7_monthly_ml.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
@@ -76,9 +76,9 @@
   <details><summary>Răspuns</summary><p>În 10 din 12 luni (MAE anual 21,97 EUR/MWh); singure, XGBoost și DNN bat AW-LEAR doar în cîte 3 luni. Toate modelele greșesc cel mai mult în aceleași luni: octombrie 2026 este luna cea mai slabă pentru AW-LEAR (34,9 EUR/MWh). Chronos-2, un model fundație folosit fără antrenare pe aceste date, are cel mai mic MAE anual, 20,82 EUR/MWh.</p></details>
 </section>
 <section class="blk" id="combination">
-  <h3>Media funcționează pentru că erorile nu sînt identice</h3>
+  <h3>Medierea prognozelor și diferențele dintre erorile modelelor</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=25" target="_blank" rel="noopener"><img src="slides/L7_combo_weight_ro.jpg" alt="Slide-ul 25: Media funcționează pentru că erorile nu sînt identice" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=25" target="_blank" rel="noopener"><img src="slides/L7_combo_weight_ro.jpg" alt="Slide-ul 25: Medierea prognozelor și diferențele dintre erorile modelelor" loading="lazy"></a>
       <figcaption>Slide-ul 25</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="cw-p">Perechea de modele</label><select id="cw-p"><option value="0" selected>AW-LEAR + XGBoost</option><option value="1">AW-LEAR + DNN</option><option value="2">AW-LEAR + Chronos-2</option><option value="3">XGBoost + DNN</option></select></div><div class="ctl"><label for="cw-w">Ponderea w a celui de-al doilea model: <b id="cw-w-v"></b></label><input type="range" id="cw-w" min="0" max="1" step="0.05" value="0.5"></div><button class="btn play" id="cw-play" type="button"></button></div><div class="charts "><div class="chart" id="cw-curve"></div><div class="chart" id="cw-month"></div></div><ul class="out" id="cw-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_combo_weight" target="_blank" rel="noopener">EMQA_L7_combo_weight</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L7/EMQA_L7_combo_weight/EMQA_L7_combo_weight.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
@@ -86,15 +86,15 @@
   <details><summary>Răspuns</summary><p>Aproape deloc. Cea mai bună pondere văzută ulterior pe anul de test este w = 0,40 (MAE 22,06 EUR/MWh), față de 22,10 EUR/MWh cu w = 0,5, iar ponderea cea mai bună nu este cunoscută dinainte. Deoarece corelația este sub 1, media greșește mai puțin decît fiecare model (23,26 pentru XGBoost, 22,53 pentru AW-LEAR). Pentru AW-LEAR + Chronos-2, ponderea văzută ulterior ar fi w = 0,75 (20,57 EUR/MWh, față de 20,81 cu ponderi egale).</p></details>
 </section>
 <section class="blk" id="dm-tests">
-  <h3>Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR</h3>
+  <h3>Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=24" target="_blank" rel="noopener"><img src="slides/L7_dm_matrix_ro.jpg" alt="Slide-ul 24: Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L7/lecture7_ro.pdf#page=24" target="_blank" rel="noopener"><img src="slides/L7_dm_matrix_ro.jpg" alt="Slide-ul 24: Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR" loading="lazy"></a>
       <figcaption>Slide-ul 24</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="dm-a">Modelul de referință (rîndul)</label><select id="dm-a"><option value="naive">Naiv</option><option value="aw_lear" selected>AW-LEAR</option><option value="ens4">Ansamblul de 4 (C2)</option><option value="xgb">XGBoost</option><option value="dnn">DNN</option><option value="bolt">Chronos-Bolt</option><option value="chr2">Chronos-2</option><option value="ens_ldx">AW-LEAR + DNN + XGBoost</option><option value="ens_t4">AW-ARX + AW-LEAR + DNN + XGBoost</option><option value="ens_lc">AW-LEAR + Chronos-2</option><option value="ens_t5">5 modele</option></select></div><div class="ctl"><label for="dm-b">Modelul concurent (coloana)</label><select id="dm-b"><option value="naive">Naiv</option><option value="aw_lear">AW-LEAR</option><option value="ens4">Ansamblul de 4 (C2)</option><option value="xgb">XGBoost</option><option value="dnn">DNN</option><option value="bolt">Chronos-Bolt</option><option value="chr2">Chronos-2</option><option value="ens_ldx" selected>AW-LEAR + DNN + XGBoost</option><option value="ens_t4">AW-ARX + AW-LEAR + DNN + XGBoost</option><option value="ens_lc">AW-LEAR + Chronos-2</option><option value="ens_t5">5 modele</option></select></div><div class="ctl"><label for="dm-L">Laguri Newey–West: <b id="dm-L-v"></b></label><input type="range" id="dm-L" min="0" max="14" step="1" value="7"></div></div><div class="charts "><div class="chart" id="dm-heat"></div><div class="chart" id="dm-cum"></div></div><ul class="out" id="dm-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_dm_matrix" target="_blank" rel="noopener">EMQA_L7_dm_matrix</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L7/EMQA_L7_dm_matrix/EMQA_L7_dm_matrix.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Media cu ponderi egale AW-LEAR + DNN + XGBoost are un MAE cu 0,56 EUR/MWh mai mic decît AW-LEAR. Este diferența semnificativă în testul Diebold–Mariano (DM) unilateral, la 5%?</div>
   <details><summary>Răspuns</summary><p>Da: p = 0,001 (statistica DM 3,09, cu 7 laguri Newey–West). Testul folosește cele 365 de erori absolute medii zilnice; diferența cumulată din dreapta crește constant de-a lungul anului, nu doar în cîteva zile. În schimb, adăugarea AW-LEAR la Chronos-2 nu schimbă nimic (p = 0,491). Modificați numărul de laguri: concluzia pentru această pereche nu depinde de el.</p></details>
-</section><h2 class="sec" id="s-fm">Gradient boosting și modele fundație</h2>
+</section><h2 class="sec" id="s-fm">Gradient boosting și modele fundaționale</h2>
 <section class="blk" id="foundation">
   <h3>Chronos-2 este mai precis decît AW-LEAR în fiecare oră a zilei</h3>
   <div class="pair">
@@ -104,7 +104,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Chronos-2 este un model fundație: prognozează din ultimele 2048 de prețuri orare, fără să fi fost antrenat pe date românești. În cîte dintre cele 24 de ore bate AW-LEAR pe anul de test și sînt benzile sale 10%–90% bine calibrate?</div>
   <details><summary>Răspuns</summary><p>Bate AW-LEAR în toate cele 24 de ore (MAE anual 20,82 față de 22,53 EUR/MWh). Banda sa 10%–90% conține însă 76,5% dintre prețuri, nu 80%: este prea îngustă și trebuie recalibrată (Cursul 2) înainte de a fi folosită pentru risc. Chronos-Bolt, mai mic și mai vechi, este la egalitate cu AW-LEAR (22,15 EUR/MWh, DM p = 0,220).</p></details>
-</section><h2 class="sec" id="s-spk">Salturi de preț, prețuri negative și un studiu de caz</h2>
+</section><h2 class="sec" id="s-spk">Vîrfuri de preț, prețuri negative și un studiu de caz</h2>
 <section class="blk" id="spike-decision">
   <h3>Regula cost–pierdere: reacționați cînd probabilitatea depășește C/L</h3>
   <div class="pair">

@@ -253,7 +253,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 2,
             "en": {
-                "title": "What drives grid capacity",
+                "title": "Determinants of grid capacity",
                 "text": "On 28 October 2026 Romanian load ranged from 5,253 megawatts (MW) at 3:00 to 7,719 MW at 17:00 Central European Time (CET), and the day's energy was 159,558 megawatt-hours (MWh). Which number drives the capacity and network costs?",
                 "options": [
                     "159,558 MWh, the energy consumed that day",
@@ -265,7 +265,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "A supplier buys and sells energy in MWh, and 159,558 MWh is simply 24 hours times the mean load of 6,648 MW; but the network is sized for the highest power it must carry."
             },
             "ro": {
-                "title": "Ce determină capacitatea rețelei",
+                "title": "Factorii care determină capacitatea rețelei",
                 "text": "La 28 octombrie 2026, consumul României a variat între 5 253 de megawați (MW) la ora 3:00 și 7 719 MW la ora 17:00, ora Europei Centrale (CET), iar energia zilei a fost de 159 558 de megawați-oră (MWh). Ce cifră determină costurile de capacitate și de rețea?",
                 "options": [
                     "159 558 MWh, energia consumată în acea zi",
@@ -280,7 +280,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Which clock defines a day",
+                "title": "Time zone of the delivery day",
                 "text": "Raw timestamps from the European Network of Transmission System Operators for Electricity (ENTSO-E) are in Coordinated Universal Time (UTC). Why must daily price statistics be computed on the delivery day of the Single Day-Ahead Coupling (SDAC) instead?",
                 "options": [
                     "Because UTC days have 25 hours on the last Sunday of October",
@@ -292,7 +292,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "UTC has no clock changes and is not rounded; the problem is that it is shifted against the CET/CEST delivery day, so one or two hours would land in the wrong day."
             },
             "ro": {
-                "title": "Ce ceas definește ziua",
+                "title": "Fusul orar al zilei de livrare",
                 "text": "Marcajele temporale din datele brute ale Rețelei europene a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E) sînt în timpul universal coordonat (UTC). De ce statisticile zilnice de preț trebuie calculate pe ziua de livrare din cuplarea unică a piețelor pentru ziua următoare (SDAC)?",
                 "options": [
                     "Pentru că zilele UTC au 25 de ore în ultima duminică din octombrie",
@@ -307,7 +307,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Nuclear fall as lower bound",
+                "title": "Fall in nuclear output as a lower bound",
                 "text": "Romanian nuclear output in January–October 2026 was 31.3% lower than in the same months of 2025, compared on the hours reported in both years. Why does the lecture call this a lower bound for the true fall?",
                 "options": [
                     "Because rooftop solar is consumed behind the meter and is not metered",
@@ -319,7 +319,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "Missing values stay missing and are never counted as zero; since the outage days with no data drop out of both years, the reported 31.3% can only understate the fall."
             },
             "ro": {
-                "title": "Scăderea nucleară, limită inferioară",
+                "title": "Scăderea producției nucleare ca limită inferioară",
                 "text": "Producția nucleară a României în ianuarie–octombrie 2026 a fost cu 31,3% mai mică decît în aceleași luni din 2025, pe orele raportate în ambii ani. De ce cursul o numește o limită inferioară a scăderii reale?",
                 "options": [
                     "Pentru că producția panourilor de pe acoperișuri este consumată direct de proprietari și nu este măsurată",
@@ -361,7 +361,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Volatility scales with level",
+                "title": "Volatility and price level",
                 "text": "The standard deviation of daily Romanian price changes was 8.6 euro per megawatt-hour (EUR/MWh) in 2020, at a mean price of 39.5, and 58.9 EUR/MWh in 2022, at a mean of 265.3. What is the right managerial reading?",
                 "options": [
                     "Romania became structurally riskier per euro of price in 2022",
@@ -373,7 +373,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "Relative to the price level, volatility barely changed; and 2022 had only 4 spike hours, because the whole year was high. A volatility in EUR/MWh is not comparable across very different price levels."
             },
             "ro": {
-                "title": "Volatilitatea urmează nivelul",
+                "title": "Volatilitatea și nivelul prețului",
                 "text": "Abaterea standard a variațiilor zilnice ale prețului din România a fost de 8,6 euro pe megawatt-oră (EUR/MWh) în 2020, la un preț mediu de 39,5, și de 58,9 EUR/MWh în 2022, la o medie de 265,3. Care este interpretarea corectă pentru un manager?",
                 "options": [
                     "România a devenit structural mai riscantă pe fiecare euro de preț în 2022",
@@ -415,7 +415,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Tuesday against Sunday",
+                "title": "Tuesday and Sunday prices",
                 "text": "On 199 weeks, from 2 January 2023 to 25 October 2026, a Romanian Tuesday on the day-ahead market (PZU, Piața pentru Ziua Următoare) was on average 12.7 euro per megawatt-hour (EUR/MWh) above the mean of its week, and a Sunday 30.7 EUR/MWh below. What is the average price gap between a Tuesday and the Sunday of the same week?",
                 "options": [
                     "About 43.4 EUR/MWh",
@@ -427,7 +427,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "The two profile values have opposite signs around the same weekly mean, so they add up in absolute value; 18.0 subtracts them as if both were on the same side, and either value alone ignores the other day."
             },
             "ro": {
-                "title": "Marți față de duminică",
+                "title": "Prețurile de marți și de duminică",
                 "text": "Pe 199 de săptămîni, între 2 ianuarie 2023 și 25 octombrie 2026, o zi de marți pe Piața pentru Ziua Următoare (PZU) din România a fost în medie cu 12,7 euro pe megawatt-oră (EUR/MWh) peste media săptămînii sale, iar o duminică cu 30,7 EUR/MWh sub ea. Care este diferența medie de preț dintre o zi de marți și duminica aceleiași săptămîni?",
                 "options": [
                     "Circa 43,4 EUR/MWh",
@@ -496,7 +496,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 3,
             "en": {
-                "title": "When prices turn negative",
+                "title": "Conditions for negative prices",
                 "text": "The first negative Romanian day-ahead price occurred on 21 May 2023. Since 2024, how are negative-price hours distributed over the day and the week?",
                 "options": [
                     "Mostly at night, between 00:00 and 06:00, when demand is lowest",
@@ -508,7 +508,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "In Romania the driver is solar, not night-time wind: inflexible output and solar exceed demand at midday, especially on weekends, when factories and offices consume less."
             },
             "ro": {
-                "title": "Cînd prețurile devin negative",
+                "title": "Condițiile apariției prețurilor negative",
                 "text": "Primul preț negativ pentru ziua următoare din România a apărut la 21 mai 2023. Din 2024, cum se distribuie orele cu preț negativ în cursul zilei și al săptămînii?",
                 "options": [
                     "Mai ales noaptea, între 00:00 și 06:00, cînd cererea este minimă",
@@ -955,7 +955,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 0,
             "en": {
-                "title": "A European rise in 2026",
+                "title": "Price increases across Europe in 2026",
                 "text": "In January–October 2026 the Romanian day-ahead price rose by 29.8%, from 105.88 to 137.45 euro per megawatt-hour (EUR/MWh), and the German–Luxembourg price by 30.1%, from 87.66 to 114.01. What does the comparison show?",
                 "options": [
                     "The rise was European, but the Romanian premium over Germany widened from 18.2 to 23.4 EUR/MWh",
@@ -967,7 +967,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "A similar percentage rise on a higher Romanian base widens the gap in EUR/MWh; and Romania had fewer negative hours in 2026 (171.75 against 196), not more."
             },
             "ro": {
-                "title": "O creștere europeană în 2026",
+                "title": "Creșterea prețurilor în Europa în 2026",
                 "text": "În ianuarie–octombrie 2026, prețul pentru ziua următoare din România a crescut cu 29,8%, de la 105,88 la 137,45 euro pe megawatt-oră (EUR/MWh), iar cel din Germania–Luxemburg cu 30,1%, de la 87,66 la 114,01. Ce arată comparația?",
                 "options": [
                     "Creșterea a fost europeană, dar prima prețului românesc față de cel german s-a mărit de la 18,2 la 23,4 EUR/MWh",
@@ -982,7 +982,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Bulgaria's cheaper evenings",
+                "title": "Evening prices in Bulgaria",
                 "text": "In April–September evenings (19:00–22:00 Eastern European Time, EET), the average price was 171.1 euro per megawatt-hour (EUR/MWh) in Romania and 169.7 in Bulgaria in 2025, but 215.5 against 178.0 in 2026; at midday prices stayed close (48.1 against 46.0). What is the most defensible reading?",
                 "options": [
                     "Bulgarian batteries are proven to have caused the gap, since it opened only in the evening",
@@ -994,7 +994,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "Coupled prices separate when the network binds, and midday prices stayed close, so solar is not the explanation; without battery data covering the start of the gap, the link cannot be called proof."
             },
             "ro": {
-                "title": "Serile mai ieftine din Bulgaria",
+                "title": "Prețurile de seară din Bulgaria",
                 "text": "În orele de seară din aprilie–septembrie (19:00–22:00, ora Europei de Est, EET), prețul mediu a fost de 171,1 euro pe megawatt-oră (EUR/MWh) în România și de 169,7 în Bulgaria în 2025, dar de 215,5 față de 178,0 în 2026; la amiază, prețurile au rămas apropiate (48,1 față de 46,0). Care este interpretarea cea mai solidă?",
                 "options": [
                     "Bateriile din Bulgaria au cauzat cu siguranță diferența, deoarece aceasta apare numai seara",

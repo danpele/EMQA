@@ -22,7 +22,7 @@ The lecture first fixes how to measure volatility, in percent or in euro per meg
 
 Before any model, two choices decide what "volatility" means for electricity: the unit in which a price change is measured, percent or euro per megawatt-hour, and what is removed from the change because it is known in advance, the weekly calendar. This section makes both choices on the Romanian data and documents the stylised facts that the models of the next sections must reproduce: volatility clustering, fat tails and a volatility in money that grows with the price level.
 
-## Real data: Romanian power, fuels, carbon and energy shares {h=f7b0eb19}
+## Data sources: Romanian power, fuels, carbon and energy shares {h=23cbfff3}
 
 The lecture uses only real, downloaded data. The main series is the day-ahead price of Romania (RO) on the PZU, with Hungary (HU) and the Germany–Luxembourg bidding zone (DE-LU) for comparison. The prices come from OPCOM, the Hungarian Power Exchange (HUPX) and EPEX SPOT, and are taken from the European Network of Transmission System Operators for Electricity (ENTSO-E) through energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE). Power data are both daily and hourly and cover 1 January 2019 to 31 October 2026, the last complete month: 2,861 delivery days in Central European Time (CET), none missing, downloaded on 4 November 2026.
 
@@ -110,7 +110,7 @@ The chart plots, on a logarithmic scale, the density of the shocks standardised 
 @chart tails
 Density of the GARCH-standardised shocks $z_t$ of the Romanian price (bars, logarithmic scale), with the normal density (dashed) and the Student-t density with $\nu$ = 4.3.
 
-## The crisis: same volatility in percent, 4 times higher in EUR/MWh {h=98887d1a}
+## Volatility in 2022: similar in percent, 4 times higher in EUR/MWh {h=f92837ef}
 
 The choice of unit is not a technical detail. The chart shows, year by year, the standard deviation of the shocks in percent and in EUR/MWh. In percent, 2022, the year of the energy crisis, was no more volatile than 2019: 18.5% against 18.7%, a ratio of 0.99. In EUR/MWh the same years give 11.2 against 45.8, a ratio of 4.1, because the mean price rose from 50 to 265 EUR/MWh.
 
@@ -268,7 +268,7 @@ A regression of $\ln\hat\sigma_m(u)$ on $\ln\bar P_m$, where $\hat\sigma_m(u)$ i
 @chart vol_level
 Monthly standard deviation of the EUR/MWh shocks against the monthly mean price, both on log scales, coloured by year, with the fitted log-log line.
 
-## Fat tails matter more than asymmetry {h=8b0150c0}
+## Relative importance of fat tails and asymmetry {h=c5a84cc3}
 
 The table puts the six models side by side: three variance equations (GARCH, GJR, EGARCH), each with normal and Student-t shocks, in both units. It gives the persistence, the BIC and the Ljung–Box $p$-value for the squared standardised shocks $z_t^2$.
 
@@ -307,7 +307,7 @@ For every day the model gives the probability of the turbulent regime. On the Ro
 
 @practice A turbulent-regime probability above 0.5 triggers a review of hedges and collateral.
 
-## The crisis was one long turbulent regime; 2026 moves in and out {h=dc3fca36}
+## Volatility regimes during the crisis and in 2026 {h=d5560c86}
 
 The chart puts the daily base price above the smoothed probability of the turbulent regime. The energy crisis appears as one long block: the longest turbulent spell ran from 15 June 2022 to 31 January 2023, 231 days. Before it, the calm regime dominated almost completely, and after it the model moves in and out of turbulence for shorter spells.
 
@@ -409,7 +409,7 @@ The design of the test: the test year runs from 1 November 2025 to 31 October 20
 
 @practice Ask your risk vendor for QLIKE on your own days, out of sample.
 
-## GARCH-type forecasts beat the 30-day history, significantly in EUR {h=8d9b469d}
+## GARCH-type forecasts compared with 30-day historical volatility {h=d145939a}
 
 The table compares the one-day-ahead variance forecasts of five models over the 365 days of the test year: the 30-day historical variance, an exponentially weighted moving average (EWMA) as in RiskMetrics (1996), and the three Student-t GARCH models.
 
@@ -438,7 +438,7 @@ The history also forgets abruptly. Thirty days later the shock leaves the window
 @chart fc_test
 Absolute daily shock $|u_t|$ in EUR/MWh over the test year (grey bars), with the GARCH-t forecast $\hat\sigma_t$ made on $t-1$ and the 30-day historical forecast (dashed).
 
-## Weeks ahead, volatility returns to its long-run level {h=ca5ab33b}
+## Over several weeks, volatility returns to its long-run level {h=5c010329}
 
 High volatility is expected to fall and low volatility to rise, so the usual rule $\sigma\sqrt{h}$ misstates the risk over $h$ days. The GARCH forecast for $h$ days ahead is
 
@@ -494,7 +494,7 @@ On the right, the 90% band for Brent over a horizon of $h$ trading days, compute
 @chart term_structure
 Left: GARCH-t forecast of the daily $\sigma$ of the Romanian price by days ahead, with the long-run level (dashed); right: 90% band for Brent over $h$ trading days on 9 April 2026, GARCH-t against today's $\sigma\times\sqrt{h}$.
 
-## Case study C3: Romanian energy shares are weakly tied to oil {h=e7d16268}
+## Case study C3: weak link between Romanian energy shares and oil {h=11d5b2c7}
 
 Case study C3 starts from a paper of our group, Grecu, Cramer, Pele & Lessmann (2025). The paper uses the stock indices of the 27 European Union countries and Brent and TTF futures over 2010–2023. It estimates the volatility of each series with a GARCH model, then a dynamic conditional correlation (DCC) between each index and the energy prices for every day, and finally a Markov model for regimes of that correlation. It finds that the correlation with oil is mostly between 0 and 0.4, that Central and Eastern Europe (CEE) is the least correlated region and that the correlation regimes persist with probabilities above 98%.
 
@@ -510,7 +510,7 @@ In 2026 the Romanian power price rose to a higher level without entering a 2022-
 
 The wrap-up checks the main ideas with five short questions, summarises the lecture and points to the research of our group and to further reading.
 
-## Check yourself {h=f052645c}
+## Self-assessment questions {h=f052645c}
 
 1. For Brent, GARCH(1,1)-t gives $\hat\alpha+\hat\beta$ = 0.973. After a shock, how long until half of the extra variance is gone? Answer: by @eq:halflife, $h_{1/2}=\ln 0.5/\ln 0.973$ = 25.6 trading days, about 5 weeks: limits stay wider for weeks, not days.
 2. In 2022 the percent volatility of the Romanian price was the same as in 2019. Did the risk of a supplier's open position of 10 MW change? Answer: yes. The position gains or loses in EUR, and the EUR/MWh volatility of the shocks rose 4.1 times, with the price level.

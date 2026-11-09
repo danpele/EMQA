@@ -268,7 +268,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kingma \& Ba, 2015, ICLR; Srivastava et al., 2014, JMLR)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Early stopping: stop when the error on recent days stops falling}
+\begin{frame}{Early stopping based on the error on recent days}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/en/learning_curve.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: chosen DNN, refit for 2026-10, seed 1.}
@@ -400,7 +400,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Ansari et al., 2024, TMLR; Ansari et al., 2025, arXiv)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Chronos-2 beats AW-LEAR in every hour of the day}
+\begin{frame}{Chronos-2 is more accurate than AW-LEAR in every hour of the day}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.437\textheight,keepaspectratio]{charts/en/foundation_hour.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE): OPCOM prices. Data: test year 2025-11-01 to 2026-10-31; zero-shot, context = last 2048 hourly prices.}
@@ -416,7 +416,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_foundation\_hour}{Quantlets/L7/EMQA_L7_foundation_hour}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{AIDA 2026 keynote: deep networks beat LEAR, zero-shot models compete}
+\begin{frame}{AIDA 2026 keynote: deep networks, LEAR and zero-shot models}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}
@@ -519,7 +519,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{DM tests: combinations with ML beat AW-LEAR significantly}
+\begin{frame}{DM tests: combinations with ML significantly outperform AW-LEAR}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.502\textheight,keepaspectratio]{charts/en/dm_matrix.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values.}
@@ -534,7 +534,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; one-sided DM tests)}\hfill\qlink{EMQA\_L7\_dm\_matrix}{Quantlets/L7/EMQA_L7_dm_matrix}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Averaging works because the errors are not identical}
+\begin{frame}{Forecast averaging and the differences between model errors}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.416\textheight,keepaspectratio]{charts/en/combo_weight.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31; illustration, the weight is not chosen on the test year.}
@@ -550,7 +550,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; own computation)}\hfill\qlink{EMQA\_L7\_combo\_weight}{Quantlets/L7/EMQA_L7_combo_weight}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Month by month, the combination beats AW-LEAR in 10 of 12 months}
+\begin{frame}{The combination outperforms AW-LEAR in 10 of 12 months}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.497\textheight,keepaspectratio]{charts/en/monthly_ml.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31.}
@@ -566,7 +566,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_monthly\_ml}{Quantlets/L7/EMQA_L7_monthly_ml}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Compute cost: daily LEAR is the expensive model, ML costs minutes}
+\begin{frame}{Computational cost of daily LEAR and of the ML models}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.580\textheight,keepaspectratio]{charts/en/cost_gain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31; one processor core.}
@@ -619,7 +619,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Shapley, 1953; Lundberg et al., 2020, Nat.\ Mach.\ Intell.)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{What drives the trees: yesterday's price at the same hour}
+\begin{frame}{Main input of the tree models: yesterday's price at the same hour}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.486\textheight,keepaspectratio]{charts/en/shap_global.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31, 8760 hours.}
@@ -667,7 +667,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Breiman, 2001, Mach.\ Learn.; own computation)}\hfill\qlink{EMQA\_L7\_perm\_dnn}{Quantlets/L7/EMQA_L7_perm_dnn}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Energy finance uses machine learning widely but rarely explains it}
+\begin{frame}{Machine learning in energy finance: a systematic literature review}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}
@@ -722,7 +722,7 @@ Ensemble of 5 (with Chronos-2) & \cellcolor{Forest!50}21.12 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_events\_hour}{Quantlets/L7/EMQA_L7_events_hour}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Spike classifiers: a good price forecast already detects spikes}
+\begin{frame}{Spike classifiers and spike detection from price forecasts}
 \footnotesize
 \intuition{A classifier gives the probability that an hour is a spike; we judge how well it ranks the hours and how honest its probabilities are.}
 \begin{columns}[T,onlytextwidth]
@@ -842,7 +842,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; SHAP values in EUR/MWh, Appendix C)}\hfill\qlink{EMQA\_L7\_shap\_local}{Quantlets/L7/EMQA_L7_shap_local}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Our group on spike early warning: the paper and our replication}
+\begin{frame}{Research from our group on spike early warning: paper and replication}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{What the paper did} (Andrei, Pele, Cramer, Amza \& Diaconu, 2026)
@@ -936,7 +936,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(AIDA 2026 slides; papers: \href{https://doi.org/10.1111/1468-0262.00152}{White, 2000}; \href{https://doi.org/10.1198/073500105000000063}{Hansen, 2005}; \href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{Romano \& Wolf, 2005}; \href{https://doi.org/10.1016/j.jempfin.2010.01.001}{Hsu et al., 2010})}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Retraining: a model frozen for a year loses 4.2\%}
+\begin{frame}{Retraining: accuracy loss of 4.2\% after a year without updating}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.442\textheight,keepaspectratio]{charts/en/pit_retrain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31.}
@@ -1003,7 +1003,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Quiz 2: which model to deploy}
+\begin{frame}{Quiz 2: choosing the model to deploy}
 \small
 \begin{itemize}
   \item Chronos-2 has the lowest MAE of the single models
@@ -1220,7 +1220,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kingma \& Ba, 2015, ICLR; Hastie et al., 2009)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Appendix B: why the optimal leaf value is $-G/(H+\lambda)$}
+\begin{frame}{Appendix B: derivation of the optimal leaf value $-G/(H+\lambda)$}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

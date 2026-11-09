@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The risk factor is the daily change of the Romanian day-ahead base price, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): a rise is a loss for a supplier that buys on the day-ahead market. VaR (Value at Risk) is a quantile of the loss, ES (Expected Shortfall) the mean loss beyond it. The ▶ button moves the main parameter step by step.</p>
-<p class="toc"><a href="#s-risk">Price risk: losses, quantiles, VaR and ES</a> · <a href="#s-est">Estimating VaR and ES: four methods</a> · <a href="#s-bt">Backtesting VaR and ES</a> · <a href="#s-coll">From quantiles to margins, guarantees and limits</a> · <a href="#s-pos">Price risk for suppliers and producers</a></p>
+<p class="toc"><a href="#s-risk">Price risk: losses, quantiles, VaR and ES</a> · <a href="#s-est">Estimating VaR and ES: four methods</a> · <a href="#s-bt">Backtesting VaR and ES</a> · <a href="#s-coll">Margins, guarantees and position limits</a> · <a href="#s-pos">Price risk for suppliers and producers</a></p>
 <h2 class="sec" id="s-risk">Price risk: losses, quantiles, VaR and ES</h2>
 <section class="blk" id="var-es">
   <h3>Large price rises are far more frequent than the normal curve allows</h3>
@@ -94,7 +94,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> Over 250 days, a correct 99% VaR model is in the green zone (at most 4 exceedances) 89.2% of the time. In which share of the days is the normal model in the red zone (10 or more)?</div>
   <details><summary>Answer</summary><p>In 29.5% of the days since the backtest window filled (from September 2017), against 6.2% for FHS and 2.8% for EVT; a correct model would be red only 0.025% of the time. The zones are binomial quantiles: green while the cumulative probability of the count under a Binomial(n, 1%) law is below 95%, red from 99.99%. Change the window to see the thresholds scale with n.</p></details>
-</section><h2 class="sec" id="s-coll">From quantiles to margins, guarantees and limits</h2>
+</section><h2 class="sec" id="s-coll">Margins, guarantees and position limits</h2>
 <section class="blk" id="horizon">
   <h3>The square-root-of-time rule overstates the 10-day risk</h3>
   <div class="pair">

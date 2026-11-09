@@ -16,7 +16,7 @@ Fiecare MWh de eroare se transformă într-un \emph{dezechilibru}, decontat de r
 Directorul de tranzacționare trebuie să decidă: \textbf{ce model de prognoză folosim în activitatea curentă --- un model sezonier clasic, un model de învățare automată sau un model fundamental preantrenat (\emph{foundation model}) --- și justifică îmbunătățirea acurateței costul implementării?}}
 \end{scenario}
 
-\section{\T{What the paper did}{Lucrarea de referință}}
+\section{\T{The reference paper}{Lucrarea de referință}}
 \textbf{\T{Question.}{Întrebarea de cercetare.}} \T{The paper benchmarks univariate forecasting models on Romania's national electricity consumption, (1) on predictive accuracy (MSE, MAE, $R^2$) and (2) on the effect of model architecture (p.~147).}%
 {Lucrarea compară modele de prognoză univariate aplicate consumului național de energie electrică al României, (1) din punctul de vedere al acurateței (MSE, MAE, $R^2$) și (2) din punctul de vedere al efectului pe care îl are arhitectura modelului (p.~147).}
 
@@ -81,7 +81,7 @@ Acuratețea se măsoară pe toate cele $N$ ore din perioada de test, cu indicato
 {Alegerea modelului are o miză financiară: volumul anual al dezechilibrelor $\approx$ MAE $\times$ 8.760 de ore $\times$ cota dumneavoastră de piață; înmulțit cu costul dezechilibrului pe MWh, acesta dă costul anual. Un model merită introdus în activitatea curentă dacă economia astfel obținută depășește costurile de operare și de întreținere.}
 \end{decision}
 
-\section{\T{Replicate it yourself}{Replicare pe datele cursului}}
+\section{\T{Replication on the course data}{Replicare pe datele cursului}}
 \T{Notebook \texttt{C2\_notebook\_EN.ipynb}: hourly load from ENTSO-E via energy-charts.info (\texttt{generation\_ro\_mw\_hourly\_utc.csv}), the paper's sample and an 80/20 split; the test period starts on \NtestStart\ (\NnDays\ forecast days).
 Our series reproduces the paper's Table~1: \NnHours\ hours, mean \NmeanLoad\ MW, minimum \NminLoad, maximum \NmaxLoad\ --- the same Transelectrica metering, published twice.}%
 {Notebook-ul \texttt{C2\_notebook\_RO.ipynb} folosește consumul orar publicat de ENTSO-E, preluat de pe energy-charts.info (\texttt{generation\_ro\_mw\_hourly\_utc.csv}), același eșantion ca lucrarea și aceeași împărțire 80/20; perioada de test începe la \NtestStart\ (\NnDays\ zile de prognoză).

@@ -27,8 +27,8 @@ BLOCKS = [('early-stopping', 'learning_curve', 'dnn', 'lc'),
 SECTIONS = {
  'en': dict(dnn='Deep neural networks', fm='Gradient boosting and foundation models', cmp='Model comparison, combination and computational cost',
             spk='Spikes, negative prices and a case study'),
- 'ro': dict(dnn='Rețele neuronale adînci', fm='Gradient boosting și modele fundație', cmp='Compararea modelelor, combinarea lor și costul de calcul',
-            spk='Salturi de preț, prețuri negative și un studiu de caz'),
+ 'ro': dict(dnn='Rețele neuronale profunde', fm='Gradient boosting și modele fundaționale', cmp='Compararea modelelor, combinarea lor și costul de calcul',
+            spk='Vîrfuri de preț, prețuri negative și un studiu de caz'),
 }
 
 ABBR_EN = ('Abbreviations: MAE = mean absolute error; DNN = deep neural network; XGBoost = extreme gradient boosting; LEAR = LASSO-estimated '

@@ -167,7 +167,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data: Romanian power, fuels, carbon and energy shares", "Folosim numai date reale: energie, combustibili, carbon, acțiuni"), table(
+    D.frame(t("Data sources: Romanian power, fuels, carbon and energy shares", "Sursele datelor: energie electrică, combustibili, carbon și acțiuni energetice"), table(
         "@{}p{0.40\\textwidth}p{0.11\\textwidth}p{0.44\\textwidth}@{}",
         [t("Series", "Seria"), t("Frequency", "Frecvența"), t("Source", "Sursa")],
         [[t("Day-ahead price of Romania (RO), Piața pentru Ziua Următoare (PZU); Hungary (HU) and Germany--Luxembourg (DE-LU) for comparison",
@@ -199,7 +199,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 1 measuring volatility
     D.section(t("Measuring volatility", "Măsurarea volatilității"))
-    D.subsection(t("Percent or EUR/MWh", "În procente sau în EUR/MWh"))
+    D.subsection(t("Volatility in percent and in EUR/MWh", "Volatilitatea în procente și în EUR/MWh"))
     D.concept(t("Definition of volatility", "Definiția volatilității"),
               t("Volatility tells how far from today's price tomorrow's price usually lands.",
                 "Volatilitatea arată cît de departe de prețul de azi ajunge, de obicei, prețul de mîine."),
@@ -291,8 +291,8 @@ def build(lang, H=None):
                      "o limită calculată cu distribuția normală este depășită mult mai des decît s-a planificat (cursul 4)."),
                tryit=NB + " \\S2", height="0.50\\textheight", cite=t("(" + OWN + "; Bollerslev, 1987, RESTAT)", "(" + OWN + "; Bollerslev, 1987, RESTAT)"))
 
-    D.figframe(t("The crisis: same volatility in percent, @{voly.ratio_eur_22_19|.0f} times higher in EUR/MWh",
-                 "Criza: aceeași volatilitate în procente, de @{voly.ratio_eur_22_19|.0f} ori mai mare în EUR/MWh"),
+    D.figframe(t("Volatility in 2022: similar in percent, @{voly.ratio_eur_22_19|.0f} times higher in EUR/MWh",
+                 "Volatilitatea din 2022: similară în procente, de @{voly.ratio_eur_22_19|.0f} ori mai mare în EUR/MWh"),
                None, None, "vol_units", [
                    t(("Standard deviation of the shocks, 2019 vs 2022",
                       "in percent: @{voly.RO_pct_d.2019|.1f}\\% vs @{voly.RO_pct_d.2022|.1f}\\% (ratio @{voly.ratio_pct_22_19|.2f})",
@@ -373,7 +373,7 @@ def build(lang, H=None):
                 "folosiți șocuri de tip Student; cu șocuri normale, limitele rămîn largi prea mult timp."),
               tryit=NB + " \\S3", cite="(Bollerslev, 1987, RESTAT)", wl="0.50", wr="0.47")
 
-    D.chart(t("GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh", "GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh"),
+    D.chart(t("GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh", "GARCH: salturi scurte în procente, creștere persistentă în EUR/MWh"),
             "cond_vol", [
                 t(("Peaks", "in percent: @{garch.cv.pct_max|.0f}\\% per day on @{garch.cv.pct_max_date|date}, gone within days",
                    "in EUR/MWh: @{garch.cv.eur_max|.1f} on @{garch.cv.eur_max_date|date}, against a minimum of @{garch.cv.eur_min|.1f} on @{garch.cv.eur_min_date|date}; @{garch.cv.eur_last|.1f} at the cut-off"),
@@ -477,7 +477,7 @@ def build(lang, H=None):
                    fmt(GG[u][k]["lbz2_p"], ".3f", lang)]
         trow.append(r_)
     best = {"garch_n": "GARCH", "garch_t": "GARCH-t", "gjr_n": "GJR", "gjr_t": "GJR-t", "egarch_n": "EGARCH", "egarch_t": "EGARCH-t"}
-    D.frame(t("Fat tails matter more than asymmetry", "Cozile groase contează mai mult decît asimetria"),
+    D.frame(t("Relative importance of fat tails and asymmetry", "Importanța relativă a cozilor groase și a asimetriei"),
             "\\begin{center}" + table("@{}l" + "rrr" * 2 + "@{}", [t("Model", "Modelul"), "$\\alpha+\\beta$ (\\%)", "BIC (\\%)", t("$p$, $z^2$ (\\%)", "$p$, $z^2$ (\\%)"),
                                                                     "$\\alpha+\\beta$ (EUR)", "BIC (EUR)", t("$p$, $z^2$ (EUR)", "$p$, $z^2$ (EUR)")],
                                       trow, size="footnotesize", stretch="1.05") + "\\end{center}\\vspace{-1mm}" + it(
@@ -513,8 +513,8 @@ def build(lang, H=None):
                 "o probabilitate a regimului agitat peste 0{,}5 cere revizuirea acoperirii riscului și a garanțiilor."),
               tryit=NB + " \\S5", cite="(Hamilton, 1989, Econometrica)", wl="0.52", wr="0.45")
 
-    D.chart(t("The crisis was one long turbulent regime; 2026 moves in and out",
-              "Criza a fost un regim agitat lung; 2026 alternează între regimuri"),
+    D.chart(t("Volatility regimes during the crisis and in 2026",
+              "Regimurile de volatilitate în timpul crizei și în 2026"),
             "ms_regime", [
                 t(("Turbulent days", "longest spell: @{" + M + ".longest_start|date} -- @{" + M + ".longest_end|date}, @{" + M + ".longest_days} days",
                    "share by year: 2022 @{" + M + ".by_year.2022|.0f}\\%, 2025 @{" + M + ".by_year.2025|.0f}\\%, 2026 @{" + M + ".by_year.2026|.0f}\\% (@{" + M + ".share_2026_q3q4|.0f}\\% since July)"),
@@ -647,8 +647,8 @@ def build(lang, H=None):
             r_ += [heat(FC[u][k]["qlike"], min(qs), max(qs), True, fmt(FC[u][k]["qlike"], ".3f", lang)), pv(f"fc.{u}.{k}.p_beats_hist") if k != "hist30" else "--"]
         frows.append(r_)
     bestn = {"hist30": "hist30", "ewma": "EWMA", "garch": "GARCH-t", "gjr": "GJR-t", "egarch": "EGARCH-t"}
-    D.frame(t("GARCH-type forecasts beat the 30-day history, significantly in EUR",
-              "Modelele GARCH sînt mai precise decît varianța istorică"),
+    D.frame(t("GARCH-type forecasts compared with 30-day historical volatility",
+              "Prognozele de tip GARCH comparate cu volatilitatea istorică pe 30 de zile"),
             "\\begin{center}" + table("@{}lrrrr@{}", [t("One-day-ahead variance", "Varianța pentru ziua următoare"),
                                                        t("QLIKE, \\%", "QLIKE, \\%"), t("$p$ vs 30-day", "$p$ față de 30 de zile"),
                                                        t("QLIKE, EUR", "QLIKE, EUR"), t("$p$ vs 30-day", "$p$ față de 30 de zile")], frows,
@@ -683,7 +683,7 @@ def build(lang, H=None):
             tryit=NB + " \\S7", cite=t("(" + OWN + ", " + TEST + ")", "(" + OWN + ")"))   # RO: test year already in the source line; keeps the footer on one line
 
     BP, BE = "ts.brent.peak", "ts.brent.end"
-    D.concept(t("Weeks ahead, volatility returns to its long-run level",
+    D.concept(t("Over several weeks, volatility returns to its long-run level",
                 "Pe mai multe săptămîni, volatilitatea revine spre nivelul normal"),
               t("High volatility is expected to fall and low volatility to rise, so $\\sigma\\sqrt{h}$ misstates the risk over $h$ days.",
                 "O volatilitate mare se așteaptă să scadă, iar una mică să crească; de aceea, regula $\\sigma\\sqrt{h}$ greșește riscul pe $h$ zile."),
@@ -754,8 +754,8 @@ def build(lang, H=None):
             tryit=NB + " \\S8", cite=t("(" + OWN + ")", "(" + OWN + ")"))
 
     c3 = "c3"
-    D.frame(t("Case study C3: Romanian energy shares are weakly tied to oil",
-              "Studiul de caz C3: acțiunile energetice, slab corelate cu petrolul"), it(
+    D.frame(t("Case study C3: weak link between Romanian energy shares and oil",
+              "Studiul de caz C3: legătura slabă dintre acțiunile energetice românești și petrol"), it(
         (t("\\textbf{What the paper did} (Grecu, Cramer, Pele \\& Lessmann, 2025)", "\\textbf{Ce a făcut lucrarea} (Grecu, Cramer, Pele \\& Lessmann, 2025)"),
          t("data: stock indices of the 27 European Union countries, Brent and TTF futures, 2010--2023",
            "date: indicii bursieri ai celor 27 de state ale Uniunii Europene, contractele futures pe Brent și TTF, 2010--2023"),

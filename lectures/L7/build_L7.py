@@ -302,7 +302,7 @@ def build(lang, H=None):
                 "regula de oprire folosește numai zile din trecut: face parte din model și se verifică la fel ca restul."),
               tryit=NB + " \\S2", cite="(Kingma \\& Ba, 2015, ICLR; Srivastava et al., 2014, JMLR)", wl="0.52", wr="0.45")
 
-    D.chart(t("Early stopping: stop when the error on recent days stops falling", "Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade"),
+    D.chart(t("Early stopping based on the error on recent days", "Oprirea timpurie pe baza erorii din zilele recente"),
             "learning_curve", [
                 (t("Refit for @{curve.month|ym}: the error on the last 15\\% of days is lowest at epoch @{curve.best_ep}",
                    "Reestimarea pentru @{curve.month|ym}: eroarea pe ultimele 15\\% din zile este minimă la epoca @{curve.best_ep}"),
@@ -387,7 +387,7 @@ def build(lang, H=None):
                 "testați un model fundațional înainte de a construi propria rețea: costă puțin, iar aici a fost cel mai precis model individual."),
               tryit=NB + " \\S4", cite="(Ansari et al., 2024, TMLR; Ansari et al., 2025, arXiv)", wl="0.52", wr="0.45")
 
-    D.chart(t("Chronos-2 beats AW-LEAR in every hour of the day",
+    D.chart(t("Chronos-2 is more accurate than AW-LEAR in every hour of the day",
               "Chronos-2 este mai precis decît AW-LEAR în fiecare oră a zilei"), "foundation_hour", [
         t("Chronos-Bolt, smaller and older, is level with AW-LEAR (DM " + pv("dm.aw_lear__bolt.p") + ").",
           "Chronos-Bolt, mai mic și mai vechi, este la egalitate cu AW-LEAR (DM: " + pv("dm.aw_lear__bolt.p") + ")"),
@@ -403,8 +403,8 @@ def build(lang, H=None):
     KUA = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/kuan_multiple_inequality_testing.pdf"
     CLO = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/clodnitchi_ai_energy_finance_review.pdf"
     # (no subsection: the section outline of this lecture has no room for an extra line)
-    D.frame(t("AIDA 2026 keynote: deep networks beat LEAR, zero-shot models compete",
-              "AIDA 2026: DNN întrece LEAR, modelele preantrenate concurează"), cols(
+    D.frame(t("AIDA 2026 keynote: deep networks, LEAR and zero-shot models",
+              "AIDA 2026: rețele neuronale profunde, LEAR și modele preantrenate"), cols(
         it((t("\\textbf{R.\\ Weron, keynote} (4 June 2026, \\href{" + WER + "}{slides})",
               "\\textbf{R.\\ Weron, conferință invitată} (4 iunie 2026, \\href{" + WER + "}{diapozitive})"),
             t("model evolution: ARX, averaging across windows, LEAR, deep and interpretable networks",
@@ -494,15 +494,15 @@ def build(lang, H=None):
                   "DM, $p$: test unilateral că modelul este mai precis decît AW-LEAR (eroarea absolută medie zilnică, varianță Newey--West, ca în cursul 2).")) +
             D.bottom(None, NB + " \\S5"), "small", cite=OWN)
 
-    D.chart(t("DM tests: combinations with ML beat AW-LEAR significantly",
-              "Testele DM: combinațiile cu ML depășesc semnificativ AW-LEAR"), "dm_matrix", [
+    D.chart(t("DM tests: combinations with ML significantly outperform AW-LEAR",
+              "Testele DM: combinațiile cu ML sînt semnificativ mai precise decît AW-LEAR"), "dm_matrix", [
         t("AW-LEAR + DNN + XGBoost beats AW-LEAR (" + pv("dm.aw_lear__ens_ldx.p") + "); adding AW-ARX gives MAE @{acc.ens_t4.mae|.2f}, better than the Lecture 2 ensemble (" + pv("dm.ens4__ens_t4.p") + ").",
           "AW-LEAR + DNN + XGBoost este mai precis decît AW-LEAR (" + pv("dm.aw_lear__ens_ldx.p") + "); cu AW-ARX adăugat, MAE scade la @{acc.ens_t4.mae|.2f}, sub ansamblul din cursul 2 (" + pv("dm.ens4__ens_t4.p") + ")"),
         t("Adding AW-LEAR to Chronos-2 changes nothing (" + pv("dm.chr2__ens_lc.p") + "): on the hard days the two models make similar errors.",
           "Adăugarea AW-LEAR la Chronos-2 nu schimbă nimic (" + pv("dm.chr2__ens_lc.p") + "): în zilele dificile, cele două modele greșesc asemănător")],
         height="0.58\\textheight", tryit=NB + " \\S5", cite=t("(own computation; one-sided DM tests)", "(calcule proprii; teste DM unilaterale)"))
 
-    D.chart(t("Averaging works because the errors are not identical", "Media funcționează pentru că erorile nu sînt identice"), "combo_weight", [
+    D.chart(t("Forecast averaging and the differences between model errors", "Medierea prognozelor și diferențele dintre erorile modelelor"), "combo_weight", [
         t("$\\Var\\big(\\tfrac{e_1+e_2}{2}\\big)=\\tfrac14(\\sigma_1^2+\\sigma_2^2+2\\rho\\sigma_1\\sigma_2)$: with correlation $\\rho<1$, the average errs less ($e$ = error, $\\sigma$ = its standard deviation).",
           "$\\Var\\big(\\tfrac{e_1+e_2}{2}\\big)=\\tfrac14(\\sigma_1^2+\\sigma_2^2+2\\rho\\sigma_1\\sigma_2)$: dacă $\\rho<1$, media greșește mai puțin ($e$ = eroarea, $\\sigma$ = abaterea ei standard, $\\rho$ = corelația)"),
         t("Error correlation with AW-LEAR: @{combo.corr.dnn|.2f} (DNN), @{combo.corr.xgb|.2f} (XGBoost); equal weights do almost as well as the best weight seen afterwards (@{combo.w_best_xgb|.2f}).",
@@ -510,8 +510,8 @@ def build(lang, H=None):
         height="0.58\\textheight", job=t("average with equal weights before estimating clever weights.", "faceți media cu ponderi egale înainte de a estima ponderi „inteligente”."),
         tryit=NB + " \\S5", cite="(Bates \\& Granger, 1969; " + t("own computation", "calcule proprii") + ")")
 
-    D.chart(t("Month by month, the combination beats AW-LEAR in @{bymonth.n_ldx_beats_lear} of 12 months",
-              "Lunar, combinația este mai precisă decît AW-LEAR în @{bymonth.n_ldx_beats_lear} din 12 luni"), "monthly_ml", [
+    D.chart(t("The combination outperforms AW-LEAR in @{bymonth.n_ldx_beats_lear} of 12 months",
+              "Combinația este mai precisă decît AW-LEAR în @{bymonth.n_ldx_beats_lear} din 12 luni"), "monthly_ml", [
         (t("Alone, XGBoost and the DNN each beat AW-LEAR in only @{bymonth.n_xgb_beats_lear} months; averaged with it, in @{bymonth.n_ldx_beats_lear}.",
            "Luate separat, XGBoost și DNN depășesc AW-LEAR fiecare doar în @{bymonth.n_xgb_beats_lear} luni; în medie cu acesta, în @{bymonth.n_ldx_beats_lear} luni")
          if N["bymonth"]["n_xgb_beats_lear"] == N["bymonth"]["n_dnn_beats_lear"] else
@@ -523,8 +523,8 @@ def build(lang, H=None):
                                          "raportați comitetului de risc acuratețea lună de lună, nu doar media anuală."),
         tryit=NB + " \\S5", cite=OWN)
 
-    D.chart(t("Compute cost: daily LEAR is the expensive model, ML costs minutes",
-              "Costul de calcul: LEAR zilnic este cel mai scump, ML costă minute"), "cost_gain", [
+    D.chart(t("Computational cost of daily LEAR and of the ML models",
+              "Costul de calcul al modelului LEAR zilnic și al modelelor ML"), "cost_gain", [
         (t("Test year, one core: AW-LEAR @{cost.aw_lear|.1f} min (365 days $\\times$ 3 windows $\\times$ 24 h)",
            "Anul de test, pe un nucleu: AW-LEAR @{cost.aw_lear|.1f} min (365 de zile $\\times$ 3 ferestre $\\times$ 24 de ore)"),
          t("XGBoost @{cost.xgb|.1f} min, DNN @{cost.dnn|.1f} min, Chronos-2 @{cost.chr2|.1f} min",
@@ -557,7 +557,7 @@ def build(lang, H=None):
                 "cereți explicația fiecărei alerte, nu doar un clasament global."),
               tryit=NB + " \\S6", cite="(Shapley, 1953; Lundberg et al., 2020, Nat.\\ Mach.\\ Intell.)", wl="0.53", wr="0.44")
 
-    D.chart(t("What drives the trees: yesterday's price at the same hour", "Ce determină prognoza arborilor: prețul de ieri, la aceeași oră"), "shap_global", [
+    D.chart(t("Main input of the tree models: yesterday's price at the same hour", "Principala variabilă a modelelor cu arbori: prețul de ieri, la aceeași oră"), "shap_global", [
         t("Top inputs: price $d-1$ same hour @{shap.top_share.0|.1f}\\%, price $d-7$ same hour @{shap.top_share.1|.1f}\\%, day of week @{shap.top_share.2|.1f}\\% of the mean $|\\phi|$.",
           "Ponderi în media $|\\phi|$: prețul din $d-1$, aceeași oră (@{shap.top_share.0|.1f}\\%), din $d-7$ (@{shap.top_share.1|.1f}\\%), ziua săptămînii (@{shap.top_share.2|.1f}\\%)"),
         t("Load @{shap.groups.load|.1f}\\%, wind + solar @{shap.groups.res|.1f}\\%: known only up to $d-2$, they are old news at gate closure.",
@@ -589,8 +589,8 @@ def build(lang, H=None):
 
 
     # (no subsection: the section outline of this lecture has no room for an extra line)
-    D.frame(t("Energy finance uses machine learning widely but rarely explains it",
-              "Finanțele energiei folosesc învățarea automată, dar rar o explică"), cols(
+    D.frame(t("Machine learning in energy finance: a systematic literature review",
+              "Învățarea automată în finanțele energiei: o analiză sistematică a literaturii"), cols(
         it((t("\\textbf{R.\\ Clodnitchi, talk} (3 June 2026, \\href{" + CLO + "}{slides})",
               "\\textbf{R.\\ Clodnitchi, prezentare} (3 iunie 2026, \\href{" + CLO + "}{diapozitive})"),
             t("systematic review of artificial intelligence (AI) in energy finance (Anagnoste et al., 2025, \\textit{Energy Strategy Reviews})",
@@ -638,7 +638,7 @@ def build(lang, H=None):
                    ("lear", t("AW-LEAR forecast $>\\theta$", "Prognoza AW-LEAR $>\\theta$"))]:
         crow.append([lab] + [fmt(sm[k][c], ".3f", lang) for c in ["auc", "prec", "rec", "f1"]] +
                     [fmt(sm[k]["brier"], ".3f", lang) if "brier" in sm[k] else "--", fmt(ng[k]["auc"], ".3f", lang), fmt(ng[k]["f1"], ".3f", lang)])
-    D.concept(t("Spike classifiers: a good price forecast already detects spikes", "Clasificarea vîrfurilor: o prognoză bună de preț le detectează deja"),
+    D.concept(t("Spike classifiers and spike detection from price forecasts", "Clasificatorii de vîrfuri și detectarea vîrfurilor din prognozele de preț"),
               t("A classifier gives the probability that an hour is a spike; we judge how well it ranks the hours and how honest its probabilities are.",
                 "Un clasificator dă probabilitatea ca o oră să fie un vîrf; judecăm cît de bine ordonează orele și cît de corecte sînt probabilitățile lui."),
               "\\[ \\hat\\pi_{d,h}=\\Pr\\big(P_{d,h}>\\theta_d\\mid\\mathbf x_{d,h}\\big) \\]\\vspace{-2mm}"
@@ -713,7 +713,7 @@ def build(lang, H=None):
                                          "prezentați consiliului de administrație această descompunere pentru fiecare alertă importantă."),
         tryit=NB + " \\S8", cite=t("(own computation; SHAP values in EUR/MWh, Appendix C)", "(calcule proprii; valori SHAP în EUR/MWh, anexa C)"))
 
-    D.frame(t("Our group on spike early warning: the paper and our replication",
+    D.frame(t("Research from our group on spike early warning: paper and replication",
               "Avertizarea timpurie a vîrfurilor: lucrarea grupului și replicarea ei"), it(
         (t("\\textbf{What the paper did} (Andrei, Pele, Cramer, Amza \\& Diaconu, 2026)", "\\textbf{Ce a făcut lucrarea} (Andrei, Pele, Cramer, Amza \\& Diaconu, 2026)"),
          t("data: 5,000 hours of the Romanian day-ahead market in 2024, with load, renewable and fuel data; spike = price above the 90th percentile",
@@ -784,8 +784,8 @@ def build(lang, H=None):
         "\\href{https://doi.org/10.1111/1468-0262.00152}{White, 2000}; \\href{https://doi.org/10.1198/073500105000000063}{Hansen, 2005}; "
         "\\href{https://doi.org/10.1111/j.1468-0262.2005.00615.x}{Romano \\& Wolf, 2005}; \\href{https://doi.org/10.1016/j.jempfin.2010.01.001}{Hsu et al., 2010})")
 
-    D.chart(t("Retraining: a model frozen for a year loses @{pit.once_loss|.1f}\\%",
-              "Reestimarea: un model neactualizat un an pierde @{pit.once_loss|.1f}\\%"), "pit_retrain", [
+    D.chart(t("Retraining: accuracy loss of @{pit.once_loss|.1f}\\% after a year without updating",
+              "Reestimarea: pierdere de precizie de @{pit.once_loss|.1f}\\% după un an fără actualizare"), "pit_retrain", [
         t("Fitted once, before the test year: MAE @{pit.once|.2f}; the loss grows with time (+@{pit.once_first_q|.2f} EUR/MWh in the first 3 months, +@{pit.once_last_q|.2f} in the last 3).",
           "Estimat o singură dată, înaintea anului de test: MAE @{pit.once|.2f}; pierderea crește în timp (+@{pit.once_first_q|.2f} EUR/MWh în primele 3 luni, +@{pit.once_last_q|.2f} în ultimele 3)"),
         t("A short rolling window (365 days, MAE @{pit.roll365|.2f}) is worse than the whole history: the trees need many past spikes to learn from.",
@@ -795,7 +795,7 @@ def build(lang, H=None):
         tryit=NB + " \\S9", cite=OWN)
 
     D.frame(t("Leakage check: forecasts recomputed without future data are unchanged",
-              "Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate"), cols(it(
+              "Testul privind informația din viitor: prognozele recalculate fără datele viitoare rămîn neschimbate"), cols(it(
         (t("\\textbf{The test}", "\\textbf{Testul}"),
          t("for the first day of each of the @{leak.n_months} test months, all data after 12:00 on $d-1$ are deleted, then replaced by 10\\,000 EUR/MWh",
            "pentru prima zi din fiecare dintre cele @{leak.n_months} luni de test, toate datele de după ora 12:00 din ziua $d-1$ sînt șterse, apoi înlocuite cu 10\\,000 EUR/MWh"),
@@ -822,7 +822,7 @@ def build(lang, H=None):
                    "Un start-up prezintă o rețea neuronală cu rMAE 0{,}70 pentru România, testată prin validare încrucișată cu 5 subeșantioane amestecate; ce cereți?"),
                  t("A walk-forward test on one untouched year, with inputs known at 12:00 on $d-1$: on our data, shuffling alone made XGBoost look @{pit.shuf_gain|.1f}\\% better.",
                    "O testare cronologică pe un an neatins, cu intrări cunoscute la ora 12:00 în ziua $d-1$: pe datele noastre, doar amestecarea a făcut XGBoost să pară cu @{pit.shuf_gain|.1f}\\% mai bun."))
-    D.quiz_frame(t("which model to deploy", "ce model puneți în producție"),
+    D.quiz_frame(t("choosing the model to deploy", "alegerea modelului pentru producție"),
                  t("Chronos-2 has the lowest MAE of the single models; AW-LEAR + Chronos-2 has the same MAE; which do you deploy?",
                    "Chronos-2 are cea mai mică MAE dintre modelele individuale; combinația AW-LEAR + Chronos-2 are aceeași MAE; pe care o puneți în producție?"),
                  t("The combination: same accuracy (DM " + pv("dm.chr2__ens_lc.p") + "), but if the pretrained model degrades or becomes unavailable, LEAR still carries half of the forecast.",
@@ -987,7 +987,7 @@ def build(lang, H=None):
               "Penalizarea ponderilor adaugă $\\lambda\\theta$ la $g_k$ (o penalizare pătratică, aici $\\lambda$ = " + sci(N['search']['dnn']['cfg']['wd']) + ")."), sep="3pt"), "0.50", "0.47"), "small",
         cite="(Kingma \\& Ba, 2015, ICLR; Hastie et al., 2009)")
 
-    D.frame(t("Appendix B: why the optimal leaf value is $-G/(H+\\lambda)$", "Anexa B: de ce valoarea optimă a unei frunze este $-G/(H+\\lambda)$"), cols(
+    D.frame(t("Appendix B: derivation of the optimal leaf value $-G/(H+\\lambda)$", "Anexa B: derivarea valorii optime a unei frunze, $-G/(H+\\lambda)$"), cols(
         "\\[ \\ell\\big(Y_i,F_{m-1}+f\\big)\\approx\\ell_i+g_i f(\\mathbf x_i)+\\tfrac12h_i f(\\mathbf x_i)^2 \\]"
         "\\[ \\sum_{j}\\Big[G_jw_j+\\tfrac12(H_j+\\lambda)w_j^2\\Big]+\\gamma J,\\quad G_j=\\textstyle\\sum_{i\\in R_j}g_i \\]"
         "\\[ w_j^{*}=-\\frac{G_j}{H_j+\\lambda},\\qquad \\text{" + t("score", "scor") + "}=-\\tfrac12\\sum_j\\frac{G_j^2}{H_j+\\lambda}+\\gamma J \\]",
