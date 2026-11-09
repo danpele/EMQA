@@ -127,7 +127,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 
 \subsection{How the day-ahead auction works}
 
-\begin{frame}{One auction, one price per quarter-hour: where supply meets demand}
+\begin{frame}{The day-ahead auction: a clearing price for each quarter-hour}
 \footnotesize
 \intuition{Sellers and buyers send price--quantity bids; the exchange finds the price at which energy offered equals energy demanded, and every accepted trade is paid that single price.}
 \begin{columns}[T,onlytextwidth]
@@ -397,7 +397,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Romania; energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_shares}{Quantlets/L1/EMQA_L1_mix_shares}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Where the course goes: seven lectures, one map of models}
+\begin{frame}{Course structure and models covered}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.56\textwidth}
@@ -439,7 +439,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 
 \subsection{Units, clocks and clean data}
 
-\begin{frame}{Power and energy: a MW is not a MWh}
+\begin{frame}{Power (MW) and energy (MWh)}
 \footnotesize
 \intuition{A megawatt (MW) is how fast energy flows; a megawatt-hour (MWh) is how much flowed, e.g.\ 1 MW for one hour.}
 \begin{columns}[T,onlytextwidth]
@@ -625,7 +625,7 @@ DE-LU & \cellcolor{Crimson!41}7.0 & \cellcolor{Crimson!53}11.0 & \cellcolor{Crim
 \par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Spring is cheap: water and sun meet mild demand}
+\begin{frame}{Seasonal profile of prices, consumption and hydro output}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.451\textheight,keepaspectratio]{charts/en/profile_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); exchange prices (OPCOM, IBEX, HUPX, EPEX SPOT) via ENTSO-E. Data: monthly means 2016-2025.}
@@ -643,7 +643,7 @@ DE-LU & \cellcolor{Crimson!41}7.0 & \cellcolor{Crimson!53}11.0 & \cellcolor{Crim
 
 \subsection{Spikes and negative prices}
 
-\begin{frame}{Spikes: a few hours with extreme prices}
+\begin{frame}{Price spikes: definition and number of hours per year}
 \footnotesize
 \intuition{A spike is an interval whose price is far above what is normal for that year.}
 \begin{columns}[T,onlytextwidth]
@@ -781,7 +781,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 
 \subsection{Stationarity and autocorrelation}
 
-\begin{frame}{Stationary means the rules of the game do not change over time}
+\begin{frame}{Weak stationarity: constant mean, variance and autocovariances}
 \small
 \intuition{Weakly stationary: mean, spread and lag-$k$ memory are the same in every period.}
 \vspace{-1mm}\[ \E X_t=\mu,\quad \Var X_t=\gamma_0,\quad \Cov(X_t,X_{t-k})=\gamma_k\quad \text{for every } t \]\vspace{-2mm}
@@ -825,7 +825,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Prices remember yesterday, last week and the same hour}
+\begin{frame}{Autocorrelation of prices at daily and weekly lags}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.372\textheight,keepaspectratio]{charts/en/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
 
@@ -859,7 +859,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 
 \subsection{Unit-root tests, decomposition, smoothing}
 
-\begin{frame}{Do shocks die out or stay? Two tests ask it from opposite sides}
+\begin{frame}{Shock persistence: two tests with opposite null hypotheses}
 \footnotesize
 \intuition{One test starts from ``shocks are permanent'' and looks for a pull back to a mean; the other starts from ``the series is stable'' and looks for a slow drift.}
 \begin{columns}[T,onlytextwidth]
@@ -888,7 +888,7 @@ ADF: keep & inconclusive & \cellcolor{Crimson!25}unit root$^{*}$ \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{One verdict per series: levels drift, changes are stable}
+\begin{frame}{ADF and KPSS results by series: levels and changes}
 \small
 {\footnotesize\renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}llrrrrrl@{}}\toprule
@@ -953,7 +953,7 @@ RO hydro, deseasonalised & 2015--2025 & 132 & \ensuremath{-}4.19 & $<$0.001 & 0.
 
 \section{Case studies on current data}
 
-\subsection{(a) Wet 2023, dry 2025}
+\subsection{(a) Hydro output in 2023 and 2025}
 
 \begin{frame}{Case study (a): 2025 hydro output was a third below wet 2023}
 \small

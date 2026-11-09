@@ -30,7 +30,7 @@ Pentru comparația cu alte active energetice adăugăm producția solară zilnic
 
 Două operații de curățare contează. Pentru Brent eliminăm prima zi de tranzacționare a fiecărei luni, în total 95 de zile, deoarece schimbarea contractului celui mai apropiat nu este o mișcare de preț. Seria EUA începe la 19 octombrie 2021.
 
-## Volatilitatea măsoară mărimea obișnuită a surprizei de preț {h=192f2634}
+## Definiția volatilității {h=41c1dbcf}
 
 Volatilitatea arată cît de departe de prețul de azi ajunge, de obicei, prețul de mîine. Pentru energia electrică, prețul zilnic $P_t$ este prețul de bază al zilei $t$, adică media prețurilor orare ale zilei, în euro (EUR) pe megawatt-oră (MWh). Variația prețului se poate măsura în procente sau în euro:
 
@@ -57,7 +57,7 @@ Zilele extreme sînt sărbători și întreruperi ale calendarului obișnuit. Ce
 @chart returns_ro
 Sus: prețul zilnic de bază din România, în EUR/MWh; jos: variația logaritmică zilnică $r_t$, în procente; banda colorată marchează criza energetică, septembrie 2021 – decembrie 2022.
 
-## Lîngă zero, variația procentuală explodează; sub zero, nu există {h=f44536ad}
+## Variațiile procentuale la prețuri apropiate de zero sau negative {h=16154762}
 
 Logaritmul din @eq:returns cere prețuri pozitive, iar lîngă zero variații obișnuite devin procente uriașe. În literatura despre prețul energiei electrice se folosește adesea o alternativă, sinusul hiperbolic invers:
 
@@ -84,7 +84,7 @@ Panoul din stînga al graficului arată variația medie pentru fiecare zi a săp
 @chart dow_effect
 Stînga: variația procentuală zilnică medie a prețului de bază din România, pe zile ale săptămînii; dreapta: abaterea standard a variației brute și a șocului rămas după ecuația mediei.
 
-## Sensul unui șoc nu poate fi anticipat, mărimea lui da {h=6d97aeaa}
+## Gruparea volatilității: autocorelația șocurilor și a pătratelor lor {h=bd5501cd}
 
 După eliminarea calendarului, șocurile $\varepsilon_t$ se comportă ca o monedă corectă în privința semnului, dar nu și a mărimii. Graficul arată autocorelația șocurilor (stînga) și a pătratelor lor (dreapta), pentru decalaje de pînă la o lună. Primele sînt aproape toate în interiorul benzii așteptate în lipsa autocorelației; celelalte sînt pozitive și ies clar din bandă la multe decalaje. Două teste confirmă imaginea. Statistica Ljung–Box,
 
@@ -219,7 +219,7 @@ Eșantioanele încep în 2019 pentru energia electrică, Brent și OMV Petrom ș
 
 @practice După un șoc pe piața petrolului, mențineți limite mai largi circa 5 săptămîni; după un șoc procentual al prețului energiei electrice, doar cîteva zile.
 
-## Petrolul și carbonul: șocurile de volatilitate durează săptămîni {h=dc39e795}
+## Timpul de înjumătățire al șocurilor de volatilitate, pe piețe {h=bd846704}
 
 În cursul 1 ne-am întrebat cît timp trebuie să mențină departamentul de risc limite mai largi după un șoc. Graficul răspunde, reprezentînd $100(\hat\alpha+\hat\beta)^h$, procentul din varianța suplimentară care mai rămîne la $h$ zile după un șoc, pentru fiecare serie; timpii de înjumătățire apar în paranteze, în legendă.
 
@@ -427,7 +427,7 @@ La pragul de 5%, în EUR/MWh toate modelele de tip GARCH, ca și EWMA, sînt sem
 
 @practice Folosiți GARCH-t ca model implicit: modelele asimetrice aduc puțin în afara eșantionului.
 
-## GARCH reacționează imediat; varianța istorică întîrzie și uită brusc {h=43b5c229}
+## Volatilitatea GARCH și cea istorică pe 30 de zile în jurul celui mai mare șoc {h=499cbf5d}
 
 Graficul arată de ce cîștigă GARCH. El reprezintă, pentru anul de test, șocul absolut din fiecare zi, în EUR/MWh, împreună cu prognoza GARCH-t și cu prognoza istorică pe 30 de zile, ambele făcute în ziua precedentă. Cel mai mare șoc din anul de test a fost de +124 EUR/MWh, la 22 ianuarie 2026. A doua zi, $\hat\sigma$ GARCH a crescut de la 25 la 47 EUR/MWh, în timp ce prognoza istorică a urcat doar la 33, deoarece o singură zi are o pondere de o treizecime în fereastra ei.
 
@@ -462,7 +462,7 @@ Prognozele de volatilitate se compară cu QLIKE și cu testul DM, pe zile pe car
 
 Studiul de caz aplică instrumentele cursului la întrebarea pe care și-a pus-o fiecare companie energetică din România în toamna lui 2026: este creșterea prețurilor o nouă criză, ca în 2022? Analizăm prețurile și volatilitatea din 2026, testăm banda GARCH de o zi pe anul de test, stabilim limitele pentru noiembrie 2026 și replicăm un studiu despre acțiunile energetice și petrol.
 
-## Studiu de caz: 2026 este un șoc de nivel, nu (încă) o criză ca în 2022 {h=7a6c4f99}
+## Studiu de caz: nivelul prețurilor și volatilitatea în 2026, comparativ cu 2022 {h=bbb122f1}
 
 Prețurile au crescut puternic în 2026. Media lunară a prețului de bază din România a urcat de la 150 EUR/MWh în ianuarie la 239 în octombrie. Brentul a crescut de la 69 USD pe baril în februarie la 100 în martie și la 108 în octombrie, iar gazele TTF de la 32 la 87 EUR/MWh între februarie și octombrie.
 

@@ -1,0 +1,141 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "res/main/icons/icon128.png",
+         "16": "res/main/icons/icon16.png",
+         "32": "res/main/icons/icon32.png",
+         "48": "res/main/icons/icon48.png"
+      },
+      "default_title": "__MSG_main_extension_name__"
+   },
+   "background": {
+      "service_worker": "app.js"
+   },
+   "content_scripts": [ {
+      "js": [ "vendor/webextension-polyfill.js", "modules/dataCollector/contentScripts/collectorContentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   }, {
+      "js": [ "vendor/webextension-polyfill.js", "modules/urlScanning/foreground/contentScripts/iframeScan.js", "modules/urlScanning/foreground/contentScripts/permissionStateListener.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   }, {
+      "all_frames": false,
+      "js": [ "vendor/webextension-polyfill.js", "modules/chatProtection/foreground/contentScripts/chatProtectionContentScript.js" ],
+      "matches": [ "https://web.whatsapp.com/*", "https://www.messenger.com/*", "https://www.facebook.com/*", "https://web.telegram.org/*", "https://discord.com/*", "https://www.linkedin.com/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "modules/chatProtection/foreground/contentScripts/dataExtractors/messengerReactPropsExtractor.js" ],
+      "matches": [ "https://www.messenger.com/*" ],
+      "run_at": "document_end",
+      "world": "MAIN"
+   }, {
+      "css": [ "modules/adDetection/foreground/contentScripts/adDetectionStyles.css" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "vendor/webextension-polyfill.js", "modules/pageDataCollector/foreground/contentScripts/pageDataCollectorContentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ]
+   }, {
+      "js": [ "vendor/webextension-polyfill.js", "modules/pageIntervention/foreground/suspiciousWarning/suspiciousWarning.js", "modules/pageIntervention/foreground/permissionsToast/permissionsToast.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   }, {
+      "all_frames": true,
+      "js": [ "modules/pageIntervention/foreground/contentScripts/leavePromptGuard.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "vendor/webextension-polyfill.js", "modules/malvertising/foreground/contentScripts/malvertisingContentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": false,
+      "js": [ "modules/malvertising/foreground/contentScripts/interceptor.js" ],
+      "matches": [ "*://*.facebook.com/*", "*://*.instagram.com/*", "*://*.tiktok.com/*", "*://*.pinterest.com/*", "*://*.x.com/*", "*://*.twitter.com/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   }, {
+      "js": [ "vendor/webextension-polyfill.js", "coreContentScript.js" ],
+      "matches": [ "https://*/*", "http://*/*" ]
+   } ],
+   "declarative_net_request": {
+      "rule_resources": [ {
+         "enabled": false,
+         "id": "advertising",
+         "path": "modules/antiTracker/tracking/dnr/advertising.json"
+      }, {
+         "enabled": false,
+         "id": "analytics",
+         "path": "modules/antiTracker/tracking/dnr/analytics.json"
+      }, {
+         "enabled": false,
+         "id": "customer_interaction",
+         "path": "modules/antiTracker/tracking/dnr/customer_interaction.json"
+      }, {
+         "enabled": false,
+         "id": "social_media",
+         "path": "modules/antiTracker/tracking/dnr/social_media.json"
+      }, {
+         "enabled": false,
+         "id": "essential",
+         "path": "modules/antiTracker/tracking/dnr/essential.json"
+      }, {
+         "enabled": false,
+         "id": "domain_cookies",
+         "path": "modules/antiTracker/tracking/dnr/domain_cookies.json"
+      }, {
+         "enabled": false,
+         "id": "anti_tracker_exceptions",
+         "path": "modules/antiTracker/tracking/dnr/exceptions.json"
+      }, {
+         "enabled": false,
+         "id": "special_offers",
+         "path": "modules/antiTracker/tracking/dnr/special_offers.json"
+      } ]
+   },
+   "default_locale": "en_US",
+   "description": "__MSG_main_extension_description__",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "res/main/icons/icon128.png",
+      "16": "res/main/icons/icon16.png",
+      "32": "res/main/icons/icon32.png",
+      "48": "res/main/icons/icon48.png",
+      "96": "res/main/icons/icon96.png"
+   },
+   "incognito": "split",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvxQDofXkd3+eei1BcMOdES+pe82wnG/Ngnc5dklcug+7RpE90olEvN6C2zuaI+Vv29lTobrGVDJVBVVneUXHLA4KDNczFrZma5j6IngyyXX891KFfKj2hcozIS5m/itFn1jcpIdaCFxVdJIvb37TfTN1OLiRUTZEj7uyboSu6pQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_main_extension_name__",
+   "permissions": [ "downloads", "alarms", "scripting", "browsingData", "idle", "tabs", "activeTab", "declarativeNetRequest", "history", "contentSettings", "storage", "bookmarks", "webNavigation", "webRequest", "nativeMessaging", "identity", "sidePanel" ],
+   "side_panel": {
+      "default_path": "modules/main/foreground/popup/sidepanel.html"
+   },
+   "sidebar_action": {
+      "default_icon": "res/main/icons/icon48.png",
+      "default_panel": "modules/main/foreground/popup/sidepanel.html",
+      "default_title": "__MSG_main_extension_name__"
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.0.5",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "res/urlScanning/*.svg" ]
+   }, {
+      "matches": [ "https://web.whatsapp.com/*", "https://www.messenger.com/*", "https://www.facebook.com/*", "https://web.telegram.org/*", "https://discord.com/*", "https://www.linkedin.com/*" ],
+      "resources": [ "modules/searchAdvisor/foreground/*.css" ]
+   }, {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "modules/adDetection/foreground/contentScripts/adDetectionStyles.css", "modules/adDetection/res/ad_whitelist.json" ]
+   }, {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "modules/pageIntervention/foreground/suspiciousWarning/suspiciousWarning.css", "modules/pageIntervention/foreground/permissionsToast/permissionsToast.css", "modules/pageIntervention/foreground/blockingPage/blocked.html", "modules/pageIntervention/foreground/blockingPage/blocked.css", "modules/pageIntervention/foreground/blockingPage/blocked.js", "modules/pageIntervention/foreground/contentScripts/signInReminderToast.css" ]
+   }, {
+      "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],
+      "resources": [ "res/searchAdvisor/*.png", "res/searchAdvisor/*.gif", "res/searchAdvisor/*.svg", "modules/searchAdvisor/foreground/contentScripts/*.css", "_locales/*.json" ]
+   }, {
+      "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],
+      "resources": [ "res/**/*.svg", "res/**/*.png", "_locales/**/*.json" ]
+   } ]
+}

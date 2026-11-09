@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261108a", "L4_text_en.js?v=20261108a", "common.js?v=20261108s"], "L4.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261108a", "L4_text_en.js?v=20261108a", "common.js?v=20261108a"], "L4.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The risk factor is the daily change of the Romanian day-ahead base price, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): a rise is a loss for a supplier that buys on the day-ahead market. VaR (Value at Risk) is a quantile of the loss, ES (Expected Shortfall) the mean loss beyond it. The ▶ button moves the main parameter step by step.</p>
-<p class="toc"><a href="#s-risk">Price risk: losses, quantiles, VaR and ES</a> · <a href="#s-est">Estimating VaR and ES: four methods</a> · <a href="#s-bt">Backtesting: did the model keep its promise?</a> · <a href="#s-coll">From quantiles to margins, guarantees and limits</a> · <a href="#s-pos">Supplier and producer: one price, two tails</a></p>
+<p class="toc"><a href="#s-risk">Price risk: losses, quantiles, VaR and ES</a> · <a href="#s-est">Estimating VaR and ES: four methods</a> · <a href="#s-bt">Backtesting VaR and ES</a> · <a href="#s-coll">From quantiles to margins, guarantees and limits</a> · <a href="#s-pos">Price risk for suppliers and producers</a></p>
 <h2 class="sec" id="s-risk">Price risk: losses, quantiles, VaR and ES</h2>
 <section class="blk" id="var-es">
   <h3>Large price rises are far more frequent than the normal curve allows</h3>
@@ -84,7 +84,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> The generalised Pareto distribution (GPD) is fitted to the residuals above the threshold u. Does the estimated tail shape ξ depend on the choice of u?</div>
   <details><summary>Answer</summary><p>Yes, and this is the main practical difficulty of extreme value theory (EVT): a low threshold gives many exceedances but mixes in the body of the distribution; a high threshold uses only a few dozen points and the estimate becomes noisy. Move u from 80% to 97% and watch ξ and the implied 99.9% quantile. In the lecture, the shape at the 90% threshold varies between −0.38 and 0.33 across the 171 refits since 2017, positive in 53% of them.</p></details>
-</section><h2 class="sec" id="s-bt">Backtesting: did the model keep its promise?</h2>
+</section><h2 class="sec" id="s-bt">Backtesting VaR and ES</h2>
 <section class="blk" id="traffic-light">
   <h3>The Basel traffic light: the normal VaR spent 30% of days in the red zone</h3>
   <div class="pair">
@@ -104,7 +104,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> The square-root-of-time rule scales a 1-day VaR to 10 days by √10 = 3.16. What ratio do the Romanian prices show at the 99% level?</div>
   <details><summary>Answer</summary><p>Only 1.72 (Germany–Luxembourg: 1.75). Daily price changes are negatively autocorrelated (ρ(1) = −0.076): a price spike is followed by a fall, so changes over several days partly cancel. The variance ratio at 10 days is 0.33, far below 1. The √h rule assumes independent changes and would overstate the 10-day VaR of a flat day-ahead position.</p></details>
-</section><h2 class="sec" id="s-pos">Supplier and producer: one price, two tails</h2>
+</section><h2 class="sec" id="s-pos">Price risk for suppliers and producers</h2>
 <section class="blk" id="supplier">
   <h3>Since 2021 the normal 99% monthly limit was exceeded 3 times (0.7 expected)</h3>
   <div class="pair">

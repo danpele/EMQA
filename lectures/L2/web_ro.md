@@ -258,7 +258,7 @@ Modelul expert ARX, cu cîte o regresie pentru fiecare oră, reduce deja eroarea
 
 Niciun model și nicio fereastră de calibrare nu sînt cele mai bune în orice moment. Secțiunea mediază prognozele pe mai multe ferestre de calibrare și pe mai multe modele, prezintă clasamentul modelelor pe anul de test din România și face o introducere la două modele de învățare automată, gradient boosting și o rețea neuronală, dezvoltate în cursul 7.
 
-## Ferestrele scurte se adaptează, cele lungi sînt stabile: mediați prognozele {h=c16d1f7c}
+## Medierea prognozelor obținute pe ferestre de calibrare diferite {h=1366bcd2}
 
 Lungimea ferestrei de calibrare este o alegere dificilă. O fereastră scurtă se adaptează repede cînd piața se schimbă; una lungă dă estimări mai stabile. În loc să ghiciți lungimea optimă, puteți estima modelul pe mai multe ferestre și face media prognozelor (Hubicka, Marcjasz & Weron, 2019; Marcjasz, Serafin & Weron, 2018):
 
@@ -342,7 +342,7 @@ Disciplina seriilor de timp se aplică și aici. Numărul de epoci de antrenare 
 
 @practice o rețea neuronală cere ani de date și o calibrare atentă; altfel, păstrați LEAR.
 
-## Pe ore, învățarea automată ajută în cadrul ansamblului, nu luată separat {h=253440b4}
+## Precizia pe ore: modelele de învățare automată, separat și în ansamblu {h=734344af}
 
 Graficul arată MAE pe ore pentru AW-LEAR, GBM, MLP și ansamblul de 4 modele. Luate separat, modelele de învățare automată sînt mai precise decît AW-LEAR în 0 ore (GBM) și în 0 ore (MLP). Ansamblul de 4 modele, care le include, este mai precis decît AW-LEAR în 15 din 24 de ore. Acesta este sensul practic al relației @eq:ens: un model mai slab, dar cu erori diferite, îmbunătățește totuși media.
 
@@ -515,7 +515,7 @@ Analiza din spatele acestui curs se verifică singură (scriptul de analiză, se
 
 @practice includeți testul de folosire a informației din viitor în orice evaluare a unui model, ca în tema 1.
 
-## AIDA 2026: prognozele probabilistice se judecă după banii pe care îi aduc {h=8c9b0abf}
+## AIDA 2026: evaluarea economică a prognozelor probabilistice {h=6aff5308}
 
 Două prezentări de la conferința AIDA 2026 (Academia de Studii Economice din București, iunie 2026) leagă acest curs de cercetarea actuală; rezultatele și cifrele de mai jos sînt cele din diapozitivele conferinței.
 

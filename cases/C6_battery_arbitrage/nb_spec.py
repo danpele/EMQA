@@ -1,5 +1,5 @@
-TITLE = ("Case 6 - Should we buy a battery? Probabilistic forecasts and day-ahead arbitrage",
-         "Studiul de caz 6 - Merită investiția într-o baterie? Prognoze probabilistice și arbitraj pe piața pentru ziua următoare")
+TITLE = ("Case 6 - Probabilistic forecasts and the value of battery arbitrage on the day-ahead market",
+         "Studiul de caz 6 - Prognozele probabilistice și valoarea arbitrajului cu baterii pe piața pentru ziua următoare")
 
 CELLS = [
 ("md",

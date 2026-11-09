@@ -221,7 +221,7 @@ def build(lang, H=None):
     D.section(t("Power markets in Romania and Europe", "Piețele de energie electrică din România și Europa"))
     D.subsection(t("How the day-ahead auction works", "Cum funcționează licitația pentru ziua următoare"))
     D.concept(
-        t("One auction, one price per quarter-hour: where supply meets demand", "Prețul de închidere a pieței: intersecția cererii cu oferta"),
+        t("The day-ahead auction: a clearing price for each quarter-hour", "Prețul de închidere a pieței: intersecția cererii cu oferta"),
         t("Sellers and buyers send price--quantity bids; the exchange finds the price at which energy offered equals "
           "energy demanded, and every accepted trade is paid that single price.",
           "Vînzătorii și cumpărătorii depun oferte de preț și cantitate; bursa determină prețul la care cantitatea oferită egalează "
@@ -463,7 +463,7 @@ def build(lang, H=None):
                      "cînd lipsește apa sau un reactor, prețul este stabilit de o altă centrală."),
                tryit=NB + " \\S2", height="0.60\\textheight",
                cite=t("(Romania; energy-charts.info; data source: ENTSO-E)", "(România; energy-charts.info; sursa datelor: ENTSO-E)"))
-    D.frame(t("Where the course goes: seven lectures, one map of models", "Structura cursului: șapte prelegeri și o hartă a modelelor"), cols(
+    D.frame(t("Course structure and models covered", "Structura cursului și modelele studiate"), cols(
         block(t("Course roadmap", "Planul cursului"), "\\begin{enumerate}\\setlength{\\itemsep}{0pt}\\footnotesize\n" + "\n".join(
             "\\item " + x for x in [
                 t("\\textbf{Energy markets and their data} (today)", "\\textbf{Piețele de energie și datele lor} (astăzi)"),
@@ -493,7 +493,7 @@ def build(lang, H=None):
     D.section(t("Energy data and stylized facts", "Date din energie și fapte stilizate"))
     D.subsection(t("Units, clocks and clean data", "Unități de măsură, fusuri orare și date curate"))
     D.concept(
-        t("Power and energy: a MW is not a MWh", "Putere și energie: MW nu înseamnă MWh"),
+        t("Power (MW) and energy (MWh)", "Puterea (MW) și energia (MWh)"),
         t("A megawatt (MW) is how fast energy flows; a megawatt-hour (MWh) is how much flowed, e.g.\\ 1 MW for one hour.",
           "Un megawatt (MW) măsoară puterea, adică ritmul producției sau al consumului; un megawatt-oră (MWh) măsoară "
           "cantitatea de energie, de exemplu 1 MW timp de o oră."),
@@ -645,7 +645,7 @@ def build(lang, H=None):
         tryit=NB + " \\S3", wl="0.50", wr="0.47")
 
     sa = N["season"]["annual"]
-    D.chart(t("Spring is cheap: water and sun meet mild demand", "Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată"), "profile_annual", [
+    D.chart(t("Seasonal profile of prices, consumption and hydro output", "Profilul sezonier al prețurilor, al consumului și al producției hidro"), "profile_annual", [
         t(f"Price relative to the annual mean: highest in {MON[sa['price_max_m']]} (@{{season.annual.price_max|.2f}}), "
           f"lowest in {MON[sa['price_min_m']]} (@{{season.annual.price_min|.2f}}); consumption is highest in January--February and "
           f"lowest in {MON[sa['load_min_m']]}; hydro peaks in {MON[sa['hydro_max_m']]} (snow melt).",
@@ -660,7 +660,7 @@ def build(lang, H=None):
     D.subsection(t("Spikes and negative prices", "Salturi de preț și prețuri negative"))
     sp = N["spikes"]["tukey"]
     D.concept(
-        t("Spikes: a few hours with extreme prices", "Salturile de preț: puține ore, prețuri extreme"),
+        t("Price spikes: definition and number of hours per year", "Salturile de preț: definiție și numărul de ore pe an"),
         t("A spike is an interval whose price is far above what is normal for that year.",
           "Un salt de preț (spike) apare într-un interval în care prețul depășește cu mult nivelul obișnuit al anului respectiv."),
         "\\[ p_t>\\underbrace{Q_{3,y}}_{" + t("\\text{75th percentile}", "\\text{percentila 75}") + "}+3\\cdot\\underbrace{(Q_{3,y}-Q_{1,y})}_{" +
@@ -763,7 +763,7 @@ def build(lang, H=None):
     D.section(t("Time-series toolkit", "Instrumente de analiză a seriilor de timp"))
     D.subsection(t("Stationarity and autocorrelation", "Staționaritate și autocorelație"))
     D.figframe(
-        t("Stationary means the rules of the game do not change over time", "Staționaritate: regulile jocului nu se schimbă în timp"),
+        t("Weak stationarity: constant mean, variance and autocovariances", "Staționaritatea slabă: medie, varianță și autocovarianțe constante"),
         t("Weakly stationary: mean, spread and lag-$k$ memory are the same in every period.",
           "Slab staționară: media, dispersia și memoria la fiecare decalaj $k$ sînt aceleași în orice perioadă."),
         "\\[ \\E X_t=\\mu,\\quad \\Var X_t=\\gamma_0,\\quad \\Cov(X_t,X_{t-k})=\\gamma_k\\quad " +
@@ -804,7 +804,7 @@ def build(lang, H=None):
         per = t("top: ", "sus: ") + m1["period_" + lang] + t("; bottom: ", "; jos: ") + m2["period_" + lang]
         return f1 + "\n" + _re.sub(r"\\chartsource\{[^{}]*\}", lambda _m: "\\chartsource{" + t("Source", "Sursa") + ": " +
                                      m2["source_" + lang] + ". " + t("Data", "Date") + ": " + per + ".}", f2)
-    D.frame(t("Prices remember yesterday, last week and the same hour", "Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră"),
+    D.frame(t("Autocorrelation of prices at daily and weekly lags", "Autocorelația prețurilor la decalaje de o zi și de o săptămînă"),
             acf_src(D.fig("acf_pacf_ro_daily", "0.42\\textheight"), D.fig("acf_ro_hourly", "0.30\\textheight")) + "\n" + it(
         t("Daily, @{acf.daily.start|date} -- @{acf.daily.end|date}: $\\hat\\rho_1=$ @{acf.daily.r1|.3f}, $\\hat\\rho_7=$ @{acf.daily.r7|.3f}, "
           "PACF $\\hat\\alpha_7=$ @{acf.daily.p7|.3f}; hourly, 2024: $\\hat\\rho_{24}=$ @{acf.hourly.r24|.3f}, $\\hat\\rho_{168}=$ @{acf.hourly.r168|.3f}.",
@@ -838,7 +838,7 @@ def build(lang, H=None):
         tryit=NB + " \\S6", cite="(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF; Lago et al., 2021, APEN)", height="0.60\\textheight")
     D.subsection(t("Unit-root tests, decomposition, smoothing", "Teste de rădăcină unitară, descompunere și netezire"))
     D.concept(
-        t("Do shocks die out or stay? Two tests ask it from opposite sides", "Persistența șocurilor: două teste cu ipoteze opuse"),
+        t("Shock persistence: two tests with opposite null hypotheses", "Persistența șocurilor: două teste cu ipoteze opuse"),
         t("One test starts from ``shocks are permanent'' and looks for a pull back to a mean; the other starts from ``the series is "
           "stable'' and looks for a slow drift.",
           "Un test pornește de la ipoteza „șocurile sînt permanente” și caută o revenire la medie; celălalt pornește de la „seria "
@@ -878,7 +878,7 @@ def build(lang, H=None):
         c_, l_ = DEC[u["decision"]]
         rows.append([LBL[k], f"{u['first'][:4]}--{u['last'][:4]}", fmt(u["T"], ",d", lang), fmt(u["adf"], ".2f", lang), pval(u["adf_p"]),
                      fmt(u["kpss"], ".3f", lang), kp, f"\\cellcolor{{{c_}}}{l_}"])
-    D.frame(t("One verdict per series: levels drift, changes are stable", "Un verdict pe serie: nivelurile persistă, variațiile sînt staționare"), table(
+    D.frame(t("ADF and KPSS results by series: levels and changes", "Rezultatele testelor ADF și KPSS pe serii: niveluri și variații"), table(
         "@{}llrrrrrl@{}", [t("Series", "Seria"), t("Sample", "Perioada"), "$T$", "ADF", "$p$", "KPSS", "$p$", t("Verdict", "Verdict")], rows,
         size="footnotesize", stretch="1.0") + note(t("$^{*}$Consistent with a unit root (not rejected); not a proof.",
         "$^{*}$Compatibil cu o rădăcină unitară (ipoteză nerespinsă); nu este o dovadă.")) + "\n\\vspace{1mm}\n" + it(
@@ -923,7 +923,7 @@ def build(lang, H=None):
               "EWMA este un bun preț de referință în contracte, dar o prognoză slabă."),
         tryit=NB + " \\S9", cite="(Hyndman \\& Athanasopoulos, 2021, OTexts, ch.\\ 8)", height="0.62\\textheight")
     D.section(t("Case studies on current data", "Studii de caz pe date recente"))
-    D.subsection(t("(a) Wet 2023, dry 2025", "(a) 2023, an ploios; 2025, an secetos"))
+    D.subsection(t("(a) Hydro output in 2023 and 2025", "(a) Producția hidro în 2023 și 2025"))
     D.chart(t("Case study (a): 2025 hydro output was a third below wet 2023", "Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023"), "hydro_case", [
         t("Hydro: @{hydro.y2023|.2f} TWh in 2023 (highest since 2015) vs @{hydro.y2025|.2f} TWh in 2025 (lowest), \\textbf{@{hydro.chg_pct|.1f}\\%}; "
           "2025 vs the 2015--2025 mean of @{hydro.mean_1525|.2f} TWh: @{hydro.vs_mean_pct|.1f}\\%.",

@@ -1,5 +1,5 @@
-TITLE = ("Case 2 - Watt's next? Forecasting Romania's national consumption one day ahead",
-         "Studiul de caz 2 - Watt's next? Prognoza consumului național al României pentru ziua următoare")
+TITLE = ("Case 2 - Day-ahead forecasting of Romania's national electricity consumption",
+         "Studiul de caz 2 - Prognoza consumului național de energie electrică al României pentru ziua următoare")
 
 CELLS = [
 ("md",

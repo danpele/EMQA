@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Ellenőrzés..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Blokkolja a harmadik féltől származó hirdetési, elemzési, közösségi médiás és süti szkriptek betöltését, így nem tudnak profilt alkotni a böngészésedről, az oldalak pedig gyorsabban betöltődnek."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Követő szkriptek blokkolása"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "ezredmásodpercek"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Nyomkövetés blokkolási teljesítmény"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Követő szkriptekkel"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Követő szkriptek nélkül"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "A nyomkövetés blokkolás nem vonatkozik az alábbi domainekre."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Kereskedelmi célú nyomkövetőket használunk annak érdekében, hogy könnyedén elérhetővé tudjuk tenni a különleges ajánlatainkat. A küldetésünk az, hogy megvédjük a biztonságodat. Soha, semmilyen céllal nem osztjuk meg senkivel a rólad gyűjtött információt."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Különleges ajánlatok"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Valami nem működik."
+   },
+   "chatAgent_thinking": {
+      "message": "Vizsgálat..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Phishing linkek és kiberfenyegetések keresése üzenetekben."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Csevegés védelem"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Nyomon követi, mely weboldalaknak adtál hozzáférést a kamerához, a mikrofonhoz, a helymeghatározáshoz, az értesítésekhez, a vágólaphoz és az automatikus letöltéshez, így azokat áttekintheted és visszavonhatod az Privacy Guard-ban."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Engedélyek kezelése"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Minden jog fenntartva"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Adatvédelmi irányelvek"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Előfizetési Szerződés"
+   },
+   "main_about_third_party_license": {
+      "message": "Harmadik féltől származó licencek feltételei"
+   },
+   "main_about_version": {
+      "message": "Verzió"
+   },
+   "main_account_manage_account_description": {
+      "message": "A beállítások és preferenciák kezeléséhez lépj be Bitdefender fiókodba."
+   },
+   "main_account_manage_account_title": {
+      "message": "Fiók kezelése"
+   },
+   "main_account_managed_by_description": {
+      "message": "Ha másik fiókkal szeretnél belépni, végezd el a hitelesítést a(z) Bitdefender alkalmazásban."
+   },
+   "main_account_managed_by_title": {
+      "message": "A(z) Bitdefender alkalmazás kezeli"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Tekintsd meg és kezeld a Bitdefender előfizetéseid."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Előfizetéseim"
+   },
+   "main_account_sign_out": {
+      "message": "Kijelentkezés"
+   },
+   "main_account_subscription_active": {
+      "message": "Aktív"
+   },
+   "main_account_subscription_expired": {
+      "message": "Az előfizetés lejárt"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Lejárt az előfizetés ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Lejár [Days] nap múlva: ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "[Days] nap ([Date]) múlva lejár "
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Teljes Biztonság"
+   },
+   "main_account_subscription_plan": {
+      "message": "Egyéni csomag"
+   },
+   "main_account_subscription_section": {
+      "message": "Előfizetés"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Ingyenes"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Prémium"
+   },
+   "main_account_title": {
+      "message": "Fiókom"
+   },
+   "main_activity_details_error": {
+      "message": "Nem sikerült betölteni a tevékenységek adatait."
+   },
+   "main_activity_detections_analysed": {
+      "message": "elemzett"
+   },
+   "main_activity_detections_title": {
+      "message": "Észlelések"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "észlelések"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Fenyegetettségi adatbázis"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "A meglátogatott weboldalak kockázati jelzéseinek összesítése kategóriák szerint."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Ez a webhely már szerepel a fehérlistán."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Mégse"
+   },
+   "main_add_whitelist_description": {
+      "message": "A fehérlistán szereplő domainek kimaradnak a vizsgálatból. Ezeken az oldalakon nem kapsz figyelmeztetést a fennálló fenyegetésekről."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Weboldal címe"
+   },
+   "main_add_whitelist_save": {
+      "message": "Mentés"
+   },
+   "main_add_whitelist_title": {
+      "message": "Weboldal hozzáadása a fehérlistához"
+   },
+   "main_autonomy_level_title": {
+      "message": "Autonómia szintje"
+   },
+   "main_autonomy_save": {
+      "message": "Beállítások mentése"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Tevékenység"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Védelmi szint módosítása"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Automatikusan kezeli a fenyegetéseket, és amint talál egyet, azonnal cselekszik anélkül, hogy zavarna téged."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Automatikus védelem"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Mindent leellenőriz, majd megkérdez, mielőtt cselekedne."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Felügyelt védelem"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Ellenőrzött domainek"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Webáruházi adatokkal támogatott vizsgálat"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Valós idejű adatok a kockázatos weboldalakról"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Átverés elleni védelem"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "AI alapú elemzés a keresési találatok hivatkozásairól"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Kereső segéd"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Banki, kriptovaluta és tárca elemzés"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Biztonságos pénzügyek és vagyonkezelés"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Aktív"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Hónap"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Ma"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Hét"
+   },
+   "main_dashboard_load_error": {
+      "message": "Nem sikerült betölteni az irányítópult adatait."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Elvetés"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Könyvjelzők és böngészési előzmények ellenőrzése"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Legutóbbi tevékenységek"
+   },
+   "main_dashboard_retry": {
+      "message": "Újra"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Tevékenység részleteinek megtekintése"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "rosszindulatú"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "biztonságos"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "gyanús"
+   },
+   "main_error_boundary_text": {
+      "message": "Hiba történt a bővítmény felugró ablakának megjelenítésekor. Kérjük, próbáld meg frissíteni vagy újra megnyitni a felugró ablakot."
+   },
+   "main_error_boundary_title": {
+      "message": "Valami hiba történt!"
+   },
+   "main_extension_description": {
+      "message": "Letiltja az átveréseket, az adathalászatot és a veszélyes oldalakat, mielőtt betöltődnének – teljesen ingyen. A Prémium verzió mesterséges intelligenciával egészül ki, amely elmagyarázza a fenyegetéseket, és védi a pénzedet."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Alkalmazás nyelve"
+   },
+   "main_general_app_theme": {
+      "message": "Alkalmazástéma"
+   },
+   "main_general_privacy_policy": {
+      "message": "Adatvédelmi irányelvek"
+   },
+   "main_general_product_reports_description": {
+      "message": "Kiberfenyegetettségi jelentések küldése a termék fejlesztése érdekében, az adatvédelmi irányelveknek megfelelően"
+   },
+   "main_general_product_reports_title": {
+      "message": "Termék jelentések"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automatikus"
+   },
+   "main_general_theme_dark": {
+      "message": "Sötét"
+   },
+   "main_general_theme_light": {
+      "message": "Világos"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Ehhez a lépéshez nem tartozik leírás."
+   },
+   "main_login_button": {
+      "message": "Bejelentkezés"
+   },
+   "main_login_connected_button": {
+      "message": "Folytatás"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Ezután állítsd be a Biztonsági Tanácsadó működését."
+   },
+   "main_login_connected_title": {
+      "message": "Csatlakoztál!"
+   },
+   "main_login_create_account": {
+      "message": "Hozz létre egyet"
+   },
+   "main_login_no_account": {
+      "message": "Nincs fiókod?"
+   },
+   "main_login_subtitle": {
+      "message": "Jelentkezz be Bitdefender fiókoddal."
+   },
+   "main_login_title": {
+      "message": "Böngészés védelme"
+   },
+   "main_navbar_dashboard": {
+      "message": "Irányítópult"
+   },
+   "main_opera_hint_caption": {
+      "message": "A bővítmény megnyitásához kattints az ikonjára az oldalsávon"
+   },
+   "main_opera_hint_instruction": {
+      "message": "A(z) Bitdefender Web Sage megnyitása az Opera oldalsávjáról."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Prémium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Válts Prémium csomagra a funkció használatához."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Engedélyek kezelése"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Értesítések, engedélyek és nyomkövetők kezelése"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Értékelést ajánl"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "A Privacy Guard prémium funkció. Válts csomagot a weboldal engedélyeinek módosításához itt."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "A módosítást nem lehetett alkalmazni. Kérlek próbáld újra."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Még egyetlen weboldal engedélyeit sem kezeled. Privacy Guard ide sorolja be a webhelyeket, ha letiltja a korábban engedélyezett hozzáféréseiket."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Irány a beállítások!"
+   },
+   "main_privacy_guard_info": {
+      "message": "Védi a személyes adatokat a nyomkövető szkriptek blokkolásával és a weboldalak engedélyeinek kezelésével. Ezeket az opciókat a Beállítások menüben tudod módosítani."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Engedélyek kezelése"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Automatikus letöltések"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Kamera felügyelete"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Vágólap hozzáférés"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Helyadatokhoz való hozzáférés"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Mikrofon felügyelet"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Értesítések"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Keresés törlése"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Egyetlen weboldal sem felel meg a keresésnek"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Weboldal keresése"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Megbízható weboldal (összes engedélyezése)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Ezt a weboldalt korábban megbízhatónak jelölted meg, és megadtad neki az összes általa kért engedélyt (értesítések, helyhozzáférés, kamera és mikrofon kezelése)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Ebben a böngészőben nem lehet kezelni a weboldalak engedélyeit."
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Miért fontos a weboldalak engedélyeinek kezelése?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Amikor egy nem biztonságos webhelyet letiltunk, a Privacy Guard a korábban megadott engedélyeit is zárolja, mint például az értesítések vagy a kamera. Azokat az engedélyeket, amelyeket a webhely sosem kapott meg, változatlanul hagyjuk."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Rosszindulatú csevegési linket észleltünk"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Gyanús csevegési linket észleltünk"
+   },
+   "main_recent_activity_info": {
+      "message": "A gyanús vagy rosszindulatú találatokat egy hónapig tároljuk."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Nem sikerült betölteni a legutóbbi tevékenységeket."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Csaló oldalt tiltottunk le"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Csaló oldalt észleltünk"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Kereső segéd észlelései"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Rosszindulatú oldalt tiltottunk le"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Gyanús tevékenységet észleltünk"
+   },
+   "main_rename_device_cancel": {
+      "message": "Mégse"
+   },
+   "main_rename_device_description": {
+      "message": "Adj egyedi nevet az eszközödnek, hogy könnyebben felismerd."
+   },
+   "main_rename_device_field_label": {
+      "message": "Eszköz neve"
+   },
+   "main_rename_device_save": {
+      "message": "Mentés"
+   },
+   "main_rename_device_title": {
+      "message": "Eszköz átnevezése"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "{n} weboldalon visszavontuk a kamerahasználati engedélyt"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "{n} weboldalon visszavonjuk a kamerahasználati engedélyt"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Vágólap-hozzáférés visszavonva {n} webhelynél"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Vágólap-hozzáférés visszavonása {n} webhelynél"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "{n} weboldalon töröltük a sütiket és a webhelyadatokat"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "{n} weboldalon töröljük a sütiket és a webhelyadatokat"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Automatikus letöltések letiltva {n} webhelynél"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Automatikus letöltések letiltása {n} webhelynél"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Javítások alkalmazása"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "{n} / {t} javítás alkalmazva"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "{n} weboldalon visszavontuk a hely hozzáférési engedélyt"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "{n} weboldalon visszavonjuk a hely hozzáférési engedélyt"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "{n} weboldalon visszavontuk a mikrofonhasználati engedélyt"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "{n} weboldalon visszavonjuk a mikrofonhasználati engedélyt"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "{n} weboldalon letiltottuk az értesítéseket"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "{n} weboldalon letiltjuk az értesítéseket"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Átneveztünk {n} kockázatos könyvjelzőt"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Átnevezünk {n} kockázatos könyvjelzőt"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Javítások alkalmazása…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Automatikus védelem"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Felügyelt védelem"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Kijelölt javítások alkalmazása"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Amit csinálok"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Javítások automatikus alkalmazása"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "A szerepem"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Amit megjelölök"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Amit megjavítok"
+   },
+   "main_sa_banner_sources": {
+      "message": "Amit megnézek"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "A te döntésed"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Összevetjük a könyvjelzőket az ismert fenyegetésekkel..."
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "{n} ellenőrzés elvégezve"
+   },
+   "main_sa_check_cookies": {
+      "message": "Ellenőrizzük a tárolt sütiket és a weboldal adatokat a megjelölt domaineken..."
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} / {t} könyvjelző ismert fenyegetést tartalmaz"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} weboldal maradvány adatai törölhetők"
+   },
+   "main_sa_check_done_history": {
+      "message": "{h} látogatás történt a megjelölt domaineken"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} / {t} módosított engedély felesleges vagy kockázatos lehet"
+   },
+   "main_sa_check_history_db": {
+      "message": "Az előzmények összehasonlítása az ismert fenyegetésekkel…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "A legnagyobb kockázatú elemekkel kezdem, majd ellenőrzöm, hogy a webhelyek hozzáférése összhangban van-e a tényleges szükségleteikkel."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Weboldalak engedélyeinek értékelése…"
+   },
+   "main_sa_continue": {
+      "message": "Folytatás"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Vágólap és letöltések"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Találja meg azokat a webhelyeket, amelyek olvashatják a vágólapját vagy kérdezés nélkül tölthetnek le fájlokat, és kapcsolja ki azokat, amelyeknek nem kellene."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Böngésző értesítések"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Tiltsd le a csaló és kéretlen értesítéseket azokról a weboldalakról, amelyeket véletlenül engedélyeztél."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Értesítések"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Mikrofon -, kamera- és helyadatokhoz való hozzáférés"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Találd meg a mikrofonodat, kamerádat vagy helyadatodat elérő webhelyeket, és kapcsold ki a jogosultságukat, ahol nem indokolt."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Mikrofon-, kamera- és helyadatokhoz való hozzáférés"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Ismert fenyegetések"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Blokkold a veszélyes weboldalakat, még a betöltés előtt."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Vágólap és letöltések — {n} webhely olvashatja a vágólapját vagy tölthet le automatikusan fájlokat"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Tárolt adatok— {n} weboldal mentett el sütiket vagy más adatokat az eszközödön"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Hamis weboldalak — {n} weboldal másol valódi vállalkozásokat, hogy átverjen téged"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Engedélyek — {n} weboldal férhet hozzá az értesítéseidhez, a helyzetedhez, a mikrofonodhoz vagy a kamerádhoz"
+   },
+   "main_sa_finding_threats": {
+      "message": "Ismert fenyegetések — {n} webhely szerepel a veszélyes oldalakat tartalmazó listánkon"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Elkészült jelentés: {n} figyelmeztetés"
+   },
+   "main_sa_findings_heading": {
+      "message": "A vizsgálat befejeződött. A következőket találtam:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "A vizsgálat befejeződött. A talált hibák javítása:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "A vizsgálat befejeződött."
+   },
+   "main_sa_findings_none": {
+      "message": "Minden tiszta – ez a vizsgálat nem jelzett problémát."
+   },
+   "main_sa_finish_setup": {
+      "message": "Mentés és folytatás"
+   },
+   "main_sa_fix_cam": {
+      "message": "Kamera hozzáférés visszavonása"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Vágólap-hozzáférés visszavonása"
+   },
+   "main_sa_fix_cookies": {
+      "message": "A gyanús sütik és helyi adatok törlése"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Automatikus letöltések letiltása"
+   },
+   "main_sa_fix_loc": {
+      "message": "Helyadatokhoz való hozzáférés visszavonása"
+   },
+   "main_sa_fix_mic": {
+      "message": "Mikrofon hozzáférés visszavonása"
+   },
+   "main_sa_fix_notif": {
+      "message": "Értesítések letiltása"
+   },
+   "main_sa_fix_rename": {
+      "message": "Kockázatos könyvjelzők átnevezése"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "{n} kockázatos könyvjelzőt megjelöltünk, hogy jól láthatóak legyenek"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Töröltük a sütiket és a tárolt adatokat {n} megjelölt domainről"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Visszavontuk {n} olyan webhely engedélyét, amelyet nem használtál"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Nincs szükség takarításra – minden rendben van"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Ezt javaslom a megoldáshoz:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Automatikusan kezeli a fenyegetéseket, és amint talál egyet, azonnal cselekszik anélkül, hogy zavarna téged."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Automatikus védelem"
+   },
+   "main_sa_go_dashboard": {
+      "message": "kész"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Mindent leellenőriz, majd megkérdez, mielőtt cselekedne."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Felügyelt védelem"
+   },
+   "main_sa_intro_scan": {
+      "message": "Kezdésként válaszd ki, hogy mit vizsgáljak meg az első átvilágítás során."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Az első vizsgálat indítása. Innen már én intézem a többit."
+   },
+   "main_sa_list_last_separator": {
+      "message": " és "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "A tervem a következő:"
+   },
+   "main_sa_plan_body": {
+      "message": "Ellenőrizni fogom a(z) {targets} elemeket, összevetem azokat az ismert fenyegetésekkel, majd mutatok egy összegzést, mielőtt bármit is megváltoztatnék."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Ellenőrizni fogom a könyvjelzőket, az előzményeket és a engedélyeket, összevetem azokat az ismert fenyegetésekkel, és amint találok valamit, azonnal kijavítom a kockázatos elemeket."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Megmutatom, mit találtam, mielőtt bármin változtatnék. Azután eldöntöd, hogy mi legyen a folytatás."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Könyvjelzők"
+   },
+   "main_sa_plan_target_history": {
+      "message": "böngészési előzmények"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "weboldal engedélyek"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "{n} könyvjelző átnézve {f} mappában"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Könyvjelzők átnézése…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "{n} forrás átnézve"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Most megvizsgálom a kockázatokat."
+   },
+   "main_sa_read_history_done": {
+      "message": "{n} előzmény bejegyzés átnézve"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Böngészési előzmények átnézése…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "{n} weboldalt találtam, ahol megváltoztak az engedélyek"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Weboldal engedélyek ellenőrzése…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Először átnézem, aztán elemzem. Most kezdem."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Kezdő vizsgálat kihagyása"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Kihagyás és jelentés megjelenítése"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Könyvjelzők"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Találd meg azokat az elmentett oldalakat, amelyek a könyvjelzőbe mentésük óta észrevétlenül kockázatossá váltak."
+   },
+   "main_sa_source_history": {
+      "message": "Böngészési előzmények"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Ismerd fel a korábban meglátogatott veszélyes oldalakat, hogy legközelebb elkerülhesd őket."
+   },
+   "main_sa_start_assessment": {
+      "message": "Indulhat a vizsgálat"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Állítsd be, hogy mekkora önállóságot kapjon:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Minden kész."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Minden rendben van."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} könyvjelző"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Amit ellenőriztem:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} előzmény bejegyzés"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} weboldal engedély {c} kategóriában"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Amit megtisztítottam:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Amit találtam:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "A jövőben a háttérben figyelem az új könyvjelzőket és engedélyeket, és megjelölöm a kockázatos elemeket."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Nem történt változás. Bármikor visszatérhetsz, hogy ellenőrizd és jóváhagyd a javasolt javításokat."
+   },
+   "main_sa_summary_stand": {
+      "message": "Itt van az összefoglaló."
+   },
+   "main_sa_title_configure": {
+      "message": "Biztonsági tanácsadó beállítása"
+   },
+   "main_sa_what_look_for": {
+      "message": "Amit megjelölök"
+   },
+   "main_sa_where_look": {
+      "message": "Amit megnézek"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonómia"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Kereső segéd"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Célzott védelem"
+   },
+   "main_settings_about": {
+      "message": "Infó"
+   },
+   "main_settings_general": {
+      "message": "Általános"
+   },
+   "main_settings_language": {
+      "message": "Nyelv"
+   },
+   "main_settings_my_account": {
+      "message": "Fiókom"
+   },
+   "main_settings_security_advisor": {
+      "message": "Biztonsági tanácsadó"
+   },
+   "main_settings_support": {
+      "message": "Támogatás"
+   },
+   "main_settings_title": {
+      "message": "Beállítások"
+   },
+   "main_settings_upgrade": {
+      "message": "Válts át {premium} csomagra a nagyobb biztonságért."
+   },
+   "main_settings_whitelist": {
+      "message": "Fehérlista"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "A(z) Bitdefender Web Sage megnyitása a böngésző oldalsávjáról."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "A kezdéshez jelentkezz be Bitdefender fiókoddal."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "A Web Sage még nem véd téged"
+   },
+   "main_support_center_description": {
+      "message": "Gyorsan megtalálhatod a válaszokat a leggyakoribb kérdésekre, vagy vedd fel a kapcsolatot ügyfélszolgálatunkkal, ha további segítségre van szükséged."
+   },
+   "main_support_center_link": {
+      "message": "Menj a Támogatási Központba"
+   },
+   "main_support_center_title": {
+      "message": "Támogatási Központ"
+   },
+   "main_support_community_description": {
+      "message": "Tedd fel a kérdéseidet, hogy választ kapj! Azért vagyunk itt, hogy segítsünk egymásnak!"
+   },
+   "main_support_community_link": {
+      "message": "Kérdezd meg a közösséget"
+   },
+   "main_support_community_title": {
+      "message": "Kérdezd meg a közösséget"
+   },
+   "main_test": {
+      "message": "teszt"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Betűtípusok"
+   },
+   "main_third_party_category_label": {
+      "message": "Kategória:"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript és TypeScript csomagok"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licenc:"
+   },
+   "main_third_party_link_label": {
+      "message": "Link:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Az alábbiakban a(z) Bitdefender böngészőkiterjesztés ($1-es verzió) egyes részeiben használt, harmadik féltől származó nyílt forráskódú szoftverekre vonatkozó nyilatkozatok találhatók. Köszönetünket fejezzük ki a nyílt forráskódú közösségnek az általuk nyújtott minden segítségért és hozzájárulásért."
+   },
+   "main_third_party_page_title": {
+      "message": "Harmadik féltől származó licencek feltételei"
+   },
+   "main_third_party_version_label": {
+      "message": "Verzió:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Nem egy hosszú űrlap. Egy e-mail cím és egy jelszó. Kb. egy perc, egyszer, és kész is vagy."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Nem fizetős tartalom. A {product} Standard verzió ingyenes, és az is marad. Nem kell bankkártya, nincs próbaidőszak, sem lejárati idő."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Nem előfizetés. A fiók önmagában nem jelent előfizetési csomagot. Nincs automatikus megújulás és semmilyen terhelés."
+   },
+   "main_welcome_account_not_title": {
+      "message": "És hogy világos legyen, mi az, ami nem:"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome a munkahelyen, Edge otthon, egy másik gép. Egyetlen fiók elég a {product} használatához mindegyiken, ugyanazokkal a beállításokkal."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Teljes körű védelem, böngészőtől függetlenül"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Ugyanazt a Bitdefender fiókot használhatod az összes Bitdefender termékhez. Új termék hozzáadása, ügyfélszolgálat felkeresése vagy eszköz ellenőrzése – a beállítások már meg is vannak."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Egyetlen fiók, nem kell több"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Az összes engedélyezett oldal, minden kikapcsolt védelem – mostantól mindenhol érvényes. Új böngésző, új laptop, friss telepítés: minden úgy marad, ahogy hagytad."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Többé nem vesznek el a beállításaid"
+   },
+   "main_welcome_account_straight": {
+      "message": "Amint bejelentkezel, elindul a {product} védelem. Amíg ezt nem teszed meg, a védelem inaktív, a böngésződben lévő pajzs ikon pedig kikapcsolt állapotot mutat."
+   },
+   "main_welcome_account_sub": {
+      "message": "Ez jelentős változás a TrafficLight óta, és teljesen érthető, ha kérdéseid vannak ezzel kapcsolatban. Íme a három őszinte indok:"
+   },
+   "main_welcome_account_title": {
+      "message": "Az egyetlen dolog, ami megváltozott"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Böngészés folytatása"
+   },
+   "main_welcome_button_open": {
+      "message": "{product} megnyitása"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Bejelentkezés"
+   },
+   "main_welcome_cta_checking": {
+      "message": "A fiókod ellenőrzése…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Már telepítetted a Bitdefender szolgáltatást ezen az eszközön? Lehet, hogy a bejelentkezés automatikusan megtörténik — az oldal a sikeres bejelentkezés pillanatában frissül."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "A(z) {product} kizárólag akkor nyújt védelmet, ha be vagy jelentkezve a(z) Bitdefender fiókodba. Ha bejelentkezel, aktiválódik a blokkolás, automatikusan alkalmazzuk a csomagodat, és szinkronizáljuk a beállításaidat. A fiók létrehozása ingyenes."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Jelentkezz be — ezzel bekapcsolod a védelmet"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Készen is vagyunk"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Frissítés kész"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "A(z) TrafficLight szintet lépett"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Nyisd meg az irányítópultot"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Bejelentkezés"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Az irányítópult, a tevékenységek és a beállítások a panel felső részén érhetők el."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Fiókod"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "A(z) Bitdefender fiókod aktiválja a védelmet, szinkronizálja a beállításokat a böngészőid és eszközeid között, a tevékenységeidet és beállításaidat pedig egyetlen irányítópultról kezelheted."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "A te fiókod, a te irányítópultod"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "A panelen"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Ismerje meg a biztonsági tanácsadót"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Minden védelmi beállítást itt találsz — azt is, hogy mennyi feladatot végezzen el önállóan."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Biztonsági tanácsadó"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "A beállítás során átnézi a könyvjelzőidet és a böngészési előzményeidet a ismert veszélyek után kutatva, majd végigkísér azon, hogy mit talál a felkeresett oldalakon. Eldöntheted, hogy megkérdezzen-e, mielőtt cselekszik, vagy intézzen mindent önállóan."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Biztonsági tanácsadó"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "A panelen"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Megtekintés a panelen"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Észrevétlen a valódi weboldalon, de azonnal riaszt, ha csaló oldalra tévedsz."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Biztonságos pénzügyek és vagyonkezelés"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "A banki, kriptovaluta- és pénztárca oldalak kiemelt figyelmet kapnak: a bankodat vagy tőzsdédet utánozó hamis oldalakat még azelőtt kiszűröm, hogy beírnád a jelszavad."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Biztonságos pénzügyek és vagyonkezelés"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Banki és kripto oldalakon"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Beállítás két lépésben"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Nem kell semmit bekapcsolnod. A frissítés pillanatától kezdve véd téged."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Még itt"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "A valós idejű oldal blokkolás és a keresési tanácsadó a megszokott módon védi a böngészést, csak most még több adatforrás segíti a munkáját. Ha a különálló Anti-tracker bővítményt is használtad, azt a feladatot mostantól a Privacy Guard látja el — nyugodtan eltávolíthatod."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "A jól bevált funkciók mind megmaradtak"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Mindig bekapcsolva"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Privacy Guard megnyitása"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Az összes kezelt oldal egy helyen, mindegyik engedélyt külön kapcsolóval szabályozhatod."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Blokkolja a nyomkövetőket, és kezeli az oldalnak megadott engedélyeket — értesítések, tartózkodási hely, kamera, mikrofon, automatikus letöltések és vágólap. Ha egy oldalról kiderül, hogy nem biztonságos, a rendszer azonnal visszavonja az összes korábban megadott engedélyt."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "A panelen"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Megtekintés a panelen"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "A figyelmeztetések azonnal megjelennek böngészés közben, még mielőtt rákattintanál bármire."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Átverés elleni védelem"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Nem csak a már ismert kártékony hivatkozásokat szűri: a gyanús oldalakat az AI kérésre azonnal átvizsgálja, és érthetően elmagyarázza a kockázatokat."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Átverés elleni védelem mélyreható AI elemzéssel"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Az oldalon"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Panel megnyitása"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Jel minden találat mellett. Mutass rá az egérrel a részletes indoklásért."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Kereső segéd"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Biztonsági értékelések a találatok mellett a Google, Bing, DuckDuckGo és Yahoo keresőkben. Így már a kattintás előtt tudod, mire számíthatsz."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Kereső segéd"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "A keresési eredmények között"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Megtekintés a panelen"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Értékelés magáról a webáruházról, nem csak arról az oldalról, amin épp tartózkodsz."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Valós idejű elemzéssel vizsgáljuk az online boltokat, hogy időben figyelmeztessünk a kamu webshopokra és a gyanús akciókra, mielőtt kiadnád a pénzed."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Webáruházakban"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Oldal állapotának megtekintése"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Csak akkor jelentkezik, ha mondanivalója van."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Oldal letiltása"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Minden megnyitott oldalt összevetünk a Bitdefender fenyegetéselemzési adatbázisával. A veszélyes oldalakat azonnal leállítjuk — majd végleg letiltjuk, mielőtt újra betöltődne."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "A veszélyes oldalakat azonnal leállítjuk"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Az oldalon"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Jogi információk és támogatás"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Adatvédelmi irányelvek"
+   },
+   "main_welcome_footer_support": {
+      "message": "Támogatás"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Felhasználási feltételek"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "A panelt nem sikerült automatikusan megnyitni. A megnyitáshoz kattints a(z) {product} ikonra az eszköztáron."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animáció arról, hogyan tűzheted ki a bővítményt a böngésző eszköztárára"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Kattints a Bővítmények gombra (a kirakós ikonra) a böngésző jobb felső sarkában."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Kattints a Bővítmények gombra (a kirakós ikonra) a böngésző jobb felső sarkában."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Kattints a Bővítmények gombra (a kirakós ikonra) az eszköztáron."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Kattints a Bővítmények gombra (a kocka ikonra) az eszköztáron."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Nyisd meg a bővítmények menüt a böngészőben."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Keresd meg a(z) {product} elemet, és kattints a mellette lévő gombostű ikonra."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Keresd meg a(z) {product} elemet, és kattints a mellette lévő gombostű ikonra, hogy megjelenjen az eszköztáron."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Keresd meg a(z) {product} elemet, nyisd meg a beállításait (a fogaskerék ikont), és válaszd a Kitűzés a eszköztárra lehetőséget."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Keresd meg a(z) {product} elemet, és kattints a mellette lévő gombostű ikonra."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Keresd meg a(z) {product} elemet, és tűzd ki az eszköztárra."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Érd el egyetlen kattintással, hogy mindig lásd az aktuális oldal biztonsági állapotát."
+   },
+   "main_welcome_pin_title": {
+      "message": "Tűzd ki a(z) {product} elemet az eszköztárra"
+   },
+   "main_welcome_protected_done": {
+      "message": "A védelem be van kapcsolva. Már csak egy lépés — tűzd ki ezt: {product}, hogy mindig kéznél legyen."
+   },
+   "main_welcome_protected_plan": {
+      "message": "A(z) {plan} csomagod része – automatikusan elérhető, nem kell külön aktiválnod."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Folyamatban"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Ingyenes a Bitdefender fiókoddal."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Védve vagy – {product} Prémium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Védve vagy – {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Be vagy jelentkezve, és a védelmed aktív"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Valós idejű védelem az átverések, az adathalászat és a nyomkövetők ellen, közvetlenül a böngésződben. Már csak két lépés, és kész is vagy."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "A(z) {version} verzió már telepítve van, és gondoskodik a védelmedről. Ezt biztosítja számodra."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Szintet lépett a bővítményed. A(z) TrafficLight minden funkciója elérhető, és még sok újdonság vár rád."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Prémium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "A(z) {product} Prémium része, a(z) Bitdefender Total Security és magasabb csomagok tartalmazzák."
+   },
+   "main_welcome_title_new": {
+      "message": "A(z) {product} nevében üdvözlünk Téged!"
+   },
+   "main_welcome_title_update": {
+      "message": "A(z) {product} még jobb lett"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "A(z) TrafficLight mostantól {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Ezt nyújtja számodra:"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Újdonságok"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Újdonságok"
+   },
+   "main_welcome_tour_next": {
+      "message": "Következő funkció"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Előző funkció"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} a {total}-ból"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Ismerd meg a(z) {product} funkcióit részletesen. Haladj lépésről lépésre, vagy vesd bele magad azonnal."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Újdonság a {version} verzióban. Haladj lépésről lépésre, vagy vesd bele magad azonnal."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Ugyanaz, mint a(z) TrafficLight esetében, kiegészítve ezzel. Haladj lépésről lépésre, vagy vesd bele magad azonnal."
+   },
+   "main_welcome_window_title": {
+      "message": "A(z) {product} nevében üdvözlünk Téged!"
+   },
+   "main_whitelist_add": {
+      "message": "Weboldal hozzáadása"
+   },
+   "main_whitelist_import": {
+      "message": "Domainek importálása"
+   },
+   "main_whitelist_info": {
+      "message": "A fehérlistán szereplő domainek kimaradnak a vizsgálatból. Ezeken az oldalakon nem kapsz figyelmeztetést a fennálló fenyegetésekről."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Eltávolítás"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Fenyegetés vizsgálat"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Követő szkriptek"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Összegyűjti a meglátogatott oldalak hirdetéseit, hogy kiszűrje a csalásokat és a visszaéléseket."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Hirdetés figyelés"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Jelzi azokat a rosszindulatú hirdetéseket és szponzorált találatokat, amik csalásokat vagy vírusokat rejtenek."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Kiszűri a hamis banki oldalakat és az átverős befektetési platformokat, amelyek az adataidat vagy a pénzed akarják megszerezni."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Pénzügyi csalások elleni védelem"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Figyelmeztet a hamis webáruházakra ész átverős fizetési oldalakra, mielőtt megadnád a banki adataidat."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Oldal letiltása"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Betöltés mindenképpen (nem biztonságos)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Tartalom betöltése mindenképpen (nem biztonságos)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "További részletek mutatása"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Részletek átvizsgálása…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Ezt az oldalt most nem sikerült átvizsgálni. Kérlek próbáld újra."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Az oldalak részletes elemzése nem része a jelenlegi előfizetésednek, így ezt az oldalt nem tudom átvizsgálni."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Hosszabb ideig tartott, mint amennyi időm volt rá, ezért abbahagytam a keresést."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Ellenőrzi az AI áttekintésekben lévő linkeket, és megjelöli azokat, amelyek nem biztonságos weboldalakra mutatnak."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI áttekintések elemzése"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Letiltva a beállításokban"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Enged"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Nem érhető el"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI Kereső segéd"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Keresési találatok elemzése"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Elemző: {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Nem tudtam blokkolni ezt az oldalt."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Oldal letiltása..."
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Kényszerített ellenőrzés (eltávolítás a fehérlistáról)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Vizsgáld meg újra"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Oldal blokkolásának feloldása"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Ismert fenyegetések adatbázisának ellenőrzése…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Engedélyek ellenőrzése…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Átverések keresése…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Ellenőrzés"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "{n} ellenőrzés elvégezve"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Oldal letiltása"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Hozzájárulás"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Mélyreható vizsgálat futtatása"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Mélyreható vizsgálat elvégezve"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Mélyreható elemzés befejezve"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Oldaltartalom és képernyőkép elemzése…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "A mélyreható elemzés nem talált problémát ezen az oldalon."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "A mélyreható elemzés lefutott, és nem talált gyanús jeleket."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "A mélyreható elemzés megerősítette, hogy ez az oldal veszélyes."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Elemzés futtatása"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Ha hozzájárulsz, ellenőrzöm az oldal tartalmát és a képernyőképét, hogy kiderítsem, mi rejtőzik a felszín alatt."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "A mélyreható vizsgálat időtúllépés miatt megszakadt"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "A várakozás {n} másodperc után megszakadt"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "A mélyreható vizsgálat a vártnál tovább tart, ezért leállítottam. Újraindíthatod, vagy dönthetsz az eddig talált adatok alapján."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Mélyreható vizsgálat futtatása?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Eltávolítás a fehérlistáról és új ellenőrzés…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Elkészült jelentés: {n} figyelmeztetés"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Elkészült jelentés: {n} figyelmeztetés"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Tovább az oldalra…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Rosszindulatú keresési találatok"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Ellenőrzi a hirdetéseket a meglátogatott oldalakon, és megjelöli azokat, amelyek átverésekhez vezetnek."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Átverős hirdetések elleni védelem"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Bővítménybeállítások megnyitása"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Az Opera addig letiltja a bővítmények hozzáférését a keresési találatokhoz, amíg ezt nem engedélyezi. Nyissa meg az opera://extensions oldalt, keresse meg ezt a bővítményt, és kapcsolja be a „Hozzáférés engedélyezése a keresőoldal találataihoz” beállítást."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "A keresési találatok ellenőrzése nem történik meg"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard: {list} letiltva"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Ez a weboldal hozzáférhet ehhez: {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Nincsenek engedélyek"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Engedélyek nem elérhetők"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Nem találtunk gyanús jeleket"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "A Privacy Guard azt javasolja, hogy tiltsd le a(z) {list} elemeket ezen a weboldalon."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "A következőket találtam:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Minden letiltott tartalmat visszaállítottunk."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Letiltott tartalom visszaállítása..."
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Nem észleltünk átverésre utaló mintákat"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} rosszindulatú jel található"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} rosszindulatú jel található"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} gyanús jel található"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} gyanús jel található"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Nem sikerült befejezni a csalás vizsgálatot"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Nem megbízható hirdetési tartalomban fordult elő"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Kényszerítéses zsarolás mintája"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Hamis pénzzel kapcsolatos átverés mintája"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Válsághelyzettel való visszaélés mintája"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Kriptovalutás átverés mintája"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Csaló felnőtt társkereső mintája"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Megtévesztő hirdetés mintája"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Megtévesztő nyereményjáték mintája"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Megtévesztő online kérdőív mintája"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Energetikai befektetési csalás mintája"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Zsaroló csalás mintája"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Csaló hirdetés megtekintési jutalmak mintája"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Csaló foglalási oldal mintája"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Csaló kaszinó mintája"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Megtévesztő jótékonysági szervezet mintája"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Csaló klinika mintája"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Megtévesztő kripto nyereményjáték mintája"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Hamis kézbesítési szolgáltatás mintája"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Megtévesztő dokumentumok mintája"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Megtévesztő webáruház mintája"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Megtévesztő oktatási intézmény mintája"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Hamis állásajánlat mintája"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Megtévesztő szórakoztató szolgáltatás mintája"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Megtévesztő pénzügyi intézmény mintája"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Megtévesztő pénzügyi befektetés mintája"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Hamis szerencsejáték oldal mintája"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Megtévesztő játéknyeremény mintája"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Megtévesztő arany befektetés mintája"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Hamis állami juttatás mintája"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Hamis kormányzati intézmény mintája"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Hamis bevándorlási ügyintézés mintája"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Hamis jogi intézmény mintája"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Hamis pénzvisszatérítés mintája"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Hamis online gyógyszertár mintája"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Csaló klinika mintája"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Megtévesztő fizetési felület mintája"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Megtévesztő nyereményakció mintája"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Megtévesztő nyeremény vagy jutalom mintája"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Megtévesztő kiadóvállalat mintája"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Megtévesztő értékelési felület mintája"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Megtévesztő webáruházak mintázatai hirdetési kampányban"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Megtévesztő spirituális szolgáltató mintája"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Megtévesztő nyeremény mintája"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Pénzügyi átverés mintája"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Megtévesztő webáruházat népszerűsítő hirdetési kampány"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Egészségügyi átverés mintája"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Homoglif támadást észleltünk"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Illegális tevékenységek oldalának mintája"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Illegális szolgáltatások mintája"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Illegális tudatmódosítók mintája"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "Rosszindulatú mintákat tartalmazó IP cím"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "Gyanús mintázatú IP cím"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Ismert adathalászat mintája"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Ismert átverés mintája"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Megtévesztő lottósorsolásos csalás mintája"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Alacsony megbízhatóságú webáruház, ismeretlen háttérrel"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Alacsony megbízhatósági szintű kereskedelmi és befektetési platform, stabil jelenlét nélkül"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Rosszindulatú befektetési platform link"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Rosszindulatú webáruház link"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Kábítószeres átverés mintája"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Webáruház ellentmondásos jelekkel"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Webáruház stabil jelenlét nélkül"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Megtévesztő kisállat értékesítés mintája"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Ponzi/piramisjáték mintája"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Megtévesztő ingatlanos csalás mintája"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Megtévesztő társkereső csalás mintája"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Megtévesztő társkereső weboldal mintája"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Megtévesztő titkos társaság mintája"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Gyanús befektetési platform link"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Gyanús link formátum"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Gyanús webáruház link"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Megtévesztő informatikai segítségnyújtás mintája"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Kereskedési vagy befektetési platform ellentmondásos jelekkel"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Kereskedési vagy befektetési platform ismeretlen háttérrel"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Kifejezetten alacsony megbízhatóságú webáruház"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Kifejezetten alacsony megbízhatóságú webáruház, ismeretlen háttérrel"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Kifejezetten alacsony megbízhatóságú kereskedési vagy befektetési platform"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Nagyon gyanús link"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Letiltottam az oldalt, és megvontam a hozzáférését a mikrofonodhoz, a kamerádhoz és a helyadataidhoz — nyugodtan bezárhatod a lapot..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "A nyomkövető szkripteket blokkoltuk, valamint a mikrofonhoz, kamerához és helyadatokhoz való hozzáférést is visszavontuk a biztonságod érdekében."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Nem sikerült befejezni a keresési találatok ellenőrzését."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "A vizsgálat nem fejeződött be"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Biztonsági tanácsadó be van kapcsolva"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Keresési eredmények beolvasása…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Gyanús keresési találat"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "A kereső segéd le van tiltva. Nyisd meg a beállításokat a bekapcsoláshoz."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "A webvédelem le van tiltva. Nyisd meg a beállításokat a bekapcsoláshoz."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Ellenőrzések kihagyása és az oldal betöltése."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Ezt az oldalt rosszindulatúnak jelöltük."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Ez az oldal egy csalási kísérlet része."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Ez az oldal egy átverős hirdetés része."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Olyan elemeket észleltünk, amelyek kárt tehetnek az eszközödben."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Az oldal megpróbálta felhasználni az eszközöd erőforrásait kriptovaluta bányászathoz, de blokkoltuk."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Ezt az oldalt a biztonsági tanácsadó nem tudja átvizsgálni."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Ellenőrzések kihagyása és az oldal betöltése."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Blokkolva marad, amíg fel nem oldja a blokkolást."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Ez az oldal egy adathalász kísérlet része."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Az oldal egy PUA-t (Potenciálisan Kéretlen Alkalmazás) próbált meg letölteni eszközödre, ezért letiltottuk."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Ezt az oldalt kihagyjuk a vizsgálatból a jelenlegi böngészési munkamenetben"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Ez az oldal lehet, hogy biztonságos, de korábban már jelentettek vele kapcsolatos biztonsági fenyegetéseket."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Ezt az oldalt kihagyjuk a vizsgálatból, mert szerepel a kivételek listáján."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Biztonsági értékelést jelenít meg a találatok mellett a Google, Bing, Yahoo és DuckDuckGo keresőkben, így még azelőtt kiszúrhatod a kockázatos linkeket, mielőtt rákattintanál."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Keresési eredmények biztonsági értékelése"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "A védelem letiltva"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "A keresési találatok átvizsgálása nem sikerült"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Ezt az oldalt nem sikerült megvizsgálni"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Ez a domain fehérlistán van"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Gyanús webáruházat észleltünk"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Csalási kísérletet észleltünk"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Átverős hirdetést észleltünk"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Fenyegetést találtunk!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Kriptobányász kísérlet észleltünk"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Az oldal nem vizsgálható át"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Ezt az oldalt kihagyjuk ebben a munkamenetben"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Ön blokkolta ezt az oldalt"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Adathalász kísérletet észleltünk"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Potenciálisan kéretlen alkalmazás letöltését észleltük"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Ez a weboldal biztonságos"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Átvizsgálás..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Nem megbízható domain észleltünk"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Kivételként kezelt oldal észleltünk"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "{n} nyomkövetőt blokkoltunk"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "A nyomkövető szkriptek blokkolása ki van kapcsolva, így ezen az oldalon nem vizsgáltuk a nyomkövetőket"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Szkriptek betöltése (nem biztonságos)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Nem találtunk követő szkripteket ezen az oldalon"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Nem tudtam feloldani az oldal blokkolását."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Az oldal blokkolásának feloldása…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Nem található ismert fenyegetés"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Oldal letiltva"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Oldal betöltve: {n}ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Biztonságban vagy"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Kockázatokat találtam ezen az oldalon. Ne adj meg személyes adatokat, jelszavakat vagy kártyaadatokat, és ne tölts le semmit."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Légy itt óvatos"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Jelenleg minden rendben."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Védelmet nyújt böngészés közben."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Ezt az oldalt letiltotta"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "A domaint rosszindulatúként jelöltük"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "A hamis webáruházak valódi cégeket másolnak, hogy megszerezzék a pénzed és a kártyaadataidat. A rendelések ritkán érkeznek meg, a megadott adataidat pedig továbbértékesíthetik vagy visszaélnek velük."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "A csalárd oldalak rendszerint megpróbálnak átverni, hogy pénzt küldj nekik, így jutva törvénytelen bevételhez."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Ezt az oldalt letiltottuk, hogy megakadályozzuk az átveréssel kapcsolatos további interakciókat.\n\nA támadók deepfake használatával, befektetési lehetőségekkel és egyéb felkapott témákkal keltik fel a potenciális áldozataik érdeklődését, hogy érzékeny adatokat, pénzt adjanak ki vagy malware programokat töltsenek le."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Veszélyes oldalak próbálnak meg olyan szoftvert telepíteni, amely károsíthatja az eszközt, személyes adatokat gyűjthet vagy a beleegyezésed nélkül működne."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "A Miner oldalak az eszköz erőforrásait használják kriptovaluta bányászásra, ezzel negatív hatást gyakorolnak az eszköz használatára és a hardver élettartamára."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Az adathalász oldalak megbízható oldalnak álcázzák magukat és bizalmas információkat gyűjtenek, mint a bejelentkezési azonosítók vagy hitelkártya adatok. Az ellopott adatokat aztán pénzügyi haszonszerzésre használják."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Az oldal egy PUA-t (Potenciálisan Kéretlen Alkalmazás) próbált meg letölteni eszközödre. Ez a fajta alkalmazás olyan viselkedést mutat, amely adatvédelmi és biztonsági szempontokból érinti az eszközödet és adataidat."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Gyanús viselkedés vagy kockázatosnak vélt sajátosságok tapasztalhatók nem megbízható oldalak részéről. Jobban teszed, ha nem látogatod meg ezeket, ha vigyázni szeretnél az adataidra."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Gyanús webáruházat blokkoltuk a biztonságodért"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "A védelmed érdekében letiltottunk néhány tartalmat."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Gyanús tartalmat észleltünk"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "A panel megnyitása nem sikerült. Kérjük, próbálja újra."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Nyisd meg a(z) Bitdefender panelt a böngésző oldalsávjából a részletek megtekintéséhez."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Oldal letiltva"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Automatikus letöltések"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "kamera"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "vágólap"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Bezárás"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "A(z) {permissions} elérése le lett tiltva ezen a weboldalon."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "A(z) {permissions} elérése le lett tiltva ezen a weboldalon."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "A(z) {permissions} elérése engedélyezve van ezen a weboldalon. Nézd meg, mihez fér hozzá ez a weboldal."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "A(z) {permissions} elérése engedélyezve van ezen a weboldalon. Nézd meg, mihez fér hozzá ez a weboldal."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "A Privacy Guard szerint érdemes ellenőrizned néhány engedélyt"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} és {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "hely"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "A(z) {permissions} elérése engedélyezve van ezen a weboldalon. Nézd át, mihez fér hozzá ez a weboldal."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "A(z) {permissions} elérése engedélyezve van ezen a weboldalon. Nézd át, mihez fér hozzá ez a weboldal."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "A Privacy Guard kezeli az engedélyeket"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "mikrofon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Értesítések"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "A Privacy Guard kezeli az engedélyeket"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Óvatosan folytasd"
+   },
+   "urlScanning_see_details": {
+      "message": "Lássuk a részleteket"
+   },
+   "urlScanning_show_details": {
+      "message": "Részletek megjelenítése"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Bezárás"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Néhány intő jelet találtunk itt. Légy óvatos a személyes adataiddal és a letöltésekkel."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "A keresési találatok átvizsgálása nem sikerült"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Ezt az oldalt nem sikerült megvizsgálni"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Gyanús webáruházat észleltünk"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Csalási kísérletet észleltünk"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Átverős hirdetést észleltünk"
+   },
+   "urlScanning_title_malware": {
+      "message": "Fenyegetést találtunk!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Kriptobányász kísérlet észleltünk"
+   },
+   "urlScanning_title_phish": {
+      "message": "Adathalász kísérletet észleltünk"
+   },
+   "urlScanning_title_pua": {
+      "message": "Potenciálisan kéretlen alkalmazás letöltését észleltük"
+   },
+   "urlScanning_title_safe": {
+      "message": "Ez az oldal biztonságos"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Nem megbízható domain észleltünk"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Átvizsgálja a meglátogatott URL-eket, hogy kiszűrje a rosszindulatú programokat, az adathalászatot, a csalásokat és az egyéb fenyegetéseket"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "webes védelem"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Bitdefender webvédelem"
+   }
+}

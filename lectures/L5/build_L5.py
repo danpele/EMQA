@@ -187,7 +187,7 @@ def build(lang, H=None):
         sep="1pt") + D.bottom(None, NB + " \\S1"), "footnotesize")
 
     # ------------------------------------------------------------------ 1 why hedge
-    D.section(t("Why hedge: exposures and the 2021--2022 lesson", "De ce acoperim riscul: expuneri și lecția crizei din 2021--2022"))
+    D.section(t("Reasons for hedging: price exposures and the 2021--2022 crisis", "Motivele acoperirii riscului: expunerile la preț și criza din 2021--2022"))
     D.concept(t("Every firm in the power chain holds a price position", "Fiecare firmă din sectorul energiei are o poziție de preț"),
               t("A supplier with fixed retail prices loses when the wholesale price rises; a producer loses when it falls.",
                 "Un furnizor cu prețuri fixe pierde cînd prețul angro crește; un producător pierde cînd prețul scade."),
@@ -253,7 +253,7 @@ def build(lang, H=None):
                 "faceți oferta către client pe baza prețului forward al perioadei de livrare, nu a prețului spot de azi."),
               tryit=NB + " \\S3", cite="(OPCOM; Benth et al., 2008)", wl="0.53", wr="0.44")
 
-    D.concept(t("Physical or cash-settled: same hedge, different mechanics", "Livrare fizică sau decontare financiară: aceeași acoperire"),
+    D.concept(t("Physical delivery and cash settlement", "Livrarea fizică și decontarea financiară"),
               t("A physical forward delivers MWh at $F$; a cash-settled future pays the gap to a reference average.",
                 "Forward-ul fizic livrează energia la prețul $F$; contractul futures financiar plătește doar diferența față de o medie."),
               "\\[ \\underbrace{F\\cdot Q}_{\\text{" + t("physical", "fizic") + "}}=\\underbrace{\\bar S Q}_{\\text{spot}}-\\underbrace{(\\bar S^{\\text{ref}}-F)Q}_{\\text{" + t("cash settlement", "decontare") + "}}"
@@ -494,7 +494,7 @@ def build(lang, H=None):
                 "evaluați un contract de achiziție pe termen lung (PPA) pentru un parc solar la raportul de captare ($f^{\\text{solar}}$), nu la prețul benzii."),
               tryit=NB + " \\S5", cite=OWN, wl="0.53", wr="0.44")
 
-    D.chart(t("Solar is worth ever less than the band, load ever more", "Energia solară valorează tot mai puțin decît banda"), "shape", [
+    D.chart(t("Value of the solar and load profiles relative to baseload", "Valoarea profilului solar și a profilului de consum față de bandă"), "shape", [
         t("Solar capture factor down to @{shape.solar_min|.3f} in @{shape.solar_min_y}; load-weighted price @{shape.load_prem.2025|.1f} EUR/MWh above the band in 2025.",
           "Raportul de captare solar a scăzut la @{shape.solar_min|.3f} în @{shape.solar_min_y}; în 2025, prețul ponderat cu consumul a depășit banda cu @{shape.load_prem.2025|.1f} EUR/MWh.")],
         height="0.60\\textheight", job=t("buy band for the base of the portfolio, peak and hourly products for the shape.",
@@ -503,7 +503,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 5 options
     D.section(t("Options on energy", "Opțiuni pe energie"))
-    D.concept(t("Caps, floors and collars: insurance instead of a fixed price", "Plafon, prag minim și collar: asigurare în locul unui preț fix"),
+    D.concept(t("Caps, floors and collars", "Plafon, prag minim și collar"),
               t("A call caps the purchase price and keeps the gain if prices fall; it costs a premium today.",
                 "O opțiune call plafonează prețul de cumpărare și păstrează cîștigul dacă prețurile scad; costă o primă plătită azi."),
               "\\[ \\underbrace{(F_T-K)^+}_{\\text{call}},\\quad \\underbrace{(K-F_T)^+}_{\\text{put}},\\quad \\underbrace{\\min(F_T,K_c)+c}_{\\text{" + t("price with a cap", "preț cu plafon") + "}} \\]"
@@ -656,7 +656,7 @@ def build(lang, H=None):
                                 "un producător îndatorat ar trebui să vîndă forward chiar dacă se așteaptă la prețuri mai mari."), NB + " \\S7"),
         "footnotesize", cite=t("(own computation; OPCOM; Andrei, Pele \\& Cramer, 2026, PICBE)", "(calcule proprii; OPCOM; Andrei, Pele \\& Cramer, 2026, PICBE)"))
 
-    D.frame(t("A hedging policy in eight lines", "O politică de acoperire în opt puncte"), cols(
+    D.frame(t("Elements of a hedging policy", "Elementele unei politici de acoperire a riscului"), cols(
         it((t("\\textbf{Exposure}", "\\textbf{Expunerea}"),
             t("net position per month and profile (band, peak, solar)", "poziția netă pe lună și pe profil (bandă, vîrf, solar)"),
             t("volume risk: demand hardly reacts to price", "riscul de volum: cererea reacționează foarte puțin la preț")),

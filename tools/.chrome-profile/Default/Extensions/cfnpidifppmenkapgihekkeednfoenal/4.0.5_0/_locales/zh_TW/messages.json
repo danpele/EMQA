@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "正在驗證..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "封鎖第三方廣告、分析、社群媒體和 cookie 腳本加載，這樣網站就無法分析您的瀏覽行為，頁面載入速度也會更快。"
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "阻止追蹤腳本"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "毫秒"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "反追蹤效能"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "使用追蹤腳本"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "沒有追蹤腳本"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "以下網域不在反追蹤器屏蔽範圍內。"
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "我們使用商業追蹤器來協助您輕鬆找到我們的特別優惠。我們的使命是保護您的隱私。我們絕不會出於任何目的與任何人共享所收集的任何資訊。"
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "特別優惠"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "出了些問題"
+   },
+   "chatAgent_thinking": {
+      "message": "思維..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "掃描郵件，尋找釣魚連結和網路威脅。"
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "聊天防護"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "追蹤您已授予哪些網站攝影機、麥克風、位置、通知、剪貼簿和自動下載存取權限，以便您可以在隱私權衛士中查看和撤銷這些權限。"
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "管理權限"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "版權所有"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "版權所有© 1997 - 2025 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "隱私權聲明"
+   },
+   "main_about_subscription_agreement": {
+      "message": "訂閱協議"
+   },
+   "main_about_third_party_license": {
+      "message": "第三方授權協議"
+   },
+   "main_about_version": {
+      "message": "版本"
+   },
+   "main_account_manage_account_description": {
+      "message": "存取您的Bitdefender 帳戶，以管理您的設定和喜好設定。"
+   },
+   "main_account_manage_account_title": {
+      "message": "管理帳戶"
+   },
+   "main_account_managed_by_description": {
+      "message": "若要使用其他帳戶，請在您的 Bitdefender 應用程式中進行驗證。"
+   },
+   "main_account_managed_by_title": {
+      "message": "由您的 Bitdefender 應用程式管理"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "檢視並管理您的Bitdefender 訂閱。"
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "我的訂閱"
+   },
+   "main_account_sign_out": {
+      "message": "登出"
+   },
+   "main_account_subscription_active": {
+      "message": "已啟用"
+   },
+   "main_account_subscription_expired": {
+      "message": "訂閱已過期"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "訂閱已過期 ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "到期 [Days] 天數 ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "到期 [Days] 天數 ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender 全方位防護"
+   },
+   "main_account_subscription_plan": {
+      "message": "個人計劃"
+   },
+   "main_account_subscription_section": {
+      "message": "訂閱"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "免費"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "優質的"
+   },
+   "main_account_title": {
+      "message": "我的帳戶"
+   },
+   "main_activity_details_error": {
+      "message": "無法載入活動資料。"
+   },
+   "main_activity_detections_analysed": {
+      "message": "分析"
+   },
+   "main_activity_detections_title": {
+      "message": "偵測"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "閒置偵測"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "威脅情報"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "您造訪的網站如何綜合顯示各類風險訊號。"
+   },
+   "main_add_whitelist_already_added": {
+      "message": "此網站已在您的白名單中。"
+   },
+   "main_add_whitelist_cancel": {
+      "message": "取消"
+   },
+   "main_add_whitelist_description": {
+      "message": "已列入白名單的網域將不會被掃描。您不會收到有關這些頁面上存在的任何威脅的警告。"
+   },
+   "main_add_whitelist_field_label": {
+      "message": "網站地址"
+   },
+   "main_add_whitelist_save": {
+      "message": "儲存"
+   },
+   "main_add_whitelist_title": {
+      "message": "將網站加入白名單"
+   },
+   "main_autonomy_level_title": {
+      "message": "自主等級"
+   },
+   "main_autonomy_save": {
+      "message": "儲存設定"
+   },
+   "main_dashboard_activity_title": {
+      "message": "活動"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "變更保護級別"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "能夠自動處理威脅，並在發現威脅時立即採取行動，而不會打斷您。"
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "自動保護"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "他會檢查所有事項，然後在採取行動前徵求你的意見。"
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "引導保護"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "已檢查的域名"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "網路商店智慧掃描"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "安全購物"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "即時風險網站情報"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Scam Protection"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "人工智慧賦能的搜尋結果連結智能"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "搜尋顧問"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "銀行、加密貨幣和錢包智能"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "保障財務安全"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "已啟用"
+   },
+   "main_dashboard_filter_month": {
+      "message": "月"
+   },
+   "main_dashboard_filter_today": {
+      "message": "今天"
+   },
+   "main_dashboard_filter_week": {
+      "message": "週"
+   },
+   "main_dashboard_load_error": {
+      "message": "無法載入儀錶板資料。"
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "關閉"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "檢查書籤和瀏覽紀錄"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "近期活動"
+   },
+   "main_dashboard_retry": {
+      "message": "重試"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "查看活動詳情"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "惡意"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "保險"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "可疑的"
+   },
+   "main_error_boundary_text": {
+      "message": "渲染擴充功能彈出視窗時發生錯誤。請嘗試刷新或重新打開彈跳窗。"
+   },
+   "main_error_boundary_title": {
+      "message": "出了些問題!"
+   },
+   "main_extension_description": {
+      "message": "免費攔截詐騙、釣魚和危險網站，防止其加載。高級版增加了人工智慧功能，可以解釋威脅並保護您的資金安全。"
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "應用程式語言"
+   },
+   "main_general_app_theme": {
+      "message": "應用程式主題"
+   },
+   "main_general_privacy_policy": {
+      "message": "隱私權聲明"
+   },
+   "main_general_product_reports_description": {
+      "message": "根據隱私權政策傳送網路威脅報告以進行產品改善"
+   },
+   "main_general_product_reports_title": {
+      "message": "產品報告"
+   },
+   "main_general_theme_automatic": {
+      "message": "自動"
+   },
+   "main_general_theme_dark": {
+      "message": "深色"
+   },
+   "main_general_theme_light": {
+      "message": "淺色"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "此步驟沒有描述。"
+   },
+   "main_login_button": {
+      "message": "登入"
+   },
+   "main_login_connected_button": {
+      "message": "繼續"
+   },
+   "main_login_connected_subtitle": {
+      "message": "接下來，設定安全顧問的工作方式。"
+   },
+   "main_login_connected_title": {
+      "message": "您已連線！"
+   },
+   "main_login_create_account": {
+      "message": "建立帳號"
+   },
+   "main_login_no_account": {
+      "message": "沒有帳號？"
+   },
+   "main_login_subtitle": {
+      "message": "使用您的Bitdefender帳號登入。"
+   },
+   "main_login_title": {
+      "message": "保護您的瀏覽"
+   },
+   "main_navbar_dashboard": {
+      "message": "儀錶板"
+   },
+   "main_opera_hint_caption": {
+      "message": "點擊側邊欄中的擴充功能圖示即可打開它"
+   },
+   "main_opera_hint_instruction": {
+      "message": "從 Opera 的側邊欄開啟 Bitdefender Web Sage。"
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "優質的"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "升級到高級版即可使用此功能。"
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "管理權限"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "管理通知、權限和追蹤器"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "建議進行審查"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "隱私防護"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "隱私防護是一項高級功能。點擊此處升級以更改網站權限。"
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "此變更無法實施。請再試一次。"
+   },
+   "main_privacy_guard_empty": {
+      "message": "目前尚未管理任何網站權限。Privacy Guard 會在此處新增一個網站，當它阻止網站使用的權限時。"
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "前往「設定」"
+   },
+   "main_privacy_guard_info": {
+      "message": "透過阻止追蹤腳本和管理網站權限來保護您的隱私。您可以在「設定」選單中對這些選項進行微調。"
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "管理權限"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "自動下載"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "相機控制"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "剪貼簿訪問"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "地點存取"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "麥克風控制"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "通知"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "清除搜尋"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "沒有符合您搜尋條件的網站"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "尋找網站"
+   },
+   "main_privacy_guard_title": {
+      "message": "隱私防護"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "信任此網站（允許所有選項）"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "您先前已選擇信任此網站並允許其請求的所有權限（通知、位置存取、攝影機和麥克風控制）。"
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "此瀏覽器無法管理網站權限"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "為什麼要管理權限？"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "當某個網站因不安全而被封鎖時，隱私防護也會封鎖該網站可以要求的權限，例如通知或攝影機存取權限。網站從未擁有過的權限保持不變。"
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "檢測到惡意聊天鏈接"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "偵測到可疑聊天鏈接"
+   },
+   "main_recent_activity_info": {
+      "message": "近期可疑或惡意判決記錄將保存過去一個月。"
+   },
+   "main_recent_activity_load_error": {
+      "message": "無法載入最近的活動記錄。"
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "詐騙頁面已被封鎖"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "偵測到詐騙頁面"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "搜尋顧問檢測結果"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "惡意頁面已被封鎖"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "偵測到可疑活動"
+   },
+   "main_rename_device_cancel": {
+      "message": "取消"
+   },
+   "main_rename_device_description": {
+      "message": "為您的裝置取一個獨特的名稱，以協助您輕鬆識別。"
+   },
+   "main_rename_device_field_label": {
+      "message": "裝置名稱"
+   },
+   "main_rename_device_save": {
+      "message": "儲存"
+   },
+   "main_rename_device_title": {
+      "message": "重新命名此裝置"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "撤銷了對 {n} 個網站的攝影機存取權限"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "撤銷對 {n} 個網站的攝影機存取權限"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "已撤銷 {n} 個網站的剪貼簿存取權限"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "正在撤銷 {n} 個網站的剪貼簿存取權限"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "已清除 {n} 個網站的 Cookie 和網站數據"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "已清除 {n} 個網站的 Cookie 和網站數據"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "已封鎖 {n} 個網站的自動下載"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "正在封鎖 {n} 個網站的自動下載"
+   },
+   "main_sa_apply_fixes": {
+      "message": "應用修復程式"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "{n}應用了{t} 個修復方案（共 1 個）"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "已撤銷對 {n} 個網站的位置存取權限"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "撤銷對 {n} 個網站的位置存取權限"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "撤銷了對 {n} 個網站的麥克風存取權限"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "撤銷 {n} 個網站的麥克風存取權限"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "已封鎖 {n} 個網站的通知"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "封鎖 {n} 個網站的通知"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "重新命名了 {n} 個風險書籤"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "重新命名 {n} 個風險書籤"
+   },
+   "main_sa_applying_fixes": {
+      "message": "正在應用修復程式…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "自動保護"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "引導保護"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "應用所選修復方案"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "我正在做什麼"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "自動應用修復程式"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "我的角色"
+   },
+   "main_sa_banner_criteria": {
+      "message": "我會標記出來"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "我會解決的問題"
+   },
+   "main_sa_banner_sources": {
+      "message": "我將要關注的是"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "你的選擇"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "將書籤與已知威脅進行比對…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "執行了 {n} 次檢查"
+   },
+   "main_sa_check_cookies": {
+      "message": "正在檢查已標記域名的已儲存 cookie 和網站資料…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b}{t}個書籤（共 1 個）與已知威脅匹配"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} 個網站還有值得清理的殘留數據"
+   },
+   "main_sa_check_done_history": {
+      "message": "發現已標記網域名稱的 {h} 次訪問"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n}{t}已修改的權限中有 0 個看起來不必要或有風險"
+   },
+   "main_sa_check_history_db": {
+      "message": "將歷史與已知威脅進行比對…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "我會先檢查風險最大的部分，並將每個網站能夠存取的內容與其實際需要的內容進行比較。"
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "評估網站權限…"
+   },
+   "main_sa_continue": {
+      "message": "繼續"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "剪貼簿和下載"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "找到可以讀取你的剪貼簿或未經詢問就下載檔案的網站，並關閉那些不應該這麼做的網站。"
+   },
+   "main_sa_criterion_notifications": {
+      "message": "瀏覽器通知"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "阻止接收來自您無意允許的網站的詐騙和垃圾郵件通知。"
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "通知"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "麥克風、攝影機和位置存取權限"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "找到可以使用你的麥克風、攝影機或位置資訊的網站，並關閉那些不應該使用的網站。"
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "麥克風、攝影機和位置存取權限"
+   },
+   "main_sa_criterion_threats": {
+      "message": "已知威脅"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "在已知有害的網站加載之前就將其屏蔽。"
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "剪貼簿和下載 — {n} 個網站可以讀取您的剪貼簿或自動下載檔案"
+   },
+   "main_sa_finding_cookies": {
+      "message": "已儲存的資料 — {n} 個網站已在您的裝置上保存了 Cookie 或其他數據"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "假網站－{n} 個網站模仿真實企業來欺騙您"
+   },
+   "main_sa_finding_permissions": {
+      "message": "權限 — {n} 個網站可以存取您的通知、位置、麥克風或攝影機。"
+   },
+   "main_sa_finding_threats": {
+      "message": "已知威脅 — {n} 個網站已列入我們已知有害的網站列表"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "產生的報告：{n} 警告"
+   },
+   "main_sa_findings_heading": {
+      "message": "掃描完成以下是我發現的情況："
+   },
+   "main_sa_findings_heading_full": {
+      "message": "掃描完成修復我發現的問題："
+   },
+   "main_sa_findings_heading_none": {
+      "message": "掃描完成"
+   },
+   "main_sa_findings_none": {
+      "message": "掃描結果正常，沒有發現任何異常或警告。"
+   },
+   "main_sa_finish_setup": {
+      "message": "保存並繼續"
+   },
+   "main_sa_fix_cam": {
+      "message": "撤銷攝影機存取權限"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "撤銷剪貼簿存取權限"
+   },
+   "main_sa_fix_cookies": {
+      "message": "清除可疑的 Cookie 和本地儲存的數據"
+   },
+   "main_sa_fix_downloads": {
+      "message": "封鎖自動下載"
+   },
+   "main_sa_fix_loc": {
+      "message": "撤銷位置存取權限"
+   },
+   "main_sa_fix_mic": {
+      "message": "撤銷麥克風存取權限"
+   },
+   "main_sa_fix_notif": {
+      "message": "阻止通知"
+   },
+   "main_sa_fix_rename": {
+      "message": "重新命名有風險的書籤"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "已標記 {n} 個風險書籤，以便一目了然"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "已清除來自 {n} 標記域的 cookie 和儲存數據"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "已撤銷您未積極使用的 {n} 個網站權限"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "無需清理——一切檢查完畢。"
+   },
+   "main_sa_fixes_heading": {
+      "message": "我會這樣做："
+   },
+   "main_sa_full_protection_desc": {
+      "message": "能夠自動處理威脅，並在發現威脅時立即採取行動，而不會打斷您。"
+   },
+   "main_sa_full_protection_title": {
+      "message": "自動保護"
+   },
+   "main_sa_go_dashboard": {
+      "message": "完畢"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "他會檢查所有事項，然後在採取行動前徵求你的意見。"
+   },
+   "main_sa_guided_protection_title": {
+      "message": "引導保護"
+   },
+   "main_sa_intro_scan": {
+      "message": "首先，請選擇我在第一次掃描中應該要查看的內容。"
+   },
+   "main_sa_intro_scan_full": {
+      "message": "開始首次掃描。接下來的一切都由我來處理。"
+   },
+   "main_sa_list_last_separator": {
+      "message": " 和 "
+   },
+   "main_sa_list_separator": {
+      "message": "， "
+   },
+   "main_sa_my_plan": {
+      "message": "我的計劃是這樣的："
+   },
+   "main_sa_plan_body": {
+      "message": "我會檢查你的 {targets}，將其與已知威脅進行交叉檢查，然後在更改任何內容之前向你顯示摘要。"
+   },
+   "main_sa_plan_body_full": {
+      "message": "我會檢查您的書籤、瀏覽歷史記錄和權限，並與已知威脅進行交叉比對，一旦發現任何風險，我會立即修復。"
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "在做任何改動之前，我會先給你看看我發現的情況。接下來發生什麼，由你決定。"
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "書籤"
+   },
+   "main_sa_plan_target_history": {
+      "message": "瀏覽紀錄"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "網站權限"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "已讀取 {f} 個資料夾中的 {n} 個書籤"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "閱讀書籤…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "閱讀 {n} 個來源"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "現在我要檢查所有風險。"
+   },
+   "main_sa_read_history_done": {
+      "message": "讀取 {n} 筆歷史記錄"
+   },
+   "main_sa_read_history_pending": {
+      "message": "正在讀取瀏覽歷史記錄…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "發現 {n} 個權限已更改的網站"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "正在檢查網站權限…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "我先閱讀，再分析。從現在開始。"
+   },
+   "main_sa_skip_assessment": {
+      "message": "跳過初始掃描"
+   },
+   "main_sa_skip_fixes": {
+      "message": "跳過並顯示報告"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "書籤"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "注意那些你收藏的網站，它們可能在你收藏後悄悄變成了風險網站。"
+   },
+   "main_sa_source_history": {
+      "message": "瀏覽紀錄"
+   },
+   "main_sa_source_history_desc": {
+      "message": "找出你已經造訪過的危險網站，以便下次避免造訪。"
+   },
+   "main_sa_start_assessment": {
+      "message": "開始掃描"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "選擇它自主運作的程度："
+   },
+   "main_sa_summary_all_done": {
+      "message": "全部完成。"
+   },
+   "main_sa_summary_all_good": {
+      "message": "一切看起來都不錯。"
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} 個書籤"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "我檢查了以下內容："
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} 歷史記錄"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} 個網站權限，涵蓋 {c} 個類別"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "我清理了以下內容："
+   },
+   "main_sa_summary_found_heading": {
+      "message": "我的發現："
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "從現在開始，我會在後台檢查新的書籤和權限，並標記任何有風險的內容。"
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "一切照舊。歡迎隨時回來查看並應用建議的修復方案。"
+   },
+   "main_sa_summary_stand": {
+      "message": "以下是概要。"
+   },
+   "main_sa_title_configure": {
+      "message": "設定安全顧問"
+   },
+   "main_sa_what_look_for": {
+      "message": "我會標記出來"
+   },
+   "main_sa_where_look": {
+      "message": "我將要關注的是"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "自治"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "隱私防護"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "搜尋顧問"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "特種防禦"
+   },
+   "main_settings_about": {
+      "message": "關於"
+   },
+   "main_settings_general": {
+      "message": "一般"
+   },
+   "main_settings_language": {
+      "message": "語言"
+   },
+   "main_settings_my_account": {
+      "message": "我的帳戶"
+   },
+   "main_settings_security_advisor": {
+      "message": "安全顧問"
+   },
+   "main_settings_support": {
+      "message": "支援中心"
+   },
+   "main_settings_title": {
+      "message": "設定"
+   },
+   "main_settings_upgrade": {
+      "message": "升級到 {premium} 以獲得更強的保護"
+   },
+   "main_settings_whitelist": {
+      "message": "白清單"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "從瀏覽器的側邊欄開啟 Bitdefender Web Sage。"
+   },
+   "main_sign_in_reminder_description": {
+      "message": "請使用您的Bitdefender帳號登入以開始使用。"
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage 尚未保護您"
+   },
+   "main_support_center_description": {
+      "message": "快速找到最常見問題的答案，如您需要額外協助，請聯絡我們的支援團隊。"
+   },
+   "main_support_center_link": {
+      "message": "前往支援中心"
+   },
+   "main_support_center_title": {
+      "message": "技術支援中心"
+   },
+   "main_support_community_description": {
+      "message": "提出你的問題並得到答案！我們在這裡互相幫助！"
+   },
+   "main_support_community_link": {
+      "message": "向社群提問"
+   },
+   "main_support_community_title": {
+      "message": "向社群提問"
+   },
+   "main_test": {
+      "message": "測試"
+   },
+   "main_third_party_category_fonts": {
+      "message": "字體"
+   },
+   "main_third_party_category_label": {
+      "message": "類別"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript/TypeScript 套件"
+   },
+   "main_third_party_licence_label": {
+      "message": "執照："
+   },
+   "main_third_party_link_label": {
+      "message": "連結"
+   },
+   "main_third_party_page_intro": {
+      "message": "以下列出了Bitdefender瀏覽器擴充功能（版本 $1）部分中包含的第三方開源軟體的歸屬聲明。我們感謝開源社群的所有貢獻。"
+   },
+   "main_third_party_page_title": {
+      "message": "第三方授權協議"
+   },
+   "main_third_party_version_label": {
+      "message": "版本："
+   },
+   "main_welcome_account_not_form": {
+      "message": "不是長篇格式。電子郵件地址和密碼。大約一分鐘，一次就搞定了。"
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "沒有付費牆。{product} 標準版是免費的，而且一直免費。無卡、無試用期、無有效期限。"
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "不是訂閱服務。帳戶不等於計劃。不會產生任何費用，也不會自動續約。"
+   },
+   "main_welcome_account_not_title": {
+      "message": "坦白說，這並非什麼。"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "公司用Chrome瀏覽器，家裡用Edge瀏覽器，還有一台備用電腦。一個帳戶涵蓋所有帳戶中的 {product}，規則相同。"
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "全方位保護，而非僅限於瀏覽器"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "同一個 Bitdefender 帳戶適用於 Bitdefender 製作的所有產品。稍後添加產品、聯絡支援、檢查設備——您已經設定好了。"
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "一個帳戶，而不是多個帳戶。"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "你允許訪問的每一個網站，你關閉的每一個保護措施——現在都會跟著你。新瀏覽器、新筆記型電腦、全新安裝的系統：一切都還在。"
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "您的設定不再消失。"
+   },
+   "main_welcome_account_straight": {
+      "message": "{product}保護從您登入時開始生效。在此之前，保護功能將保持非活動狀態，瀏覽器中的盾牌圖示將保持關閉狀態。"
+   },
+   "main_welcome_account_sub": {
+      "message": "這與 TrafficLight 相比確實發生了變化，因此有必要詢問原因。三個老實的理由："
+   },
+   "main_welcome_account_title": {
+      "message": "唯一改變的事情"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "繼續瀏覽"
+   },
+   "main_welcome_button_open": {
+      "message": "開啟 {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "登入"
+   },
+   "main_welcome_cta_checking": {
+      "message": "正在查看您的帳戶…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "此設備上已有 Bitdefender？您可能已自動登入－此頁面會在登入發生的那一刻立即更新。"
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} 僅在您登入 Bitdefender 帳戶時保護您。登入後即可啟動封鎖功能，自動套用您的套餐並保持您的設定同步。創建帳戶是免費的。"
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "登入－這將開啟保護功能"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "你都準備好了！"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "更新完成"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight 已經長大"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "打開您的儀表板"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "登入"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "您的儀錶板、活動和設定都顯示在面板頂部。"
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "您的帳戶"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "您的 Bitdefender 帳戶可以開啟保護功能，使您的設定在不同瀏覽器和裝置之間保持同步，並為您提供一個用於查看您的活動和設定的控制面板。"
+   },
+   "main_welcome_feature_account_title": {
+      "message": "您的帳戶，您的控制面板"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "在面板中"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "會見安全顧問"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "所有保護設定都集中在這裡，包括它自己能執行多少操作。"
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "安全顧問"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "設定完成後，它會檢查您的書籤和瀏覽記錄是否包含已知威脅，然後向您解釋在您造訪的頁面上發現的內容。你可以選擇它是先詢問再行動，還是自行處理。"
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "安全顧問"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "在面板中"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "請查看面板。"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "正版網站安安靜靜，假冒網站卻大肆叫囂。"
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "保障財務安全"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "銀行、加密貨幣和錢包頁面會受到額外審查：在您輸入密碼之前，任何冒充您的銀行或交易所的行為都會被偵測到。"
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "保障財務安全"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "銀行和加密貨幣網站"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "分兩步驟設定"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "無需開啟任何功能；自更新以來它一直在保護您。"
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "還在這兒"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "即時頁面封鎖和搜尋顧問的功能與以前完全相同，現在有了更多資源支援。如果您還運行了單獨的反追蹤器擴充程序，Privacy Guard 現在會執行該操作——您可以將其刪除。"
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "你所依賴的一切都還在這裡。"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "永遠開機"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "開放隱私保護"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "它管理的每個站點，每個權限都有一個切換開關。"
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "隱私防護"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "封鎖追蹤器，並管理網站擁有的權限—通知、位置、攝影機、麥克風、自動下載和剪貼簿。如果一個網站被證實不安全，你之前獲得的任何權限都將被撤銷。"
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "隱私防護"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "在面板中"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "請查看面板。"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "警告訊息會在您瀏覽頁面並點擊之前立即顯示。"
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Scam Protection"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "除了已知的惡意網址之外：可疑頁面還會獲得按需人工智慧分析，用簡單易懂的語言解釋哪裡出了問題。"
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "利用人工智慧深度掃描進行詐騙防護"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "在頁面上"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "打開面板"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "每個結果旁邊都有一個標記；將滑鼠懸停在上面即可查看原因。"
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "搜尋顧問"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "在 Google、Bing、DuckDuckGo 和 Yahoo 的搜尋結果旁邊會顯示安全性評級，以便在點擊之前了解相關資訊。"
+   },
+   "main_welcome_feature_search_title": {
+      "message": "搜尋顧問"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "搜尋結果"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "請查看面板。"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "對店家本身的評價，而不僅僅是你目前瀏覽的頁面。"
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "安全購物"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "當您瀏覽網站時，系統會根據網路商店情報對線上商店進行檢查，因此在您付款之前，虛假商店和好得令人難以置信的交易都會被標記出來。"
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "安全購物"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "購物網站"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "查看頁面狀態"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "只有當它有話要說的時候，你才會注意到它。"
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "頁面封鎖"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "您開啟的每個頁面都會根據 Bitdefender 的威脅情報進行檢查。危險程式會立即關閉，並在再次加載之前被徹底阻止。"
+   },
+   "main_welcome_feature_web_title": {
+      "message": "危險網頁立即關閉"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "在頁面上"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "法律和支持"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "隱私權聲明"
+   },
+   "main_welcome_footer_support": {
+      "message": "支援中心"
+   },
+   "main_welcome_footer_terms": {
+      "message": "使用條款"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "面板無法自動打開。點擊工具列中的 {product} 圖示即可打開它。"
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "動畫示範如何將擴充功能固定到瀏覽器工具列"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "點擊瀏覽器右上角的「擴充功能」按鈕（拼圖圖示）。"
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "點擊瀏覽器右上角的「擴充功能」按鈕（拼圖圖示）。"
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "點擊工具列中的「擴充」按鈕（拼圖圖示）。"
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "點擊工具列中的「擴充」按鈕（方塊）。"
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "開啟瀏覽器的擴充功能選單。"
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "找到 {product}，然後點擊它旁邊的圖釘圖示。"
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "找到 {product}，然後點擊它旁邊的圖釘圖標，將其顯示在工具列中。"
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "找到 {product}，開啟其設定（齒輪圖示），然後選擇「固定到工具列」。"
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "找到 {product}，然後點擊它旁邊的圖釘圖示。"
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "找到 {product} 並將其固定到工具列。"
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "只需點擊一下即可查看，這樣您就可以隨時查看當前頁面的安全狀態。"
+   },
+   "main_welcome_pin_title": {
+      "message": "將 {product} 固定在工具列"
+   },
+   "main_welcome_protected_done": {
+      "message": "保護已開啟。這裡沒什麼其他事可做了－固定 {product} 使其保持在視線範圍內。"
+   },
+   "main_welcome_protected_plan": {
+      "message": "包含在您的 {plan} 套餐中 — 自動解鎖，無需啟動。"
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "現在運行"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "免費，使用您的Bitdefender帳戶即可。"
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "您受到保護 — {product} 高級版"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "您受到保護 — {product} 標準"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "您已登入並受到保護"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "即時保護您免受詐騙、網路釣魚和追蹤器的侵害，就在您瀏覽網頁時。只要兩步，就完成了。"
+   },
+   "main_welcome_subtitle_update": {
+      "message": "版本 {version} 已安裝並正在保護您。它新增了以下內容。"
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "您的擴充功能剛剛進行了重大升級。TrafficLight 所做的一切仍然存在，而且還有更多內容已經到來。"
+   },
+   "main_welcome_tier_premium": {
+      "message": "優質的"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "屬於 {product} Premium 的一部分，包含在 Bitdefender Total Security 及以上版本中。"
+   },
+   "main_welcome_title_new": {
+      "message": "歡迎使用 {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} 變得更好了"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight 現在是 {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "你將獲得什麼"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "看看新功能"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "看看新功能"
+   },
+   "main_welcome_tour_next": {
+      "message": "下一個功能"
+   },
+   "main_welcome_tour_prev": {
+      "message": "上一功能"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} / {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "{product} 為您完成所有功能，一次一個功能。循序漸進，或直接投入。"
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "版本 {version} 新增。循序漸進，或直接投入。"
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "TrafficLight 所做的一切，再加上這一點。循序漸進，或直接投入。"
+   },
+   "main_welcome_window_title": {
+      "message": "歡迎使用 {product}"
+   },
+   "main_whitelist_add": {
+      "message": "新增網站"
+   },
+   "main_whitelist_import": {
+      "message": "導入網域"
+   },
+   "main_whitelist_info": {
+      "message": "已列入白名單的網域將不會被掃描。您不會收到有關這些頁面上存在的任何威脅的警告。"
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "移除"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "威脅掃描"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "追蹤腳本"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "收集您造訪的頁面上顯示的廣告，以便檢查是否有詐騙和詐欺行為。"
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "廣告監測"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "標記惡意廣告和導致詐騙或惡意軟體的贊助結果。"
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "廣告詐欺防護"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "偵測旨在竊取您的憑證或資金的虛假銀行網站和虛假投資平台。"
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "金融詐欺保護"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "在您輸入付款資訊之前，它會提醒您注意虛假商店和欺詐性結帳頁面。"
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "安全購物"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "封鎖此頁面"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "仍然加載（不安全）"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "仍然加載內容（不安全）"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "顯示更多細節"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "深入了解細節…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "我現在無法分析此頁面。請再試一次。"
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "詳細分析頁面不包含在您目前的訂閱服務中，所以我無法對此進行調查。"
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "那件事耗時太長，我等不及了，所以就不再追究了。"
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "檢查 AI 概覽面板內的鏈接，並標記指向不安全網站的連結。"
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI概覽掃描器"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "已在設定中停用"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "已啟動"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "無法使用"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "人工智慧搜尋顧問"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "搜尋結果連結智能"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "由 {product} 分析"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "我無法封鎖此頁面。"
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "已封鎖此頁面…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "強制檢查（從白名單中移除）"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "再次掃描"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "解除封鎖此頁面"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "正在檢查已知威脅資料庫…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "正在驗證權限…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "檢查是否有詐騙…"
+   },
+   "searchAdvisor_checking": {
+      "message": "檢查中"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "執行了 {n} 次檢查"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "封鎖頁面"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "同意"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "進行深入分析"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "進行了深入分析"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "深度分析完成"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "分析頁面內容和螢幕截圖…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "深度分析未發現此頁面有任何問題。"
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "深入分析已完成，但未發現具體指標。"
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "深入分析證實，此頁面存在危險。"
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "運行分析"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "如果你同意，我會檢查頁面內容及其截圖，找出隱藏的問題。"
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "深度分析超時"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "等待0秒後停止{n}"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "深入分析耗時太長，我無法等待，所以我停止了。你可以再運行一次，或根據我已經找到的結果來決定。"
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "進行更深入的分析？"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "從白名單中移除並重新檢查…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "產生的報告：{n} 警告"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "產生的報告：{n} 警告"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "跳到下一頁…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "惡意搜尋結果"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "檢查您造訪的頁面上的廣告，並標記那些指向詐騙網站的廣告。"
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "防範詐騙廣告"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "開啟擴充功能設定"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "在您允許之前，Opera 會封鎖擴充功能存取搜尋結果。請開啟 opera://extensions，找到此擴充功能，然後開啟「允許存取搜尋頁面結果」。"
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "目前未檢查搜尋結果"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "隱私衛士已阻止 {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "本網站可以造訪您的{list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "未授予任何權限"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "權限不足"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "未發現任何警訊"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard 建議封鎖此網站的{list} 。"
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "以下是我發現的情況："
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "已恢復所有被屏蔽的內容。"
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "正在恢復被屏蔽的內容…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "未偵測到詐騙模式"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "發現惡意指標 {n}"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n}發現 0 個惡意指標"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "發現可疑指標 {n}"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "發現 {n} 個可疑指標"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "詐騙分析無法完成"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "出現在未經證實的宣傳內容中"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "強制勒索模板"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "偽鈔詐騙模板"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "危機利用騙局模板"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "加密貨幣詐欺模板"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "欺騙性成人約會平台模板"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "虛假廣告模板"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "欺騙贈品模板"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "欺騙性線上調查模板"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "能源投資騙局模板"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "勒索騙局模板"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "虛假廣告瀏覽獎勵模板"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "虛假預訂網站模板"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "假賭場模板"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "虛假慈善機構模板"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "假診所模板"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "假加密貨幣贈送模板"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "假外送服務模板"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "偽造文件模板"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "虛假電商商店模板"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "虛假教育機構模板"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "虛假招募資訊模板"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "虛假娛樂服務模板"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "虛假金融機構模板"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "虛假金融投資模板"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "假賭博網站模板"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "假遊戲獎金模板"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "假黃金投資模板"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "虛假政府福利模板"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "虛假政府機構模板"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "虛假移民服務模板"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "虛假法律機構模板"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "虛假退款服務模板"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "虛假網路藥局模板"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "假診所模板"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "虛假支付平台模板"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "虛假中獎活動模板"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "虛假獎品或獎勵模板"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "虛假出版社模板"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "虛假評論平台模板"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "廣告活動中的假店鋪模式"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "假靈修者模板"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "虛假中獎模板"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "金融詐騙模板"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "虛假商店廣告詐欺活動"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "醫療保健詐欺模板"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "偵測到同形異義詞攻擊"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "非法活動網站模板"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "非法服務模板"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "非法物質模板"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "具有惡意模式的 IP"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "具有可疑模式的 IP 位址"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "已知的網路釣魚模板"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "已知的詐騙模板"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "彩票詐騙模板"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "信譽度低的網店，尚未建立穩固的品牌形象"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "低信任度的交易/投資平台，尚未建立穩固的業務基礎。"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "惡意投資平台鏈接"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "惡意網店鏈接"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "毒品詐騙模板"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "網路商店的指標相互矛盾"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "沒有實體店面的網路商店"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "寵物詐騙模板"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "龐氏騙局/金字塔騙局模板"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "房地產詐騙模板"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "愛情騙局模板"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "愛情騙局網站模板"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "秘密社團騙局模板"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "可疑的投資平台鏈接"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "可疑的連結格式"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "可疑的網上商店鏈接"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "技術支援詐騙模板"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "交易/投資平台存在相互矛盾的指標"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "尚未建立實體業務的交易/投資平台"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "非常不可信的網路商店"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "信譽度極低的網店，尚未建立穩固的品牌形象"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "極低信任度的交易/投資平台"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "非常可疑的鏈接"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "我已經屏蔽了它，切斷了它對你麥克風、攝影機和位置資訊的存取權限——你可以安全地關閉這個標籤頁了…"
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "為了保障您的安全，我們已封鎖追蹤腳本，並撤銷了麥克風、攝影機和位置存取權。"
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "我沒能看完這些搜尋結果。"
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "掃描未完成"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "安全顧問正在運行"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "正在掃描搜尋結果…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "可疑的搜尋結果"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "搜尋顧問已停用。請前往設定啟用該功能。"
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "網頁保護功能已停用。請前往設定啟用該功能。"
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "跳過檢查並載入頁面。"
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "此頁面已被標記為惡意頁面。"
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "此頁面是詐騙活動的一部分。"
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "此頁面是詐騙廣告的一部分。"
+   },
+   "searchAdvisor_text_malware": {
+      "message": "我們偵測到了一些可能損害您裝置的元素。"
+   },
+   "searchAdvisor_text_miner": {
+      "message": "該頁面試圖利用您設備的資源進行加密貨幣挖礦，已被阻止。"
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "安全顧問無法掃描此頁面。"
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "跳過檢查並載入頁面。"
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "在您解除封鎖之前，此頁面會保持封鎖。"
+   },
+   "searchAdvisor_text_phish": {
+      "message": "此頁面是網路釣魚攻擊的一部分。"
+   },
+   "searchAdvisor_text_pua": {
+      "message": "該頁面嘗試將 PUA（可能不需要的應用程式）下載到您的設備。"
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "此頁面在目前瀏覽工作階段中不會被掃描"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "此頁面可能安全，但過去曾有報告指出存在一些安全威脅。"
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "由於此頁面已新增至例外清單中，因此掃描時會跳過此頁面。"
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "在 Google、Bing、Yahoo 和 DuckDuckGo 的每個搜尋結果旁邊添加安全評級，以便您在點擊之前發現風險連結。"
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "搜尋結果註釋"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "保護停用"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "無法掃描搜尋結果"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "無法掃描此頁面"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "該網域已加入白名單。"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "偵測到詐欺店鋪"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "偵測到詐騙企圖"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "偵測到詐騙廣告"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "偵測到的威脅!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "偵測到挖礦嘗試"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "頁面無法掃描"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "本會話跳過此頁面"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "您已封鎖此頁面"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "偵測到網路釣魚企圖"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "偵測到潛在有害應用程式下載"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "本網站安全。"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "掃描..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "偵測到不受信任的網域"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "偵測到異常頁面"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "已屏蔽 {n} 個追蹤器"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "追蹤腳本攔截已關閉，因此此頁面未檢查追蹤器"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "載入腳本（不安全）"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "此頁面未偵測到追蹤腳本"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "我無法解除封鎖此頁面。"
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "正在解除封鎖此頁面…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "未發現已知威脅"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "頁面封鎖"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "頁面載入耗時 {n} 毫秒"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "你很安全"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "我發現這個頁面存在一些風險。避免輸入個人資料、密碼或付款詳情，也不要下載任何內容。"
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "這裡要小心"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "目前一切正常。"
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "保護您瀏覽安全。"
+   },
+   "urlScanning_blocked_by": {
+      "message": "此頁面已被封鎖"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "域名被標記為惡意域名"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "假商店模仿正規零售商，收取您的付款並竊取您的銀行卡資訊。訂單很少能送達，而且您輸入的資料可能會重複使用或出售。"
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "欺詐頁面通常試圖欺騙您匯款，以獲得非法收益的目的。"
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "該頁面已被封鎖，以防止進一步與騙局互動。\u003Cbr>\u003Cbr>攻擊者利用深度偽造、投資機會和其他熱門話題來引誘潛在受害者，誘騙他們洩露敏感資料、金錢或下載惡意軟體。"
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "危險頁面試圖安裝可能損害裝置、收集個人資訊或在未經您同意下執行的軟體。"
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "挖礦頁面使用該設備的資源來挖掘加密貨幣，從而影響其可用性和硬體壽命。"
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "網路釣魚頁面試圖透過偽裝成可信實體來獲取敏感訊息，例如登入認證或信用卡詳細資料。然後，被盜的資料可被用於竊取您的金錢。"
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "該頁面嘗試將 PUA（可能不需要的應用程式）下載到您的設備。這種類型的應用程式表現出會影響您設備和數據的隱私和安全性的行為。"
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "不受信任的頁面表現出我們認為有風險的可疑行為或特殊性，因此您應避免訪問它們以保持數據不受傷害。"
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "為保護您的安全，已封鎖詐欺店鋪"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "為了您的安全，我們屏蔽了部分內容。"
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "偵測到可疑內容"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "無法開啟面板。請再試一次。"
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "從瀏覽器側邊欄開啟 Bitdefender 面板以查看詳細資訊。"
+   },
+   "urlScanning_page_blocked": {
+      "message": "頁面封鎖"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "自動下載"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "攝影機"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "剪貼簿"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "關閉"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "已封鎖對網站的存取 {permissions}。"
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "已阻止對該網站{permissions}的存取。"
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "本網站允許{permissions}次存取。看看這個網站可以使用哪些功能。"
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "本網站允許{permissions}存取。看看這個網站可以使用哪些功能。"
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard 已獲得審查權限"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} 和 {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "地點"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "網站已被{permissions}次訪問阻止。查看本網站可以使用哪些功能。"
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "網站已被阻止訪問 {permissions}。查看本網站可以使用哪些功能。"
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard 正在管理權限"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "麥克風"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "通知"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard 正在管理權限"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "謹慎行事"
+   },
+   "urlScanning_see_details": {
+      "message": "查看詳細資料"
+   },
+   "urlScanning_show_details": {
+      "message": "顯示詳情"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "關閉"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "這裡有一些警示信號。請妥善保管個人資料和下載內容。"
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "無法掃描搜尋結果"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "無法掃描此頁面"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "偵測到詐欺店鋪"
+   },
+   "urlScanning_title_fraud": {
+      "message": "偵測到詐騙企圖"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "偵測到詐騙廣告"
+   },
+   "urlScanning_title_malware": {
+      "message": "偵測到的威脅"
+   },
+   "urlScanning_title_miner": {
+      "message": "偵測到挖礦嘗試"
+   },
+   "urlScanning_title_phish": {
+      "message": "偵測到網路釣魚企圖"
+   },
+   "urlScanning_title_pua": {
+      "message": "偵測到潛在有害應用程式下載"
+   },
+   "urlScanning_title_safe": {
+      "message": "本網頁很安全"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "偵測到不受信任的網域"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "掃描造訪過的網址，尋找惡意軟體、網路釣魚、詐欺和其他威脅"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "網頁防護"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Bitdefender 網頁防護"
+   }
+}

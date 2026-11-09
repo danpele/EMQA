@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Ověřování..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Zabraňuje načítání reklam, analytických nástrojů, sociálních médií a skriptů pro soubory cookie od třetích stran, takže webové stránky nemohou sledovat vaše chování při prohlížení a stránky se načítají rychleji."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Blokovat skripty pro sledování"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "milisekundy"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Účinnost proti sledovacím nástrojům"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "S pomocí sledovacích skriptů"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Bez sledovacích skriptů"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Následující domény jsou z blokování sledovacích nástrojů vyloučeny."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Používáme komerční trackery, abychom vám pomohli snadno najít naše speciální nabídky, naším posláním je chránit vaše soukromí, nikdy s nikým nesdílíme žádné informace získané za jakýmkoliv účelem."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Zvláštní nabídky"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Někde došlo k chybě"
+   },
+   "chatAgent_thinking": {
+      "message": "Přemýšlím..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Zkontrolujte zprávy, zda neobsahují phishingové odkazy a kybernetické hrozby."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Ochrana chatu"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Sleduje, kterým webovým stránkám jste udělili přístup k fotoaparátu, mikrofonu, poloze, oznámením, schránce a automatickému stahování, abyste si to mohli zkontrolovat a oprávnění v aplikaci Privacy Guard zrušit."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Správa oprávnění"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Všechna práva vyhrazena"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2024 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Zásady ochrany osobních údajů"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Smlouva o předplatném"
+   },
+   "main_about_third_party_license": {
+      "message": "Licenční podmínky třetích stran"
+   },
+   "main_about_version": {
+      "message": "Verze"
+   },
+   "main_account_manage_account_description": {
+      "message": "Nastavení a předvolby lze spravovat po přihlášení k účtu Bitdefender."
+   },
+   "main_account_manage_account_title": {
+      "message": "Spravovat účet"
+   },
+   "main_account_managed_by_description": {
+      "message": "Chcete-li použít jiný účet, přihlaste se prosím ve své aplikaci Bitdefender."
+   },
+   "main_account_managed_by_title": {
+      "message": "Spravováno vaší aplikací Bitdefender"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Předplatná Bitdefender lze zobrazit a spravovat."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Moje předplatná"
+   },
+   "main_account_sign_out": {
+      "message": "Odhlásit se"
+   },
+   "main_account_subscription_active": {
+      "message": "Aktivní"
+   },
+   "main_account_subscription_expired": {
+      "message": "Předplatné vypršelo"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Předplatné vypršelo ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Vyprší za [Days] dní ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Vyprší za [Days] dní ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Individuální předplatné"
+   },
+   "main_account_subscription_section": {
+      "message": "Předplatné"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Volný"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Můj účet"
+   },
+   "main_activity_details_error": {
+      "message": "Nepodařilo se načíst údaje o aktivitě."
+   },
+   "main_activity_detections_analysed": {
+      "message": "analyzováno"
+   },
+   "main_activity_detections_title": {
+      "message": "Detekce"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "detekce"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Informace o hrozbách"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Jak se kombinují signály rizika napříč kategoriemi u webových stránek, které navštěvujete."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Tento web už je na vašem seznamu povolených."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Storno"
+   },
+   "main_add_whitelist_description": {
+      "message": "Domény uvedené ve vašem seznamu povolených adres budou při skenování vynechány. Na případné hrozby na těchto stránkách nebudete upozorněni."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Webová adresa"
+   },
+   "main_add_whitelist_save": {
+      "message": "Uložit"
+   },
+   "main_add_whitelist_title": {
+      "message": "Přidat webovou stránku na seznam povolených stránek"
+   },
+   "main_autonomy_level_title": {
+      "message": "Úroveň autonomie"
+   },
+   "main_autonomy_save": {
+      "message": "Uložit nastavení"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Aktivity"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Změnit úroveň ochrany"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Hrozby řeší automaticky a reaguje ihned, jakmile nějakou zjistí, aniž by vás vyrušoval."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Automatická ochrana"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Všechno zkontroluje a před provedením akce se vás zeptá."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Řízená ochrana"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Zkontrolované domény"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Skenování s využitím dat z internetového obchodu"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Bezpečné nakupování"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Informace o rizikových lokalitách v reálném čase"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Scam Protection"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Inteligentní zpracování odkazů ve výsledcích vyhledávání s využitím AI"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Hodnocení rizikovosti odkazů ve vyhledávání"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Informace o bankovnictví, kryptoměnách a peněženkách"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Bezpečné finance"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Aktivní"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Měsíc"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Dnes"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Týden"
+   },
+   "main_dashboard_load_error": {
+      "message": "Nepodařilo se načíst data z řídicího panelu."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Zavřít"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Zkontrolovat záložky a historii prohlížení"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Nedávná aktivita"
+   },
+   "main_dashboard_retry": {
+      "message": "Opakovat"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Zobrazit podrobnosti o aktivitě"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "škodlivé"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "bezpečné"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "podezřelý"
+   },
+   "main_error_boundary_text": {
+      "message": "Při vykreslování vyskakovacího okna s informacemi o rozšíření došlo k chybě. Zkuste prosím okno obnovit nebo znovu otevřít."
+   },
+   "main_error_boundary_title": {
+      "message": "Něco se pokazilo!"
+   },
+   "main_extension_description": {
+      "message": "Zablokuje podvody, phishing a nebezpečné stránky ještě před jejich načtením a to zcela zdarma. Premium s AI chrání vaše peníze."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Jazyk aplikace"
+   },
+   "main_general_app_theme": {
+      "message": "Téma aplikace"
+   },
+   "main_general_privacy_policy": {
+      "message": "Zásady ochrany osobních údajů"
+   },
+   "main_general_product_reports_description": {
+      "message": "Odesílejte zprávy o kybernetických hrozbách za účelem vylepšení produktu v souladu se zásadami ochrany osobních údajů"
+   },
+   "main_general_product_reports_title": {
+      "message": "Produktová hlášení"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automatické"
+   },
+   "main_general_theme_dark": {
+      "message": "Tmavý"
+   },
+   "main_general_theme_light": {
+      "message": "Lehký"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Tento krok nemá popis."
+   },
+   "main_login_button": {
+      "message": "Přihlásit se"
+   },
+   "main_login_connected_button": {
+      "message": "Pokračovat"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Dále nastavte, jak má Security Advisor fungovat."
+   },
+   "main_login_connected_title": {
+      "message": "Jste připojeni!"
+   },
+   "main_login_create_account": {
+      "message": "Vytvořit účet"
+   },
+   "main_login_no_account": {
+      "message": "Nemáte účet?"
+   },
+   "main_login_subtitle": {
+      "message": "Přihlaste se pomocí svého účtu Bitdefender."
+   },
+   "main_login_title": {
+      "message": "Chraňte své prohlížení webu"
+   },
+   "main_navbar_dashboard": {
+      "message": "Řídicí panel"
+   },
+   "main_opera_hint_caption": {
+      "message": "Kliknutím na ikonu rozšíření v postranním panelu jej otevřete"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Otevřete Bitdefender Web Sage z postranní lišty prohlížeče Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Chcete-li tuto funkci využívat, přejděte na verzi Premium."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Správa oprávnění"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Správa oznámení, oprávnění a sledovacích nástrojů"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Navrhuje provést přezkum"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Ochrana soukromí"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacy Guard je funkce v rámci služby Premium. Chcete-li změnit oprávnění k webu, proveďte zde aktualizaci."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Tuto změnu nebylo možné provést. Zkuste to prosím znovu."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Zatím nejsou spravována žádná oprávnění pro webové stránky. Funkce Privacy Guard sem přidá webovou stránku, když zablokuje oprávnění, která měla tato stránka dříve povolena."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Přejít k Nastavení"
+   },
+   "main_privacy_guard_info": {
+      "message": "Chrání vaše soukromí tím, že blokuje sledovací skripty a spravuje oprávnění webových stránek. Tyto možnosti můžete doladit v nabídce Nastavení."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Správa oprávnění"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Automatické stahování"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Ovládání kamery"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Přístup ke schránce"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Přístup k poloze"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Ovládání mikrofonu"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Oznámení"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Vymazat vyhledávání"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Žádná webová stránka neodpovídá vašemu vyhledávání"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Najít webovou stránku"
+   },
+   "main_privacy_guard_title": {
+      "message": "Ochrana soukromí"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Důvěřovat této webové stránce (povolit vše)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "V minulosti jste se rozhodli této webové stránce důvěřovat a udělit jí všechna požadovaná oprávnění (oznámení, přístup k poloze, ovládání kamery a mikrofonu)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "V tomto prohlížeči nelze spravovat oprávnění webových stránek"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Proč se oprávnění spravují?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Pokud je webová stránka zablokována z důvodu nebezpečnosti, aplikace Privacy Guard zablokuje také oprávnění, o která může tato stránka požádat, jako jsou například oznámení nebo přístup k fotoaparátu. Oprávnění, která webová stránka nikdy neměla, zůstávají beze změny."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Zjištěn škodlivý odkaz v chatu"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Zjištěn podezřelý odkaz v chatu"
+   },
+   "main_recent_activity_info": {
+      "message": "Nedávné podezřelé nebo škodlivé verdikty se ukládají za poslední měsíc."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Nepodařilo se načíst nedávnou aktivitu."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Podvodná stránka byla zablokována"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Byla zjištěna podvodná stránka"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Zjištění nástroje Search Advisor"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Škodlivá stránka byla zablokována"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Aplikace vykazuje podezřelé chování"
+   },
+   "main_rename_device_cancel": {
+      "message": "Storno"
+   },
+   "main_rename_device_description": {
+      "message": "Jedinečný název slouží ke snadné identifikaci zařízení."
+   },
+   "main_rename_device_field_label": {
+      "message": "Název zařízení"
+   },
+   "main_rename_device_save": {
+      "message": "Uložit"
+   },
+   "main_rename_device_title": {
+      "message": "Přejmenovat zařízení"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Zrušen přístup k fotoaparátu pro {n} webových stránek"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Zrušení přístupu k fotoaparátu pro {n} webové stránky"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Zrušen přístup ke schránce pro {n} webových stránek"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Zrušení přístupu ke schránce pro {n} webové stránky"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Byly vymazány soubory cookie a data webových stránek pro {n} webových stránek"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Byly vymazány soubory cookie a data webových stránek pro {n} webových stránek"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Zablokováno automatické stahování pro {n} webových stránek"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Blokování automatického stahování pro {n} webové stránky"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Použít opravy"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Bylo použito {n} z {t} oprav"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Zrušen přístup k poloze pro {n} webových stránek"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Zrušení přístupu k poloze pro {n} webové stránky"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Zrušen přístup k mikrofonu pro {n} webových stránek"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Zrušení přístupu k mikrofonu pro {n} webových stránek"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Zablokovaná oznámení pro {n} webových stránek"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Blokování oznámení pro {n} webových stránek"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Přejmenováno {n} rizikových záložek"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Přejmenování {n} rizikových záložek"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Provádíme opravy…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Automatická ochrana"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Řízená ochrana"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Použít vybrané opravy"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Co právě dělám"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Automatické použití oprav"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Moje role"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Na co upozorním"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Co opravím"
+   },
+   "main_sa_banner_sources": {
+      "message": "Na co se zaměříme"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Vaše volba"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Porovnávání záložek se známými hrozbami…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Bylo provedeno {n} kontrol"
+   },
+   "main_sa_check_cookies": {
+      "message": "Provádí se kontrola uložených souborů cookie a dat webových stránek na označených doménách…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} ze {t} záložek odpovídá známým hrozbám"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "Na {c} webových stránkách se nacházejí zbytková data, která by bylo vhodné vymazat"
+   },
+   "main_sa_check_done_history": {
+      "message": "Bylo nalezeno {h} návštěv označených domén"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} z {t} upravených oprávnění se jeví jako zbytečná nebo riziková"
+   },
+   "main_sa_check_history_db": {
+      "message": "Porovnání historie se známými hrozbami…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Nejprve zkontroluji ty nejrizikovější položky a porovnám, k čemu má každý web přístup, s tím, co skutečně potřebuje."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Probíhá ověřování oprávnění webových stránek…"
+   },
+   "main_sa_continue": {
+      "message": "Pokračovat"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Schránka a stahování"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Najděte webové stránky, které mohou číst vaši schránku nebo stahovat soubory bez zeptání, a zablokujte ty, které by to dělat neměly."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Oznámení v prohlížeči"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Zabraňte podvodným a spamovým oznámením z webových stránek, kterým jste nechtěli udělit povolení."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Oznámení"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Přístup k mikrofonu, kameře a k informacím o poloze"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Najděte webové stránky, které mohou využívat váš mikrofon, kameru nebo polohu, a zablokujte ty, které by to dělat neměly."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Přístup k mikrofonu, kameře a k informacím o poloze"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Známé hrozby"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Blokujte webové stránky, o nichž je již známo, že jsou škodlivé, ještě předtím, než se načtou."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Schránka a stahování — {n} webové stránky mohou číst vaši schránku nebo automaticky stahovat soubory"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Uložená data — {n} webové stránky již do vašeho zařízení uložily soubory cookie nebo jiná data"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Falešné webové stránky — {n} webových stránek napodobuje skutečné firmy, aby vás oklamaly"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Oprávnění — {n} webové stránky mají přístup k vašim oznámením, poloze, mikrofonu nebo kameře"
+   },
+   "main_sa_finding_threats": {
+      "message": "Známé hrozby — {n} webových stránek je na našem seznamu známých škodlivých webových stránek"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Vygenerovaná zpráva: {n} varování"
+   },
+   "main_sa_findings_heading": {
+      "message": "Sken dokončen. Toto jsem zjistil:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Sken dokončen. Oprava toho, co jsem zjistil:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Sken dokončen."
+   },
+   "main_sa_findings_none": {
+      "message": "Nic nevybočovalo z normálu – tento sken neukázal žádná varování."
+   },
+   "main_sa_finish_setup": {
+      "message": "Uložit a pokračovat"
+   },
+   "main_sa_fix_cam": {
+      "message": "Zrušit přístup k fotoaparátu"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Zrušit přístup ke schránce"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Vymazat podezřelé soubory cookie a lokálně uložená data"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Blokovat automatické stahování"
+   },
+   "main_sa_fix_loc": {
+      "message": "Zrušit přístup k poloze"
+   },
+   "main_sa_fix_mic": {
+      "message": "Zrušit přístup k mikrofonu"
+   },
+   "main_sa_fix_notif": {
+      "message": "Blokovat oznámení"
+   },
+   "main_sa_fix_rename": {
+      "message": "Přejmenovat rizikové záložky"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Označil jsem {n} rizikových záložek, aby byly na první pohled viditelné"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Vymazány soubory cookie a uložená data z domén označených jako {n}"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Zrušena oprávnění k {n} webům, které jste aktivně nepoužívali"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Nebylo třeba nic uklízet – všechno bylo v pořádku"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Takhle bych to vyřešil:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Hrozby řeší automaticky a reaguje ihned, jakmile nějakou zjistí, aniž by vás vyrušoval."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Automatická ochrana"
+   },
+   "main_sa_go_dashboard": {
+      "message": "hotovo"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Všechno zkontroluje a před provedením akce se vás zeptá."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Řízená ochrana"
+   },
+   "main_sa_intro_scan": {
+      "message": "Nejprve si vyberte, na co se mám při prvním skenování zaměřit."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Spouštím první skenování. Od této chvíle se o všechno postarám já."
+   },
+   "main_sa_list_last_separator": {
+      "message": " a "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Tady je můj plán:"
+   },
+   "main_sa_plan_body": {
+      "message": "Prověřím vaše {targets}, porovnám je se známými hrozbami a poté vám před provedením jakýchkoli změn ukážu souhrn."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Zkontroluji vaše záložky, historii a oprávnění, porovnám je se známými hrozbami a jakmile najdu něco rizikového, ihned to opravím."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Než něco změním, ukážu ti, co jsem našel. Je na tobě, co se stane dál."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Záložky"
+   },
+   "main_sa_plan_target_history": {
+      "message": "historie prohlížení"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "oprávnění k přístupu na web"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Přečíst {n} záložek v {f} složkách"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Načítání záložek…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Přečtěte si {n} zdrojů"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Teď vše zkontroluji, jestli v tom nejsou nějaká rizika."
+   },
+   "main_sa_read_history_done": {
+      "message": "Přečíst {n} záznamů v historii"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Čtení historie prohlížení…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Bylo nalezeno {n} webových stránek se změněnými oprávněními"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Kontrola oprávnění webových stránek…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Nejdřív si to přečtu, pak to rozebere. Začínáme hned teď."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Přeskočit úvodní skenování"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Přeskočit a zobrazit zprávu"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Záložky"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Zachyťte uložené webové stránky, které se od doby, kdy jste si je přidali do záložek, nepozorovaně staly rizikovými."
+   },
+   "main_sa_source_history": {
+      "message": "Historie prohlížení"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Zjistěte, které nebezpečné webové stránky jste již navštívili, abyste se jim příště mohli vyhnout."
+   },
+   "main_sa_start_assessment": {
+      "message": "Spustit sken"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Zvolte, do jaké míry bude zařízení fungovat samostatně:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Hotovo."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Všechno vypadá dobře."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} záložek"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Co jsem zkontroloval:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} záznamů v historii"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "Oprávnění k {n} webům v {c} kategoriích"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Co jsem uklidil:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Co jsem zjistil:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Od teď budu na pozadí kontrolovat nové záložky a oprávnění a označovat vše, co se jeví jako rizikové."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Nic se nezměnilo. Můžete se kdykoli vrátit, abyste si navrhovaná řešení prohlédli a aplikovali."
+   },
+   "main_sa_summary_stand": {
+      "message": "Tady je shrnutí."
+   },
+   "main_sa_title_configure": {
+      "message": "Nastavení nástroje Security Advisor"
+   },
+   "main_sa_what_look_for": {
+      "message": "Na co upozorním"
+   },
+   "main_sa_where_look": {
+      "message": "Na co se zaměříme"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonomie"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Ochrana soukromí"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Hodnocení rizikovosti odkazů ve vyhledávání"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Specializovaná obrana"
+   },
+   "main_settings_about": {
+      "message": "O produktu"
+   },
+   "main_settings_general": {
+      "message": "Hlavní"
+   },
+   "main_settings_language": {
+      "message": "Jazyk"
+   },
+   "main_settings_my_account": {
+      "message": "Můj účet"
+   },
+   "main_settings_security_advisor": {
+      "message": "Bezpečnostní poradce"
+   },
+   "main_settings_support": {
+      "message": "Podpora"
+   },
+   "main_settings_title": {
+      "message": "Nastavení"
+   },
+   "main_settings_upgrade": {
+      "message": "Přejděte na verzi {premium} a získejte lepší ochranu"
+   },
+   "main_settings_whitelist": {
+      "message": "Whitelist"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Otevřete Bitdefender Web Sage z postranní lišty prohlížeče."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Přihlaste se pomocí svého účtu Bitdefender a začněte."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage vás zatím nechrání"
+   },
+   "main_support_center_description": {
+      "message": "Rychle naleznete odpovědi na nejčastější problémy nebo kontaktujte náš tým podpory, pokud potřebujete další pomoc."
+   },
+   "main_support_center_link": {
+      "message": "Přejděte na Centrum podpory"
+   },
+   "main_support_center_title": {
+      "message": "Centrum podpory"
+   },
+   "main_support_community_description": {
+      "message": "Získejte odpovědi a ptejte se! Jsme tu, abychom si navzájem pomáhali!"
+   },
+   "main_support_community_link": {
+      "message": "Zeptejte se Komunity"
+   },
+   "main_support_community_title": {
+      "message": "Zeptejte se Komunity"
+   },
+   "main_test": {
+      "message": "test"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Fonty"
+   },
+   "main_third_party_category_label": {
+      "message": "Kategorie:"
+   },
+   "main_third_party_category_packages": {
+      "message": "Balíčky JavaScriptu/TypeScriptu"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licence:"
+   },
+   "main_third_party_link_label": {
+      "message": "Odkaz:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Níže jsou uvedena prohlášení o autorství týkající se softwaru třetích stran s otevřeným zdrojovým kódem, který je součástí některých částí rozšíření prohlížeče Bitdefender (verze $1). Děkujeme komunitě open source za všechny její příspěvky."
+   },
+   "main_third_party_page_title": {
+      "message": "Licenční podmínky třetích stran"
+   },
+   "main_third_party_version_label": {
+      "message": "Verze:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Není to dlouhý formulář. E-mailová adresa a heslo. Stačí asi minuta, a je to hotovo."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Nejedná se o placený obsah. {product} Verze Standard je zdarma a zůstane zdarma. Žádná karta, žádný zkušební čas, žádné datum platnosti."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Nejedná se o předplatné. Účet není plán. Nic se neúčtuje a nic se automaticky neobnovuje."
+   },
+   "main_welcome_account_not_title": {
+      "message": "A abych řekl na rovinu, o co tady nejde"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome v práci, Edge doma, druhý počítač. Jeden účet pokrývá {product} ve všech případech, a to podle stejných pravidel."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Ochrana všude, nikoli pouze v prohlížeči"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Stejný účet Bitdefender funguje ve všech službách, které Bitdefender poskytuje. Chcete-li později přidat produkt, kontaktovat podporu nebo zkontrolovat zařízení – už máte vše nastaveno."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Jeden účet, ani o jeden víc"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Každá stránka, kterou jste povolili, každé bezpečnostní opatření, které jste deaktivovali – to vše vás nyní sleduje. Nový prohlížeč, nový notebook, čerstvá instalace: všechno je pořád tam."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Vaše nastavení už nezmizí"
+   },
+   "main_welcome_account_straight": {
+      "message": "Ochrana {product} se spustí, jakmile se přihlásíte. Do té doby zůstává ochrana neaktivní a ikona štítu ve vašem prohlížeči zůstává vypnutá."
+   },
+   "main_welcome_account_sub": {
+      "message": "To je oproti TrafficLight opravdu velká změna a je na místě se zeptat, proč tomu tak je. Tři upřímné důvody:"
+   },
+   "main_welcome_account_title": {
+      "message": "Jediná věc, která se změnila"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Pokračujte v prohlížení"
+   },
+   "main_welcome_button_open": {
+      "message": "Otevřít {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Přihlásit se"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Provádíme kontrolu vašeho účtu…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Máte na tomto zařízení již Bitdefender? Může se stát, že se přihlásíte automaticky – tato stránka se v takovém případě okamžitě aktualizuje."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} vás chrání pouze tehdy, když jste přihlášeni ke svému účtu Bitdefender. Přihlášením se aktivuje blokování, automaticky se nastaví váš tarif a vaše nastavení se synchronizuje. Vytvoření účtu je zdarma."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Přihlásit se – tím se aktivuje ochrana"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Vše je připraveno"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Aktualizace dokončena"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight už vyrostl"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Otevřete svůj ovládací panel"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Přihlásit se"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "V horní části panelu najdete hlavní obrazovku, přehled aktivit a nastavení."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Váš účet"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Váš účet Bitdefender slouží k aktivaci ochrany, synchronizaci nastavení napříč prohlížeči a zařízeními a poskytuje vám jednotný přehled o vaší aktivitě a nastaveních."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Váš účet, váš ovládací panel"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "V panelu"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Seznamte se s bezpečnostním poradcem"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Zde se nacházejí všechna nastavení ochrany, včetně toho, do jaké míry systém jedná samostatně."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Bezpečnostní poradce"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Při nastavení porovná vaše záložky a historii prohlížení se známými hrozbami a poté vám vysvětlí, co na navštívených stránkách zjistil. Můžete si vybrat, zda se systém před provedením akce zeptá, nebo zda vše vyřídí sám."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Bezpečnostní poradce"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "V panelu"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Podívejte se na to v panelu"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Na skutečném webu je ticho, na falešném je hluk."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Bezpečné finance"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Stránky týkající se bankovnictví, kryptoměn a peněženek jsou podrobeny důkladnější kontrole: pokusy o vydávání se za vaši banku nebo burzu jsou odhaleny ještě předtím, než zadáte heslo."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Bezpečné finance"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Na bankovních a krypto měnových webech"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Nastavení ve dvou krocích"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Není třeba nic zapínat; chrání vás už od aktualizace."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Pořád tady"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Blokování stránek v reálném čase a funkce Search Advisor fungují přesně stejně jako dříve, nyní však čerpají z většího počtu zdrojů. Pokud jste dosud používali i samostatné rozšíření Anti-tracker, tuto funkci nyní plní Privacy Guard – můžete jej tedy odstranit."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Všechno, na co jste se spoléhali, je stále tady"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Vždy zapnuto"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Spustit Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Každý web, který spravuje, s přepínačem pro každé oprávnění."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Ochrana soukromí"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Blokuje sledovací nástroje a spravuje oprávnění jednotlivých webových stránek – oznámení, polohu, fotoaparát, mikrofon, automatické stahování a schránku. Pokud se ukáže, že stránka není bezpečná, budou vám odebrána všechna oprávnění, která vám byla udělena."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Ochrana soukromí"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "V panelu"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Podívejte se na to v panelu"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Varování se zobrazují přímo na stránce, kterou právě prohlížíte, ještě než na ni kliknete."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Scam Protection"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Nejen známé škodlivé URL adresy: podezřelá stránka projde analýzou pomocí umělé inteligence na vyžádání, která srozumitelným způsobem vysvětlí, v čem je problém."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Ochrana před podvody pomocí hloubkové kontroly s AI"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Na stránce"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Otevřete panel"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Vedle každého výsledku je značka; najedete-li na ni kurzorem, zobrazí se důvod."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Hodnocení rizikovosti odkazů ve vyhledávání"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Hodnocení bezpečnosti se zobrazuje vedle výsledků ve vyhledávačích Google, Bing, DuckDuckGo a Yahoo, takže to víte ještě předtím, než na odkaz kliknete."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Hodnocení rizikovosti odkazů ve vyhledávání"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "Ve výsledcích vyhledávání"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Podívejte se na to v panelu"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Hodnocení se týká samotného obchodu, nikoli pouze stránky, na které se právě nacházíte."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Bezpečné nakupování"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Při procházení internetových obchodů jsou tyto porovnávány s databází Webshop Intelligence, takže podvodné obchody a nabídky, které se zdají až příliš výhodné, jsou označeny ještě předtím, než provedete platbu."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Bezpečné nakupování"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Na nákupních webech"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Zobrazit stav stránky"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Všimnete si toho až tehdy, když to má co říct."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Blokování stránek"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Každá stránka, kterou otevřete, je porovnána s informacemi o hrozbách od Bitdefender. Nebezpečný web je okamžitě odpojen – a zcela zablokován, než se stačí znovu načíst."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Nebezpečné stránky byly okamžitě zablokovány"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Na stránce"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Právní záležitosti a podpora"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Zásady ochrany osobních údajů"
+   },
+   "main_welcome_footer_support": {
+      "message": "Podpora"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Podmínky Použití"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Panel se nepodařilo otevřít automaticky. Kliknutím na ikonu {product} na panelu nástrojů jej otevřete."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animace ukazující, jak připnout rozšíření na panel nástrojů prohlížeče"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Klikněte na tlačítko „Rozšíření“ (s ikonou skládačky) v pravém horním rohu prohlížeče."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Klikněte na tlačítko „Rozšíření“ (s ikonou skládačky) v pravém horním rohu prohlížeče."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Klikněte na tlačítko „Rozšíření“ (s ikonou kousku skládačky) na panelu nástrojů."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Klikněte na tlačítko „Rozšíření“ (kostka) na panelu nástrojů."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Otevřete nabídku rozšíření ve svém prohlížeči."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Najděte {product} a klikněte na ikonu špendlíku vedle něj."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Najděte {product} a klikněte na ikonu špendlíku vedle něj, aby se položka zobrazila na panelu nástrojů."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Najděte {product}, otevřete jeho nastavení (ikona ozubeného kolečka) a vyberte možnost „Připnout na panel nástrojů“."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Najděte {product} a klikněte na ikonu špendlíku vedle něj."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Najděte {product} a připněte jej na panel nástrojů."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Mějte to na dosah jednoho kliknutí, abyste vždy viděli stav zabezpečení stránky, na které se právě nacházíte."
+   },
+   "main_welcome_pin_title": {
+      "message": "Připněte {product} na panel nástrojů"
+   },
+   "main_welcome_protected_done": {
+      "message": "Ochrana je zapnutá. Tady už není co dělat – připněte {product}, aby to zůstalo na očích."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Součástí vašeho tarifu {plan} — odemkne se automaticky, není třeba nic aktivovat."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Právě běží"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Zdarma s vaším účtem Bitdefender."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Jste chráněni — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Jste chráněni — {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Jste přihlášeni a chráněni"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Ochrana v reálném čase před podvody, phishingem a sledovacími nástroji přímo při procházení webu. Dva rychlé kroky a máte hotovo."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Verze {version} je nainstalována a již vás chrání. Toto je to, co přidává."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Vaše rozšíření právě prošlo významnou aktualizací. Všechno, co TrafficLight udělal, tu stále je, a přibylo toho ještě mnohem víc."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Součást balíčku {product} Premium, který je součástí balíčku Bitdefender Total Security a vyšších verzí."
+   },
+   "main_welcome_title_new": {
+      "message": "Vítejte v {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} se právě zlepšilo"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight je nyní {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Co získáte"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Co je nového"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Co je nového"
+   },
+   "main_welcome_tour_next": {
+      "message": "Další funkce"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Předchozí článek"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} z {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Všechno, co pro vás {product} dělá, funkce po funkci. Projděte si to krok za krokem, nebo se do toho rovnou pusťte."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Novinky ve verzi {version}. Projděte si to krok za krokem, nebo se do toho rovnou pusťte."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Všechno, co TrafficLight udělal, a k tomu ještě tohle. Projděte si to krok za krokem, nebo se do toho rovnou pusťte."
+   },
+   "main_welcome_window_title": {
+      "message": "Vítejte v {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Přidat stránku"
+   },
+   "main_whitelist_import": {
+      "message": "Importovat domény"
+   },
+   "main_whitelist_info": {
+      "message": "Domény uvedené ve vašem seznamu povolených adres budou při skenování vynechány. Na případné hrozby na těchto stránkách nebudete upozorněni."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Odebrat"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Skenování hrozeb"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Sledovací skripty"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Shromažďuje reklamy zobrazené na stránkách, které navštěvujete, aby bylo možné je zkontrolovat z hlediska podvodů a podvodných praktik."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Sledování reklam"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Označuje škodlivé reklamy a sponzorované výsledky, které vedou k podvodům nebo škodlivému softwaru."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ochrana proti podvodům v reklamě"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Odhaluje falešné bankovní weby a podvodné investiční platformy, jejichž účelem je odcizit vaše přihlašovací údaje nebo finanční prostředky."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Ochrana před finančním podvodem"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Upozorní vás na falešné obchody a podvodné stránky pro dokončení objednávky ještě předtím, než zadáte své platební údaje."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Bezpečné nakupování"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Zablokovat tuto stránku"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Načíst i tak (nebezpečné)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Obsah přesto načíst (nebezpečné)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Zobrazit více podrobností"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Podívejme se na podrobnosti…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Tuto stránku se mi momentálně nepodařilo analyzovat. Zkuste to prosím znovu."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Podrobná analýza stránek není součástí vašeho aktuálního předplatného, takže tuto stránku nemohu prozkoumat."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Trvalo to déle, než jsem byl ochoten čekat, tak jsem to přestal řešit."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Zkontroluje odkazy v přehledových panelech AI a označí ty, které vedou na nebezpečné webové stránky."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI přehledový skener"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Zakázáno v nastavení"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Zapnuto"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Není k dispozici"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI Poradce pro vyhledávání"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Analýza odkazů ve výsledcích vyhledávání"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Analyzováno {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Tuto stránku se mi nepodařilo zablokovat."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Blokování této stránky…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Vynutit kontrolu (odstranit ze seznamu povolených)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Znovu zkontrolovat"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Odblokovat tuto stránku"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Provádí se kontrola databáze známých hrozeb…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Ověřování oprávnění…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Kontrola podvodů…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Kontroluji"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Bylo provedeno {n} kontrol"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Stránka bloku"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Souhlas"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Proveďte důkladnou analýzu"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Provedl jsem důkladnou analýzu"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Hloubková analýza dokončena"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Probíhá analýza obsahu stránky a snímku obrazovky…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Podrobná analýza na této stránce neodhalila žádné problémy."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Byla provedena důkladná analýza, která však nepřinesla žádné konkrétní ukazatele."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Podrobná analýza potvrdila, že tato stránka je nebezpečná."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Spustit analýzu"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "S vaším souhlasem prozkoumám obsah stránky a její snímek obrazovky, abych zjistil, co se skrývá pod povrchem."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Došlo k vypršení časového limitu při hloubkové analýze"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Po {n} sekundách bylo čekání ukončeno"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Podrobná analýza trvá déle, než jsem ochoten čekat, tak jsem s ní přestal. Můžeš to zkusit znovu, nebo se rozhodnout na základě toho, co jsem už zjistil."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Provést podrobnější analýzu?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Odstranění ze seznamu povolených a opětovná kontrola…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Vygenerovaná zpráva: {n} varování"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Vygenerovaná zpráva: {n} varování"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Přejít na stránku…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Škodlivý výsledek vyhledávání"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Kontroluje reklamy na stránkách, které navštěvujete, a označuje ty, které vedou k podvodům."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Ochrana před podvodnými reklamami"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Otevřít nastavení rozšíření"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera rozšířením blokuje přístup k výsledkům vyhledávání, dokud to nepovolíte. Otevřete opera://extensions, najděte toto rozšíření a zapněte možnost „Povolit přístup k výsledkům stránky vyhledávání“."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Výsledky vyhledávání se nekontrolují"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard zablokoval {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Tato webová stránka má přístup k vašemu {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Nebyla udělena žádná oprávnění"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Oprávnění nejsou k dispozici"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Nebyly zjištěny žádné varovné příznaky"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Aplikace Privacy Guard doporučuje zablokovat {list} pro tuto webovou stránku."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Toto jsem zjistil:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Obnovili jsme veškerý blokovaný obsah."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Obnovování zablokovaného obsahu…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Nebyly zjištěny žádné podvodné vzorce"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} byl nalezen indikátor škodlivého softwaru"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "Byly nalezeny {n} indikátory škodlivého softwaru"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} byl zjištěn podezřelý indikátor"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} nalezeno podezřelých indikátorů"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Analýzu podvodu se nepodařilo dokončit"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Objevilo se v nedůvěryhodném propagačním obsahu"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Šablona pro vydírání s použitím nátlaku"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Šablona podvodu s padělanými penězi"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Šablona podvodu spočívajícího ve zneužití krizové situace"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Šablona pro podvody s kryptoměnami"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Šablona pro podvodnou seznamovací platformu pro dospělé"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Šablona pro klamavou reklamu"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Šablona klamavé propagační akce"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Šablona klamavého online průzkumu"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Šablona pro podvod s investicemi do energetiky"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Šablona podvodného vydírání"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Šablona odměn za zobrazení falešných reklam"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Šablona falešného rezervačního webu"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Šablona falešného kasina"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Šablona falešné charitativní organizace"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Šablona falešné kliniky"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Šablona falešné kryptoměnové soutěže"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Šablona falešné doručovací služby"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Šablona falešných dokumentů"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Šablona fiktivního eshopu"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Šablona fiktivní vzdělávací instituce"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Šablona falešné nabídky zaměstnání"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Šablona fiktivní zábavní služby"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Šablona fiktivní finanční instituce"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Šablona fiktivní finanční investice"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Šablona falešného hazardního webu"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Šablona falešných herních výher"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Šablona pro investice do falešného zlata"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Šablona falešných státních dávek"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Šablona fiktivní vládní instituce"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Šablona falešného imigračního úřadu"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Šablona fiktivní právní instituce"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Šablona služby „Vrácení peněz v případě padělku“"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Šablona falešné internetové lékárny"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Šablona falešné kliniky"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Šablona falešné platební platformy"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Šablona kampaně s falešnými cenami"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Šablona falešné ceny nebo odměny"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Šablona fiktivního nakladatelství"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Šablona pro platformu s falešnými recenzemi"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Vzory falešných obchodů v reklamní kampani"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Šablona falešného duchovního praktikanta"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Šablona falešných výher"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Šablona pro finanční podvod"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Podvodná reklamní kampaň falešného obchodu"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Šablona pro podvody ve zdravotnictví"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Zjištěn útok typu homoglyf"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Šablona stránky o nelegálních činnostech"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Šablona pro nelegální služby"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Šablona pro nelegální látky"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP adresy vykazující podezřelé chování"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP adresy s podezřelými vzory"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Známá šablona pro phishing"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Šablona známého podvodu"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Šablona podvodu s loterií"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Internetový obchod s nízkou důvěryhodností, bez zavedené pozice na trhu"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Obchodní/investiční platforma s nízkou důvěryhodností, bez zavedené pozice na trhu"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Odkaz na podvodnou investiční platformu"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Odkaz na podvodný internetový obchod"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Šablona podvodu s omamnými látkami"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Internetový obchod s protichůdnými ukazateli"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Internetový obchod bez fyzické provozovny"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Šablona podvodu s domácími mazlíčky"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Šablona pro Ponziho/pyramidový systém"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Šablona pro podvod s nemovitostmi"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Šablona pro podvod s romantickými vztahy"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Šablona webové stránky pro romantické podvody"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Šablona podvodu s tajným spolkem"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Odkaz na podvodnou investiční platformu"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Podezřelý formát odkazu"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Odkaz na podvodný internetový obchod"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Šablona podvodu s technickou podporou"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Obchodní / investiční platforma s protichůdnými ukazateli"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Obchodní / investiční platforma bez zavedené pobočky"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Internetový obchod s velmi nízkou důvěryhodností"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Internetový obchod s nízkou důvěryhodností, bez zavedené pozice na trhu"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Obchodní a investiční platforma s velmi nízkou důvěryhodností"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Velmi podezřelý odkaz"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Zablokoval jsem ji a omezil jsem jí přístup k tvému mikrofonu, kameře a poloze – můžeš kartu bez obav zavřít..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Skriptům pro sledování byl zablokován přístup a byl zrušen přístup k mikrofonu, kameře a poloze, aby byla zajištěna vaše bezpečnost."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Nepodařilo se mi dokončit kontrolu těchto výsledků vyhledávání."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Skenování není dokončeno"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Bezpečnostní poradce je zapnutý"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Probíhá prohledávání výsledků vyhledávání…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Podezřelý výsledek vyhledávání"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Funkce Search Advisor je deaktivována. Přejděte do nastavení a funkci zapněte."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Ochrana webu je vypnutá. Přejděte do nastavení a funkci zapněte."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Přeskočení kontrol a načítání stránky."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Tato stránka byla označena jako škodlivá."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Tato stránka je součástí pokusu o podvod."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Tato stránka je součástí podvodné reklamy."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Zjistili jsme prvky, které by mohly poškodit vaše zařízení."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Tato stránka se pokusila využít zdroje vašeho zařízení k těžbě kryptoměny a byla zablokována."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Tuto stránku nelze zkontrolovat pomocí nástroje Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Přeskočení kontrol a načítání stránky."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Zůstane zablokovaná, dokud ji neodblokujete."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Tato stránka je součástí phishingového útoku."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Tato stránka se pokusila stáhnout do vašeho zařízení PUA (potenciálně nežádoucí aplikaci) a byla zablokována."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Tato stránka se v aktuální relaci prohlížení přeskočí při skenování"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Tato stránka je sice bezpečná, v minulosti však byly hlášeny některé bezpečnostní hrozby."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Tato stránka se při skenování přeskočí, protože byla přidána do seznamu výjimek."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "K každému výsledku ve vyhledávačích Google, Bing, Yahoo a DuckDuckGo přidává hodnocení bezpečnosti, takže můžete rozpoznat rizikové odkazy ještě předtím, než na ně kliknete."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Anotace výsledků vyhledávání"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Ochrana je deaktivována"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Nelze prohledat výsledky vyhledávání"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Tuto stránku nelze naskenovat"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Tato doména je zařazena na seznam povolených adres"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Byl zjištěn podvodný obchod"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Byl detekován pokus o podvod"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Zjištěna podvodná reklama"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Nalezena hrozba!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Zjištěn pokus o těžbu"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Stránku nelze naskenovat"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Tato stránka se v této relaci přeskočí"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Tuto stránku jste zablokovali"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Detekován pokus o phishing"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Bylo zjištěno stažení potenciálně nežádoucí aplikace"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Tato webová stránka je bezpečná"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Probíhá kontrola..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Byla zjištěna nedůvěryhodná doména"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Byla zjištěna stránka, na kterou se výjimka nevztahuje"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Zablokováno {n} sledovacích modulů"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Blokování sledovacích skriptů je vypnuté, takže tato stránka nebyla zkontrolována z hlediska přítomnosti sledovacích prvků"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Načíst skripty (nebezpečné)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Na této stránce nebyly zjištěny žádné sledovací skripty"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Tuto stránku se mi nepodařilo odblokovat."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Odblokování této stránky…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Nebyly nalezeny žádné známé hrozby"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Stránka zablokována"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Stránka se načítala {n}ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Zařízení je chráněno"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Na této stránce jsem narazil na některá rizika. Nezadávejte žádné osobní údaje, hesla ani platební údaje a nic nestahujte."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Tady buďte opatrní"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Teď je už všechno v pořádku."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Chráníme vás při procházení webu."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Tato stránka byla zablokována"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Doména označená jako škodlivá"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Falešné obchody napodobují skutečné prodejce a snaží se potencionální oběť přimět k provedení platby a/nebo zadání platebních údajů. Údaje o platební kartě lze použít opakovaně nebo naopak přeprodat. Zakoupené zboží většinou vůbec nedorazí."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Podvodné stránky se vás obvykle snaží oklamat, abyste jim poslali peníze, za cílem nezákonného zisku."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Stránka byla vyhodnocena jako podvodná a byla zablokována.\nÚtočníci lákají své potenciální oběti pomocí deepfakes, investičních příležitostí a dalších trendových témat, aby je přiměli k předání citlivých údajů, peněz nebo stažení malwaru."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Škodlivé stránky se snaží nainstalovat software, který může poškodit zařízení, sbírat osobní údaje nebo pracovat bez vašeho vědomí."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Těžařské stránky (miner pages) využívají zdroje zařízení, aby těžily kryptoměnu, což ovlivňuje jeho použitelnost a životnost hardwaru. "
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Phishingové stránky se vydávají za důvěryhodné organizace nebo služby a snaží z potencionální oběti vylákat citlivé osobní údaje jako jsou přístupové údaje a čísla platebních karet. Ty pak útočníkům slouží jako prostředek k cíleným útokům sociálního inženýrství."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Stránka se pokusila stáhnout do zařízení potenciálně nežádoucí aplikaci (PUA). Potenciálně nežádoucí aplikace mohou zatěžovat výkon zařízení, měnit důležitá nastavení nebo instalovat další nežádoucí software."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Nedůvěryhodné stránky vykazují podezřelé chování nebo zvláštnosti, které považujeme za rizikové, proto byste se měli vyhýbat přístupu k těmto stránkám a udržet tak svá data v bezpečí."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Obchod byl vyhodnocen jako podvodný a z bezpečnostních důvodů zablokován"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Pro vaši bezpečnost jsme zablokovali část obsahu."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Zjištěn podezřelý obsah"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Panel se nepodařilo otevřít. Zkuste to prosím znovu."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Otevřete panel Bitdefender v postranním panelu prohlížeče, abyste si prohlédli podrobnosti."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Stránka zablokována"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Automatické stahování"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "fotoaparát"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "schránka"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Zavřít"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "Přístup k této webové stránce byl {permissions} zablokován."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "Přístup k této webové stránce byl {permissions} zablokován."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "Na této webové stránce je povolen přístup {permissions}. Podívejte se, k čemu se tato webová stránka hodí."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "Na tuto webovou stránku je povolen přístup {permissions}. Podívejte se, k čemu se tato webová stránka hodí."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Aplikace Privacy Guard našla oprávnění, která je třeba zkontrolovat"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} a {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "umístění"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "Na této webové stránce je povolen přístup {permissions}. Zjistěte, co by se na této webové stránce hodilo."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "Na tuto webovou stránku je povolen přístup {permissions}. Zjistěte, co by se na této webové stránce hodilo."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Aplikace Privacy Guard spravuje oprávnění"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "mikrofon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Oznámení"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Aplikace Privacy Guard spravuje oprávnění"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Postupujte opatrně"
+   },
+   "urlScanning_see_details": {
+      "message": "Zobrazit podrobnosti"
+   },
+   "urlScanning_show_details": {
+      "message": "Zobrazit podrobnosti"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Zavřít"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Zde se objevují určité varovné signály. Buďte opatrní s osobními údaji a stahováním souborů."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Nelze prohledat výsledky vyhledávání"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Tuto stránku nelze naskenovat"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Byl zjištěn podvodný obchod"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Byl detekován pokus o podvod"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Zjištěna podvodná reklama"
+   },
+   "urlScanning_title_malware": {
+      "message": "Nalezena hrozba!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Zjištěn pokus o těžbu"
+   },
+   "urlScanning_title_phish": {
+      "message": "Detekován pokus o phishing"
+   },
+   "urlScanning_title_pua": {
+      "message": "Bylo zjištěno stažení potenciálně nežádoucí aplikace"
+   },
+   "urlScanning_title_safe": {
+      "message": "Tato stránka je bezpečná"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Byla zjištěna nedůvěryhodná doména"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Prohledávalo navštívené webové adresy s cílem odhalit malware, phishing, podvody a další hrozby"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "webová ochrana"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Webová ochrana od společnosti Bitdefender"
+   }
+}

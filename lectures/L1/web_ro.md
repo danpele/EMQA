@@ -131,7 +131,7 @@ Aceste schimbări contează pentru prețuri, pentru că modifică centrala margi
 @chart mix_shares
 Ponderea fiecărei surse în producția României (%) în 2015, 2025 și ianuarie–octombrie 2026, sub formă de bare orizontale.
 
-## Structura cursului: șapte prelegeri și o hartă a modelelor {h=1bb3187f}
+## Structura cursului și modelele studiate {h=f3ae7bfa}
 
 Acest curs deschide o serie de șapte: (1) piețele de energie și datele lor; (2) prognoza, cu modele clasice și cu modele autoregresive cu variabile exogene (ARX); (3) volatilitatea; (4) riscul în companiile de energie, inclusiv riscul preț–volum, fluxul de numerar la risc, dezechilibrele și riscul de bază; (5) derivatele și acoperirea riscului, inclusiv contractele de achiziție de energie pe termen lung (PPA); (6) regenerabilele, stocarea și flexibilitatea, cu canibalizarea, prețurile negative și bateriile; (7) învățarea automată și modelele fundaționale pentru prognoză.
 
@@ -147,7 +147,7 @@ O singură licitație zilnică, cuplată la nivel european, stabilește prețul 
 
 Înainte de orice model, datele trebuie măsurate în unitățile potrivite, pe fusul orar corect și fără valori inventate. Secțiunea fixează aceste convenții și documentează apoi, pe seriile din România și din Europa, faptele stilizate ale prețurilor energiei: salturile de nivel, sezonalitatea la trei frecvențe, salturile de preț, prețurile negative, cozile groase și gruparea volatilității.
 
-## Putere și energie: MW nu înseamnă MWh {h=811b05c6}
+## Puterea (MW) și energia (MWh) {h=116c9d6b}
 
 Un megawatt (MW) măsoară puterea, adică ritmul producției sau al consumului; un megawatt-oră (MWh) măsoară cantitatea de energie, de exemplu 1 MW timp de o oră. Energia dintr-o perioadă și gradul de acoperire al datelor se calculează astfel:
 
@@ -240,7 +240,7 @@ Pe 199 de săptămîni, între 2 ianuarie 2023 și 25 octombrie 2026:
 
 @practice un consumator industrial își poate muta consumul flexibil (mentenanță, pompare, încărcare) duminica, reducîndu-și astfel costurile cu energia.
 
-## Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată {h=30e28a5a}
+## Profilul sezonier al prețurilor, al consumului și al producției hidro {h=44dd955a}
 
 De-a lungul anului, prețul din România urmează echilibrul dintre cerere și sursele ieftine. Raportat la media anuală, prețul este maxim în ianuarie (de 1,26 ori media) și minim în aprilie (de 0,72 ori). Consumul este maxim în ianuarie–februarie și minim în mai, iar producția hidro atinge maximul în iunie, odată cu topirea zăpezii. Primăvara, apa abundentă și producția solară în creștere întîlnesc o cerere moderată, iar prețurile scad.
 
@@ -251,7 +251,7 @@ Profilul anual este a treia frecvență sezonieră a seriei, după cea zilnică 
 @chart profile_annual
 Medii lunare 2016–2025: consumul, producția hidro și cea solară a României pe luni (GW, stînga) și prețul PZU din fiecare lună raportat la media anuală, mediana pe ani (dreapta).
 
-## Salturile de preț: puține ore, prețuri extreme {h=28b10f20}
+## Salturile de preț: definiție și numărul de ore pe an {h=dcf8abce}
 
 Un salt de preț (*spike*) apare într-un interval în care prețul depășește cu mult nivelul obișnuit al anului respectiv. O regulă robustă marchează intervalul $t$ din anul $y$ ca salt de preț atunci cînd
 
@@ -346,7 +346,7 @@ Prețurile energiei își schimbă nivelul, urmează cicluri zilnice, săptămî
 
 Secțiunea introduce instrumentele folosite în tot cursul pentru a descrie o serie de prețuri: staționaritatea, autocorelația și autocorelația parțială, prognoza naivă, testele de rădăcină unitară, descompunerea și netezirea exponențială. Fiecare instrument este aplicat pe datele din România, din Germania sau pe țițeiul Brent.
 
-## Staționaritate: regulile jocului nu se schimbă în timp {h=799527c5}
+## Staționaritatea slabă: medie, varianță și autocovarianțe constante {h=1c434620}
 
 O serie este (slab) staționară dacă media, dispersia și memoria ei rămîn aceleași în orice perioadă:
 
@@ -373,7 +373,7 @@ Patru reguli de interpretare acoperă majoritatea situațiilor. O scădere lent�
 
 @practice prognoza unui furnizor pentru ziua de mîine pornește de la „aceeași zi din săptămîna trecută”: autocorelația la decalajul 7 este 0,672 în România, din 2023.
 
-## Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră {h=3538be57}
+## Autocorelația prețurilor la decalaje de o zi și de o săptămînă {h=caee17f5}
 
 Cele două grafice aplică regulile de interpretare prețurilor din România. Pentru prețurile zilnice în bandă dintre 1 ianuarie 2023 și 31 octombrie 2026, autocorelația la decalajul 1 este $\hat\rho_1=0{,}789$, iar la decalajul 7, $\hat\rho_7=0{,}672$; autocorelația parțială la decalajul 7 este $\hat\alpha_7=0{,}257$, deci aceeași zi din săptămîna precedentă aduce informație în plus față de ultimele zile. Funcția de autocorelație scade lent, cu vîrfuri la multiplii lui 7.
 
@@ -417,7 +417,7 @@ unde $\Delta x_t=x_t-x_{t-1}$ este variația seriei, $\alpha$ este o constantă,
 
 @practice dacă șocurile pot fi permanente, un furnizor nu își poate baza bugetul pe „revenirea la normal”.
 
-## Un verdict pe serie: nivelurile persistă, variațiile sînt staționare {h=1eff8512}
+## Rezultatele testelor ADF și KPSS pe serii: niveluri și variații {h=247019ae}
 
 Aplicînd ambele teste, numai cu constantă, cu decalajele ADF alese după AIC și la pragul de 5%, obținem un verdict pentru fiecare serie:
 

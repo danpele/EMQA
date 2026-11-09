@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261108a", "L4_text_ro.js?v=20261108a", "common.js?v=20261108s"], "L4.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L4_data.js?v=20261108a", "L4_text_ro.js?v=20261108a", "common.js?v=20261108a"], "L4.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din datele cursului (data/clean) cînd modificați un control. Factorul de risc este variația zilnică a prețului de bază PZU din România, X<sub>t</sub> = P<sub>t</sub> − P<sub>t−1</sub> (EUR/MWh): o creștere este o pierdere pentru un furnizor care cumpără pe piața pentru ziua următoare. VaR (Value at Risk, valoarea la risc) este o cuantilă a pierderii, ES (Expected Shortfall, pierderea așteptată în coadă) media pierderilor de dincolo de ea. Butonul ▶ modifică parametrul principal pas cu pas.</p>
-<p class="toc"><a href="#s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</a> · <a href="#s-est">Estimarea VaR și ES: patru metode</a> · <a href="#s-bt">Testarea retrospectivă: și-a ținut modelul promisiunea?</a> · <a href="#s-coll">De la cuantile la marje, garanții și limite</a> · <a href="#s-pos">Furnizorul și producătorul: un singur preț, două cozi</a></p>
+<p class="toc"><a href="#s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</a> · <a href="#s-est">Estimarea VaR și ES: patru metode</a> · <a href="#s-bt">Testarea retrospectivă a VaR și ES</a> · <a href="#s-coll">De la cuantile la marje, garanții și limite</a> · <a href="#s-pos">Riscul de preț pentru furnizori și producători</a></p>
 <h2 class="sec" id="s-risk">Riscul de preț: pierderi, cuantile, VaR și ES</h2>
 <section class="blk" id="var-es">
   <h3>Creșterile mari de preț sînt mult mai frecvente decît prevede repartiția normală</h3>
@@ -84,7 +84,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Distribuția Pareto generalizată (GPD) se ajustează reziduurilor de peste pragul u. Depinde forma estimată a cozii, ξ, de alegerea lui u?</div>
   <details><summary>Răspuns</summary><p>Da, și aceasta este principala dificultate practică a teoriei valorilor extreme (EVT): un prag jos dă multe depășiri, dar amestecă și corpul distribuției; un prag înalt folosește doar cîteva zeci de puncte, iar estimația devine instabilă. Mutați u de la 80% la 97% și urmăriți ξ și cuantila de 99,9% implicată. În curs, forma estimată la pragul de 90% variază între −0,38 și 0,33 în cele 171 de reestimări din 2017, fiind pozitivă în 53% dintre ele.</p></details>
-</section><h2 class="sec" id="s-bt">Testarea retrospectivă: și-a ținut modelul promisiunea?</h2>
+</section><h2 class="sec" id="s-bt">Testarea retrospectivă a VaR și ES</h2>
 <section class="blk" id="traffic-light">
   <h3>Semaforul Basel: VaR normală a stat 30% din zile în zona roșie</h3>
   <div class="pair">
@@ -104,7 +104,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Regula rădăcinii pătrate a timpului scalează un VaR pe o zi la 10 zile cu √10 = 3,16. Ce raport arată prețurile din România la nivelul de 99%?</div>
   <details><summary>Răspuns</summary><p>Doar 1,72 (Germania–Luxemburg: 1,75). Variațiile zilnice ale prețului sînt autocorelate negativ (ρ(1) = −0,076): un salt de preț este urmat de o scădere, deci variațiile pe mai multe zile se compensează parțial. Raportul varianțelor la 10 zile este 0,33, mult sub 1. Regula √h presupune variații independente și ar supraestima VaR pe 10 zile al unei poziții de bandă pe PZU.</p></details>
-</section><h2 class="sec" id="s-pos">Furnizorul și producătorul: un singur preț, două cozi</h2>
+</section><h2 class="sec" id="s-pos">Riscul de preț pentru furnizori și producători</h2>
 <section class="blk" id="supplier">
   <h3>Din 2021, limita lunară normală de 99% a fost depășită de 3 ori (0,7 așteptate)</h3>
   <div class="pair">

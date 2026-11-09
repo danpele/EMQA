@@ -399,7 +399,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(România; energy-charts.info; sursa datelor: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_shares}{Quantlets/L1/EMQA_L1_mix_shares}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Structura cursului: șapte prelegeri și o hartă a modelelor}
+\begin{frame}{Structura cursului și modelele studiate}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.56\textwidth}
@@ -441,7 +441,7 @@ Gaze naturale, hubul Title Transfer Facility (TTF) & lunară & Banca Mondială; 
 
 \subsection{Unități de măsură, fusuri orare și date curate}
 
-\begin{frame}{Putere și energie: MW nu înseamnă MWh}
+\begin{frame}{Puterea (MW) și energia (MWh)}
 \footnotesize
 \intuition{Un megawatt (MW) măsoară puterea, adică ritmul producției sau al consumului; un megawatt-oră (MWh) măsoară cantitatea de energie, de exemplu 1 MW timp de o oră.}
 \begin{columns}[T,onlytextwidth]
@@ -627,7 +627,7 @@ DE-LU & \cellcolor{Crimson!41}7{,}0 & \cellcolor{Crimson!53}11{,}0 & \cellcolor{
 \par\vfill\noindent{\scriptsize\color{FooterGray}}\hfill\tryit{notebook-ul Jupyter \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată}
+\begin{frame}{Profilul sezonier al prețurilor, al consumului și al producției hidro}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.437\textheight,keepaspectratio]{charts/ro/profile_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile burselor OPCOM, IBEX, HUPX, EPEX SPOT, prin ENTSO-E. Date: medii lunare 2016-2025.}
@@ -645,7 +645,7 @@ DE-LU & \cellcolor{Crimson!41}7{,}0 & \cellcolor{Crimson!53}11{,}0 & \cellcolor{
 
 \subsection{Salturi de preț și prețuri negative}
 
-\begin{frame}{Salturile de preț: puține ore, prețuri extreme}
+\begin{frame}{Salturile de preț: definiție și numărul de ore pe an}
 \footnotesize
 \intuition{Un salt de preț (spike) apare într-un interval în care prețul depășește cu mult nivelul obișnuit al anului respectiv.}
 \begin{columns}[T,onlytextwidth]
@@ -780,7 +780,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 
 \subsection{Staționaritate și autocorelație}
 
-\begin{frame}{Staționaritate: regulile jocului nu se schimbă în timp}
+\begin{frame}{Staționaritatea slabă: medie, varianță și autocovarianțe constante}
 \small
 \intuition{Slab staționară: media, dispersia și memoria la fiecare decalaj $k$ sînt aceleași în orice perioadă.}
 \vspace{-1mm}\[ \E X_t=\mu,\quad \Var X_t=\gamma_0,\quad \Cov(X_t,X_{t-k})=\gamma_k\quad \text{pentru orice } t \]\vspace{-2mm}
@@ -824,7 +824,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021; Ljung \& Box, 1978)}\hfill\tryit{notebook-ul Jupyter \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră}
+\begin{frame}{Autocorelația prețurilor la decalaje de o zi și de o săptămînă}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.371\textheight,keepaspectratio]{charts/ro/acf_pacf_ro_daily.pdf}\end{center}\vspace{-3mm}
 
@@ -887,7 +887,7 @@ ADF nerespinsă & neconcludent & \cellcolor{Crimson!25}răd.\ unitară$^{*}$ \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Dickey \& Fuller, 1979, JASA; Kwiatkowski et al., 1992, J.\ Econometrics)}\hfill\tryit{notebook-ul Jupyter \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Un verdict pe serie: nivelurile persistă, variațiile sînt staționare}
+\begin{frame}{Rezultatele testelor ADF și KPSS pe serii: niveluri și variații}
 \small
 {\footnotesize\renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}llrrrrrl@{}}\toprule
@@ -952,7 +952,7 @@ Hidro RO, desezonalizat & 2015--2025 & 132 & \ensuremath{-}4{,}19 & $<$0{,}001 &
 
 \section{Studii de caz pe date recente}
 
-\subsection{(a) 2023, an ploios; 2025, an secetos}
+\subsection{(a) Producția hidro în 2023 și 2025}
 
 \begin{frame}{Studiul de caz (a): producția hidro în 2025, cu o treime sub 2023}
 \small

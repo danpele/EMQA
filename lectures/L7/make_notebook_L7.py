@@ -193,8 +193,8 @@ def cells(lang):
         "plt.xlabel('hour'); plt.ylabel('MAE'); plt.legend(); plt.show()"))
 
     # ---------------------------------------------------------------- §5
-    C.append(md(T("## §5 Honest comparison: scoreboard, Diebold–Mariano tests, combinations, compute cost",
-                  "## §5 Comparație corectă: clasament, teste Diebold–Mariano, combinații, cost de calcul")))
+    C.append(md(T("## §5 Model comparison: scoreboard, Diebold–Mariano tests, combinations, computational cost",
+                  "## §5 Compararea modelelor: clasament, teste Diebold–Mariano, combinații, cost de calcul")))
     C.append(code(fsrc("nw_var", "dm") + "\n\n\n"
                   "M = dict(B)\n"
                   "if RUN_ALL:\n"
@@ -280,8 +280,8 @@ def cells(lang):
         "for j in np.argsort(-np.abs(phi_eur))[:5]: print(f'{XGB_NAMES[j]:18s} value {XS[kd, kh, j]:8.1f}  contribution {phi_eur[j]:+7.1f} EUR/MWh')"))
 
     # ---------------------------------------------------------------- §9
-    C.append(md(T("## §9 Pitfalls: look-ahead, shuffled cross-validation, data snooping, retraining",
-                  "## §9 Capcane: informația din viitor, validarea încrucișată amestecată, alegerea pe anul de test, reestimarea")))
+    C.append(md(T("## §9 Evaluation errors: look-ahead, shuffled cross-validation, data snooping, retraining",
+                  "## §9 Erori de evaluare: informația din viitor, validarea încrucișată amestecată, alegerea pe anul de test, reestimarea")))
     C.append(code(
         "a, b = MB[-1]\nhon = xgb_block(P_, L_, R_, F_, a, b, CFG_XGB)['pred']; lk = xgb_block(P_, L_, R_, F_, a, b, CFG_XGB, leak=True)['pred']\n"
         "Am = P_[a:b + 1]\nprint('last month: honest MAE %.2f, with same-day load and wind+solar %.2f' % (np.mean(np.abs(Am - hon)), np.mean(np.abs(Am - lk))))\n"

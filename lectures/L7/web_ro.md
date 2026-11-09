@@ -17,7 +17,7 @@ Cursul folosește aceleași date reale și același an de test ca în cursul 2: 
 - **Comparați** aceste modele cu modelele de referință din cursul 2, pe același an de test, cu eroarea absolută medie (MAE), rădăcina erorii pătratice medii (RMSE), MAE relativă (rMAE) și testul Diebold–Mariano (DM), și combinați învățarea automată cu modelele statistice.
 - **Explicați** prognozele, anticipați vîrfurile de preț și prețurile negative și recunoașteți capcanele care fac un model să pară mai bun decît este.
 
-# Învățarea automată, evaluată corect
+# Modelele de învățare automată și evaluarea lor
 
 Modelele flexibile pot învăța tipare pe care un model liniar nu le vede, dar pot învăța și zgomotul trecutului; secțiunea stabilește regulile care păstrează evaluarea corectă. Datele sînt împărțite în eșantioane de antrenare, de validare și de test, în ordine cronologică, iar setările se aleg prin căutare aleatoare numai pe anul de validare.
 
@@ -29,7 +29,7 @@ Timpul este împărțit în trei. Antrenarea începe la 8 ianuarie 2022 și cre�
 
 Modelele de referință sînt prognozele din cursul 2, preluate din fișierele acestuia: modelul naiv; modelul autoregresiv cu variabile exogene (ARX); operatorul de contracție și selecție în normă absolută (LASSO); autoregresia estimată cu LASSO (LEAR); ARX și LEAR mediate pe mai multe ferestre de calibrare (AW-ARX și AW-LEAR); ansamblul de 4 modele. Fiindcă anul de test este același, fiecare eroare din acest curs se poate compara direct cu cele din cursul 2.
 
-## Învățarea automată cîștigă flexibilitate, dar plătește prin varianță {h=99f85e49}
+## Flexibilitatea și varianța modelelor de învățare automată {h=853e50a3}
 
 Un model flexibil poate învăța praguri și interacțiuni pe care LEAR nu le vede, dar poate învăța și zgomotul din anii de antrenare. Toate modelele din acest curs, statistice sau nu, se estimează după același principiu: se minimizează potrivirea pe zilele de antrenare plus o penalizare a complexității,
 
@@ -41,7 +41,7 @@ Modelele diferă prin gradul de flexibilitate. LEAR are cel mult 247 de coeficie
 
 @practice întrebați furnizorul de prognoze cîți parametri are modelul pentru fiecare zi de istoric și pe ce zile a fost măsurată eroarea.
 
-## Trei eșantioane în ordine cronologică: antrenare, validare, test {h=b82cb03b}
+## Trei eșantioane în ordine cronologică: antrenare, validare, test {h=21fcd8dd}
 
 Graficul arată cum este împărțit istoricul. În anul de validare se compară 25 de setări pentru fiecare model, reestimate la fiecare 3 luni; setarea cu cea mai mică MAE este fixată înainte de începutul anului de test. În anul de test, modelele sînt reestimate la începutul fiecărei luni, pe toate zilele anterioare.
 
@@ -72,7 +72,7 @@ De ce aleator și nu pe o grilă completă? Doar cîteva setări contează cu ad
 
 O rețea neuronală este un lanț de regresii, fiecare urmată de o transformare neliniară, antrenat prin pași mici împotriva erorii. Secțiunea construiește rețeaua folosită în curs, arată cum este antrenată și oprită la timp și măsoară ce aduce calibrarea.
 
-## O rețea neuronală înlănțuie regresii, fiecare urmată de o funcție neliniară {h=d1cbe4ee}
+## Structura unei rețele neuronale cu propagare înainte {h=fe698186}
 
 Fiecare neuron transformă neliniar o combinație liniară a intrărilor; stratul de ieșire dă deodată cele 24 de prețuri ale zilei $d$. Cu un singur strat ascuns,
 
@@ -86,7 +86,7 @@ Rețeaua aleasă pe anul de validare are 251 de intrări, un strat ascuns de 512
 
 @practice o rețea neuronală este o regresie cu mult mai mulți coeficienți: are nevoie de aceeași disciplină a datelor, nu de mai puțină.
 
-## Antrenarea: pași mici împotriva erorii, opriți la timp {h=47322134}
+## Antrenarea: metoda gradientului descendent stocastic, cu oprire timpurie {h=3354dd5c}
 
 Ponderile se modifică puțin, în direcția care reduce eroarea pe un grup aleator de zile. Funcția de pierdere pe un grup și pasul de actualizare sînt
 
@@ -209,7 +209,7 @@ La aceeași conferință, Alexandru-Victor Andrei ([diapozitive](https://github.
 
 Arborii construiți secvențial și calibrați sînt mai buni decît modelul GBM din cursul 2, dar rămîn în urma modelului AW-LEAR. Chronos-2, preantrenat și fără nicio antrenare pe datele noastre, este mai precis decît AW-LEAR în fiecare oră.
 
-# Comparație corectă, combinare și cost
+# Compararea modelelor, combinarea lor și costul de calcul
 
 Toate modelele sînt comparate acum pe același an de test, cu aceleași măsuri ale erorii și cu teste DM față de AW-LEAR. Secțiunea arată că combinațiile dintre învățarea automată și modelele statistice sînt semnificativ mai bune, explică de ce funcționează media și pune acuratețea în balanță cu costul de calcul.
 
@@ -425,7 +425,7 @@ Graficul arată valoarea regulii în anul de test, în funcție de prag. Pe MW �
 @chart decision
 Valoarea pe MW și an a reacției la alertele de vîrf, în funcție de pragul de probabilitate, cu pragul C/L, persistența și informația perfectă marcate; 1 MW de consum flexibil, C = 30 EUR/MWh.
 
-## Studiu de caz, 30 iunie 2026: vîrf anticipat, amploare subestimată {h=32d50d6f}
+## Studiu de caz, 30 iunie 2026: modelele au anticipat vîrful, dar i-au subestimat amplitudinea {h=a24d6225}
 
 Studiul de caz privește săptămîna 27 iunie 2026 – 3 iulie 2026. La 30 iunie 2026, ora 20:00 CET, prețul a atins 954,59 EUR/MWh, cel mai mare preț din anul de test. Toate modelele se așteptau la un preț ridicat: AW-LEAR a prognozat 520, XGBoost 499, rețeaua DNN 614, iar Chronos-2 607 EUR/MWh, în timp ce probabilitatea vîrfului era 0,992. Niciun model nu s-a apropiat însă de nivelul efectiv.
 
@@ -459,7 +459,7 @@ Replicarea noastră, studiul de caz C7, folosește numai informația de la înch
 
 Vîrfurile de preț apar seara, iar prețurile negative la prînz. O prognoză bună de preț detectează deja vîrfurile, regula cost–pierdere transformă probabilitățile în bani, iar niciun model nu a anticipat amploarea celui mai mare vîrf.
 
-# Capcane care fac un model să pară mai bun
+# Erori de evaluare care supraestimează precizia
 
 Cele mai multe promisiuni de cîștiguri mari din învățarea automată provin din greșeli de evaluare, nu din modele mai bune. Secțiunea reproduce pe datele noastre trei asemenea greșeli, informația din viitor, alegerea pe anul de test și modelele neactualizate, măsoară cît de mult avantajează fiecare rezultatul și se încheie cu un test de scurgere a informației.
 
@@ -474,7 +474,7 @@ A doua folosește drept intrări consumul și producția eoliană și solară di
 @chart pit_leak
 MAE a modelului XGBoost în anul de test, la evaluarea cronologică corectă, la validarea încrucișată cu 5 subeșantioane amestecate și cu consumul și RES din aceeași zi ca intrări.
 
-## Alegerea pe anul de test simulează o victorie asupra LEAR {h=e0c49865}
+## Data snooping: selecția pe anul de test produce un avantaj aparent față de LEAR {h=2871c584}
 
 Rețeaua DNN aleasă corect, la validare, cu o singură inițializare, are MAE 23,34 EUR/MWh în anul de test. Dacă alegem în schimb cea mai bună dintre cele 25 de setări direct pe anul de test, obținem 22,52, chiar sub AW-LEAR (22,53): o victorie aparentă asupra modelului statistic de referință, creată doar prin alegerea pe datele folosite pentru evaluare (White, 2000).
 
@@ -514,7 +514,7 @@ O fereastră glisantă scurtă, de 365 de zile, este chiar mai slabă (MAE 25,59
 @chart pit_retrain
 MAE a modelului XGBoost în anul de test, cu reestimare lunară pe tot istoricul, estimat o singură dată și cu fereastră glisantă de 365 de zile, plus diferența lunară a modelului neactualizat.
 
-## Testul de scurgere a informației: ștergerea viitorului nu schimbă nimic {h=9c11cb69}
+## Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate {h=bcc79b5d}
 
 Un test simplu arată dacă un flux de prelucrare a datelor folosește, fără să vrea, informație din viitor. Pentru prima zi din fiecare dintre cele 12 luni de test, toate datele de după ora 12:00 din ziua $d-1$ sînt șterse, apoi înlocuite cu 10 000 EUR/MWh. XGBoost, rețeaua DNN și clasificatorul de vîrfuri sînt reestimate și trebuie să dea aceleași prognoze.
 

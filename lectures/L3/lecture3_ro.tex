@@ -122,7 +122,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 
 \subsection{În procente sau în EUR/MWh}
 
-\begin{frame}{Volatilitatea măsoară mărimea obișnuită a surprizei de preț}
+\begin{frame}{Definiția volatilității}
 \footnotesize
 \intuition{Volatilitatea arată cît de departe de prețul de azi ajunge, de obicei, prețul de mîine.}
 \begin{columns}[T,onlytextwidth]
@@ -170,7 +170,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 \par\vfill\noindent{\scriptsize\color{FooterGray}(prețurile PZU publicate de OPCOM)}\hfill\qlink{EMQA\_L3\_returns\_ro}{Quantlets/L3/EMQA_L3_returns_ro}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Lîngă zero, variația procentuală explodează; sub zero, nu există}
+\begin{frame}{Variațiile procentuale la prețuri apropiate de zero sau negative}
 \footnotesize
 \intuition{Logaritmul cere prețuri pozitive; lîngă zero, variații obișnuite devin procente uriașe.}
 \begin{columns}[T,onlytextwidth]
@@ -224,7 +224,7 @@ Acțiuni listate la Bursa de Valori București (BVB): OMV Petrom (SNP), Hidroele
 
 \subsection{Faptele stilizate}
 
-\begin{frame}{Sensul unui șoc nu poate fi anticipat, mărimea lui da}
+\begin{frame}{Gruparea volatilității: autocorelația șocurilor și a pătratelor lor}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.410\textheight,keepaspectratio]{charts/ro/acf_clust.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU (OPCOM), prin ENTSO-E. Date: reziduurile ecuației mediei, 2019-01-01 - 2026-10-31.}
@@ -427,7 +427,7 @@ OMV Petrom & 0{,}934 & 10{,}2 & zile lucrătoare \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Engle, 2001, JEP)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Petrolul și carbonul: șocurile de volatilitate durează săptămîni}
+\begin{frame}{Timpul de înjumătățire al șocurilor de volatilitate, pe piețe}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.467\textheight,keepaspectratio]{charts/ro/halflife.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); Yahoo Finance (Brent BZ=F, titlul SparkChange EUA ETC); EODHD (acțiuni BVB). Date: GARCH(1,1)-t, fiecare serie pe propriul eșantion (tabelul de pe diapozitiv).}
@@ -777,7 +777,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Diebold \& Mariano, 1995, JBES; Patton, 2011, JOE; RiskMetrics, 1996)}\hfill\tryit{notebook-ul Jupyter, secțiunea 7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{GARCH reacționează imediat; varianța istorică întîrzie și uită brusc}
+\begin{frame}{Volatilitatea GARCH și cea istorică pe 30 de zile în jurul celui mai mare șoc}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.444\textheight,keepaspectratio]{charts/ro/fc_test.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (OPCOM, prin ENTSO-E); estimări proprii. Date: anul de test 2025-11-01 - 2026-10-31; modele reestimate zilnic.}
@@ -828,7 +828,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1{,}452 & 0{,}120 & \cellcolor{Forest!55}1{
 
 \section{Studiu de caz: prețul energiei electrice din România în 2026}
 
-\begin{frame}{Studiu de caz: 2026 este un șoc de nivel, nu (încă) o criză ca în 2022}
+\begin{frame}{Studiu de caz: nivelul prețurilor și volatilitatea în 2026, comparativ cu 2022}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Ce s-a întîmplat cu prețurile}

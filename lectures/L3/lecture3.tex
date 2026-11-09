@@ -120,7 +120,7 @@ Shares on the Bucharest Stock Exchange (BVB): OMV Petrom (SNP), Hidroelectrica (
 
 \subsection{Percent or EUR/MWh}
 
-\begin{frame}{Volatility is the typical size of tomorrow's price surprise}
+\begin{frame}{Definition of volatility}
 \footnotesize
 \intuition{Volatility tells how far from today's price tomorrow's price usually lands.}
 \begin{columns}[T,onlytextwidth]
@@ -168,7 +168,7 @@ Shares on the Bucharest Stock Exchange (BVB): OMV Petrom (SNP), Hidroelectrica (
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM day-ahead prices)}\hfill\qlink{EMQA\_L3\_returns\_ro}{Quantlets/L3/EMQA_L3_returns_ro}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Near zero the percent change explodes; below zero it does not exist}
+\begin{frame}{Percentage changes at prices near zero or negative}
 \footnotesize
 \intuition{The logarithm needs positive prices; near zero, ordinary moves become huge percentages.}
 \begin{columns}[T,onlytextwidth]
@@ -222,7 +222,7 @@ Shares on the Bucharest Stock Exchange (BVB): OMV Petrom (SNP), Hidroelectrica (
 
 \subsection{Stylised facts}
 
-\begin{frame}{The sign of a shock is unpredictable, its size is not}
+\begin{frame}{Volatility clustering: autocorrelation of shocks and of squared shocks}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.418\textheight,keepaspectratio]{charts/en/acf_clust.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: residuals of the mean equation, 2019-01-01 to 2026-10-31.}
@@ -425,7 +425,7 @@ OMV Petrom & 0.934 & 10.2 & trading days \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Engle, 2001, JEP)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Answer to Lecture 1: oil and carbon shocks fade in weeks, not days}
+\begin{frame}{Half-life of volatility shocks by market}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.470\textheight,keepaspectratio]{charts/en/halflife.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (OPCOM, via ENTSO-E); Yahoo Finance (Brent BZ=F, SparkChange EUA ETC); EODHD (BVB shares). Data: GARCH(1,1)-t, each series over its own sample (table on the slide).}
@@ -778,7 +778,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Diebold \& Mariano, 1995, JBES; Patton, 2011, JOE; RiskMetrics, 1996)}\hfill\tryit{notebook \S7}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{GARCH reacts at once; the 30-day history lags, then forgets abruptly}
+\begin{frame}{GARCH and 30-day historical volatility around the largest shock}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.451\textheight,keepaspectratio]{charts/en/fc_test.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (OPCOM, via ENTSO-E); own estimates. Data: test year 2025-11-01 to 2026-10-31; models re-estimated daily.}
@@ -829,7 +829,7 @@ EGARCH(1,1)-t & \cellcolor{Forest!45}1.452 & 0.120 & \cellcolor{Forest!55}1.349 
 
 \section{Case study: Romanian power in 2026}
 
-\begin{frame}{Case study: 2026 is a level shock, not (yet) a new 2022}
+\begin{frame}{Case study: price level and volatility in 2026 compared with 2022}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{What happened to prices}

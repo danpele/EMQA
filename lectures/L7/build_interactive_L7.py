@@ -25,9 +25,9 @@ BLOCKS = [('early-stopping', 'learning_curve', 'dnn', 'lc'),
           ('spike-decision', 'decision', 'spk', 'sd')]
 
 SECTIONS = {
- 'en': dict(dnn='Deep neural networks', fm='Gradient boosting and foundation models', cmp='Honest comparison, combination and cost',
+ 'en': dict(dnn='Deep neural networks', fm='Gradient boosting and foundation models', cmp='Model comparison, combination and computational cost',
             spk='Spikes, negative prices and a case study'),
- 'ro': dict(dnn='Rețele neuronale adînci', fm='Gradient boosting și modele fundație', cmp='Comparație onestă, combinare și cost',
+ 'ro': dict(dnn='Rețele neuronale adînci', fm='Gradient boosting și modele fundație', cmp='Compararea modelelor, combinarea lor și costul de calcul',
             spk='Salturi de preț, prețuri negative și un studiu de caz'),
 }
 

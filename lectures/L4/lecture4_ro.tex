@@ -120,7 +120,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \section{Riscul de preț: pierderi, cuantile, VaR și ES}
 
-\begin{frame}{Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după}
+\begin{frame}{Variațiile zilnice ale prețului înainte și după 2021}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.433\textheight,keepaspectratio]{charts/ro/price_changes.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM, prin ENTSO-E; estimări proprii. Date: date zilnice, 2015-01-01 - 2026-10-31 (zile de livrare CET).}
@@ -258,7 +258,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \subsection{Simularea istorică și modelele parametrice}
 
-\begin{frame}{Simularea istorică: ultimul an de date este repartiția zilei de mîine}
+\begin{frame}{Simularea istorică pe o fereastră de un an}
 \footnotesize
 \intuition{Ordonăm ultimele 365 de variații zilnice; a patra cea mai mare este VaR de 99\%.}
 \begin{columns}[T,onlytextwidth]
@@ -327,7 +327,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \subsection{Simularea istorică filtrată și valorile extreme}
 
-\begin{frame}{Simularea istorică filtrată: volatilitatea de azi, forma repartiției din trecut}
+\begin{frame}{Simularea istorică filtrată: șocurile trecute, rescalate la volatilitatea curentă}
 \footnotesize
 \intuition{Împărțim variațiile trecute la volatilitatea lor, apoi înmulțim șocurile cu volatilitatea de azi.}
 \begin{columns}[T,onlytextwidth]
@@ -416,7 +416,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 
 \subsection{Compararea metodelor}
 
-\begin{frame}{Aceeași zi, aceleași date, cinci răspunsuri: alegerea metodei este o decizie de risc}
+\begin{frame}{VaR și ES pentru aceeași zi, estimate prin cinci metode}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrr@{}}\toprule
@@ -474,7 +474,7 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
 \end{frame}
 
 
-\section{Testarea retrospectivă: și-a respectat modelul promisiunea?}
+\section{Testarea retrospectivă a VaR și ES}
 
 \begin{frame}{Testul Kupiec: sînt atîtea depășiri cîte au fost promise?}
 \footnotesize
@@ -671,7 +671,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 
 \subsection{Marjele la bursă}
 
-\begin{frame}{Marjele la bursă sînt VaR plătită în numerar, în fiecare zi}
+\begin{frame}{Marjele la bursă: marja inițială ca VaR, marja de variație plătită zilnic}
 \footnotesize
 \intuition{Casa de compensare reține un depozit pentru pierderea de 99\% pe două zile și decontează zilnic diferențele.}
 \begin{columns}[T,onlytextwidth]
@@ -824,7 +824,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \end{frame}
 
 
-\section{Furnizorul și producătorul: un singur preț, două cozi}
+\section{Riscul de preț pentru furnizori și producători}
 
 \begin{frame}{Costul lunar la risc al unui furnizor: limita normală a eșuat din nou}
 \footnotesize
@@ -876,7 +876,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii)}\hfill\qlink{EMQA\_L4\_supplier\_month}{Quantlets/L4/EMQA_L4_supplier_month}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Același preț, două cozi: coada furnizorului este mai groasă decît a producătorului}
+\begin{frame}{Cozile pierderilor: coada furnizorului este mai groasă decît a producătorului}
 \footnotesize
 \intuition{Furnizorul pierde cînd prețul crește, producătorul cînd scade; prețurile sar mai mult în sus decît în jos.}
 \begin{columns}[T,onlytextwidth]
@@ -997,7 +997,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii; OPCOM)}\hfill\qlink{EMQA\_L4\_case2026}{Quantlets/L4/EMQA_L4_case2026}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiu de caz: în 2026 pericolul a fost lipsa de lichidități, nu VaR zilnică}
+\begin{frame}{Studiu de caz: riscul de piață și nevoia de lichidități în 2026}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}

@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Se verifică..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Împiedică încărcarea scripturilor terțe de publicitate, de analiză a site-urilor, rețele sociale și cookie-uri, astfel încât site-urile să nu îți poată crea un profil pe baza activității de navigare, iar paginile să se încarce mai repede."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Blochează scripturile de urmărire"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "milisecunde"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Performanța funcției Anti-tracker"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Cu scripturi de urmărire"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Fără scripturi de urmărire"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Domeniile de mai jos sunt excluse de la blocarea prin Anti-tracker."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Folosim trackere comerciale pentru a te ajuta să găsești cu ușurință ofertele noastre speciale. Misiunea noastră este de a-ți proteja confidențialitatea. Nu partajăm nimănui niciodată și în niciun scop informațiile colectate."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Oferte speciale"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "A intervenit o problemă"
+   },
+   "chatAgent_thinking": {
+      "message": "Se analizează..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Scanează mesajele pentru a identifica orice linkuri de phishing și amenințări cibernetice."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Protecție chat"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Monitorizează site-urile cărora le-ai permis accesul la cameră, microfon, locație, notificări, clipboard și descărcări automate, ca să poți verifica și revoca accesul în Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Gestionează permisiunile"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Toate drepturile rezervate"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Politica de confidențialitate"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Contractul de abonament"
+   },
+   "main_about_third_party_license": {
+      "message": "Condițiile de licență pentru terțe părți"
+   },
+   "main_about_version": {
+      "message": "Versiune"
+   },
+   "main_account_manage_account_description": {
+      "message": "Accesează contul tău Bitdefender pentru a-ți gestiona setările și preferințele."
+   },
+   "main_account_manage_account_title": {
+      "message": "Gestionare cont"
+   },
+   "main_account_managed_by_description": {
+      "message": "Pentru a utiliza un alt cont, autentifică-te în aplicația Bitdefender."
+   },
+   "main_account_managed_by_title": {
+      "message": "Gestionat prin aplicația Bitdefender"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Vezi și gestionează abonamentele Bitdefender."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Abonamentele mele"
+   },
+   "main_account_sign_out": {
+      "message": "Ieșire"
+   },
+   "main_account_subscription_active": {
+      "message": "Activ"
+   },
+   "main_account_subscription_expired": {
+      "message": "Abonament expirat"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Abonamentul a expirat ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Expiră în [Days] zi ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Expiră în [Days] zile ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Plan Individual"
+   },
+   "main_account_subscription_section": {
+      "message": "Abonament"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Gratuit"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Contul meu"
+   },
+   "main_activity_details_error": {
+      "message": "Datele privind activitatea nu au putut fi încărcate."
+   },
+   "main_activity_detections_analysed": {
+      "message": "analizate"
+   },
+   "main_activity_detections_title": {
+      "message": "Detecții"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "detecții"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Informații despre amenințări"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Cum se combină semnalele de risc din diferite categorii pentru site-urile pe care le accesezi."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Acest site este deja în lista de excepții."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Anulează"
+   },
+   "main_add_whitelist_description": {
+      "message": "Domeniile din lista de excepții nu vor fi scanate. Nu vei primi notificări în legătură cu amenințările existente pe aceste pagini."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Adresă site web"
+   },
+   "main_add_whitelist_save": {
+      "message": "Salvare"
+   },
+   "main_add_whitelist_title": {
+      "message": "Adaugă site-ul în lista de excepții"
+   },
+   "main_autonomy_level_title": {
+      "message": "Nivel de autonomie"
+   },
+   "main_autonomy_save": {
+      "message": "Salvare setări"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Activitate"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Schimbă nivelul de protecție"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Gestionează automat amenințările și acționează imediat ce detectează una, fără să te întrerupă."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Protecție automată"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Verifică totul, apoi îți cere acordul înainte de a acționa."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Protecție ghidată"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Domenii verificate"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Scanare îmbunătățită cu informații despre magazine online"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Informații în timp real despre site-uri riscante"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Scam Protection"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Analiza asistată de AI a linkurilor din rezultatele căutării"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Asistență la căutare"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Informații despre servicii bancare, criptomonede și portofele digitale"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Protecție financiară"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Activ"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Luna"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Azi"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Săptămâna"
+   },
+   "main_dashboard_load_error": {
+      "message": "Datele din panoul de control nu au putut fi încărcate."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Închide"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Verifică marcajele și istoricul de navigare"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Activitate recentă"
+   },
+   "main_dashboard_retry": {
+      "message": "Încearcă din nou"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Vezi detaliile activității"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "periculos"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "sigur"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "suspect"
+   },
+   "main_error_boundary_text": {
+      "message": "A apărut o eroare la afișarea ferestrei pop-up a extensiei. Încearcă să reîncarci sau să redeschizi fereastra pop-up."
+   },
+   "main_error_boundary_title": {
+      "message": "Ceva nu a funcționat!"
+   },
+   "main_extension_description": {
+      "message": "Blochează gratuit scam-uri, tentative de phishing și site-uri periculoase. Premium include funcții AI care explică amenințările și îți protejează banii."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Limba aplicației"
+   },
+   "main_general_app_theme": {
+      "message": "Temă aplicație"
+   },
+   "main_general_privacy_policy": {
+      "message": "Politica de confidențialitate"
+   },
+   "main_general_product_reports_description": {
+      "message": "Trimite rapoarte de amenințări cibernetice pentru îmbunătățirea produsului, în conformitate cu Politica de confidențialitate"
+   },
+   "main_general_product_reports_title": {
+      "message": "Rapoarte despre produs"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automat"
+   },
+   "main_general_theme_dark": {
+      "message": "Întunecată"
+   },
+   "main_general_theme_light": {
+      "message": "Luminoasă"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Acest pas nu are nicio descriere."
+   },
+   "main_login_button": {
+      "message": "Conectare"
+   },
+   "main_login_connected_button": {
+      "message": "Continuă"
+   },
+   "main_login_connected_subtitle": {
+      "message": "În continuare, setează modul în care ar trebui să funcționeze Security Advisor."
+   },
+   "main_login_connected_title": {
+      "message": "Conectare reușită!"
+   },
+   "main_login_create_account": {
+      "message": "Creează unul"
+   },
+   "main_login_no_account": {
+      "message": "Nu ai cont?"
+   },
+   "main_login_subtitle": {
+      "message": "Conectează-te cu contul Bitdefender."
+   },
+   "main_login_title": {
+      "message": "Protejează-ți activitatea de navigare"
+   },
+   "main_navbar_dashboard": {
+      "message": "Panou de control"
+   },
+   "main_opera_hint_caption": {
+      "message": "Dă clic pe pictograma extensiei din bara laterală pentru a o deschide."
+   },
+   "main_opera_hint_instruction": {
+      "message": "Deschide Bitdefender Web Sage din bara laterală a browserului Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Fă upgrade la Premium pentru a folosi această funcție."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Gestionează permisiunile"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Gestionează notificările, permisiunile și scripturile de urmărire"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Recomandă o verificare"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacy Guard este o funcție Premium. Fă upgrade la Premium pentru a modifica aici permisiunile site-urilor."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Modificarea nu a putut fi aplicată. Încearcă din nou."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Nu este gestionată încă nicio permisiune pentru site-uri. Privacy Guard adaugă aici un site atunci când blochează permisiunile pe care site-ul respectiv le putea utiliza anterior."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Accesează Setările"
+   },
+   "main_privacy_guard_info": {
+      "message": "Îți protejează confidențialitatea blocând scripturile de urmărire și gestionând permisiunile site-urilor. Poți configura aceste opțiuni din meniul Setări."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Gestionează permisiunile"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Descărcări automate"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Control cameră"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Acces la clipboard"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Acces la locație"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Control microfon"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Notificări"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Șterge căutarea"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Niciun site nu corespunde căutării tale"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Caută un site"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Marchează acest site ca fiind sigur (permite toate)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Ai ales anterior să ai încredere în acest site și să îi acorzi toate permisiunile solicitate (notificări, acces la locație, cameră și microfon)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Permisiunile site-urilor nu pot fi gestionate în acest browser"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "De ce sunt gestionate permisiunile?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Atunci când un site este blocat deoarece nu este sigur, Privacy Guard blochează și permisiunile pe care acesta le putea utiliza, cum ar fi notificările sau accesul la cameră. Permisiunile pe care site-ul nu le-a avut niciodată rămân neschimbate."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Link periculos detectat în chat"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Link suspect detectat în chat"
+   },
+   "main_recent_activity_info": {
+      "message": "Verdictele recente de tip link suspect sau periculos sunt păstrate timp de o lună."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Activitatea recentă nu a putut fi încărcată."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Pagină de scam blocată"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Pagină de scam detectată"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Detecții ale Asistentului pentru siguranța căutărilor"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Pagină periculoasă blocată"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Activitate suspectă detectată"
+   },
+   "main_rename_device_cancel": {
+      "message": "Anulează"
+   },
+   "main_rename_device_description": {
+      "message": "Dă dispozitivului tău un nume unic pentru a-l identifica mai ușor."
+   },
+   "main_rename_device_field_label": {
+      "message": "Nume dispozitiv "
+   },
+   "main_rename_device_save": {
+      "message": "Salvare"
+   },
+   "main_rename_device_title": {
+      "message": "Redenumește acest dispozitiv"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Accesul la cameră a fost revocat pentru {n} site-uri"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Se revocă accesul la cameră pentru {n} site-uri"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Accesul la clipboard a fost revocat pentru {n} site-uri"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Se revocă accesul la clipboard pentru {n} site-uri"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Cookie-urile și datele au fost șterse pentru {n} site-uri"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Se șterg cookie-urile și datele pentru {n} site-uri"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Descărcările automate au fost blocate pentru {n} site-uri"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Se blochează descărcările automate pentru {n} site-uri"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Aplică remedierile"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "S-au aplicat {n} din {t} remedieri"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Accesul la locație a fost revocat pentru {n} site-uri"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Se revocă accesul la locație pentru {n} site-uri"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Accesul la microfon a fost revocat pentru {n} site-uri"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Se revocă accesul la microfon pentru {n} site-uri"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Notificările au fost blocate pentru {n} site-uri"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Se blochează notificările pentru {n} site-uri"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Au fost redenumite {n} marcaje riscante"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Se redenumesc {n} marcaje riscante"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Se aplică remedierile…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Protecție automată"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Protecție ghidată"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Aplică remedierile selectate"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Ce fac"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Se aplică automat remedierile"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Rolul meu"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Ce voi semnala"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Ce voi remedia"
+   },
+   "main_sa_banner_sources": {
+      "message": "Ce voi verifica"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Alegerea ta"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Compar marcajele cu amenințările cunoscute…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Am efectuat {n} verificări"
+   },
+   "main_sa_check_cookies": {
+      "message": "Verific dacă domeniile semnalate au cookie-uri și date de site stocate…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} din {t} marcaje corespund unor amenințări cunoscute"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} site-uri au date stocate care ar trebui șterse"
+   },
+   "main_sa_check_done_history": {
+      "message": "Am găsit {h} accesări ale domeniilor semnalate"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} din {t} permisiuni modificate par inutile sau riscante"
+   },
+   "main_sa_check_history_db": {
+      "message": "Compar istoricul cu amenințările cunoscute…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Voi verifica mai întâi elementele cu cel mai ridicat nivel de risc și voi compara ce poate accesa fiecare site cu permisiunile care îi sunt necesare."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Evaluez permisiunile site-urilor…"
+   },
+   "main_sa_continue": {
+      "message": "Continuă"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Clipboard și descărcări"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Identifică site-urile care îți pot citi clipboardul sau pot descărca fișiere fără să întrebe și blochează accesul pentru cele care nu ar trebui să aibă astfel de permisiuni."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Notificări din browser"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Oprește notificările de tip scam și spam de la site-uri pe care le-ai autorizat din greșeală."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Notificări"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Acces la microfon, cameră și locație"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Identifică site-urile care îți pot folosi microfonul, camera sau locația și blochează accesul pentru cele care nu ar trebui să aibă astfel de permisiuni."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Acces la microfon, cameră și locație"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Amenințări cunoscute"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Blochează site-urile cunoscute ca fiind periculoase înainte ca acestea să se încarce."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Clipboard și descărcări – {n} site-uri care îți pot citi clipboardul sau pot descărca automat fișiere"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Date stocate – {n} site-uri care au salvat deja cookie-uri sau alte date pe dispozitivul tău"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Site-uri false – {n} site-uri care imită companii reale pentru a te păcăli"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Permisiuni – {n} site-uri care îți pot accesa notificările, locația, microfonul sau camera"
+   },
+   "main_sa_finding_threats": {
+      "message": "Amenințări cunoscute – {n} site-uri care se află pe lista noastră de site-uri cunoscute ca fiind periculoase"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Raport generat: {n} avertismente"
+   },
+   "main_sa_findings_heading": {
+      "message": "Scanare finalizată. Iată ce am găsit:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Scanare finalizată. Remediez problemele găsite:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Scanare finalizată."
+   },
+   "main_sa_findings_none": {
+      "message": "Nu s-a remarcat nimic neobișnuit. Scanarea nu a generat avertismente."
+   },
+   "main_sa_finish_setup": {
+      "message": "Salvează și continuă"
+   },
+   "main_sa_fix_cam": {
+      "message": "Revocă accesul la cameră"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Revocă accesul la clipboard"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Șterge cookie-urile suspecte și datele stocate local"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Blochează descărcările automate"
+   },
+   "main_sa_fix_loc": {
+      "message": "Revocă accesul la locație"
+   },
+   "main_sa_fix_mic": {
+      "message": "Revocă accesul la microfon"
+   },
+   "main_sa_fix_notif": {
+      "message": "Blochează notificările"
+   },
+   "main_sa_fix_rename": {
+      "message": "Redenumește marcajele riscante"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Am semnalat {n} marcaje riscante, pentru a le putea identifica rapid"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Am șters cookie-urile și datele stocate de pe {n} domenii semnalate"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Am revocat {n} permisiuni neutilizate ale site-urilor"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Nu a fost nevoie de nicio acțiune de remediere. Toate verificările au fost în regulă"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Iată ce aș face:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Gestionează automat amenințările și acționează imediat ce detectează una, fără să te întrerupă."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Protecție automată"
+   },
+   "main_sa_go_dashboard": {
+      "message": "gata"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Verifică totul, apoi îți cere acordul înainte de a acționa."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Protecție ghidată"
+   },
+   "main_sa_intro_scan": {
+      "message": "Pentru început, alege ce vrei să verific la prima scanare."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Încep prima scanare. De aici mă ocup eu de tot."
+   },
+   "main_sa_list_last_separator": {
+      "message": " și "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Iată planul meu:"
+   },
+   "main_sa_plan_body": {
+      "message": "Voi verifica {targets}, le voi compara cu amenințările cunoscute, apoi îți voi arăta un rezumat înainte de a modifica ceva."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Voi verifica marcajele, istoricul și permisiunile, le voi compara cu amenințările cunoscute și voi remedia orice risc imediat ce îl găsesc."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Îți voi arăta ce am găsit înainte de a modifica ceva. Tu decizi ce urmează."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Marcaje"
+   },
+   "main_sa_plan_target_history": {
+      "message": "istoricul de navigare"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "permisiunile site-urilor"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Am citit {n} marcaje din {f} foldere"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Citesc marcajele…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Am citit {n} surse"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Acum voi verifica totul pentru a identifica riscurile."
+   },
+   "main_sa_read_history_done": {
+      "message": "Am citit {n} înregistrări din istoric"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Citesc istoricul de navigare…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Am găsit {n} site-uri cu permisiuni modificate"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Verific permisiunile site-urilor…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Mai întâi voi citi totul, apoi voi analiza. Încep acum."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Omite scanarea inițială"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Omite și afișează raportul"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Marcaje"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Detectează site-urile salvate care au devenit riscante după ce le-ai adăugat la marcaje, fără să îți dai seama."
+   },
+   "main_sa_source_history": {
+      "message": "Istoricul de navigare"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Identifică site-urile periculoase pe care le-ai accesat deja, ca să le poți evita data viitoare."
+   },
+   "main_sa_start_assessment": {
+      "message": "Pornire scanare"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Alege nivelul de autonomie:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Totul este gata."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Totul arată bine."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} marcaje"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Ce am verificat:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} înregistrări din istoric"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} permisiuni ale site-urilor din {c} categorii"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Ce am remediat:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Ce am găsit:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "De acum înainte, voi verifica în fundal marcajele și permisiunile noi și voi semnala orice risc."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Nu s-a modificat nimic. Poți reveni oricând pentru a verifica și a aplica remedierile propuse."
+   },
+   "main_sa_summary_stand": {
+      "message": "Iată rezumatul."
+   },
+   "main_sa_title_configure": {
+      "message": "Configurează Security Advisor"
+   },
+   "main_sa_what_look_for": {
+      "message": "Ce voi semnala"
+   },
+   "main_sa_where_look": {
+      "message": "Ce voi verifica"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonomie"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Asistență la căutare"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Protecție specializată"
+   },
+   "main_settings_about": {
+      "message": "Despre"
+   },
+   "main_settings_general": {
+      "message": "General"
+   },
+   "main_settings_language": {
+      "message": "Limbă"
+   },
+   "main_settings_my_account": {
+      "message": "Contul meu"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor"
+   },
+   "main_settings_support": {
+      "message": "Suport"
+   },
+   "main_settings_title": {
+      "message": "Setări"
+   },
+   "main_settings_upgrade": {
+      "message": "Fă upgrade la {premium} pentru protecție îmbunătățită"
+   },
+   "main_settings_whitelist": {
+      "message": "Lista de excepții"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Deschide Bitdefender Web Sage din bara laterală a browserului."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Conectează-te cu contul Bitdefender pentru a începe."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage nu te protejează încă"
+   },
+   "main_support_center_description": {
+      "message": "Găsește rapid răspunsuri la cele mai frecvente probleme sau contactează echipa noastră de asistență dacă ai nevoie de ajutor suplimentar."
+   },
+   "main_support_center_link": {
+      "message": "Mergi la Centrul de Asistență"
+   },
+   "main_support_center_title": {
+      "message": "Centrul de asistență"
+   },
+   "main_support_community_description": {
+      "message": "Obține răspunsuri, pune întrebări! Suntem aici să ne ajutăm reciproc!"
+   },
+   "main_support_community_link": {
+      "message": "Întreabă comunitatea"
+   },
+   "main_support_community_title": {
+      "message": "Întreabă comunitatea"
+   },
+   "main_test": {
+      "message": "test"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Fonturi"
+   },
+   "main_third_party_category_label": {
+      "message": "Categorie:"
+   },
+   "main_third_party_category_packages": {
+      "message": "Pachete JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licență:"
+   },
+   "main_third_party_link_label": {
+      "message": "Link:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Mai jos sunt prezentate mențiunile de atribuire pentru software-ul open source de la terțe părți inclus în anumite componente ale extensiei de browser Bitdefender (versiunea $1). Mulțumim comunității open source pentru toate contribuțiile sale."
+   },
+   "main_third_party_page_title": {
+      "message": "Condițiile de licență pentru terțe părți"
+   },
+   "main_third_party_version_label": {
+      "message": "Versiune:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Fără formulare lungi. Doar o adresă și o parolă. Durează aproximativ un minut, o singură dată, și ai terminat."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Fără taxă de acces. {product} Standard este și va rămâne gratuit. Fără card, perioadă de evaluare sau dată de expirare."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Nu este un abonament. Crearea unui cont nu presupune un abonament. Nu se facturează nimic și nu se reînnoiește nimic automat."
+   },
+   "main_welcome_account_not_title": {
+      "message": "Iar ca să spunem clar ce nu este"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome la serviciu, Edge acasă, încă un computer. Un singur cont acoperă toate instalările {product} cu aceleași reguli."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Protecție peste tot, nu doar într-un browser"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Același cont Bitdefender este valabil pentru toate produsele Bitdefender. Poți adăuga un produs mai târziu, contacta serviciul de asistență sau verifica un dispozitiv – totul e deja configurat."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Un singur cont, nu încă unul"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Toate site-urile permise și protecțiile dezactivate – toate se sincronizează acum. Un browser nou, un laptop nou, o nouă instalare: totul este acolo."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Setările tale nu mai dispar"
+   },
+   "main_welcome_account_straight": {
+      "message": "Protecția {product} pornește atunci când te autentifici. Până atunci, protecția rămâne inactivă, iar pictograma scut din browser rămâne dezactivată."
+   },
+   "main_welcome_account_sub": {
+      "message": "Este o schimbare față de TrafficLight și e firesc să te întrebi de ce. Iată trei motive sincere:"
+   },
+   "main_welcome_account_title": {
+      "message": "Singurul lucru care s-a schimbat"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Continuă să navighezi"
+   },
+   "main_welcome_button_open": {
+      "message": "Deschide {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Conectare"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Îți verificăm contul..."
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Ai deja Bitdefender pe acest dispozitiv? Este posibil ca autentificarea să se facă automat – pagina se actualizează imediat ce se întâmplă acest lucru."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} te protejează doar cât timp ești conectat la contul tău Bitdefender. Autentificarea activează blocarea, aplică automat abonamentul și îți sincronizează setările. Crearea unui cont este gratuită."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Autentifică-te pentru a activa protecția"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Totul este configurat"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Actualizare finalizată"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight a crescut"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Deschide panoul de control"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Conectare"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Panoul de control, activitatea și setările sunt în partea de sus a panoului."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Contul tău"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Contul tău Bitdefender activează protecția, îți sincronizează setările pe toate browserele și dispozitivele și îți oferă un singur panou de control pentru gestionarea activității și a setărilor."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Contul tău, panoul tău de control"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "În panou"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Descoperă Security Advisor"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Aici se află toate setările de protecție, inclusiv nivelul de autonomie al fiecăreia."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Verifică marcajele și istoricul de navigare comparându-le cu amenințările cunoscute atunci când îl configurezi, apoi îți explică ce identifică pe paginile pe care le accesezi. Alegi dacă să îți ceară acordul înainte de a acționa sau să se ocupe automat de acestea."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "În panou"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Vizualizează în panou"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Nu afișează nicio alertă pentru site-urile reale, dar te avertizează când identifică unul fals."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Protecție financiară"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Paginile bancare, paginile de tranzacționare de criptomonede și cele asociate portofelelor digitale sunt verificate mai atent: site-urile care imită banca sau platforma ta de tranzacționare sunt depistate înainte să introduci parola."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Protecție financiară"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Pe site-uri bancare și platforme de tranzacționare de criptomonede"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Configurare în doi pași"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Nu trebuie să activezi nimic. Te protejează încă de la actualizare."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Totul este încă aici"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Blocarea paginilor în timp real și Search Advisor funcționează exact ca înainte, acum pe baza mai multor surse. Dacă ai folosit și extensia Anti-tracker separat, Privacy Guard îi preia acum rolul, astfel încât o poți dezinstala."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Tot ceea ce foloseai este în continuare aici"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Mereu activ"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Deschide Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Fiecare site pe care îl gestionează, cu câte un buton de activare/dezactivare pentru fiecare permisiune."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Blochează trackerele și gestionează permisiunile acordate unui site: notificări, locație, cameră, microfon, descărcări automate și clipboard. Dacă un site se dovedește a fi nesigur, toate permisiunile acordate acestuia sunt revocate automat."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "În panou"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Vizualizează în panou"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Avertismentele apar chiar în pagina pe care navighezi, înainte să dai clic."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Scam Protection"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Dincolo de adresele URL deja cunoscute ca fiind periculoase: orice pagină suspectă poate fi supusă unei analize AI la cerere, care explică pe înțelesul tău ce nu este în regulă."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Protecție împotriva scam-urilor cu scanare AI aprofundată"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "În pagină"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Deschide panoul"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Un marcaj în dreptul fiecărui rezultat. Treci cu mouse-ul peste el pentru a vedea motivul."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Asistență la căutare"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Evaluări lângă fiecare rezultat de pe Google, Bing, DuckDuckGo și Yahoo, ca să știi înainte să dai clic."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Asistență la căutare"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "În rezultatele căutării"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Vezi în panou"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Un verdict despre magazinul în sine, nu doar despre pagina pe care te afli."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Magazinele online sunt verificate pe baza informațiilor despre comercianți, pe măsură ce navighezi, astfel încât magazinele false și ofertele prea bune ca să fie adevărate să fie semnalate înainte să plătești."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Pe site-urile de cumpărături"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Vezi starea paginii"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Îl observi numai când are ceva de spus."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Blocarea paginilor"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Fiecare pagină pe care o deschizi este verificată pe baza informațiilor despre amenințări ale Bitdefender. O pagină periculoasă este blocată imediat, înainte de a se putea încărca din nou."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Paginile periculoase sunt blocate imediat"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "În pagină"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Informații juridice și asistență"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Politica de confidențialitate"
+   },
+   "main_welcome_footer_support": {
+      "message": "Suport"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Termenii de utilizare"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Panoul nu a putut fi deschis automat. Dă clic pe pictograma {product} din bara de instrumente pentru a-l deschide."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animație care arată cum se fixează extensia în bara de instrumente a browserului"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Dă clic pe butonul Extensii (piesa de puzzle) din colțul din dreapta sus al browserului."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Dă clic pe butonul Extensii (piesa de puzzle) din colțul din dreapta sus al browserului."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Dă clic pe butonul Extensii (piesa de puzzle) din bara de instrumente."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Dă clic pe butonul Extensii (cubul) din bara de instrumente."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Deschide meniul de extensii al browserului."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Găsește {product} și dă clic pe pictograma de fixare de lângă acesta."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Găsește {product} și dă clic pe pictograma de fixare de lângă acesta, pentru a-l afișa în bara de instrumente."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Găsește {product}, deschide setările (pictograma roată dințată) și alege Fixează în bara de instrumente."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Găsește {product} și dă clic pe pictograma de fixare de lângă acesta."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Găsește {product} și fixează-l în bara de instrumente."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Ține-l mereu la un clic distanță, ca să vezi mereu statusul paginii pe care te afli."
+   },
+   "main_welcome_pin_title": {
+      "message": "Fixează {product} în bara de instrumente"
+   },
+   "main_welcome_protected_done": {
+      "message": "Protecția este activată. Nu mai ai nimic de făcut aici – fixează {product} în bara de instrumente astfel încât să râmână vizibil."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Inclus în abonamentul {plan} – se deblochează automat, nu trebuie să activezi nimic."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Activ acum"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Gratuit cu contul Bitdefender."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Ești protejat – {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Ești protejat – {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Ești autentificat și protejat"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Protecție în timp real împotriva scam-urilor, tentativelor de phishing și trackerelor, chiar în browser. Parcurgi doi pași rapizi și ai terminat."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Versiunea {version} este instalată și te protejează deja. Iată ce oferă în plus."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Extensia ta tocmai a primit un upgrade important. Toate caracteristicile incluse în TrafficLight sunt încă disponibile, plus mult mai multe funcționalități."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Face parte din {product} Premium, inclus în Bitdefender Total Security și abonamentele superioare."
+   },
+   "main_welcome_title_new": {
+      "message": "Bun venit la {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "Acum, {product} este și mai bun."
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight a devenit {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Ce primești"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Noutăți"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Noutăți"
+   },
+   "main_welcome_tour_next": {
+      "message": "Funcția următoare"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Funcția anterioară"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} din {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Descoperă tot ce face {product} pentru tine, funcție cu funcție. Parcurge funcțiile sau sari imediat la cea care te interesează."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Nou în versiunea {version}. Parcurge funcțiile sau sari imediat la cea care te interesează."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Tot ce făcea TrafficLight, plus aceste funcții. Parcurge funcțiile sau sari imediat la cea care te interesează."
+   },
+   "main_welcome_window_title": {
+      "message": "Bun venit la {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Adaugă site web"
+   },
+   "main_whitelist_import": {
+      "message": "Importă domenii"
+   },
+   "main_whitelist_info": {
+      "message": "Domeniile din lista de excepții nu vor fi scanate. Nu vei primi avertismente despre amenințările existente pe aceste pagini."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Ștergere"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Scanarea amenințărilor"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Scripturi de urmărire"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Colectează reclamele afișate pe paginile pe care le accesezi, pentru a le verifica în vederea detectării scam-urilor și fraudelor."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Monitorizarea reclamelor"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Semnalează reclamele periculoase și rezultatele sponsorizate care duc la scam-uri sau malware."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Detectează site-urile bancare false și platformele de investiții frauduloase create pentru a-ți fura datele de autentificare sau banii."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Protecție împotriva fraudelor financiare"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Te avertizează cu privire la magazinele false și paginile de plată frauduloase înainte să introduci datele de plată."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Blochează această pagină"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Încarcă oricum (nesigur)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Încarcă oricum conținutul (nesigur)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Mai multe detalii"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Analizez detaliile…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Nu am putut analiza această pagină acum. Încearcă din nou."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Analiza detaliată a paginilor nu este inclusă în abonamentul tău actual, așa că nu pot verifica această pagină."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "A durat mai mult decât puteam aștepta, așa că am oprit verificarea."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Verifică linkurile din sintezele generate de AI și le semnalează pe cele care duc la site-uri nesigure."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Scaner pentru sintezele generate de AI"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Dezactivat în Setări"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Activat"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Indisponibil"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "Asistent AI pentru siguranța căutărilor"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Informații despre linkurile din rezultatele căutării"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Analizat de {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Nu am putut bloca această pagină."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Blochez această pagină…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Verificare forțată (elimină din lista de excepții)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Scanează din nou"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Deblochează această pagină"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Verific baza de date cu amenințări cunoscute…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Verific permisiunile…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Verific dacă există scam-uri…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Verificare..."
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Am efectuat {n} verificări"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Blochează pagina"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Acceptă"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Rulează o analiză aprofundată"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Analiză aprofundată efectuată"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Analiza aprofundată s-a încheiat."
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Analizez conținutul paginii și captura de ecran…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Analiza aprofundată nu a identificat probleme la această pagină."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Analiza aprofundată s-a încheiat fără a identifica indicatori specifici."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Analiza aprofundată a confirmat că această pagină este periculoasă."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Rulează analiza"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Cu acordul tău, voi examina conținutul paginii și o captură de ecran pentru a identifica riscurile ascunse."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Timpul pentru analiza aprofundată a expirat"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Așteptarea a fost oprită după {n} secunde"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Analiza aprofundată durează mai mult decât pot aștepta, așa că am oprit-o. O poți rula din nou sau poți decide pe baza informațiilor pe care le-am găsit deja."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Vrei să rulezi o analiză mai aprofundată?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Elimin din lista de excepții și verific din nou…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Raport generat: {n} avertisment"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Raport generat: {n} avertismente"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Accesez pagina…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Rezultat de căutare periculos"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Verifică reclamele de pe paginile pe care le accesezi și le semnalează pe cele care duc la scam-uri."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Protecție împotriva reclamelor de tip scam"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Deschide setările extensiei"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera blochează accesul extensiilor la rezultatele căutării până când îl permiți. Deschide opera://extensions, găsește această extensie și activează „Permite accesul la rezultatele paginii de căutare”."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Rezultatele căutării nu sunt verificate"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard a blocat {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Acest site îți poate accesa {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Nu a fost acordată nicio permisiune"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Permisiuni indisponibile"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Nu s-au identificat semne care să indice un risc"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard îți recomandă să blochezi {list} pentru acest site."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Iată ce am găsit:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Am restaurat tot conținutul blocat."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Restaurez conținutul blocat…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Nu s-au detectat tipare care să indice un scam"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} indicator periculos găsit"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} indicatori periculoși găsiți"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} indicator suspect găsit"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} indicatori suspecți găsiți"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Analiza pentru identificarea eventualelor scam-uri nu a putut fi finalizată"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "A apărut în conținut promoțional nesigur"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Șablon de extorcare prin constrângere"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Șablon de scam cu bani falși"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Șablon de scam care exploatează situații de criză"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Șablon de fraudă cu criptomonede"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Șablon de platformă înșelătoare de întâlniri pentru adulți"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Șablon de publicitate înșelătoare"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Șablon de concurs înșelător"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Șablon de sondaj online înșelător"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Șablon de scam cu investiții în energie"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Șablon de scam prin extorcare"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Șablon de recompense false pentru vizionarea reclamelor"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Șablon de site de rezervări fals"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Șablon de cazinou fals"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Șablon de organizație caritabilă falsă"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Șablon de clinică falsă"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Șablon de concurs fals cu criptomonede"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Șablon de serviciu de livrare fals"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Șablon de documente false"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Șablon de magazin de comerț electronic fals"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Șablon de instituție de învățământ falsă"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Șablon de ofertă de angajare falsă"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Șablon de serviciu de divertisment fals"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Șablon de instituție financiară falsă"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Șablon de investiție financiară falsă"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Șablon de site de jocuri de noroc fals"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Șablon de câștiguri false la jocuri"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Șablon de investiție falsă în aur"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Șablon de beneficii guvernamentale false"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Șablon de instituție guvernamentală falsă"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Șablon de serviciu de imigrare fals"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Șablon de instituție juridică falsă"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Șablon de serviciu de rambursare fals"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Șablon de farmacie online falsă"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Magazin online fals detectat"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Șablon de platformă de plată falsă"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Șablon de campanie falsă cu premii"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Șablon de premiu sau recompensă falsă"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Șablon de editură falsă"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Șablon de platformă de recenzii falsă"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Tipare de magazin fals într-o campanie publicitară"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Șablon de ghid spiritual fals"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Șablon de câștiguri false"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Șablon de scam financiar"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Campanie publicitară frauduloasă pentru un magazin fals"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Șablon de fraudă în domeniul sănătății"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Atac cu homoglife detectat"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Șablon de site cu activități ilegale"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Șablon de servicii ilegale"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Șablon de substanțe ilegale"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP cu tipare periculoase"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP cu tipare suspecte"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Șablon de phishing cunoscut"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Șablon de scam cunoscut"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Șablon de scam cu loterie"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Magazin online cu grad redus de încredere, fără o prezență consacrată"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Platformă de trading sau investiții cu grad redus de încredere, fără o prezență consacrată"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Link periculos către o platformă de investiții"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Link periculos către un magazin online"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Șablon de scam cu narcotice"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Magazin online cu indicatori contradictorii"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Magazin online fără o prezență consacrată"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Șablon de scam cu animale de companie"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Șablon de schemă Ponzi sau piramidală"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Șablon de scam imobiliar"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Șablon de scam romantic"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Șablon de site de scam romantic"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Șablon de scam cu societăți secrete"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Link suspect către o platformă de investiții"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Format de link suspect"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Link suspect către un magazin online"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Șablon de scam cu suport tehnic"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Platformă de trading sau investiții cu indicatori contradictorii"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Platformă de trading sau investiții fără o prezență consacrată"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Magazin online cu grad foarte redus de încredere"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Magazin online cu grad foarte redus de încredere, fără o prezență consacrată"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Platformă de trading sau investiții cu grad foarte redus de încredere"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Link foarte suspect"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Am blocat-o și i-am întrerupt accesul la microfon, cameră și locație. Poți închide fila în siguranță..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Scripturile de urmărire au fost blocate, iar accesul la microfon, cameră și locație a fost revocat pentru a te proteja."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Nu am putut finaliza verificarea acestor rezultate ale căutării."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Scanare incompletă"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Security Advisor este activ"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Scanez rezultatele căutării…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Rezultat de căutare suspect"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Search Advisor este dezactivat. Accesează secțiunea Setări pentru a-l activa."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Funcția Protecție web este dezactivată. Accesează secțiunea Setări pentru a o activa."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Omit verificările și încarc pagina."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Această pagină a fost semnalată ca fiind periculoasă."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Această pagină face parte dintr-o tentativă de fraudă."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Această pagină face parte dintr-o reclamă de tip scam."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Am detectat elemente care ți-ar putea afecta dispozitivul."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Pagina a încercat să utilizeze resursele dispozitivului tău pentru a mina criptomonede și a fost blocată."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Această pagină nu poate fi scanată de Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Omit verificările și încarc pagina."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Rămâne blocată până când o deblochezi."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Această pagină face parte dintr-o tentativă de phishing."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Pagina a încercat să descarce pe dispozitivul tău o aplicație potențial nedorită (PUA) și a fost blocată."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Această pagină este omisă de la scanare în sesiunea de navigare curentă"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Este posibil ca această pagină să fie sigură, dar în trecut au fost raportate unele amenințări de securitate."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Această pagină este omisă de la scanare deoarece a fost adăugată în lista Excepții."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Adaugă o evaluare lângă fiecare rezultat din Google, Bing, Yahoo și DuckDuckGo, ca să poți identifica linkurile riscante înainte de a da clic pe ele."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Adnotarea rezultatelor căutării"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Protecția este dezactivată"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Rezultatele căutării nu pot fi scanate"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Această pagină nu poate fi scanată"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Acest domeniu se află în lista de excepții"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Magazin fraudulos detectat"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Tentativă de fraudă detectată"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Reclamă de tip scam detectată"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Amenințare detectată!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Tentativă de minare detectată"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Pagina nu poate fi scanată"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Această pagină este omisă în sesiunea curentă"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Ai blocat această pagină"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "S-a detectat o tentativă de phishing"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Descărcare de aplicație potențial nedorită detectată"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Acest site este sigur"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Scanare în curs..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Domeniu nesigur detectat"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Pagină din lista de excepții detectată"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Au fost blocate {n} scripturi de urmărire"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Blocarea scripturilor de urmărire este dezactivată, astfel încât această pagină nu a fost verificată pentru depistarea eventualelor trackere."
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Încarcă scripturile (nesigur)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Nu au fost detectate scripturi de urmărire pe această pagină"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Nu am putut debloca această pagină."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Deblochez această pagină…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Nu au fost găsite amenințări cunoscute"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Pagină blocată"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Pagina s-a încărcat în {n} ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Ești în siguranță"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Am găsit câteva riscuri pe această pagină. Nu introduce informații personale, parole sau date de plată și nu descărca nimic."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Ai grijă pe această pagină"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Totul este în regulă acum."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Te protejez în timp ce navighezi."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Această pagină a fost blocată de"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Domeniu semnalat ca fiind periculos"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Magazinele false imită comercianți reali pentru a încasa plata și pentru a obține datele cardurilor tale. Comenzile sunt rareori livrate, iar datele pe care le introduci pot fi reutilizate sau vândute mai departe."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Paginile frauduloase încearcă, de obicei, să te păcălească pentru a trimite bani cu intenția de a obține venituri ilegale."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Această pagină a fost blocată pentru a împiedica orice interacțiune ulterioară cu un scam.\n\nAtacatorii își ademenesc potențialele victime folosind deepfake-uri, oportunități de investiții și alte subiecte în tendințe pentru a le determina să divulge date sensibile, să transfere bani sau să descarce malware."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Paginile periculoase încearcă să instaleze software-uri care pot afecta negativ dispozitivul, pot colecta date cu caracter personal sau pot funcționa fără acordul tău."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Paginile de tip miner folosesc resursele dispozitivului pentru a mina criptomonedă, afectând utilizarea și durata de viață a hardware-ului."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Paginile de phishing încearcă să colecteze informații cu caracter sensibil, cum ar fi datele de autentificare sau datele cardului de credit, deghizându-se ca entități de încredere. Datele astfel furate pot fi apoi utilizate pentru obținerea unor câștiguri financiare."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Această pagină a încercat să descarce o aplicație potențial nedorită (PUA) pe dispozitivul tău. Acest tip de aplicații prezintă comportamente care afectează confidențialitatea și securitatea dispozitivului și a datelor tale."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Paginile nesigure prezintă un comportament suspect sau particularități pe care le considerăm riscante, prin urmare ar trebui să eviți accesarea acestora pentru a-ți păstra datele în siguranță."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Magazin fraudulos blocat pentru a te proteja"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Am blocat o parte din conținut pentru siguranța ta."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Conținut suspect detectat"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Panoul nu a putut fi deschis. Încearcă din nou."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Deschide panoul Bitdefender din bara laterală a browserului pentru a vedea detaliile."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Pagină blocată"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Descărcări automate"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "cameră"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "clipboard"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Închide"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "Accesul la {permissions} a fost blocat pentru acest site."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "Accesul la {permissions} a fost blocat pentru acest site."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "Accesul la {permissions} este permis pentru acest site. Vezi ce poate utiliza acest site."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "Accesul la {permissions} este permis pentru acest site. Vezi ce poate utiliza acest site."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard a găsit permisiuni care trebuie verificate"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} și {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "Locație"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "Accesul la {permissions} este blocat pentru acest site. Verifică ce poate utiliza acest site."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "Accesul la {permissions} este blocat pentru acest site. Verifică ce poate utiliza acest site."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard gestionează permisiunile"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "Microfon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Notificări"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard gestionează permisiunile"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Continuă cu atenție"
+   },
+   "urlScanning_see_details": {
+      "message": "Vezi detalii"
+   },
+   "urlScanning_show_details": {
+      "message": "Afișează detaliile"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Închide"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Există câteva semne de avertizare. Ai grijă la informațiile personale și la descărcări."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Rezultatele căutării nu pot fi scanate"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Această pagină nu poate fi scanată"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Magazin fraudulos detectat"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Tentativă de fraudă detectată"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Reclamă de tip scam detectată"
+   },
+   "urlScanning_title_malware": {
+      "message": "Amenințare detectată!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Tentativă de minare detectată"
+   },
+   "urlScanning_title_phish": {
+      "message": "S-a detectat o tentativă de phishing"
+   },
+   "urlScanning_title_pua": {
+      "message": "Descărcare de aplicație potențial nedorită detectată"
+   },
+   "urlScanning_title_safe": {
+      "message": "Această pagină este sigură."
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Domeniu nesigur detectat"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Scanează adresele URL accesate pentru a detecta malware, tentative de phishing, fraude și alte amenințări"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "protecție web"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Protecție web cu Bitdefender"
+   }
+}

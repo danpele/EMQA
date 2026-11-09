@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261108a", "L3_text_ro.js?v=20261108a", "common.js?v=20261108s"], "L3.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261108a", "L3_text_ro.js?v=20261108a", "common.js?v=20261108a"], "L3.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -56,9 +56,9 @@
 <p class="toc"><a href="#s-meas">Măsurarea volatilității</a> · <a href="#s-garch">Modelele din familia GARCH</a> · <a href="#s-case">Studiu de caz: prețul energiei electrice din România în 2026</a></p>
 <h2 class="sec" id="s-meas">Măsurarea volatilității</h2>
 <section class="blk" id="clustering">
-  <h3>Sensul unui șoc nu poate fi anticipat, mărimea lui da</h3>
+  <h3>Gruparea volatilității: autocorelația șocurilor și a pătratelor lor</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_ro.jpg" alt="Slide-ul 11: Sensul unui șoc nu poate fi anticipat, mărimea lui da" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_ro.jpg" alt="Slide-ul 11: Gruparea volatilității: autocorelația șocurilor și a pătratelor lor" loading="lazy"></a>
       <figcaption>Slide-ul 11</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="cl-u">Unitatea șocurilor</label><select id="cl-u"><option value="pct" selected>Variația în % (logaritmică)</option><option value="eur">Variația în EUR/MWh</option></select></div><div class="ctl"><label for="cl-L">Laguri afișate (zile): <b id="cl-L-v"></b></label><input type="range" id="cl-L" min="10" max="60" step="5" value="30"></div><div class="ctl"><label for="cl-y">Începutul eșantionului: <b id="cl-y-v"></b></label><input type="range" id="cl-y" min="2019" max="2025" step="1" value="2019"></div><button class="btn play" id="cl-play" type="button"></button></div><div class="charts "><div class="chart" id="cl-e"></div><div class="chart" id="cl-e2"></div></div><ul class="out" id="cl-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_acf_clust" target="_blank" rel="noopener">EMQA_L3_acf_clust</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_acf_clust/EMQA_L3_acf_clust.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>
@@ -86,9 +86,9 @@
   <details><summary>Răspuns</summary><p>Cu varianța de lungă durată fixată la estimația ei, persistența α + β crește de la 0,75 la 0,99: șocurile se sting încet, traiectoria devine netedă și rămîne ridicată săptămîni întregi după un salt, iar timpul de înjumătățire al unui șoc crește de la 2,4 zile la circa 58 de zile. Log-verosimilitatea Student-t din sinteză scade: datele preferă o stingere mai rapidă. În EUR/MWh, chiar estimația este persistentă (α + β = 0,994, timp de înjumătățire 113,5 zile), deoarece nivelul prețului determină mărimea variațiilor.</p></details>
 </section>
 <section class="blk" id="half-life">
-  <h3>Petrolul și carbonul: șocurile de volatilitate durează săptămîni</h3>
+  <h3>Timpul de înjumătățire al șocurilor de volatilitate, pe piețe</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_ro.jpg" alt="Slide-ul 20: Petrolul și carbonul: șocurile de volatilitate durează săptămîni" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L3/lecture3_ro.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_ro.jpg" alt="Slide-ul 20: Timpul de înjumătățire al șocurilor de volatilitate, pe piețe" loading="lazy"></a>
       <figcaption>Slide-ul 20</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="hl-p">Persistența α + β: <b id="hl-p-v"></b></label><input type="range" id="hl-p" min="0.5" max="0.999" step="0.001" value="0.746"></div><div class="ctl"><label for="hl-h">Orizontul afișat (zile): <b id="hl-h-v"></b></label><input type="range" id="hl-h" min="20" max="250" step="10" value="120"></div><button class="btn play" id="hl-play" type="button"></button></div><div class="charts one"><div class="chart" id="hl-chart"></div></div><ul class="out" id="hl-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_halflife" target="_blank" rel="noopener">EMQA_L3_halflife</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_halflife/EMQA_L3_halflife.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>

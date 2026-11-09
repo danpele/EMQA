@@ -224,7 +224,7 @@ Comparînd aceleași luni, ianuarie–octombrie, numărul a scăzut în 2026: î
 @chart neg_hours
 Orele cu preț negativ din fiecare an în România, Bulgaria, Ungaria și Germania–Luxemburg, din 2022 pînă în octombrie 2026, în ore echivalente.
 
-## Oprirea la prețuri negative aduce puțin; pierderea reală vine din prețul mic, dar pozitiv, de la amiază {h=95ad43c9}
+## Pierderile de venit: prețurile mici, dar pozitive, de la amiază costă mai mult decît prețurile negative {h=adeb47de}
 
 Un parc fără sprijin pe MWh cîștigă $|P_t|$ pentru fiecare MWh pe care nu îl produce la preț negativ. Cîștigul obținut prin oprire în toate intervalele negative, raportat la un MWh din producția anuală, este
 

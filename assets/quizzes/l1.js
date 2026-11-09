@@ -442,7 +442,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Spring is cheap",
+                "title": "Seasonal price profile",
                 "text": "Relative to the annual mean, the Romanian day-ahead price is highest in January (1.26 times the mean) and lowest in April (0.72 times), while hydro output peaks in June with the snow melt. How does a reservoir hydro producer use this pattern?",
                 "options": [
                     "It releases as much water as possible in spring, when inflows are highest",
@@ -454,7 +454,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "The annual profile is a regular seasonal pattern, not a shock, and forward prices for spring reflect the cheap spring months; the reservoir lets the producer move output to the expensive months."
             },
             "ro": {
-                "title": "Primăvara, energie ieftină",
+                "title": "Profilul sezonier al prețului",
                 "text": "Raportat la media anuală, prețul pentru ziua următoare din România este maxim în ianuarie (de 1,26 ori media) și minim în aprilie (de 0,72 ori), iar producția hidro atinge maximul în iunie, odată cu topirea zăpezii. Cum folosește acest tipar un producător hidro cu lac de acumulare?",
                 "options": [
                     "Turbinează cît mai multă apă primăvara, cînd afluxul este maxim",

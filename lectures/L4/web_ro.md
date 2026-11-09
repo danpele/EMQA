@@ -27,7 +27,7 @@ Seria principală este prețul de bază de pe PZU din România (RO), administrat
 
 Datele acoperă intervalul 1 ianuarie 2015 – 31 octombrie 2026, ultima lună completă, și au fost descărcate la 4 noiembrie 2026. Prețul zilnic este media prețurilor zilei de livrare, după ora Europei Centrale (CET). Cele cinci zile lipsă din seria prețului din România rămîn lipsă, iar variațiile vecine cu ele nu se calculează. Testarea retrospectivă acoperă fiecare zi din intervalul 1 ianuarie 2017 – 31 octombrie 2026, adică 3 587 de zile valide, iar fiecare prognoză folosește numai datele disponibile pînă în ziua precedentă, exact cum ar lucra un birou de risc.
 
-## Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după {h=a0ad287d}
+## Variațiile zilnice ale prețului înainte și după 2021 {h=23934e0e}
 
 Variabila care determină pierderea este variația prețului zilnic de bază de la o zi la alta, $X_t=P_t-P_{t-1}$, în EUR/MWh, unde $P_t$ este prețul de bază al zilei $t$. Prețul energiei electrice poate fi negativ, de aceea lucrăm cu variații în euro, nu cu randamente logaritmice, care nu sînt definite pentru un preț negativ.
 
@@ -93,7 +93,7 @@ Estimată pe 2 182 de zile din 2015–2020, $\hat\sigma$ este 10,21, iar limita 
 
 Există multe moduri de a estima o cuantilă a pierderii de mîine, iar în aceeași zi și pe aceleași date ele dau răspunsuri diferite. Secțiunea prezintă simularea istorică, repartițiile normală și Student-t, simularea istorică filtrată și teoria valorilor extreme, apoi le compară în octombrie 2026 și pe parcursul crizei din 2021–2022.
 
-## Simularea istorică: ultimul an de date este repartiția zilei de mîine {h=6808e619}
+## Simularea istorică pe o fereastră de un an {h=2c04b23a}
 
 Simularea istorică (HS, *historical simulation*) nu presupune nicio repartiție: ordonează ultimele 365 de variații zilnice și citește direct cuantila; a patra cea mai mare variație este VaR de 99%. Formal,
 
@@ -119,7 +119,7 @@ unde $\mu$ și $\sigma$ sînt media și abaterea standard, $z_\alpha$ și $\varp
 
 @practice VaR normală este cel mai ușor de explicat și cel mai periculos de folosit fără verificare.
 
-## Simularea istorică filtrată: volatilitatea de azi, forma repartiției din trecut {h=c299e9be}
+## Simularea istorică filtrată: șocurile trecute, rescalate la volatilitatea curentă {h=ae0ce107}
 
 Simularea istorică filtrată (FHS, *filtered historical simulation*) combină cele două idei anterioare. Împarte variațiile trecute la volatilitatea lor, obținînd șocuri standardizate, apoi înmulțește aceste șocuri cu volatilitatea de azi; forma cozii vine astfel din istorie, iar scala din prezent (Barone-Adesi, Giannopoulos și Vosper, 1999):
 
@@ -158,7 +158,7 @@ Parametrul de formă nu este stabil: $\hat\xi$ a fost pozitiv în 53% din reesti
 @chart gpd_tail
 Coada variațiilor filtrate GARCH ale prețului din România în cele 730 de zile dinainte de 31 octombrie 2026, cu curba Pareto generalizată ajustată și cu curba normală.
 
-## Aceeași zi, aceleași date, cinci răspunsuri: alegerea metodei este o decizie de risc {h=56935146}
+## VaR și ES pentru aceeași zi, estimate prin cinci metode {h=c8c1e5e8}
 
 Tabelul prezintă media celor 31 de prognoze făcute pentru zilele din octombrie 2026. Primele trei coloane sînt în EUR/MWh, ultimele două în mii EUR pentru 100 MW în bandă, adică 2 400 MWh pe zi.
 
@@ -194,7 +194,7 @@ Măsurată direct, cuantila de 99% pe 10 zile este de 1,72 ori cuantila pe o zi 
 @chart horizon
 Cuantila empirică de 99% a variațiilor prețului pe orizonturi de pînă la 10 zile, în România și în Germania–Luxemburg, comparată cu scalarea cuantilei pe o zi prin rădăcina pătrată a timpului.
 
-# Testarea retrospectivă: și-a respectat modelul promisiunea?
+# Testarea retrospectivă a VaR și ES
 
 O VaR este o promisiune privind frecvența cu care pierderile o vor depăși, iar promisiunea poate fi verificată ulterior. Secțiunea numără depășirile cu testul Kupiec, le verifică momentul apariției cu testul Christoffersen și cu semaforul Basel și testează ES cu statistica Acerbi–Székely, pe 3 587 de zile.
 
@@ -301,7 +301,7 @@ Ca diagnostic, $\hat q_V$ variază între −0,007, pentru un model prea prudent
 
 Cuantilele din secțiunile anterioare devin numerar și limite în trei locuri: marjele cerute de bursă, garanția de pe PZU și limitele de poziție ale biroului de tranzacționare. Secțiunea arată cum se calculează fiecare și de ce o companie bine acoperită la risc poate rămîne totuși fără lichidități.
 
-## Marjele la bursă sînt VaR plătită în numerar, în fiecare zi {h=d2fdf779}
+## Marjele la bursă: marja inițială ca VaR, marja de variație plătită zilnic {h=34d81bc4}
 
 Casa de compensare reține un depozit care acoperă pierderea de 99% pe două zile și decontează zilnic, în numerar, cîștigurile și pierderile:
 
@@ -367,7 +367,7 @@ Cu VaR FHS de 99% pe datele din România, VaR mediană din 2019 a fost 20,27 EUR
 
 @practice stabiliți limitele în EUR de VaR și transformați-le zilnic în MW.
 
-# Furnizorul și producătorul: un singur preț, două cozi
+# Riscul de preț pentru furnizori și producători
 
 Furnizorul și producătorul se confruntă cu același preț, dar cu cozi opuse, iar factura lunară a furnizorului depinde și de profilul consumului. Secțiunea măsoară fluxul de numerar lunar la risc al furnizorului, compară cele două cozi și rezumă studiul de caz C4 despre riscul sistemic și riscurile specifice sectorului energetic.
 
@@ -392,7 +392,7 @@ Graficul arată depășirea lunară a costului ponderat cu consumul din martie 2
 @chart supplier_month
 Depășirea lunară a costului energiei ponderat cu consumul în România, martie 2015 – octombrie 2026, cu limita normală de 99% calculată în 2020; lunile peste limită sînt marcate cu roșu.
 
-## Același preț, două cozi: coada furnizorului este mai groasă decît a producătorului {h=6b9516b4}
+## Cozile pierderilor: coada furnizorului este mai groasă decît a producătorului {h=4c363a62}
 
 Furnizorul pierde cînd prețul crește, producătorul cînd prețul scade:
 
@@ -441,7 +441,7 @@ Media lunară a prețului PZU a fost 122,99 EUR/MWh în iunie 2026 și 239,32 î
 @chart case2026
 Prețul de bază PZU din România și prognozele VaR de 99%, 1 iunie – 31 octombrie 2026, cu depășirile marcate.
 
-## Studiu de caz: în 2026 pericolul a fost lipsa de lichidități, nu VaR zilnică {h=27678bb2}
+## Studiu de caz: riscul de piață și nevoia de lichidități în 2026 {h=08ba634e}
 
 Riscul de piață aproape nu s-a modificat. VaR FHS de 99% a fost 61,64 EUR/MWh în iunie și 67,50 în octombrie, iar testul ES din 2023 încoace nu respinge FHS ($Z_2$ = −0,083). Nevoia de lichidități s-a dublat însă. Garanția pentru 100 MW pe PZU, calculată din cuantila de 99% lărgită, a crescut de la 0,416 la 0,776 milioane EUR pe zi. Prețul ar fi depășit limita garanției în 3 zile, iar fără lărgire în 6.
 

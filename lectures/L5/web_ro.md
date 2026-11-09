@@ -18,7 +18,7 @@ Cursul folosește numai date reale: 2 298 de licitații forward ale operatorului
 - **Evaluați** plafoane, praguri minime și collar-uri cu formula Black-76, pe baza unei volatilități estimate pe date reale.
 - **Analizați** cît au cîștigat sau au pierdut prin acoperire un furnizor și un producător din România în 2022, 2025 și 2026.
 
-# De ce acoperim riscul: expuneri și lecția crizei din 2021–2022
+# Motivele acoperirii riscului: expunerile la preț și criza din 2021–2022
 
 Fiecare firmă din sectorul energiei are o poziție de preț, iar criza din 2021–2022 a arătat în România cît de mari pot fi cîștigurile și pierderile celor acoperiți sau neacoperiți. Secțiunea definește expunerile și măsoară lecția crizei pe prețurile reale ale licitațiilor.
 
@@ -81,7 +81,7 @@ Contractele diferă prin profil. Banda acoperă toate orele, de luni pînă dumi
 
 @practice faceți oferta către client pe baza prețului forward al perioadei de livrare, nu a prețului spot de azi.
 
-## Livrare fizică sau decontare financiară: aceeași acoperire {h=672f6c14}
+## Livrarea fizică și decontarea financiară {h=f693a277}
 
 Forward-ul fizic livrează energia la prețul $F$; contractul futures cu decontare financiară plătește doar diferența dintre o medie de referință și $F$, iar firma cumpără energia de pe piața spot. Cele două sînt echivalente numai cu o condiție:
 
@@ -312,7 +312,7 @@ Un furnizor care deservește profilul consumului național a avut un factor de 1
 
 @practice evaluați un contract de achiziție pe termen lung (PPA) pentru un parc solar la raportul de captare ($f^{\text{solar}}$), nu la prețul benzii.
 
-## Energia solară valorează tot mai puțin decît banda {h=a1c59c26}
+## Valoarea profilului solar și a profilului de consum față de bandă {h=de0b1889}
 
 Graficul urmărește an de an cei doi factori din @eq:shape. Raportul de captare solar a scăzut la 0,596 în 2025, pe măsură ce prețurile de la prînz au coborît odată cu creșterea capacității solare; prețul ponderat cu consumul a ajuns, în 2025, cu 7,1 EUR/MWh peste bandă. Forward-ul în bandă acoperă deci prost riscul atît pentru un furnizor, cît și pentru un producător solar: primul rămîne subacoperit în orele scumpe, al doilea supraacoperit în cele ieftine.
 
@@ -329,7 +329,7 @@ Contractele din Ungaria acoperă aproape perfect prețurile din România, cele g
 
 O opțiune protejează împotriva prețurilor mari (sau mici) și păstrează cîștigul dacă prețul evoluează în sens favorabil, în schimbul unei prime plătite azi. Secțiunea definește plafonul, pragul minim și collar-ul, le evaluează cu formula Black-76 pentru banda din 2027 din România și arată că parametrul esențial, volatilitatea, trebuie estimat și diferă după sursă.
 
-## Plafon, prag minim și collar: asigurare în locul unui preț fix {h=21f6558c}
+## Plafon, prag minim și collar {h=035b0d24}
 
 O opțiune call plafonează prețul de cumpărare și păstrează cîștigul dacă prețurile scad. Cîștigurile la scadență și prețul efectiv plătit cu un plafon sau cu un collar sînt
 
@@ -464,7 +464,7 @@ Concluzia este că acoperirea transferă valoare între cele două părți ale p
 
 @practice un producător îndatorat ar trebui să vîndă forward chiar dacă se așteaptă la prețuri mai mari.
 
-## O politică de acoperire în opt puncte {h=3b1c3003}
+## Elementele unei politici de acoperire a riscului {h=99cc3725}
 
 Cursul poate fi rezumat într-o politică de acoperire cu patru componente:
 

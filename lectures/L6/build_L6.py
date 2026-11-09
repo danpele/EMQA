@@ -394,8 +394,8 @@ def build(lang, H=None):
               "un furnizor cu clienți industriali flexibili poate fi plătit pentru a consuma în aceste ore."),
         tryit=NB + " \\S5", cite=t("(" + OWN + "; counting rule of Lecture 1)", "(" + OWN + "; regula de numărare din cursul 1)"))
 
-    D.concept(t("Switching off at negative prices saves little; the low positive midday price is the real loss",
-                "Oprirea la prețuri negative aduce puțin; pierderea reală vine din prețul mic, dar pozitiv, de la amiază"),
+    D.concept(t("Revenue losses: low positive midday prices cost more than negative prices",
+                "Pierderile de venit: prețurile mici, dar pozitive, de la amiază costă mai mult decît prețurile negative"),
               t("A merchant park gains $|P_t|$ for each MWh it does not produce at a negative price; such MWh are few.",
                 "Un parc fără sprijin cîștigă $|P_t|$ pentru fiecare MWh neprodus la preț negativ; acești MWh sînt puțini."),
               "\\[ g=\\frac{\\sum_t \\max(0,-P_t)\\,G_t\\Delta_t}{\\sum_t G_t\\Delta_t}\\quad\\text{" + t("vs", "față de") + "}\\quad B-\\mathrm{CP} \\]" +

@@ -27,7 +27,7 @@ The main series is the day-ahead base price of Romania (RO) on the PZU, run by t
 
 The data run from 1 Jan 2015 to 31 Oct 2026, the last complete month, and were downloaded on 4 Nov 2026. The daily price is the mean of the delivery day in Central European Time (CET). Five missing days of the Romanian price stay missing, and the changes next to them are not computed. The backtest covers every day from 1 Jan 2017 to 31 Oct 2026, 3,587 valid days, and each forecast is made only with data up to the previous day, as a risk desk would have to do.
 
-## The risk sits in the daily price change: small until 2021, violent since {h=471eb432}
+## Daily price changes before and after 2021 {h=e8618855}
 
 The variable that drives the loss is the change of the daily base price, $X_t=P_t-P_{t-1}$, in EUR/MWh, where $P_t$ is the base price of day $t$. Power prices can be negative, so the lecture works with changes in euro rather than with log returns, which are not defined for a negative price.
 
@@ -93,7 +93,7 @@ Estimated on 2,182 days of 2015–2020, $\hat\sigma$ is 10.21 and the limit is 2
 
 There are many ways to estimate a quantile of tomorrow's loss, and on the same day and the same data they give different answers. This section presents historical simulation, the normal and Student-t curves, filtered historical simulation and extreme value theory, then compares them on October 2026 and through the 2021–2022 crisis.
 
-## Historical simulation: the past year is the distribution of tomorrow {h=0a400a22}
+## Historical simulation with a one-year window {h=a3ead1e5}
 
 Historical simulation (HS) assumes no distribution: it sorts the last 365 daily changes and reads the quantile directly; the 4th largest change is the 99% VaR. Formally,
 
@@ -119,7 +119,7 @@ On October 2026 the normal curve gives VaR$_{0.99}$ 69.64 and ES$_{0.975}$ 69.98
 
 @practice the normal VaR is the easiest to explain and the most dangerous to trust.
 
-## Filtered historical simulation: today's volatility, the past's shape {h=9c9934eb}
+## Filtered historical simulation: past shocks rescaled to current volatility {h=ac347b8e}
 
 Filtered historical simulation (FHS) combines the two previous ideas. It divides past changes by their volatility to obtain standardised shocks, then rescales those shocks by today's volatility, so that the shape of the tail comes from history and the scale from the present (Barone-Adesi, Giannopoulos and Vosper, 1999):
 
@@ -158,7 +158,7 @@ The shape parameter is not stable: $\hat\xi$ was positive in 53% of the refits, 
 @chart gpd_tail
 Tail of the GARCH-filtered Romanian price changes over the 730 days before 31 Oct 2026, with the fitted generalised Pareto curve and the normal curve.
 
-## Same day, same data, five answers: choosing the method is a risk decision {h=e36797dd}
+## VaR and ES on the same day by five methods {h=78223520}
 
 The table gives the mean of the 31 forecasts made for October 2026. The first three columns are in EUR/MWh; the last two are in thousand EUR for 100 MW flat, 2,400 MWh per day.
 
@@ -194,7 +194,7 @@ Measured directly, the 10-day 99% quantile is 1.72 times the 1-day one in Romani
 @chart horizon
 Empirical 99% quantile of price changes over horizons up to 10 days, in Romania and Germany–Luxembourg, against the square-root-of-time scaling of the 1-day quantile.
 
-# Backtesting: did the model keep its promise?
+# Backtesting VaR and ES
 
 A VaR is a promise about how often losses will exceed it, and the promise can be checked after the fact. This section counts exceedances with the Kupiec test, checks their timing with the Christoffersen test and the Basel traffic light, and tests ES with the Acerbi–Székely statistic, over 3,587 days.
 
@@ -301,7 +301,7 @@ As a diagnosis, $\hat q_V$ ranges from −0.007, for a model that is too prudent
 
 The quantiles of the previous sections become cash and limits in three places: the margins of an exchange, the guarantee of the day-ahead market and the position limits of a trading desk. This section shows how each is computed and why a well-hedged company can still run out of cash.
 
-## Exchange margins are VaR in cash, paid every day {h=cb4deb78}
+## Exchange margins: initial margin as a VaR, variation margin paid daily {h=4408bce8}
 
 A clearing house holds a deposit that covers a 99% two-day loss and settles gains and losses in cash every evening:
 
@@ -367,7 +367,7 @@ With the FHS 99% VaR on Romanian data, the median VaR of 2019 was 20.27 EUR/MWh,
 
 @practice set limits in EUR of VaR and convert them to MW every day.
 
-# Supplier and producer: one price, two tails
+# Price risk for suppliers and producers
 
 A supplier and a producer face the same price but opposite tails, and a supplier's monthly bill adds the shape of its load. This section measures the supplier's monthly cash-flow-at-risk, compares the two tails and summarises case study C4 on systemic and energy-specific risks.
 
@@ -392,7 +392,7 @@ The chart shows the monthly overrun of the load-weighted cost since March 2015 t
 @chart supplier_month
 Monthly overrun of the load-weighted power cost in Romania, Mar 2015 to Oct 2026, with the normal 99% limit computed in 2020; months above the limit in red.
 
-## Same price, two tails: the supplier's tail is heavier than the producer's {h=7fe01827}
+## Loss tails: the supplier's tail is heavier than the producer's {h=fdcdce2f}
 
 A supplier loses when the price rises, a producer when it falls:
 
@@ -441,7 +441,7 @@ The monthly mean of the day-ahead price was 122.99 EUR/MWh in June 2026 and 239.
 @chart case2026
 Romanian day-ahead base price and the 99% VaR forecasts, 1 Jun to 31 Oct 2026, with the exceedances marked.
 
-## Case study: in 2026 the danger was cash, not the daily VaR {h=887b841b}
+## Case study: market risk and liquidity needs in 2026 {h=f7460c47}
 
 Market risk barely moved. The FHS 99% VaR was 61.64 EUR/MWh in June and 67.50 in October, and the ES test since 2023 does not reject FHS ($Z_2$ = −0.083). Cash needs, however, doubled. The day-ahead guarantee for 100 MW, computed from the widened 99% quantile, rose from 0.416 to 0.776 million EUR per day. Orders would have exceeded the guarantee limit on 3 days, and on 6 without the widening.
 

@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "A verificar..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Impede o carregamento de anúncios de terceiros, ferramentas de análise, redes sociais e scripts de cookies, para que os sites não possam criar perfis da sua navegação e as páginas carreguem mais rapidamente."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Bloquear scripts de monitorização"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "milissegundos"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Desempenho anti-monitorização"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Com scripts de monitorização"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Sem scripts de monitorização"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Os domínios abaixo estão excluídos do bloqueio anti-monitorização."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Utilizamos monitorizadores comerciais para o ajudar a encontrar as nossas ofertas especiais de forma fácil. A nossa missão é proteger a sua privacidade. Nunca partilhamos a sua informação recolhida com ninguém, por razão alguma."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Ofertas especiais"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Ocorreu um problema"
+   },
+   "chatAgent_thinking": {
+      "message": "A pensar..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Analise mensagens quanto à presença de links de phishing e ciberameaças."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Chat Protection"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Monitoriza os sites a que concedeu acesso à câmara, microfone, localização, notificações, área de transferência e transferências automáticas, para que possa rever e revogar estas permissões no Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Gerir permissões"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Todos os direitos reservados"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Política de Privacidade"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Contrato de Subscrição"
+   },
+   "main_about_third_party_license": {
+      "message": "Termos das licenças de terceiros"
+   },
+   "main_about_version": {
+      "message": "Versão"
+   },
+   "main_account_manage_account_description": {
+      "message": "Aceda à sua conta Bitdefender para gerir as suas definições e preferências."
+   },
+   "main_account_manage_account_title": {
+      "message": "Gerir conta"
+   },
+   "main_account_managed_by_description": {
+      "message": "Para utilizar outra conta, autentique-se na aplicação Bitdefender."
+   },
+   "main_account_managed_by_title": {
+      "message": "Gerido pela aplicação Bitdefender"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Veja e gira as suas subscrições Bitdefender."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "As minhas subscrições"
+   },
+   "main_account_sign_out": {
+      "message": "Terminar sessão"
+   },
+   "main_account_subscription_active": {
+      "message": "Ativo"
+   },
+   "main_account_subscription_expired": {
+      "message": "A subscrição expirou"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "A subscrição expirou ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Expira em [Days] dia ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Expira dentro de [Days] dias ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Plano Individual"
+   },
+   "main_account_subscription_section": {
+      "message": "Subscrição"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Livre"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Minha Conta"
+   },
+   "main_activity_details_error": {
+      "message": "Não foi possível carregar os dados de atividade."
+   },
+   "main_activity_detections_analysed": {
+      "message": "analisado"
+   },
+   "main_activity_detections_title": {
+      "message": "Deteções"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "deteções"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Inteligência contra ameaças"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Como os sinais de risco de diferentes categorias se combinam nos sites que visita."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Este site já está na sua lista de permissões."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Cancelar"
+   },
+   "main_add_whitelist_description": {
+      "message": "Os domínios na sua lista de permissões serão ignorados na análise. Não será avisado sobre quaisquer ameaças existentes nestas páginas."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Endereço do site"
+   },
+   "main_add_whitelist_save": {
+      "message": "Guardar"
+   },
+   "main_add_whitelist_title": {
+      "message": "Adicionar site à lista de permissões"
+   },
+   "main_autonomy_level_title": {
+      "message": "Nível de autonomia"
+   },
+   "main_autonomy_save": {
+      "message": "Guardar definição"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Atividade"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Alterar nível de proteção"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Lida com as ameaças automaticamente e atua no momento em que deteta uma, sem o interromper."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Proteção automática"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Verifica tudo e depois pergunta antes de tomar qualquer medida."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Proteção guiada"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Domínios verificados"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Análise com integração de dados da loja virtual"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Inteligência de risco de sites em tempo real"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Proteção contra fraudes"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Inteligência de links de resultados de pesquisa baseada em IA"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Consultor de Procura"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Inteligência bancária, de criptomoedas e de carteiras"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Finanças seguras"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Ativo"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Mês"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Hoje"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Semana"
+   },
+   "main_dashboard_load_error": {
+      "message": "Não foi possível carregar os dados do painel."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Ignorar"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Verificar marcadores e histórico de navegação"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Atividade recente"
+   },
+   "main_dashboard_retry": {
+      "message": "Voltar a tentar"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Veja os detalhes da atividade"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "malicioso"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "seguro"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "suspeito"
+   },
+   "main_error_boundary_text": {
+      "message": "Ocorreu um erro ao renderizar a janela pop-up da extensão. Tente atualizar ou reabrir o pop-up."
+   },
+   "main_error_boundary_title": {
+      "message": "Ocorreu um erro!"
+   },
+   "main_extension_description": {
+      "message": "Bloqueia fraudes, phishing e sites perigosos, gratuitamente. A versão Premium tem IA que explica as ameaças e protege o seu dinheiro."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Idioma da aplicação"
+   },
+   "main_general_app_theme": {
+      "message": "Tema da aplicação"
+   },
+   "main_general_privacy_policy": {
+      "message": "Política de Privacidade"
+   },
+   "main_general_product_reports_description": {
+      "message": "Enviar relatórios de ciberameaças para melhoria do produto, de acordo com a Política de Privacidade"
+   },
+   "main_general_product_reports_title": {
+      "message": "Relatórios do produto"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automático"
+   },
+   "main_general_theme_dark": {
+      "message": "Escuro"
+   },
+   "main_general_theme_light": {
+      "message": "Modo claro"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Esta etapa não tem descrição."
+   },
+   "main_login_button": {
+      "message": "Iniciar sessão"
+   },
+   "main_login_connected_button": {
+      "message": "Continuar"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Em seguida, defina como o Security Advisor deve funcionar."
+   },
+   "main_login_connected_title": {
+      "message": "Está ligado!"
+   },
+   "main_login_create_account": {
+      "message": "Crie uma"
+   },
+   "main_login_no_account": {
+      "message": "Não tem uma conta?"
+   },
+   "main_login_subtitle": {
+      "message": "Inicie sessão na sua conta Bitdefender."
+   },
+   "main_login_title": {
+      "message": "Proteja a sua navegação"
+   },
+   "main_navbar_dashboard": {
+      "message": "Painel"
+   },
+   "main_opera_hint_caption": {
+      "message": "Clique no ícone da extensão na barra lateral para a abrir"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Abra o Bitdefender Web Sage na barra lateral do Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Atualize para a versão Premium para utilizar esta funcionalidade."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Gerir permissões"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Gerir notificações, permissões e monitorizadores"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Sugere uma avaliação"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "O Privacy Guard é uma funcionalidade Premium. Atualize as permissões do site aqui."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Esta alteração não pôde ser aplicada. Por favor, tente novamente."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Ainda não existem permissões de sites geridas. O Privacy Guard adiciona um site aqui quando bloqueia as permissões que esse site tinha autorização para utilizar."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Aceder às definições"
+   },
+   "main_privacy_guard_info": {
+      "message": "Protege a sua privacidade bloqueando os scripts de monitorização e gerindo as permissões do site. Pode ajustar estas opções no menu Definições."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Gerir permissões"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Transferências automáticas"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Controlo da câmara"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Acesso à área de transferência"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Acesso à localização"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Controlo do microfone"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Notificações"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Limpar pesquisa"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Nenhum site corresponde à sua pesquisa"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Encontrar um site"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Confiar neste site (permitir tudo)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Optou anteriormente por confiar neste site e conceder todas as permissões solicitadas (notificações, acesso à localização, controlo da câmara e do microfone)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Não é possível gerir as permissões do site neste navegador"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Por que razão as permissões são geridas?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Quando um site é bloqueado por ser considerado inseguro, o Privacy Guard bloqueia também as permissões que tem autorização para utilizar, como as notificações ou o acesso à câmara. As permissões que o site nunca teve permanecem inalteradas."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Link de chat malicioso detetado"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Link de chat suspeito detetado"
+   },
+   "main_recent_activity_info": {
+      "message": "Os vereditos suspeitos ou maliciosos recentes são armazenados referentes ao último mês."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Não foi possível carregar a atividade recente."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Página fraudulenta bloqueada"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Página fraudulenta detetada"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Deteções do Search Advisor"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Página maliciosa bloqueada"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Atividade suspeita detetada"
+   },
+   "main_rename_device_cancel": {
+      "message": "Cancelar"
+   },
+   "main_rename_device_description": {
+      "message": "Atribua um nome único ao seu dispositivo para o ajudar a identificá-lo facilmente."
+   },
+   "main_rename_device_field_label": {
+      "message": "Nome do dispositivo"
+   },
+   "main_rename_device_save": {
+      "message": "Guardar"
+   },
+   "main_rename_device_title": {
+      "message": "Renomear este dispositivo"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Acesso à câmara revogado para {n} sites"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "A revogar acesso à câmara para {n} sites"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Acesso à área de transferência revogado para {n} sites"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "A revogar acesso à área de transferência para {n} sites"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Os cookies e os dados do site foram apagados para {n} sites"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "A apagar cookies e dados do site para {n} sites"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Transferências automáticas bloqueadas para {n} sites"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "A bloquear transferências automáticas para {n} sites"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Aplicar correções"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "{n} de {t} correções aplicadas"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Acesso à localização revogado para {n} sites"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "A revogar acesso à localização para {n} sites"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Acesso ao microfone revogado para {n} sites"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "A revogar acesso ao microfone para {n} sites"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Notificações bloqueadas para {n} sites"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "A bloquear notificações para {n} sites"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "{n} marcadores de risco renomeados"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "A renomear {n} marcadores de risco"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Aplicando correções…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Proteção automática"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Proteção guiada"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Aplicar correções selecionadas"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "O que estou a fazer"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "A aplicar correções automaticamente"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "A minha função"
+   },
+   "main_sa_banner_criteria": {
+      "message": "O que vou sinalizar"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "O que vou corrigir"
+   },
+   "main_sa_banner_sources": {
+      "message": "O que vou verificar"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "A sua escolha"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "A comparar marcadores com ameaças conhecidas…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Foram realizadas {n} verificações"
+   },
+   "main_sa_check_cookies": {
+      "message": "A verificar cookies armazenados e dados do site em domínios sinalizados…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} de {t} marcadores correspondem a ameaças conhecidas"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} sites têm dados residuais que vale a pena apagar"
+   },
+   "main_sa_check_done_history": {
+      "message": "Foram encontradas {h} visitas aos domínios sinalizados"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} de {t} permissões modificadas parecem ser desnecessárias ou arriscadas"
+   },
+   "main_sa_check_history_db": {
+      "message": "A comparar o histórico com ameaças conhecidas..."
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Vou verificar primeiro os itens mais arriscados e comparar o que cada site pode aceder com o que realmente precisa."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "A avaliar as permissões do site..."
+   },
+   "main_sa_continue": {
+      "message": "Continuar"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Área de transferência e transferências"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Encontre sites que podem ler a sua área de transferência ou transferir ficheiros sem perguntar e desative aqueles que não devem."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Notificações do navegador"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Bloqueie as notificações de fraudes e spam de sites que não pretendia permitir."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Notificações"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Acesso ao microfone, à câmara e à localização"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Encontre sites que podem utilizar o seu microfone, câmara ou localização e desative aqueles que não devem."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Acesso ao microfone, à câmara e à localização"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Ameaças conhecidas"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Bloqueie sites que já são conhecidos por serem prejudiciais antes mesmo de serem carregados."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Área de transferência e transferências — {n} sites podem ler a sua área de transferência ou transferir ficheiros automaticamente"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Dados armazenados — {n} sites já guardaram cookies ou outros dados no seu dispositivo"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Sites falsos — {n} sites copiam empresas reais para o enganar"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Permissões — {n} os sites podem aceder às suas notificações, localização, microfone ou câmara"
+   },
+   "main_sa_finding_threats": {
+      "message": "Ameaças conhecidas — {n} sites estão na nossa lista de sites prejudiciais conhecidos"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Relatório gerado: {n} avisos"
+   },
+   "main_sa_findings_heading": {
+      "message": "Análise concluída. Aqui está o que descobri:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Análise concluída. A corrigir o que encontrei:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Análise concluída."
+   },
+   "main_sa_findings_none": {
+      "message": "Nada de relevante — nenhum aviso nesta análise."
+   },
+   "main_sa_finish_setup": {
+      "message": "Guardar e continuar"
+   },
+   "main_sa_fix_cam": {
+      "message": "Revogar acesso à câmara"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Revogar acesso à área de transferência"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Apagar cookies e dados armazenados localmente"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Bloquear transferências automáticas"
+   },
+   "main_sa_fix_loc": {
+      "message": "Revogar acesso à localização"
+   },
+   "main_sa_fix_mic": {
+      "message": "Revogar acesso ao microfone"
+   },
+   "main_sa_fix_notif": {
+      "message": "Bloquear notificações"
+   },
+   "main_sa_fix_rename": {
+      "message": "Renomear marcadores de risco"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Foram sinalizados {n} marcadores de risco para que fiquem visíveis rapidamente"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Cookies e dados armazenados apagados de {n} domínios sinalizados"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Foram revogadas {n} permissões de sites que não estava a utilizar ativamente"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Nada precisava de ser apagado — estava tudo bem"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Aqui fica o que eu faria em relação a isso:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Lida com as ameaças automaticamente e atua no momento em que deteta uma, sem o interromper."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Proteção automática"
+   },
+   "main_sa_go_dashboard": {
+      "message": "concluído"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Verifica tudo e depois pergunta antes de tomar qualquer medida."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Proteção guiada"
+   },
+   "main_sa_intro_scan": {
+      "message": "Para começar, escolha o que devo analisar na sua primeira análise."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "A iniciar a sua primeira análise. Eu trato de tudo daqui para a frente."
+   },
+   "main_sa_list_last_separator": {
+      "message": " e "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Este é o meu plano:"
+   },
+   "main_sa_plan_body": {
+      "message": "Vou verificar os seus {targets}, compará-los com as ameaças conhecidas e depois mostrar-lhe um resumo antes de alterar o que quer que seja."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Vou verificar os seus favoritos, histórico e permissões, compará-los com ameaças conhecidas e corrigir qualquer risco assim que o encontrar."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Vou mostrar-lhe o que encontrei antes de alterar alguma coisa. É você quem decide o que acontece a seguir."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "marcadores"
+   },
+   "main_sa_plan_target_history": {
+      "message": "histórico de navegação"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "permissões de sites"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "A ler {n} marcadores em {f} pastas"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "A ler marcadores..."
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "A ler {n} fontes"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Agora vou verificar tudo para ver se existem riscos."
+   },
+   "main_sa_read_history_done": {
+      "message": "A ler {n} entradas do histórico"
+   },
+   "main_sa_read_history_pending": {
+      "message": "A ler o histórico de navegação..."
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Foram encontrados {n} sites com permissões alteradas"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "A verificar as permissões do site…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Primeiro vou ler, depois analisar. A começar agora."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Ignorar análise inicial"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Ignorar e mostrar o relatório"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Marcadores"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Detete sites guardados que, sem dar por isso, se tornaram de risco desde que os adicionou aos favoritos."
+   },
+   "main_sa_source_history": {
+      "message": "Histórico de navegação"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Identifique os sites perigosos que já visitou para os evitar da próxima vez."
+   },
+   "main_sa_start_assessment": {
+      "message": "Iniciar Análise"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Escolha o quanto faz sozinho:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Já está."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Parece estar tudo bem."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} marcadores"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "O que verifiquei:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} entradas do histórico"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} permissões de sites em {c} categorias"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "O que apaguei:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "O que encontrei:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "A partir de agora, vou verificar novos marcadores de favoritos e permissões em segundo plano e sinalizar tudo o que seja arriscado."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Nada foi alterado. Volte quando quiser para rever e aplicar as correções propostas."
+   },
+   "main_sa_summary_stand": {
+      "message": "Aqui fica o resumo."
+   },
+   "main_sa_title_configure": {
+      "message": "Configurar o Security Advisor"
+   },
+   "main_sa_what_look_for": {
+      "message": "O que vou sinalizar"
+   },
+   "main_sa_where_look": {
+      "message": "O que vou verificar"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonomia"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Consultor de Procura"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Defesa especializada"
+   },
+   "main_settings_about": {
+      "message": "Sobre"
+   },
+   "main_settings_general": {
+      "message": "Geral"
+   },
+   "main_settings_language": {
+      "message": "Idioma"
+   },
+   "main_settings_my_account": {
+      "message": "Minha Conta"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor"
+   },
+   "main_settings_support": {
+      "message": "Apoio"
+   },
+   "main_settings_title": {
+      "message": "Definições"
+   },
+   "main_settings_upgrade": {
+      "message": "Atualize para {premium} para obter uma proteção melhorada"
+   },
+   "main_settings_whitelist": {
+      "message": "Lista de confiança"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Abra o Bitdefender Web Sage na barra lateral do seu navegador."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Inicie sessão na sua conta Bitdefender para começar."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "O Web Sage ainda não o está a proteger"
+   },
+   "main_support_center_description": {
+      "message": "Encontre rapidamente respostas para os problemas mais comuns ou entre em contacto com nossa equipa de assistência se precisar de ajuda adicional."
+   },
+   "main_support_center_link": {
+      "message": "Ir para o Centro de Apoio"
+   },
+   "main_support_center_title": {
+      "message": "Centro de Suporte"
+   },
+   "main_support_community_description": {
+      "message": "Obtenha as suas respostas, faça as suas perguntas! Estamos aqui para nos ajudarmos!"
+   },
+   "main_support_community_link": {
+      "message": "Pergunte à Comunidade"
+   },
+   "main_support_community_title": {
+      "message": "Pergunte à Comunidade"
+   },
+   "main_test": {
+      "message": "teste"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Tipos de letra"
+   },
+   "main_third_party_category_label": {
+      "message": "Categoria:"
+   },
+   "main_third_party_category_packages": {
+      "message": "Pacotes JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licença:"
+   },
+   "main_third_party_link_label": {
+      "message": "Link:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Seguem-se os avisos de atribuição do software de código aberto de terceiros incluído em partes da extensão de navegador Bitdefender (versão $1). Agradecemos à comunidade de código aberto todas as suas contribuições."
+   },
+   "main_third_party_page_title": {
+      "message": "Termos das licenças de terceiros"
+   },
+   "main_third_party_version_label": {
+      "message": "Versão:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Não é um formulário extenso. Um endereço de e-mail e uma palavra-passe. Cerca de um minuto, uma única vez, e está pronto."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Não é um sistema com conteúdo pago. O {product} Standard é gratuito e continuará a ser gratuito. Sem cartão, sem período de teste e sem data de expiração."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Não é uma subscrição. Ter uma conta não significa ter um plano. Não há qualquer cobrança nem renovação automática."
+   },
+   "main_welcome_account_not_title": {
+      "message": "E, para sermos claros sobre o que não é"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome no trabalho, Edge em casa, um segundo computador. Uma única conta abrange o {product} em todos eles, com as mesmas regras."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Proteção em todo o lado, não por navegador"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "A mesma conta Bitdefender funciona em tudo o que o(a) Bitdefender oferece. Adicione um produto mais tarde, entre em contacto com o suporte, verifique um dispositivo — e já está tudo configurado."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Uma conta, nada mais"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Todos os sites que autorizou e todas as proteções que desativou — estes acompanham-no agora. Novo navegador, novo portátil, nova instalação: continua tudo lá."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "As suas definições não desaparecem"
+   },
+   "main_welcome_account_straight": {
+      "message": "A proteção do {product} começa quando inicia sessão. Até lá, a proteção permanece inativa e o ícone de proteção no navegador fica desativado."
+   },
+   "main_welcome_account_sub": {
+      "message": "Esta é uma mudança significativa em relação ao TrafficLight, e é legítimo perguntar porquê. Três motivos principais:"
+   },
+   "main_welcome_account_title": {
+      "message": "A única coisa que mudou"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Continuar a navegar"
+   },
+   "main_welcome_button_open": {
+      "message": "Abra o {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Iniciar sessão"
+   },
+   "main_welcome_cta_checking": {
+      "message": "A verificar a sua conta…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Já tem o(a) Bitdefender instalado neste dispositivo? Pode iniciar sessão automaticamente — esta página será atualizada assim que isso acontecer."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "O {product} protege-o apenas enquanto tiver sessão iniciada na sua conta Bitdefender. Ao iniciar sessão, o bloqueio é ativado, o seu plano é aplicado automaticamente e as suas definições permanecem sincronizadas. Criar uma conta é gratuito."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Inicie sessão — isso ativa a proteção"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Está tudo pronto"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Atualização concluída"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "O TrafficLight evoluiu"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Abra o dashboard"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Iniciar sessão"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "O seu dashboard, a sua atividade e as suas definições ficam na parte superior do painel."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "A sua conta"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "A sua conta Bitdefender é o que ativa a proteção, mantém as suas definições sincronizadas entre navegadores e dispositivos e oferece um único dashboard para a sua atividade e definições."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "A sua conta, o seu dashboard"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "No painel"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Conheça o Security Advisor"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Todas as definições de proteção estão aqui, incluindo o grau de autonomia da proteção."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Ao ser configurado, verifica os seus marcadores e o histórico de navegação em busca de ameaças conhecidas e, em seguida, explica detalhadamente o que encontra nas páginas que visita. Pode escolher se o sistema pergunta antes de agir ou se resolve os problemas de forma autónoma."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "No painel"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Veja no painel"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Discreto no site real, visível num site falso."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Finanças seguras"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "As páginas de bancos, criptomoedas e carteiras são sujeitas a um escrutínio adicional: as páginas que se fazem passar pelo seu banco ou pela sua plataforma de câmbio são identificadas antes de introduzir uma palavra-passe."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Finanças seguras"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Em sites de bancos e criptomoedas"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Configuração em dois passos"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Não é necessário ativar nada; a proteção já está a funcionar desde a atualização."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Continua aqui"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "O bloqueio de páginas em tempo real e o Security Advisor funcionam exatamente como antes, agora com mais fontes por trás deles. Se também utilizava a extensão Anti-tracker separadamente, o Privacy Guard agora realiza essa função — portanto, pode removê-la."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Tudo aquilo em que confiava continua aqui."
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Sempre ativo"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Abrir o Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Cada site que gere, com uma opção para ativar/desativar cada permissão."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Bloqueia os rastreadores e gere as permissões que um site tem — notificações, localização, câmara, microfone, transferências automáticas e área de transferência. Quando um site se revela inseguro, toda e qualquer permissão que tenha recebido é revogada."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "No painel"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Veja no painel"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Os avisos aparecem diretamente no local onde navega, antes de clicar."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Proteção contra fraudes"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Para além dos URL já reconhecidos como maliciosos: uma página suspeita passa por uma análise de IA a pedido que explica, em linguagem simples, o que está errado."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Proteção contra fraudes com análise detalhada por IA"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Na página"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Abra o painel"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Uma marca aparece ao lado de cada resultado; passe o cursor sobre ela para ver o motivo."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Consultor de Procura"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Classificações de segurança ao lado dos resultados no Google, Bing, DuckDuckGo e Yahoo, para ter conhecimento antes de clicar."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Consultor de Procura"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "Nos resultados da pesquisa"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Veja no painel"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Uma avaliação da própria loja, não apenas da página em que se encontra."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "As lojas online são verificadas com base em informações sobre sites de compras enquanto navega, para que as lojas falsas e ofertas boas demais para serem verdade sejam sinalizadas antes de efetuar o pagamento."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Em sites de compras"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Veja o estado da página"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Só repara nele quando há algo a informar."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Bloqueio de páginas"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Todas as páginas que abre são verificadas com base na informações contra ameaças da Bitdefender. Uma página perigosa é imediatamente fechada — e completamente bloqueada antes de poder ser carregada novamente."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Encerramento imediato de páginas perigosas"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Na página"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Informações jurídicas e suporte"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Política de Privacidade"
+   },
+   "main_welcome_footer_support": {
+      "message": "Apoio"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Termos de utilização"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Não foi possível abrir automaticamente o painel. Clique no ícone {product} da sua barra de ferramentas para o abrir."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animação que mostra como afixar a extensão à barra de ferramentas do navegador"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Clique no botão Extensões (peça do puzzle) no canto superior direito do navegador."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Clique no botão Extensões (peça do puzzle) no canto superior direito do navegador."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Clique no botão Extensões (a peça do puzzle) da sua barra de ferramentas."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Clique no botão Extensões (o cubo) da sua barra de ferramentas."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Abra o menu de extensões do seu navegador."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Localize {product} e clique no ícone de alfinete junto a ele."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Localize {product} e clique no ícone de alfinete junto a ele para o mostrar na barra de ferramentas."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Localize {product}, abra as suas definições (o ícone da engrenagem) e escolha Afixar na barra de ferramentas."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Localize {product} e clique no ícone de alfinete junto a ele."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Localize {product} e afixe-o à barra de ferramentas."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Mantenha-o a um clique de distância, para que consiga ver sempre o estado de segurança da página em que se encontra."
+   },
+   "main_welcome_pin_title": {
+      "message": "Afixe o {product} à sua barra de ferramentas"
+   },
+   "main_welcome_protected_done": {
+      "message": "A proteção está ativada. Não há mais nada a fazer aqui — afixe o {product} para que permaneça visível."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Incluído no seu plano {plan} — desbloqueado automaticamente, sem necessidade de ativação."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Em execução agora"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Gratuito com a sua conta Bitdefender."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Está protegido — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Está protegido — {product} Padrão"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Está ligado e protegido"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Proteção em tempo real contra fraudes, phishing e rastreadores, exatamente no local onde navega. Dois passos rápidos e está pronto."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "A versão {version} já está instalada e a protegê-lo. Veja o que acrescenta."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "A sua extensão acabou de receber uma grande atualização. Tudo o que o TrafficLight fazia continua aqui, e há muito mais novidades."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Parte do pacote {product} Premium, incluído no pacote Bitdefender Total Security e versões superiores."
+   },
+   "main_welcome_title_new": {
+      "message": "Bem-vindo ao {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "O {product} ficou ainda melhor"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight agora é {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "O que inclui"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Novidades"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Novidades"
+   },
+   "main_welcome_tour_next": {
+      "message": "Funcionalidade seguinte"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Funcionalidade anterior"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} de {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Tudo o que o {product} faz por si, uma funcionalidade de cada vez. Explore cada elemento passo a passo ou vá direto ao que interessa."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Novidade na versão {version}. Explore cada elemento passo a passo ou vá direto ao que interessa."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Tudo o que o TrafficLight fazia, e ainda isto. Explore cada elemento passo a passo ou vá direto ao que interessa."
+   },
+   "main_welcome_window_title": {
+      "message": "Bem-vindo ao {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Adicionar site Web"
+   },
+   "main_whitelist_import": {
+      "message": "Importar domínios"
+   },
+   "main_whitelist_info": {
+      "message": "Os domínios na sua lista de permissões serão ignorados na análise. Não será avisado sobre quaisquer ameaças existentes nestas páginas."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Remover"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Análise de ameaças"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Scripts de monitorização"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Recolhe os anúncios exibidos nas páginas que visita para que possam ser verificados quanto a burlas e fraudes."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Monitorização de anúncios"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Identifica anúncios maliciosos e resultados patrocinados que levam a fraudes ou malware."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Deteta sites bancários falsos e plataformas de investimento fraudulentas criadas para roubar as suas credenciais ou fundos."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Proteção contra Fraudes Financeiras"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Avisa sobre lojas falsas e páginas de pagamento fraudulentas antes de introduzir os seus dados de pagamento."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Bloquear esta página"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Carregar mesmo assim (inseguro)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Carregar conteúdo mesmo assim (inseguro)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Mostrar mais detalhes"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "A analisar os detalhes…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Não consegui analisar esta página neste momento. Tente novamente."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "A análise detalhada de páginas não está incluída na sua subscrição atual, por isso não posso analisar esta página."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "O processo demorou mais do que eu podia esperar, por isso deixei de verificar."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Verifica os links dentro dos painéis de visão geral da IA e sinaliza aqueles que conduzem a sites não seguros."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Analisador de visão geral de IA"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Desativado nas Definições"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Ativado"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Não disponível"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "Consultor de Pesquisa com IA"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Informações sobre os links dos resultados de pesquisa"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Analisado por {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Não foi possível bloquear esta página."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "A bloquear esta página…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Forçar verificação (remover da lista de permissões)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Verificar novamente"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Desbloquear esta página"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "A verificar a base de dados de ameaças conhecidas…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "A verificar permissões…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "A verificar fraudes..."
+   },
+   "searchAdvisor_checking": {
+      "message": "A verificar"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Foram realizadas {n} verificações"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Bloquear página"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Consentimento"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Executar uma análise detalhada"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Análise detalhada executada"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Análise detalhada concluída"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "A analisar o conteúdo da página e a captura de ecrã…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "A análise detalhada não encontrou problemas nesta página."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "A análise detalhada foi concluída sem encontrar indicadores específicos."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "A análise detalhada confirmou que esta página é perigosa."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Executar análise"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Com a sua autorização, vou examinar o conteúdo da página e uma captura de ecrã da mesma para descobrir o que está escondido."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "A análise detalhada expirou"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Interrompeu a espera após {n} segundos"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "A análise detalhada está a demorar mais do que posso esperar, por isso parei. Pode executá-la novamente ou decidir com base no que já detetei."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Executar uma análise mais detalhada?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "A remover da lista de permissões e a verificar novamente..."
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Relatório gerado: {n} aviso"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Relatório gerado: {n} avisos"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "A aceder à página…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Resultado de pesquisa malicioso"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Analisa os anúncios nas páginas que visita e sinaliza aqueles que conduzem a burlas."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Proteção contra anúncios fraudulentos"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Abrir definições da extensão"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "O Opera impede que as extensões acedam aos resultados de pesquisa até que o permita. Abra opera://extensions, encontre esta extensão e ative «Permitir acesso aos resultados da página de pesquisa»."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Os resultados de pesquisa não estão a ser verificados"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Bloqueado pelo Privacy Guard {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Este site pode aceder ao seu {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Nenhuma permissão concedida"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Permissões indisponíveis"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Nenhum sinal de alerta identificado"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "O Privacy Guard sugere bloquear {list} neste site."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Veja o que descobri:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Todo o conteúdo bloqueado foi restaurado."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "A restaurar o conteúdo bloqueado…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Nenhum padrão de fraude detetado"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} indicador malicioso encontrado"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} indicadores maliciosos encontrados"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} indicador suspeito encontrado"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} indicadores suspeitos encontrados"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Não foi possível concluir a análise de fraude"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Apareceu em conteúdo promocional não fidedigno"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Modelo de extorsão coerciva"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Modelo de fraude com dinheiro falso"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Modelo de fraude que explora situações de crise"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Modelo de fraude com criptomoedas"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Modelo de plataforma enganosa de encontros para adultos"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Modelo de publicidade enganosa"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Modelo de passatempo enganoso"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Modelo de inquérito online enganoso"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Modelo de fraude de investimento em energia"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Modelo de fraude de extorsão"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Modelo de recompensas falsas por ver anúncios"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Modelo de site de reservas falso"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Modelo de casino falso"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Modelo de instituição de caridade falsa"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Modelo de clínica falsa"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Modelo de passatempo de criptomoedas falso"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Modelo de serviço de entregas falso"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Modelo de documentos falsos"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Modelo de loja de comércio eletrónico falsa"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Modelo de instituição de ensino falsa"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Modelo de oferta de emprego falsa"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Modelo de serviço de entretenimento falso"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Modelo de instituição financeira falsa"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Modelo de investimento financeiro falso"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Modelo de site de apostas falso"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Modelo de prémios de jogo falsos"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Modelo de investimento em ouro falso"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Modelo de apoios governamentais falsos"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Modelo de instituição governamental falsa"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Modelo de serviço de imigração falso"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Modelo de instituição jurídica falsa"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Modelo de serviço de reembolso falso"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Modelo de farmácia online falsa"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Loja online falsa detetada"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Modelo de plataforma de pagamento falsa"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Modelo de campanha de prémios falsa"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Modelo de prémio ou recompensa falsos"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Modelo de editora falsa"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Modelo de plataforma de avaliações falsa"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Padrões de loja falsa numa campanha publicitária"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Modelo de guia espiritual falso"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Modelo de prémios falsos"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Modelo de fraude financeira"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Campanha publicitária fraudulenta de loja falsa"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Modelo de fraude na área da saúde"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Ataque de homóglifos detetado"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Modelo de site de atividades ilegais"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Modelo de serviços ilegais"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Modelo de substâncias ilegais"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP com padrões maliciosos"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP com padrões suspeitos"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Modelo de phishing conhecido"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Modelo de fraude conhecido"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Modelo de fraude de lotaria"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Loja online pouco fidedigna, sem presença consolidada"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Plataforma de trading ou investimento pouco fidedigna, sem presença consolidada"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Link malicioso para uma plataforma de investimento"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Link malicioso para uma loja online"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Modelo de fraude com estupefacientes"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Loja online com indicadores contraditórios"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Loja online sem presença consolidada"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Modelo de fraude com animais de estimação"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Modelo de esquema Ponzi ou em pirâmide"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Modelo de fraude imobiliária"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Modelo de fraude romântica"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Modelo de site de fraude romântica"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Modelo de fraude de sociedade secreta"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Link suspeito para uma plataforma de investimento"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Formato de link suspeito"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Link suspeito para uma loja online"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Modelo de fraude de apoio técnico"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Plataforma de trading ou investimento com indicadores contraditórios"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Plataforma de trading ou investimento sem presença consolidada"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Loja online muito pouco fidedigna"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Loja online muito pouco fidedigna, sem presença consolidada"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Plataforma de trading ou investimento muito pouco fidedigna"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Link muito suspeito"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Bloqueei a página e cortei o acesso ao microfone, à câmara e à localização — pode fechar o separador em segurança…"
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Os scripts de rastreio foram bloqueados e o acesso ao microfone, à câmara e à localização foi revogado para o manter em segurança."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Não foi possível terminar de verificar estes resultados de pesquisa."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Análise incompleta"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "O Security Advisor está ativado"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "A analisar os resultados da pesquisa…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Resultado de pesquisa suspeito"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "O Search Advisor está desativado. Aceda às definições para o ativar."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "A proteção da Web está desativada. Aceda às definições para ativá-la."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "A ignorar verificações e a carregar a página."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Esta página foi sinalizada como maliciosa."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Esta página faz parte de uma tentativa de fraude."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Esta página faz parte de um anúncio fraudulento."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Detetamos elementos que podem danificar o seu dispositivo."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "A página tentou utilizar os recursos do seu dispositivo para minerar criptomoedas e foi bloqueada."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Esta página não pode ser verificada pelo Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "A ignorar verificações e a carregar a página."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Permanece bloqueada até a desbloquear."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Esta página faz parte de uma tentativa de phishing."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "A página tentou transferir uma PUA (aplicação potencialmente indesejada) para o seu dispositivo e foi bloqueada."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Esta página foi ignorada na sessão de navegação atual"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Esta página pode ser segura, mas foram relatadas algumas ameaças de segurança no passado."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Esta página foi ignorada na análise porque foi adicionada à Lista de exceções."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Adiciona uma classificação de segurança ao lado de cada resultado no Google, Bing, Yahoo e DuckDuckGo, para que possa identificar links arriscados antes de clicar."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Anotação dos resultados da pesquisa"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Proteção desativada"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Não foi possível analisar os resultados da pesquisa"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Não foi possível analisar esta página"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Este domínio está na lista de permissões"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Loja fraudulenta detetada"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Tentativa de fraude detetada"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Anúncio fraudulento detetado"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Ameaça detetada!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Tentativa de mineração detetada"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Não é possível analisar a página"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Esta página foi ignorada nesta sessão"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Bloqueou esta página"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Tentativa de phishing detetada"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Deteção de transferência de aplicação potencialmente indesejada"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Este site é seguro"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "A analisar..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Domínio não fidedigno detetado"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Página com exceção detetada"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Foram bloqueados {n} monitorizadores"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "O bloqueio de scripts de rastreio está desativado, pelo que esta página não foi verificada quanto à presença de rastreadores"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Carregar scripts (inseguro)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Nenhum script de monitorização foi detetado nesta página"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Não foi possível desbloquear esta página."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "A desbloquear esta página…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Nenhuma ameaça conhecida foi encontrada"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Página bloqueada"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Página carregada em {n} ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Está em segurança"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Encontrei alguns riscos nesta página. Evite introduzir informações pessoais, palavras-passe ou dados de pagamento e não transfira nada."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Tenha cuidado"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Está tudo bem até agora."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Protegendo-o enquanto navega."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Esta página foi bloqueada por"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Domínio sinalizado como malicioso"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Lojas falsas imitam comerciantes reais para receber o seu pagamento e obter os dados do seu cartão. Os pedidos raramente são entregues e os dados que insere podem ser reutilizados ou vendidos."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Páginas fraudulentas geralmente tentam enganá-lo e fazer com que envie dinheiro com o intuito de obter benefícios ilegais."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Esta página foi bloqueada para impedir novas interações com uma burla.\n\nOs atacantes atraem as suas potenciais vítimas utilizando deepfakes, oportunidades de investimento e outros temas em tendência para as enganar e levá-las a fornecer dados confidenciais, dinheiro ou transferir malware."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Páginas perigosas tentam instalar software que pode prejudicar o dispositivo, reunir informações pessoais ou operar sem o seu consentimento."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "As páginas Miner utilizam os recursos dos dispositivos para criptomoeda, afetando a sua utilidade e o ciclo de vida do hardware."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Páginas com phishing tentam obter informações sensíveis, como credenciais de login ou detalhes do cartão de crédito, ao se disfarçarem como entidades fiáveis. Os dados roubados podem ser utilizados para ganhos financeiros."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "A página tentou transferir uma aplicação potencialmente indesejada (Potentially Unwanted App, PUA) para o seu dispositivo. Este tipo de aplicações exibe comportamentos que afetam a privacidade e segurança do seu dispositivo e dados."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Páginas não fiáveis exibem um comportamento suspeito, ou particularidades que consideramos de risco, portanto, deve evitar acedê-las para manter os seus dados intatos."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Loja fraudulenta bloqueada para a sua proteção"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Bloqueámos alguns conteúdos para sua segurança"
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Conteúdo suspeito detetado"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Não foi possível abrir o painel. Tente novamente."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Abra o painel do(a) Bitdefender na barra lateral do navegador para ver os detalhes."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Página bloqueada"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Transferências automáticas"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "câmara"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "área de transferência"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Fechar"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "O acesso a {permissions} para este site foi bloqueado."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "O acesso a {permissions} para este site foi bloqueado."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "O acesso a {permissions} é permitido para este site. Veja o que este site pode utilizar."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "O acesso a {permissions} é permitido para este site. Veja o que este site pode utilizar."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "O Privacy Guard encontrou permissões para rever"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} e {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "localização"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "O acesso a {permissions} está bloqueado para este site. Analise o que este site pode utilizar."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "O acesso a {permissions} está bloqueado para este site. Analise o que este site pode utilizar."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "O Privacy Guard está a gerir permissões"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "microfone"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Notificações"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "O Privacy Guard está a gerir permissões"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Proceda com cuidado"
+   },
+   "urlScanning_see_details": {
+      "message": "Ver detalhes"
+   },
+   "urlScanning_show_details": {
+      "message": "Mostrar detalhes"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Fechar"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Existem alguns sinais de alerta aqui. Tenha cuidado com informações pessoais e transferências."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Não foi possível analisar os resultados da pesquisa"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Não foi possível analisar esta página"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Loja fraudulenta detetada"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Tentativa de fraude detetada"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Anúncio fraudulento detetado"
+   },
+   "urlScanning_title_malware": {
+      "message": "Ameaça detetada!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Tentativa de mineração detetada"
+   },
+   "urlScanning_title_phish": {
+      "message": "Tentativa de phishing detetada"
+   },
+   "urlScanning_title_pua": {
+      "message": "Deteção de transferência de aplicação potencialmente indesejada"
+   },
+   "urlScanning_title_safe": {
+      "message": "Esta página é segura"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Domínio não fidedigno detetado"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Analisa os URL visitados à procura de malware, phishing, fraudes e outras ameaças."
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "proteção da web"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Proteção na Web por Bitdefender"
+   }
+}

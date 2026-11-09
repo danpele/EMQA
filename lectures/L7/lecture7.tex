@@ -107,9 +107,9 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \end{frame}
 
 
-\section{Machine learning, evaluated honestly}
+\section{Machine-learning models and their evaluation}
 
-\begin{frame}{Machine learning buys flexibility and pays for it with variance}
+\begin{frame}{Flexibility and variance of machine-learning models}
 \footnotesize
 \intuition{A flexible model can learn thresholds and interactions that LEAR misses, but it can also learn the noise of the training years.}
 \begin{columns}[T,onlytextwidth]
@@ -201,7 +201,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 
 \section{Deep neural networks}
 
-\begin{frame}{A neural network stacks regressions, each followed by a bend}
+\begin{frame}{Structure of a feed-forward neural network}
 \footnotesize
 \intuition{Each neuron bends a linear combination of the inputs; the output layer gives the 24 prices of day $d$ at once.}
 \begin{columns}[T,onlytextwidth]
@@ -234,7 +234,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Training: small steps against the error, stopped in time}
+\begin{frame}{Training: stochastic gradient descent with early stopping}
 \footnotesize
 \intuition{The weights move a little in the direction that lowers the error on a random batch of days; we stop when the error on later days stops falling.}
 \begin{columns}[T,onlytextwidth]
@@ -490,7 +490,7 @@ Test year & 1 Nov 2025 -- 31 Oct 2026, 8\,760 hours, models refitted monthly \\
 \end{frame}
 
 
-\section{Honest comparison, combination and cost}
+\section{Model comparison, combination and computational cost}
 
 \begin{frame}{Scoreboard: Chronos-2 is the best single model}
 \small
@@ -810,9 +810,9 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; own computation)}\hfill\qlink{EMQA\_L7\_decision}{Quantlets/L7/EMQA_L7_decision}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study, 30 Jun 2026: every model saw the spike, none its size}
+\begin{frame}{Case study, 30 Jun 2026: the models anticipated the spike but underestimated its size}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.502\textheight,keepaspectratio]{charts/en/case_week.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.441\textheight,keepaspectratio]{charts/en/case_week.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: 2026-06-27 to 2026-07-03, hourly.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -865,11 +865,11 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \end{frame}
 
 
-\section{Pitfalls that flatter a model}
+\section{Evaluation errors that overstate accuracy}
 
 \begin{frame}{Look-ahead: two invalid evaluations flatter XGBoost}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.428\textheight,keepaspectratio]{charts/en/pit_leak.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.445\textheight,keepaspectratio]{charts/en/pit_leak.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -886,9 +886,9 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; own computation)}\hfill\qlink{EMQA\_L7\_pit\_leak}{Quantlets/L7/EMQA_L7_pit_leak}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Data snooping: choosing on the test year fakes a win over LEAR}
+\begin{frame}{Data snooping: selection on the test year gives a spurious gain over LEAR}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.506\textheight,keepaspectratio]{charts/en/snooping.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.502\textheight,keepaspectratio]{charts/en/snooping.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: validation and test year 2025-11-01 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -938,7 +938,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 
 \begin{frame}{Retraining: a model frozen for a year loses 4.2\%}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.450\textheight,keepaspectratio]{charts/en/pit_retrain.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.442\textheight,keepaspectratio]{charts/en/pit_retrain.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Data: test year 2025-11-01 to 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -952,7 +952,7 @@ AW-LEAR forecast $>\theta$ & 0.959 & 0.851 & 0.733 & 0.788 & -- & 0.983 & 0.558 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L7\_pit\_retrain}{Quantlets/L7/EMQA_L7_pit_retrain}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Leakage self-check: deleting the future changes no forecast}
+\begin{frame}{Leakage check: forecasts recomputed without future data are unchanged}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

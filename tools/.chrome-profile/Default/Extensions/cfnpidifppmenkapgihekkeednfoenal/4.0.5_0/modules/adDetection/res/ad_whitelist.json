@@ -1,0 +1,8 @@
+{
+  "whitelisted_domains": [
+    "gmail.com",
+    "mail.google.com"
+  ],
+  "whitelist_reason": "These domains are trusted services where ad detection may cause false positives. Gmail and other email services particularly have embedded content that may be incorrectly flagged as ads."
+}
+

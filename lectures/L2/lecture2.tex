@@ -230,7 +230,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Assignment 1; OPCOM; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S1}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Calibration, burn-in, test: time runs one way, data are never shuffled}
+\begin{frame}{Chronological split into calibration, burn-in and test periods}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.520\textheight,keepaspectratio]{charts/en/split_timeline.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: daily base price, 2022-01-01 to 2026-10-31, CET delivery days.}
@@ -333,7 +333,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Four error measures, one benchmark-relative score}
+\begin{frame}{Four error measures and the relative MAE}
 \footnotesize
 \intuition{Absolute errors are in EUR/MWh, squared errors punish spikes, rMAE compares with naive.}
 \begin{columns}[T,onlytextwidth]
@@ -385,7 +385,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 
 \subsection{Testing forecast accuracy}
 
-\begin{frame}{The Diebold--Mariano test: is the gain larger than luck?}
+\begin{frame}{The Diebold--Mariano test of equal predictive accuracy}
 \footnotesize
 \intuition{Compare the daily average error of two models; if the mean difference is large relative to its own noise, one model is really better.}
 \begin{columns}[T,onlytextwidth]
@@ -416,7 +416,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Diebold \& Mariano, 1995, JBES; Ziel \& Weron, 2018, ENEECO)}\hfill\tryit{notebook \S2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The DM chessboard: which model beats which on the Romanian test year}
+\begin{frame}{Pairwise DM tests on the Romanian test year}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.473\textheight,keepaspectratio]{charts/en/dm_matrix.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC). Data: test year 2025-11-01 to 2026-10-31, 365 days; one-sided p-values.}
@@ -557,7 +557,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 
 \subsection{LASSO-estimated autoregression}
 
-\begin{frame}{LEAR: give the model 247 candidates and let the LASSO switch most of them off}
+\begin{frame}{LEAR: LASSO selection among 247 candidate regressors}
 \footnotesize
 \intuition{A penalty on the size of the coefficients sets the useless ones exactly to zero, so the data choose the regressors.}
 \begin{columns}[T,onlytextwidth]
@@ -606,7 +606,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 
 \subsection{Calibration windows}
 
-\begin{frame}{Short windows adapt, long windows are stable: average them}
+\begin{frame}{Averaging forecasts across calibration windows}
 \footnotesize
 \intuition{Instead of guessing the best window length, estimate the model on several windows and average the forecasts.}
 \begin{columns}[T,onlytextwidth]
@@ -790,7 +790,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Hour by hour: machine learning helps inside the ensemble, not alone}
+\begin{frame}{Accuracy by hour: machine-learning models alone and in the ensemble}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/en/ml_hour.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC). Data: test year 2025-11-01 to 2026-10-31; ML refitted monthly.}
@@ -1058,7 +1058,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation; OPCOM; SDAC 15-minute go-live, 1 Oct 2025)}\hfill\qlink{EMQA\_L2\_mtu15}{Quantlets/L2/EMQA_L2_mtu15}\par\vspace{0.5mm}
 \end{frame}
 
-\subsection{(d) From forecast to money}
+\subsection{(d) Economic value of the forecast}
 
 \begin{frame}{Case study (d): what a better forecast is worth}
 \small
@@ -1112,7 +1112,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 
 \subsection{Research and practice: AIDA 2026}
 
-\begin{frame}{AIDA 2026: probabilistic forecasts are judged by the money they make}
+\begin{frame}{AIDA 2026: economic evaluation of probabilistic forecasts}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.49\textwidth}

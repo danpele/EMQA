@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261108a", "L2_text_en.js?v=20261108a", "common.js?v=20261108s"], "L2.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261108a", "L2_text_en.js?v=20261108a", "common.js?v=20261108a"], "L2.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -66,9 +66,9 @@
   <details><summary>Answer</summary><p>No. The percentage error divides by the actual price, and 387 hours have |price| below 5 EUR/MWh (60 are exactly zero, 195 are negative). These hours produce 99.5% of the MAPE; excluding them, the MAPE of AW-LEAR falls to 32.4%. Move the slider: the MAE and the sMAPE hardly change, the MAPE collapses. With prices near zero, MAE, RMSE and the relative MAE (rMAE, MAE divided by the MAE of the naive forecast) are the measures to report.</p></details>
 </section>
 <section class="blk" id="dm-test">
-  <h3>The DM chessboard: which model beats which on the Romanian test year</h3>
+  <h3>Pairwise DM tests on the Romanian test year</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L2_dm_matrix_en.jpg" alt="Slide 17: The DM chessboard: which model beats which on the Romanian test year" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=17" target="_blank" rel="noopener"><img src="slides/L2_dm_matrix_en.jpg" alt="Slide 17: Pairwise DM tests on the Romanian test year" loading="lazy"></a>
       <figcaption>Slide 17</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="dm-a">Model A (row)</label><select id="dm-a"><option value="naive" selected>Naive</option><option value="snaive">Seasonal naive</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear">AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ensemble of 4 models</option></select></div><div class="ctl"><label for="dm-b">Model B (column)</label><select id="dm-b"><option value="naive">Naive</option><option value="snaive">Seasonal naive</option><option value="arx728">ARX(728)</option><option value="aw_arx">AW-ARX</option><option value="lear728">LEAR(728)</option><option value="aw_lear" selected>AW-LEAR</option><option value="gbm">GBM</option><option value="mlp">MLP</option><option value="ens_all">Ensemble of 4 models</option></select></div><div class="ctl"><label for="dm-l">Loss</label><select id="dm-l"><option value="abs" selected>Absolute error</option><option value="sq">Squared error</option></select></div><div class="ctl"><label for="dm-L">Newey–West lags: <b id="dm-L-v"></b></label><input type="range" id="dm-L" min="0" max="21" step="1" value="7"></div><button class="btn play" id="dm-play" type="button"></button></div><div class="charts "><div class="chart" id="dm-diff"></div><div class="chart" id="dm-cum"></div></div><ul class="out" id="dm-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_dm_matrix" target="_blank" rel="noopener">EMQA_L2_dm_matrix</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_dm_matrix/EMQA_L2_dm_matrix.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

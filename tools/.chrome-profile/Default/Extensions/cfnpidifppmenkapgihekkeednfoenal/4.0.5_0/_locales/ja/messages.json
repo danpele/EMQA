@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "確認中..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "サードパーティの広告・分析・ソーシャルメディア・Cookie のスクリプトが読み込まれるのを防ぎます。ウェブサイトによる閲覧内容のプロファイリングを阻止し、ページの表示も高速になります。"
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "トラッキングスクリプトをブロック"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "ミリ秒"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "アンチトラッカーのパフォーマンス"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "トラッキングスクリプトあり"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "トラッキングスクリプトなし"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "以下のドメインは、アンチトラッカーによるブロックの対象外です。"
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "弊社は、お客様がお得なキャンペーンを見つけやすくする目的でコマーシャルトラッカーを使用しています。弊社のミッションはお客様のプライバシーを守ることですので、いかなる目的のためにも収集した情報を第三者と共有することは絶対にありません。"
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "特別価格"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "問題が発生しました"
+   },
+   "chatAgent_thinking": {
+      "message": "考えています..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "メッセージをスキャンして、フィッシングリンクやサイバー脅威を検出します。"
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "チャット保護"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "カメラ、マイク、位置情報、通知、クリップボード、自動ダウンロードへのアクセスをお客様が許可したウェブサイトを記録します。内容の確認や許可の取り消しは、Privacy Guardで行えます。"
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "アクセス許可の管理"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "無断複写・転載を禁じます。"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "プライバシーポリシー"
+   },
+   "main_about_subscription_agreement": {
+      "message": "同意します。"
+   },
+   "main_about_third_party_license": {
+      "message": "サードパーティライセンス規約"
+   },
+   "main_about_version": {
+      "message": "バージョン"
+   },
+   "main_account_manage_account_description": {
+      "message": "Bitdefenderアカウントにアクセスして設定や環境設定を管理します。"
+   },
+   "main_account_manage_account_title": {
+      "message": "アカウントの管理"
+   },
+   "main_account_managed_by_description": {
+      "message": "別のアカウントを使用するには、Bitdefenderアプリで認証してください。"
+   },
+   "main_account_managed_by_title": {
+      "message": "Bitdefenderアプリで管理中"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Bitdefender のサブスクリプションを表示および管理します。"
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "サブスクリプション"
+   },
+   "main_account_sign_out": {
+      "message": "ログアウト"
+   },
+   "main_account_subscription_active": {
+      "message": "アクティブ"
+   },
+   "main_account_subscription_expired": {
+      "message": "サブスクリプションの有効期限が切れました"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "サブスクリプションの有効期限が切れました ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "残り[Days]日で有効期限が切れます ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "有効期間はあと [Days]日で終了します ([Date])。"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "個人プラン"
+   },
+   "main_account_subscription_section": {
+      "message": "サブスクリプション"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "空き"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "マイアカウント"
+   },
+   "main_activity_details_error": {
+      "message": "アクティビティデータを読み込めませんでした。"
+   },
+   "main_activity_detections_analysed": {
+      "message": "分析済み"
+   },
+   "main_activity_detections_title": {
+      "message": "検出数"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "検出数"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "脅威インテリジェンス"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "アクセスしたウェブサイトについて、各カテゴリのリスクシグナルがどのように組み合わさっているかを示します。"
+   },
+   "main_add_whitelist_already_added": {
+      "message": "このWebサイトはすでにホワイトリストに登録されています。"
+   },
+   "main_add_whitelist_cancel": {
+      "message": "キャンセル"
+   },
+   "main_add_whitelist_description": {
+      "message": "ホワイトリストに登録されたドメインはスキャンの対象外となります。これらのページに脅威が存在しても警告は表示されません。"
+   },
+   "main_add_whitelist_field_label": {
+      "message": "ウェブサイトのアドレス"
+   },
+   "main_add_whitelist_save": {
+      "message": "保存"
+   },
+   "main_add_whitelist_title": {
+      "message": "ウェブサイトをホワイトリストに追加"
+   },
+   "main_autonomy_level_title": {
+      "message": "自動化レベル"
+   },
+   "main_autonomy_save": {
+      "message": "設定を保存"
+   },
+   "main_dashboard_activity_title": {
+      "message": "アクティビティ"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "保護レベルを変更"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "脅威を自動的に処理し、検出した時点ですぐに対応します。お客様の作業を妨げることはありません。"
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "自動保護"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "すべてをチェックしたうえで、対応の前にお客様に確認します。"
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "ガイド付き保護"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "チェックしたドメイン数"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "ウェブショップ情報を活用したスキャン"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "危険なサイトの情報をリアルタイムに反映"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "詐欺からの保護"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "AI を活用した検索結果リンクの分析"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "サーチアドバイザー"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "銀行・暗号資産・ウォレットの情報分析"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "安全な金融取引"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "アクティブ"
+   },
+   "main_dashboard_filter_month": {
+      "message": "月"
+   },
+   "main_dashboard_filter_today": {
+      "message": "今日"
+   },
+   "main_dashboard_filter_week": {
+      "message": "週"
+   },
+   "main_dashboard_load_error": {
+      "message": "ダッシュボードのデータを読み込めませんでした。"
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "閉じる"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "ブックマークと閲覧履歴をチェック"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "最近のアクティビティ"
+   },
+   "main_dashboard_retry": {
+      "message": "再試行"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "アクティビティの詳細を表示"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "悪質"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "安全"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "疑わしい"
+   },
+   "main_error_boundary_text": {
+      "message": "拡張機能のポップアップの表示中にエラーが発生しました。更新するか、ポップアップを開き直してください。"
+   },
+   "main_error_boundary_title": {
+      "message": "問題が発生しました！"
+   },
+   "main_extension_description": {
+      "message": "詐欺・フィッシング・危険なサイトを、読み込まれる前に無料でブロックします。Premium なら、脅威の内容を AI が解説し、お客様の資産も守ります。"
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "アプリの言語"
+   },
+   "main_general_app_theme": {
+      "message": "アプリのテーマ"
+   },
+   "main_general_privacy_policy": {
+      "message": "プライバシーポリシー"
+   },
+   "main_general_product_reports_description": {
+      "message": "製品の品質向上のため、プライバシーポリシーに則りサイバー脅威レポートを送信します。"
+   },
+   "main_general_product_reports_title": {
+      "message": "製品レポート"
+   },
+   "main_general_theme_automatic": {
+      "message": "自動"
+   },
+   "main_general_theme_dark": {
+      "message": "ダーク"
+   },
+   "main_general_theme_light": {
+      "message": "ライト"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "このステップには説明がありません。"
+   },
+   "main_login_button": {
+      "message": "サインイン"
+   },
+   "main_login_connected_button": {
+      "message": "続行"
+   },
+   "main_login_connected_subtitle": {
+      "message": "次に、セキュリティアドバイザーの動作を設定してください。"
+   },
+   "main_login_connected_title": {
+      "message": "接続されました！"
+   },
+   "main_login_create_account": {
+      "message": "アカウントを作成"
+   },
+   "main_login_no_account": {
+      "message": "アカウントをお持ちでない場合"
+   },
+   "main_login_subtitle": {
+      "message": "Bitdefender アカウントでサインインしてください。"
+   },
+   "main_login_title": {
+      "message": "ブラウジングを保護"
+   },
+   "main_navbar_dashboard": {
+      "message": "ダッシュボード"
+   },
+   "main_opera_hint_caption": {
+      "message": "サイドバーの拡張機能アイコンをクリックして開きます"
+   },
+   "main_opera_hint_instruction": {
+      "message": "OperaのサイドバーからBitdefender Web Sageを開きます。"
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "この機能を利用するには Premium にアップグレードしてください。"
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "アクセス許可の管理"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "通知・アクセス許可・トラッカーを管理"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "確認をおすすめします"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "プライバシーガードは Premium の機能です。ここでサイトのアクセス許可を変更するには、アップグレードしてください。"
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "変更を適用できませんでした。もう一度お試しください。"
+   },
+   "main_privacy_guard_empty": {
+      "message": "管理されているウェブサイトのアクセス許可はまだありません。プライバシーガードがウェブサイトに付与されていたアクセス許可をブロックすると、そのウェブサイトがここに追加されます。"
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "設定に移動"
+   },
+   "main_privacy_guard_info": {
+      "message": "トラッキングスクリプトをブロックし、ウェブサイトのアクセス許可を管理することで、お客様のプライバシーを保護します。これらのオプションは設定メニューで細かく調整できます。"
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "アクセス許可の管理"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "自動ダウンロード"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "カメラの制御"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "クリップボードアクセス"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "位置情報アクセス"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "マイクの制御"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "通知"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "検索をクリア"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "検索条件に一致するウェブサイトはありません"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "ウェブサイトを検索"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "このウェブサイトを信頼する (すべて許可)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "お客様は以前、このウェブサイトを信頼し、要求されるすべてのアクセス許可 (通知、位置情報アクセス、カメラとマイクの制御) を許可することを選択しました。"
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "このブラウザではウェブサイトのアクセス許可を管理できません"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "アクセス許可が管理されるのはなぜですか？"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "ウェブサイトが安全でないためにブロックされると、プライバシーガードは、通知やカメラへのアクセスなど、そのウェブサイトに付与されていたアクセス許可もブロックします。もともと付与されていなかったアクセス許可は変更されません。"
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "悪意のあるチャットリンクを検出しました"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "疑わしいチャットリンクを検出しました"
+   },
+   "main_recent_activity_info": {
+      "message": "疑わしい、または悪意があると判定された履歴は、過去1か月分を保存しています。"
+   },
+   "main_recent_activity_load_error": {
+      "message": "最近のアクティビティを読み込めませんでした。"
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "詐欺ページをブロックしました"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "詐欺ページを検出しました"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "検索アドバイザーの検出数"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "悪意のあるページをブロックしました"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "不審なアクティビティが検出されました"
+   },
+   "main_rename_device_cancel": {
+      "message": "キャンセル"
+   },
+   "main_rename_device_description": {
+      "message": "識別しやすいように、このデバイスに固有の名前を付けてください。"
+   },
+   "main_rename_device_field_label": {
+      "message": "デバイス名"
+   },
+   "main_rename_device_save": {
+      "message": "保存"
+   },
+   "main_rename_device_title": {
+      "message": "このデバイスの名前を変更"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "{n}件のウェブサイトのカメラへのアクセスを取り消しました"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "{n}件のウェブサイトのカメラへのアクセスを取り消しています"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "{n}件のウェブサイトのクリップボードへのアクセスを取り消しました"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "{n}件のウェブサイトのクリップボードへのアクセスを取り消しています"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "{n}件のウェブサイトの Cookie とサイトデータを削除しました"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "{n}件のウェブサイトの Cookie とサイトデータを削除しています"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "{n}件のウェブサイトの自動ダウンロードをブロックしました"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "{n}件のウェブサイトの自動ダウンロードをブロックしています"
+   },
+   "main_sa_apply_fixes": {
+      "message": "修正を適用"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "{t}件中{n}件の修正を適用しました"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "{n}件のウェブサイトの位置情報へのアクセスを取り消しました"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "{n}件のウェブサイトの位置情報へのアクセスを取り消しています"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "{n}件のウェブサイトのマイクへのアクセスを取り消しました"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "{n}件のウェブサイトのマイクへのアクセスを取り消しています"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "{n}件のウェブサイトの通知をブロックしました"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "{n}件のウェブサイトの通知をブロックしています"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "危険な{n}件のブックマークの名前を変更しました"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "危険な{n}件のブックマークの名前を変更しています"
+   },
+   "main_sa_applying_fixes": {
+      "message": "修正を適用しています…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "自動保護"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "ガイド付き保護"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "選択した修正を適用"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "実行中の処理"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "修正を自動的に適用しています"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "役割"
+   },
+   "main_sa_banner_criteria": {
+      "message": "警告する対象"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "修正する対象"
+   },
+   "main_sa_banner_sources": {
+      "message": "確認する対象"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "お客様の選択"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "ブックマークを既知の脅威と照合しています…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "{n}件のチェックを実行しました"
+   },
+   "main_sa_check_cookies": {
+      "message": "警告対象のドメインに保存された Cookie とサイトデータを確認しています…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{t}件中{b}件のブックマークが既知の脅威と一致しました"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c}件のウェブサイトに、削除すべきデータが残っています"
+   },
+   "main_sa_check_done_history": {
+      "message": "警告対象のドメインへのアクセスが{h}件見つかりました"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "変更されたアクセス許可{t}件のうち{n}件は、不要または危険と思われます"
+   },
+   "main_sa_check_history_db": {
+      "message": "閲覧履歴を既知の脅威と照合しています…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "最もリスクの高いものから順に確認し、各ウェブサイトがアクセスできる範囲と実際に必要な範囲を比較します。"
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "ウェブサイトのアクセス許可を評価しています…"
+   },
+   "main_sa_continue": {
+      "message": "続行"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "クリップボードとダウンロード"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "クリップボードを読み取ったり、確認なしにファイルをダウンロードしたりできるウェブサイトを洗い出し、必要のないものは無効にします。"
+   },
+   "main_sa_criterion_notifications": {
+      "message": "ブラウザの通知"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "意図せず許可してしまったウェブサイトからの詐欺通知やスパム通知を止めます。"
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "通知"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "マイク・カメラ・位置情報へのアクセス"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "マイク、カメラ、位置情報を利用できるウェブサイトを洗い出し、必要のないものは無効にします。"
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "マイク・カメラ・位置情報へのアクセス"
+   },
+   "main_sa_criterion_threats": {
+      "message": "既知の脅威"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "有害であることが判明しているウェブサイトを、読み込まれる前にブロックします。"
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "クリップボードとダウンロード — {n}件のウェブサイトが、クリップボードの読み取りやファイルの自動ダウンロードを行える状態です"
+   },
+   "main_sa_finding_cookies": {
+      "message": "保存データ — {n}件のウェブサイトが、お客様のデバイスに Cookie などのデータをすでに保存しています"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "偽のウェブサイト — {n}件のウェブサイトが実在する企業になりすまし、お客様をだまそうとしています"
+   },
+   "main_sa_finding_permissions": {
+      "message": "アクセス許可 — {n}件のウェブサイトが、通知、位置情報、マイク、カメラにアクセスできる状態です"
+   },
+   "main_sa_finding_threats": {
+      "message": "既知の脅威 — {n}件のウェブサイトが、有害なウェブサイトのリストに登録されています"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "レポートを作成しました: 警告{n}件"
+   },
+   "main_sa_findings_heading": {
+      "message": "スキャン完了。検出した内容は次のとおりです:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "スキャン完了。検出した内容を修正しています:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "スキャン完了。"
+   },
+   "main_sa_findings_none": {
+      "message": "特に気になる点はありませんでした。今回のスキャンで警告はありません。"
+   },
+   "main_sa_finish_setup": {
+      "message": "保存して続行"
+   },
+   "main_sa_fix_cam": {
+      "message": "カメラへのアクセスを取り消す"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "クリップボードへのアクセスを取り消す"
+   },
+   "main_sa_fix_cookies": {
+      "message": "疑わしい Cookie とローカルに保存されたデータを削除する"
+   },
+   "main_sa_fix_downloads": {
+      "message": "自動ダウンロードをブロックする"
+   },
+   "main_sa_fix_loc": {
+      "message": "位置情報へのアクセスを取り消す"
+   },
+   "main_sa_fix_mic": {
+      "message": "マイクへのアクセスを取り消す"
+   },
+   "main_sa_fix_notif": {
+      "message": "通知をブロックする"
+   },
+   "main_sa_fix_rename": {
+      "message": "危険なブックマークの名前を変更する"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "危険な{n}件のブックマークに印を付け、ひと目で分かるようにしました"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "警告対象の{n}件のドメインから Cookie と保存データを削除しました"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "実際には使われていなかった{n}件のサイトのアクセス許可を取り消しました"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "整理が必要なものはありませんでした。すべて問題ありません"
+   },
+   "main_sa_fixes_heading": {
+      "message": "推奨する対応は次のとおりです:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "脅威を自動的に処理し、検出した時点ですぐに対応します。お客様の作業を妨げることはありません。"
+   },
+   "main_sa_full_protection_title": {
+      "message": "自動保護"
+   },
+   "main_sa_go_dashboard": {
+      "message": "完了"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "すべてをチェックしたうえで、対応の前にお客様に確認します。"
+   },
+   "main_sa_guided_protection_title": {
+      "message": "ガイド付き保護"
+   },
+   "main_sa_intro_scan": {
+      "message": "まず、最初のスキャンで確認する対象を選択してください。"
+   },
+   "main_sa_intro_scan_full": {
+      "message": "最初のスキャンを開始します。ここからはすべてお任せください。"
+   },
+   "main_sa_list_last_separator": {
+      "message": " と "
+   },
+   "main_sa_list_separator": {
+      "message": "、 "
+   },
+   "main_sa_my_plan": {
+      "message": "実行する内容は次のとおりです:"
+   },
+   "main_sa_plan_body": {
+      "message": "{targets}を確認し、既知の脅威と照合します。変更を加える前に、結果の概要をお見せします。"
+   },
+   "main_sa_plan_body_full": {
+      "message": "ブックマーク、閲覧履歴、アクセス許可を確認して既知の脅威と照合し、危険なものが見つかり次第すぐに修正します。"
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "変更を加える前に、検出した内容をお見せします。次にどうするかはお客様が決められます。"
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "ブックマーク"
+   },
+   "main_sa_plan_target_history": {
+      "message": "閲覧履歴"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "サイトのアクセス許可"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "{f}個のフォルダから{n}件のブックマークを読み取りました"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "ブックマークを読み取っています…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "{n}件のソースを読み取りました"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "続いて、すべてにリスクがないか確認します。"
+   },
+   "main_sa_read_history_done": {
+      "message": "{n}件の履歴を読み取りました"
+   },
+   "main_sa_read_history_pending": {
+      "message": "閲覧履歴を読み取っています…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "アクセス許可が変更されたウェブサイトが{n}件見つかりました"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "ウェブサイトのアクセス許可を確認しています…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "まず読み取り、その後に分析します。これから開始します。"
+   },
+   "main_sa_skip_assessment": {
+      "message": "初回スキャンをスキップ"
+   },
+   "main_sa_skip_fixes": {
+      "message": "スキップしてレポートを表示"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "ブックマーク"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "ブックマークした後で危険な状態に変わってしまったウェブサイトを見つけ出します。"
+   },
+   "main_sa_source_history": {
+      "message": "閲覧履歴"
+   },
+   "main_sa_source_history_desc": {
+      "message": "すでにアクセスした危険なウェブサイトを特定し、次回以降は避けられるようにします。"
+   },
+   "main_sa_start_assessment": {
+      "message": "スキャン開始"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "どこまで自動で処理するかを選択してください:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "完了しました。"
+   },
+   "main_sa_summary_all_good": {
+      "message": "問題は見つかりませんでした。"
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "ブックマーク{n}件"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "確認した項目:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "履歴{n}件"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{c}個のカテゴリにわたるサイトのアクセス許可{n}件"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "整理した内容:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "検出した内容:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "今後は、新しいブックマークやアクセス許可をバックグラウンドで確認し、危険なものがあれば警告します。"
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "変更は行われませんでした。提案された修正内容は、いつでも確認して適用できます。"
+   },
+   "main_sa_summary_stand": {
+      "message": "結果の概要は次のとおりです。"
+   },
+   "main_sa_title_configure": {
+      "message": "セキュリティアドバイザーを設定"
+   },
+   "main_sa_what_look_for": {
+      "message": "警告する対象"
+   },
+   "main_sa_where_look": {
+      "message": "確認する対象"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "自動化"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "サーチアドバイザー"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "特化型防御"
+   },
+   "main_settings_about": {
+      "message": "について"
+   },
+   "main_settings_general": {
+      "message": "一般"
+   },
+   "main_settings_language": {
+      "message": "言語"
+   },
+   "main_settings_my_account": {
+      "message": "マイアカウント"
+   },
+   "main_settings_security_advisor": {
+      "message": "セキュリティアドバイザー"
+   },
+   "main_settings_support": {
+      "message": "サポート"
+   },
+   "main_settings_title": {
+      "message": "設定"
+   },
+   "main_settings_upgrade": {
+      "message": "{premium} にアップグレードして保護を強化"
+   },
+   "main_settings_whitelist": {
+      "message": "ホワイトリスト"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "ブラウザのサイドバーからBitdefender Web Sageを開きます。"
+   },
+   "main_sign_in_reminder_description": {
+      "message": "開始するには、Bitdefender アカウントでサインインしてください。"
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage による保護はまだ有効ではありません"
+   },
+   "main_support_center_description": {
+      "message": "よくある質問にはすぐに答えが見つかる場合があります。さらにサポートが必要な場合は、サポートチームに連絡することができます。"
+   },
+   "main_support_center_link": {
+      "message": "サポートセンターを開く"
+   },
+   "main_support_center_title": {
+      "message": "サポートセンター"
+   },
+   "main_support_community_description": {
+      "message": "質問をして、必要な答えを手に入れましょう。ここではお互いを助け合うことができます！"
+   },
+   "main_support_community_link": {
+      "message": "コミュニティに質問する"
+   },
+   "main_support_community_title": {
+      "message": "コミュニティに質問する"
+   },
+   "main_test": {
+      "message": "テスト"
+   },
+   "main_third_party_category_fonts": {
+      "message": "フォント"
+   },
+   "main_third_party_category_label": {
+      "message": "カテゴリ:"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript/TypeScript パッケージ"
+   },
+   "main_third_party_licence_label": {
+      "message": "ライセンス:"
+   },
+   "main_third_party_link_label": {
+      "message": "リンク:"
+   },
+   "main_third_party_page_intro": {
+      "message": "以下は、Bitdefender ブラウザー拡張機能 (バージョン $1) の一部に含まれるサードパーティ製オープンソースソフトウェアの帰属表示です。オープンソースコミュニティの皆様のご貢献に心より感謝いたします。"
+   },
+   "main_third_party_page_title": {
+      "message": "サードパーティライセンス規約"
+   },
+   "main_third_party_version_label": {
+      "message": "バージョン："
+   },
+   "main_welcome_account_not_form": {
+      "message": "長い入力フォームはありません。必要なのはメールアドレスとパスワードだけです。最初に1分ほどで完了します。"
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "有料の壁ではありません。{product} Standard は無料で、これからも無料のままです。カード情報の登録も、試用期間のカウントダウンも、有効期限もありません。"
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "サブスクリプションではありません。アカウントは有料プランとは別のものです。課金も自動更新も一切発生しません。"
+   },
+   "main_welcome_account_not_title": {
+      "message": "誤解のないようにお伝えしたいこと"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "職場では Chrome、自宅では Edge、そしてもう1台のパソコン。1つのアカウントで、そのすべての {product} を同じ設定のまま利用できます。"
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "ブラウザごとではなく、どこでも同じ保護"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "同じ Bitdefender アカウントが、Bitdefender のすべての製品で使えます。後から製品を追加するときも、サポートに問い合わせるときも、デバイスの状態を確認するときも、設定はすでに済んでいます。"
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "アカウントが増えるのではなく、1つにまとまる"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "許可したサイトも、オフにした保護機能も、すべてが引き継がれます。新しいブラウザでも、新しいノートパソコンでも、インストールし直しても、設定はそのままです。"
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "設定が消えてしまうことはありません"
+   },
+   "main_welcome_account_straight": {
+      "message": "{product} の保護は、サインインすると開始されます。それまでは保護は有効にならず、ブラウザのシールドアイコンもオフのままです。"
+   },
+   "main_welcome_account_sub": {
+      "message": "これは TrafficLight からの大きな変更であり、その理由を知りたいと思われるのは当然です。理由は次の3つです:"
+   },
+   "main_welcome_account_title": {
+      "message": "変わったのは1点だけ"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "ブラウジングを続ける"
+   },
+   "main_welcome_button_open": {
+      "message": "{product}を開く"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "サインイン"
+   },
+   "main_welcome_cta_checking": {
+      "message": "アカウントを確認しています…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "このデバイスですでに Bitdefender をお使いですか？自動的にサインインされる場合があります。その際は、このページがすぐに更新されます。"
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} がお客様を保護するのは、Bitdefender アカウントにサインインしている間だけです。サインインするとブロック機能が有効になり、ご契約のプランが自動的に適用され、設定も同期されます。アカウントの作成は無料です。"
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "サインイン — 保護が有効になります"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "準備はすべて整いました"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "アップデート完了"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight が進化しました"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "ダッシュボードを開く"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "サインイン"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "ダッシュボード、アクティビティ、設定は、パネルの上部にまとまっています。"
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "お客様のアカウント"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Bitdefender アカウントは、保護を有効にし、ブラウザやデバイス間で設定を同期し、アクティビティと設定を1つのダッシュボードにまとめる役割を担います。"
+   },
+   "main_welcome_feature_account_title": {
+      "message": "お客様のアカウントとダッシュボード"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "パネル内"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "セキュリティアドバイザーのご紹介"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "自動でどこまで対処するかも含め、すべての保護設定をここで管理できます。"
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "セキュリティアドバイザー"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "セットアップ時にブックマークと閲覧履歴を既知の脅威と照合し、その後はアクセスしたページで見つかった問題をわかりやすく説明します。対処の前に確認を求めるか、自動で対処するかを選択できます。"
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "セキュリティアドバイザー"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "パネル内"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "パネルで確認"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "本物のサイトでは静かに、偽のサイトではしっかりと警告します。"
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "安全な金融取引"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "銀行、暗号資産、ウォレットのページはより厳しくチェックします。お客様の銀行や取引所になりすましたサイトは、パスワードを入力する前に検出されます。"
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "安全な金融取引"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "銀行・暗号資産サイトで"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "2ステップで設定完了"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "有効にする操作は不要です。アップデート以降、すでに保護が続いています。"
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "そのまま使えます"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "リアルタイムのページブロックと検索アドバイザーは、これまでとまったく同じように動作します。加えて、より多くの情報源に対応しました。別途アンチトラッカー拡張機能をお使いだった場合は、その役割をPrivacy Guardが引き継ぐため、削除していただいて問題ありません。"
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "これまでの機能はすべてそのまま"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "常にオン"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "プライバシーガードを開く"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "管理中のすべてのサイトを確認し、アクセス許可ごとにオン/オフを切り替えられます。"
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "トラッカーをブロックし、サイトに付与されているアクセス許可（通知、位置情報、カメラ、マイク、自動ダウンロード、クリップボード）を管理します。サイトが安全でないと判明した場合は、そのサイトに付与されていたアクセス許可が自動的に取り消されます。"
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "パネル内"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "パネルで確認"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "警告は、クリックする前に、ブラウジング中の画面にそのまま表示されます。"
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "詐欺からの保護"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "既知の危険な URL の判定にとどまりません。疑わしいページはその場で AI が分析し、何が問題なのかを分かりやすく説明します。"
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "AI ディープスキャンによる詐欺保護"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "ページ上で"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "パネルを開く"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "各検索結果の横にマークが表示されます。マークにカーソルを合わせると理由が分かります。"
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "サーチアドバイザー"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Google、Bing、DuckDuckGo、Yahoo の検索結果の横に安全性の評価を表示するため、クリックする前に安全性を判断することができます。"
+   },
+   "main_welcome_feature_search_title": {
+      "message": "サーチアドバイザー"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "検索結果内"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "パネルで確認"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "表示中のページだけでなく、ショップそのものについても判定します。"
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "ブラウジング中にオンラインショップをウェブショップの安全性データベースと照合するため、偽のショップや不自然にお得な取引は、支払いの前に警告されます。"
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "ショッピングサイトで"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "ページの状態を確認"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "伝えるべきことがあるときだけ、姿を見せます。"
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "ページブロック"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "開いたすべてのページがBitdefenderの脅威インテリジェンスと照合されます。危険なページはただちに遮断され、再び読み込まれる前に完全にブロックされます。"
+   },
+   "main_welcome_feature_web_title": {
+      "message": "危険なページをその場で遮断"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "ページ上で"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "法的情報とサポート"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "プライバシーポリシー"
+   },
+   "main_welcome_footer_support": {
+      "message": "サポート"
+   },
+   "main_welcome_footer_terms": {
+      "message": "利用規約に同意したことになります。"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "パネルを自動的に開けませんでした。ツールバーの {product} アイコンをクリックして開いてください。"
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "拡張機能をブラウザのツールバーに固定する方法を示すアニメーション"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "ブラウザの右上にある拡張機能ボタン (パズルのピースのアイコン) をクリックします。"
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "ブラウザの右上にある拡張機能ボタン (パズルのピースのアイコン) をクリックします。"
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "ツールバーにある拡張機能ボタン (パズルのピースのアイコン) をクリックします。"
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "ツールバーにある拡張機能ボタン (立方体のアイコン) をクリックします。"
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "ブラウザの拡張機能メニューを開きます。"
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "{product} を見つけて、その横にあるピンのアイコンをクリックします。"
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "{product} を見つけて、その横にあるピンのアイコンをクリックすると、ツールバーに表示されます。"
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "{product} を見つけて設定 (歯車のアイコン) を開き、「ツールバーに固定」を選択します。"
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "{product} を見つけて、その横にあるピンのアイコンをクリックします。"
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "{product} を見つけて、ツールバーに固定します。"
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "ワンクリックで開ける場所に置いておけば、表示中のページの安全性をいつでも確認できます。"
+   },
+   "main_welcome_pin_title": {
+      "message": "{product} をツールバーに固定する"
+   },
+   "main_welcome_protected_done": {
+      "message": "保護は有効です。ほかに必要な操作はありません。{product} をツールバーに固定して、いつでも確認できるようにしましょう。"
+   },
+   "main_welcome_protected_plan": {
+      "message": "ご利用中の {plan} プランに含まれています。自動的に有効になるため、アクティベーションは不要です。"
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "実行中"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Bitdefender アカウントがあれば無料でご利用いただけます。"
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "保護されています — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "保護されています — {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "サインイン済みで、保護されています"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "詐欺、フィッシング、トラッカーから、ブラウジング中のお客様をリアルタイムで保護します。簡単な2ステップで設定は完了です。"
+   },
+   "main_welcome_subtitle_update": {
+      "message": "バージョン {version} のインストールが完了し、すでに保護が始まっています。追加された内容は次のとおりです。"
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "拡張機能が大幅にアップグレードされました。TrafficLight の機能はすべてそのままに、さらに多くの機能が加わりました。"
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "{product} Premium の機能です。Bitdefender Total Security 以上のプランに含まれます。"
+   },
+   "main_welcome_title_new": {
+      "message": "{product}へようこそ"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} がさらに進化しました"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight は {product} になりました"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "ご利用いただける機能"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "新着情報"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "新着情報"
+   },
+   "main_welcome_tour_next": {
+      "message": "次の機能"
+   },
+   "main_welcome_tour_prev": {
+      "message": "前の機能"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} / {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "{product} でできることを、機能ごとにご紹介します。順に見ていくことも、すぐに使い始めることもできます。"
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "バージョン {version} の新機能です。順に見ていくことも、すぐに使い始めることもできます。"
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "TrafficLight の機能はそのままに、さらにこれらが加わりました。順に見ていくことも、すぐに使い始めることもできます。"
+   },
+   "main_welcome_window_title": {
+      "message": "{product}へようこそ"
+   },
+   "main_whitelist_add": {
+      "message": "Webサイトを追加"
+   },
+   "main_whitelist_import": {
+      "message": "ドメインをインポート"
+   },
+   "main_whitelist_info": {
+      "message": "ホワイトリストに登録されたドメインはスキャンの対象外となります。これらのページに脅威が存在しても警告は表示されません。"
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "除去"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "脅威スキャン"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "トラッキングスクリプト"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "アクセスしたページに表示された広告を収集し、詐欺や不正がないかを確認できるようにします。"
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "広告の監視"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "詐欺やマルウェアにつながる悪意のある広告やスポンサー付き検索結果を警告します。"
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "認証情報や資金を盗み取るために作られた偽の銀行サイトや不正な投資プラットフォームを検出します。"
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "金融詐欺保護"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "支払い情報を入力する前に、偽のショップや不正な決済ページについて警告します。"
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "このページをブロック"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "それでも読み込む (安全ではありません)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "それでもコンテンツを読み込む (安全ではありません)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "詳細を表示"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "詳細を確認しています…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "現在、このページを分析できませんでした。もう一度お試しください。"
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "ページの詳細分析は現在のサブスクリプションに含まれていないため、このページを調べることはできません。"
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "時間がかかりすぎたため、調査を中止しました。"
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "AI 概要パネル内のリンクを確認し、安全でないウェブサイトにつながるものを警告します。"
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI 概要スキャナー"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "設定で無効になっています"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "有効"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "利用できません"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI 検索アドバイザー"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "検索結果リンクの分析"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "{product} による分析"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "このページをブロックできませんでした。"
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "このページをブロックしています…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "強制的にチェック (ホワイトリストから削除)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "もう一度スキャンする"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "このページのブロックを解除"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "既知の脅威データベースを確認しています…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "アクセス許可を確認しています…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "詐欺がないか確認しています…"
+   },
+   "searchAdvisor_checking": {
+      "message": "確認中..."
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "{n}件のチェックを実行しました"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "ページをブロック"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "同意する"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "詳細分析を実行"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "詳細分析を実行しました"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "詳細分析が完了しました"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "ページの内容とスクリーンショットを分析しています…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "詳細分析の結果、このページに問題は見つかりませんでした。"
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "詳細分析は完了しましたが、特定の兆候は見つかりませんでした。"
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "詳細分析の結果、このページが危険であることが確認されました。"
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "分析を実行"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "お客様の許可をいただければ、ページの内容とそのスクリーンショットを調べ、表面からは見えない問題を探します。"
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "詳細分析がタイムアウトしました"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "{n}秒待機したところで中止しました"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "詳細分析に時間がかかりすぎたため、中止しました。もう一度実行することも、ここまでに判明した内容をもとに判断することもできます。"
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "さらに詳しく分析しますか？"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "ホワイトリストから削除して再チェックしています…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "レポートを作成しました: 警告{n}件"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "レポートを作成しました: 警告{n}件"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "ページに移動しています…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "悪意のある検索結果"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "アクセスしたページの広告を確認し、詐欺につながるものを警告します。"
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "詐欺広告保護"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "拡張機能の設定を開く"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera では、許可するまで拡張機能は検索結果にアクセスできません。opera://extensions を開き、この拡張機能を見つけて「検索ページの結果へのアクセスを許可する」をオンにしてください。"
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "検索結果はチェックされていません"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guardが {list} をブロックしました"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "このウェブサイトは、お客様の {list} にアクセスできます"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "アクセスは許可されていません"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "アクセス許可を取得できません"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "警告すべき兆候はありません"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guardは、このウェブサイトで {list} をブロックすることをおすすめします。"
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "検出した内容は次のとおりです:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "ブロックされたコンテンツをすべて復元しました。"
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "ブロックされたコンテンツを復元しています…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "詐欺の兆候は検出されませんでした"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "悪意のある兆候が{n}件見つかりました"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "悪意のある兆候が{n}件見つかりました"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "疑わしい兆候が{n}件見つかりました"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "疑わしい兆候が{n}件見つかりました"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "詐欺の分析を完了できませんでした"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "信頼できないプロモーションコンテンツに掲載されていました"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "強要型恐喝のテンプレート"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "偽造紙幣詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "危機便乗型詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "暗号資産詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "虚偽のアダルト出会い系プラットフォームのテンプレート"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "虚偽広告のテンプレート"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "虚偽のプレゼント企画のテンプレート"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "虚偽のオンラインアンケートのテンプレート"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "エネルギー投資詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "恐喝詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "偽の広告視聴報酬のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "偽の予約サイトのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "偽カジノのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "偽の慈善団体のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "偽クリニックのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "偽の暗号資産プレゼントのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "偽の配送サービスのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "偽造書類のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "偽のECショップのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "偽の教育機関のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "偽の求人のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "偽のエンターテインメントサービスのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "偽の金融機関のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "偽の金融投資のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "偽のギャンブルサイトのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "偽のゲーム賞金のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "偽のゴールド投資のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "偽の政府給付金のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "偽の政府機関のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "偽の移民サービスのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "偽の法律機関のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "偽の返金サービスのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "偽のオンライン薬局のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "偽のオンラインショップを検出しました"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "偽の決済プラットフォームのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "偽の懸賞キャンペーンのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "偽の賞品・特典のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "偽の出版社のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "偽のレビュープラットフォームのテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "広告キャンペーン内の偽ショップのパターン"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "偽のスピリチュアル施術者のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "偽の当選金のテンプレート"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "金融詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "偽ショップの不正広告キャンペーン"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "医療詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "ホモグリフ攻撃を検出しました"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "違法行為サイトのテンプレート"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "違法サービスのテンプレート"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "違法薬物のテンプレート"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "悪意のあるパターンが見られる IP"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "疑わしいパターンが見られる IP"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "既知のフィッシングテンプレート"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "既知の詐欺テンプレート"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "宝くじ詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "信頼性が低く、実績のないオンラインショップ"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "信頼性が低く、実績のない取引・投資プラットフォーム"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "投資プラットフォームへの悪意のあるリンク"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "オンラインショップへの悪意のあるリンク"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "麻薬詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "相反する兆候が見られるオンラインショップ"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "実績のないオンラインショップ"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "ペット詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "ポンジ・スキーム/ねずみ講のテンプレート"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "不動産詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "ロマンス詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "ロマンス詐欺サイトのテンプレート"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "秘密結社詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "投資プラットフォームへの疑わしいリンク"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "疑わしいリンク形式"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "オンラインショップへの疑わしいリンク"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "テクニカルサポート詐欺のテンプレート"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "相反する兆候が見られる取引・投資プラットフォーム"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "実績のない取引・投資プラットフォーム"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "信頼性が非常に低いオンラインショップ"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "信頼性が非常に低く、実績のないオンラインショップ"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "信頼性が非常に低い取引・投資プラットフォーム"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "非常に疑わしいリンク"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "ブロックし、マイク、カメラ、位置情報へのアクセスを遮断しました。このままタブを閉じていただいて問題ありません..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "安全を確保するため、トラッキングスクリプトをブロックし、マイク、カメラ、位置情報へのアクセスを取り消しました。"
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "これらの検索結果の確認を完了できませんでした。"
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "スキャン未完了"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "セキュリティアドバイザーは有効です"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "検索結果をスキャンしています…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "疑わしい検索結果"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "検索アドバイザーは無効です。設定から有効にすることができます。"
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Web保護は無効です。設定から有効にすることができます。"
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "チェックをスキップしてページを読み込みます。"
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "このページは悪意のあるページとして報告されています。"
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "このページは詐欺サイトです。"
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "このページは詐欺広告の一部です。"
+   },
+   "searchAdvisor_text_malware": {
+      "message": "デバイスへ被害を加える可能性がある要素を検出しました。"
+   },
+   "searchAdvisor_text_miner": {
+      "message": "このページは、お使いのデバイスのリソースを無断で利用して暗号資産のマイニングを行おうとしたためブロックされました。"
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "このページはセキュリティアドバイザーでは検査できません。"
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "チェックをスキップしてページを読み込みます。"
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "ブロックを解除するまでブロックされたままです。"
+   },
+   "searchAdvisor_text_phish": {
+      "message": "このページはフィッシング詐欺サイトです。"
+   },
+   "searchAdvisor_text_pua": {
+      "message": "このページは、お使いのデバイスに PUA (望ましくない可能性があるアプリ) をダウンロードしようと試みたためブロックされました。"
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "このページは、現在のブラウジングセッションでスキャン対象から除外されます。"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "このページは安全ですが、過去にセキュリティ問題が報告されています。"
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "このページは、除外リストに追加されているためスキャンから除外されます。"
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Google、Bing、Yahoo、DuckDuckGo の各検索結果の横に安全性の評価を追加するため、クリックする前に危険なリンクを見分けられます。"
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "検索結果への安全性表示"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "保護は無効になっています"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "検索結果をスキャンできません"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "このページは検査できません。"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "このドメインはホワイトリストに登録されています"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "詐欺の危険が含まれるストアを検出しました"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "詐欺の試みを検出しました"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "詐欺広告が検出されました"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "脅威を検出しました！"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "マイニングの試みが検出されました"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "ページを検査できません"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "このページは今回のセッションでは対象外です"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "このページはあなたがブロックしました"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "フィッシング攻撃が検出されました"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "望ましくないアプリケーション(PUA) のダウンロードが検出されました"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "このウェブサイトは安全です"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "スキャン"
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "信頼されていないドメインが検出されました"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "例外ページを検出しました"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "{n}件のトラッカーをブロックしました"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "トラッキングスクリプトのブロックがオフになっているため、このページのトラッカーは確認されていません"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "スクリプトを読み込む (安全ではありません)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "このページでトラッキングスクリプトは検出されませんでした"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "このページのブロックを解除できませんでした。"
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "このページのブロックを解除しています…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "既知の脅威は見つかりませんでした"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "ページがブロックされました"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "ページの読み込み時間: {n}ミリ秒"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "安全です"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "このページでいくつかのリスクが見つかりました。個人情報、パスワード、支払い情報の入力は避け、ファイルのダウンロードも行わないでください。"
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "注意が必要です"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "今のところ問題ありません。"
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "ブラウジング中のお客様を保護しています。"
+   },
+   "urlScanning_blocked_by": {
+      "message": "ブロック元"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "悪意のあるドメインとして報告されています"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "偽のストアは実在の小売店になりすまし、代金の支払いやカード情報を入力させようとします。商品が届くことはほとんどなく、入力した情報は悪用されたり転売されたりする可能性があります。"
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "悪意のある危険なページは通常、ユーザーを騙してお金を送金させようと試みます。"
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "このページは詐欺対策のためにブロックされました。\n\nサイバー犯罪者は、ディープフェイクや投資話、その他の話題性のあるトピックを巧みに利用し、被害者を誘い込みます。そして、個人情報や金銭を騙し取ったり、マルウェアのダウンロードへ誘導したりします。"
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "危険なページは、ユーザーのデバイスに損害を与える危険のあるソフトウェアをインストールしようと試みたり、個人情報を収集したり、ユーザーの同意なくデバイスを不正に操作する場合があります。"
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "マイニングページは、デバイスのリソースを利用して仮想通貨を採掘するため、デバイスの利用可能性とハードウェア寿命に悪影響を与えます。"
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "フィッシングページは、安心できるサイトのように偽装することで、ログイン情報やクレジットカード情報などの個人データを盗み出そうとします。盗まれたデータによって、金銭的な被害が生じる恐れがあります。"
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "このページは PUA (望ましくない可能性があるアプリケーション)をデバイスにダウンロードしようとしました。この種類のアプリケーションは、デバイスとデータのプライバシーとセキュリティに悪影響をおよぼす恐れがあります。"
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "信頼されていないページは、疑わしい挙動や潜在的に危険な特徴を持つため、そのようなページを回避して個人データへのリスクを防ぐことが推奨されます。"
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "詐欺の危険が含まれるストアが、セキュリティ保護のためブロックされました"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "安全のため、一部のコンテンツをブロックしました。"
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "疑わしいコンテンツを検出しました"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "パネルを開けませんでした。もう一度お試しください。"
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "詳細を確認するには、ブラウザのサイドバーからBitdefenderパネルを開いてください。"
+   },
+   "urlScanning_page_blocked": {
+      "message": "ページがブロックされました"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "自動ダウンロード"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "カメラ"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "クリップボード"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "閉じる"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "このウェブサイトの {permissions} へのアクセスをブロックしました。"
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "このウェブサイトの {permissions} へのアクセスをブロックしました。"
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "このウェブサイトには {permissions} へのアクセスが許可されています。このウェブサイトが利用できる内容をご確認ください。"
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "このウェブサイトには {permissions} へのアクセスが許可されています。このウェブサイトが利用できる内容をご確認ください。"
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "プライバシーガードが確認の必要なアクセス許可を検出しました"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first}と{second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "位置情報"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "このウェブサイトの {permissions} へのアクセスはブロックされています。このウェブサイトが利用できる内容をご確認ください。"
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "このウェブサイトの {permissions} へのアクセスはブロックされています。このウェブサイトが利用できる内容をご確認ください。"
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guardがアクセス許可を管理しています"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "マイク"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "通知"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guardがアクセス許可を管理しています"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "注意して進んでください"
+   },
+   "urlScanning_see_details": {
+      "message": "詳細を表示"
+   },
+   "urlScanning_show_details": {
+      "message": "詳細を表示"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "閉じる"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "いくつか気になる兆候があります。個人情報の入力やダウンロードにはご注意ください。"
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "検索結果をスキャンできません"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "このページは検査できません。"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "詐欺の危険が含まれるストアを検出しました"
+   },
+   "urlScanning_title_fraud": {
+      "message": "詐欺の試みを検出しました"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "詐欺広告が検出されました"
+   },
+   "urlScanning_title_malware": {
+      "message": "脅威を検出しました！"
+   },
+   "urlScanning_title_miner": {
+      "message": "マイニングの試みが検出されました"
+   },
+   "urlScanning_title_phish": {
+      "message": "フィッシング攻撃が検出されました"
+   },
+   "urlScanning_title_pua": {
+      "message": "望ましくないアプリケーション(PUA) のダウンロードが検出されました"
+   },
+   "urlScanning_title_safe": {
+      "message": "このページは安全です。"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "信頼されていないドメインが検出されました"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "アクセスした URL をスキャンし、マルウェア、フィッシング、詐欺などの脅威を検出します"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "Web保護"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Bitdefender による Web 保護"
+   }
+}

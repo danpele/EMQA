@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L7_data.js?v=20261108a", "L7_text_en.js?v=20261108a", "common.js?v=20261108s"], "L7.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L7_data.js?v=20261108a", "L7_text_en.js?v=20261108a", "common.js?v=20261108a"], "L7.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the saved results of the Quantlets (forecasts of the test year 1 November 2025 – 31 October 2026) and the Romanian day-ahead prices. The ▶ button moves the main parameter step by step. Abbreviations: MAE = mean absolute error; DNN = deep neural network; XGBoost = extreme gradient boosting; LEAR = LASSO-estimated autoregressive model (LASSO = least absolute shrinkage and selection operator); AW-LEAR / AW-ARX = average of LEAR / ARX (autoregressive model with exogenous inputs) forecasts over several calibration windows; GBM = gradient boosting machine; MLP = multilayer perceptron; DM = Diebold–Mariano test; ROC = receiver operating characteristic; AUC = area under the ROC curve.</p>
-<p class="toc"><a href="#s-dnn">Deep neural networks</a> · <a href="#s-cmp">Honest comparison, combination and cost</a> · <a href="#s-fm">Gradient boosting and foundation models</a> · <a href="#s-spk">Spikes, negative prices and a case study</a></p>
+<p class="toc"><a href="#s-dnn">Deep neural networks</a> · <a href="#s-cmp">Model comparison, combination and computational cost</a> · <a href="#s-fm">Gradient boosting and foundation models</a> · <a href="#s-spk">Spikes, negative prices and a case study</a></p>
 <h2 class="sec" id="s-dnn">Deep neural networks</h2>
 <section class="blk" id="early-stopping">
   <h3>Early stopping: stop when the error on recent days stops falling</h3>
@@ -64,7 +64,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> The chosen DNN, refitted for October 2026, is trained with early stopping: training stops after 25 epochs without a lower error on the last 15% of the days, and the weights of the best epoch are kept. Would training to the end (epoch 76) give a lower error on those recent days?</div>
   <details><summary>Answer</summary><p>No. The training error keeps falling, to 23.06 EUR/MWh at epoch 76, but the error on the recent days is lowest at epoch 51 (24.50 EUR/MWh) and is 25.07 EUR/MWh at epoch 76: after epoch 51 the network memorises the past. With a short patience the search stops too early: with 5 epochs it stops at epoch 30 and keeps epoch 25 (24.91 EUR/MWh).</p></details>
-</section><h2 class="sec" id="s-cmp">Honest comparison, combination and cost</h2>
+</section><h2 class="sec" id="s-cmp">Model comparison, combination and computational cost</h2>
 <section class="blk" id="monthly-mae">
   <h3>Month by month, the combination beats AW-LEAR in 10 of 12 months</h3>
   <div class="pair">

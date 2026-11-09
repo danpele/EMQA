@@ -200,7 +200,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 1 measuring volatility
     D.section(t("Measuring volatility", "Măsurarea volatilității"))
     D.subsection(t("Percent or EUR/MWh", "În procente sau în EUR/MWh"))
-    D.concept(t("Volatility is the typical size of tomorrow's price surprise", "Volatilitatea măsoară mărimea obișnuită a surprizei de preț"),
+    D.concept(t("Definition of volatility", "Definiția volatilității"),
               t("Volatility tells how far from today's price tomorrow's price usually lands.",
                 "Volatilitatea arată cît de departe de prețul de azi ajunge, de obicei, prețul de mîine."),
               "\\[ \\underbrace{r_t=100\\ln\\frac{P_t}{P_{t-1}}}_{\\text{" + t("change in \\%", "variația în \\%") + "}}\\qquad "
@@ -233,7 +233,7 @@ def build(lang, H=None):
             job=t("a calm month says little about next month: risk comes in clusters.", "o lună calmă spune puțin despre luna următoare: riscul apare grupat."),
             tryit=NB + " \\S1", cite=t("(OPCOM day-ahead prices)", "(prețurile PZU publicate de OPCOM)"))
 
-    D.concept(t("Near zero the percent change explodes; below zero it does not exist", "Lîngă zero, variația procentuală explodează; sub zero, nu există"),
+    D.concept(t("Percentage changes at prices near zero or negative", "Variațiile procentuale la prețuri apropiate de zero sau negative"),
               t("The logarithm needs positive prices; near zero, ordinary moves become huge percentages.",
                 "Logaritmul cere prețuri pozitive; lîngă zero, variații obișnuite devin procente uriașe."),
               "\\[ \\operatorname{asinh}(x)=\\ln\\bigl(x+\\sqrt{x^2+1}\\bigr) \\]\\vspace{-2mm}\\[ \\Delta\\operatorname{asinh}P_t\\approx\\Delta\\ln P_t\\ \\ \\text{" +
@@ -270,7 +270,7 @@ def build(lang, H=None):
                tryit=NB + " \\S1", height="0.45\\textheight", cite=t("(" + OWN + "; Weron, 2014, IJF)", "(" + OWN + "; Weron, 2014, IJF)"))
 
     D.subsection(t("Stylised facts", "Faptele stilizate"))
-    D.figframe(t("The sign of a shock is unpredictable, its size is not", "Sensul unui șoc nu poate fi anticipat, mărimea lui da"),
+    D.figframe(t("Volatility clustering: autocorrelation of shocks and of squared shocks", "Gruparea volatilității: autocorelația șocurilor și a pătratelor lor"),
                None, None,
                "acf_clust", [
                    t(("Ljung--Box $Q(10)=T(T+2)\\sum_{k\\le10}\\hat\\rho_k^2/(T-k)$, $\\hat\\rho_k$ = autocorrelation at lag $k$: @{facts.lb_e|.1f} for $\\varepsilon_t$ ($p$ = @{facts.lb_e_p|.2f}), @{facts.lb_e2|.1f} for $\\varepsilon_t^2$ (critical value 18.31)",
@@ -409,8 +409,8 @@ def build(lang, H=None):
                 "după un șoc pe piața petrolului, mențineți limite mai largi circa @{xm.BRENT.hl_weeks|.0f} săptămîni; după un șoc procentual al prețului energiei electrice, doar cîteva zile."),
               tryit=NB + " \\S3", cite="(Engle, 2001, JEP)", wl="0.49", wr="0.48")
 
-    D.figframe(t("Answer to Lecture 1: oil and carbon shocks fade in weeks, not days",
-                 "Petrolul și carbonul: șocurile de volatilitate durează săptămîni"),
+    D.figframe(t("Half-life of volatility shocks by market",
+                 "Timpul de înjumătățire al șocurilor de volatilitate, pe piețe"),
                None, None, "halflife", [
                    t(("Curves: $100(\\hat\\alpha+\\hat\\beta)^h$ = percent of the extra variance left after $h$ days; half-lives in brackets", "Brent @{xm.BRENT.hl|.0f} trading days, about @{xm.BRENT.hl_weeks|.0f} weeks; EUA @{xm.EUA.hl|.0f}, about @{xm.EUA.hl_weeks|.0f} weeks",
                       "Romania: @{xm.RO_pct.hl|.1f} days in percent, but @{xm.RO_eur.hl|.0f} days in EUR/MWh, because volatility in money follows the price level"),
@@ -668,8 +668,8 @@ def build(lang, H=None):
             "footnotesize", cite="(Diebold \\& Mariano, 1995, JBES; Patton, 2011, JOE; RiskMetrics, 1996)")
 
     GH = "ghost"
-    D.chart(t("GARCH reacts at once; the 30-day history lags, then forgets abruptly",
-              "GARCH reacționează imediat; varianța istorică întîrzie și uită brusc"),
+    D.chart(t("GARCH and 30-day historical volatility around the largest shock",
+              "Volatilitatea GARCH și cea istorică pe 30 de zile în jurul celui mai mare șoc"),
             "fc_test", [
                 t(("Largest shock of the test year: @{" + GH + ".shock|+.0f} EUR/MWh on @{" + GH + ".date|date}",
                    "next day: GARCH $\\hat\\sigma$ from @{" + GH + ".garch_before|.0f} to @{" + GH + ".garch_after|.0f}, history only @{" + GH + ".hist_after|.0f} EUR/MWh",
@@ -705,7 +705,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 6 case study
     D.section(t("Case study: Romanian power in 2026", "Studiu de caz: prețul energiei electrice din România în 2026"))
     C = "case"
-    D.frame(t("Case study: 2026 is a level shock, not (yet) a new 2022", "Studiu de caz: 2026 este un șoc de nivel, nu (încă) o criză ca în 2022"), it(
+    D.frame(t("Case study: price level and volatility in 2026 compared with 2022", "Studiu de caz: nivelul prețurilor și volatilitatea în 2026, comparativ cu 2022"), it(
         (t("\\textbf{What happened to prices}", "\\textbf{Ce s-a întîmplat cu prețurile}"),
          t("Romanian base price: @{" + C + ".p_jan|.0f} EUR/MWh in January, @{" + C + ".p_oct|.0f} in October 2026 (monthly means)",
            "prețul de bază din România: @{" + C + ".p_jan|.0f} EUR/MWh în ianuarie, @{" + C + ".p_oct|.0f} în octombrie 2026 (medii lunare)"),

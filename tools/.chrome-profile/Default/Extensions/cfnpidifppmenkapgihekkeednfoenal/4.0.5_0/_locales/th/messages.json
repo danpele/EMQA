@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "กําลังตรวจสอบ..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "หยุดการโหลดโฆษณา การวิเคราะห์ โซเชียลมีเดีย และสคริปต์คุกกี้ของบุคคลที่สาม ทําให้เว็บไซต์ไม่สามารถสร้างโปรไฟล์ในการท่องเว็บของคุณได้ และหน้าเว็บจะโหลดเร็วขึ้น"
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "บล็อกสคริปต์ที่ติดตามใดๆ"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "ในเสี้ยววินาที"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "ประสิทธิภาพในการป้องกันการติดตาม"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "ด้วยสคริปต์ติดตามใดๆ"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "ปราศจากสคริปต์ติดตามใดๆ"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "โดเมนต่างๆ ทางด้านล่างจะไม่ถูกบล็อกด้วยระบบป้องกันการติดตาม"
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "เราใช้เครื่องมือติดตามเชิงพาณิชย์ เพื่อช่วยให้คุณค้นหาข้อเสนอพิเศษของเราได้อย่างง่ายดาย ภารกิจของเราคือเพื่อปกป้องความเป็นส่วนตัวของคุณ เราจะไม่แบ่งปันข้อมูลใดๆ ที่เก็บรวบรวมข้อมูลกับใครเพื่อวัตถุประสงค์ใดๆ"
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "ข้อเสนอพิเศษ"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "มีบางอย่างผิดปกติ"
+   },
+   "chatAgent_thinking": {
+      "message": "กําลังคิด..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "สแกนข้อความเพื่อหาลิงก์ฟิชชิ่ง และภัยคุกคามทางไซเบอร์ทั้งหมด"
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Chat Protection"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "ติดตามเว็บไซต์ที่คุณให้สิทธิ์การเข้าถึงกล้อง ไมโครโฟน ตําแหน่ง การแจ้งเตือน คลิปบอร์ด และการดาวน์โหลดโดยอัตโนมัติ เพื่อให้คุณสามารถตรวจสอบและเพิกถอนมันได้ใน Privacy Guard"
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "จัดการสิทธิ์ค่างๆ"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "สงวนลิขสิทธิ์"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "ลิขสิทธิ์ © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "นโยบายส่วนบุคคล"
+   },
+   "main_about_subscription_agreement": {
+      "message": "ข้อตกลงในการสมัครสมาชิก"
+   },
+   "main_about_third_party_license": {
+      "message": "เงื่อนไขใบอนุญาตสำหรับบุคคลที่สาม "
+   },
+   "main_about_version": {
+      "message": "เวอร์ชัน"
+   },
+   "main_account_manage_account_description": {
+      "message": "เข้าสู่ระบบบัญชี Bitdefender ของคุณ เพื่อจัดการในการตั้งค่า และค่ากำหนดต่างๆ ที่พอใจของคุณ"
+   },
+   "main_account_manage_account_title": {
+      "message": "จัดการบัญชี"
+   },
+   "main_account_managed_by_description": {
+      "message": "ถ้าหากต้องการใช้บัญชีอื่น กรุณายืนยันตัวตนในแอป Bitdefender ของคุณ"
+   },
+   "main_account_managed_by_title": {
+      "message": "จัดการโดยแอป Bitdefender ของคุณ"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "ดูและจัดการการสมัครรับข้อมูลของคุณ Bitdefender รายการ"
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "สมาชิกของฉัน"
+   },
+   "main_account_sign_out": {
+      "message": "ออกจากระบบ"
+   },
+   "main_account_subscription_active": {
+      "message": "ใช้งานอยู่"
+   },
+   "main_account_subscription_expired": {
+      "message": "การสมัครสมาชิกหมดอายุแล้ว"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "การสมัครสมาชิกได้หมดอายุลงแล้ว ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "จะหมดอายุใน [Days] วัน ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "หมดอายุใน [Days] วัน ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "แผนของรายบุคคล Individual Plan"
+   },
+   "main_account_subscription_section": {
+      "message": "ลงทะเบียน"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "ฟรี"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "บัญชีของฉัน"
+   },
+   "main_activity_details_error": {
+      "message": "โหลดข้อมูลของกิจกรรมไม่ได้"
+   },
+   "main_activity_detections_analysed": {
+      "message": "ถูกวิเคราะห์แล้ว"
+   },
+   "main_activity_detections_title": {
+      "message": "การตรวจจับ"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "การตรวจจับ"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "ข่าวกรองภัยคุกคาม"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "สัญญาณความเสี่ยงในแต่ละหมวดหมู่รวมกันอย่างไร สําหรับเว็บไซต์ที่คุณเยี่ยมชม"
+   },
+   "main_add_whitelist_already_added": {
+      "message": "เว็บไซต์นี้อยู่ในรายการที่อนุญาตของคุณแล้ว"
+   },
+   "main_add_whitelist_cancel": {
+      "message": "ยกเลิก"
+   },
+   "main_add_whitelist_description": {
+      "message": "โดเมนในรายการขาวของคุณจะถูกข้ามจากการสแกน คุณจะไม่ได้รับคําเตือนเกี่ยวกับภัยคุกคามใดๆ ที่มีอยู่ในหน้าเหล่านี้"
+   },
+   "main_add_whitelist_field_label": {
+      "message": "ที่อยู่เว็บไซต์"
+   },
+   "main_add_whitelist_save": {
+      "message": "บันทึก"
+   },
+   "main_add_whitelist_title": {
+      "message": "เพิ่มเว็บไซต์เพื่อเข้าในรายการที่อนุญาต"
+   },
+   "main_autonomy_level_title": {
+      "message": "ระดับความเป็นอิสระ"
+   },
+   "main_autonomy_save": {
+      "message": "บันทึกการตั้งค่า"
+   },
+   "main_dashboard_activity_title": {
+      "message": "กิจกรรม"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "การเปลี่ยนแปลงระดับในการป้องกัน"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "จัดการภัยคุกคามทั้งหมดโดยอัตโนมัติ และดําเนินการในทันทีที่พบ โดยไม่รบกวนคุณ"
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "การป้องกันโดยอัตโนมัติ"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "ตรวจสอบทุกอย่าง แล้วถามคุณก่อนจะดําเนินการ"
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "การป้องกันแบบมีทิศทาง"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "โดเมนทั้งหมดที่ตรวจสอบแล้ว"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "การสแกนที่ผสานเทคโนโลยี Intel ในร้านค้าทางออนไลน์"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "การช็อปปิ้งอย่างปลอดภัย"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "ข้อมูลเชิงลึกของไซต์ที่มีความเสี่ยงในแบบเรียลไทม์"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Scam Protection การป้องกันการหลอกลวง"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "ผลการค้นหาที่ผสมผสานด้วย AI และเชื่อมกับขัอมูลข่าวกรอง"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "การแนะนำการค้นหา"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "ข้อมูลทางธนาคาร คริปโต และวอลเล็ต"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "การเงินที่มั่นคงปลอดถัย"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "ใช้งานอยู่"
+   },
+   "main_dashboard_filter_month": {
+      "message": "เดือน"
+   },
+   "main_dashboard_filter_today": {
+      "message": "วันนี้"
+   },
+   "main_dashboard_filter_week": {
+      "message": "สัปดาห์"
+   },
+   "main_dashboard_load_error": {
+      "message": "โหลดข้อมูลบนแดชบอร์ดไม่ได้"
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "ปิด"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "ตรวจสอบบุ๊กมาร์กและประวัติในการท่องเว็บ"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "กิจกรรมล่าสุด"
+   },
+   "main_dashboard_retry": {
+      "message": "ลองใหม่"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "ดูรายละเอียดกิจกรรม"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "ที่อันตราย"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "ปลอดภัย"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "ที่น่าสงสัย"
+   },
+   "main_error_boundary_text": {
+      "message": "เกิดข้อผิดพลาดในขณะแสดงผลป๊อปอัพในส่วนขยาย กรุณาลองรีเฟรช หรือเปิดหน้าต่างป๊อปอัพใหม่"
+   },
+   "main_error_boundary_title": {
+      "message": "มีบางอย่างผิดพลาด!"
+   },
+   "main_extension_description": {
+      "message": "บล็อกการหลอกลวง ฟิชชิ่ง และเว็บไซต์อันตรายก่อนจะโหลดฟรี Premium จะเพิ่ม AI ที่อธิบายภัยคุกคามและปกป้องเงินของคุณ"
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "ภาษาของแอป"
+   },
+   "main_general_app_theme": {
+      "message": "ธีมของแอป"
+   },
+   "main_general_privacy_policy": {
+      "message": "นโยบายส่วนบุคคล"
+   },
+   "main_general_product_reports_description": {
+      "message": "ส่งรายงานภัยคุกคามทางไซเบอร์ เพื่อปรับปรุงผลิตภัณฑ์ตามนโยบายความเป็นส่วนตัว"
+   },
+   "main_general_product_reports_title": {
+      "message": "รายงานผลิตภัณฑ์"
+   },
+   "main_general_theme_automatic": {
+      "message": "อัตโนมัติ"
+   },
+   "main_general_theme_dark": {
+      "message": "โหมดมืด"
+   },
+   "main_general_theme_light": {
+      "message": "โหมดความสว่าง"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "ขั้นตอนนี้ไม่มีคําอธิบาย"
+   },
+   "main_login_button": {
+      "message": "ลงชื่อเข้าใช้"
+   },
+   "main_login_connected_button": {
+      "message": "ต่อไป"
+   },
+   "main_login_connected_subtitle": {
+      "message": "ต่อไป ตั้งค่าวิธีการทํางานของ Security Advisor"
+   },
+   "main_login_connected_title": {
+      "message": "คุณได้เชื่อมโยงกันแล้ว!"
+   },
+   "main_login_create_account": {
+      "message": "สร้างบัญชี"
+   },
+   "main_login_no_account": {
+      "message": "ยังไม่มีบัญชีใช่ไหม"
+   },
+   "main_login_subtitle": {
+      "message": "ลงชื่อเข้าใช้ด้วยบัญชี Bitdefender ของคุณ"
+   },
+   "main_login_title": {
+      "message": "ปกป้องการท่องเว็บของคุณ"
+   },
+   "main_navbar_dashboard": {
+      "message": "แดชบอร์ด"
+   },
+   "main_opera_hint_caption": {
+      "message": "คลิกไอคอนของส่วนขยายในแถบด้านข้างเพื่อเปิดใช้"
+   },
+   "main_opera_hint_instruction": {
+      "message": "เปิด Bitdefender Web Sage จากแถบทางด้านข้างของ Opera"
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "อัปเกรดเป็น Premium เพื่อใช้ฟีเจอร์นี้"
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "จัดการสิทธิ์ค่างๆ"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "จัดการการแจ้งเตือน สิทธิ์ต่างๆ และตัวติดตามทั้งหมด"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "แนะนํารีวิว"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "ผู้พิทักษ์ความเป็นส่วนตัว"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacy Guard เป็นฟีเจอร์ระดับ Premium อัปเกรดเพื่อเปลี่ยนสิทธิ์ไซต์ที่นี่"
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "การเปลี่ยนแปลงนั้นไม่สามารถนําไปใช้ได้ กรุณาลองอีกครั้ง"
+   },
+   "main_privacy_guard_empty": {
+      "message": "ยังไม่มีการจัดการสิทธิ์ของเว็บไซต์ใดๆ Privacy Guard จะเพิ่มเว็บไซต์ที่นี่เมื่อบล็อกสิทธิ์ที่เว็บไซต์นั้นเคยได้รับอนุญาตให้ใช้"
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "ไปที่การตั้งค่า"
+   },
+   "main_privacy_guard_info": {
+      "message": "ปกป้องความเป็นส่วนตัวของคุณโดยการบล็อกสคริปต์ติดตาม และจัดการสิทธิ์ทั้งหมดในเว็บไซต์ คุณสามารถปรับแต่งตัวเลือกเหล่านี้ได้ในเมนูการตั้งค่าทั้งหมด"
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "จัดการสิทธิ์ค่างๆ"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "ดาวน์โหลดโดยอัตโนมัติ"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "การควบคุมกล้อง"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "การเข้าถึงคลิปบอร์ด"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "การเข้าถึงตำแหน่ง"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "การควบคุมไมโครโฟน"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "การแจ้งเตือน"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "ล้างการค้นหา"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "ไม่มีเว็บไซต์ใดๆ ที่ตรงกับการค้นหาของคุณ"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "ค้นหาเว็บไซต์"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "ไว้วางใจเว็บไซต์นี้ (อนุญาตทั้งหมด)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "ก่อนหน้านี้คุณเลือกที่จะไว้วางใจเว็บไซต์นี้ และอนุญาตสิทธิ์ทั้งหมดที่เว็บไซต์ร้องขอ (การแจ้งเตือน, การเข้าถึงตําแหน่ง, การควบคุมกล้อง และไมโครโฟน)"
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "สิทธิ์ในการเข้าถึงเว็บไซต์ ไม่สามารถจัดการได้ในเบราว์เซอร์นี้"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "ทําไมสิทธิ์ต่างๆ จึงถูกจัดการ?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "เมื่อเว็บไซต์ถูกบล็อกเนื่องจากไม่ปลอดภัย Privacy Guard จะบล็อกสิทธิ์ที่เคยได้รับอนุญาตให้ใช้ เช่น การแจ้งเตือนหรือการเข้าถึงกล้องวงจรปิด สิทธิ์ต่างๆ ที่เว็บไซต์นั้นไม่เคยมีก็ยังจะคงอยู่เหมือนเดิม"
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "ตรวจพบลิงก์แชทที่เป็นอันตรายแล้ว"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "ตรวจพบลิงก์แชทที่น่าสงสัยแล้ว"
+   },
+   "main_recent_activity_info": {
+      "message": "คําตัดสินทั้งหมดที่น่าสงสัย หรือมีเจตนาร้ายล่าสุด จะถูกเก็บไว้ตลอดเดือนที่ผ่านมา"
+   },
+   "main_recent_activity_load_error": {
+      "message": "ไม่สามารถโหลดกิจกรรมล่าสุดได้"
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "หน้าเพจหลอกลวงถูกบล็อกแล้ว"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "หน้าเพจหลอกลวงถูกตรวจพบแล้ว"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Search Advisor ที่ปรึกษาในการค้นหาได้ตรวจพบแล้ว"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "หน้าเพจที่เป็นอันตรายถูกบล็อกแล้ว"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "กิจกรรมที่น่าสงสัยถูกตรวจพบแล้ว"
+   },
+   "main_rename_device_cancel": {
+      "message": "ยกเลิก"
+   },
+   "main_rename_device_description": {
+      "message": "ตั้งชื่อที่ไม่ซ้ำกันให้กับอุปกรณ์ของคุณเพื่อช่วยให้คุณระบุอุปกรณ์ได้ง่าย"
+   },
+   "main_rename_device_field_label": {
+      "message": "ชื่ออุปกรณ์"
+   },
+   "main_rename_device_save": {
+      "message": "บันทึก"
+   },
+   "main_rename_device_title": {
+      "message": "เปลี่ยนชื่ออุปกรณ์นี้"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "การเพิกถอนการเข้าถึงกล้องสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "การเพิกถอนการเข้าถึงกล้องสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "เพิกถอนการเข้าถึงคลิปบอร์ดสำหรับ {n} เว็บไซต์แล้ว"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "กำลังเพิกถอนการเข้าถึงคลิปบอร์ดสำหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "ลบคุกกี้และข้อมูลเว็บไซต์สําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "การล้างคุกกี้และข้อมูลเว็บไซต์สําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "บล็อกการดาวน์โหลดโดยอัตโนมัติสำหรับ {n} เว็บไซต์แล้ว"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "กำลังบล็อกการดาวน์โหลดโดยอัตโนมัติสำหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_fixes": {
+      "message": "ปรับใช้การแก้ไขทั้งหมด"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "การแก้ไข {n} ของทั้งหมด {t} ที่ถูกปรับใช้แล้ว"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "การเพิกถอนการเข้าถึงกล้องสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "การเพิกถอนการเข้าถึงกล้องสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "การเพิกถอนการเข้าถึงไมโครโฟนสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "การเพิกถอนการเข้าถึงไมโครโฟนสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "การแจ้งเตือนที่ถูกบล็อกแล้วสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "การบล็อกการแจ้งเตือนสําหรับ {n} เว็บไซต์"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "เปลี่ยนชื่อของ {n} บุ๊กมาร์กเสี่ยงแล้ว"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "การเปลี่ยนชื่อของ {n} บุ๊กมาร์กเสี่ยงแล้ว"
+   },
+   "main_sa_applying_fixes": {
+      "message": "กําลังแก้ไข..."
+   },
+   "main_sa_autonomy_full": {
+      "message": "การป้องกันโดยอัตโนมัติ"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "การป้องกันแบบมีทิศทาง"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "ปรับใช้การแก้ไขทั้งหมดที่เลือกแล้ว"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "สิ่งที่ฉันกําลังทําอยู่"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "การปรับใช้การแก้ไขทั้งหมดโดยอัตโนมัติ"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "บทบาทของฉัน"
+   },
+   "main_sa_banner_criteria": {
+      "message": "สิ่งที่ฉันจะแจ้งเตือน"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "สิ่งที่ฉันจะแก้ไข"
+   },
+   "main_sa_banner_sources": {
+      "message": "สิ่งที่ฉันจะดู"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "ทางเลือกเองของคุณ"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "การจับคู่บุ๊กมาร์กต่างๆ กับภัยคุกคามที่รู้จักทั้งหมด..."
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "แสดงการตรวจสอบแล้ว {n} รายการ"
+   },
+   "main_sa_check_cookies": {
+      "message": "กําลังตรวจสอบคุกกี้ที่ถูกเก็บไว้ และข้อมูลของเว็บไซต์บนโดเมนที่ถูกติดธงไว้แล้ว..."
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} ใน {t} บุ๊กมาร์กทั้งหมดตรงกับภัยคุกคามที่รู้จัก"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} เว็บไซต์มีข้อมูลที่เหลืออยู่ที่ควรลบทิ้ง"
+   },
+   "main_sa_check_done_history": {
+      "message": "พบ {h} ของการเยี่ยมชมบนโดเมนที่ถูกธงแล้ว"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} ใน {t} สิทธิ์ที่ถูกแก้ไขแล้ว ดูเหมือนไม่จำเป็น หรือมีความเสี่ยง"
+   },
+   "main_sa_check_history_db": {
+      "message": "การเปรียบเทียบประวัติศาสตร์กับภัยคุกคามทั้งหมดที่รู้จัก..."
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "เราจะตรวจสอบสิ่งที่เสี่ยงที่สุดก่อน และเปรียบเทียบว่าแต่ละเว็บไซต์ สามารถเข้าถึงอะไรได้กับสิ่งที่ต้องการจริงๆ"
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "กําลังประเมินสิทธิ์ต่างๆ ในการเข้าถึงเว็บไซต์..."
+   },
+   "main_sa_continue": {
+      "message": "ต่อไป"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "คลิปบอร์ดและการดาวน์โหลด"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "ค้นหาเว็บไซต์ที่สามารถอ่านคลิปบอร์ดของคุณหรือดาวน์โหลดไฟล์โดยไม่ถามได้ และจะปิดเว็บไซต์ที่ไม่ควรใช้ให้คุณ"
+   },
+   "main_sa_criterion_notifications": {
+      "message": "การแจ้งเตือนผ่านเบราว์เซอร์"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "หยุดการแจ้งเตือนที่หลอกลวง และสแปมจากเว็บไซต์ต่างๆ ที่คุณไม่ได้ตั้งใจอนุญาต"
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "การแจ้งเตือน"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "การเข้าถึงไมโครโฟน กล้อง และตําแน่ง"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "ค้นหาเว็บไซต์ที่สามารถใช้ไมโครโฟน กล้อง หรือตําแหน่งของคุณได้ และจะปิดเว็บไซต์ที่ไม่ควรใช้ให้คุณ"
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "การเข้าถึงไมโครโฟน กล้อง และตําแน่ง"
+   },
+   "main_sa_criterion_threats": {
+      "message": "ภัยคุกคามทั้งหมดที่รู้จัก"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "บล็อกเว็บไซต์ต่างๆ ที่ทราบว่าเป็นอันตรายก่อนที่จะโหลด"
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "คลิปบอร์ดและการดาวน์โหลด — {n} เว็บไซต์ สามารถอ่านคลิปบอร์ดของคุณหรือดาวน์โหลดไฟล์โดยอัตโนมัติได้"
+   },
+   "main_sa_finding_cookies": {
+      "message": "ข้อมูลที่ถูกจัดเก็บแล้ว — {n} เว็บไซต์ ได้บันทึกคุกกี้หรือข้อมูลอื่นๆ บนอุปกรณ์ของคุณไว้แล้ว"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "เว็บไซต์ปลอม — {n} เว็บไซต์ ได้ลอกเลียนแบบธุรกิจจริง เพื่อหลอกลวงคุณ"
+   },
+   "main_sa_finding_permissions": {
+      "message": "สิทธิ์ในการเข้าถึงของ — {n} เว็บไซต์ สามารถเข้าถึงการแจ้งเตือน ตําแหน่ง ไมโครโฟน หรือกล้องของคุณได้"
+   },
+   "main_sa_finding_threats": {
+      "message": "ภัยคุกคามที่รู้จักทั้งหมด — {n} เว็บไซต์ อยู่ในรายชื่อเว็บไซต์ที่เป็นอันตรายที่เรารู้จัก"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "รายงานที่ถูกสร้างขึ้น: {n} คําเตือน"
+   },
+   "main_sa_findings_heading": {
+      "message": "การสแกนเสร็จสมบูรณ์แล้ว นี่คือสิ่งที่เราพบ:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "การสแกนเสร็จสมบูรณ์แล้ว แก้ไขสิ่งที่ฉันพบ:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "การสแกนเสร็จสมบูรณ์"
+   },
+   "main_sa_findings_none": {
+      "message": "ไม่มีอะไรโดดเด่น — ไม่มีคําเตือนจากการสแกนนี้"
+   },
+   "main_sa_finish_setup": {
+      "message": "บันทึกและดําเนินการต่อไป"
+   },
+   "main_sa_fix_cam": {
+      "message": "ยกเลิกการเข้าถึงกล้องแล้ว"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "เพิกถอนการเข้าถึงคลิปบอร์ด"
+   },
+   "main_sa_fix_cookies": {
+      "message": "ล้างคุกกี้ที่น่าสงสัย และข้อมูลที่จัดเก็บไว้ในเครื่อง"
+   },
+   "main_sa_fix_downloads": {
+      "message": "บล็อกการดาวน์โหลดโดยอัตโนมัติ"
+   },
+   "main_sa_fix_loc": {
+      "message": "เพิกถอนการเข้าถึงตําแหน่งที่ตั้ง"
+   },
+   "main_sa_fix_mic": {
+      "message": "เพิกถอนการเข้าถึงไมโครโฟน"
+   },
+   "main_sa_fix_notif": {
+      "message": "บล็อกการแจ้งเตือนทั้งหมด"
+   },
+   "main_sa_fix_rename": {
+      "message": "เปลี่ยนชื่อบุ๊กมาร์กที่มีความเสี่ยงทั้งหมด"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "ทำเครื่องหมายบุ๊กมาร์กที่มีความเสี่ยง {n} รายการแล้ว เพื่อให้มองเห็นได้ทันที"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "ทําการลบคุกกี้และข้อมูลที่ถูกจัดเก็บจากโดเมนที่ทำเครื่องหมาย {n} รายกการแล้ว"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "เพิกถอนสิทธิ์ต่างๆ {n} ไซต์ ที่คุณไม่ได้ใช้งานอย่างจริงจังแล้ว"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "ไม่มีอะไรต้องทําความสะอาด — ทุกอย่างได้ตรวจสอบเรียบร้อยแล้ว"
+   },
+   "main_sa_fixes_heading": {
+      "message": "นี่คือสิ่งที่ฉันจะทํากับเรื่องนี้:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "จัดการภัยคุกคามทั้งหมดโดยอัตโนมัติ และดําเนินการในทันทีที่พบ โดยไม่รบกวนคุณ"
+   },
+   "main_sa_full_protection_title": {
+      "message": "การป้องกันโดยอัตโนมัติ"
+   },
+   "main_sa_go_dashboard": {
+      "message": "เสร็จสิ้น"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "ตรวจสอบทุกอย่าง แล้วถามคุณก่อนจะดําเนินการ"
+   },
+   "main_sa_guided_protection_title": {
+      "message": "การป้องกันแบบมีทิศทาง"
+   },
+   "main_sa_intro_scan": {
+      "message": "เริ่มต้นด้วย การเลือกสิ่งที่ฉันควรดูในการสแกนครั้งแรกของคุณ"
+   },
+   "main_sa_intro_scan_full": {
+      "message": "เริ่มสแกนครั้งแรกของคุณ ฉันจะจัดการทุกอย่างจากตรงนี้"
+   },
+   "main_sa_list_last_separator": {
+      "message": " และ "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "นี่คือแผนของฉัน:"
+   },
+   "main_sa_plan_body": {
+      "message": "ฉันจะตรวจสอบ {targets} ของคุณ ทําการตรวจสอบกับภัยคุกคามทั้งหมดที่รู้จัก แล้วแสดงสรุปให้คุณดู ก่อนจะเปลี่ยนแปลงอะไร"
+   },
+   "main_sa_plan_body_full": {
+      "message": "ฉันจะตรวจสอบบุ๊กมาร์กต่างๆ ประวัติ และสิทธิ์ต่างๆ ของคุณ ทําการตรวจสอบกับภัยคุกคามทั้งหมดที่รู้จัก และแก้ไขทุกอย่างที่เสี่ยงทันทีที่พบเจอ"
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "ฉันจะโชว์สิ่งที่ฉันเจอ ก่อนจะเปลี่ยนอะไร คุณเป็นคนตัดสินใจว่าจะเกิดอะไรขึ้นต่อไป"
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "บุ๊กมาร์ก"
+   },
+   "main_sa_plan_target_history": {
+      "message": "ประวัติในการท่องเว็บ"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "สิทธิ์ต่างๆ ในการเข้าถึงเว็บไซต์"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "อ่านบุ๊กมาร์กต่างๆ {n} รายการ ใน {f} โฟลเดอร์"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "กําลังอ่านบุ๊กมาร์กต่างๆ..."
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "อ่านแหล่งข้อมูลต่างๆ {n} รายการ"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "ตอนนี้ฉันจะตรวจสอบทุกอย่าง เพื่อหาความเสี่ยงต่างๆ"
+   },
+   "main_sa_read_history_done": {
+      "message": "อ่านบันทึกประวัติศาสตร์ทั้งหมด {n} รายการ"
+   },
+   "main_sa_read_history_pending": {
+      "message": "กําลังอ่านและเรียกดูประวัติต่างๆ..."
+   },
+   "main_sa_read_permissions_done": {
+      "message": "ตรวจพบ {n} เว็บไซต์ ที่มีการเปลี่ยนแปลงสิทธิ์ต่างๆ แล้ว"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "กําลังตรวจสอบสิทธิ์ต่างๆ ของเว็บไซต์..."
+   },
+   "main_sa_reading_kickoff": {
+      "message": "ฉันจะอ่านก่อน แล้วค่อยวิเคราะห์ เริ่มตั้งแต่ตอนนี้เลย"
+   },
+   "main_sa_skip_assessment": {
+      "message": "ข้ามการสแกนครั้งแรก"
+   },
+   "main_sa_skip_fixes": {
+      "message": "ข้ามและแสดงรายงาน"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "บุ๊กมาร์ก"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "จับเว็บไซต์ต่างๆ ที่บันทึกไว้ ซึ่งค่อยๆ กลายเป็นความเสี่ยงตั้งแต่ที่คุณบุ๊กมาร์กเหล่านั้นไว้"
+   },
+   "main_sa_source_history": {
+      "message": "ประวัติในการท่องเว็บ"
+   },
+   "main_sa_source_history_desc": {
+      "message": "สังเกตเว็บไซต์ที่อันตรายต่างๆ ที่คุณเคยเยี่ยมชมมาก่อน เพื่อหลีกเลี่ยงในครั้งถัดไป"
+   },
+   "main_sa_start_assessment": {
+      "message": "เริ่มสแกน"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "เลือกได้ว่ามันจะทําได้มากแค่ไหน ด้วยตัวเอง:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "ทั้งหมดเสร็จแล้ว"
+   },
+   "main_sa_summary_all_good": {
+      "message": "ทุกอย่างดูดีหมด"
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} บุ๊กมาร์ก"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "สิ่งที่ฉันตรวจสอบแล้ว:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} ประวัติรายการ"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "สิทธิ์ต่างๆ {n} ไซต์ ใน {c} หมวดหมู่"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "สิ่งที่ฉันทําความสะอาดแล้ว:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "สิ่งที่ฉันพบ:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "จากนี้ไป ฉันจะตรวจสอบบุ๊กมาร์กใหม่ และสิทธิ์ต่างๆ ในแบบเบื้องหลัง และจะแจ้งเตือนสิ่งใดๆ ที่มีความเสี่ยงให้ทราบ"
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "ยังไม่มีอะไรเปลี่ยนแปลง กลับมาได้ทุกเมื่อ เพื่อทบทวน และนําวิธีแก้ไขทั้งหมด ที่นําเสนอมาปรับใช้"
+   },
+   "main_sa_summary_stand": {
+      "message": "นี่คือบทสรุป"
+   },
+   "main_sa_title_configure": {
+      "message": "ตั้งค่าให้ Security Advisor ที่ปรึกษาด้านความปลอดภัย"
+   },
+   "main_sa_what_look_for": {
+      "message": "สิ่งที่ฉันจะแจ้งเตือน"
+   },
+   "main_sa_where_look": {
+      "message": "สิ่งที่ฉันจะดู"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "ความเป็นอิสระ"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "การแนะนำการค้นหา"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "การป้องกันแบบเฉพาะทาง"
+   },
+   "main_settings_about": {
+      "message": "เกี่ยวกับ"
+   },
+   "main_settings_general": {
+      "message": "โดยทั่วไป"
+   },
+   "main_settings_language": {
+      "message": "ภาษา"
+   },
+   "main_settings_my_account": {
+      "message": "บัญชีของฉัน"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor ที่ปรึกษาด้านความปลอดภัย"
+   },
+   "main_settings_support": {
+      "message": "สนับสนุนช่วยเหลือ"
+   },
+   "main_settings_title": {
+      "message": "ตั้งค่า"
+   },
+   "main_settings_upgrade": {
+      "message": "อัปเกรดเป็น {premium} เพื่อการปกป้องที่ได้เพิ่มขึ้น"
+   },
+   "main_settings_whitelist": {
+      "message": "รายการที่อนุญาต"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "เปิด Bitdefender Web Sage จากแถบทางด้านข้างของเบราว์เซอร์"
+   },
+   "main_sign_in_reminder_description": {
+      "message": "ลงชื่อเข้าใช้ด้วยบัญชี Bitdefender ของคุณเพื่อเริ่มต้น"
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage ยังไม่ได้ปกป้องคุณ"
+   },
+   "main_support_center_description": {
+      "message": "ค้นหาคำตอบอย่างรวดเร็วสำหรับปัญหาที่พบบ่อยที่สุด หรือติดต่อทีมสนับสนุนของเราหากคุณต้องการความช่วยเหลือเพิ่มเติม"
+   },
+   "main_support_center_link": {
+      "message": "ไปยังศูนย์ให้การสนับสนุน"
+   },
+   "main_support_center_title": {
+      "message": " ศูนย์สนับสนุน"
+   },
+   "main_support_community_description": {
+      "message": "หาคำตอบ ถามคำถามของคุณ! เราอยู่ที่นี่เพื่อช่วยเหลือซึ่งกันและกัน! "
+   },
+   "main_support_community_link": {
+      "message": "ไถ่ถามจากชุมชน"
+   },
+   "main_support_community_title": {
+      "message": "ไถ่ถามจากชุมชน"
+   },
+   "main_test": {
+      "message": "ทดสอบ"
+   },
+   "main_third_party_category_fonts": {
+      "message": "ฟอนต์"
+   },
+   "main_third_party_category_label": {
+      "message": "หมวดหมู่:"
+   },
+   "main_third_party_category_packages": {
+      "message": "แพ็กเกจของ JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "ใบอนุญาตไลเซนส์:"
+   },
+   "main_third_party_link_label": {
+      "message": "ลิงก์:"
+   },
+   "main_third_party_page_intro": {
+      "message": "ต่อไปนี้เป็นการระบุการให้เครดิตสําหรับซอฟต์แวร์โอเพ่นซอร์สของบุคคลที่สาม ที่อยู่ในส่วนหนึ่งของส่วนขยายบนเบราว์เซอร์ของ Bitdefender (เวอร์ชัน $1) เราขอขอบคุณชุมชนโอเพ่นซอร์ส สําหรับการมีส่วนร่วมทั้งหมด"
+   },
+   "main_third_party_page_title": {
+      "message": "เงื่อนไขใบอนุญาตสำหรับบุคคลที่สาม "
+   },
+   "main_third_party_version_label": {
+      "message": "เวอร์ชั่น:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "ไม่ใช่แบบฟอร์มขนาดยาว ที่อยู่อีเมลและรหัสผ่าน ประมาณแค่หนึ่งนาที ครั้งเดียว แล้วก็จะเสร็จสิ้น"
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "ไม่ใช่ระบบที่ต้องจ่ายเงิน เพื่อเข้าถึงเนื้อหา {product} Standard นั้นฟรี และจะยังคงฟรีตลอดไป ไม่ต้องใช้บัตร ไม่มีการนับเวลาทดลองใช้งาน และไม่มีวันหมดอายุ"
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "ไม่ใช่การสมัครสมาชิก ด้วยบัญชีที่ไม่ใช่แผนการใช้ ไม่มีอะไรถูกเรียกเก็บเงิน และไม่มีอะไรในการต่ออายุอัตโนมัติ"
+   },
+   "main_welcome_account_not_title": {
+      "message": "และพูดตรงๆ ว่านี่ไม่ใช่อะไร"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome ใช้ที่ทํางาน่, ส่วน Edge ใช้ที่บ้าน เป็นเครื่องที่สองได้ บัญชีเดียวที่ครอบคลุม {product} ในทุกบัญชี โดยมีกฎที่เหมือนกัน"
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "ปกป้องได้ทุกที่ ไม่ใช่เฉพาะบนเบราว์เซอร์"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "บัญชี Bitdefender เดียวกันนี้ จะใช้ได้กับทุกอย่างที่ Bitdefender ผลิตขึ้นมา เพิ่มสินค้าในภายหลัง ให้ติดต่อฝ่ายสนับสนุนช่วยเหลือ ตรวจสอบอุปกรณ์ — คุณได้ตั้งค่าไว้เรียบร้อยแล้ว"
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "บัญชีเดียว ไม่ใช่อีกบัญชี"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "ทุกเว็บไซต์ที่คุณอนุญาต ทุกการป้องกันที่คุณปิด — ตอนนี้มันจะตามคุณไปแล้ว เบราว์เซอร์ใหม่ แล็ปท็อปใหม่ ติดตั้งใหม่: ทุกอย่างยังคงอยู่ครบ"
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "การตั้งค่าของคุณได้หยุดหายไป"
+   },
+   "main_welcome_account_straight": {
+      "message": "การปกป้อง {product} จะเริ่มเมื่อคุณได้เข้าสู่ระบบ จนกว่าจะถึงตอนนั้น การป้องกันจะยังคงไม่ทํางาน และไอคอนโล่ในเบราว์เซอร์ของคุณจะยังคงถูกปิดอยู่"
+   },
+   "main_welcome_account_sub": {
+      "message": "นั่นเป็นการเปลี่ยนแปลงที่แท้จริงจาก TrafficLight และมันก็สมเหตุสมผลที่จะถามว่าทําไม สามเหตุผลที่จริงใจ:"
+   },
+   "main_welcome_account_title": {
+      "message": "สิ่งเดียวที่เปลี่ยนไป"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "ท่องเว็บต่อไป"
+   },
+   "main_welcome_button_open": {
+      "message": "เปิด {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "ลงชื่อเข้าใช้"
+   },
+   "main_welcome_cta_checking": {
+      "message": "กําลังตรวจสอบบัญชีของคุณ..."
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "มี Bitdefender อยู่แล้วในอุปกรณ์นี้หรือเปล่า? คุณอาจเข้าสู่ระบบโดยอัตโนมัติ — หน้านี้จะอัปเดตในทันทีที่เกิดขึ้น"
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} จะปกป้องคุณเฉพาะเมื่อคุณได้เข้าสู่ระบบบัญชี Bitdefender ของคุณเท่านั้น การเข้าสู่ระบบจะเปิดใช้งานในการบล็อก โดยใช้แผนของคุณโดยอัตโนมัติ และรักษาการตั้งค่าให้ตรงกัน การสร้างบัญชีนั้นฟรี"
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "เข้าสู่ระบบ — ฟีเจอร์นี้ จะเปิดใช้งานในการป้องกัน"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "คุณพร้อมแล้ว"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "อัปเดตเสร็จสมบูรณ์"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight ได้โตขึ้นแล้ว"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "เปิดแดชบอร์ดของคุณ"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "ลงชื่อเข้าใช้"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "แดชบอร์ด กิจกรรม และการตั้งค่าของคุณ จะอยู่ที่ด้านบนของแผงควบคุม"
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "บัญชีของคุณ"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "บัญชี Bitdefender ของคุณ คือสิ่งที่เปิดการป้องกัน รักษาการตั้งค่าให้ตรงกันข้ามเบราว์เซอร์และอุปกรณ์ และมีแดดชบอร์ดเดียวสําหรับกิจกรรม และการตั้งค่าของคุณ"
+   },
+   "main_welcome_feature_account_title": {
+      "message": "บัญชีของคุณ แดชบอร์ดของคุณ"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "ในแผงควบคุม"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "พบกับ Security Advisor ที่ปรึกษาด้านความปลอดภัย"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "ทุกการตั้งค่าในการป้องกันจะอยู่ที่นี่ รวมถึงสิ่งที่มันทําได้ด้วยตัวเอง"
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor ที่ปรึกษาด้านความปลอดภัย"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "มันจะตรวจสอบบุ๊กมาร์กและประวัติการท่องเว็บของคุณกับภัยคุกคามที่รู้จัก เมื่อคุณตั้งค่า จากนั้นจะอธิบายสิ่งที่พบในหน้าเพจที่คุณเยี่ยมชม คุณเลือกได้ว่ามันจะถามก่อนลงมือทํา หรือจะจัดการเอง"
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor ที่ปรึกษาด้านความปลอดภัย"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "ในแผงควบคุม"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "ดูได้ในแผงควบคุม"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "เงียบในเว็บไซต์จริง แต่เสียงจะดังในเว็บไซต์ปลอม"
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "การเงินที่มั่นคงปลอดถัย"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "หน้าเว็บเพจใดๆ ของธนาคาร คริปโต และกระเป๋าเงิน จะถูกตรวจสอบเป็นพิเศษ: การปลอมตัวเป็นธนาคาร หรือแพลตฟอร์มแลกเปลี่ยน จะถูกจับได้ก่อนที่คุณจะพิมพ์รหัสผ่าน"
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "การเงินที่มั่นคงปลอดถัย"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "บนเว็บไซต์ใดๆ ของธนาคาร และคริปโต"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "ตั้งค่าในสองขั้นตอน"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "ไม่มีอะไรให้เปิด; มันจะปกป้องคุณตั้งแต่การอัปเดต"
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "ยังอยู่ที่นี่"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "การบล็อกหน้าเว็บเพจในแบบเรียลไทม์ และ Search Advisor จะทํางานเหมือนเดิม แต่ตอนนี้มีแหล่งข้อมูลที่มากขึ้น ถ้าคุณเคยรันส่วนขยายของ Anti-tracker แยกต่างหาก, ด้วย Privacy Guard ก็จะทําหน้าที่นั้นได้ — คุณสามารถลบมันออกได้"
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "ทุกสิ่งที่คุณพึ่งพายังคงอยู่ที่นี่"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "เปิดใช้งานตลอดเวลา"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "เปืดใช้ Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "ทุกเว็บไซต์ที่มันจัดการ พร้อมจะสวิตช์สําหรับแต่ละสิทธิ์ได้"
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "บล็อกตัวติดตาม และจัดการสิทธิ์ที่ไซต์มี — การแจ้งเตือนต่างๆ, ตําแหน่งที่ตั้ง, กล้อง, ไมโครโฟน, การดาวน์โหลดอัตโนมัติ และคลิปบอร์ด เมื่อเว็บไซต์ใดไม่ปลอดภัย สิ่งที่ได้รับอนุญาตจะถูกเพิกถอนแทนคุณ"
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "ในแผงควบคุม"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "ดูได้ในแผงควบคุม"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "คําเตือนจะปรากฏตรงที่คุณเรียกดู ก่อนที่คุณจะคลิก"
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Scam Protection การป้องกันการหลอกลวง"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "นอกเหนือจาก URLs ที่ทราบว่าไม่ดี: หน้าเว็บเพจที่น่าสงสัย จะได้รับการวิเคราะห์ AI แบบออนดีมานด์ ที่จะอธิบายปัญหาอย่างชัดเจน"
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "การป้องกันการหลอกลวงด้วย AI การสแกนลึก"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "บนหน้าเพจ"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "เปิดใช้แผงควบคุม"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "ทําเครื่องหมายข้างผลลัพธ์ในแต่ละอัน; เลื่อนมันไว้เพื่อหาสาเหตุ"
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "การแนะนำการค้นหา"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "คะแนนความปลอดภัยจะอยู่ข้างผลลัพธ์ของคุณบน Google, Bing, DuckDuckGo และ Yahoo เพื่อให้คุณได้รู้ก่อนคลิก"
+   },
+   "main_welcome_feature_search_title": {
+      "message": "การแนะนำการค้นหา"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "ในผลการค้นหาทั้งหมด"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "ดูได้ในแผงควบคุม"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "เป็นการตัดสินเกี่ยวกับตัวร้านค้าเอง ไม่ใช่แค่หน้าเพจที่คุณกําลังอ่านอยู่"
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "การช็อปปิ้งอย่างปลอดภัย"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "ร้านค้าทางออนไลน์ทั้งหมด จะถูกตรวจสอบกับข้อมูลร้านค้าทางออนไลน์ในขณะที่คุณเรียกดู ดังนั้นร้านค้าปลอมใดๆ และดีลต่างๆ ที่ดูดีเกินจริง จะถูกตรวจสอบก่อนที่คุณจะชําระเงิน"
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "การช็อปปิ้งอย่างปลอดภัย"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "บนเว็บไซต์ช้อปปิ้งทั้งหมด"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "ดูสถานะของหน้าเพจ"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "คุณจะสังเกตเห็นมันก็ต่อเมื่อมันมีอะไรจะพูดเท่านั้น"
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "การบล็อกหน้าเพจ"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "ทุกหน้าเพจที่เปิดอยู่จะถูกตรวจสอบกับข้อมูลข่าวกรองของภัยคุกคามจากBitdefender ถ้าเป็นอันตราย ระบบที่อันตรายจะถูกปิด shut down โดยทันที — และถูกบล็อกในทันทีก่อนที่จะโหลดขึ้นมาใหม่ได้"
+   },
+   "main_welcome_feature_web_title": {
+      "message": "หน้าเว็บดพจที่อันตรายจะถูกปิดในทันที"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "บนหน้าเพจ"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "กฎหมายและการสนับสนุนช่วยเหลือ"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "นโยบายส่วนบุคคล"
+   },
+   "main_welcome_footer_support": {
+      "message": "สนับสนุนช่วยเหลือ"
+   },
+   "main_welcome_footer_terms": {
+      "message": "ข้อกำหนดการใช้งาน"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "แผงควบคุมไม่สามารถเปิดโดยอัตโนมัติได้ คลิกที่ไอคอน {product} ในแถบเครื่องมือของคุณ เพื่อเปิดใช้"
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "แอนิเมชันจะแสดงวิธีปักหมุดในส่วนขยายบนแถบเครื่องมือของเบราว์เซอร์"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "คลิกที่ปุ่ม Extensions (ชิ้นส่วนจิ๊กซอว์) ที่มุมขวาบนของเบราว์เซอร์ของคุณ"
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "คลิกที่ปุ่ม Extensions (ชิ้นส่วนจิ๊กซอว์) ที่มุมขวาบนของเบราว์เซอร์ของคุณ"
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "คลิกที่ปุ่มส่วนขยาย (ชิ้นส่วนจิ๊กซอว์) ในแถบเครื่องมือของคุณ"
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "คลิกที่ปุ่มส่วนขยาย (ลูกบาศก์) ในแถบเครื่องมือของคุณ"
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "เปิดเมนูในส่วนขยายของเบราว์เซอร์ของคุณ"
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "ค้นหา {product} แล้วคลิกที่ไอคอนหมุดข้างๆ"
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "ค้นหา {product} แล้วคลิกที่ไอคอนหมุดข้างๆ เพื่อแสดงในแถบเครื่องมือ"
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "ค้นหา {product} แล้วเปิดการตั้งค่า (ไอคอนรูปเฟือง) แล้วเลือก ปักหมุดที่แถบเครื่องมือ"
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "ค้นหา {product} แล้วคลิกที่ไอคอนหมุดข้างๆ"
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "ค้นหา {product} และปักหมุดไว้ที่แถบเครื่องมือ"
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "เก็บไว้แค่คลิกเดียว เพื่อดูสถานะความปลอดภัยของหน้าเพจที่คุณใช้อยู่เสมอ"
+   },
+   "main_welcome_pin_title": {
+      "message": "ปักหมุด {product} ไว้ที่แถบเครื่องมือของคุณ"
+   },
+   "main_welcome_protected_done": {
+      "message": "การป้องกันเปิดใช้งานแล้ว ไม่มีอะไรที่ต้องทําอีกแล้ว — ปักหมุด {product} ไว้ให้เห็น"
+   },
+   "main_welcome_protected_plan": {
+      "message": "รวมอยู่ในแผน {plan} ของคุณแล้ว — ปลดล็อกอัตโนมัติ ไม่ต้องเปิดใช้งาน"
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "กําลังดําเนินการอยู่ในตอนนี้"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "ฟรีด้วยบัญชี Bitdefender ของคุณ"
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "คุณได้รับการปกป้องแล้ว — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "คุณได้รับการปกป้องแล้ว — {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "คุณได้เข้าสู่ระบบ และได้รับการปกป้องแล้ว"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "ปกป้องในแบบเรียลไทม์จากการหลอกลวง ฟิชชิ่ง และตัวติดตาม ได้ทุกที่ที่คุณเรียกดู แค่สองขั้นตอนก็จะเสร็จแล้ว"
+   },
+   "main_welcome_subtitle_update": {
+      "message": "เวอร์ชัน {version} ได้ถูกติดตั้ง และกําลังปกป้องคุณแล้ว นี่คือสิ่งที่มันเพิ่มเข้ามา"
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "ส่วนขยายของคุณ เพิ่งได้รับการอัปเกรดครั้งใหญ่ ทุกสิ่งที่ TrafficLight ทําได้ยังคงอยู่ และมีอีกมากที่มาถึงแล้ว"
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "เป็นส่วนหนึ่งของ {product} Premium ได้รวมอยู่ใน Bitdefender Total Security ขึ้นไป"
+   },
+   "main_welcome_title_new": {
+      "message": "ยินดีต้อนรับสู่ {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} ดีขึ้นเรื่อยๆ"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight ตอนนี้คือ {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "สิ่งที่คุณจะได้รับ"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "มีอะไรใหม่"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "มีอะไรใหม่"
+   },
+   "main_welcome_tour_next": {
+      "message": "ฟีเจอร์ถัดไป"
+   },
+   "main_welcome_tour_prev": {
+      "message": "ฟีเจอร์ก่อนหน้า"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} ของ {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "ทุกอย่างที่ {product} ทําให้คุณทีละฟีเจอร์ ก้าวผ่านมันไป หรือจะกระโดดลงไปเลยก็ได้"
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "อันใหม่ในเวอร์ชัน {version}. ก้าวผ่านมันไป หรือจะกระโดดลงไปเลยก็ได้"
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "ทุกอย่างที่ TrafficLight ทําได้ รวมถึงสิ่งนี้ด้วย ก้าวผ่านมันไป หรือจะกระโดดลงไปเลยก็ได้"
+   },
+   "main_welcome_window_title": {
+      "message": "ยินดีต้อนรับสู่ {product}"
+   },
+   "main_whitelist_add": {
+      "message": "เพิ่มเว็บไซต์"
+   },
+   "main_whitelist_import": {
+      "message": "นําเข้าโดเมนทั้งหมด"
+   },
+   "main_whitelist_info": {
+      "message": "โดเมนในรายการขาวของคุณจะถูกข้ามจากการสแกน คุณจะไม่ได้รับคําเตือนเกี่ยวกับภัยคุกคามใดๆ ที่มีอยู่ในหน้าเหล่านี้"
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "ถอดถอน"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "การสแกนภัยคุกคาม"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "สคริปต์ติดตาม"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "รวบรวมโฆษณาที่แสดงบนหน้าที่คุณเยี่ยมชม เพื่อให้สามารถตรวจสอบการหลอกลวงและการฉ้อโกงได้"
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "การตรวจสอบโฆษณา"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "แจ้งเตือนโฆษณาที่เป็นอันตรายและผลการค้นหาที่ได้รับการสนับสนุนซึ่งนําไปสู่การหลอกลวงหรือมัลแวร์"
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "โล่ป้องกันการฉ้อโกงโฆษณา"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "ตรวจจับเว็บไซต์ธนาคารปลอม และแพลตฟอร์มการลงทุนปลอม ที่สร้างขึ้นเพื่อขโมยข้อมูลรับรอง หรือทางการเงินของคุณ"
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "การป้องกันการฉ้อโกงทางการเงิน"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "เตือนคุณเกี่ยวกับร้านค้าปลอม และหน้าของการชําระเงินปลอมก่อนที่คุณจะกรอกรายละเอียดในการชําระเงิน"
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "การช็อปปิ้งอย่างปลอดภัย"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "บล็อกหน้าเพจนี้"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "โหลดไปเลย (แต่ไม่ปลอดภัย)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "โหลดเนื้อหาอยู่แล้ว (แต่ไม่ปลอดภัย)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "แสดงรายละเอียดเพิ่มเติม"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "กําลังพิจารณาในรายละเอียด..."
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "ตอนนี้ฉันไม่สามารถวิเคราะห์หน้าเพจนี้ได้ กรุณาลองอีกครั้ง"
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "การวิเคราะห์หน้าเว็บอย่างละเอียดไม่ใช่ส่วนหนึ่งของการสมัครสมาชิกในปัจจุบันของคุณ ดังนั้นผมจึงไม่สามารถตรวจสอบเรื่องนี้ได้"
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "มันใช้เวลานานเกินกว่าที่ฉันจะรอได้ เลยหยุดหาข้อมูลไป"
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "ตรวจสอบลิงก์ในแผงภาพรวม AI และทําเครื่องหมายลิงก์ที่นําไปสู่เว็บไซต์ที่ไม่ปลอดภัย"
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "ภาพรวม AI จากสแกนเนอร์"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "ปิดใช้งานในการตั้งค่า"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "ทำงาน"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "ไม่พร้อมใช้งาน"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "ที่ปรึกษาการค้นหาด้วย AI"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "ความฉลาดของลิงก์ผลการค้นหา"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "วิเคราะห์โดย {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "ฉันไม่สามารถบล็อกหน้าเพจนี้ได้"
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "บล็อกหน้าเพจนี้..."
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "บังคับตรวจสอบ (ลบออกจากรายการที่อนุญาต)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "สแกนอีกครั้ง"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "เลิกบล็อกหน้าเพจนี้"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "กําลังตรวจสอบฐานข้อมูลของภัยคุกคามที่รู้จัก..."
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "กําลังตรวจสอบการให้สิทธิ์..."
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "ตรวจสอบการหลอกลวง..."
+   },
+   "searchAdvisor_checking": {
+      "message": "กำลังตรวจสอบ"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "แสดงการตรวจสอบแล้ว {n} รายการ"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "บล็อกหน้าเพจ"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "ความยินยอม"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "เริ่มการวิเคราะห์ในแบบเชิงลึก"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "เริ่มการวิเคราะห์ในแบบเชิงลึก"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "การวิเคราะห์แบบเชิงลึกเสร็จสมบูรณ์แล้ว"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "กําลังวิเคราะห์เนื้อหาหน้าเว็บเพจ และภาพหน้าจอ..."
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "การวิเคราะห์แบบเชิงลึกไม่พบปัญหาใดๆ กับหน้านี้"
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "การวิเคราะห์แบบเชิงลึกเสร็จสิ้นโดยไม่พบตัวชี้วัดเฉพาะ"
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "การวิเคราะห์แบบเชิงลึกยืนยันว่าหน้านี้อันตราย"
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "เริ่มการวิเคราะห์"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "ถ้าคุณอนุญาต เราจะตรวจสอบเนื้อหาของหน้าเว็บเพจและภาพหน้าจอ เพื่อหาสิ่งที่ซ่อนอยู่ใต้พื้นที่นั้น"
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "การวิเคราะห์ในแบบเชิงลึกหมดเวลาแล้ว"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "หยุดรอหลังจาก {n} วินาที"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "การวิเคราะห์ในแบบเชิงลึกได้ใช้เวลานานเกินกว่าที่ฉันจะรอได้ เลยหยุดไป คุณสามารถเริ่มใหม่ได้ หรือจะเลือกจากที่เราหามาแล้วก็ได้"
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "เริ่มการวิเคราะห์ในแบบเชิงลึกหรือไม่?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "กําลังลบออกจากรายการที่อนุญาต และเริ่มตรวจสอบใหม่..."
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "รายงานที่ถูกสร้างขึ้น: {n} คําเตือน"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "รายงานที่ถูกสร้างขึ้น: {n} คําเตือน"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "ดําเนินการไปยังหน้าเพจ..."
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "ผลการค้นหาที่เป็นอันตราย"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "ตรวจสอบโฆษณาบนหน้าเพจที่คุณเยี่ยมชม และทําเครื่องหมายโฆษณาที่นําไปสู่การหลอกลวง"
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "การป้องกันโฆษณาหลอกลวง"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "เปิดการตั้งค่าส่วนขยาย"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera จะบล็อกไม่ให้ส่วนขยายเข้าถึงผลการค้นหาจนกว่าคุณจะอนุญาต เปิด opera://extensions ค้นหาส่วนขยายนี้ แล้วเปิด \"อนุญาตให้เข้าถึงผลลัพธ์ในหน้าการค้นหา\""
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "ไม่ได้ตรวจสอบผลการค้นหา"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard ได้บล็อกแล้ว {list} รายการ"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "เว็บไซต์นี้สามารถเข้าถึง {list} รายการของคุณได้"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "ยังไม่มีสิทธิ์การอนุญาต"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "สิทธิ์การอนุญาตไม่พร้อมใช้งาน"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "ยังไม่พบสัญญาณเตือน"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard แนะนําให้บล็อก {list} สําหรับเว็บไซต์นี้"
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "นี่คือสิ่งที่เราพบ:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "กู้คืนเนื้อหาที่ถูกบล็อกทั้งหมดแล้ว"
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "กําลังกู้คืนเนื้อหาที่ถูกบล็อก..."
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "ยังไม่พบรูปแบบการหลอกลวง"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "พบ {n} ตัวบ่งชี้อันตราย"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "พบ {n} ตัวบ่งชี้อันตราย"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "พบ {n} ตัวบ่งชี้ที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "พบ {n} ตัวบ่งชี้ที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "ไม่สามารถวิเคราะห์การหลอกลวงได้"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "จะปรากฏในเนื้อหาของการส่งเสริมการขายที่ไม่น่าเชื่อถือ"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "รูปแบบของการรีดไถแบบการขู่กรรโชกทรัพย์"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "รูปแบบของกลโกงในเรื่องธนบัตรปลอม"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "รูปแบบของกลโกงแบบฉวยโอกาสจากวิกฤต"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "รูปแบบในการฉ้อโกงของสกุลเงินดิจิทัล"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "รูปแบบของแพลตฟอร์มเพื่อหาคู่ของผู้ใหญ่ที่หลอกลวง"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "รูปแบบในการโฆษณาที่หลอกลวง"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "รุปแบบในการแจกของรางวัลที่หลอกลวง"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "รูปแบบของการสํารวจทางออนไลน์ที่หลอกลวง"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "รูปแบบกของการหลอกลวงในการลงทุนด้านพลังงาน"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "รูปแบบของกลโกงในการขู่กรรโชก"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "รูปแบบของรางวัลในการดูโฆษณาปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "รูปแบบของเว็บไซต์ในการจองปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "รูปแบบของคาสิโนปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "รูปแบบขององค์กรการกุศลปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "รูปแบบคลินิกปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "รูปแแบของการแจกคริปโตปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "รูปแบบของการบริการจัดส่งปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "รูปแบบของเอกสารปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "รุปแบบของร้านค้าอีคอมเมิร์ซปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "รูปแบบของสถาบันการศึกษาปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "รูปแบบของโอกาสในการจ้างงานปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "รูปแบบของการบริการด้านบันเทิงปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "รูปแบบของสถาบันการเงินปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "รูปแบบของการลงทุนทางด้านการเงินปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "รูปแบบของเว็บไซต์การพนันปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "รูปแบบของเงินรางวัลจากเกมปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "รูปแบบของการลงทุนด้านทองคําปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "รูปแบบของสวัสดิการจากรัฐบาลปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "รูปแบบของสถาบันของรัฐบาลปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "รูปแบบของการบริการตรวจคนเข้าเมืองปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "รูปแบบของสถาบันด้านกฎหมายปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "รูปแบบของบริการเพื่อคืนเงินปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "รูปแบบของร้านขายยาทางออนไลน์ปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "รูปแบบของคลินิกปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "รูปแบบของแพลตฟอร์มในการชําระเงินปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "รุปแบบของแคมเปญของรางวัลปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "รูปแบบของรางวัลหรือของสมนาคุณปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "รูปแบบของสํานักพิมพ์ปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "รูปแบบของแพลตฟอร์มในการวิจารณ์ปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "แพทเทิร์นต่างๆ ของร้านค้าปลอมในแคมเปญโฆษณา"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "รูปแบบของผู้ปฏิบัติทางจิตวิญญาณปลอม"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "รูปแบบของเงินรางวัลปลอม"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "รุปแบบของการหลอกลวงทางด้ารการเงิน"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "แคมเปญโฆษณาของร้านค้าปลอมที่ฉ้อโกง"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "รุปแบบของการฉ้อโกงด้านสุขภาพ"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "ตรวจพบการโจมตีด้วย Homoglyph แล้ว"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "รูปแบบของกิจกรรมต่างๆ ในเว็บไซต์ที่ผิดกฎหมาย"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "รูปแบบของบริการต่างๆ ที่ผิดกฎหมาย"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "รูปแบบของสสารที่ผิดกฎหมาย"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP ที่มีรูปแบบอันตราย"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP ที่มีรูปแบบน่าสงสัย"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "รูปแแบบของฟิชชิ่งที่รู้จัก"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "รูปแแบของการหลอกลวงที่รู้จัก"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "รูปแแบบของหลอกลวงด้วยลอตเตอรี่"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "ร้านค้าออนไลน์ที่มีความไว้วางใจที่ตํ่ามาก โดยมีสถานะที่ยังไม่เป็นที่ยอมรับ"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "รูปแบบในการเทรด/การลงทุนที่มีความน่าเชื่อถือที่ตํ่ามาก การมีตัวตนที่ยังไม่เป็นที่ยอมรับ"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "ลิงก์ของแพลตฟอร์มในการลงทุนที่เป็นอันตราย"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "ลิงก์ของร้านค้าออนไลน์ที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "รูปแบบของกลโกงด้วยยาเสพติด"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "ร้านค้าออนไลน์ที่มีตัวชี้วัดที่ขัดแย้งกัน"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "ร้านค้าออนไลน์ที่ไม่มีตัวตนที่มั่นคง"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "รูปแบบของกลโกงด้วยสัตว์เลี้ยง"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "รุปแบบแผนผังแบบพอนซี/แชร์ลูกโซ่"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "รูปบบของการหลอกลวงด้านอสังหาริมทรัพย์"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "รูปแบบของการหลอกลวงด้วยความรัก"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "รูปแบบของเว็บไซต์ที่หลอกลวงด้วยความรัก"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "รูปแบบของกลโกงจากสมาคมลับ"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "ลิงก์ของแพลตฟอร์มในการลงทุนที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "รูปแบบของลิงก์ที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "ลิงก์ของร้านค้าออนไลน์ที่น่าสงสัย"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "รูปแบบในการหลอกลวงของฝ่ายสนับสนุนทางเทคนิค"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "รูปแบบในการซื้อขาย/การลงทุนที่มีตัวชี้วัดที่ขัดแย้งกัน"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "รูปแแบในการซื้อขาย/การลงทุนที่ไม่มีตัวตนที่มั่นคง"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "ร้านค้าออนไลน์ที่มีความไว้วางใจที่ตํ่ามาก"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "ร้านค้าออนไลน์ที่มีความไว้วางใจที่ตํ่ามาก โดยมีสถานะที่ยังไม่เป็นที่ยอมรับ"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "รูปแบบในการเทรด/การลงทุนที่มีความไว้วางใจที่ตํ่ามาก"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "ลิงก์ที่น่าสงสัยมาก"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "ฉันได้บล็อกและตัดการเข้าถึงไมโครโฟน กล้อง และตําแหน่งของคุณแล้ว — คุณปลอดภัยที่จะปิดแท็บนี้ ..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "สคริปต์ติดตามได้ถูกบล็อกแล้ว และการเข้าถึงไมโครโฟน กล้อง และตําแหน่ง ได้ถูกเพิกถอนเพื่อความปลอดภัยของคุณ"
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "ฉันไม่สามารถตรวจสอบผลการค้นหาเหล่านี้ให้จบได้"
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "การสแกนยังไม่สมบูรณ์"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Security Advisor เปิดใช้อยู่"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "กําลังสแกนผลการค้นหาทั้งหมด..."
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "ผลการค้นหาที่น่าสงสัย"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Search Advisor ถูกปิดใช้งาน ไปที่การตั้งค่าเพื่อเปิดใช้งาน"
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "การป้องกันเว็บถูกปิดใช้งาน ไปที่การตั้งค่าเพื่อเปิดใช้งาน"
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "ข้ามการตรวจสอบ และโหลดหน้าเพจ"
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "หน้าเพจนี้ถูกติดเครื่องหมายแล้ว ว่าเป็นหน้าที่อันตราย"
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "หน้าเพจนี้เป็นส่วนหนึ่งของความพยายามของการหลอกลอง"
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "หน้านี้เป็นส่วนหนึ่งของโฆษณาที่หลอกลวง"
+   },
+   "searchAdvisor_text_malware": {
+      "message": "เราได้ตรวจพบองค์ประกอบที่อาจเป็นอันตรายต่ออุปกรณ์ของคุณ"
+   },
+   "searchAdvisor_text_miner": {
+      "message": "หน้าเพจนี้พยายามใช้ทรัพยากรในอุปกรณ์ของคุณ ในการขุดคริปโตเคอร์เรนซี และได้ถูกบล็อกแล้ว"
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "หน้าเพจนี้ไม่สามารถสแกนโดย Security Advisor ได้"
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "ข้ามการตรวจสอบ และโหลดหน้าเพจ"
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "หน้าเพจนี้จะถูกบล็อกจนกว่าคุณจะเลิกบล็อก"
+   },
+   "searchAdvisor_text_phish": {
+      "message": "หน้าเพจนี้เป็นส่วนหนึ่งของความพยายามจากฟิชชิ่ง"
+   },
+   "searchAdvisor_text_pua": {
+      "message": "หน้าเพจดังกล่าวได้พยายามดาวน์โหลด PUA (แอปที่อาจไม่เป็นที่ต้องการ) ไปยังอุปกรณ์ของคุณ และได้ถูกบล็อกแล้ว"
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "หน้าเพจนี้ได้ถูกข้ามจากการสแกนในเซสชันของการท่องเว็บในปัจจุบัน"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "หน้าเพจนี้อาจปลอดภัย แต่มีรายงานภัยคุกคามด้านความปลอดภัยบางอย่างในอดีต"
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "หน้าเพจนี้ถูกข้ามจากการสแกน เนื่องจากถูกเพิ่มไว้ในรายการของข้อยกเว้น"
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "เพิ่มคะแนนความปลอดภัยข้างผลลัพธ์ในแต่ละรายการบน Google, Bing, Yahoo และ DuckDuckGo เพื่อให้คุณสังเกตเห็นลิงก์ที่เสี่ยงก่อนการคลิก"
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "คําอธิบายประกอบผลการค้นหาต่างๆ"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "การป้องกันถูกปิดใช้งาน"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "ไม่สามารถสแกนผลการค้นหาได้"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "ไม่สามารถสแกนหน้าเพจนี้ได้"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "โดเมนนี้ได้รับการขึ้นบัญชีในรายการที่ปลอดภัยแล้ว"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "ตรวจพบร้านค้าที่เป็นการฉ้อโกงแล้ว"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "ตรวจพบความพยายามของการหลอกลวง"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "ตรวจพบโฆษณาที่หลอกลวง"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "ตรวจพบภัยคุกคาม!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "ตรวจพบความพยายามขุดเหมือง"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "ไม่สามารถสแกนหน้าเพจได้"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "หน้าเพจนี้ได้ถูกข้ามในเซสชันนี้"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "คุณบล็อกหน้าเพจนี้แล้ว"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "พยายามตรวจหาฟิชชิ่ง"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "ตรวจพบการดาวน์โหลดแอปที่อาจไม่พึงประสงค์แล้ว"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "เว็บไซต์นี้ปลอดภัย"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "กำลังสแกน..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "ตรวจพบโดเมนที่ไม่น่าเชื่อถือแล้ว"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "ตรวจพบหน้าเพจที่ยกเว้นแล้ว"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "ตัวติดตาม {n} รายการที่ถูกบล็อกแล้ว"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "การบล็อกสคริปต์ในการติดตามถูกปิดใช้งาน ดังนั้นหน้านี้จึงไม่ได้ถูกตรวจสอบสําหรับตัวติดตาม"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "โหลดสคริปต์ (ไม่ปลอดภัย)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "ไม่พบสคริปต์ติดตามในหน้าเพจนี้"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "ฉันไม่สามารถเลิกบล็อกหน้าเพจนี้ได้"
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "กำลังเลิกบล็อกหน้าเพจนี้..."
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "ไม่พบภัยคุกคามที่รู้จัก"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "หน้าเว็บเพจได้ถูกบล็อกแล้ว"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "หน้าเว็บเพจถูกโหลดใน {n}ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "คุณปลอดภัยแล้ว"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "เราพบความเสี่ยงบางอย่างในหน้าเพจนี้ หลีกเลี่ยงการกรอกข้อมูลส่วนตัว รหัสผ่าน หรือรายละเอียดของการชําระเงิน และอย่าดาวน์โหลดอะไรเลย"
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "ระวังที่นี่ด้วย"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "ตอนนี้ปลอดภัยแล้ว"
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "ปกป้องคุณในขณะที่คุณท่องเว็บ"
+   },
+   "urlScanning_blocked_by": {
+      "message": "หน้าเพจนี้ถูกบล็อกโดย"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "โดเมนได้ถูกติดธงแล้วว่าเป็นอันตราย"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "ร้านค้าปลอมที่เลียนแบบร้านค้าปลีกจริง จะรวบรวมการชำระเงินของคุณ และนำรายละเอียดบัตรของคุณไปด้วย คําสั่งซื้อแทบจะไม่ถูกส่งมอบ และข้อมูลที่คุณป้อนนั้น สามารถนํากลับมาใช้ใหม่ หรือขายต่อได้"
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "หน้าเว็บหลอกลวงมักพยายามหลอกล่อให้คุณส่งเงินด้วยเจตนาที่จะได้รับผลประโยชน์ที่ผิดกฏหมาย"
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "หน้าเพจนี้ได้ถูกบล็อกแล้ว เพื่อป้องกันการมีปฏิสัมพันธ์เพิ่มเติมกับกลโกง\n\nผู้โจมตีล่อเหยื่อด้วย deepfakes โอกาสลงทุน และหัวข้อที่กําลังเป็นที่นิยมอื่นๆ เพื่อหลอกล่อให้คุณเปิดเผยข้อมูลสําคัญ การเงิน หรือดาวน์โหลดมัลแวร์"
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "หน้าเว็บที่เป็นอันตรายพยายามที่จะติดตั้งซอฟต์แวร์ที่อาจเป็นอันตรายต่ออุปกรณ์ รวบรวมข้อมูลส่วนบุคคลหรือดำเนินการโดยปราศจากความยินยอมของคุณ"
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "เพจผู้ขุดเหมือง ได้ใช้ทรัพยากรของอุปกรณ์ เพื่อทำการขุดหา cryptocurrency ส่งผลกระทบต่อการใช้งาน และอายุการใช้งานของฮาร์ดแวร์ของคุณ"
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "หน้าเว็บฟิชชิ่งเพจจะพยายามขโมยข้อมูลสำคัญ เช่น ข้อมูลการเข้าสู่ระบบ หรือรายละเอียดของบัตรเครดิต โดยปลอมตัวเป็นหน่วยงานที่น่าเชื่อถือ ข้อมูลที่ถูกขโมยไปสามารถนำไปใช้เพื่อผลประโยชน์ทางการเงินได้"
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "หน้านี้พยายามดาวน์โหลด PUA (แอปที่อาจไม่เป็นที่ต้องการ) ไปยังอุปกรณ์ของคุณ แอปประเภทนี้แสดงพฤติกรรมที่ส่งผลกระทบต่อความเป็นส่วนตัว และความปลอดภัยของอุปกรณ์และข้อมูลของคุณ"
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "หน้าเว็บที่ไม่น่าเชื่อถือแสดงพฤติกรรมที่น่าสงสัย หรือเป็นลักษณะเฉพาะที่เราคิดว่ามีความเสี่ยงดังนั้น คุณควรหลีกเลี่ยงการเข้าถึงข้อมูลเหล่านี้เพื่อรักษาข้อมูลของคุณไว้อย่างเป็นอันตราย"
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "ร้านค้าที่เป็นการฉ้อโกงได้ถูกบล็อกแล้ว เพื่อความปลอดภัยของคุณ"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "เราได้บล็อกเนื้อหาบางส่วนแล้ว เพื่อความปลอดภัยของคุณ"
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "ตรวจพบเนื้อหาที่น่าสงสัยแล้ว"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "ไม่สามารถเปิดแผงได้ โปรดลองอีกครั้ง"
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "เปิดแผงของ Bitdefender จากแถบด้านข้างของเบราว์เซอร์ เพื่อดูรายละเอียดต่างๆ"
+   },
+   "urlScanning_page_blocked": {
+      "message": "หน้าเว็บเพจได้ถูกบล็อกแล้ว"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "ดาวน์โหลดโดยอัตโนมัติ"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "กล้อง"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "คลิปบอร์ด"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "ปิด"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "การเข้าถึงเว็บไซต์ {permissions} นี้ถูกบล็อก"
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "การเข้าถึงเว็บไซต์ {permissions} นี้ถูกบล็อก"
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "เว็บไซต์นี้อนุญาตให้เข้าถึง {permissions} ได้ ลองดูว่าเว็บไซต์นี้ใช้อะไรบ้าง"
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "เว็บไซต์นี้อนุญาตให้เข้าถึง {permissions} ได้ ลองดูว่าเว็บไซต์นี้ใช้อะไรบ้าง"
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard พบสิทธิ์ในการตรวจสอบ"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} และ {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "ตําแหน่งที่ตั้ง"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "การเข้าถึง{permissions} ถูกบล็อกสําหรับเว็บไซต์นี้ ตรวจสอบสิ่งที่เว็บไซต์นี้สามารถใช้ได้"
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "การเข้าถึง {permissions} ถูกบล็อกสําหรับเว็บไซต์นี้ ตรวจสอบสิ่งที่เว็บไซต์นี้สามารถใช้ได้"
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard กําลังจัดการสิทธิ์ต่างๆ"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "ไมโครโฟน"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "การแจ้งเตือน"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard กําลังจัดการสิทธิ์ต่างๆ"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "โปรดดําเนินการด้วยความระมัดระวัง"
+   },
+   "urlScanning_see_details": {
+      "message": "ดูรายละเอียด"
+   },
+   "urlScanning_show_details": {
+      "message": "แสดงรายละเอียดทั้งหมด"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "ปิด"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "มีสัญญาณเตือนบางอย่าง ดูแลข้อมูลส่วนตัวและการดาวน์โหลดให้ดี"
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "ไม่สามารถสแกนผลการค้นหาได้"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "ไม่สามารถสแกนหน้าเพจนี้ได้"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "ตรวจพบร้านค้าที่เป็นการฉ้อโกงแล้ว"
+   },
+   "urlScanning_title_fraud": {
+      "message": "ตรวจพบความพยายามของการหลอกลวง"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "ตรวจพบโฆษณาที่หลอกลวง"
+   },
+   "urlScanning_title_malware": {
+      "message": "ตรวจพบภัยคุกคาม!"
+   },
+   "urlScanning_title_miner": {
+      "message": "ตรวจพบความพยายามขุดเหมือง"
+   },
+   "urlScanning_title_phish": {
+      "message": "พยายามตรวจหาฟิชชิ่ง"
+   },
+   "urlScanning_title_pua": {
+      "message": "ตรวจพบการดาวน์โหลดแอปที่อาจไม่พึงประสงค์แล้ว"
+   },
+   "urlScanning_title_safe": {
+      "message": "หน้าเพจนี้มีความปลอดภัย"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "ตรวจพบโดเมนที่ไม่น่าเชื่อถือแล้ว"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "สแกน URLs ที่เยี่ยมชมทั้งหมด เพื่อหามัลแวร์ ฟิชชิ่ง การฉ้อโกง และภัยคุกคามอื่นๆ"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "การป้องกันเว็บ"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "การป้องกันเว็บโดย Bitdefender"
+   }
+}

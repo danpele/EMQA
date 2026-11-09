@@ -30,7 +30,7 @@ For comparison with other energy assets the lecture adds daily solar generation 
 
 Two cleaning steps matter. For Brent, the first trading day of each month is dropped, 95 days in all, because the change of the nearest contract is not a price move. The EUA series starts on 19 October 2021.
 
-## Volatility is the typical size of tomorrow's price surprise {h=bdd5818d}
+## Definition of volatility {h=0eed0740}
 
 Volatility tells how far from today's price tomorrow's price usually lands. For electricity, the daily price $P_t$ is the base price of day $t$, the mean of the day's hourly prices in euro (EUR) per megawatt-hour (MWh). A price change can be measured in percent or in euro:
 
@@ -57,7 +57,7 @@ The extreme days are holidays and calendar breaks. The largest rise, +194%, happ
 @chart returns_ro
 Top: daily base price of Romania in EUR/MWh; bottom: daily log change $r_t$ in percent; the shaded band marks the energy crisis, September 2021 to December 2022.
 
-## Near zero the percent change explodes; below zero it does not exist {h=6530e76c}
+## Percentage changes at prices near zero or negative {h=944c8a79}
 
 The logarithm in @eq:returns needs positive prices, and near zero ordinary moves become huge percentages. A common alternative in the electricity literature is the inverse hyperbolic sine:
 
@@ -84,7 +84,7 @@ The left panel of the chart shows the mean change by weekday: about +38% on Mond
 @chart dow_effect
 Left: mean daily percent change of the Romanian base price by day of the week; right: standard deviation of the raw change and of the shock left after the mean equation.
 
-## The sign of a shock is unpredictable, its size is not {h=8206baaa}
+## Volatility clustering: autocorrelation of shocks and of squared shocks {h=c16f7c93}
 
 Once the calendar is removed, the shocks $\varepsilon_t$ behave like a fair coin in their sign but not in their size. The chart shows the autocorrelation of the shocks (left) and of the squared shocks (right) for lags up to a month. The first are almost all inside the band expected without autocorrelation; the second are positive and clearly outside it for many lags. Two tests confirm the picture. The Ljung–Box statistic,
 
@@ -219,7 +219,7 @@ Power and Brent are estimated from 2019, the EUA from 19 October 2021 and OMV Pe
 
 @practice After an oil shock keep wider limits for about 5 weeks; after a percent shock in power, for days.
 
-## Answer to Lecture 1: oil and carbon shocks fade in weeks, not days {h=0177c06e}
+## Half-life of volatility shocks by market {h=ef97b87e}
 
 Lecture 1 asked how long a risk desk should keep wider limits after a shock. The chart answers it by plotting $100(\hat\alpha+\hat\beta)^h$, the percent of the extra variance left $h$ days after a shock, for each series; the half-lives are given in brackets in the legend.
 
@@ -427,7 +427,7 @@ At the 5% level, in EUR/MWh all GARCH-type models and the EWMA beat the history 
 
 @practice Use GARCH-t as the default: asymmetric models add little out of sample.
 
-## GARCH reacts at once; the 30-day history lags, then forgets abruptly {h=1784334a}
+## GARCH and 30-day historical volatility around the largest shock {h=6b6b8c0e}
 
 The chart shows why GARCH wins. It plots, over the test year, the absolute shock of each day in EUR/MWh with the GARCH-t forecast and the 30-day historical forecast, both made the day before. The largest shock of the test year was +124 EUR/MWh on 22 January 2026. The next day the GARCH $\hat\sigma$ jumped from 25 to 47 EUR/MWh, while the historical forecast rose only to 33, because one day weighs one thirtieth in its window.
 
@@ -462,7 +462,7 @@ Volatility forecasts are compared with QLIKE and the DM test on days the model h
 
 The case study applies the tools of the lecture to the question every Romanian energy company asked in autumn 2026: is the rise in prices a new crisis like 2022? It looks at prices and volatility in 2026, tests the one-day GARCH band over the test year, sets limits for November 2026 and replicates a study of energy shares and oil.
 
-## Case study: 2026 is a level shock, not (yet) a new 2022 {h=481e11e4}
+## Case study: price level and volatility in 2026 compared with 2022 {h=b6f3e441}
 
 Prices rose sharply in 2026. The monthly mean of the Romanian base price went from 150 EUR/MWh in January to 239 in October. Brent rose from 69 USD per barrel in February to 100 in March and 108 in October, and TTF gas from 32 to 87 EUR/MWh between February and October.
 

@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261108a", "L3_text_en.js?v=20261108a", "common.js?v=20261108s"], "L3.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261108a", "L3_text_en.js?v=20261108a", "common.js?v=20261108a"], "L3.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -56,9 +56,9 @@
 <p class="toc"><a href="#s-meas">Measuring volatility</a> · <a href="#s-garch">The GARCH family</a> · <a href="#s-case">Case study: Romanian power in 2026</a></p>
 <h2 class="sec" id="s-meas">Measuring volatility</h2>
 <section class="blk" id="clustering">
-  <h3>The sign of a shock is unpredictable, its size is not</h3>
+  <h3>Volatility clustering: autocorrelation of shocks and of squared shocks</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_en.jpg" alt="Slide 11: The sign of a shock is unpredictable, its size is not" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=11" target="_blank" rel="noopener"><img src="slides/L3_acf_clust_en.jpg" alt="Slide 11: Volatility clustering: autocorrelation of shocks and of squared shocks" loading="lazy"></a>
       <figcaption>Slide 11</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="cl-u">Unit of the shocks</label><select id="cl-u"><option value="pct" selected>Change in % (log)</option><option value="eur">Change in EUR/MWh</option></select></div><div class="ctl"><label for="cl-L">Lags shown (days): <b id="cl-L-v"></b></label><input type="range" id="cl-L" min="10" max="60" step="5" value="30"></div><div class="ctl"><label for="cl-y">Start of the sample: <b id="cl-y-v"></b></label><input type="range" id="cl-y" min="2019" max="2025" step="1" value="2019"></div><button class="btn play" id="cl-play" type="button"></button></div><div class="charts "><div class="chart" id="cl-e"></div><div class="chart" id="cl-e2"></div></div><ul class="out" id="cl-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_acf_clust" target="_blank" rel="noopener">EMQA_L3_acf_clust</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_acf_clust/EMQA_L3_acf_clust.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>
@@ -86,9 +86,9 @@
   <details><summary>Answer</summary><p>With the long-run variance held at its estimate, the persistence α + β rises from 0.75 to 0.99: shocks die out slowly, the path becomes smooth and stays high for weeks after a spike, and the half-life of a shock grows from 2.4 days to about 58 days. The Student-t log-likelihood in the readout falls: the data prefer the faster decay. In EUR/MWh the estimate itself is persistent (α + β = 0.994, half-life 113.5 days), because the level of the price drives the size of the changes.</p></details>
 </section>
 <section class="blk" id="half-life">
-  <h3>Answer to Lecture 1: oil and carbon shocks fade in weeks, not days</h3>
+  <h3>Half-life of volatility shocks by market</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_en.jpg" alt="Slide 20: Answer to Lecture 1: oil and carbon shocks fade in weeks, not days" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=20" target="_blank" rel="noopener"><img src="slides/L3_halflife_en.jpg" alt="Slide 20: Half-life of volatility shocks by market" loading="lazy"></a>
       <figcaption>Slide 20</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="hl-p">Persistence α + β: <b id="hl-p-v"></b></label><input type="range" id="hl-p" min="0.5" max="0.999" step="0.001" value="0.746"></div><div class="ctl"><label for="hl-h">Horizon shown (days): <b id="hl-h-v"></b></label><input type="range" id="hl-h" min="20" max="250" step="10" value="120"></div><button class="btn play" id="hl-play" type="button"></button></div><div class="charts one"><div class="chart" id="hl-chart"></div></div><ul class="out" id="hl-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_halflife" target="_blank" rel="noopener">EMQA_L3_halflife</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_halflife/EMQA_L3_halflife.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

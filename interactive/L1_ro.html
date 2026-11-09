@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_ro.js?v=20261108a", "common.js?v=20261108s"], "L1.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_ro.js?v=20261108a", "common.js?v=20261108a"], "L1.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -106,9 +106,9 @@
   <details><summary>Răspuns</summary><p>Logaritmul nu este definit pentru prețuri zero sau negative. Sinusul hiperbolic invers, asinh((p − mediana)/(c·MAD)), unde MAD este abaterea absolută mediană, se comportă ca un logaritm în cozi și aproape liniar lîngă mediană, și acceptă orice semn. Pentru România în 2025, c = 1 reduce asimetria de la 0,90 la 0,09 și excesul de kurtosis de la 4,24 la −0,24; un c mai mic comprimă și mai mult cozile (exces de kurtosis negativ), un c mai mare lasă seria mai aproape de prețurile brute.</p></details>
 </section><h2 class="sec" id="s-tool">Instrumente pentru serii de timp</h2>
 <section class="blk" id="acf-hourly">
-  <h3>Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră</h3>
+  <h3>Autocorelația prețurilor la decalaje de o zi și de o săptămînă</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L1_acf_ro_hourly_ro.jpg" alt="Slide-ul 37: Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L1_acf_ro_hourly_ro.jpg" alt="Slide-ul 37: Autocorelația prețurilor la decalaje de o zi și de o săptămînă" loading="lazy"></a>
       <figcaption>Slide-ul 37</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="ac-z">Zona</label><select id="ac-z"><option value="RO" selected>România</option><option value="BG">Bulgaria</option><option value="HU">Ungaria</option><option value="DE_LU">Germania–Luxemburg</option></select></div><div class="ctl"><label for="ac-f">Seria</label><select id="ac-f"><option value="lev" selected>Prețul orar</option><option value="d24">Diferența față de aceeași oră de ieri</option></select></div><div class="ctl"><label for="ac-y">Anul: <b id="ac-y-v"></b></label><input type="range" id="ac-y" min="2016" max="2026" step="1" value="2025"></div><div class="ctl"><label for="ac-L">Laguri afișate (ore): <b id="ac-L-v"></b></label><input type="range" id="ac-L" min="48" max="336" step="24" value="168"></div><button class="btn play" id="ac-play" type="button"></button></div><div class="charts one"><div class="chart" id="ac-chart"></div></div><ul class="out" id="ac-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_acf_ro_hourly" target="_blank" rel="noopener">EMQA_L1_acf_ro_hourly</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_acf_ro_hourly/EMQA_L1_acf_ro_hourly.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>

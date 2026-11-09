@@ -54,7 +54,7 @@ The models of this lecture therefore use prices up to $d-1$; realised load, wind
 
 @practice a backtest that uses the realised load of $d-1$ looks excellent and cannot be run at 12:00.
 
-## Calibration, burn-in, test: time runs one way, data are never shuffled {h=6c953229}
+## Chronological split into calibration, burn-in and test periods {h=311115a6}
 
 A forecasting model for prices must be evaluated in the same order in which it would be used. Each model is re-estimated every day on a window that ends at $d-1$, then produces the 24 forecasts for day $d$; the window then moves forward by one day. There is no random K-fold cross-validation and no random validation split, because shuffling the days would let the model learn from the future and would make the backtest look better than reality (Weron, 2014; Lago, Marcjasz, De Schutter & Weron, 2021).
 
@@ -102,7 +102,7 @@ The switch is justified by the data. On Mondays, Saturdays and Sundays, the pric
 
 @practice ask any forecast vendor for the rMAE against this naive rule on your hours.
 
-## Four error measures, one benchmark-relative score {h=ce3739f3}
+## Four error measures and the relative MAE {h=40e64b76}
 
 Forecast errors can be summarised in several ways, and each answers a slightly different question (Hyndman & Koehler, 2006). With $e_{d,h}=P_{d,h}-\hat P_{d,h}$:
 
@@ -131,7 +131,7 @@ On the Romanian test year the MAPE of AW-LEAR is 5,777.7%. Without the 387 hours
 @chart mape_fail
 Absolute percentage error of the AW-LEAR forecast against the actual price for each of the 8,760 hours of the test year, with the band $|P|<5$ EUR/MWh shaded and the 100% error line marked.
 
-## The Diebold–Mariano test: is the gain larger than luck? {h=92df5f00}
+## The Diebold–Mariano test of equal predictive accuracy {h=9685cdd1}
 
 A lower MAE on one test year may be due to luck. The Diebold–Mariano test (Diebold & Mariano, 1995) asks whether the mean difference in errors between two models is large relative to its own noise. Following Ziel & Weron (2018), the 24 hourly errors are first averaged within each day, which removes the strong correlation between the hours of the same day (the multivariate version of the test):
 
@@ -143,7 +143,7 @@ On the 365 test days, naive against AW-LEAR gives DM = 7.32 with $p<0.001$: LEAR
 
 @practice switch models only when the gain is significant on your hours.
 
-## The DM chessboard: which model beats which on the Romanian test year {h=93b3bfab}
+## Pairwise DM tests on the Romanian test year {h=76b56549}
 
 Running the DM test of @eq:dm for every pair of models gives a matrix of p-values. Rows carry the model names and numbers, columns the same numbers. Each cell answers the question "is the column model more accurate than the row model?", and green cells mark a significant win of the column model. The diagonal is empty.
 
@@ -227,7 +227,7 @@ The left panel of the chart shows the transformation: close to the median it is 
 @chart vst
 Left: the asinh transformation and a plain z-score against the price, with the median and scale of the last window; right: monthly MAE of ARX(728) on raw and on asinh-transformed prices over the test year.
 
-## LEAR: give the model 247 candidates and let the LASSO switch most of them off {h=ee507c72}
+## LEAR: LASSO selection among 247 candidate regressors {h=f5a468ed}
 
 Instead of choosing the regressors by expert judgement, the LEAR model gives the regression many candidates and lets a penalty select them (Tibshirani, 1996; Uniejewski, Nowotarski & Weron, 2016; Lago et al., 2021). For each hour $h$:
 
@@ -258,7 +258,7 @@ The expert ARX model with one regression per hour already cuts the naive error b
 
 No single model or calibration window is best at all times. This section averages forecasts across calibration windows and across models, presents the scoreboard of the Romanian test year and previews two machine-learning models, gradient boosting and a neural network, that are developed in Lecture 7.
 
-## Short windows adapt, long windows are stable: average them {h=68f89236}
+## Averaging forecasts across calibration windows {h=46a06248}
 
 The length of the calibration window is a hard choice. A short window adapts quickly when the market changes; a long window gives more stable estimates. Instead of guessing the best length, the model can be estimated on several windows and the forecasts averaged (Hubicka, Marcjasz & Weron, 2019; Marcjasz, Serafin & Weron, 2018):
 
@@ -342,7 +342,7 @@ Time-series discipline applies here too. The number of training epochs is chosen
 
 @practice a neural network needs years of data and careful tuning, or you keep LEAR.
 
-## Hour by hour: machine learning helps inside the ensemble, not alone {h=4e479061}
+## Accuracy by hour: machine-learning models alone and in the ensemble {h=6e5b8891}
 
 The chart shows the MAE by hour of AW-LEAR, GBM, MLP and the ensemble of 4. Alone, the machine-learning models are better than AW-LEAR in 0 hours (GBM) and 0 hours (MLP). The ensemble of 4, which contains them, is better than AW-LEAR in 15 of the 24 hours. This is the practical meaning of @eq:ens: a weaker model whose errors are different still improves the average.
 
@@ -515,7 +515,7 @@ The analysis behind this lecture checks itself for leakage of future information
 
 @practice make the leakage check part of every model review, as Assignment 1 does.
 
-## AIDA 2026: probabilistic forecasts are judged by the money they make {h=e479b646}
+## AIDA 2026: economic evaluation of probabilistic forecasts {h=a390cd55}
 
 Two talks at the AIDA 2026 conference (Bucharest University of Economic Studies, June 2026) connect this lecture to current research; the findings and numbers below are those printed on the conference slides.
 

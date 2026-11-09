@@ -200,8 +200,8 @@ def build(lang, H=None):
         sep="1pt") + D.bottom(None, NB + " \\S1"), "footnotesize")
 
     # ------------------------------------------------------------------ 1 principles
-    D.section(t("Machine learning, evaluated honestly", "Învățarea automată, evaluată corect"))
-    D.concept(t("Machine learning buys flexibility and pays for it with variance", "Învățarea automată cîștigă flexibilitate, dar plătește prin varianță"),
+    D.section(t("Machine-learning models and their evaluation", "Modelele de învățare automată și evaluarea lor"))
+    D.concept(t("Flexibility and variance of machine-learning models", "Flexibilitatea și varianța modelelor de învățare automată"),
               t("A flexible model can learn thresholds and interactions that LEAR misses, but it can also learn the noise of the training years.",
                 "Un model flexibil poate învăța praguri și interacțiuni pe care LEAR nu le vede, dar poate învăța și zgomotul din anii de antrenare."),
               "\\[ \\hat\\theta=\\arg\\min_{\\theta}\\ \\underbrace{\\frac1n\\sum_{i=1}^{n}\\ell\\big(Y_i,f_\\theta(\\mathbf x_i)\\big)}_{\\text{" +
@@ -259,7 +259,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 2 neural networks
     D.section(t("Deep neural networks", "Rețele neuronale profunde"))
-    D.concept(t("A neural network stacks regressions, each followed by a bend", "O rețea neuronală înlănțuie regresii, fiecare urmată de o funcție neliniară"),
+    D.concept(t("Structure of a feed-forward neural network", "Structura unei rețele neuronale cu propagare înainte"),
               t("Each neuron bends a linear combination of the inputs; the output layer gives the 24 prices of day $d$ at once.",
                 "Fiecare neuron transformă neliniar o combinație liniară a intrărilor; stratul de ieșire dă deodată cele 24 de prețuri ale zilei $d$."),
               "\\[ \\mathbf z=\\phi\\big(W_1\\mathbf x_d+\\mathbf b_1\\big),\\qquad \\hat{\\mathbf Y}_d=W_2\\,\\mathbf z+\\mathbf b_2\\in\\mathbb R^{24} \\]"
@@ -281,7 +281,7 @@ def build(lang, H=None):
                 "o rețea neuronală este o regresie cu mult mai mulți coeficienți: are nevoie de aceeași disciplină a datelor, nu de mai puțină."),
               tryit=NB + " \\S2", cite=CITE_L, wl="0.56", wr="0.41")
 
-    D.concept(t("Training: small steps against the error, stopped in time", "Antrenarea: pași mici împotriva erorii, opriți la timp"),
+    D.concept(t("Training: stochastic gradient descent with early stopping", "Antrenarea: metoda gradientului descendent stocastic, cu oprire timpurie"),
               t("The weights move a little in the direction that lowers the error on a random batch of days; we stop when the error on later days stops falling.",
                 "Ponderile se modifică puțin, în direcția care reduce eroarea pe un grup aleator de zile; ne oprim cînd eroarea pe zilele mai recente nu mai scade."),
               "\\[ \\mathcal L(\\theta)=\\frac{1}{24\\,|B|}\\sum_{d\\in B}\\sum_{h=0}^{23}\\big|Y_{d,h}-\\hat Y_{d,h}(\\theta)\\big| \\]"
@@ -470,7 +470,7 @@ def build(lang, H=None):
         "\\href{https://arxiv.org/abs/2411.03372}{Andrei et al., 2024, arXiv})")
 
     # ------------------------------------------------------------------ 4 comparison, combination, cost
-    D.section(t("Honest comparison, combination and cost", "Comparație corectă, combinare și cost"))
+    D.section(t("Model comparison, combination and computational cost", "Compararea modelelor, combinarea lor și costul de calcul"))
     RES = [("naive", t("Naive", "Naiv")), ("aw_arx", "AW-ARX"), ("aw_lear", "AW-LEAR"), ("ens4", t("Ensemble of 4 (Lecture 2)", "Ansamblul de 4 (cursul 2)")),
            ("gbm2", t("GBM (Lecture 2)", "GBM (cursul 2)")), ("mlp2", t("MLP (Lecture 2)", "MLP (cursul 2)")),
            ("xgb", t("XGBoost, tuned", "XGBoost, calibrat")), ("dnn", t("DNN, tuned", "DNN, calibrată")),
@@ -691,8 +691,8 @@ def build(lang, H=None):
                                          "stabiliți pragul din propriile costuri, nu retrospectiv (cel mai bun prag ulterior: @{decision.best_cut|.2f})."),
         tryit=NB + " \\S7", cite="(Murphy, 1977, MWR; " + t("own computation", "calcule proprii") + ")")
 
-    D.chart(t("Case study, @{case.day|date}: every model saw the spike, none its size",
-              "Studiu de caz, @{case.day|date}: vîrf anticipat, amploare subestimată"), "case_week", [
+    D.chart(t("Case study, @{case.day|date}: the models anticipated the spike but underestimated its size",
+              "Studiu de caz, @{case.day|date}: modelele au anticipat vîrful, dar i-au subestimat amplitudinea"), "case_week", [
         (t("\\textbf{Hour @{case.hour}:00 CET}: @{case.price|.2f} EUR/MWh, the highest price of the test year",
            "\\textbf{Ora @{case.hour}:00 CET}: @{case.price|.2f} EUR/MWh, cel mai mare preț din anul de test"),
          t("forecasts: AW-LEAR @{case.aw_lear|.0f}, XGBoost @{case.xgb|.0f}, DNN @{case.dnn|.0f}, Chronos-2 @{case.chr2|.0f}; spike probability @{case.p_xgb|.3f}",
@@ -734,7 +734,7 @@ def build(lang, H=None):
         "footnotesize", cite="(Andrei, Pele, Cramer, Amza \\& Diaconu, 2026, PICBE; " + t("case study C7", "studiul de caz C7") + ")")
 
     # ------------------------------------------------------------------ 7 pitfalls
-    D.section(t("Pitfalls that flatter a model", "Capcane care fac un model să pară mai bun"))
+    D.section(t("Evaluation errors that overstate accuracy", "Erori de evaluare care supraestimează precizia"))
     D.chart(t("Look-ahead: two invalid evaluations flatter XGBoost", "Informația din viitor: două evaluări invalide avantajează XGBoost"), "pit_leak", [
         (t("\\textbf{Shuffled 5-fold cross-validation}: future days end up in the training sample",
            "\\textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor intră în antrenare"),
@@ -747,7 +747,7 @@ def build(lang, H=None):
                                          "cereți oricărui furnizor o testare cronologică, cu intrările datate la închiderea licitației."),
         tryit=NB + " \\S9", cite="(Bergmeir \\& Benítez, 2012, Inf.\\ Sci.; " + t("own computation", "calcule proprii") + ")")
 
-    D.chart(t("Data snooping: choosing on the test year fakes a win over LEAR", "Alegerea pe anul de test simulează o victorie asupra LEAR"), "snooping", [
+    D.chart(t("Data snooping: selection on the test year gives a spurious gain over LEAR", "Data snooping: selecția pe anul de test produce un avantaj aparent față de LEAR"), "snooping", [
         t("Honest DNN (chosen on validation, 1 seed): MAE @{search.dnn.test_chosen|.2f}; best of @{search.n_cfg} settings on the test year: @{search.dnn.test_best|.2f}, just below AW-LEAR (@{acc.aw_lear.mae|.2f}).",
           "Rețeaua DNN aleasă corect (la validare, o inițializare): MAE @{search.dnn.test_chosen|.2f}; cea mai bună dintre cele @{search.n_cfg} " + de("search.n_cfg") + "setări pe anul de test: @{search.dnn.test_best|.2f}, chiar sub AW-LEAR (@{acc.aw_lear.mae|.2f})"),
         t("Validation works, but not perfectly: Spearman rank correlation @{search.dnn.spearman|.2f} (DNN), @{search.xgb.spearman|.2f} (XGBoost).",
@@ -794,8 +794,8 @@ def build(lang, H=None):
                                          "includeți reestimarea lunară în calendarul operațional, cu un responsabil, ca pe orice alt control."),
         tryit=NB + " \\S9", cite=OWN)
 
-    D.frame(t("Leakage self-check: deleting the future changes no forecast",
-              "Testul de scurgere a informației: ștergerea viitorului nu schimbă nimic"), cols(it(
+    D.frame(t("Leakage check: forecasts recomputed without future data are unchanged",
+              "Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate"), cols(it(
         (t("\\textbf{The test}", "\\textbf{Testul}"),
          t("for the first day of each of the @{leak.n_months} test months, all data after 12:00 on $d-1$ are deleted, then replaced by 10\\,000 EUR/MWh",
            "pentru prima zi din fiecare dintre cele @{leak.n_months} luni de test, toate datele de după ora 12:00 din ziua $d-1$ sînt șterse, apoi înlocuite cu 10\\,000 EUR/MWh"),

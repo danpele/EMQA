@@ -868,7 +868,7 @@ save_chart(fig, "decision", bottom=0.22)''')],
 
     # ------------------------------------------------------------------ 14 snooping
     Q["snooping"] = dict(
-        title="Data snooping: choosing on the test year fakes a win over LEAR",
+        title="Data snooping: selection on the test year gives a spurious gain over LEAR",
         desc=("Test-year MAE against validation-year MAE of the 25 configurations of the DNN and of XGBoost (one seed each), with the "
               "configuration chosen honestly on the validation year, the one that would be chosen on the test year (data snooping) and "
               f"AW-LEAR. Romanian day-ahead prices, validation year {D['val_start']} to {D['val_end']} and {test}."),
@@ -989,7 +989,7 @@ save_chart(fig, "pit_retrain", bottom=0.2)
     # ------------------------------------------------------------------ 17 case_week
     cs = J["case"]
     Q["case_week"] = dict(
-        title="Case study: every model saw the spike, none its size",
+        title="Case study: the models anticipated the spike but underestimated its size",
         desc=("Studiu de caz around the highest hourly price of the test year: hourly Romanian day-ahead price, the AW-LEAR, XGBoost and "
               "Chronos-2 forecasts and the spike threshold (top), and the XGBoost spike probability with the cost-loss threshold C/L and the "
               f"actual spike hours (bottom); week {cs['week_start']} to {cs['week_end']}."),

@@ -189,8 +189,8 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 1 price risk, VaR and ES
     D.section(t("Price risk: losses, quantiles, VaR and ES", "Riscul de preț: pierderi, cuantile, VaR și ES"))
-    D.chart(t("The risk sits in the daily price change: small until 2021, violent since",
-              "Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după"), "price_changes", [
+    D.chart(t("Daily price changes before and after 2021",
+              "Variațiile zilnice ale prețului înainte și după 2021"), "price_changes", [
         t(("$X_t=P_t-P_{t-1}$ = change of the daily base price, EUR/MWh", "prices can be negative, so we use changes, not log returns",
            "largest rise @{dist.RO.max|.2f} (@{dist.RO.max_date|date}), largest fall @{dist.RO.min|.2f} EUR/MWh (@{dist.RO.min_date|date})"),
           ("$X_t=P_t-P_{t-1}$ = variația zilnică a prețului de bază, EUR/MWh", "prețul poate fi negativ: folosim variații, nu randamente logaritmice",
@@ -276,7 +276,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 2 estimation
     D.section(t("Estimating VaR and ES: four methods", "Estimarea VaR și ES: patru metode"))
     D.subsection(t("Historical simulation and parametric models", "Simularea istorică și modelele parametrice"))
-    D.concept(t("Historical simulation: the past year is the distribution of tomorrow", "Simularea istorică: ultimul an de date este repartiția zilei de mîine"),
+    D.concept(t("Historical simulation with a one-year window", "Simularea istorică pe o fereastră de un an"),
               t("Sort the last 365 daily changes; the 4th largest is the 99\\% VaR.",
                 "Ordonăm ultimele 365 de variații zilnice; a patra cea mai mare este VaR de 99\\%."),
               "\\[ \\widehat{\\text{VaR}}^{\\text{HS}}_{\\alpha,t}=\\hat q_{\\alpha}\\big(X_{t-W},\\dots,X_{t-1}\\big) \\]"
@@ -314,7 +314,7 @@ def build(lang, H=None):
               tryit=NB + " \\S3", cite="(McNeil, Frey \\& Embrechts, 2015)", wl="0.55", wr="0.42")
 
     D.subsection(t("Filtered historical simulation and extreme values", "Simularea istorică filtrată și valorile extreme"))
-    D.concept(t("Filtered historical simulation: today's volatility, the past's shape", "Simularea istorică filtrată: volatilitatea de azi, forma repartiției din trecut"),
+    D.concept(t("Filtered historical simulation: past shocks rescaled to current volatility", "Simularea istorică filtrată: șocurile trecute, rescalate la volatilitatea curentă"),
               t("Divide past changes by their volatility, then rescale the shocks by today's volatility.",
                 "Împărțim variațiile trecute la volatilitatea lor, apoi înmulțim șocurile cu volatilitatea de azi."),
               "\\[ e_t=X_t-\\mu_{d(t)},\\quad \\sigma_t^2=\\omega+a\\,e_{t-1}^2+b\\,\\sigma_{t-1}^2,\\quad z_t=e_t/\\sigma_t \\]"
@@ -373,8 +373,8 @@ def build(lang, H=None):
         L_ = N["last"][m]
         lr.append([MN[m], fmt(L_["var95"], ".2f", lang), fmt(L_["var99"], ".2f", lang), fmt(L_["es975"], ".2f", lang),
                    fmt(L_["var99_eur"], ",.0f", lang), fmt(L_["es975_eur"], ",.0f", lang)])
-    D.frame(t("Same day, same data, five answers: choosing the method is a risk decision",
-              "Aceeași zi, aceleași date, cinci răspunsuri: alegerea metodei este o decizie de risc"),
+    D.frame(t("VaR and ES on the same day by five methods",
+              "VaR și ES pentru aceeași zi, estimate prin cinci metode"),
             "\\begin{center}" + table("@{}lrrrrr@{}", [t("Method", "Metoda"), "VaR$_{" + dec("0.95") + "}$", "VaR$_{" + dec("0.99") + "}$", "ES$_{" + dec("0.975") + "}$",
                                                       t("VaR$_{0.99}$, kEUR", "VaR$_{0{,}99}$, mii EUR"), t("ES$_{0.975}$, kEUR", "ES$_{0{,}975}$, mii EUR")], lr,
                                       size="footnotesize", stretch="1.2") + "\\end{center}\\vspace{-1mm}" + note(
@@ -410,7 +410,7 @@ def build(lang, H=None):
         tryit=NB + " \\S3", cite=t("(own computation; Weron, 2014, IJF)", "(calcule proprii; Weron, 2014, IJF)"))
 
     # ------------------------------------------------------------------ 3 backtesting
-    D.section(t("Backtesting: did the model keep its promise?", "Testarea retrospectivă: și-a respectat modelul promisiunea?"))
+    D.section(t("Backtesting VaR and ES", "Testarea retrospectivă a VaR și ES"))
     D.concept(t("Kupiec test: are there as many exceedances as promised?", "Testul Kupiec: sînt atîtea depășiri cîte au fost promise?"),
               t("A 99\\% VaR promises to be exceeded on 1\\% of days; count the exceedances and test whether the share differs from 1\\%.",
                 "O VaR de 99\\% promite că va fi depășită în 1\\% din zile; numărăm depășirile și testăm dacă proporția lor diferă de 1\\%."),
@@ -544,7 +544,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 4 collateral and limits
     D.section(t("From quantiles to margins, guarantees and limits", "De la cuantile la marje, garanții și limite"))
     D.subsection(t("Exchange margins", "Marjele la bursă"))
-    D.concept(t("Exchange margins are VaR in cash, paid every day", "Marjele la bursă sînt VaR plătită în numerar, în fiecare zi"),
+    D.concept(t("Exchange margins: initial margin as a VaR, variation margin paid daily", "Marjele la bursă: marja inițială ca VaR, marja de variație plătită zilnic"),
               t("The clearing house holds a deposit that covers a 99\\% two-day loss and settles gains and losses in cash every evening.",
                 "Casa de compensare reține un depozit pentru pierderea de 99\\% pe două zile și decontează zilnic diferențele."),
               "\\[ \\underbrace{\\text{IM}_t=K F_t\\,\\hat q_{" + dec("0.99") + "}\\big(|r^{(2)}|\\big)}_{\\text{" + t("initial margin", "marja inițială") + "}},\\quad "
@@ -643,7 +643,7 @@ def build(lang, H=None):
               tryit=NB + " \\S6", cite=t("(own estimates)", "(estimări proprii)"), wl="0.46", wr="0.51")
 
     # ------------------------------------------------------------------ 5 positions
-    D.section(t("Supplier and producer: one price, two tails", "Furnizorul și producătorul: un singur preț, două cozi"))
+    D.section(t("Price risk for suppliers and producers", "Riscul de preț pentru furnizori și producători"))
     S = "supplier"
     D.concept(t("A supplier's monthly cost-at-risk: the normal limit failed again", "Costul lunar la risc al unui furnizor: limita normală a eșuat din nou"),
               t("A supplier prices next month at this month's cost; the risk is a jump of the load-weighted price.",
@@ -673,7 +673,7 @@ def build(lang, H=None):
               "reestimați limita lunară în fiecare trimestru și testați-o în condițiile lunilor din 2022."),
         tryit=NB + " \\S7", cite=t("(own computation)", "(calcule proprii)"))
 
-    D.concept(t("Same price, two tails: the supplier's tail is heavier than the producer's", "Același preț, două cozi: coada furnizorului este mai groasă decît a producătorului"),
+    D.concept(t("Loss tails: the supplier's tail is heavier than the producer's", "Cozile pierderilor: coada furnizorului este mai groasă decît a producătorului"),
               t("A supplier loses when the price rises, a producer when it falls; prices jump up more than down.",
                 "Furnizorul pierde cînd prețul crește, producătorul cînd scade; prețurile sar mai mult în sus decît în jos."),
               "\\[ L^{\\text{" + t("buyer", "cumpărător") + "}}_t=+Q\\,24\\,X_t,\\qquad L^{\\text{" + t("seller", "vînzător") + "}}_t=-Q\\,24\\,X_t \\]" +
@@ -771,7 +771,7 @@ def build(lang, H=None):
               "o creștere lentă trece testele VaR, dar consumă lichidități: urmăriți și nivelul prețului."),
         tryit=NB + " \\S8", cite=t("(own estimates; OPCOM)", "(estimări proprii; OPCOM)"))
 
-    D.frame(t("Case study: in 2026 the danger was cash, not the daily VaR", "Studiu de caz: în 2026 pericolul a fost lipsa de lichidități, nu VaR zilnică"), cols(
+    D.frame(t("Case study: market risk and liquidity needs in 2026", "Studiu de caz: riscul de piață și nevoia de lichidități în 2026"), cols(
         it((t("\\textbf{Market risk barely moved}", "\\textbf{Riscul de piață aproape nu s-a modificat}"),
             t("FHS 99\\% VaR: @{case.fhs_jun|.2f} EUR/MWh in June, @{case.fhs_oct|.2f} in October", "VaR FHS de 99\\%: @{case.fhs_jun|.2f} EUR/MWh în iunie, @{case.fhs_oct|.2f} în octombrie"),
             t("ES test since 2023, FHS: $Z_2$ = @{case.z2_after_fhs|.3f}, not rejected", "testul ES din 2023, FHS: $Z_2$ = @{case.z2_after_fhs|.3f}, ipoteza nu este respinsă")),

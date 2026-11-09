@@ -18,7 +18,7 @@ The lecture uses only real data: 2,298 forward auctions of the Romanian electric
 - **Price** caps, floors and collars with the Black-76 formula, using a volatility estimated on real data.
 - **Evaluate** what a Romanian supplier and a producer gained or lost by hedging in 2022, 2025 and 2026.
 
-# Why hedge: exposures and the 2021–2022 lesson
+# Reasons for hedging: price exposures and the 2021–2022 crisis
 
 Every firm in the power chain holds a price position, and the 2021–2022 crisis showed in Romania how large the gains and losses of being hedged or unhedged can be. This section defines the exposures and measures the lesson on real auction prices.
 
@@ -81,7 +81,7 @@ Contracts differ by profile. The band covers all hours, Monday to Sunday (LD, OP
 
 @practice price a customer's contract on the forward of its delivery period, not on today's spot.
 
-## Physical or cash-settled: same hedge, different mechanics {h=38b8874a}
+## Physical delivery and cash settlement {h=1746bc0b}
 
 A physical forward delivers the MWh at price $F$; a cash-settled future pays only the gap between a reference average and $F$, and the firm buys the energy on the spot market. The two are equivalent only under one condition:
 
@@ -312,7 +312,7 @@ A supplier serving the national load profile paid a factor of 1.039 in 2019 and 
 
 @practice price a solar power purchase agreement (PPA) at the capture factor, not at the band forward.
 
-## Solar is worth ever less than the band, load ever more {h=f91d41cf}
+## Value of the solar and load profiles relative to baseload {h=c5e191be}
 
 The chart follows the two factors of @eq:shape year by year. The solar capture factor fell to 0.596 in 2025, as midday prices dropped with the growth of solar capacity; the load-weighted price rose to 7.1 EUR/MWh above the band in 2025. The band forward is therefore a poor hedge for both a supplier and a solar producer: one is under-hedged in expensive hours, the other over-hedged in cheap ones.
 
@@ -329,7 +329,7 @@ Hungarian contracts hedge Romanian prices almost perfectly, German ones leave a 
 
 An option gives protection against high (or low) prices while keeping the gain if prices move the other way, at the cost of a premium paid today. This section defines caps, floors and collars, prices them with the Black-76 formula on the 2027 Romanian band, and shows that the key input, volatility, has to be estimated and differs by source.
 
-## Caps, floors and collars: insurance instead of a fixed price {h=c36d1d7c}
+## Caps, floors and collars {h=31b0f534}
 
 A call caps the purchase price and keeps the gain if prices fall. The payoffs at expiry and the effective price paid with a cap or a collar are
 
@@ -464,7 +464,7 @@ The lesson is that a hedge transfers value between the two sides of the market. 
 
 @practice a producer with debt should sell forward even when it expects higher prices.
 
-## A hedging policy in eight lines {h=5d1d4196}
+## Elements of a hedging policy {h=de69cc2f}
 
 The lecture can be summarised as a hedging policy in four parts:
 

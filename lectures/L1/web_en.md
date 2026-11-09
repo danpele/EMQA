@@ -34,7 +34,7 @@ Every number and chart in this lecture comes from downloaded data. Prices come f
 
 The data end on 31 October 2026, the last complete month, and were downloaded on 4 November 2026. Whenever the lecture writes "2026 year to date (YTD)", it means January to October 2026. Missing values stay missing: they are never interpolated and never counted as zero, and every total is reported together with its coverage, the share of hours for which data exist.
 
-## One auction, one price per quarter-hour: where supply meets demand {h=47b8fc33}
+## The day-ahead auction: a clearing price for each quarter-hour {h=43341835}
 
 On the day-ahead market, sellers and buyers send price–quantity bids for each delivery interval of the next day. The exchange looks for the price at which the energy offered equals the energy demanded, and every accepted trade is paid that single price:
 
@@ -131,7 +131,7 @@ These shifts matter for prices because they change which plant is marginal. Less
 @chart mix_shares
 Share of each source in Romanian generation (%) in 2015, 2025 and January–October 2026, as horizontal bars.
 
-## Where the course goes: seven lectures, one map of models {h=36af70bf}
+## Course structure and models covered {h=9c534fcb}
 
 This lecture opens a course of seven: (1) energy markets and their data; (2) forecasting with classical and expert autoregressive models with exogenous variables (ARX); (3) volatility; (4) risk in energy companies, including price–volume risk, cash flow at risk, imbalance and basis risk; (5) derivatives and hedging, including power purchase agreements (PPA); (6) renewables, storage and flexibility, with cannibalisation, negative prices and batteries; (7) machine learning and foundation models for forecasting.
 
@@ -147,7 +147,7 @@ One coupled auction per day sets the Romanian price as the cost of the marginal 
 
 Before any model, the data must be measured in the right units, on the right clock and without invented values. This section fixes those conventions and then documents, on the Romanian and European series, the stylized facts of energy prices: level shifts, seasonality at three frequencies, spikes, negative prices, fat tails and volatility clustering.
 
-## Power and energy: a MW is not a MWh {h=875c37b4}
+## Power (MW) and energy (MWh) {h=60326361}
 
 A megawatt (MW) measures power, how fast energy flows; a megawatt-hour (MWh) measures how much energy flowed, for example 1 MW during one hour. Energy over a period and the coverage of the data are computed as
 
@@ -240,7 +240,7 @@ A Romanian Sunday costs on average 30.7 EUR/MWh less than the mean of its week, 
 
 @practice an industrial consumer can move flexible load (maintenance, pumping, charging) to Sunday and save that difference.
 
-## Spring is cheap: water and sun meet mild demand {h=ae175bfc}
+## Seasonal profile of prices, consumption and hydro output {h=09a82ba2}
 
 Over the year, the Romanian price follows the balance between demand and the cheap sources. Relative to the annual mean, the price is highest in January (1.26 times the mean) and lowest in April (0.72 times). Consumption is highest in January–February and lowest in May, while hydro output peaks in June, with the snow melt. In spring, abundant water and growing solar output meet mild demand, and prices fall.
 
@@ -251,7 +251,7 @@ The annual profile is the third seasonal frequency of the series, after the dail
 @chart profile_annual
 Monthly means 2016–2025: Romanian load, hydro and solar generation by month (GW, left) and the Romanian day-ahead price of each month relative to the annual mean, median over years (right).
 
-## Spikes: a few hours with extreme prices {h=8625c649}
+## Price spikes: definition and number of hours per year {h=e1dab3c4}
 
 A spike is an interval whose price is far above what is normal for that year. A robust rule flags an interval $t$ of year $y$ as a spike when
 
@@ -346,7 +346,7 @@ Energy prices shift level, follow daily, weekly and annual cycles, spike, turn n
 
 This section introduces the tools used throughout the course to describe a price series: stationarity, autocorrelation and partial autocorrelation, the naive benchmark, unit-root tests, decomposition and exponential smoothing. Each tool is applied to the Romanian, German or Brent data.
 
-## Stationary means the rules of the game do not change over time {h=fb295fc9}
+## Weak stationarity: constant mean, variance and autocovariances {h=4672622e}
 
 A series is (weakly) stationary if its average, its spread and its memory are the same in every period:
 
@@ -373,7 +373,7 @@ Four reading rules cover most cases. A slow decay from near 1 indicates persiste
 
 @practice a supplier's forecast for tomorrow starts from "same weekday last week": the autocorrelation at lag 7 is 0.672 in Romania since 2023.
 
-## Prices remember yesterday, last week and the same hour {h=2ccb9666}
+## Autocorrelation of prices at daily and weekly lags {h=9eb4e0c4}
 
 The two charts apply the reading rules to Romanian prices. For daily base prices from 1 January 2023 to 31 October 2026, the autocorrelation at lag 1 is $\hat\rho_1=0.789$ and at lag 7 $\hat\rho_7=0.672$; the partial autocorrelation at lag 7 is $\hat\alpha_7=0.257$, so the same weekday of the previous week carries information beyond that of the last few days. The autocorrelation function decays slowly, with peaks at multiples of 7.
 
@@ -400,7 +400,7 @@ For Romania in 2025 the naive forecast had an MAE of 22.9 EUR/MWh, at a mean pri
 @chart naive_bar
 MAE (EUR/MWh) of the naive forecast and of the two pure lags (day d−1 and day d−7) for Romanian hourly prices in 2024, 2025 and 2026 YTD.
 
-## Do shocks die out or stay? Two tests ask it from opposite sides {h=cac5deb7}
+## Shock persistence: two tests with opposite null hypotheses {h=6ce245fe}
 
 One test starts from "shocks are permanent" and looks for a pull back to a mean; the other starts from "the series is stable" and looks for a slow drift. The augmented Dickey–Fuller (ADF) test estimates
 
@@ -417,7 +417,7 @@ where $\Delta x_t=x_t-x_{t-1}$ is the change of the series, $\alpha$ a constant,
 
 @practice if a supplier's price can carry permanent shocks, "prices will come back to normal" is not a safe budget assumption.
 
-## One verdict per series: levels drift, changes are stable {h=ee57464b}
+## ADF and KPSS results by series: levels and changes {h=cc282cde}
 
 Applying both tests, with a constant only and ADF lags chosen by AIC at the 5% level, gives one verdict per series:
 

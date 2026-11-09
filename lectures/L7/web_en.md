@@ -17,7 +17,7 @@ The lecture uses the same real data and the same test year as Lecture 2, the hou
 - **Compare** them with the benchmarks of Lecture 2 on the same test year, with the mean absolute error (MAE), the root mean squared error (RMSE), the relative MAE (rMAE) and the Diebold–Mariano (DM) test, and combine machine learning with the statistical models.
 - **Explain** the forecasts, predict price spikes and negative prices, and recognise the pitfalls that make a model look better than it is.
 
-# Machine learning, evaluated honestly
+# Machine-learning models and their evaluation
 
 Flexible models can learn patterns that a linear model misses, but they can also learn the noise of the past; this section sets the rules that keep the evaluation honest. Data are split into training, validation and test samples in time order, and settings are chosen by random search on the validation year only.
 
@@ -29,7 +29,7 @@ Time is cut into three pieces. Training starts on 8 Jan 2022 and grows by one mo
 
 The benchmarks are the forecasts of Lecture 2, read from its files: the naive model; the autoregressive model with exogenous variables (ARX); the least absolute shrinkage and selection operator (LASSO); the LASSO-estimated autoregression (LEAR); ARX and LEAR averaged across calibration windows (AW-ARX and AW-LEAR); and the ensemble of 4 models. Because the test year is the same, every error in this lecture can be compared directly with Lecture 2.
 
-## Machine learning buys flexibility and pays for it with variance {h=fb721647}
+## Flexibility and variance of machine-learning models {h=19c7b2d6}
 
 A flexible model can learn thresholds and interactions that LEAR misses, but it can also learn the noise of the training years. Every model in this lecture, statistical or not, is estimated by the same principle: minimise the fit to the training days plus a penalty on complexity,
 
@@ -72,7 +72,7 @@ Machine learning is judged only on data it has not seen. Settings are chosen on 
 
 A neural network is a chain of regressions, each followed by a non-linear bend, trained by small steps against the error. This section builds the network used in the lecture, shows how it is trained and stopped in time, and measures what tuning gains.
 
-## A neural network stacks regressions, each followed by a bend {h=5eaa6f2b}
+## Structure of a feed-forward neural network {h=e99586a0}
 
 Each neuron bends a linear combination of the inputs; the output layer gives the 24 prices of day $d$ at once. With one hidden layer,
 
@@ -86,7 +86,7 @@ The network chosen on the validation year has 251 inputs, one hidden layer of 51
 
 @practice a network is a regression with many more coefficients: it needs the same data discipline, not less.
 
-## Training: small steps against the error, stopped in time {h=5dcdd41c}
+## Training: stochastic gradient descent with early stopping {h=60891de9}
 
 The weights move a little in the direction that lowers the error on a random batch of days. The loss on a batch and the update are
 
@@ -209,7 +209,7 @@ In this lecture the newer Chronos-2 (2025), used zero-shot on Romanian day-ahead
 
 Tuned boosted trees improve on the GBM of Lecture 2 but stay behind AW-LEAR. The pretrained Chronos-2, with no training at all, is more accurate than AW-LEAR in every hour.
 
-# Honest comparison, combination and cost
+# Model comparison, combination and computational cost
 
 All models are now compared on the same test year, with the same error measures and DM tests against AW-LEAR. The section shows that combinations of machine learning and statistical models are significantly better, explains why averaging works, and weighs accuracy against computing cost.
 
@@ -425,7 +425,7 @@ The chart shows the value of the rule over the test year as a function of the th
 @chart decision
 Value per MW and year of acting on spike alerts as a function of the probability threshold, with C/L, persistence and perfect foresight marked; 1 MW of flexible load, C = 30 EUR/MWh.
 
-## Case study, 30 Jun 2026: every model saw the spike, none its size {h=890621bc}
+## Case study, 30 Jun 2026: the models anticipated the spike but underestimated its size {h=0d1973ab}
 
 The case study looks at the week of 27 Jun 2026 – 3 Jul 2026. On 30 Jun 2026, at 20:00 CET, the price reached 954.59 EUR/MWh, the highest price of the test year. All models expected a high price: AW-LEAR forecast 520, XGBoost 499, the DNN 614 and Chronos-2 607 EUR/MWh, and the spike probability was 0.992. None came close to the actual level.
 
@@ -459,11 +459,11 @@ Our replication, case study C7, uses only gate-closure information. Over the tes
 
 Spikes come in the evening and negative prices at midday. A good price forecast already detects spikes, a cost–loss rule turns probabilities into money, and no model foresaw the size of the largest spike.
 
-# Pitfalls that flatter a model
+# Evaluation errors that overstate accuracy
 
 Most claims of large gains from machine learning come from evaluation mistakes rather than from better models. This section reproduces three such mistakes on our data, look-ahead, data snooping and frozen models, measures how much each flatters the result, and ends with a self-check for leakage.
 
-## Look-ahead: two invalid evaluations flatter XGBoost {h=374996c3}
+## Look-ahead: two invalid evaluations flatter XGBoost {h=c78133da}
 
 The chart compares the honest MAE of XGBoost, 23.26 EUR/MWh, with two invalid evaluations. The first is shuffled 5-fold cross-validation: the days are shuffled before being split, so future days end up in the training sample. The MAE drops to 22.01, 5.4% better, on paper only.
 
@@ -474,7 +474,7 @@ The second uses the load and wind and solar generation of day $d$ as inputs, lab
 @chart pit_leak
 MAE of XGBoost on the test year under the honest walk-forward evaluation, under shuffled 5-fold cross-validation and with same-day load and RES as inputs.
 
-## Data snooping: choosing on the test year fakes a win over LEAR {h=d5495c86}
+## Data snooping: selection on the test year gives a spurious gain over LEAR {h=167d8218}
 
 The honest DNN, chosen on validation and run with 1 seed, has MAE 23.34 EUR/MWh on the test year. If instead we pick the best of the 25 settings directly on the test year, we get 22.52, just below AW-LEAR (22.53): an apparent victory over the statistical benchmark, created only by choosing on the data used for evaluation (White, 2000).
 
@@ -503,7 +503,7 @@ On our data, the best of the 25 DNN settings on the test year is just below AW-L
 
 @practice when shown the best of many models, ask for an RC or SPA p-value against your benchmark.
 
-## Retraining: a model frozen for a year loses 4.2% {h=93f15bb2}
+## Retraining: a model frozen for a year loses 4.2% {h=435c4164}
 
 Markets change, so a model must be refitted. The chart compares the monthly-refitted XGBoost with a version fitted once, before the test year, and with a version fitted on a short rolling window. The frozen model has MAE 24.25, 4.2% worse. The loss grows with time: +0.15 EUR/MWh in the first 3 months and +3.70 in the last 3.
 
@@ -514,7 +514,7 @@ A short rolling window of 365 days does even worse (MAE 25.59) than the whole hi
 @chart pit_retrain
 MAE of XGBoost on the test year with monthly refits on all history, fitted once and with a 365-day rolling window, and the monthly gap of the frozen model.
 
-## Leakage self-check: deleting the future changes no forecast {h=350ec455}
+## Leakage check: forecasts recomputed without future data are unchanged {h=5d017c45}
 
 A simple test shows whether a pipeline leaks information from the future. For the first day of each of the 12 test months, all data after 12:00 on $d-1$ are deleted, then replaced by 10,000 EUR/MWh. XGBoost, the DNN and the spike classifier are refitted and must give the same forecasts.
 

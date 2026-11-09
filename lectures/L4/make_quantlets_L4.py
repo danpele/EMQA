@@ -241,7 +241,7 @@ def q_price_changes():
                  "electricity prices, day-ahead market, price changes, risk factor, volatility, Romania, OPCOM, time series",
                  f"power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, {SRC_EC} "
                  f"(cut-off {END})",
-                 title="The risk sits in the daily price change: small until 2021, violent since")
+                 title="Daily price changes before and after 2021")
     q.code(SETUP).code(prices())
     q.md("## The risk factor\n\nPrices can be negative, so the lecture uses daily changes $X_t=P_t-P_{t-1}$ (EUR/MWh), "
          "not log returns. A buyer of a flat block budgeted at yesterday's price loses $X_t$ per MWh.")

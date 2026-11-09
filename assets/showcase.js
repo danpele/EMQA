@@ -53,8 +53,8 @@
    "src": "Quantlets/L1/EMQA_L1_profile_annual/profile_annual.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_profile_annual",
    "q": "EMQA_L1_profile_annual",
-   "en": "Spring is cheap: water and sun meet mild demand",
-   "ro": "Primăvara, energia este ieftină: multă apă, mult soare, cerere moderată"
+   "en": "Seasonal profile of prices, consumption and hydro output",
+   "ro": "Profilul sezonier al prețurilor, al consumului și al producției hidro"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_negative_prices/negative_prices.png",
@@ -88,22 +88,22 @@
    "src": "Quantlets/L1/EMQA_L1_sim_wn_ar_rw/sim_wn_ar_rw.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_sim_wn_ar_rw",
    "q": "EMQA_L1_sim_wn_ar_rw",
-   "en": "Stationary means the rules of the game do not change over time",
-   "ro": "Staționaritate: regulile jocului nu se schimbă în timp"
+   "en": "Weak stationarity: constant mean, variance and autocovariances",
+   "ro": "Staționaritatea slabă: medie, varianță și autocovarianțe constante"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_acf_pacf_ro_daily/acf_pacf_ro_daily.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_acf_pacf_ro_daily",
    "q": "EMQA_L1_acf_pacf_ro_daily",
-   "en": "Prices remember yesterday, last week and the same hour",
-   "ro": "Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră"
+   "en": "Autocorrelation of prices at daily and weekly lags",
+   "ro": "Autocorelația prețurilor la decalaje de o zi și de o săptămînă"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_acf_ro_hourly/acf_ro_hourly.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_acf_ro_hourly",
    "q": "EMQA_L1_acf_ro_hourly",
-   "en": "Prices remember yesterday, last week and the same hour",
-   "ro": "Prețul ține minte ziua de ieri, săptămîna trecută și aceeași oră"
+   "en": "Autocorrelation of prices at daily and weekly lags",
+   "ro": "Autocorelația prețurilor la decalaje de o zi și de o săptămînă"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_naive_bar/naive_bar.png",
@@ -188,7 +188,7 @@
    "src": "Quantlets/L2/EMQA_L2_split_timeline/split_timeline.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_split_timeline",
    "q": "EMQA_L2_split_timeline",
-   "en": "Calibration, burn-in, test: time runs one way, data are never shuffled",
+   "en": "Chronological split into calibration, burn-in and test periods",
    "ro": "Datele se împart cronologic în calibrare, rodaj și test, fără amestecare"
   },
   {
@@ -209,7 +209,7 @@
    "src": "Quantlets/L2/EMQA_L2_dm_matrix/dm_matrix.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_dm_matrix",
    "q": "EMQA_L2_dm_matrix",
-   "en": "The DM chessboard: which model beats which on the Romanian test year",
+   "en": "Pairwise DM tests on the Romanian test year",
    "ro": "Matricea testelor DM: care modele sînt semnificativ mai precise în România"
   },
   {
@@ -251,8 +251,8 @@
    "src": "Quantlets/L2/EMQA_L2_ml_hour/ml_hour.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_ml_hour",
    "q": "EMQA_L2_ml_hour",
-   "en": "Hour by hour: machine learning helps inside the ensemble, not alone",
-   "ro": "Pe ore, învățarea automată ajută în cadrul ansamblului, nu luată separat"
+   "en": "Accuracy by hour: machine-learning models alone and in the ensemble",
+   "ro": "Precizia pe ore: modelele de învățare automată, separat și în ansamblu"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_qra_week/qra_week.png",
@@ -330,8 +330,8 @@
    "src": "Quantlets/L3/EMQA_L3_acf_clust/acf_clust.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_acf_clust",
    "q": "EMQA_L3_acf_clust",
-   "en": "The sign of a shock is unpredictable, its size is not",
-   "ro": "Sensul unui șoc nu poate fi anticipat, mărimea lui da"
+   "en": "Volatility clustering: autocorrelation of shocks and of squared shocks",
+   "ro": "Gruparea volatilității: autocorelația șocurilor și a pătratelor lor"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_tails/tails.png",
@@ -358,8 +358,8 @@
    "src": "Quantlets/L3/EMQA_L3_halflife/halflife.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_halflife",
    "q": "EMQA_L3_halflife",
-   "en": "Answer to Lecture 1: oil and carbon shocks fade in weeks, not days",
-   "ro": "Petrolul și carbonul: șocurile de volatilitate durează săptămîni"
+   "en": "Half-life of volatility shocks by market",
+   "ro": "Timpul de înjumătățire al șocurilor de volatilitate, pe piețe"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_nic/nic.png",
@@ -400,8 +400,8 @@
    "src": "Quantlets/L3/EMQA_L3_fc_test/fc_test.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_fc_test",
    "q": "EMQA_L3_fc_test",
-   "en": "GARCH reacts at once; the 30-day history lags, then forgets abruptly",
-   "ro": "GARCH reacționează imediat; varianța istorică întîrzie și uită brusc"
+   "en": "GARCH and 30-day historical volatility around the largest shock",
+   "ro": "Volatilitatea GARCH și cea istorică pe 30 de zile în jurul celui mai mare șoc"
   },
   {
    "src": "Quantlets/L3/EMQA_L3_case_band/case_band.png",
@@ -423,8 +423,8 @@
    "src": "Quantlets/L4/EMQA_L4_price_changes/price_changes.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_price_changes",
    "q": "EMQA_L4_price_changes",
-   "en": "The risk sits in the daily price change: small until 2021, violent since",
-   "ro": "Riscul stă în variația zilnică a prețului: mică pînă în 2021, mare după"
+   "en": "Daily price changes before and after 2021",
+   "ro": "Variațiile zilnice ale prețului înainte și după 2021"
   },
   {
    "src": "Quantlets/L4/EMQA_L4_tails/tails.png",
@@ -558,8 +558,8 @@
    "src": "Quantlets/L5/EMQA_L5_shape/shape.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_shape",
    "q": "EMQA_L5_shape",
-   "en": "Solar is worth ever less than the band, load ever more",
-   "ro": "Energia solară valorează tot mai puțin decît banda"
+   "en": "Value of the solar and load profiles relative to baseload",
+   "ro": "Valoarea profilului solar și a profilului de consum față de bandă"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_samuelson/samuelson.png",
@@ -793,8 +793,8 @@
    "src": "Quantlets/L7/EMQA_L7_case_week/case_week.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_case_week",
    "q": "EMQA_L7_case_week",
-   "en": "Case study, 30 Jun 2026: every model saw the spike, none its size",
-   "ro": "Studiu de caz, 30 iunie 2026: vîrf anticipat, amploare subestimată"
+   "en": "Case study, 30 Jun 2026: the models anticipated the spike but underestimated its size",
+   "ro": "Studiu de caz, 30 iunie 2026: modelele au anticipat vîrful, dar i-au subestimat amplitudinea"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_shap_local/shap_local.png",
@@ -814,8 +814,8 @@
    "src": "Quantlets/L7/EMQA_L7_snooping/snooping.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_snooping",
    "q": "EMQA_L7_snooping",
-   "en": "Data snooping: choosing on the test year fakes a win over LEAR",
-   "ro": "Alegerea pe anul de test simulează o victorie asupra LEAR"
+   "en": "Data snooping: selection on the test year gives a spurious gain over LEAR",
+   "ro": "Data snooping: selecția pe anul de test produce un avantaj aparent față de LEAR"
   },
   {
    "src": "Quantlets/L7/EMQA_L7_pit_retrain/pit_retrain.png",

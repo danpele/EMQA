@@ -122,9 +122,9 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 \end{frame}
 
 
-\section{Învățarea automată, evaluată corect}
+\section{Modelele de învățare automată și evaluarea lor}
 
-\begin{frame}{Învățarea automată cîștigă flexibilitate, dar plătește prin varianță}
+\begin{frame}{Flexibilitatea și varianța modelelor de învățare automată}
 \footnotesize
 \intuition{Un model flexibil poate învăța praguri și interacțiuni pe care LEAR nu le vede, dar poate învăța și zgomotul din anii de antrenare.}
 \begin{columns}[T,onlytextwidth]
@@ -160,7 +160,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 
 \begin{frame}{Trei eșantioane în ordine cronologică: antrenare, validare, test}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.466\textheight,keepaspectratio]{charts/ro/split_ml.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.469\textheight,keepaspectratio]{charts/ro/split_ml.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE): prețuri OPCOM. Date: preț zilnic de bază, 2022-01-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -216,7 +216,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 
 \section{Rețele neuronale profunde}
 
-\begin{frame}{O rețea neuronală înlănțuie regresii, fiecare urmată de o funcție neliniară}
+\begin{frame}{Structura unei rețele neuronale cu propagare înainte}
 \footnotesize
 \intuition{Fiecare neuron transformă neliniar o combinație liniară a intrărilor; stratul de ieșire dă deodată cele 24 de prețuri ale zilei $d$.}
 \begin{columns}[T,onlytextwidth]
@@ -249,7 +249,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\tryit{notebook-ul Jupyter, secțiunea 2}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Antrenarea: pași mici împotriva erorii, opriți la timp}
+\begin{frame}{Antrenarea: metoda gradientului descendent stocastic, cu oprire timpurie}
 \footnotesize
 \intuition{Ponderile se modifică puțin, în direcția care reduce eroarea pe un grup aleator de zile; ne oprim cînd eroarea pe zilele mai recente nu mai scade.}
 \begin{columns}[T,onlytextwidth]
@@ -505,7 +505,7 @@ Anul de test & 1 noiembrie 2025 -- 31 octombrie 2026, 8\,760 de ore, modele rees
 \end{frame}
 
 
-\section{Comparație corectă, combinare și cost}
+\section{Compararea modelelor, combinarea lor și costul de calcul}
 
 \begin{frame}{Clasamentul: Chronos-2 este cel mai bun model individual}
 \small
@@ -825,9 +825,9 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Murphy, 1977, MWR; calcule proprii)}\hfill\qlink{EMQA\_L7\_decision}{Quantlets/L7/EMQA_L7_decision}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Studiu de caz, 30 iunie 2026: vîrf anticipat, amploare subestimată}
+\begin{frame}{Studiu de caz, 30 iunie 2026: modelele au anticipat vîrful, dar i-au subestimat amplitudinea}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.495\textheight,keepaspectratio]{charts/ro/case_week.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.434\textheight,keepaspectratio]{charts/ro/case_week.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: 2026-06-27 - 2026-07-03, date orare.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -880,7 +880,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \end{frame}
 
 
-\section{Capcane care fac un model să pară mai bun}
+\section{Erori de evaluare care supraestimează precizia}
 
 \begin{frame}{Informația din viitor: două evaluări invalide avantajează XGBoost}
 \small
@@ -901,9 +901,9 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bergmeir \& Benítez, 2012, Inf.\ Sci.; calcule proprii)}\hfill\qlink{EMQA\_L7\_pit\_leak}{Quantlets/L7/EMQA_L7_pit_leak}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Alegerea pe anul de test simulează o victorie asupra LEAR}
+\begin{frame}{Data snooping: selecția pe anul de test produce un avantaj aparent față de LEAR}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.495\textheight,keepaspectratio]{charts/ro/snooping.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.435\textheight,keepaspectratio]{charts/ro/snooping.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); Yahoo Finance (EUA). Date: anul de validare și anul de test 2025-11-01 - 2026-10-31.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -967,7 +967,7 @@ Prognoza AW-LEAR $>\theta$ & 0{,}959 & 0{,}851 & 0{,}733 & 0{,}788 & -- & 0{,}98
 \par\vfill\noindent{\scriptsize\color{FooterGray}(calcule proprii, anul de test 1 noiembrie 2025 -- 31 octombrie 2026)}\hfill\qlink{EMQA\_L7\_pit\_retrain}{Quantlets/L7/EMQA_L7_pit_retrain}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Testul de scurgere a informației: ștergerea viitorului nu schimbă nimic}
+\begin{frame}{Testul de scurgere a informației: prognozele recalculate fără datele viitoare rămîn neschimbate}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

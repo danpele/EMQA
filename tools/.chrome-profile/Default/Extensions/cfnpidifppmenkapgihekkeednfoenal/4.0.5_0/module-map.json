@@ -1,0 +1,142 @@
+{
+  "coreContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "59.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "app.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/dataCollector/contentScripts/collectorContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/urlScanning/foreground/contentScripts/permissionStateListener.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/urlScanning/foreground/contentScripts/iframeScan.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/chatProtection/foreground/contentScripts/chatProtectionContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/adDetection/foreground/contentScripts/adDetectionContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/pageDataCollector/foreground/contentScripts/pageDataCollectorContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/pageIntervention/foreground/contentScripts/signInReminderToast.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/pageIntervention/foreground/permissionsToast/permissionsToast.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/pageIntervention/foreground/blockingPage/blocked.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/pageIntervention/foreground/suspiciousWarning/suspiciousWarning.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/searchAdvisor/foreground/statusTooltip.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/searchAdvisor/foreground/analyzerPageStatus.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/searchAdvisor/foreground/contentScripts/searchAdvisor.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/malvertising/foreground/contentScripts/malvertisingContentScript.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/main/foreground/popup/popup.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/main/foreground/welcome/welcome.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ],
+  "modules/main/foreground/thirdPartyLicenses/thirdPartyLicenses.js": [
+    {
+      "start": 1,
+      "end": 2,
+      "moduleId": "core"
+    }
+  ]
+}

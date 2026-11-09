@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_en.js?v=20261108a", "common.js?v=20261108s"], "L1.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_en.js?v=20261108a", "common.js?v=20261108a"], "L1.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -106,9 +106,9 @@
   <details><summary>Answer</summary><p>The logarithm is not defined for zero or negative prices. The area hyperbolic sine, asinh((p − median)/(c·MAD)), where MAD is the median absolute deviation, behaves like a logarithm in the tails and is almost linear near the median, and it accepts any sign. For Romania in 2025, c = 1 brings the skewness from 0.90 to 0.09 and the excess kurtosis from 4.24 to −0.24; a smaller c compresses the tails further (negative excess kurtosis), a larger c leaves the series closer to the raw prices.</p></details>
 </section><h2 class="sec" id="s-tool">Time-series toolkit</h2>
 <section class="blk" id="acf-hourly">
-  <h3>Prices remember yesterday, last week and the same hour</h3>
+  <h3>Autocorrelation of prices at daily and weekly lags</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L1/lecture1.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L1_acf_ro_hourly_en.jpg" alt="Slide 37: Prices remember yesterday, last week and the same hour" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L1/lecture1.pdf#page=37" target="_blank" rel="noopener"><img src="slides/L1_acf_ro_hourly_en.jpg" alt="Slide 37: Autocorrelation of prices at daily and weekly lags" loading="lazy"></a>
       <figcaption>Slide 37</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="ac-z">Zone</label><select id="ac-z"><option value="RO" selected>Romania</option><option value="BG">Bulgaria</option><option value="HU">Hungary</option><option value="DE_LU">Germany–Luxembourg</option></select></div><div class="ctl"><label for="ac-f">Series</label><select id="ac-f"><option value="lev" selected>Hourly price</option><option value="d24">Change from the same hour yesterday</option></select></div><div class="ctl"><label for="ac-y">Year: <b id="ac-y-v"></b></label><input type="range" id="ac-y" min="2016" max="2026" step="1" value="2025"></div><div class="ctl"><label for="ac-L">Lags shown (hours): <b id="ac-L-v"></b></label><input type="range" id="ac-L" min="48" max="336" step="24" value="168"></div><button class="btn play" id="ac-play" type="button"></button></div><div class="charts one"><div class="chart" id="ac-chart"></div></div><ul class="out" id="ac-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_acf_ro_hourly" target="_blank" rel="noopener">EMQA_L1_acf_ro_hourly</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_acf_ro_hourly/EMQA_L1_acf_ro_hourly.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

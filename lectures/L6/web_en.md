@@ -224,7 +224,7 @@ Comparing the same months, Jan–Oct, the count fell in 2026: in Romania from 19
 @chart neg_hours
 Negative hours per year in Romania, Bulgaria, Hungary and Germany–Luxembourg, 2022 to Oct 2026, in hour-equivalents.
 
-## Switching off at negative prices saves little; the low positive midday price is the real loss {h=e4654eb1}
+## Revenue losses: low positive midday prices cost more than negative prices {h=d817b3dc}
 
 A merchant park, without support per MWh, gains $|P_t|$ for each MWh it does not produce at a negative price. Its gain from stopping in every negative interval, per MWh of yearly output, is
 

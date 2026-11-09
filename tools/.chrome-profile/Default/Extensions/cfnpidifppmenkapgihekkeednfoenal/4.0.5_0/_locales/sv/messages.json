@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Verifierar..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Stoppar tredjepartsannonsering, analys, sociala medier och cookie-skript från att laddas, så att webbplatser inte kan profilera din surfning och sidor laddas snabbare."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Blockera spårningsskript"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "millisekunder"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Anti-tracker-resultat"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Med spårningsskript"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Utan spårningsskript"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Domäner nedan är undantagna från anti-tracker-blockering."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Vi använder kommersiella spårningsverktyg för att hjälpa dig att hitta våra specialerbjudanden lättare. Vårt mål är att skydda din integritet. Vi delar aldrig någon information som samlas in med någon, av något skäl."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Specialerbjudanden"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Något gick fel"
+   },
+   "chatAgent_thinking": {
+      "message": "Tänker..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Skanna meddelanden efter phishing-länkar och cyberhot."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Chattskydd"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Spårar vilka webbplatser du har gett åtkomst till kamera, mikrofon, plats, meddelande, urklipp och automatisk nedladdning, så att du kan granska och återkalla den i Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Hantera behörigheter"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Alla rättigheter förbehållna"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Integritetspolicy"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Prenumerationsavtal"
+   },
+   "main_about_third_party_license": {
+      "message": "Licensvillkor från tredje part"
+   },
+   "main_about_version": {
+      "message": "Version"
+   },
+   "main_account_manage_account_description": {
+      "message": "Få tillgång till ditt Bitdefender-konto för att hantera dina inställningar och preferenser."
+   },
+   "main_account_manage_account_title": {
+      "message": "Hantera konto"
+   },
+   "main_account_managed_by_description": {
+      "message": "För att använda ett annat konto, vänligen autentisera i din Bitdefender-app."
+   },
+   "main_account_managed_by_title": {
+      "message": "Hanteras av din Bitdefender-app"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Visa och hantera dina Bitdefender-prenumerationer."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Mina prenumerationer"
+   },
+   "main_account_sign_out": {
+      "message": "Logga ut"
+   },
+   "main_account_subscription_active": {
+      "message": "Aktiv"
+   },
+   "main_account_subscription_expired": {
+      "message": "Prenumerationen har löpt ut"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Prenumerationen gick ut ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Förfaller om [Days] dag ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Förfaller om [Days] dagar ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Individuell plan"
+   },
+   "main_account_subscription_section": {
+      "message": "Abonnemang"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Gratis"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Mitt konto"
+   },
+   "main_activity_details_error": {
+      "message": "Det gick inte att läsa in aktivitetsdata."
+   },
+   "main_activity_detections_analysed": {
+      "message": "analyserade"
+   },
+   "main_activity_detections_title": {
+      "message": "Upptäckter"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "upptäckter"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Hotinformation"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Hur risksignaler över kategorier kombineras för de webbplatser du besöker."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Den här webbplatsen finns redan i din vitlista."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Avbryt"
+   },
+   "main_add_whitelist_description": {
+      "message": "Domäner i vitlistan kommer att hoppas över vid skanning. Du kommer inte att varnas för eventuella hot som finns på dessa sidor."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Webbplatsadress"
+   },
+   "main_add_whitelist_save": {
+      "message": "Spara"
+   },
+   "main_add_whitelist_title": {
+      "message": "Lägg till webbplats i vitlistan"
+   },
+   "main_autonomy_level_title": {
+      "message": "Autonominivå"
+   },
+   "main_autonomy_save": {
+      "message": "Spara inställning"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Aktivitet"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Ändra skyddsnivå"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Hanterar hot automatiskt och agerar i det ögonblick den hittar ett, utan att avbryta dig."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Automatiskt skydd"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Kontrollerar allt och frågar dig innan åtgärder vidtas."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Guidat skydd"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Kontrollerade domäner"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Skanning med särskild webbshopsinformation"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Riskabel webbplatsinformation i realtid"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Skydd mot bedrägeri"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "AI-baserad länkinformation i sökresultat"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Search Advisor"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Bank-, krypto- och plånboksinformation"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Säkra finanser"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Aktiv"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Månad"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Idag"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Vecka"
+   },
+   "main_dashboard_load_error": {
+      "message": "Det gick inte att ladda instrumentpaneldata."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Stäng"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Kontrollera bokmärken och surfhistorik"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Senaste aktivitet"
+   },
+   "main_dashboard_retry": {
+      "message": "Försök på nytt"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Se aktivitetsinformation"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "skadlig"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "säker"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "misstänkt"
+   },
+   "main_error_boundary_text": {
+      "message": "Ett fel inträffade vid återgivning av tilläggspopupfönstret. Försök uppdatera eller öppna popupfönstret igen."
+   },
+   "main_error_boundary_title": {
+      "message": "Något gick fel!"
+   },
+   "main_extension_description": {
+      "message": "Blockerar bedrägerier, phishing och farliga sidor innan de laddas. Premium lägger till AI som förklarar hot och skyddar dina pengar."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Appspråk"
+   },
+   "main_general_app_theme": {
+      "message": "Apptema"
+   },
+   "main_general_privacy_policy": {
+      "message": "Integritetspolicy"
+   },
+   "main_general_product_reports_description": {
+      "message": "Skicka cyberhotsrapporter för produktförbättring enligt sekretesspolicyn"
+   },
+   "main_general_product_reports_title": {
+      "message": "Produktrapporter"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automatisk"
+   },
+   "main_general_theme_dark": {
+      "message": "Mörk"
+   },
+   "main_general_theme_light": {
+      "message": "Ljus"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Det här steget har ingen beskrivning."
+   },
+   "main_login_button": {
+      "message": "Logga in"
+   },
+   "main_login_connected_button": {
+      "message": "Fortsätt"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Ställ därefter in hur Security Advisor ska fungera."
+   },
+   "main_login_connected_title": {
+      "message": "Du är ansluten!"
+   },
+   "main_login_create_account": {
+      "message": "Skapa ett"
+   },
+   "main_login_no_account": {
+      "message": "Inget konto?"
+   },
+   "main_login_subtitle": {
+      "message": "Logga in med ditt Bitdefender-konto."
+   },
+   "main_login_title": {
+      "message": "Skydda din surfning"
+   },
+   "main_navbar_dashboard": {
+      "message": "Instrumentpanel"
+   },
+   "main_opera_hint_caption": {
+      "message": "Klicka på tilläggsikonen i sidofältet för att öppna det"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Öppna Bitdefender Web Sage från Operas sidofält."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Uppgradera till Premium för att använda den här funktionen."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Hantera behörigheter"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Hantera aviseringar, behörigheter och spårare"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Föreslå en granskning"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacy Guard är en Premium-funktion. Uppgradera för att ändra webbplatsbehörigheter här."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Den ändringen kunde inte tillämpas. Försök igen."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Inga webbplatsbehörigheter hanteras ännu. Privacy Guard lägger till en webbplats här när den blockerar behörigheterna som webbplatsen hade tillåtits att använda."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Gå till Inställningar"
+   },
+   "main_privacy_guard_info": {
+      "message": "Skyddar din integritet genom att blockera spårningsskript och hantera webbplatsbehörigheter. Du kan finjustera dessa alternativ i menyn Inställningar."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Hantera behörigheter"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Automatiska nedladdningar"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Kamerakontroll"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Urklippsåtkomst"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Platsåtkomst"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Mikrofonkontroll"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Aviseringar"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Rensa sökning"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Ingen webbplats matchar din sökning"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Hitta en webbplats"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Pålitlig (tillåt alla)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Du valde tidigare att lita på den här webbplatsen och tillåta alla behörigheter den begär (aviseringar, platsåtkomst, kamera- och mikrofonkontroll)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Webbplatsbehörigheter kan inte hanteras i den här webbläsaren"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Varför hanteras behörigheter?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "När en webbplats blockeras för att vara osäker blockerar Privacy Guard också de behörigheter som den hade tillåtits att använda, till exempel aviseringar eller kameraåtkomst. Behörigheter som webbplatsen aldrig hade lämnas orörda."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Skadlig chattlänk upptäckt"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Misstänkt chattlänk upptäckt"
+   },
+   "main_recent_activity_info": {
+      "message": "Nya misstänkta eller skadliga omdömen lagras för den senaste månaden."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Det gick inte att ladda senaste aktivitet."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Bedrägerisida blockerad"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Bedrägerisida upptäckt"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Search Advisor-upptäckter"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Skadlig sida blockerad"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Misstänkt aktivitet upptäckt"
+   },
+   "main_rename_device_cancel": {
+      "message": "Avbryt"
+   },
+   "main_rename_device_description": {
+      "message": "Ge din enhet ett unikt namn så att du enkelt kan identifiera den."
+   },
+   "main_rename_device_field_label": {
+      "message": "Enhetsnamn"
+   },
+   "main_rename_device_save": {
+      "message": "Spara"
+   },
+   "main_rename_device_title": {
+      "message": "Byt namn på denna enhet"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Återkallad kameraåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Återkallar kameraåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Återkallad urklippsåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Återkallar urklippsåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Rensade cookies och webbplatsdata för {n} webbplatser"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Rensar cookies och webbplatsdata för {n} webbplatser"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Blockerade automatiska nedladdningar för {n} webbplatser"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Blockerar automatiska nedladdningar för {n} webbplatser"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Tillämpa korrigeringar"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Tillämpat {n} av {t} korrigeringar"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Återkallad platsåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Återkallar platsåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Återkallad mikrofonåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Återkallar mikrofonåtkomst för {n} webbplatser"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Blockerade aviseringar för {n} webbplatser"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Blockerar aviseringar för {n} webbplatser"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Bytt namn på {n} riskfyllda bokmärken"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Byter namn på {n} riskfyllda bokmärken"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Tillämpar korrigeringar…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Automatiskt skydd"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Guidat skydd"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Tillämpa valda korrigeringar"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Vad jag gör"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Tillämpar korrigeringar automatiskt"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Min roll"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Det här flaggar jag"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Vad jag korrigerar"
+   },
+   "main_sa_banner_sources": {
+      "message": "Det här tittar jag på"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Ditt val"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Matchar bokmärken mot kända hot…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Utförde {n} kontroller"
+   },
+   "main_sa_check_cookies": {
+      "message": "Söker efter lagrade cookies och webbplatsdata på flaggade domäner…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} av {t} bokmärken matchar kända hot"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} webbplatser har kvarvarande data som bör rensas"
+   },
+   "main_sa_check_done_history": {
+      "message": "Hittade {h} besök på flaggade domäner"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} av {t} modifierade behörigheter ser onödiga eller riskabla ut"
+   },
+   "main_sa_check_history_db": {
+      "message": "Matchande historik mot kända hot…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Jag kontrollerar de mest riskfyllda sakerna först och jämför vad varje webbplats kan komma åt mot vad den faktiskt behöver."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Utvärderar webbplatsbehörigheter…"
+   },
+   "main_sa_continue": {
+      "message": "Fortsätt"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Urklipp och nedladdningar"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Hitta webbplatser som kan läsa ditt urklipp eller ladda ned filer utan att fråga och stäng av de som inte ska kunna det."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Webbläsaraviseringar"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Stoppa bedrägerier och skräppostmeddelanden från webbplatser som du inte menade att tillåta."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Aviseringar"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Mikrofon-, kamera- och platsåtkomst"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Hitta webbplatser som kan använda din mikrofon, kamera eller plats och stäng av de som inte ska kunna det."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Mikrofon-, kamera- och platsåtkomst"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Kända hot"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Blockera webbplatser som redan är kända för att vara skadliga innan de laddas."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Urklipp och nedladdningar – {n} webbplatser kan läsa ditt urklipp eller ladda ned filer automatiskt"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Lagrade data – {n} webbplatser har redan sparat cookies eller andra data på din enhet"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Falska webbplatser – {n} webbplatser kopierar riktiga företag för att lura dig"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Behörigheter – {n} webbplatser kan nå dina aviseringar, plats, mikrofon eller kamera"
+   },
+   "main_sa_finding_threats": {
+      "message": "Kända hot – {n} webbplatser finns på vår lista över kända skadliga webbplatser"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Genererad rapport: {n} varningar"
+   },
+   "main_sa_findings_heading": {
+      "message": "Skanning klar. Det här hittade jag:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Skanning klar. Korrigerar det jag hittade:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Skanning klar."
+   },
+   "main_sa_findings_none": {
+      "message": "Ingenting stack ut – inga varningar från den här skanningen."
+   },
+   "main_sa_finish_setup": {
+      "message": "Spara och fortsätt"
+   },
+   "main_sa_fix_cam": {
+      "message": "Återkalla kameraåtkomst"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Återkalla urklippsåtkomst"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Rensa misstänkta cookies och lokalt lagrade data"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Blockera automatiska nedladdningar"
+   },
+   "main_sa_fix_loc": {
+      "message": "Återkalla platsåtkomst"
+   },
+   "main_sa_fix_mic": {
+      "message": "Återkalla mikrofonåtkomst"
+   },
+   "main_sa_fix_notif": {
+      "message": "Blockera aviseringar"
+   },
+   "main_sa_fix_rename": {
+      "message": "Byt namn på riskabla bokmärken"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Flaggade {n} riskabla bokmärken så att de är synliga på ett ögonblick"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Rensade cookies och lagrade data från {n} flaggade domäner"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Återkallade {n} webbplatsbehörigheter som du inte aktivt använder"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Inget behövde rensas – allt är kontrollerat"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Det här skulle jag göra åt det:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Hanterar hot automatiskt och agerar i det ögonblick den hittar ett, utan att avbryta dig."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Automatiskt skydd"
+   },
+   "main_sa_go_dashboard": {
+      "message": "klart"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Kontrollerar allt och frågar dig innan åtgärder vidtas."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Guidat skydd"
+   },
+   "main_sa_intro_scan": {
+      "message": "För att börja, välj vad jag ska titta på i din första skanning."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Startar din första skanning. Jag sköter allt härifrån."
+   },
+   "main_sa_list_last_separator": {
+      "message": " och "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Här är min plan:"
+   },
+   "main_sa_plan_body": {
+      "message": "Jag kontrollerar din {targets}, dubbelkollar dem mot kända hot och visar dig sedan en sammanfattning innan jag ändrar något."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Jag kontrollerar bokmärken, historik och behörigheter, dubbelkollar dem mot kända hot och fixar allt riskabelt så snart jag hittar det."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Jag ska visa dig vad jag hittade innan jag ändrar något. Du bestämmer vad som händer härnäst."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Bokmärken"
+   },
+   "main_sa_plan_target_history": {
+      "message": "surfhistorik"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "webbplatsbehörigheter"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Läst {n} bokmärken över {f} mappar"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Läser bokmärken…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Läs {n} källor"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Nu ska jag kontrollera allt för risker."
+   },
+   "main_sa_read_history_done": {
+      "message": "Läst {n} historikposter"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Läser webbhistorik…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Hittade {n} webbplatser med ändrade behörigheter"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Kontrollerar webbplatsbehörigheter…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Jag läser först och analyserar sedan. Börjar nu."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Hoppa över initial skanning"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Hoppa över och visa rapporten"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Bokmärken"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Fånga upp sparade webbplatser som i det tysta har blivit riskabla sedan du bokmärkte dem."
+   },
+   "main_sa_source_history": {
+      "message": "Surfhistorik"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Hitta farliga webbplatser som du redan har besökt så att du kan undvika dem nästa gång."
+   },
+   "main_sa_start_assessment": {
+      "message": "Påbörja skanning"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Välj hur mycket det gör på egen hand:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Allt klart."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Allt ser bra ut."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} bokmärken"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Det här kollade jag:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} historikposter"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} webbplatsbehörigheter över {c} kategorier"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Det här rensade jag:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Det här hittade jag:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Från och med nu kontrollerar jag nya bokmärken och behörigheter i bakgrunden och flaggar allt som är riskabelt."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Ingenting ändrades. Kom tillbaka när som helst för att granska och tillämpa de föreslagna korrigeringarna."
+   },
+   "main_sa_summary_stand": {
+      "message": "Här är sammanfattningen."
+   },
+   "main_sa_title_configure": {
+      "message": "Konfigurera Security Advisor"
+   },
+   "main_sa_what_look_for": {
+      "message": "Det här flaggar jag"
+   },
+   "main_sa_where_look": {
+      "message": "Det här tittar jag på"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonomi"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Search Advisor"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Specialiserat försvar"
+   },
+   "main_settings_about": {
+      "message": "Om"
+   },
+   "main_settings_general": {
+      "message": "Allmänt"
+   },
+   "main_settings_language": {
+      "message": "Språk"
+   },
+   "main_settings_my_account": {
+      "message": "Mitt konto"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor"
+   },
+   "main_settings_support": {
+      "message": "Support"
+   },
+   "main_settings_title": {
+      "message": "Inställningar"
+   },
+   "main_settings_upgrade": {
+      "message": "Uppgradera till {premium} för förbättrat skydd"
+   },
+   "main_settings_whitelist": {
+      "message": "Vitlista"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Öppna Bitdefender Web Sage från webbläsarens sidofält."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Logga in med ditt Bitdefender-konto för att komma igång."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage skyddar dig inte än"
+   },
+   "main_support_center_description": {
+      "message": "Hitta snabbt svar på de vanligaste problemen, eller kontakta vårt supportteam om du behöver extra hjälp."
+   },
+   "main_support_center_link": {
+      "message": "Gå till Support Center"
+   },
+   "main_support_center_title": {
+      "message": "Supportcenter"
+   },
+   "main_support_community_description": {
+      "message": "Få dina svar, ställ dina frågor! Vi är här för att hjälpa varandra!"
+   },
+   "main_support_community_link": {
+      "message": "Fråga communityn"
+   },
+   "main_support_community_title": {
+      "message": "Fråga communityn"
+   },
+   "main_test": {
+      "message": "test"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Teckensnitt"
+   },
+   "main_third_party_category_label": {
+      "message": "Kategori:"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript/TypeScript-paket"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licens:"
+   },
+   "main_third_party_link_label": {
+      "message": "Länk:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Nedan följer upphovsangivelser för programvara med öppen källkod från tredje part som ingår i delar av webbläsartillägget Bitdefender (version $1). Vi tackar communityn för öppen källkod för alla bidrag."
+   },
+   "main_third_party_page_title": {
+      "message": "Licensvillkor från tredje part"
+   },
+   "main_third_party_version_label": {
+      "message": "Version:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Inte ett långt formulär. En e-postadress och ett lösenord. Ungefär en minut, en gång, och du är klar."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Inte en betalvägg. {product} Standard är gratis och förblir gratis. Inget kort, ingen provklocka, inget utgångsdatum."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Inte en prenumeration. Ett konto är inte en plan. Ingenting faktureras och ingenting förnyas automatiskt."
+   },
+   "main_welcome_account_not_title": {
+      "message": "Och för att vara direkt om vad detta inte är"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome på jobbet, Edge hemma, en andra maskin. Ett konto omfattar {product} för dem alla, med samma regler."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Skydd överallt, inte per webbläsare"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Samma Bitdefender-konto fungerar över allt som Bitdefender gör. Lägg till en produkt senare, nå support, kontrollera en enhet – du är redan konfigurerad."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Ett konto, inte ett till"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Varje webbplats du tillät, varje skydd du stängde av – det följer dig nu. Ny webbläsare, ny bärbar dator, ny installation: allt är fortfarande där."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Dina inställningar slutar försvinna"
+   },
+   "main_welcome_account_straight": {
+      "message": "{product}-skyddet startar när du loggar in. Fram till dess förblir skyddet inaktivt och sköldikonen i din webbläsare förblir avstängd."
+   },
+   "main_welcome_account_sub": {
+      "message": "Det är en verklig förändring från TrafficLight, och det är rimligt att fråga varför. Tre ärliga skäl:"
+   },
+   "main_welcome_account_title": {
+      "message": "Det enda som förändrats"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Fortsätt surfa"
+   },
+   "main_welcome_button_open": {
+      "message": "Öppet {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Logga in"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Kontrollerar ditt konto…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Har du redan Bitdefender på den här enheten? Du kan vara inloggad automatiskt – den här sidan uppdateras i det ögonblick den händer."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} skyddar dig bara när du är inloggad på ditt Bitdefender-konto. Inloggning aktiverar blockering, tillämpar din plan automatiskt och ser till att dina inställningar är synkroniserade. Det kostar inget att skapa ett konto."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Logga in – det här aktiverar skyddet"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Du är klar"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Uppdateringen slutförd"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight har vuxit upp"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Öppna din instrumentpanel"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Logga in"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Din instrumentpanel, aktivitet och inställningar visas högst upp på panelen."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Ditt konto"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Ditt Bitdefender-konto är det som aktiverar skydd, ser till att dina inställningar är synkroniserade mellan webbläsare och enheter och ger dig en instrumentpanel för din aktivitet och dina inställningar."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Ditt konto, din instrumentpanel"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "I panelen"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Möt Security Advisor"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Alla skyddsinställningar finns här, inklusive hur mycket den gör på egen hand."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Den kontrollerar dina bokmärken och webbhistorik mot kända hot när du ställer in det och talar sedan om vad som hittas på sidorna du besöker. Du väljer om den ska fråga innan den agerar eller hantera saker på egen hand."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "I panelen"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Se det i panelen"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Tyst på den riktiga webbplatsen, ljudligt på en falsk."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Säkra finanser"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Bank-, krypto- och plånbokssidor granskas extra: imitationer av din bank eller börs fångas innan du skriver in ett lösenord."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Säkra finanser"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "På bank- och kryptosidor"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Ställ in i två steg"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Inget att slå på – det har skyddat dig sedan uppdateringen."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Fortfarande här"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Sidblockering i realtid och Search Advisor fungerar precis som tidigare, nu med fler källor bakom sig. Om du också körde det separata Anti-tracker-tillägget gör Privacy Guard nu det jobbet – du kan ta bort det."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Allt du förlitade dig på är fortfarande här"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Alltid på"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Öppna Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Varje webbplats den hanterar, med en växling för varje behörighet."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Blockerar spårare och hanterar behörigheterna som en webbplats har - aviseringar, plats, kamera, mikrofon, automatiska nedladdningar och urklipp. När en webbplats visar sig vara osäker återkallas allt som den hade beviljats åt dig."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "I panelen"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Se det i panelen"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Varningar visas precis där du bläddrar, innan du klickar."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Skydd mot bedrägeri"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Utöver kända dåliga webbadresser: en misstänkt sida får en AI-analys på begäran som förklarar vad som är fel, med enkla ord."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Scam Protection med AI-djupskanning"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "På sidan"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Öppna panelen"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Ett märke bredvid varje resultat – håll muspekaren över för att se orsaken."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Search Advisor"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Säkerhetsbetyg bredvid dina resultat på Google, Bing, DuckDuckGo och Yahoo, så du vet innan du klickar."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Search Advisor"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "I sökresultat"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Se det i panelen"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "En omdöme om själva butiken, inte bara sidan du är på."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Onlinebutiker kontrolleras mot webbshopsinformation när du surfar, så falska butiker och erbjudanden som är för bra för att vara sanna flaggas innan du betalar."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "På shoppingwebbplatser"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Se sidstatus"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Du märker det bara när det finns något att säga."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Sidblockering"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Varje sida du öppnar kontrolleras mot Bitdefenders hotinformation. En farlig sida stängs av omedelbart - och blockeras direkt innan den kan laddas igen."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Farliga sidor stängs av direkt"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "På sidan"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Juridiskt och support"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Integritetspolicy"
+   },
+   "main_welcome_footer_support": {
+      "message": "Support"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Användningsvillkoren"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Panelen kunde inte öppnas automatiskt. Klicka på ikonen {product} i verktygsfältet för att öppna den."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animering som visar hur du fäster tillägget i webbläsarens verktygsfält"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Klicka på knappen Tillägg (pusselbiten) längst upp till höger i din webbläsare."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Klicka på knappen Tillägg (pusselbiten) längst upp till höger i din webbläsare."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Klicka på knappen Tillägg (pusselbiten) i verktygsfältet."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Klicka på knappen Tillägg (kuben) i verktygsfältet."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Öppna webbläsarens tilläggsmeny."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Leta upp {product} och klicka på stiftikonen bredvid."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Leta upp {product} och klicka på stiftikonen bredvid för att visa den i verktygsfältet."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Hitta {product}, öppna dess inställningar (kugghjulsikonen) och välj Fäst i verktygsfältet."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Leta upp {product} och klicka på stiftikonen bredvid."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Hitta {product} och fäst den i verktygsfältet."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Håll det ett klick bort så att du alltid ser säkerhetsstatusen för sidan du är på."
+   },
+   "main_welcome_pin_title": {
+      "message": "Fäst {product} i verktygsfältet"
+   },
+   "main_welcome_protected_done": {
+      "message": "Skyddet är på. Inget annat att göra här – fäst {product} så att den är inom synhåll."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Ingår i din {plan}-plan – låses upp automatiskt, inget att aktivera."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Körs nu"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Gratis med ditt Bitdefender-konto."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Du är skyddad – {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Du är skyddad – {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Du är inloggad och skyddad"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Skydd i realtid mot bedrägerier, phishing och spårare, precis där du surfar. Två snabba steg och du är klar."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Version {version} är installerad och skyddar dig redan. Det här är vad som läggs till."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Din tillägg har just fått en större uppgradering. Allt TrafficLight gjorde är fortfarande här, och mycket mer har tillkommit."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "En del av {product} Premium, ingår i Bitdefender Total Security och högre."
+   },
+   "main_welcome_title_new": {
+      "message": "Välkommen till {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} blev precis bättre"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight är nu {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Det här får du"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Vad är nytt"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Vad är nytt"
+   },
+   "main_welcome_tour_next": {
+      "message": "Nästa funktion"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Föregående funktion"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} av {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Allt {product} gör för dig, en funktion i taget. Gå igenom steg för steg, eller hoppa rakt in."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Nytt i version {version}. Gå igenom steg för steg, eller hoppa rakt in."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Allt TrafficLight gjorde, plus detta. Gå igenom steg för steg, eller hoppa rakt in."
+   },
+   "main_welcome_window_title": {
+      "message": "Välkommen till {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Lägg till webbplats"
+   },
+   "main_whitelist_import": {
+      "message": "Importera domäner"
+   },
+   "main_whitelist_info": {
+      "message": "Domäner i vitlistan kommer att hoppas över vid skanning. Du kommer inte att varnas för eventuella hot som finns på dessa sidor."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Ta bort"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Hotskanning"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Spårningsskript"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Samlar in annonserna som visas på sidorna du besöker så att de kan kontrolleras för bedrägerier."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Annonsövervakning"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Flaggar skadliga annonser och sponsrade resultat som leder till bedrägerier eller skadlig programvara."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Upptäcker falska bankwebbplatser och falska investeringsplattformar byggda för att stjäla din information eller medel."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Skydd mot ekonomiskt bedrägeri"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Varnar dig för falska butiker och bedrägliga kassasidor innan du anger dina betalningsuppgifter."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Blockera denna sida"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Ladda ändå (osäkert)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Ladda innehållet ändå (osäkert)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Visa mer information"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Tittar närmare på detaljerna…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Jag kunde inte analysera den här sidan just nu. Försök igen."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Detaljerad analys av sidor ingår inte i ditt nuvarande abonnemang, så jag kan inte undersöka den här."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Det tog längre tid än jag kunde vänta på, så jag slutade titta på det."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Kontrollerar länkarna i AI-översiktspaneler och flaggar de som leder till osäkra webbplatser."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI-översiktsskanner"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Inaktiverad i Inställningar"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Aktiverad"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Inte tillgänglig"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI Search Advisor"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Länkinformation i sökresultat"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Analyserad av {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Jag kunde inte blockera den här sidan."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Blockerar den här sidan…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Tvingad kontroll (ta bort från vitlistan)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Skanna igen"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Avblockera den här sidan"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Kontrollerar databas med kända hot…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Verifierar behörigheter…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Söker efter bedrägerier…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Kontrollerar"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Utförde {n} kontroller"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Blockera sida"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Samtycke"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Kör en djup analys"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Körde en djup analys"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Djupanalys klar"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Analyserar sidinnehåll och skärmdump…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Djupanalysen hittade inga problem med den här sidan."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Djupanalysen slutfördes utan att hitta specifika indikatorer."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Djupanalysen bekräftade att denna sida är farlig."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Kör analys"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Med ditt OK undersöker jag sidans innehåll och en skärmdump av det för att hitta vad som gömmer sig under ytan."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Tidsgräns för djupanalys"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Slutade vänta efter {n} sekunder"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Djupanalysen tar längre tid än jag kan vänta på, så jag slutade. Du kan köra den igen, eller fatta beslut utifrån det jag redan hittat."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Kör en djupare analys?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Tar bort från vitlistan och kontrollerar igen…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Genererad rapport: {n} varning"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Genererad rapport: {n} varningar"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Fortsätter till sidan…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Skadligt sökresultat"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Kontrollerar annonserna på sidorna du besöker och flaggar de som leder till bedrägerier."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Skydd mot bedrägeriannonser"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Öppna tilläggets inställningar"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera blockerar tillägg från sökresultat tills du tillåter det. Öppna opera://extensions, leta upp det här tillägget och aktivera ”Tillåt åtkomst till sökresultat”."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Sökresultat kontrolleras inte"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard blockerade {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Den här webbplatsen kan komma åt din {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Inga behörigheter beviljade"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Behörigheter är inte tillgängliga"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Inga varningstecken identifierade"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard föreslår att {list} blockeras för den här webbplatsen."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Det här hittade jag:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Allt blockerat innehåll har återställts."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Återställer blockerat innehåll…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Inga bluffmönster upptäcktes"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} skadlig indikator hittades"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} skadliga indikatorer hittades"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} misstänkt indikator hittades"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} misstänkta indikatorer hittades"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Bedrägerianalys kunde inte slutföras"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Förekom i otillförlitligt reklaminnehåll"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Mall för utpressning med tvång"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Mall för bedrägeri med falska pengar"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Mall för bedrägeri som utnyttjar kriser"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Mall för kryptovalutabedrägeri"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Mall för vilseledande dejtingplattform för vuxna"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Mall för vilseledande reklam"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Mall för vilseledande utlottning"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Mall för vilseledande onlineundersökning"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Mall för bedrägeri med energiinvesteringar"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Mall för utpressningsbedrägeri"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Mall för falska belöningar för att titta på annonser"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Mall för falsk bokningswebbplats"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Mall för falskt kasino"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Mall för falsk välgörenhetsorganisation"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Mall för falsk klinik"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Mall för falsk kryptoutlottning"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Mall för falsk leveranstjänst"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Mall för falska dokument"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Mall för falsk e-handelsbutik"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Mall för falsk utbildningsinstitution"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Mall för falskt jobberbjudande"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Mall för falsk underhållningstjänst"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Mall för falsk finansinstitution"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Mall för falsk finansiell investering"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Mall för falsk spelwebbplats"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Mall för falska spelvinster"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Mall för falsk guldinvestering"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Mall för falska statliga bidrag"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Mall för falsk myndighet"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Mall för falsk immigrationstjänst"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Mall för falsk juridisk institution"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Mall för falsk återbetalningstjänst"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Mall för falskt onlineapotek"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Falsk onlinebutik upptäckt"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Mall för falsk betalningsplattform"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Mall för falsk priskampanj"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Mall för falskt pris eller falsk belöning"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Mall för falskt bokförlag"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Mall för falsk recensionsplattform"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Mönster för falska butiker i annonskampanj"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Mall för falsk andlig vägledare"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Mall för falska vinster"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Mall för finansiellt bedrägeri"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Bedräglig annonskampanj för falsk butik"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Mall för vårdbedrägeri"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Homoglyfattack upptäckt"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Mall för webbplats med olaglig verksamhet"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Mall för olagliga tjänster"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Mall för olagliga substanser"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP med skadliga mönster"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP med misstänkta mönster"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Känd phishing-mall"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Känd bedrägerimall"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Mall för lotteribedrägeri"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Onlinebutik med låg tillförlitlighet utan etablerad närvaro"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Trading- eller investeringsplattform med låg tillförlitlighet utan etablerad närvaro"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Skadlig länk till investeringsplattform"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Skadlig länk till onlinebutik"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Mall för narkotikabedrägeri"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Onlinebutik med motstridiga indikatorer"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Onlinebutik utan etablerad närvaro"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Mall för husdjursbedrägeri"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Mall för ponzi- eller pyramidspel"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Mall för fastighetsbedrägeri"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Mall för romansbedrägeri"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Mall för webbplats för romansbedrägeri"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Mall för bedrägeri med hemligt sällskap"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Misstänkt länk till investeringsplattform"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Misstänkt länkformat"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Misstänkt länk till onlinebutik"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Mall för bedrägeri med falsk teknisk support"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Trading- eller investeringsplattform med motstridiga indikatorer"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Trading- eller investeringsplattform utan etablerad närvaro"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Onlinebutik med mycket låg tillförlitlighet"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Onlinebutik med mycket låg tillförlitlighet utan etablerad närvaro"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Trading- eller investeringsplattform med mycket låg tillförlitlighet"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Mycket misstänkt länk"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Jag har blockerat den och stängt av dess åtkomst till din mikrofon, kamera och plats – du kan säkert stänga fliken..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Spårningsskript blockerades och åtkomst till mikrofon, kamera och plats återkallades för att skydda dig."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Jag kunde inte slutföra kontrollen av dessa sökresultat."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Skanning ofullständig"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Security Advisor är på"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Skannar sökresultat…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Misstänkt sökresultat"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Search Advisor är inaktiverat. Gå till inställningar för att aktivera det."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Web Protection är inaktiverat. Gå till inställningar för att aktivera det."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Hoppa över kontroller och ladda sida."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Den här sidan har flaggats som skadlig."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Den här sidan är en del av ett bedrägeriförsök."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Den här sidan är en del av en bluffannons."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Vi upptäckte element som kan skada din enhet."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Sidan försökte använda enhetens resurser för att utvinna kryptovaluta och blockerades."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Den här sidan kan inte skannas av Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Hoppa över kontroller och ladda sida."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Den förblir blockerad tills du avblockerar den."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Den här sidan är en del av ett phishing-försök."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Sidan försökte ladda ner en PUA (potentiellt oönskad app) till din enhet och blockerades."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Den här sidan är överhoppad från skanning i den aktuella webbläsarsessionen"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Den här sidan kan vara säker, men vissa säkerhetshot har rapporterats tidigare."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Den här sidan hoppar över från skanning eftersom den har lagts till i listan Undantag."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Lägger till ett säkerhetsbetyg bredvid varje resultat på Google, Bing, Yahoo och DuckDuckGo, så att du kan upptäcka riskfyllda länkar innan du klickar."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Sökresultatnotering"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Skydd inaktiverat"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Det går inte att skanna sökresultat"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Det går inte att skanna den här sidan"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Den här domänen är vitlistad"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Falsk butik upptäckt"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Bedrägeriförsök upptäckt"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Bedrägeriannons upptäckt"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Hot upptäckt!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Miningförsök upptäckt"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Sidan kan inte skannas"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Den här sidan har hoppats över den här sessionen"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Du har blockerat den här sidan"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Nätfiskeförsök upptäcktes"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Potentiellt oönskad appnedladdning upptäckt"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Den här webbplatsen är säker"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Skannar..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Otillförlitlig domän upptäckt"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Undantagen sida upptäckt"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Blockerade {n} spårare"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Blockering av spårningsskript är avstängd, så den här sidan kontrollerades inte för spårare"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Ladda skript (osäkert)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Inga spårningsskript upptäcktes på den här sidan"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Jag kunde inte avblockera den här sidan."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Avblockerar den här sidan…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Inga kända hot hittades"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Blockerad sida"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Sidan laddad på {n} ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Du är säker"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Jag hittade några risker på den här sidan. Undvik att ange personlig information, lösenord eller betalningsuppgifter och ladda inte ner något."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Var försiktig här"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Allt klart just nu."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Skyddar dig när du surfar."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Den här sidan blockerades av"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Domän flaggad som skadlig"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Falska butiker imiterar verkliga butiker för att inkassera din betalning och ta dina kortuppgifter. Beställningar levereras sällan, och de uppgifter du anger kan återanvändas eller säljas vidare."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Bedrägerisidor försöker ofta lura dig att skicka pengar i ett olagligt syfte."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Den här sidan blockerades för att förhindra ytterligare interaktion med ett bedrägeri.\u003Cbr>\u003Cbr>Angripare lurar sina potentiella offer med hjälp av deepfakes, investeringsmöjligheter och andra trendiga ämnen för att lura dem att lämna ut känslig information, pengar eller ladda ner skadlig kod."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Farliga sidor försöker installera programvara som kan skada enheten, samla in personlig information eller köras utan ditt samtycke."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Minersidor använder enhetens resurser för att utvinna kryptovaluta och påverkar dess användbarhet och hårdvarans livslängd."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Nätfiskesidor försöker skaffa känslig information som inloggningsuppgifter eller kreditkortsinformation genom att utge sig för att vara betrodda företag. Den stulna informationen kan sedan användas för ekonomisk vinning."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Sidan försökte ladda ned en PUA (potentiellt oönskad app) till din enhet. Den här typen av appar uppvisar beteenden som påverkar sekretess och säkerhet för enhet och data."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Ej betrodda sidor kan uppvisa misstänkt beteende eller besynnerligheter vi bedömer som riskfyllda, därför ska du undvika att öppna dem för att behålla dina data oskadade."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Falsk butik blockerad för att skydda dig"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Vi har blockerat innehåll för din säkerhets skull."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Misstänkt innehåll upptäckt"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Det gick inte att öppna panelen. Försök igen."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Öppna Bitdefender-panelen från webbläsarens sidofält för att se detaljerna."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Blockerad sida"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Automatiska nedladdningar"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "kamera"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "urklipp"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Stäng"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "{permissions} åtkomst till denna webbplats har blockerats."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "{permissions} åtkomst för denna webbplats har blockerats."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "{permissions} åtkomst är tillåten för denna webbplats. Ta en titt på vad den här webbplatsen kan använda."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "{permissions} åtkomst är tillåten för denna webbplats. Ta en titt på vad den här webbplatsen kan använda."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard hittade behörigheter att granska"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} och {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "plats"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "{permissions} åtkomst har blockerats för denna webbplats. Granska vad den här webbplatsen kan använda."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "{permissions} åtkomst har blockerats för denna webbplats. Granska vad den här webbplatsen kan använda."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard hanterar behörigheter"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "mikrofon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Aviseringar"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard hanterar behörigheter"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Fortsätt med försiktighet"
+   },
+   "urlScanning_see_details": {
+      "message": "Se detaljer"
+   },
+   "urlScanning_show_details": {
+      "message": "Visa information"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Stäng"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Några varningstecken här. Var försiktig med personlig information och nedladdningar."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Det går inte att skanna sökresultat"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Det går inte att skanna den här sidan"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Falsk butik upptäckt"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Bedrägeriförsök upptäckt"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Bedrägeriannons upptäckt"
+   },
+   "urlScanning_title_malware": {
+      "message": "Hot upptäckt!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Miningförsök upptäckt"
+   },
+   "urlScanning_title_phish": {
+      "message": "Nätfiskeförsök upptäcktes"
+   },
+   "urlScanning_title_pua": {
+      "message": "Potentiellt oönskad appnedladdning upptäckt"
+   },
+   "urlScanning_title_safe": {
+      "message": "Den här sidan är säker"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Otillförlitlig domän upptäckt"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Skannar besökta webbadresser efter skadlig kod, phishing, bedrägerier och andra hot"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "webbskydd"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Webbskydd från Bitdefender"
+   }
+}

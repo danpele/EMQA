@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Проверка..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Предотвращает загрузку сторонней рекламы, аналитических данных, ссылок на социальные сети и скриптов cookie, благодаря чему веб-сайты не могут составлять профиль ваших действий в интернете, а страницы загружаются быстрее."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Блокировать скрипты отслеживания"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "миллисекунды"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Эффективность защиты от слежения"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Со скриптами отслеживания"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Без скриптов отслеживания"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Указанные ниже домены исключены из блокировки средств отслеживания."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Мы используем коммерческие трекеры, чтобы помочь вам легко находить наши специальные предложения. Наша цель - обеспечить вашу конфиденциальность. Мы никогда не передаем какую-либо информацию, собранную кому-либо, для любых целей."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Специальные предложения"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Что-то пошло не так"
+   },
+   "chatAgent_thinking": {
+      "message": "Думаю..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Проверяйте сообщения на наличие фишинговых ссылок и киберугроз."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Защита Чата"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Отслеживает, каким веб-сайтам вы предоставили доступ к камере, микрофону, местоположению, уведомлениям, буферу обмена и автоматической загрузке, чтобы вы могли просмотреть и отозвать эти разрешения в Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Управление разрешениями"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Все права защищены"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Все права защищены © 1997 - 2024 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Политика конфиденциальности"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Соглашение о подписке"
+   },
+   "main_about_third_party_license": {
+      "message": "Условия лицензии третьих сторон"
+   },
+   "main_about_version": {
+      "message": "Версия"
+   },
+   "main_account_manage_account_description": {
+      "message": "Войдите в свою учетную запись Bitdefender, чтобы управлять настройками и предпочтениями."
+   },
+   "main_account_manage_account_title": {
+      "message": "Управление учетной записью"
+   },
+   "main_account_managed_by_description": {
+      "message": "Чтобы использовать другую учетную запись, пожалуйста, пройдите аутентификацию в своем приложении Bitdefender."
+   },
+   "main_account_managed_by_title": {
+      "message": "Управляется вашим приложением Bitdefender"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Просматривайте и управляйте своими подписками Bitdefender ."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Мои подписки"
+   },
+   "main_account_sign_out": {
+      "message": "Выход"
+   },
+   "main_account_subscription_active": {
+      "message": "Активный"
+   },
+   "main_account_subscription_expired": {
+      "message": "Срок действия подписки истек"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Срок действия подписки истек ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Истекает через [Days] дней ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Истекает через [Days] дней ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender: полная безопасность"
+   },
+   "main_account_subscription_plan": {
+      "message": "Индивидуальный план"
+   },
+   "main_account_subscription_section": {
+      "message": "Подписка"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Бесплатно"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Моя учетная запись"
+   },
+   "main_activity_details_error": {
+      "message": "Не удалось загрузить данные об активности."
+   },
+   "main_activity_detections_analysed": {
+      "message": "проанализировано"
+   },
+   "main_activity_detections_title": {
+      "message": "Обнаружения"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "обнаружения"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Threat intelligence"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Как сигналы риска из разных категорий суммируются на посещаемых вами веб-сайтах."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Этот веб-сайт уже есть в вашем белом списке."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Отмена"
+   },
+   "main_add_whitelist_description": {
+      "message": "Домены из вашего белого списка будут пропущены при сканировании. Вы не будете предупреждены о каких-либо угрозах, существующих на этих страницах."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Адрес веб-сайта"
+   },
+   "main_add_whitelist_save": {
+      "message": "Сохранить"
+   },
+   "main_add_whitelist_title": {
+      "message": "Добавить веб-сайт в белый список"
+   },
+   "main_autonomy_level_title": {
+      "message": "Уровень автономности"
+   },
+   "main_autonomy_save": {
+      "message": "Сохранить настройки"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Активность"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Изменить уровень защиты"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Обрабатывает угрозы автоматически и реагирует в момент их обнаружения, не прерывая вашу работу."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Автоматическая защита"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Проверяет всё, а затем спрашивает вашего мнения, прежде чем предпринимать какие-либо действия."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Управляемая защита"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Проверенные домены"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Сканирование с использованием данных Intel в интернет-магазине"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Информация о рискованных сайтах в режиме реального времени"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Защита от мошенничества"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Анализ ссылок в результатах поиска с использованием ИИ"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Оптимизация поиска"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Аналитика по банкам, криптовалютам и кошелькам"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Безопасные финансы"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Активный"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Месяц"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Сегодня"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Неделя"
+   },
+   "main_dashboard_load_error": {
+      "message": "Не удалось загрузить данные панели мониторинга."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Закрыть"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Проверить закладки и историю просмотров"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Недавняя активность"
+   },
+   "main_dashboard_retry": {
+      "message": "Повторить"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Посмотреть подробности об активности"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "вредоносный"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "безопасно"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "подозрительный"
+   },
+   "main_error_boundary_text": {
+      "message": "При отображении всплывающего окна расширения произошла ошибка. Пожалуйста, попробуйте обновить страницу или снова открыть всплывающее окно."
+   },
+   "main_error_boundary_title": {
+      "message": "Что-то пошло не так!"
+   },
+   "main_extension_description": {
+      "message": "Блокирует мошеннические, фишинговые и опасные сайты до их загрузки, бесплатно. Premium включает ИИ, объясняющий угрозы и защищает ваши деньги."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Язык приложения"
+   },
+   "main_general_app_theme": {
+      "message": "Тема приложения"
+   },
+   "main_general_privacy_policy": {
+      "message": "Политика конфиденциальности"
+   },
+   "main_general_product_reports_description": {
+      "message": "Отправляйте отчеты об угрозах кибербезопасности для улучшения продукта в соответствии с Политикой конфиденциальности"
+   },
+   "main_general_product_reports_title": {
+      "message": "Отчеты о продукте"
+   },
+   "main_general_theme_automatic": {
+      "message": "Автоматический"
+   },
+   "main_general_theme_dark": {
+      "message": "Темно"
+   },
+   "main_general_theme_light": {
+      "message": "Легкий"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Этот шаг не имеет описания."
+   },
+   "main_login_button": {
+      "message": "Войти"
+   },
+   "main_login_connected_button": {
+      "message": "Продолжить"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Затем настройте режим работы Помощника по безопасности."
+   },
+   "main_login_connected_title": {
+      "message": "Вы подключены!"
+   },
+   "main_login_create_account": {
+      "message": "Создайте ее"
+   },
+   "main_login_no_account": {
+      "message": "Нет учетной записи?"
+   },
+   "main_login_subtitle": {
+      "message": "Войдите в систему, используя свою учетную запись Bitdefender."
+   },
+   "main_login_title": {
+      "message": "Защитите свой интернет-браузер"
+   },
+   "main_navbar_dashboard": {
+      "message": "Панель мониторинга"
+   },
+   "main_opera_hint_caption": {
+      "message": "Нажмите на значок расширения на боковой панели, чтобы открыть его"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Откройте Bitdefender Web Sage из боковой панели Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Для использования этой функции необходимо перейти на Premium."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Управление разрешениями"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Управление уведомлениями, разрешениями и трекерами"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Предлагает провести анализ"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Функция Privacy Guard — это функция Premium. Обновите браузер, чтобы изменить разрешения сайта здесь."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Это изменение не удалось применить. Пожалуйста, попробуйте еще раз."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Пока не настроены никакие разрешения для веб-сайтов. Privacy Guard добавляет веб-сайт сюда, когда блокирует разрешения, которые этому веб-сайту были предоставлены ранее."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Перейти в настройки"
+   },
+   "main_privacy_guard_info": {
+      "message": "Защищает вашу конфиденциальность, блокируя скрипты отслеживания и управляя правами доступа к веб-сайту. Эти параметры можно точно настроить в меню «Настройки»."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Управление разрешениями"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Автоматическая загрузка"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Управление камерой"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Доступ к буферу обмена"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Доступ к местоположению"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Управление микрофоном"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Уведомления"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Очистить Поиск"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Ни один сайт не соответствует вашему запросу"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Найти веб-сайт"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacy Guard"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Доверять этому сайту (разрешить всё)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Вы ранее решили доверять этому веб-сайту и предоставили все запрашиваемые им разрешения (уведомления, доступ к местоположению, управление камерой и микрофоном)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "В этом браузере невозможно управлять разрешениями веб-сайтов"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Зачем нужно управлять разрешениями?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Когда веб-сайт блокируется как небезопасный, Privacy Guard также блокирует предоставленные ему разрешения, такие как уведомления или доступ к камере. Разрешения, которых у веб-сайта никогда не было, остаются без изменений."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Обнаружена вредоносная ссылка в чате"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Обнаружена подозрительная ссылка в чате"
+   },
+   "main_recent_activity_info": {
+      "message": "Последние подозрительные или вредоносные вердикты хранятся в течение последнего месяца."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Не удалось загрузить последние события."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Мошенническая страница заблокирована"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Обнаружена мошенническая страница"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Обнаружения Поискового Помощника"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Вредоносная страница заблокирована"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Обнаружена подозрительная активность"
+   },
+   "main_rename_device_cancel": {
+      "message": "Отмена"
+   },
+   "main_rename_device_description": {
+      "message": "Присвойте своему устройству уникальное имя, чтобы его было легко идентифицировать."
+   },
+   "main_rename_device_field_label": {
+      "message": "Название устройства"
+   },
+   "main_rename_device_save": {
+      "message": "Сохранить"
+   },
+   "main_rename_device_title": {
+      "message": "Переименовать это устройство"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Доступ к камере для {n} веб-сайтов отозван"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Отзыв доступа к камере для {n} веб-сайтов"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Доступ к буферу обмена для {n} веб-сайтов отозван"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Отзыв доступа к буферу обмена для {n} веб-сайтов"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Очищены файлы cookie и данные сайтов для {n} веб-сайтов"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Очистка файлов cookie и данных сайта для {n} веб-сайтов"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Автоматическая загрузка для {n} веб-сайтов заблокирована"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Блокировка автоматической загрузки для {n} веб-сайтов"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Применить исправления"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Применено {n} из {t} исправлений"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Доступ к местоположению для {n} веб-сайтов отозван"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Отзыв доступа к местоположению для {n} веб-сайтов"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Доступ к микрофону для {n} веб-сайтов отозван"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Отзыв доступа к микрофону для {n} веб-сайтов"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Заблокированы уведомления для {n} веб-сайтов"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Блокировка уведомлений для {n} веб-сайтов"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Переименованы {n} рискованные закладки"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Переименование {n} рискованных закладок"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Применение исправлений…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Автоматическая защита"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Управляемая защита"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Применить выбранные исправления"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Что я делаю"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Автоматическое применение исправлений"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Моя роль"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Что я отмечу"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Что я исправлю"
+   },
+   "main_sa_banner_sources": {
+      "message": "На что я буду смотреть"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Ваш выбор"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Сопоставление закладок с известными угрозами…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Выполнено {n} проверок"
+   },
+   "main_sa_check_cookies": {
+      "message": "Проверка наличия сохраненных файлов cookie и данных сайтов на отмеченных доменах…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} из {t} закладок соответствуют известным угрозам"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "На {c} веб-сайтах остались необработанные данные, которые стоит удалить."
+   },
+   "main_sa_check_done_history": {
+      "message": "Обнаружено {h} посещений отмеченных доменов"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} из {t} измененных разрешений выглядят ненужными или рискованными"
+   },
+   "main_sa_check_history_db": {
+      "message": "Сравнение истории с известными угрозами…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Я сначала проверю наиболее рискованные моменты и сравню, к чему каждый веб-сайт имеет доступ, с тем, что ему действительно необходимо."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Проверка разрешений веб-сайта…"
+   },
+   "main_sa_continue": {
+      "message": "Продолжить"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Буфер обмена и загрузки"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Найдите веб-сайты, которые могут читать ваш буфер обмена или загружать файлы без запроса, и отключите те, которые этого делать не должны."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Уведомления браузера"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Остановите мошеннические и спам-уведомления с сайтов, на которые вы не хотели разрешать доступ."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Уведомления"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Доступ к микрофону, камере и местоположению"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Найдите веб-сайты, которые могут использовать ваш микрофон, камеру или местоположение, и отключите те, которые этого делать не должны."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Доступ к микрофону, камере и местоположению"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Известные угрозы"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Блокируйте веб-сайты, которые заведомо являются вредоносными, еще до их загрузки."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Буфер обмена и загрузки — {n} веб-сайтов могут читать ваш буфер обмена или автоматически загружать файлы"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Сохраненные данные — {n} веб-сайтов уже сохранили файлы cookie или другие данные на вашем устройстве"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Поддельные веб-сайты — {n} веб-сайтов копируют реальные компании, чтобы обмануть вас"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Разрешения — {n} веб-сайтов могут получить доступ к вашим уведомлениям, местоположению, микрофону или камере"
+   },
+   "main_sa_finding_threats": {
+      "message": "Известные угрозы — {n} веб-сайтов находятся в нашем списке известных вредоносных веб-сайтов"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Сгенерирован отчет: {n} предупреждений"
+   },
+   "main_sa_findings_heading": {
+      "message": "Сканирование завершено Вот что я обнаружил:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Сканирование завершено. Исправляю обнаруженную проблему:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Сканирование завершено."
+   },
+   "main_sa_findings_none": {
+      "message": "Ничего подозрительного не обнаружилось — сканирование не выявило никаких тревожных признаков."
+   },
+   "main_sa_finish_setup": {
+      "message": "Сохранить и продолжить"
+   },
+   "main_sa_fix_cam": {
+      "message": "Отменить доступ к камере"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Отменить доступ к буферу обмена"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Удалите подозрительные файлы cookie и локально сохраненные данные"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Заблокировать автоматическую загрузку"
+   },
+   "main_sa_fix_loc": {
+      "message": "Отменить доступ к местоположению"
+   },
+   "main_sa_fix_mic": {
+      "message": "Отменить доступ к микрофону"
+   },
+   "main_sa_fix_notif": {
+      "message": "Блокировать уведомления"
+   },
+   "main_sa_fix_rename": {
+      "message": "Переименовать опасные закладки"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Отмечено {n} опасных закладок, чтобы они были видны с первого взгляда"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Очищены файлы cookie и сохраненные данные с {n} отмеченных доменов"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Отозваны {n} разрешений сайта, которые вы не использовали активно"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Ничего не нужно было очищать — всё было в порядке"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Вот что бы я сделал:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Обрабатывает угрозы автоматически и реагирует в момент их обнаружения, не прерывая вашу работу."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Автоматическая защита"
+   },
+   "main_sa_go_dashboard": {
+      "message": "сделано"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Проверяет всё, а затем спрашивает вашего мнения, прежде чем предпринимать какие-либо действия."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Управляемая защита"
+   },
+   "main_sa_intro_scan": {
+      "message": "Для начала выберите, что именно я должен посмотреть на вашем первом сканировании."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Начинается ваше первое сканирование. Дальше я всё улажу сам."
+   },
+   "main_sa_list_last_separator": {
+      "message": " и "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Вот мой план:"
+   },
+   "main_sa_plan_body": {
+      "message": "Я проверю ваш {targets}, сопоставлю его с известными угрозами, а затем покажу вам сводку, прежде чем что-либо менять."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Я проверю ваши закладки, историю и разрешения, сопоставлю их с известными угрозами и устраню любые потенциальные проблемы, как только их обнаружу."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Я покажу вам, что обнаружил, прежде чем что-либо менять. Вы сами решаете, что произойдет дальше."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Закладки"
+   },
+   "main_sa_plan_target_history": {
+      "message": "история просмотров"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "разрешения сайта"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Прочитано {n} закладок в {f} папках"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Чтение закладок…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Прочитать {n} источников"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Теперь я всё проверю на наличие рисков."
+   },
+   "main_sa_read_history_done": {
+      "message": "Прочитать {n} записей истории"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Чтение истории просмотров…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Обнаружено {n} веб-сайтов с измененными разрешениями"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Проверка разрешений сайта…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Сначала прочитаю, а потом проанализирую. Начинаем сейчас."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Пропустить первоначальное сканирование"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Пропустить и показать отчет"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Закладки"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Найдите сохраненные сайты, которые незаметно стали опасными после того, как вы добавили их в закладки."
+   },
+   "main_sa_source_history": {
+      "message": "История просмотров"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Выявляйте опасные веб-сайты, которые вы уже посещали, чтобы избегать их в следующий раз."
+   },
+   "main_sa_start_assessment": {
+      "message": "Начать сканирование"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Выберите, сколько действий он будет выполнять самостоятельно:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Всё готово."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Всё выглядит хорошо."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} закладок"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Что я проверил:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} записей истории"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} разрешений сайта по {c} категориям"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Что я устранил:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Что я обнаружил:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Отныне я буду проверять новые закладки и разрешения в фоновом режиме и отмечать все, что может представлять опасность."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Ничего не изменилось. Вы можете вернуться в любое время, чтобы проверить и применить предложенные исправления."
+   },
+   "main_sa_summary_stand": {
+      "message": "Вот краткое изложение."
+   },
+   "main_sa_title_configure": {
+      "message": "Настроить Помощника по безопасности"
+   },
+   "main_sa_what_look_for": {
+      "message": "Что я отмечу"
+   },
+   "main_sa_where_look": {
+      "message": "На что я буду смотреть"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Автономность"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacy Guard"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Оптимизация поиска"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Специализированная защита"
+   },
+   "main_settings_about": {
+      "message": "О программе"
+   },
+   "main_settings_general": {
+      "message": "Основные"
+   },
+   "main_settings_language": {
+      "message": "Язык"
+   },
+   "main_settings_my_account": {
+      "message": "Моя учетная запись"
+   },
+   "main_settings_security_advisor": {
+      "message": "Помощник по безопасности"
+   },
+   "main_settings_support": {
+      "message": "Техническая поддержка"
+   },
+   "main_settings_title": {
+      "message": "Настройки"
+   },
+   "main_settings_upgrade": {
+      "message": "Для повышения уровня защиты обновите до {premium}"
+   },
+   "main_settings_whitelist": {
+      "message": "Белый список"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Откройте Bitdefender Web Sage из боковой панели браузера."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Войдите в свою учетную запись Bitdefender, чтобы начать."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage пока не защищает вас"
+   },
+   "main_support_center_description": {
+      "message": "Быстро находите ответы на самые распространенные вопросы или свяжитесь с нашей службой поддержки, если вам нужна дополнительная помощь."
+   },
+   "main_support_center_link": {
+      "message": "Перейти в службу поддержки"
+   },
+   "main_support_center_title": {
+      "message": "Центр поддержки"
+   },
+   "main_support_community_description": {
+      "message": "Получайте ответы, задавая вопросы! Мы здесь для того, чтобы помогать друг другу!"
+   },
+   "main_support_community_link": {
+      "message": "Задайте вопрос сообществу"
+   },
+   "main_support_community_title": {
+      "message": "Задайте вопрос сообществу"
+   },
+   "main_test": {
+      "message": "тест"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Шрифты"
+   },
+   "main_third_party_category_label": {
+      "message": "Категория:"
+   },
+   "main_third_party_category_packages": {
+      "message": "Пакеты JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "Лицензия:"
+   },
+   "main_third_party_link_label": {
+      "message": "Ссылка:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Ниже приведены уведомления об авторских правах на программное обеспечение с открытым исходным кодом сторонних разработчиков, содержащееся в отдельных частях расширения для браузера Bitdefender (версия $1). Мы благодарим сообщество разработчиков открытого программного обеспечения за весь их вклад."
+   },
+   "main_third_party_page_title": {
+      "message": "Условия лицензии третьих сторон"
+   },
+   "main_third_party_version_label": {
+      "message": "Версия:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Неполная версия. Адрес электронной почты и пароль. Примерно минута — и всё готово."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Это не платный доступ. {product} Standard бесплатен и останется бесплатным. Никакой карты, никакого пробного периода, никакого срока действия."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Это не подписка. Счёт — это не план. Ничего не оплачивается и не продлевается автоматически."
+   },
+   "main_welcome_account_not_title": {
+      "message": "И, чтобы сразу прояснить, чем это не является"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome на работе, Edge дома, второй компьютер. Одна учетная запись {product} покрывает во всех из них с одинаковыми правилами."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Защита повсюду, а не для каждого браузера отдельно"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Одна и та же учетная запись Bitdefender работает во всем, что создает Bitdefender. Добавьте продукт позже, свяжитесь со службой поддержки, проверьте устройство — у вас уже всё настроено."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Одна учетная запись, ни одной больше"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Каждый сайт, к которому вы дали доступ, каждая отключенная вами функция защиты — теперь всё это преследует вас. Новый браузер, новый ноутбук, свежая установка: всё по-прежнему на месте."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Ваши настройки перестанут исчезать"
+   },
+   "main_welcome_account_straight": {
+      "message": "Защита {product} начинается при входе в систему. До тех пор защита остается неактивной, а значок щита в вашем браузере остается выключенным."
+   },
+   "main_welcome_account_sub": {
+      "message": "Это существенное отличие от TrafficLight, и вполне уместно спросить, почему. Три веские причины:"
+   },
+   "main_welcome_account_title": {
+      "message": "Единственное, что изменилось"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Продолжайте просмотр"
+   },
+   "main_welcome_button_open": {
+      "message": "Открыть {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Войти"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Проверка вашей учетной записи…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "На этом устройстве уже есть Bitdefender? Возможно, вы вошли в систему автоматически — эта страница обновится в момент этого события."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} защищает вас только тогда, когда вы вошли в свою учетную запись Bitdefender. Вход в систему активирует блокировку, автоматически применяет ваш тарифный план и синхронизирует ваши настройки. Создание учетной записи бесплатно."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Войдите в систему — это включит защиту"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Всё готово"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Обновление завершено"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight вырос"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Откройте свою панель управления"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Войти"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "В верхней части панели расположены ваша панель управления, активность и настройки."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Ваша учетная запись"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Ваша учетная запись Bitdefender включает защиту, синхронизирует ваши настройки между браузерами и устройствами и предоставляет вам единую панель управления для вашей активности и настроек."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Ваша учетная запись, ваша панель управления"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "На панели"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Познакомьтесь с Помощником по Безопасности"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Здесь находятся все настройки защиты, в том числе и те, которые определяют степень автономной работы системы."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Помощник по безопасности"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "При настройке он проверяет ваши закладки и историю просмотров на наличие известных угроз, а затем подробно объясняет, что именно обнаружено на посещаемых вами страницах. Вы сами выбираете, будет ли он спрашивать вас перед тем, как действовать, или будет действовать самостоятельно."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Помощник по безопасности"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "На панели"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Посмотрите это на панели"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "На настоящем сайте тихо, на поддельном — шумно."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Безопасные финансы"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Страницы, посвященные банковским операциям, криптовалютам и электронным кошелькам, подвергаются дополнительной проверке: попытки подделки данных вашего банка или биржи выявляются еще до ввода пароля."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Безопасные финансы"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "На сайтах, посвящённых банковской сфере и криптовалютам"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Настройка в два этапа"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Ничего включать не нужно; система защищает вас с момента обновления."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Всё ещё здесь"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Блокировка страниц в режиме реального времени и функция Поисковый Помощник работают точно так же, как и раньше, но теперь используют больше источников информации. Если вы также использовали отдельное расширение для защиты от отслеживания, то теперь Privacy Guard выполняет эту задачу — вы можете его удалить."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Всё, на что вы полагались, по-прежнему здесь"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Всегда включен"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Открыть Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Каждый сайт, которым он управляет, с переключателем для каждого разрешения."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Блокирует средства отслеживания и управляет разрешениями, предоставленными сайту: уведомления, определение местоположения, камера, микрофон, автоматическая загрузка и буфер обмена. Если сайт окажется небезопасным, все предоставленные вам разрешения будут отозваны."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacy Guard"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "На панели"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Посмотрите это на панели"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Предупреждения появляются прямо там, где вы просматриваете сайт, еще до того, как вы нажмете на ссылку."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Защита от мошенничества"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Не только известные вредоносные URL-адреса: подозрительная страница проходит анализ с помощью ИИ по запросу, который простым языком объясняет, в чём заключается проблема."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Защита от мошенничества с помощью глубокого сканирования на основе ИИ"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "На странице"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Открыть панель"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Рядом с каждым результатом есть отметка; наведите курсор, чтобы узнать причину."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Оптимизация поиска"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Рейтинги безопасности отображаются рядом с результатами поиска в Google, Bing, DuckDuckGo и Yahoo, чтобы вы знали об этом, прежде чем кликнуть."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Оптимизация поиска"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "В результатах поиска"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Посмотрите это на панели"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Оценка самого магазина, а не только той страницы, на которой вы находитесь."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Интернет-магазины проверяются с помощью веб-аналитики прямо во время вашего просмотра, поэтому поддельные магазины и предложения, которые кажутся слишком хорошими, чтобы быть правдой, выявляются еще до того, как вы совершите покупку."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "На сайтах покупок"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Посмотреть состояние страницы"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Вы замечаете это только тогда, когда он хочет что-то сказать."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Блокировка страницы"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Каждая открытая вами страница проверяется с помощью системы анализа угроз Bitdefender. Опасный сайт немедленно закрывается — и полностью блокируется, прежде чем он сможет загрузиться снова."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Опасные страницы блокируются на месте"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "На странице"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Юридическая и техническая поддержка"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Политика конфиденциальности"
+   },
+   "main_welcome_footer_support": {
+      "message": "Техническая поддержка"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Условия использования"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Панель не удалось открыть автоматически. Нажмите на значок {product} на панели инструментов, чтобы открыть его."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Анимация, демонстрирующая, как закрепить расширение на панели инструментов браузера"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Нажмите кнопку «Расширения» (значок пазла) в правом верхнем углу браузера."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Нажмите кнопку «Расширения» (значок пазла) в правом верхнем углу браузера."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Нажмите кнопку «Расширения» (значок пазла) на панели инструментов."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Нажмите кнопку «Расширения» (кубик) на панели инструментов."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Откройте меню расширений вашего браузера."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Найдите {product} и нажмите на значок булавки рядом с ним."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Найдите {product} и щелкните значок булавки рядом с ним, чтобы отобразить его на панели инструментов."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Найдите {product}, откройте его настройки (значок шестеренки) и выберите «Закрепить на панели инструментов»."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Найдите {product} и нажмите на значок булавки рядом с ним."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Найдите {product} и закрепите его на панели инструментов."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Держите эту информацию наготове, чтобы всегда видеть статус безопасности страницы, на которой вы находитесь."
+   },
+   "main_welcome_pin_title": {
+      "message": "Закрепите {product} на панели инструментов"
+   },
+   "main_welcome_protected_done": {
+      "message": "Защита включена. Больше ничего делать не нужно — закрепите {product}, чтобы он оставался на виду."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Включено в ваш {plan} план — разблокируется автоматически, ничего активировать не нужно."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Запущено сейчас"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Бесплатно с вашей учетной записью Bitdefender."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Вы защищены — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Вы защищены — {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Вы авторизованы и защищены"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Защита от мошенничества, фишинга и отслеживания в режиме реального времени, прямо там, где вы просматриваете веб-страницы. Два простых шага и готово."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Версия {version} установлена и уже обеспечивает вашу защиту. Вот что это добавляет."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Ваше расширение только что получило важное обновление. Всё, что сделал TrafficLight, осталось на своём месте, а кроме того, появилось ещё много нового."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Часть {product} Premium, включена в Bitdefender Total Security и выше."
+   },
+   "main_welcome_title_new": {
+      "message": "Добро пожаловать в {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} стало лучше"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight теперь {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Что вы получите"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Новые возможности"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Новые возможности"
+   },
+   "main_welcome_tour_next": {
+      "message": "Следующая функция"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Предыдущая функция"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} из {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Всё, что {product} делает для вас, по одной функции за раз. Пройдите через это шаг за шагом или сразу же приступайте."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Новое в версии {version}. Пройдите через это шаг за шагом или сразу же приступайте."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Всё, что сделал TrafficLight, плюс это. Пройдите через это шаг за шагом или сразу же приступайте."
+   },
+   "main_welcome_window_title": {
+      "message": "Добро пожаловать в {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Добавить веб-сайт"
+   },
+   "main_whitelist_import": {
+      "message": "Импорт доменов"
+   },
+   "main_whitelist_info": {
+      "message": "Домены из вашего белого списка будут пропущены при сканировании. Вы не будете предупреждены о каких-либо угрозах, существующих на этих страницах."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Удалить"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Сканирование угроз"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Скрипты отслеживания"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Собирает рекламные объявления, показываемые на посещаемых вами страницах, для проверки на предмет мошенничества и обмана."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Мониторинг рекламы"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Помечает вредоносную рекламу и спонсируемые результаты поиска, ведущие к мошенническим схемам или вредоносному ПО."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Обнаруживает поддельные банковские сайты и мошеннические инвестиционные платформы, созданные для кражи ваших учетных данных или средств."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Защита от финансового мошенничества"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Предупреждает о поддельных магазинах и мошеннических страницах оформления заказа до ввода платежных данных."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Заблокировать эту страницу"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Загрузить в любом случае (небезопасно)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Загрузить содержимое в любом случае (небезопасно)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Подробнее"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Взглянем на детали…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Я не могу сейчас проанализировать эту страницу. Пожалуйста, попробуйте еще раз."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Подробный анализ страниц не входит в вашу текущую подписку, поэтому я не могу этим заняться."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Это заняло больше времени, чем я мог ждать, поэтому я перестал этим заниматься."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Проверяет ссылки внутри панелей обзора ИИ и помечает те, которые ведут на небезопасные веб-сайты."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Сканер ИИ обзора"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Отключено в Настройках"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Включено"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Недоступно"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "ИИ Поисковый Помощник"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Информация о ссылках в результатах поиска"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Проанализировано с помощью {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Мне не удалось заблокировать эту страницу."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Блокировка этой страницы…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Принудительная проверка (удаление из белого списка)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Сканировать ещё раз"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Разблокировать эту страницу"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Проверка базы данных известных угроз…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Проверка разрешений…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Проверка на мошенничество…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Выполняется проверка"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Выполнено {n} проверок"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Блокировать страницу"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Согласие"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Провести углубленный анализ"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Провел углубленный анализ"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Глубокий анализ завершён"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Анализ содержимого страницы и скриншота…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Глубокий анализ не выявил проблем на этой странице."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Глубокий анализ завершён без обнаружения каких-либо специфических признаков."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Глубокий анализ подтвердил, что эта страница опасна."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Запустить анализ"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "С вашего согласия я изучу содержимое страницы и сделаю скриншот, чтобы выяснить, что скрывается под поверхностью."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Время глубокого анализа истекло"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Ожидание прекратилось через {n} секунд"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Глубокий анализ занимает больше времени, чем я могу ждать, поэтому я остановился. Вы можете запустить его еще раз или принять решение, опираясь на то, что я уже обнаружил."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Провести более глубокий анализ?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Удаление из белого списка и повторная проверка…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Сгенерирован отчет: {n} предупреждение"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Сгенерирован отчет: {n} предупреждений"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Переход на страницу…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Вредоносный результат поиска"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Проверяет рекламу на посещаемых вами страницах и помечает те объявления, которые ведут к мошенническим схемам."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Защита от мошеннической рекламы"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Открыть настройки расширения"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera не даёт расширениям доступ к результатам поиска, пока вы его не разрешите. Откройте opera://extensions, найдите это расширение и включите параметр «Разрешить доступ к результатам на странице поиска»."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Результаты поиска не проверяются"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacy Guard заблокировал {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Этот веб-сайт может получить доступ к вашему {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Разрешения не предоставлены"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Разрешения отсутствуют"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Предупреждающих знаков не обнаружено"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard предлагает заблокировать {list} для этого веб-сайта."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Вот что я обнаружил:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Восстановлен весь заблокированный контент."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Восстановление заблокированного контента…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Схемы мошенничества не обнаружены"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} индикатор вредоносной активности обнаружен"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} индикаторов вредоносной активности обнаружено"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} подозрительный индикатор обнаружен"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} подозрительные индикаторы обнаружены"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Анализ мошенничества завершить не удалось"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Появилось в недостоверном рекламном контенте"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Шаблон \"Принудительное вымогательство\""
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Шаблон \"Мошенничество с фальшивыми деньгами\""
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Шаблон \"Мошенничество с использованием кризисных ситуаций\""
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Шаблон \"Мошенничество с криптовалютой\""
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Шаблон \"Мошенническая платформа знакомств для взрослых\""
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Шаблон \"Вводящая в заблуждение реклама\""
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Шаблон \"Вводящий в заблуждение розыгрыш призов\""
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Шаблон \"Вводящий в заблуждение онлайн-опрос\""
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Шаблон \"Мошенничество с инвестициями в энергетику\""
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Шаблон \"Мошенничество с вымогательством\""
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Шаблон \"Поддельное вознаграждения за просмотр рекламы\""
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Шаблон \"Поддельный сайт бронирования\""
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Шаблон \"Фейковое казино\""
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Шаблон \"Фальшивая благотворительность\""
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Шаблон \"Поддельная клиника\""
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Шаблон \"Фейковая раздача криптовалюты\""
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Шаблон \"Поддельная служба доставки\""
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Шаблон \"Поддельные документы\""
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Шаблон \"Поддельный интернет-магазин\""
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Шаблон \"Поддельное учебное заведение\""
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Шаблон \"Поддельное предложение о работе\""
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Шаблон \"Поддельный развлекательный сервис\""
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Шаблон \"Поддельное финансовое учреждение\""
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Шаблон \"Поддельные финансовые инвестиции\""
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Шаблон \"Поддельный сайт азартных игр\""
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Шаблон \"Фальшивые выигрыши в азартных играх\""
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Шаблон \"Поддельные инвестиции в золото\""
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Шаблон \"Поддельные государственные пособия\""
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Шаблон \"Поддельное государственное учреждение\""
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Шаблон \"Поддельная иммиграционная служба\""
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Шаблон \"Фальшивая юридическая организация\""
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Шаблон \"Фальшивая услуга возврата денег\""
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Шаблон \"Поддельная интернет-аптека\""
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Шаблон \"Поддельная клиника\""
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Шаблон \"Поддельная платежная платформа\""
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Шаблон \"Кампания с фальшивыми призами\""
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Шаблон \"Поддельный приз или вознаграждение\""
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Шаблон \"Поддельное издательство\""
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Шаблон \"Платформа с фальшивыми отзывами\""
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Поддельные паттерны магазинов в рекламной кампании"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Шаблон \"Фальшивый духовный практик\""
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Шаблон \"Фальшивые выигрыши\""
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Шаблон \"Финансовое мошенничество\""
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Мошенническая рекламная кампания поддельного магазина"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Шаблон \"Мошенничество в сфере здравоохранения\""
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Обнаружена атака с использованием омоглифов"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Шаблон \"Сайт, посвящённый незаконной деятельности\""
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Шаблон \"Незаконные услуги\""
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Шаблон \"Незаконные вещества\""
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP-адрес со вредоносными паттернами"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP-адрес с подозрительными паттернами"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Известный шаблон фишинга"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Известный шаблон мошенничества"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Шаблон \"Лотерейное мошенничество\""
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Интернет-магазин с низким уровнем доверия, без устоявшейся репутации"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Торговая/инвестиционная платформа с низким уровнем доверия, без устоявшейся репутации"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Вредоносная ссылка на инвестиционную платформу"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Вредоносная ссылка на интернет-магазин"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Шаблон \"Мошенничество с наркотиками\""
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Интернет-магазин с противоречивыми показателями"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Интернет-магазин без устоявшегося представительства"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Шаблон \"Мошенничество с домашними животными\""
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Шаблон \"Схема Понци/пирамида\""
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Шаблон \"Мошенничество с недвижимостью\""
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Шаблон \"Романтическая афера\""
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Шаблон \"Сайт романтической аферы\""
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Шаблон \"Афера с тайным обществом\""
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Ссылка на подозрительную инвестиционную платформу"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Подозрительный формат ссылки"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Подозрительная ссылка на интернет-магазин"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Шаблон \"Мошенничество с технической поддержкой\""
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Торговая/инвестиционная платформа с противоречивыми индикаторами"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Торговая/инвестиционная платформа без устоявшегося присутствия на рынке"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Интернет-магазин с очень низким уровнем доверия"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Интернет-магазин с очень низким уровнем доверия, не имеющий устоявшейся репутации"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Торговая/инвестиционная платформа с очень низким уровнем доверия"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Очень подозрительная ссылка"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Я заблокировал это приложение и ограничил его доступ к вашему микрофону, камере и местоположению — можете смело закрыть вкладку..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Для вашей безопасности были заблокированы скрипты отслеживания, а доступ к микрофону, камере и местоположению был отозван."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Я не успел до конца проверить эти результаты поиска."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Сканирование не завершено"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Помощник по безопасности включен"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Сканирование результатов поиска…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Подозрительный результат поиска"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Поисковый Помощник отключен. Перейдите в настройки, чтобы включить эту функцию."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Веб-защита отключена. Перейдите в настройки, чтобы включить эту функцию."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Пропуск проверок и загрузка страницы."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Эта страница помечена как вредоносная."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Эта страница является частью попытки мошенничества."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Эта страница является частью мошеннической рекламы."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Мы обнаружили элементы, которые могут нанести вред вашему устройству."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Страница попыталась использовать ресурсы вашего устройства для майнинга криптовалюты и была заблокирована."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Эта страница не может быть проверена Помощником по безопасности."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Пропуск проверок и загрузка страницы."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Она останется заблокированной, пока вы её не разблокируете."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Эта страница является частью фишинговой атаки."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Попытка загрузки потенциально нежелательного приложения (PUA) на ваше устройство была заблокирована."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Эта страница пропускается при сканировании в текущей сессии просмотра"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Эта страница, возможно, безопасна, но в прошлом поступали сообщения об угрозах безопасности."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Эта страница пропускается при сканировании, поскольку она была добавлена в список исключений."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Добавляет рейтинг безопасности рядом с каждым результатом поиска в Google, Bing, Yahoo и DuckDuckGo, чтобы вы могли распознать опасные ссылки, прежде чем перейти по ним."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Аннотация результатов поиска"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Защита отключена"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Не удается отсканировать результаты поиска"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Невозможно отсканировать эту страницу"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Этот домен внесен в белый список"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Обнаружен мошеннический магазин"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Обнаружена попытка мошенничества"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Обнаружена мошенническая реклама"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Обнаружена угроза!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Обнаружена попытка майнинга"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Страница не может быть отсканирована"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Эта страница пропускается в данной сессии"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Вы заблокировали эту страницу"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Обнаружена попытка фишинга"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Обнаружена загрузка потенциально нежелательного приложения"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Этот сайт безопасен"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Сканирование..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Обнаружен недоверенный домен"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Обнаружена страница, не подпадающая под правила"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Заблокировано {n} трекеров"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Блокировка отслеживающих скриптов отключена, поэтому эта страница не проверялась на наличие трекеров"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Загрузка скриптов (небезопасно)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "На этой странице не обнаружено скриптов отслеживания"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Мне не удалось разблокировать эту страницу."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Разблокировка этой страницы…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Известных угроз не обнаружено"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Страница заблокирована"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Страница загружена за {n}мс"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Вы в безопасности"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Я обнаружил на этой странице некоторые риски. Избегайте ввода личной информации, паролей или платежных данных и ничего не скачивайте."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Будьте осторожны здесь"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "На данный момент все в порядке."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Мы обеспечиваем вашу защиту во время просмотра веб-страниц."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Эта страница была заблокирована"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Домен помечен как вредоносный"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Поддельные магазины имитируют реальных продавцов, чтобы получить вашу оплату и завладеть данными вашей карты. Заказы доставляются крайне редко, а введенные вами данные могут быть использованы повторно или проданы."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Мошеннические страницы обычно вынуждают переводить денежные средства с целью получения незаконной выгоды."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Данная страница была заблокирована для предотвращения дальнейшего взаимодействия с мошенниками.\u003Cbr>\u003Cbr>Злоумышленники заманивают своих потенциальных жертв, используя дипфейки, инвестиционные возможности и другие популярные темы, чтобы обманом заставить их передать конфиденциальные данные, деньги или загрузить вредоносное ПО."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Страницы с вредоносным содержимым пытаются установить программное обеспечение, которое похищает персональную информацию, вредит вашей системе и работает без ведома пользователя."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Страницы майнера используют ресурсы устройства для добычи криптовалюты, что влияет на удобство использования и срок службы устройства."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Фишинговые страницы, визуально неотличимые от оригинальных сайтов, пытаются получить доступ к конфиденциальной информации, такой как учетные данные или данные кредитной карты. Украденные данные могут быть использованы для получения незаконной выгоды."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Эта страница пытается загрузить ПНП (потенциально нежелательные приложения) на Ваше устройство. Поведение таких приложений может повлиять на конфиденциальность Ваших данных и безопасность Вашего устройства."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Сомнительные страницы проявляют подозрительное поведение или особенности, связанные с риском, поэтому вы должны воздержаться от их посещения в целях безопасности."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Мошеннический магазин заблокирован в целях вашей безопасности."
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "В целях вашей безопасности мы заблокировали часть контента."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Обнаружено подозрительное содержимое"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Не удалось открыть панель. Попробуйте еще раз."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Чтобы увидеть подробности, откройте панель Bitdefender из боковой панели браузера."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Страница заблокирована"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Автоматическая загрузка"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "камера"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "буфер обмена"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Закрыть"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "{permissions} доступ к этому сайту заблокирован."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "{permissions} доступ к этому сайту заблокирован."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "{permissions} доступ к этому сайту разрешен. Посмотрите, что может использовать этот веб-сайт."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "{permissions} доступ к этому сайту разрешен. Посмотрите, что может использовать этот веб-сайт."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard обнаружил разрешения, требующие проверки"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} и {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "местоположение"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "{permissions} доступ к этому сайту заблокирован. Посмотрите, что может использовать этот веб-сайт."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "{permissions} доступ к этому сайту заблокирован. Посмотрите, что может использовать этот веб-сайт."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard управляет разрешениями"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "микрофон"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Уведомления"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard управляет разрешениями"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Действуйте с осторожностью"
+   },
+   "urlScanning_see_details": {
+      "message": "Посмотреть детали"
+   },
+   "urlScanning_show_details": {
+      "message": "Показать подробности"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Закрыть"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Здесь есть некоторые тревожные признаки. Будьте осторожны с личной информацией и скачиваемыми файлами."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Не удается просканировать результаты поиска"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Невозможно отсканировать эту страницу"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Обнаружен мошеннический магазин"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Обнаружена попытка мошенничества"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Обнаружена мошенническая реклама"
+   },
+   "urlScanning_title_malware": {
+      "message": "Обнаружена угроза!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Обнаружена попытка майнинга"
+   },
+   "urlScanning_title_phish": {
+      "message": "Обнаружена попытка фишинга"
+   },
+   "urlScanning_title_pua": {
+      "message": "Обнаружена загрузка потенциально нежелательного приложения"
+   },
+   "urlScanning_title_safe": {
+      "message": "Страница безопасна"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Обнаружен недоверенный домен"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Проверяет посещаемые URL-адреса на наличие вредоносных программ, фишинга, мошенничества и других угроз"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "веб-защита"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Веб-защита Bitdefender"
+   }
+}

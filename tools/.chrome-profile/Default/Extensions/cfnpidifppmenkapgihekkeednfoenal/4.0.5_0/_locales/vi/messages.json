@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Đang xác minh..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Ngăn chặn việc tải các tập lệnh quảng cáo, phân tích, mạng xã hội và cookie của bên thứ ba, nhờ đó các trang web không thể lập hồ sơ hoạt động duyệt web của bạn và giúp trang tải nhanh hơn.?."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Chặn các tập lệnh theo dõi"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "mili giây"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Hiệu suất chống theo dõi"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Theo dõi các tập lệnh "
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Không theo dõi các tập lệnh "
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Các tên miền bên dưới không nằm trong diện bị chặn bởi phần mềm chống theo dõi."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Chúng tôi sử dụng trình theo dõi thương mại để giúp bạn tìm thấy các ưu đãi đặc biệt của chúng tôi một cách dễ dàng. Nhiệm vụ của chúng tôi là bảo vệ quyền riêng tư của bạn. Chúng tôi không bao giờ chia sẻ bất kỳ thông tin nào được thu thập với bất kỳ ai, cho bất kỳ mục đích nào."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Ưu đãi đặc biệt"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Đã xảy ra lỗi"
+   },
+   "chatAgent_thinking": {
+      "message": "Đang suy nghĩ..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Kiểm tra kỹ các tin nhắn để phát hiện các liên kết lừa đảo và các mối đe dọa trên mạng."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Bảo vệ trò chuyện"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Ứng dụng này theo dõi những trang web nào bạn đã cấp quyền truy cập vào camera, micro, vị trí, thông báo, clipboard và tải xuống tự động, để bạn có thể xem xét và thu hồi quyền đó trong Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Quản lý quyền truy cập"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Đã đăng ký bản quyền, mọi quyền được bảo lưu"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Bản quyền © 1997 - 2025 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Chính sách Riêng tư"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Thỏa thuận thuê bao"
+   },
+   "main_about_third_party_license": {
+      "message": "Điều khoản cấp phép của bên thứ ba"
+   },
+   "main_about_version": {
+      "message": "Phiên bản"
+   },
+   "main_account_manage_account_description": {
+      "message": "Truy cập tài khoản Bitdefender của bạn để quản lý cài đặt và tùy chọn của bạn."
+   },
+   "main_account_manage_account_title": {
+      "message": "Quản lý tài khoản"
+   },
+   "main_account_managed_by_description": {
+      "message": "Để sử dụng tài khoản khác, vui lòng xác thực trong ứng dụng Bitdefender của bạn."
+   },
+   "main_account_managed_by_title": {
+      "message": "Được quản lý bởi ứng dụng Bitdefender của bạn"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Xem và quản lý đăng ký thuê bao Bitdefender của bạn."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Các Dịch vụ của tôi"
+   },
+   "main_account_sign_out": {
+      "message": "Đăng xuất"
+   },
+   "main_account_subscription_active": {
+      "message": "Tích cực"
+   },
+   "main_account_subscription_expired": {
+      "message": "Đăng ký đã hết hạn"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Gói đăng ký thuê bao đã hết hạn ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Hết hạn sau [Days] ngày ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Hết hạn sau [Days] ngày ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Gói cá nhân"
+   },
+   "main_account_subscription_section": {
+      "message": "Đăng ký"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Miễn phí"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Cao cấp"
+   },
+   "main_account_title": {
+      "message": "Tài khoản của tôi"
+   },
+   "main_activity_details_error": {
+      "message": "Không thể tải dữ liệu hoạt động."
+   },
+   "main_activity_detections_analysed": {
+      "message": "đã phân tích"
+   },
+   "main_activity_detections_title": {
+      "message": "Phát hiện"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "phát hiện"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Thông tin tình báo về mối đe dọa"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Cách các tín hiệu rủi ro từ nhiều danh mục khác nhau kết hợp với nhau đối với các trang web bạn truy cập."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Website này đã có trong danh sách cho phép."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Hủy bỏ"
+   },
+   "main_add_whitelist_description": {
+      "message": "Các tên miền trong danh sách trắng của bạn sẽ được bỏ qua trong quá trình quét. Bạn sẽ không nhận được cảnh báo nào về bất kỳ mối đe dọa nào trên các trang này."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Địa chỉ trang web"
+   },
+   "main_add_whitelist_save": {
+      "message": "Lưu"
+   },
+   "main_add_whitelist_title": {
+      "message": "Thêm website vào danh sách cho phép"
+   },
+   "main_autonomy_level_title": {
+      "message": "Mức độ tự chủ"
+   },
+   "main_autonomy_save": {
+      "message": "Lưu cài đặt"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Hoạt động"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Thay đổi mức độ bảo vệ"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Tự động xử lý các mối đe dọa và hành động ngay khi phát hiện ra chúng, mà không làm gián đoạn công việc của bạn."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Bảo vệ tự động"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Kiểm tra mọi thứ, sau đó hỏi ý kiến bạn trước khi hành động."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Bảo vệ có hướng dẫn"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Các tên miền đã được kiểm tra"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Quét thông minh trên trang web bán hàng trực tuyến"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Mua sắm an toàn"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Thông tin tình báo về các trang web rủi ro theo thời gian thực"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Bảo vệ lừa đảo"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Trí tuệ liên kết kết quả tìm kiếm được tích hợp AI"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Cố vấn Tìm kiếm"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Thông tin tình báo về ngân hàng, tiền điện tử và ví điện tử"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Tài chính an toàn"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Tích cực"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Tháng"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Hôm nay"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Tuần"
+   },
+   "main_dashboard_load_error": {
+      "message": "Không thể tải dữ liệu bảng điều khiển."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Bỏ qua"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Kiểm tra đánh dấu trang và lịch sử duyệt web"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Hoạt động gần đây"
+   },
+   "main_dashboard_retry": {
+      "message": "Làm lại"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Xem chi tiết hoạt động"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "độc hại"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "an toàn"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "khả nghi"
+   },
+   "main_error_boundary_text": {
+      "message": "Đã xảy ra lỗi trong quá trình hiển thị cửa sổ bật lên của tiện ích mở rộng. Vui lòng thử làm mới hoặc mở lại cửa sổ bật lên."
+   },
+   "main_error_boundary_title": {
+      "message": "Đã xảy ra lỗi!"
+   },
+   "main_extension_description": {
+      "message": "Chặn các trang web lừa đảo, giả mạo danh tính và các trang web nguy hiểm trước khi chúng tải, hoàn toàn miễn phí. Bản Premium bổ sung AI giúp giải thích các mối đe dọa và bảo vệ tiền của bạn."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Ngôn ngữ ứng dụng"
+   },
+   "main_general_app_theme": {
+      "message": "Chủ đề ứng dụng"
+   },
+   "main_general_privacy_policy": {
+      "message": "Chính sách Riêng tư"
+   },
+   "main_general_product_reports_description": {
+      "message": "Gửi báo cáo về các mối đe dọa mạng để cải tiến sản phẩm theo Chính sách bảo mật."
+   },
+   "main_general_product_reports_title": {
+      "message": "Báo cáo sản phẩm"
+   },
+   "main_general_theme_automatic": {
+      "message": "Tự động"
+   },
+   "main_general_theme_dark": {
+      "message": "Tối"
+   },
+   "main_general_theme_light": {
+      "message": "Sáng"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Bước này không có mô tả."
+   },
+   "main_login_button": {
+      "message": "Đăng nhập"
+   },
+   "main_login_connected_button": {
+      "message": "Tiếp tục"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Tiếp theo, hãy thiết lập cách thức hoạt động của Trình tư vấn bảo mật."
+   },
+   "main_login_connected_title": {
+      "message": "Bạn đã kết nối!"
+   },
+   "main_login_create_account": {
+      "message": "Tạo tài khoản"
+   },
+   "main_login_no_account": {
+      "message": "Chưa có tài khoản?"
+   },
+   "main_login_subtitle": {
+      "message": "Đăng nhập vào tài khoản Bitdefender của bạn."
+   },
+   "main_login_title": {
+      "message": "Bảo vệ hoạt động duyệt web của bạn"
+   },
+   "main_navbar_dashboard": {
+      "message": "Bảng điều khiển"
+   },
+   "main_opera_hint_caption": {
+      "message": "Nhấp vào biểu tượng tiện ích mở rộng ở thanh bên để mở nó."
+   },
+   "main_opera_hint_instruction": {
+      "message": "Mở Bitdefender Web Sage từ thanh bên của Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Cao cấp"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Nâng cấp lên gói Premium để sử dụng tính năng này."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Quản lý quyền truy cập"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Quản lý thông báo, quyền truy cập và trình theo dõi."
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Đề xuất một bài đánh giá"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Bảo vệ quyền riêng tư"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Bảo vệ quyền riêng tư là một tính năng cao cấp. Nâng cấp để thay đổi quyền truy cập trang web tại đây."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Sự thay đổi đó không thể áp dụng được. Vui lòng thử lại."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Hiện tại chưa có hệ thống quản lý quyền truy cập trang web nào được thiết lập. Privacy Guard sẽ thêm trang web này vào đây khi nó chặn các quyền mà trang web đó được phép sử dụng."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Chuyển đến Cài đặt"
+   },
+   "main_privacy_guard_info": {
+      "message": "Bảo vệ quyền riêng tư của bạn bằng cách chặn các tập lệnh theo dõi và quản lý quyền truy cập trang web. Bạn có thể tinh chỉnh các tùy chọn này trong menu Cài đặt."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Quản lý quyền truy cập"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Tải xuống tự động"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Điều khiển camera"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Truy cập bảng nhớ tạm"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Truy cập vị trí"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Điều khiển micro"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Thông báo"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Xóa tìm kiếm"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Không có trang web nào phù hợp với tìm kiếm của bạn"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Tìm một trang web"
+   },
+   "main_privacy_guard_title": {
+      "message": "Bảo vệ quyền riêng tư"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Tin tưởng trang web này (cho phép tất cả)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Trước đó, bạn đã chọn tin tưởng trang web này và cho phép tất cả các quyền mà nó yêu cầu (thông báo, truy cập vị trí, điều khiển camera và micro)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Không thể quản lý quyền truy cập trang web trong trình duyệt này."
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Tại sao cần quản lý quyền truy cập?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Khi một trang web bị chặn vì không an toàn, Privacy Guard cũng chặn các quyền mà trang web đó được phép sử dụng, chẳng hạn như thông báo hoặc quyền truy cập camera. Các quyền mà trang web chưa từng có vẫn được giữ nguyên."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Phát hiện liên kết trò chuyện độc hại"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Phát hiện liên kết trò chuyện đáng ngờ"
+   },
+   "main_recent_activity_info": {
+      "message": "Các phán quyết đáng ngờ hoặc độc hại gần đây được lưu trữ trong tháng qua."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Không thể tải hoạt động gần đây."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Trang lừa đảo đã bị chặn"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Phát hiện trang web lừa đảo"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Phát hiện của Cố vấn tìm kiếm"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Trang web độc hại đã bị chặn"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Đã phát hiện hoạt động đáng ngờ"
+   },
+   "main_rename_device_cancel": {
+      "message": "Hủy bỏ"
+   },
+   "main_rename_device_description": {
+      "message": "Đặt cho thiết bị của bạn một tên duy nhất để giúp bạn xác định thiết bị một cách dễ dàng."
+   },
+   "main_rename_device_field_label": {
+      "message": "Tên thiết bị"
+   },
+   "main_rename_device_save": {
+      "message": "Lưu"
+   },
+   "main_rename_device_title": {
+      "message": "Đổi tên thiết bị này"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Đã thu hồi quyền truy cập camera cho {n} trang web"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Thu hồi quyền truy cập camera cho {n} trang web"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Đã thu hồi quyền truy cập bảng nhớ tạm cho {n} trang web"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Thu hồi quyền truy cập bảng nhớ tạm cho {n} trang web"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Đã xóa cookie và dữ liệu trang web cho {n} trang web"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Đã xóa cookie và dữ liệu trang web cho {n} trang web"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Đã chặn tải xuống tự động cho {n} trang web"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Chặn tải xuống tự động cho {n} trang web"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Áp dụng các bản sửa lỗi"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Đã áp dụng {n} trong số {t} bản sửa lỗi"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Đã thu hồi quyền truy cập vị trí cho {n} trang web"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Thu hồi quyền truy cập vị trí cho {n} trang web"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Đã thu hồi quyền truy cập micro cho {n} trang web"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Thu hồi quyền truy cập micro cho {n} trang web"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Đã chặn thông báo cho {n} trang web"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Chặn thông báo cho {n} trang web"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Đã đổi tên dấu trang có rủi ro {n}"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Đổi tên {n} dấu trang có rủi ro"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Đang áp dụng các bản sửa lỗi…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Bảo vệ tự động"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Bảo vệ có hướng dẫn"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Áp dụng các bản sửa lỗi đã chọn"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Tôi đang làm gì"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Tự động áp dụng các bản sửa lỗi"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Vai trò của tôi"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Tôi sẽ đánh dấu gì?"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Tôi sẽ sửa lỗi gì"
+   },
+   "main_sa_banner_sources": {
+      "message": "Tôi sẽ xem xét"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Sự lựa chọn của bạn"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "So khớp dấu trang với các mối đe dọa đã biết…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Đã thực hiện {n} lần kiểm tra"
+   },
+   "main_sa_check_cookies": {
+      "message": "Kiểm tra cookie và dữ liệu trang web đã lưu trên các tên miền bị gắn cờ…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} trong số {t} dấu trang phù hợp với các mối đe dọa đã biết"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} trang web có dữ liệu còn sót lại cần được xóa"
+   },
+   "main_sa_check_done_history": {
+      "message": "Tìm thấy {h} lượt truy cập vào các miền được gắn cờ"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} trong số {t} quyền đã sửa đổi có vẻ không cần thiết hoặc có rủi ro"
+   },
+   "main_sa_check_history_db": {
+      "message": "Đối chiếu lịch sử với các mối đe dọa đã biết…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Tôi sẽ kiểm tra những thứ rủi ro nhất trước, và so sánh xem mỗi trang web có thể truy cập được những thông tin gì so với những gì nó thực sự cần."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Đánh giá quyền truy cập trang web…"
+   },
+   "main_sa_continue": {
+      "message": "Tiếp tục"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Bảng nhớ tạm và tải xuống"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Hãy tìm những trang web có thể đọc bảng nhớ tạm của bạn hoặc tải tệp xuống mà không hỏi, và tắt những trang web không nên làm vậy."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Thông báo trình duyệt"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Chặn các thông báo lừa đảo và thư rác từ các trang web mà bạn không muốn cho phép."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Thông báo"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Quyền truy cập micro, máy quay và địa điểm"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Hãy tìm những trang web cho phép sử dụng micrô, camera hoặc vị trí của bạn, và tắt những trang web không nên sử dụng."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Quyền truy cập micro, máy quay phim và địa điểm"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Các mối đe dọa đã biết"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Chặn các trang web đã được xác định là độc hại trước khi chúng được tải."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Bảng nhớ tạm và tải xuống — {n} trang web có thể đọc bảng nhớ tạm của bạn hoặc tự động tải tệp xuống"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Dữ liệu đã lưu trữ — {n} trang web đã lưu cookie hoặc dữ liệu khác trên thiết bị của bạn"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Trang web giả mạo — {n} trang web sao chép các doanh nghiệp thật để lừa đảo bạn"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Quyền — {n} trang web có thể truy cập thông báo, vị trí, micrô hoặc camera của bạn"
+   },
+   "main_sa_finding_threats": {
+      "message": "Các mối đe dọa đã biết — {n} trang web nằm trong danh sách các trang web độc hại đã biết của chúng tôi"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Báo cáo được tạo: {n} cảnh báo"
+   },
+   "main_sa_findings_heading": {
+      "message": "Quét hoàn tất. Đây là những gì tôi tìm thấy:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Quét hoàn tất. Khắc phục những gì tôi đã tìm thấy:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Quét hoàn tất."
+   },
+   "main_sa_findings_none": {
+      "message": "Không có gì bất thường — không có cảnh báo nào từ lần quét này."
+   },
+   "main_sa_finish_setup": {
+      "message": "Lưu và tiếp tục"
+   },
+   "main_sa_fix_cam": {
+      "message": "Thu hồi quyền truy cập camera"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Thu hồi quyền truy cập bảng nhớ tạm"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Xóa các cookie đáng ngờ và dữ liệu được lưu trữ cục bộ."
+   },
+   "main_sa_fix_downloads": {
+      "message": "Chặn tải xuống tự động"
+   },
+   "main_sa_fix_loc": {
+      "message": "Thu hồi quyền truy cập vị trí"
+   },
+   "main_sa_fix_mic": {
+      "message": "Thu hồi quyền truy cập micro"
+   },
+   "main_sa_fix_notif": {
+      "message": "Chặn thông báo"
+   },
+   "main_sa_fix_rename": {
+      "message": "Đổi tên các dấu trang có nguy cơ bị rò rỉ"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Đã gắn cờ {n} dấu trang có nguy cơ cao để chúng hiển thị ngay lập tức."
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Đã xóa cookie và dữ liệu được lưu trữ từ các miền được gắn cờ {n}"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Đã thu hồi {n} quyền truy cập trang web mà bạn không sử dụng thường xuyên."
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Không cần dọn dẹp gì cả — mọi thứ đều đã được kiểm tra xong."
+   },
+   "main_sa_fixes_heading": {
+      "message": "Đây là những gì tôi sẽ làm về vấn đề này:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Tự động xử lý các mối đe dọa và hành động ngay khi phát hiện ra chúng, mà không làm gián đoạn công việc của bạn."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Bảo vệ tự động"
+   },
+   "main_sa_go_dashboard": {
+      "message": "xong"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Kiểm tra mọi thứ, sau đó hỏi ý kiến bạn trước khi hành động."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Bảo vệ có hướng dẫn"
+   },
+   "main_sa_intro_scan": {
+      "message": "Để bắt đầu, hãy chọn những gì tôi nên xem xét trong lần quét đầu tiên của bạn."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Bắt đầu lần quét đầu tiên. Tôi sẽ lo liệu mọi việc từ đây."
+   },
+   "main_sa_list_last_separator": {
+      "message": " và "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Đây là kế hoạch của tôi:"
+   },
+   "main_sa_plan_body": {
+      "message": "Tôi sẽ kiểm tra {targets} của bạn, đối chiếu chúng với các mối đe dọa đã biết, sau đó hiển thị cho bạn bản tóm tắt trước khi thay đổi bất cứ điều gì."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Tôi sẽ kiểm tra dấu trang, lịch sử và quyền truy cập của bạn, đối chiếu chúng với các mối đe dọa đã biết và khắc phục bất kỳ vấn đề nào gây rủi ro ngay khi tôi phát hiện ra."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Tôi sẽ cho bạn xem những gì tôi tìm thấy trước khi thay đổi bất cứ điều gì. Bạn quyết định điều gì sẽ xảy ra tiếp theo."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Đánh dấu trang"
+   },
+   "main_sa_plan_target_history": {
+      "message": "lịch sử duyệt web"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "các quyền truy cập trang web"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Đã đọc {n} dấu trang trên {f} thư mục"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Đánh dấu trang khi đọc sách…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Đọc {n} nguồn"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Giờ tôi sẽ kiểm tra mọi thứ xem có rủi ro gì không."
+   },
+   "main_sa_read_history_done": {
+      "message": "Đã đọc {n} mục lịch sử"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Đang đọc lịch sử duyệt web…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Đã tìm thấy {n} trang web có quyền thay đổi"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Kiểm tra quyền truy cập trang web…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Tôi sẽ đọc trước, rồi mới phân tích. Bắt đầu từ bây giờ."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Bỏ qua lần quét ban đầu"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Bỏ qua và hiển thị báo cáo"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Đánh dấu trang"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Hãy tìm những trang web đã lưu nhưng âm thầm trở nên nguy hiểm kể từ khi bạn đánh dấu chúng."
+   },
+   "main_sa_source_history": {
+      "message": "Lịch sử duyệt web"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Nhận diện những trang web nguy hiểm mà bạn đã từng truy cập để có thể tránh chúng vào lần sau."
+   },
+   "main_sa_start_assessment": {
+      "message": "Bắt đầu Quét"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Chọn mức độ tự động thực hiện của nó:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Xong rồi."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Mọi thứ đều ổn."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} dấu trang"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Những gì tôi đã kiểm tra:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} mục lịch sử"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} quyền truy cập trang web trên {c} danh mục"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Những thứ tôi đã dọn dẹp:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Những gì tôi tìm thấy:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Từ giờ trở đi, tôi sẽ kiểm tra các dấu trang và quyền truy cập mới trong nền và gắn cờ bất kỳ thứ gì có nguy cơ gây hại."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Không có gì thay đổi cả. Bạn có thể quay lại bất cứ lúc nào để xem xét và áp dụng các bản sửa lỗi được đề xuất."
+   },
+   "main_sa_summary_stand": {
+      "message": "Đây là bản tóm tắt."
+   },
+   "main_sa_title_configure": {
+      "message": "Thiết lập Cố vấn Bảo mật"
+   },
+   "main_sa_what_look_for": {
+      "message": "Tôi sẽ đánh dấu gì"
+   },
+   "main_sa_where_look": {
+      "message": "Tôi sẽ xem xét"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Tự chủ"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Bảo vệ quyền riêng tư"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Cố vấn Tìm kiếm"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Phòng thủ chuyên biệt"
+   },
+   "main_settings_about": {
+      "message": "Thông tin"
+   },
+   "main_settings_general": {
+      "message": "Chung"
+   },
+   "main_settings_language": {
+      "message": "Ngôn ngữ"
+   },
+   "main_settings_my_account": {
+      "message": "Tài khoản của tôi"
+   },
+   "main_settings_security_advisor": {
+      "message": "Cố vấn an ninh"
+   },
+   "main_settings_support": {
+      "message": "Hỗ trợ"
+   },
+   "main_settings_title": {
+      "message": "Các cài đặt"
+   },
+   "main_settings_upgrade": {
+      "message": "Nâng cấp lên {premium} để được bảo vệ tốt hơn"
+   },
+   "main_settings_whitelist": {
+      "message": "Danh sách trắng"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Mở Bitdefender Web Sage từ thanh bên của trình duyệt."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Đăng nhập vào tài khoản Bitdefender của bạn để bắt đầu."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage chưa bảo vệ bạn"
+   },
+   "main_support_center_description": {
+      "message": "Nhanh chóng tìm câu trả lời cho các vấn đề phổ biến nhất hoặc liên hệ với nhóm hỗ trợ của chúng tôi nếu bạn cần trợ giúp thêm."
+   },
+   "main_support_center_link": {
+      "message": "Đi tới Trung tâm hỗ trợ"
+   },
+   "main_support_center_title": {
+      "message": "Trung tâm hỗ trợ"
+   },
+   "main_support_community_description": {
+      "message": "Nhận câu trả lời của bạn, đặt câu hỏi của bạn! Chúng tôi ở đây để giúp đỡ lẫn nhau!"
+   },
+   "main_support_community_link": {
+      "message": "Hỏi cộng đồng"
+   },
+   "main_support_community_title": {
+      "message": "Hỏi cộng đồng"
+   },
+   "main_test": {
+      "message": "kiểm tra"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Phông chữ"
+   },
+   "main_third_party_category_label": {
+      "message": "Thể loại"
+   },
+   "main_third_party_category_packages": {
+      "message": "Gói JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "Giấy phép:"
+   },
+   "main_third_party_link_label": {
+      "message": "Liên kết:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Sau đây là các thông báo ghi công cho phần mềm mã nguồn mở của bên thứ ba có trong các phần của tiện ích mở rộng trình duyệt Bitdefender (phiên bản $1). Chúng tôi xin cảm ơn cộng đồng mã nguồn mở vì tất cả những đóng góp của họ."
+   },
+   "main_third_party_page_title": {
+      "message": "Điều khoản cấp phép của bên thứ ba"
+   },
+   "main_third_party_version_label": {
+      "message": "Phiên bản :"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Không phải là dạng dài. Địa chỉ email và mật khẩu. Chỉ khoảng một phút, thực hiện một lần, và bạn đã hoàn thành."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Không yêu cầu trả phí. {product} Phiên bản tiêu chuẩn là miễn phí và sẽ luôn miễn phí. Không cần thẻ, không giới hạn thời gian dùng thử, không có ngày hết hạn."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Không phải là đăng ký thuê bao. Tài khoản không phải là gói sản phẩm. Không có khoản phí nào được tính và không có gì tự động gia hạn."
+   },
+   "main_welcome_account_not_title": {
+      "message": "Và để nói thẳng ra thì đây không phải là gì"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Dùng trình duyệt Chrome cho công việc, Edge cho riẻng ở nhà, và một máy tính thứ hai. Một tài khoản bao gồm {product} trong tất cả chúng, với các quy tắc giống nhau."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Bảo vệ mọi lúc mọi nơi, không chỉ riêng từng trình duyệt."
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Cùng một tài khoản Bitdefender hoạt động trên mọi thứ Bitdefender tạo ra. Thêm sản phẩm sau, liên hệ bộ phận hỗ trợ, kiểm tra thiết bị — vậy là bạn đã hoàn tất thiết lập."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Chỉ một tài khoản, không hơn."
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Mọi trang web bạn cho phép truy cập, mọi biện pháp bảo vệ bạn đã tắt – giờ đây đều theo bạn. Trình duyệt mới, máy tính xách tay mới, cài đặt lại hệ điều hành: tất cả vẫn còn đó."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Các cài đặt của bạn sẽ không còn biến mất nữa."
+   },
+   "main_welcome_account_straight": {
+      "message": "Chế độ bảo vệ {product} bắt đầu khi bạn đăng nhập. Cho đến lúc đó, tính năng bảo vệ vẫn không hoạt động và biểu tượng khiên trong trình duyệt của bạn vẫn tắt."
+   },
+   "main_welcome_account_sub": {
+      "message": "Đó là một sự thay đổi thực sự so với TrafficLight, và việc đặt câu hỏi tại sao là điều hợp lý. Ba lý do chân thành:"
+   },
+   "main_welcome_account_title": {
+      "message": "Điều duy nhất đã thay đổi"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Tiếp tục duyệt web"
+   },
+   "main_welcome_button_open": {
+      "message": "Mở {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Đăng nhập"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Kiểm tra tài khoản của bạn…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Bạn đã có Bitdefender trên thiết bị này chưa? Bạn có thể được đăng nhập tự động — trang này sẽ cập nhật ngay khi quá trình đăng nhập diễn ra."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} chỉ bảo vệ bạn khi bạn đang đăng nhập vào tài khoản Bitdefender của mình. Đăng nhập sẽ kích hoạt tính năng chặn, tự động áp dụng gói dịch vụ của bạn và đồng bộ hóa các cài đặt. Việc tạo tài khoản là miễn phí."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Đăng nhập — thao tác này sẽ bật chế độ bảo vệ."
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Mọi thứ đã sẵn sàng!"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Hoàn thành cập nhật"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight đã lớn lên"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Mở bảng điều khiển của bạn"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Đăng nhập"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Trang tổng quan, hoạt động và cài đặt của bạn nằm ở phía trên cùng của bảng điều khiển."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Tài khoản của bạn"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Tài khoản Bitdefender của bạn là thứ kích hoạt tính năng bảo vệ, giữ cho cài đặt của bạn được đồng bộ trên các trình duyệt và thiết bị, đồng thời cung cấp cho bạn một bảng điều khiển duy nhất để theo dõi hoạt động và cài đặt của bạn."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Tài khoản của bạn, bảng điều khiển của bạn"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "Trong bảng điều khiển"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Gặp gỡ Cố vấn An ninh"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Tất cả các thiết lập bảo vệ đều nằm ở đây, bao gồm cả mức độ tự động thực hiện."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Cố vấn an ninh"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Khi thiết lập, nó sẽ kiểm tra dấu trang và lịch sử duyệt web của bạn để tìm các mối đe dọa đã biết, sau đó sẽ giải thích cho bạn những gì nó tìm thấy trên các trang bạn truy cập. Bạn có thể lựa chọn xem hệ thống sẽ hỏi ý kiến trước khi hành động hay tự xử lý mọi việc."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Cố vấn an ninh"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "Trong bảng điều khiển"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Hãy xem nó trong bảng điều khiển."
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Trang web thật thì yên tĩnh, trang web giả thì ồn ào."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Tài chính an toàn"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Các trang web về ngân hàng, tiền điện tử và ví điện tử được kiểm tra kỹ lưỡng hơn: các hành vi mạo danh ngân hàng hoặc sàn giao dịch của bạn sẽ bị phát hiện trước khi bạn nhập mật khẩu."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Tài chính an toàn"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Trên các trang web ngân hàng và tiền điện tử"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Thiết lập theo hai bước"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Không cần bật gì cả; nó đã bảo vệ bạn từ khi cập nhật rồi."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Vẫn còn ở đây"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Chức năng chặn trang theo thời gian thực và Trình tư vấn tìm kiếm vẫn hoạt động như trước, giờ đây được hỗ trợ bởi nhiều nguồn thông tin hơn. Nếu bạn cũng đang sử dụng tiện ích mở rộng Chống theo dõi riêng biệt, Bảo vệ Quyền riêng tư giờ đây sẽ đảm nhiệm công việc đó — bạn có thể gỡ bỏ nó."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Mọi thứ bạn từng dựa vào vẫn còn ở đây."
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Luôn luôn bật"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Mở Bảo vệ Quyền riêng tư"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Nó quản lý mọi trang web, với một nút bật/tắt cho mỗi quyền truy cập."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Bảo vệ quyền riêng tư"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Chặn các trình theo dõi và quản lý các quyền mà một trang web nắm giữ — thông báo, vị trí, camera, micro, tải xuống tự động và clipboard. Khi một trang web được xác định là không an toàn, tất cả các quyền mà bạn đã được cấp trước đó sẽ bị thu hồi."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Bảo vệ quyền riêng tư"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "Trong bảng điều khiển"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Hãy xem nó trong bảng điều khiển."
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Cảnh báo sẽ hiện lên ngay tại nơi bạn duyệt web, trước khi bạn nhấp chuột."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Bảo vệ lừa đảo"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Ngoài các URL độc hại đã biết: một trang web đáng ngờ sẽ được phân tích bằng AI theo yêu cầu, giải thích vấn đề bằng ngôn từ dễ hiểu."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Bảo vệ chống gian lận bằng công nghệ quét sâu AI."
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Trên trang"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Mở bảng điều khiển"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Có một dấu hiệu bên cạnh mỗi kết quả; di chuột vào đó để xem lý do."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Cố vấn Tìm kiếm"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Xếp hạng độ an toàn hiển thị bên cạnh kết quả tìm kiếm trên Google, Bing, DuckDuckGo và Yahoo, giúp bạn biết trước khi nhấp chuột."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Cố vấn Tìm kiếm"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "Trong kết quả tìm kiếm"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Hãy xem nó trong bảng điều khiển."
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Đánh giá này dựa trên chính cửa hàng đó, chứ không chỉ là trang bạn đang xem."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Mua sắm an toàn"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Các cửa hàng trực tuyến được kiểm tra bằng phần mềm phân tích thông tin thương mại điện tử khi bạn duyệt web, vì vậy các cửa hàng giả mạo và các giao dịch quá tốt đến mức khó tin sẽ được gắn cờ trước khi bạn thanh toán."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Mua sắm an toàn"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Trên các trang web mua sắm"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Xem trạng thái trang"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Bạn chỉ để ý đến nó khi nó có điều gì đó muốn nói."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Chặn trang"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Mỗi trang bạn mở đều được kiểm tra dựa trên thông tin tình báo về mối đe dọa của Bitdefender. Một mối nguy hiểm sẽ bị tắt ngay lập tức — và bị chặn hoàn toàn trước khi nó có thể tải lại."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Các trang web nguy hiểm bị đóng ngay lập tức."
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Trên trang"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Pháp lý và hỗ trợ"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Chính sách Riêng tư"
+   },
+   "main_welcome_footer_support": {
+      "message": "Hỗ trợ"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Điều khoản sử dụng"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Bảng điều khiển không thể tự động mở. Nhấp vào biểu tượng {product} trên thanh công cụ để mở nó."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Ảnh động minh họa cách ghim tiện ích mở rộng vào thanh công cụ trình duyệt."
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Nhấp vào nút Tiện ích mở rộng (biểu tượng hình mảnh ghép) ở góc trên bên phải trình duyệt của bạn."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Nhấp vào nút Tiện ích mở rộng (biểu tượng hình mảnh ghép) ở góc trên bên phải trình duyệt của bạn."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Nhấp vào nút Tiện ích mở rộng (biểu tượng hình mảnh ghép) trên thanh công cụ của bạn."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Nhấp vào nút Tiện ích mở rộng (hình khối) trên thanh công cụ của bạn."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Mở menu tiện ích mở rộng của trình duyệt."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Tìm {product} và nhấp vào biểu tượng ghim bên cạnh."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Tìm {product} và nhấp vào biểu tượng ghim bên cạnh để hiển thị nó trên thanh công cụ."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Tìm {product}, mở cài đặt của nó (biểu tượng bánh răng) và chọn Ghim vào thanh công cụ."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Tìm {product} và nhấp vào biểu tượng ghim bên cạnh."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Tìm {product} và ghim nó vào thanh công cụ."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Hãy luôn truy cập trang đó chỉ bằng một cú nhấp chuột, để bạn luôn có thể xem trạng thái an toàn của trang mình đang truy cập."
+   },
+   "main_welcome_pin_title": {
+      "message": "Ghim {product} vào thanh công cụ của bạn"
+   },
+   "main_welcome_protected_done": {
+      "message": "Chế độ bảo vệ đang được bật. Không còn việc gì khác để làm ở đây — ghim {product} để nó luôn hiển thị."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Bao gồm trong gói {plan} của bạn — được mở khóa tự động, không cần kích hoạt gì cả."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Đang chạy"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Miễn phí với tài khoản Bitdefender của bạn."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Bạn được bảo vệ — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Bạn được bảo vệ — {product} Tiêu chuẩn"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Bạn đã đăng nhập và được bảo vệ."
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Bảo vệ tức thời chống lại các chiêu trò lừa đảo, tấn công giả mạo và theo dõi, ngay tại nơi bạn duyệt web. Hai bước đơn giản là xong."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Phiên bản {version} đã được cài đặt và đang bảo vệ bạn. Đây là những gì nó bổ sung."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Tiện ích mở rộng của bạn vừa được nâng cấp lớn. Mọi thứ TrafficLight đã làm vẫn còn đó, và nhiều thứ khác nữa đã xuất hiện."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Cao cấp"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Một phần của {product} Premium, được bao gồm trong Bitdefender Total Security trở lên."
+   },
+   "main_welcome_title_new": {
+      "message": "Chào mừng tới {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} vừa trở nên tốt hơn"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight hiện là {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Những gì bạn nhận được"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Có gì mới."
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Có gì mới."
+   },
+   "main_welcome_tour_next": {
+      "message": "Tính năng tiếp theo"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Tính năng trước đó"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} trong số {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Mọi thứ mà {product} làm cho bạn, từng tính năng một. Bước qua nó, hoặc nhảy thẳng vào cuộc."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Mới trong phiên bản {version}. Bước qua nó, hoặc nhảy thẳng vào cuộc."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Tất cả những gì TrafficLight đã làm, cộng thêm điều này. Bước qua nó, hoặc nhảy thẳng vào cuộc."
+   },
+   "main_welcome_window_title": {
+      "message": "Chào mừng tới {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Thêm Website"
+   },
+   "main_whitelist_import": {
+      "message": "Nhập tên miền"
+   },
+   "main_whitelist_info": {
+      "message": "Các tên miền trong danh sách trắng của bạn sẽ được bỏ qua trong quá trình quét. Bạn sẽ không nhận được cảnh báo nào về bất kỳ mối đe dọa nào trên các trang này."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Gỡ bỏ"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Quét mối đe dọa"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Các tập lệnh theo dõi"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Thu thập các quảng cáo hiển thị trên các trang bạn truy cập để kiểm tra xem chúng có phải là lừa đảo hay gian lận hay không."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Giám sát quảng cáo"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Đánh dấu các quảng cáo độc hại và kết quả được tài trợ dẫn đến các trò lừa đảo hoặc phần mềm độc hại."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Tấm chắn chống gian lận quảng cáo"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Phát hiện các trang web ngân hàng giả mạo và các nền tảng đầu tư lừa đảo được thiết kế để đánh cắp thông tin đăng nhập hoặc tiền của bạn."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Bảo vệ chống gian lận tài chính"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Cảnh báo bạn về các cửa hàng giả mạo và trang thanh toán gian lận trước khi bạn nhập thông tin thanh toán."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Mua sắm an toàn"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Chặn trang này"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Dù sao thì vẫn tải (không an toàn)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Dù sao cũng tải các nội dung (không an toàn)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Hiển thị thêm chi tiết"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Đang xem xét chi tiết…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Tôi không thể phân tích trang này ngay bây giờ. Vui lòng thử lại."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Đang phân tích chi tiết các trang không nằm trong gói đăng ký thuê bao hiện tại của bạn, vì vậy tôi không thể xem xét vấn đề này."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Việc đó mất nhiều thời gian hơn tôi có thể chờ đợi, vì vậy tôi đã ngừng tìm hiểu về nó."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Kiểm tra các liên kết bên trong bảng tổng quan AI và gắn cờ các liên kết dẫn đến các trang web không an toàn."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Công cụ quét tổng quan bằng AI"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Đã tắt trong Cài đặt"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Bật"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Không khả dụng"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "Cố vấn tìm kiếm bằng AI"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Thông tin liên kết kết quả tìm kiếm"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Được phân tích bởi {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Tôi không thể chặn trang này."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Đang chặn trang này…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Buộc kiểm tra (xóa khỏi danh sách trắng)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Quét lại"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Bỏ chặn trang này"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Kiểm tra cơ sở dữ liệu các mối đe dọa đã biết…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Đang xác minh quyền truy cập…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Kiểm tra xem có lừa đảo không…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Đang kiểm tra…"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Đã thực hiện {n} lần kiểm tra"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Trang bị chặn"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Bằng lòng"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Tiến hành phân tích chuyên sâu"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Đã tiến hành phân tích chuyên sâu."
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Phân tích chuyên sâu đã hoàn tất"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Phân tích nội dung trang và ảnh chụp màn hình…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Phân tích kỹ lưỡng cho thấy trang này không có vấn đề gì."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Quá trình phân tích chuyên sâu đã hoàn tất mà không tìm thấy bất kỳ dấu hiệu cụ thể nào."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Phân tích kỹ lưỡng đã xác nhận trang này nguy hiểm."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Tiến hành phân tích"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Sau khi nhận được sự đồng ý của bạn, tôi sẽ xem xét nội dung trang và ảnh chụp màn hình để tìm ra những gì đang ẩn giấu bên dưới bề mặt."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Phân tích chuyên sâu đã hết thời gian chờ."
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Ngừng chờ sau {n} giây"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Việc phân tích chuyên sâu đang mất nhiều thời gian hơn tôi có thể chờ đợi, vì vậy tôi đã dừng lại. Bạn có thể chạy lại hoặc quyết định dựa trên những gì tôi đã tìm thấy."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Cần phân tích sâu hơn?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Xóa khỏi danh sách cho phép và kiểm tra lại…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Báo cáo được tạo: {n} cảnh báo"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Báo cáo được tạo: {n} cảnh báo"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Đang tiếp tục đến trang…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Kết quả tìm kiếm độc hại"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Ứng dụng này kiểm tra các quảng cáo trên các trang bạn truy cập và gắn cờ những quảng cáo dẫn đến các trang lừa đảo."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Bảo vệ khỏi quảng cáo lừa đảo"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Mở cài đặt tiện ích"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera chặn tiện ích truy cập kết quả tìm kiếm cho đến khi bạn cho phép. Mở opera://extensions, tìm tiện ích này và bật \"Cho phép truy cập kết quả trang tìm kiếm\"."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Kết quả tìm kiếm đang không được kiểm tra"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Người bảo vệ quyền riêng tư đã chặn {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Trang web này có thể truy cập {list}của bạn"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Không có quyền nào được cấp"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Không có quyền truy cập"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Không phát hiện dấu hiệu cảnh báo nào."
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard đề xuất chặn {list} đối với trang web này."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Đây là những gì tôi tìm thấy:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Đã khôi phục tất cả nội dung bị chặn."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Đang khôi phục nội dung bị chặn…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Không phát hiện thấy mô hình lừa đảo nào."
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} dấu hiệu độc hại được tìm thấy"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} các dấu hiệu độc hại được tìm thấy"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} dấu hiệu đáng ngờ được tìm thấy"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} các dấu hiệu đáng ngờ được tìm thấy"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Việc phân tích lừa đảo không thể hoàn tất."
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Đã xuất hiện trong nội dung quảng cáo không đáng tin cậy"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Mẫu tống tiền cưỡng bức"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Mẫu lừa đảo tiền giả"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Mẫu lừa đảo lợi dụng khủng hoảng"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Mẫu lừa đảo tiền điện tử"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Mẫu nền tảng hẹn hò người lớn lừa đảo"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Mẫu quảng cáo lừa đảo"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Mẫu quà tặng lừa đảo"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Mẫu khảo sát trực tuyến lừa đảo"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Mẫu lừa đảo đầu tư năng lượng"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Mẫu lừa đảo tống tiền"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Mẫu quảng cáo giả mạo phần thưởng lượt xem"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Mẫu trang web đặt phòng giả"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Mẫu sòng bạc giả"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Mẫu trang web từ thiện giả"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Mẫu phòng khám giả"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Mẫu quà tặng tiền điện tử giả"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Mẫu dịch vụ giao hàng giả"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Mẫu tài liệu giả"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Mẫu cửa hàng thương mại điện tử giả"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Mẫu giả mạo cơ sở giáo dục"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Mẫu thông tin tuyển dụng giả"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Mẫu dịch vụ giải trí giả"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Mẫu giả mạo tổ chức tài chính"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Mẫu đầu tư tài chính giả mạo"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Mẫu trang web cờ bạc giả mạo"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Mẫu tiền thắng cược giả"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Mẫu đầu tư vàng giả"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Mẫu đơn giả mạo trợ cấp chính phủ"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Mẫu giả mạo cơ quan chính phủ"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Mẫu đơn giả mạo dịch vụ nhập cư"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Mẫu giả mạo cơ quan pháp luật"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Mẫu dịch vụ hoàn tiền giả"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Mẫu nhà thuốc trực tuyến giả mạo"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Mẫu phòng khám giả"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Mẫu nền tảng thanh toán giả mạo"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Mẫu chiến dịch giải thưởng giả"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Mẫu giải thưởng hoặc phần thưởng giả"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Mẫu nhà xuất bản giả"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Mẫu nền tảng đánh giá giả mạo"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Các mô hình cửa hàng giả trong chiến dịch quảng cáo"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Mẫu giả mạo thầy tu"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Mẫu trúng thưởng giả"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Mẫu lừa đảo tài chính"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Chiến dịch quảng cáo cửa hàng giả mạo lừa đảo"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Mẫu gian lận chăm sóc sức khỏe"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Phát hiện tấn công Homoglyph"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Mẫu trang web hoạt động bất hợp pháp"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Mẫu dịch vụ bất hợp pháp"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Mẫu chất cấm"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "Địa chỉ IP có chứa các mẫu độc hại"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "Địa chỉ IP có các mẫu đáng ngờ"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Mẫu lừa đảo đã biết"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Mẫu lừa đảo đã biết"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Mẫu lừa đảo xổ số"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Cửa hàng trực tuyến thiếu uy tín, chưa có chỗ đứng vững chắc."
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Nền tảng giao dịch/đầu tư có độ tin cậy thấp, chưa có chỗ đứng vững chắc."
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Liên kết nền tảng đầu tư độc hại"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Liên kết cửa hàng trực tuyến độc hại"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Mẫu lừa đảo ma túy"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Cửa hàng trực tuyến với các chỉ báo mâu thuẫn"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Cửa hàng trực tuyến không có sự hiện diện thực tế"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Mẫu lừa đảo thú cưng"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Mẫu mô hình Ponzi/kim tự tháp"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Mẫu lừa đảo bất động sản"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Mẫu lừa đảo tình cảm"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Mẫu website lừa đảo tình cảm"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Mẫu lừa đảo hội kín"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Liên kết nền tảng đầu tư đáng ngờ"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Định dạng liên kết đáng ngờ"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Liên kết cửa hàng trực tuyến đáng ngờ"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Mẫu lừa đảo hỗ trợ kỹ thuật"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Nền tảng giao dịch/đầu tư với các chỉ báo mâu thuẫn."
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Nền tảng giao dịch/đầu tư chưa có sự hiện diện chính thức."
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Cửa hàng trực tuyến có độ tin cậy rất thấp."
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Cửa hàng trực tuyến có độ tin cậy rất thấp, chưa có uy tín lâu năm."
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Nền tảng giao dịch/đầu tư có độ tin cậy rất thấp"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Liên kết rất đáng ngờ"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Tôi đã chặn và cắt quyền truy cập của ứng dụng vào micro, camera và vị trí của bạn — bạn có thể đóng tab một cách an toàn..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Các tập lệnh theo dõi đã bị chặn và quyền truy cập micro, camera và vị trí đã bị thu hồi để đảm bảo an toàn cho bạn."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Tôi không thể kiểm tra hết các kết quả tìm kiếm này."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Quét chưa hoàn tất"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Cố vấn an ninh đang có mặt."
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Đang quét kết quả tìm kiếm…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Kết quả tìm kiếm đáng ngờ"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Công cụ tìm kiếm đã bị vô hiệu hóa. Vào phần cài đặt để bật tính năng này."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Chức năng bảo vệ web đã bị vô hiệu hóa. Vào phần cài đặt để bật tính năng này."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Bỏ qua các bước kiểm tra và tải trang."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Trang này đã bị gắn cờ là độc hại."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Trang này là một phần của âm mưu lừa đảo."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Trang này là một phần của quảng cáo lừa đảo."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Chúng tôi đã phát hiện các yếu tố có thể gây hại cho thiết bị của bạn."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Trang web này đã cố gắng sử dụng tài nguyên thiết bị của bạn để khai thác tiền điện tử và đã bị chặn."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Trang này không thể được quét bởi Trình tư vấn bảo mật."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Bỏ qua các bước kiểm tra và tải trang."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Trang sẽ bị chặn cho đến khi bạn bỏ chặn."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Trang này là một phần của nỗ lực lừa đảo trực tuyến (phishing)."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Trang này đã cố gắng tải xuống một ứng dụng PUA (Ứng dụng tiềm ẩn khả năng không mong muốn) vào thiết bị của bạn và đã bị chặn."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Trang này sẽ bị bỏ qua trong quá trình quét ở phiên duyệt web hiện tại."
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Trang này có thể an toàn, nhưng đã có một số mối đe dọa an ninh được báo cáo trong quá khứ."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Trang này được bỏ qua trong quá trình quét vì nó đã được thêm vào danh sách Ngoại lệ."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Ứng dụng này thêm xếp hạng độ an toàn bên cạnh mỗi kết quả tìm kiếm trên Google, Bing, Yahoo và DuckDuckGo, giúp bạn phát hiện các liên kết rủi ro trước khi nhấp chuột."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Chú thích kết quả tìm kiếm"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Bảo vệ bị vô hiệu hóa."
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Không thể quét kết quả tìm kiếm"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Không thể quét trang này"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Tên miền này đã được đưa vào danh sách cho phép."
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Phát hiện cửa hàng gian lận"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Phát hiện hành vi gian lận"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Phát hiện quảng cáo lừa đảo"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Phát hiện hiểm họa"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Phát hiện nỗ lực khai thác"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Không thể quét trang này."
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Trang này sẽ bị bỏ qua trong phiên này."
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Bạn đã chặn trang này"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Phát hiện trang web lừa đảo"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Phát hiện tải xuống Ứng dụng tiềm ẩn khả năng không mong muốn"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Trang web này an toàn"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Đang quét..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Đã phát hiện tên miền không đáng tin cậy"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Đã phát hiện trang ngoại lệ"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Đã chặn {n} trình theo dõi"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Chức năng chặn tập lệnh theo dõi đã bị tắt, do đó trang này không được kiểm tra xem có chứa trình theo dõi hay không."
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Tải các tập lệnh (không an toàn)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Không phát hiện thấy mã theo dõi nào trên trang này."
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Tôi không thể bỏ chặn trang này."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Đang bỏ chặn trang này…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Không phát hiện thấy mối đe dọa nào."
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Trang bị chặn"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Trang được tải trong {n}ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Bạn an toàn"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Tôi đã phát hiện một số rủi ro trên trang này. Tránh nhập thông tin cá nhân, mật khẩu hoặc chi tiết thanh toán, và không tải xuống bất cứ thứ gì."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Hãy cẩn thận ở đây"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Hiện tại mọi thứ đều ổn."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Bảo vệ bạn khi bạn duyệt web."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Trang này đã bị chặn bởi"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Tên miền bị gắn cờ là độc hại"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Các cửa hàng giả mạo bắt chước các nhà bán lẻ thật để thu tiền và lấy thông tin thẻ của bạn. Đơn hàng hiếm khi được giao và dữ liệu bạn nhập có thể được sử dụng lại hoặc bán cho bên thứ ba."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Các trang gian lận thường cố lừa bạn gửi tiền với mục đích bất hợp pháp."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Trang này đã bị chặn để ngăn chặn sự tương tác tiếp theo với một trò lừa đảo.\n\nNhững kẻ tấn công dụ dỗ nạn nhân tiềm năng bằng cách sử dụng deepfake, cơ hội đầu tư và các chủ đề thịnh hành khác để lừa họ cung cấp dữ liệu nhạy cảm, tiền hoặc tải xuống phần mềm độc hại."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Các trang độc hại cố cài đặt phần mềm có thể gây hại cho thiết bị, thu thập thông tin cá nhân hoặc hoạt động mà không có sự đồng ý của người dùng."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Các trang khai thác sử dụng tài nguyên của thiết bị để khai thác tiền điện tử, ảnh hưởng đến khả năng sử dụng và tuổi thọ phần cứng của thiết bị."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Các trang lừa đảo cố gắng lấy thông tin nhạy cảm như thông tin đăng nhập hoặc chi tiết thẻ tín dụng bằng cách ngụy trang thành các thực thể đáng tin cậy. Dữ liệu bị đánh cắp sau đó có thể được sử dụng để thu lợi tài chính."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Trang đã cố gắng tải xuống PUA (Ứng dụng tiềm ẩn không mong muốn) vào thiết bị của bạn. Loại ứng dụng này thể hiện các hành vi ảnh hưởng đến quyền riêng tư và bảo mật của thiết bị và dữ liệu."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Các trang không tin cậy thể hiện hành vi hoặc đặc thù đáng ngờ mà chúng tôi cho là nguy hiểm, do đó bạn nên tránh truy cập chúng để giữ cho dữ liệu của bạn không bị ảnh hưởng."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Cửa hàng gian lận đã bị chặn để bảo vệ bạn."
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Chúng tôi đã chặn một số nội dung vì lý do an toàn."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Đã phát hiện nội dung đáng ngờ"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Không thể mở bảng điều khiển. Vui lòng thử lại."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Mở bảng Bitdefender từ thanh bên của trình duyệt để xem chi tiết."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Trang bị chặn"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Tải xuống tự động"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "máy ảnh"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "bảng nhớ tạm"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Đóng"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "{permissions} Quyền truy cập vào trang web này đã bị chặn."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "{permissions} Quyền truy cập vào trang web này đã bị chặn."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "{permissions} lượt truy cập được cho phép đối với trang web này. Hãy xem trang web này có thể sử dụng những gì."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "{permissions} được phép truy cập vào trang web này. Hãy xem trang web này có thể sử dụng những gì."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Người bảo vệ quyền riêng tư đã tìm thấy quyền xem xét"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} và {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "Vị trí"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "Quyền truy cập {permissions} bị chặn đối với trang web này. Hãy xem xét những gì trang web này có thể sử dụng."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "Quyền truy cập {permissions} bị chặn đối với trang web này. Hãy xem xét những gì trang web này có thể sử dụng."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Người bảo vệ quyền riêng tư đang quản lý quyền truy cập."
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "Microphone"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Thông báo"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Người bảo vệ quyền riêng tư đang quản lý quyền truy cập."
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Hãy thận trọng"
+   },
+   "urlScanning_see_details": {
+      "message": "Xem chi tiết"
+   },
+   "urlScanning_show_details": {
+      "message": "Hiển thị chi tiết"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Đóng"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Có một số dấu hiệu cảnh báo ở đây. Cẩn thận với thông tin cá nhân và các file tải xuống."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Không thể quét kết quả tìm kiếm"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Không thể quét trang này"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Phát hiện cửa hàng gian lận"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Phát hiện hành vi gian lận"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Phát hiện quảng cáo lừa đảo"
+   },
+   "urlScanning_title_malware": {
+      "message": "Phát hiện hiểm họa"
+   },
+   "urlScanning_title_miner": {
+      "message": "Phát hiện nỗ lực khai thác"
+   },
+   "urlScanning_title_phish": {
+      "message": "Phát hiện trang web lừa đảo"
+   },
+   "urlScanning_title_pua": {
+      "message": "Phát hiện tải xuống Ứng dụng tiềm ẩn khả năng không mong muốn"
+   },
+   "urlScanning_title_safe": {
+      "message": "Trang này an toàn"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Đã phát hiện tên miền không đáng tin cậy"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Quét các URL đã truy cập để tìm phần mềm độc hại, lừa đảo trực tuyến, gian lận và các mối đe dọa khác."
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "Bảo vệ Web"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Bảo vệ web bởi Bitdefender"
+   }
+}

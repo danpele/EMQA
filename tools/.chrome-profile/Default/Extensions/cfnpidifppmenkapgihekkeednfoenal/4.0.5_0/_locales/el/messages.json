@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Επαλήθευση..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Αποτρέπει τη φόρτωση διαφημίσεων τρίτων, αναλυτικών στοιχείων, μέσων κοινωνικής δικτύωσης και σεναρίων cookie, έτσι ώστε οι ιστότοποι να μην μπορούν να δημιουργήσουν προφίλ περιήγησής σας και οι σελίδες να φορτώνουν πιο γρήγορα."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Σενάρια παρακολούθησης μπλοκ"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "χιλιοστά του δευτερολέπτου"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Απόδοση κατά του ιχνηλάτη"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Με σενάρια παρακολούθησης"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Χωρίς σενάρια παρακολούθησης"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Οι παρακάτω τομείς εξαιρούνται από τον αποκλεισμό anti-tracker."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Χρησιμοποιούμε τους εμπορικούς trackers για να σας βοηθήσουμε να βρείτε εύκολα τις ειδικές προσφορές μας. Αποστολή μας είναι να προστατέψουμε το ιδιωτικό σας απόρρητο. Ποτέ δεν μοιραζόμαστε καμία από τις πληροφορίες που συλλέξαμε με κανέναν, για οποιονδήποτε σκοπό."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Ειδικές προσφορές"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Κάτι πήγε λάθος"
+   },
+   "chatAgent_thinking": {
+      "message": "Σκέψη..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Σάρωση μηνυμάτων για συνδέσμους ηλεκτρονικού \"ψαρέματος\" (phishing) και απειλές στον κυβερνοχώρο."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Προστασία συνομιλίας"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Παρακολουθεί σε ποιους ιστότοπους έχετε παραχωρήσει πρόσβαση σε κάμερα, μικρόφωνο, τοποθεσία, ειδοποιήσεις, πρόχειρο και αυτόματες λήψεις, ώστε να μπορείτε να την ελέγξετε και να την ανακαλέσετε στο Privacy Guard."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Διαχείριση δικαιωμάτων"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Με την επιφύλαξη κάθε νόμιμου δικαιώματος"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Πνευματικά δικαιώματα © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Πολιτική Απορρήτου"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Άδεια Χρήσης Τελικού Χρήστη"
+   },
+   "main_about_third_party_license": {
+      "message": "Όροι άδειας τρίτου μέρους"
+   },
+   "main_about_version": {
+      "message": "Έκδοση"
+   },
+   "main_account_manage_account_description": {
+      "message": "Αποκτήστε πρόσβαση στον λογαριασμό σας Bitdefender για να διαχειριστείτε τις ρυθμίσεις και τις προτιμήσεις σας."
+   },
+   "main_account_manage_account_title": {
+      "message": "Διαχείριση λογαριασμού"
+   },
+   "main_account_managed_by_description": {
+      "message": "Για να χρησιμοποιήσετε έναν άλλο λογαριασμό, επαληθεύστε τον λογαριασμό σας στην εφαρμογή Bitdefender."
+   },
+   "main_account_managed_by_title": {
+      "message": "Διαχειρίζεται από την εφαρμογή σας Bitdefender"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Δείτε και διαχειριστείτε τις συνδρομές σας Bitdefender ."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Οι Συνδρομές μου"
+   },
+   "main_account_sign_out": {
+      "message": "Έξοδος"
+   },
+   "main_account_subscription_active": {
+      "message": "Ενεργός"
+   },
+   "main_account_subscription_expired": {
+      "message": "Η συνδρομή έληξε"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Η συνδρομή έληξε ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Λήγει σε [Days] ημέρες ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Λήγει σε [Days] ημέρες ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Ατομικό Πρόγραμμα"
+   },
+   "main_account_subscription_section": {
+      "message": "Συνδρομή"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Δωρεάν"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Ο λογαριασμός μου"
+   },
+   "main_activity_details_error": {
+      "message": "Δεν ήταν δυνατή η φόρτωση δεδομένων δραστηριότητας."
+   },
+   "main_activity_detections_analysed": {
+      "message": "αναλύθηκε"
+   },
+   "main_activity_detections_title": {
+      "message": "Ανιχνεύσεις"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "ανιχνεύσεις"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Πληροφορίες για απειλές"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Πώς συνδυάζονται τα σήματα κινδύνου σε όλες τις κατηγορίες για τους ιστότοπους που επισκέπτεστε."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Αυτός ο ιστότοπος βρίσκεται ήδη στη λίστα επιτρεπόμενων."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "ΑΚΥΡΟ"
+   },
+   "main_add_whitelist_description": {
+      "message": "Τα domains στη λίστα επιτρεπόμενων θα παραλειφθούν από τη σάρωση. Δεν θα ειδοποιηθείτε για τυχόν απειλές που υπάρχουν σε αυτές τις σελίδες."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Διεύθυνση ιστότοπου"
+   },
+   "main_add_whitelist_save": {
+      "message": "Αποθήκευση"
+   },
+   "main_add_whitelist_title": {
+      "message": "Προσθήκη ιστότοπου στη λίστα επιτρεπόμενων"
+   },
+   "main_autonomy_level_title": {
+      "message": "Επίπεδο αυτονομίας"
+   },
+   "main_autonomy_save": {
+      "message": "Αποθήκευση ρυθμίσεων"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Δραστηριότητα"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Αλλαγή επιπέδου προστασίας"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Αντιμετωπίζει τις απειλές αυτόματα και ενεργεί αμέσως μόλις τις εντοπίσει, χωρίς να σας διακόψει."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Αυτόματη προστασία"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Ελέγχει τα πάντα και μετά σας ρωτάει πριν αναλάβει δράση."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Καθοδηγούμενη προστασία"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Οι τομείς ελέγχθηκαν"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Σάρωση με βάση τις πληροφορίες του ηλεκτρονικού καταστήματος"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Ασφαλείς αγορές"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Ευφυής πληροφόρηση για επικίνδυνες τοποθεσίες σε πραγματικό χρόνο"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Scam Protection"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Ευφυής σύνδεση αποτελεσμάτων αναζήτησης εμπλουτισμένη με τεχνητή νοημοσύνη"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Σύμβουλος Αναζήτησης"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Τραπεζικές συναλλαγές, κρυπτονομίσματα και πληροφορίες για πορτοφόλια"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Ασφαλή Οικονομικά"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Ενεργός"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Μήνας"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Σήμερα"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Εβδομάδα"
+   },
+   "main_dashboard_load_error": {
+      "message": "Δεν ήταν δυνατή η φόρτωση δεδομένων πίνακα ελέγχου."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Απόρριψη"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Έλεγχος σελιδοδεικτών και ιστορικού περιήγησης"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Πρόσφατη δραστηριότητα"
+   },
+   "main_dashboard_retry": {
+      "message": "Ξαναπροσπαθήστε"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Δείτε λεπτομέρειες δραστηριότητας"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "Κακόβουλη"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "ασφαλής"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "ύποπτος"
+   },
+   "main_error_boundary_text": {
+      "message": "Παρουσιάστηκε σφάλμα κατά την απόδοση του αναδυόμενου παραθύρου επέκτασης. Δοκιμάστε να ανανεώσετε ή να ανοίξετε ξανά το αναδυόμενο παράθυρο."
+   },
+   "main_error_boundary_title": {
+      "message": "Κάτι πήγε στραβά."
+   },
+   "main_extension_description": {
+      "message": "Αποκλείει απάτες, ηλεκτρονικό ψάρεμα και επικίνδυνους ιστότοπους πριν φορτώσουν, δωρεάν. Προσθέτει ΑΙ που εξηγεί τις απειλές ."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Γλώσσα εφαρμογής"
+   },
+   "main_general_app_theme": {
+      "message": "Θέμα εφαρμογής"
+   },
+   "main_general_privacy_policy": {
+      "message": "Πολιτική Απορρήτου"
+   },
+   "main_general_product_reports_description": {
+      "message": "Αποστολή αναφορών απειλών στον κυβερνοχώρο για βελτιώσεις προϊόντων σύμφωνα με την Πολιτική Απορρήτου"
+   },
+   "main_general_product_reports_title": {
+      "message": "Αναφορές προϊόντος"
+   },
+   "main_general_theme_automatic": {
+      "message": "Αυτόματα"
+   },
+   "main_general_theme_dark": {
+      "message": "Σκούρο"
+   },
+   "main_general_theme_light": {
+      "message": "Φωτεινό"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Αυτό το βήμα δεν έχει περιγραφή."
+   },
+   "main_login_button": {
+      "message": "Συνδεθείτε"
+   },
+   "main_login_connected_button": {
+      "message": "ΣΥΝΕΧΕΙΑ"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Στη συνέχεια, ορίστε τον τρόπο λειτουργίας του Συμβούλου Ασφαλείας."
+   },
+   "main_login_connected_title": {
+      "message": "Συνδεθήκατε!"
+   },
+   "main_login_create_account": {
+      "message": "Δημιουργήστε έναν"
+   },
+   "main_login_no_account": {
+      "message": "Δεν έχετε λογαριασμό;"
+   },
+   "main_login_subtitle": {
+      "message": "Συνδεθείτε στον λογαριασμό σας Bitdefender ."
+   },
+   "main_login_title": {
+      "message": "Προστατέψτε την περιήγησή σας"
+   },
+   "main_navbar_dashboard": {
+      "message": "Πίνακας ελέγχου"
+   },
+   "main_opera_hint_caption": {
+      "message": "Κάντε κλικ στο εικονίδιο επέκτασης στην πλαϊνή γραμμή για να το ανοίξετε"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Ανοίξτε το Bitdefender Web Sage από την πλαϊνή μπάρα της Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Αναβαθμίστε σε Premium για να χρησιμοποιήσετε αυτήν τη λειτουργία."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Διαχείριση δικαιωμάτων"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Διαχείριση ειδοποιήσεων, δικαιωμάτων και ιχνηλατών"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Προτείνει μια κριτική"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Προστασία Απορρήτου"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Το Privacy Guard είναι μια Premium λειτουργία. Αναβαθμίστε για να αλλάξετε τα δικαιώματα ιστότοπου εδώ."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Δεν ήταν δυνατή η εφαρμογή αυτής της αλλαγής. Παρακαλώ προσπαθήστε ξανά."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Δεν διαχειρίζονται ακόμη δικαιώματα ιστότοπου. Το Privacy Guard προσθέτει έναν ιστότοπο εδώ όταν αποκλείει τα δικαιώματα που είχε επιτραπεί να χρησιμοποιήσει ο ιστότοπος."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Μεταβείτε στις Ρυθμίσεις"
+   },
+   "main_privacy_guard_info": {
+      "message": "Προστατεύει το απόρρητό σας αποκλείοντας τα σενάρια παρακολούθησης και διαχειριζόμενοι τα δικαιώματα ιστότοπων. Μπορείτε να βελτιώσετε αυτές τις επιλογές στο μενού Ρυθμίσεις."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Διαχείριση δικαιωμάτων"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Αυτόματες λήψεις"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Έλεγχος κάμερας"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Πρόσβαση στο πρόχειρο"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Πρόσβαση τοποθεσίας"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Έλεγχος μικροφώνου"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Ειδοποιήσεις"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Εκκαθάριση αναζήτησης"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Δεν υπάρχει ιστότοπος που να ταιριάζει με την αναζήτησή σας"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Βρείτε έναν ιστότοπο"
+   },
+   "main_privacy_guard_title": {
+      "message": "Προστασία Απορρήτου"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Να εμπιστεύεστε αυτόν τον ιστότοπο (να επιτρέπονται όλοι)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Προηγουμένως επιλέξατε να εμπιστευτείτε αυτόν τον ιστότοπο και να επιτρέψετε όλα τα δικαιώματα που ζητά (ειδοποιήσεις, πρόσβαση στην τοποθεσία, έλεγχος κάμερας και μικροφώνου)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Δεν είναι δυνατή η διαχείριση των δικαιωμάτων ιστότοπου σε αυτό το πρόγραμμα περιήγησης"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Γιατί γίνεται διαχείριση των δικαιωμάτων;"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Όταν ένας ιστότοπος αποκλείεται επειδή δεν είναι ασφαλής, το Privacy Guard αποκλείει επίσης τα δικαιώματα που μπορεί να ζητήσει, όπως ειδοποιήσεις ή πρόσβαση στην κάμερα. Τα δικαιώματα που δεν είχε ποτέ ο ιστότοπος παραμένουν ανέπαφα."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Εντοπίστηκε κακόβουλος σύνδεσμος συνομιλίας"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Εντοπίστηκε ύποπτος σύνδεσμος συνομιλίας"
+   },
+   "main_recent_activity_info": {
+      "message": "Οι πρόσφατες ύποπτες ή κακόβουλες ετυμηγορίες αποθηκεύονται για τον τελευταίο μήνα."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Δεν ήταν δυνατή η φόρτωση της πρόσφατης δραστηριότητας."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Η σελίδα απάτης έχει αποκλειστεί"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Εντοπίστηκε σελίδα απάτης"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Ανιχνεύσεις του Συμβούλου Αναζήτησης"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Κακόβουλη σελίδα μπλοκαρίστηκε"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Εντοπίστηκε ύποπτη δραστηριότητα"
+   },
+   "main_rename_device_cancel": {
+      "message": "ΑΚΥΡΟ"
+   },
+   "main_rename_device_description": {
+      "message": "Δώστε στη συσκευή σας ένα μοναδικό όνομα για να την αναγνωρίζετε εύκολα."
+   },
+   "main_rename_device_field_label": {
+      "message": "Όνομα συσκευής"
+   },
+   "main_rename_device_save": {
+      "message": "Αποθήκευση"
+   },
+   "main_rename_device_title": {
+      "message": "Μετονομάστε αυτήν τη συσκευή"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Ανακλήθηκε η πρόσβαση στην κάμερα για {n} ιστότοπους"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Ανάκληση πρόσβασης στην κάμερα για {n} ιστότοπους"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Ανακλήθηκε η πρόσβαση στο πρόχειρο για {n} ιστότοπους"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Ανάκληση πρόσβασης στο πρόχειρο για {n} ιστότοπους"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Διαγράφηκαν τα cookie και τα δεδομένα ιστότοπου για {n} ιστότοπους"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Διαγράφηκαν τα cookie και τα δεδομένα ιστότοπου για {n} ιστότοπους"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Αποκλείστηκαν οι αυτόματες λήψεις για {n} ιστότοπους"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Αποκλεισμός αυτόματων λήψεων για {n} ιστότοπους"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Εφαρμογή διορθώσεων"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Εφαρμόστηκαν {n} από {t} διορθώσεις"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Ανακλήθηκε η πρόσβαση τοποθεσίας για {n} ιστότοπους"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Ανάκληση πρόσβασης τοποθεσίας για {n} ιστότοπους"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Ανακλήθηκε η πρόσβαση στο μικρόφωνο για {n} ιστότοπους"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Ανάκληση πρόσβασης στο μικρόφωνο για {n} ιστότοπους"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Αποκλεισμένες ειδοποιήσεις για {n} ιστότοπους"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Αποκλεισμός ειδοποιήσεων για {n} ιστότοπους"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Μετονομάστηκαν {n} επικίνδυνοι σελιδοδείκτες"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "Μετονομασία {n} επικίνδυνων σελιδοδεικτών"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Εφαρμογή διορθώσεων…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Αυτόματη προστασία"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Καθοδηγούμενη προστασία"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Εφαρμογή επιλεγμένων διορθώσεων"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Τι κάνω"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Αυτόματη εφαρμογή διορθώσεων"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Ο ρόλος μου"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Τι θα επισημάνω"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Τι θα διορθώσω"
+   },
+   "main_sa_banner_sources": {
+      "message": "Τι θα κοιτάξω"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Η επιλογή σας"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Αντιστοίχιση σελιδοδεικτών με γνωστές απειλές…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Πραγματοποιήθηκαν {n} έλεγχοι"
+   },
+   "main_sa_check_cookies": {
+      "message": "Έλεγχος για αποθηκευμένα cookies και δεδομένα ιστότοπου σε τομείς με σημαία…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} από {t} σελιδοδείκτες αντιστοιχούν σε γνωστές απειλές"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} ιστότοποι έχουν δεδομένα που αξίζουν διαγραφής"
+   },
+   "main_sa_check_done_history": {
+      "message": "Βρέθηκαν {h} επισκέψεις σε τομείς με σημαία"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} από {t} τροποποιημένα δικαιώματα φαίνονται περιττά ή επικίνδυνα"
+   },
+   "main_sa_check_history_db": {
+      "message": "Αντιστοίχιση ιστορικού με γνωστές απειλές…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Θα ελέγξω πρώτα τα πιο επικίνδυνα πράγματα και θα συγκρίνω τι μπορεί να έχει πρόσβαση κάθε ιστότοπος με αυτό που πραγματικά χρειάζεται."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Αξιολόγηση δικαιωμάτων ιστότοπου…"
+   },
+   "main_sa_continue": {
+      "message": "ΣΥΝΕΧΕΙΑ"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Πρόχειρο και λήψεις"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Βρείτε ιστότοπους που μπορούν να διαβάσουν το πρόχειρό σας ή να κατεβάζουν αρχεία χωρίς να ρωτήσουν και απενεργοποιήστε αυτούς που δεν θα έπρεπε."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Ειδοποιήσεις προγράμματος περιήγησης"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Σταματήστε τις ειδοποιήσεις απάτης και ανεπιθύμητου περιεχομένου από ιστότοπους που δεν θέλατε να επιτρέψετε."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Ειδοποιήσεις"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Πρόσβαση σε μικρόφωνο, κάμερα και τοποθεσία"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Βρείτε ιστότοπους που μπορούν να χρησιμοποιήσουν το μικρόφωνο, την κάμερα ή την τοποθεσία σας και απενεργοποιήστε αυτούς που δεν θα έπρεπε."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Πρόσβαση σε μικρόφωνο, κάμερα και τοποθεσία"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Γνωστές απειλές"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Αποκλείστε ιστότοπους που είναι ήδη γνωστό ότι είναι επιβλαβείς πριν από τη φόρτωσή τους."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Πρόχειρο και λήψεις — {n} ιστότοποι μπορούν να διαβάσουν το πρόχειρό σας ή να κατεβάζουν αρχεία αυτόματα"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Αποθηκευμένα δεδομένα — {n} ιστότοποι έχουν ήδη αποθηκεύσει cookies ή άλλα δεδομένα στη συσκευή σας"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Ψεύτικοι ιστότοποι — {n} ιστότοποι αντιγράφουν πραγματικές επιχειρήσεις για να σας ξεγελάσουν"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Δικαιώματα — {n} ιστότοποι μπορούν να έχουν πρόσβαση στις ειδοποιήσεις, την τοποθεσία, το μικρόφωνο ή την κάμερά σας"
+   },
+   "main_sa_finding_threats": {
+      "message": "Γνωστές απειλές — {n} ιστότοποι βρίσκονται στη λίστα μας με γνωστούς επιβλαβείς ιστότοπους"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Δημιουργήθηκε αναφορά: {n} προειδοποιήσεις"
+   },
+   "main_sa_findings_heading": {
+      "message": "Η σάρωση ολοκληρώθηκε Να τι βρήκα:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Η σάρωση ολοκληρώθηκε Διόρθωση αυτού που βρήκα:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Η σάρωση ολοκληρώθηκε"
+   },
+   "main_sa_findings_none": {
+      "message": "Τίποτα δεν ξεχώριζε — καμία προειδοποίηση από αυτή τη σάρωση."
+   },
+   "main_sa_finish_setup": {
+      "message": "Αποθήκευση και συνέχεια"
+   },
+   "main_sa_fix_cam": {
+      "message": "Ανάκληση πρόσβασης στην κάμερα"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Ανάκληση πρόσβασης στο πρόχειρο"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Διαγραφή ύποπτων cookie και τοπικά αποθηκευμένων δεδομένων"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Αποκλεισμός αυτόματων λήψεων"
+   },
+   "main_sa_fix_loc": {
+      "message": "Ανάκληση πρόσβασης στην τοποθεσία"
+   },
+   "main_sa_fix_mic": {
+      "message": "Ανάκληση πρόσβασης στο μικρόφωνο"
+   },
+   "main_sa_fix_notif": {
+      "message": "Αποκλεισμός ειδοποιήσεων"
+   },
+   "main_sa_fix_rename": {
+      "message": "Μετονομασία επικίνδυνων σελιδοδεικτών"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Επισημάνθηκαν {n} επικίνδυνοι σελιδοδείκτες, ώστε να είναι ορατοί με μια ματιά"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Διαγράφηκαν τα cookie και τα αποθηκευμένα δεδομένα από {n} τομείς με σημαία"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Ανακλήθηκαν {n} δικαιώματα ιστότοπου που δεν χρησιμοποιούσατε ενεργά"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Δεν χρειαζόταν καθάρισμα — όλα ελέγχθηκαν"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Να τι θα έκανα γι' αυτό:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Αντιμετωπίζει τις απειλές αυτόματα και ενεργεί αμέσως μόλις τις εντοπίσει, χωρίς να σας διακόψει."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Αυτόματη προστασία"
+   },
+   "main_sa_go_dashboard": {
+      "message": "γινώμενος"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Ελέγχει τα πάντα και μετά σας ρωτάει πριν αναλάβει δράση."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Καθοδηγούμενη προστασία"
+   },
+   "main_sa_intro_scan": {
+      "message": "Για να ξεκινήσετε, επιλέξτε τι θα εξετάσω στην πρώτη σας σάρωση."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Έναρξη της πρώτης σας σάρωσης. Θα τα αναλάβω όλα από εδώ."
+   },
+   "main_sa_list_last_separator": {
+      "message": " και "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Ορίστε το σχέδιό μου:"
+   },
+   "main_sa_plan_body": {
+      "message": "Θα ελέγξω τα {targets} σας, θα τα διασταυρώσω με γνωστές απειλές και στη συνέχεια θα σας δείξω μια σύνοψη πριν αλλάξω οτιδήποτε."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Θα ελέγξω τους σελιδοδείκτες, το ιστορικό και τα δικαιώματά σας, θα τα διασταυρώσω με γνωστές απειλές και θα διορθώσω οτιδήποτε είναι επικίνδυνο μόλις το εντοπίσω."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Θα σας δείξω τι βρήκα πριν αλλάξω οτιδήποτε. Εσύ αποφασίζεις τι θα συμβεί στη συνέχεια."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Σελιδοδείκτες"
+   },
+   "main_sa_plan_target_history": {
+      "message": "ιστορικό περιήγησης"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "δικαιώματα ιστότοπου"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Ανάγνωση {n} σελιδοδεικτών σε {f} φακέλους"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Ανάγνωση σελιδοδεικτών…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Διαβάστε {n} πηγές"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Τώρα θα ελέγξω τα πάντα για κινδύνους."
+   },
+   "main_sa_read_history_done": {
+      "message": "Ανάγνωση {n} καταχωρίσεων ιστορικού"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Ανάγνωση ιστορικού περιήγησης…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Βρέθηκαν {n} ιστότοποι με τροποποιημένα δικαιώματα"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Έλεγχος δικαιωμάτων ιστότοπου…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Θα διαβάσω πρώτα και μετά θα αναλύσω. Ξεκινώντας τώρα."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Παράλειψη αρχικής σάρωσης"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Παράλειψη και εμφάνιση της αναφοράς"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Σελιδοδείκτες"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Εντοπίστε αποθηκευμένους ιστότοπους που έχουν γίνει αθόρυβα επικίνδυνοι από τότε που τους προσθέσατε σελιδοδείκτες."
+   },
+   "main_sa_source_history": {
+      "message": "Ιστορικό περιήγησης"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Εντοπίστε επικίνδυνους ιστότοπους που έχετε ήδη επισκεφτεί, ώστε να τους αποφύγετε την επόμενη φορά."
+   },
+   "main_sa_start_assessment": {
+      "message": "ΕΝΑΡΞΗ ΣΑΡΩΣΗΣ"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Επιλέξτε πόσο κάνει από μόνο του:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Όλα έτοιμα."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Όλα φαίνονται καλά."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} σελιδοδείκτες"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Τι έλεγξα:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} καταχωρίσεις ιστορικού"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} δικαιώματα ιστότοπου σε {c} κατηγορίες"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Τι καθάρισα:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Τι βρήκα:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Από εδώ και στο εξής, θα ελέγχω τους νέους σελιδοδείκτες και τα δικαιώματα στο παρασκήνιο και θα επισημαίνω οτιδήποτε είναι επικίνδυνο."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Τίποτα δεν άλλαξε. Επιστρέψτε οποιαδήποτε στιγμή για να ελέγξετε και να εφαρμόσετε τις προτεινόμενες διορθώσεις."
+   },
+   "main_sa_summary_stand": {
+      "message": "Ορίστε η περίληψη."
+   },
+   "main_sa_title_configure": {
+      "message": "Ρύθμιση του Συμβούλου Ασφαλείας"
+   },
+   "main_sa_what_look_for": {
+      "message": "Τι θα επισημάνω"
+   },
+   "main_sa_where_look": {
+      "message": "Τι θα κοιτάξω"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Αυτονομία"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Προστασία Απορρήτου"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Σύμβουλος Αναζήτησης"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Εξειδικευμένη Άμυνα"
+   },
+   "main_settings_about": {
+      "message": "Σχετικά"
+   },
+   "main_settings_general": {
+      "message": "Γενικά"
+   },
+   "main_settings_language": {
+      "message": "Γλώσσα"
+   },
+   "main_settings_my_account": {
+      "message": "Ο λογαριασμός μου"
+   },
+   "main_settings_security_advisor": {
+      "message": "Σύμβουλος Ασφαλείας"
+   },
+   "main_settings_support": {
+      "message": "Υποστήριξη"
+   },
+   "main_settings_title": {
+      "message": "Ρυθμίσεις"
+   },
+   "main_settings_upgrade": {
+      "message": "Αναβάθμιση σε {premium} για βελτιωμένη προστασία"
+   },
+   "main_settings_whitelist": {
+      "message": "Επιτρεπτή λίστα (Whitelist)"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Ανοίξτε το Bitdefender Web Sage από την πλαϊνή μπάρα του προγράμματος περιήγησής σας."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Συνδεθείτε στον λογαριασμό σας Bitdefender για να ξεκινήσετε."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Το Web Sage δεν σας προστατεύει ακόμα"
+   },
+   "main_support_center_description": {
+      "message": "Βρείτε γρήγορα απαντήσεις στα πιο συνηθισμένα ζητήματα ή επικοινωνήστε με την ομάδα υποστήριξής μας αν χρειάζεστε επιπλέον βοήθεια."
+   },
+   "main_support_center_link": {
+      "message": "Μεταβείτε στο Κέντρο υποστήριξης"
+   },
+   "main_support_center_title": {
+      "message": "Κέντρο Υποστήριξης"
+   },
+   "main_support_community_description": {
+      "message": "Λάβετε τις απαντήσεις σας, κάντε τις ερωτήσεις σας! Είμαστε εδώ για να βοηθήσουμε ο ένας τον άλλον!"
+   },
+   "main_support_community_link": {
+      "message": "Ρωτήστε την κοινότητα"
+   },
+   "main_support_community_title": {
+      "message": "Ρωτήστε την κοινότητα"
+   },
+   "main_test": {
+      "message": "δοκιμή"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Γραμματοσειρές"
+   },
+   "main_third_party_category_label": {
+      "message": "Κατηγορία:"
+   },
+   "main_third_party_category_packages": {
+      "message": "Πακέτα JavaScript/TypeScript"
+   },
+   "main_third_party_licence_label": {
+      "message": "Αδεια:"
+   },
+   "main_third_party_link_label": {
+      "message": "Σύνδεσμος:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Τα παρακάτω ορίζουν τις ειδοποιήσεις απόδοσης για λογισμικό ανοιχτού κώδικα τρίτων που περιέχεται σε τμήματα της επέκτασης προγράμματος περιήγησης Bitdefender (έκδοση $1). Ευχαριστούμε την κοινότητα ανοιχτού κώδικα για όλες τις συνεισφορές της."
+   },
+   "main_third_party_page_title": {
+      "message": "Όροι άδειας τρίτου μέρους"
+   },
+   "main_third_party_version_label": {
+      "message": "Έκδοση:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Όχι μια μακρά μορφή. Μια διεύθυνση ηλεκτρονικού ταχυδρομείου και ένας κωδικός πρόσβασης. Περίπου ένα λεπτό, μία φορά, και τελειώσατε."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Δεν είναι paywall. {product} Το Standard είναι δωρεάν και παραμένει δωρεάν. Χωρίς κάρτα, χωρίς δοκιμαστικό ρολόι, χωρίς ημερομηνία λήξης."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Όχι συνδρομή. Ένας λογαριασμός δεν είναι σχέδιο. Δεν χρεώνεται τίποτα και τίποτα δεν ανανεώνεται αυτόματα."
+   },
+   "main_welcome_account_not_title": {
+      "message": "Και για να είμαι ευθύς σχετικά με το τι δεν είναι αυτό"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome στη δουλειά, Edge στο σπίτι, ένα δεύτερο μηχάνημα. Ένας λογαριασμός καλύπτει {product} σε όλα αυτά, με τους ίδιους κανόνες."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Προστασία παντού, όχι ανά πρόγραμμα περιήγησης"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Ο ίδιος λογαριασμός Bitdefender λειτουργεί σε όλα όσα δημιουργεί η Bitdefender. Προσθέστε ένα προϊόν αργότερα, επικοινωνήστε με την υποστήριξη, ελέγξτε μια συσκευή — έχετε ήδη ρυθμίσει τη συσκευή σας."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Ένας λογαριασμός, όχι ένας παραπάνω"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Κάθε ιστότοπος που επιτρέψατε, κάθε προστασία που απενεργοποιήσατε — τώρα σας ακολουθεί. Νέο πρόγραμμα περιήγησης, νέος φορητός υπολογιστής, νέα εγκατάσταση: όλα είναι ακόμα εκεί."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Οι ρυθμίσεις σας σταματούν να εξαφανίζονται"
+   },
+   "main_welcome_account_straight": {
+      "message": "Η προστασία {product} ξεκινά όταν συνδέεστε. Μέχρι τότε, η προστασία παραμένει ανενεργή και το εικονίδιο ασπίδας στο πρόγραμμα περιήγησής σας παραμένει απενεργοποιημένο."
+   },
+   "main_welcome_account_sub": {
+      "message": "Αυτή είναι μια πραγματική αλλαγή από το TrafficLight, και είναι λογικό να αναρωτηθούμε γιατί. Τρεις ειλικρινείς λόγοι:"
+   },
+   "main_welcome_account_title": {
+      "message": "Το ένα πράγμα που άλλαξε"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Συνεχίστε την περιήγηση"
+   },
+   "main_welcome_button_open": {
+      "message": "Άνοιγμα {product}"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Συνδεθείτε"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Έλεγχος του λογαριασμού σας…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Έχετε ήδη Bitdefender σε αυτήν τη συσκευή; Ενδέχεται να συνδεθείτε αυτόματα — αυτή η σελίδα ενημερώνεται τη στιγμή που συμβαίνει αυτό."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "Το {product} σας προστατεύει μόνο όταν είστε συνδεδεμένοι στον λογαριασμό σας Bitdefender. Η σύνδεση ενεργοποιεί τον αποκλεισμό, εφαρμόζει αυτόματα το πρόγραμμά σας και διατηρεί τις ρυθμίσεις σας συγχρονισμένες. Η δημιουργία λογαριασμού είναι δωρεάν."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Σύνδεση — αυτό ενεργοποιεί την προστασία"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Είστε έτοιμοι!"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Η ενημέρωση ολοκληρώθηκε"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight έχει μεγαλώσει"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Ανοίξτε τον πίνακα ελέγχου σας"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Συνδεθείτε"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Ο πίνακας ελέγχου, η δραστηριότητα και οι ρυθμίσεις σας βρίσκονται στο επάνω μέρος του πίνακα."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Ο λογαριασμός σας"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Ο λογαριασμός σας Bitdefender είναι αυτός που ενεργοποιεί την προστασία, διατηρεί τις ρυθμίσεις σας συγχρονισμένες σε όλα τα προγράμματα περιήγησης και τις συσκευές και σας παρέχει έναν πίνακα ελέγχου για τη δραστηριότητα και τις ρυθμίσεις σας."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Ο λογαριασμός σας, ο πίνακας ελέγχου σας"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "Στον πίνακα"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Γνωρίστε τον Σύμβουλο Ασφαλείας"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Κάθε ρύθμιση προστασίας βρίσκεται εδώ, συμπεριλαμβανομένου του πόσο καλά λειτουργεί από μόνη της."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Σύμβουλος Ασφαλείας"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Ελέγχει τους σελιδοδείκτες και το ιστορικό περιήγησής σας για γνωστές απειλές όταν το ρυθμίζετε και, στη συνέχεια, σας ενημερώνει για το τι βρίσκει στις σελίδες που επισκέπτεστε. Εσύ επιλέγεις αν θα ρωτήσει πριν ενεργήσει ή αν θα χειριστεί τα πράγματα μόνο του."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Σύμβουλος Ασφαλείας"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "Στον πίνακα"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Δείτε το στον πίνακα"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Ήσυχα στην πραγματική τοποθεσία, δυνατά σε μια ψεύτικη."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Ασφαλή Οικονομικά"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Οι σελίδες τραπεζικών συναλλαγών, κρυπτονομισμάτων και πορτοφολιών ελέγχονται επιπλέον: οι πλαστοπροσωπίες της τράπεζάς σας ή του ανταλλακτηρίου σας εντοπίζονται πριν πληκτρολογήσετε έναν κωδικό πρόσβασης."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Ασφαλή Οικονομικά"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Σε τραπεζικούς ιστότοπους και ιστότοπους κρυπτονομισμάτων"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Ρύθμιση σε δύο βήματα"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Δεν υπάρχει τίποτα για ενεργοποίηση. Σε προστατεύει από την ενημέρωση."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Ακόμα εδώ"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Το μπλοκάρισμα σελίδων σε πραγματικό χρόνο και ο Σύμβουλος Αναζήτησης λειτουργούν ακριβώς όπως πριν, τώρα με περισσότερες πηγές πίσω από αυτά. Αν εκτελέσατε επίσης την ξεχωριστή επέκταση Anti-tracker, το Privacy Guard κάνει πλέον αυτήν τη δουλειά — μπορείτε να την καταργήσετε."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Όλα όσα βασίστηκες είναι ακόμα εδώ"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Πάντα ενεργοποιημένο"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Ανοιχτή Προστασία Απορρήτου"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Κάθε ιστότοπος που διαχειρίζεται, με μια εναλλαγή για κάθε δικαίωμα."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Προστασία Απορρήτου"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Αποκλείει τους trackers και διαχειρίζεται τα δικαιώματα που διαθέτει ένας ιστότοπος — ειδοποιήσεις, τοποθεσία, κάμερα, μικρόφωνο, αυτόματες λήψεις και πρόχειρο. Όταν ένας ιστότοπος αποδειχθεί μη ασφαλής, ό,τι του είχε χορηγηθεί ανακαλείται για εσάς."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Προστασία Απορρήτου"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "Στον πίνακα"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Δείτε το στον πίνακα"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Οι προειδοποιήσεις εμφανίζονται ακριβώς εκεί που κάνετε περιήγηση, πριν κάνετε κλικ."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Scam Protection"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Πέρα από τις γνωστές κακές διευθύνσεις URL: μια ύποπτη σελίδα λαμβάνει μια ανάλυση τεχνητής νοημοσύνης κατ' απαίτηση που εξηγεί τι συμβαίνει, με απλά λόγια."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Προστασία από απάτες με βαθιά σάρωση με τεχνητή νοημοσύνη"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Στη σελίδα"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Άνοιγμα του πίνακα"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Ένα σημάδι δίπλα σε κάθε αποτέλεσμα. Τοποθετήστε το δείκτη του ποντικιού για να δείτε τον λόγο."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Σύμβουλος Αναζήτησης"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Αξιολογήσεις ασφαλείας δίπλα στα αποτελέσματά σας στο Google, το Bing, το DuckDuckGo και το Yahoo, ώστε να γνωρίζετε πριν κάνετε κλικ."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Σύμβουλος Αναζήτησης"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "Στα αποτελέσματα αναζήτησης"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Δείτε το στον πίνακα"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Μια ετυμηγορία για το ίδιο το κατάστημα, όχι μόνο για τη σελίδα στην οποία βρίσκεστε."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Ασφαλείς αγορές"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Τα ηλεκτρονικά καταστήματα ελέγχονται με βάση τις πληροφορίες ηλεκτρονικού καταστήματος καθώς περιηγείστε, επομένως τα ψεύτικα καταστήματα και οι προσφορές που είναι πολύ καλές για να είναι αληθινές επισημαίνονται πριν πληρώσετε."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Ασφαλείς αγορές"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Σε ιστότοπους αγορών"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Δείτε την κατάσταση της σελίδας"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Το παρατηρείς μόνο όταν έχει κάτι να πει."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Αποκλεισμός σελίδας"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Κάθε σελίδα που ανοίγετε ελέγχεται ως προς τις πληροφορίες απειλών του Bitdefender. Οτιδήποτε επικίνδυνο τερματίζεται αμέσως — και αποκλείεται εντελώς πριν μπορέσει να φορτώσει ξανά."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Οι επικίνδυνες σελίδες κλείνουν επί τόπου"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Στη σελίδα"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Νομική υποστήριξη"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Πολιτική Απορρήτου"
+   },
+   "main_welcome_footer_support": {
+      "message": "Υποστήριξη"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Όροι Χρήσης"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Δεν ήταν δυνατό το αυτόματο άνοιγμα του πίνακα. Κάντε κλικ στο εικονίδιο {product} στη γραμμή εργαλείων σας για να το ανοίξετε."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Κινούμενη εικόνα που δείχνει πώς να καρφιτσώσετε την επέκταση στη γραμμή εργαλείων του προγράμματος περιήγησης"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Κάντε κλικ στο κουμπί Επεκτάσεις (το κομμάτι του παζλ) επάνω δεξιά στο πρόγραμμα περιήγησής σας."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Κάντε κλικ στο κουμπί Επεκτάσεις (το κομμάτι του παζλ) επάνω δεξιά στο πρόγραμμα περιήγησής σας."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Κάντε κλικ στο κουμπί Επεκτάσεις (το κομμάτι του παζλ) στη γραμμή εργαλείων σας."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Κάντε κλικ στο κουμπί Επεκτάσεις (ο κύβος) στη γραμμή εργαλείων σας."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Ανοίξτε το μενού επεκτάσεων του προγράμματος περιήγησής σας."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Βρείτε το {product} και κάντε κλικ στο εικονίδιο καρφίτσας δίπλα του."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Βρείτε το {product} και κάντε κλικ στο εικονίδιο καρφίτσας δίπλα του για να το εμφανίσετε στη γραμμή εργαλείων."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Βρείτε το {product}, ανοίξτε τις ρυθμίσεις του (το εικονίδιο με το γρανάζι) και επιλέξτε Καρφίτσωμα στη γραμμή εργαλείων."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Βρείτε το {product} και κάντε κλικ στο εικονίδιο καρφίτσας δίπλα του."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Βρείτε το {product} και καρφιτσώστε το στη γραμμή εργαλείων."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Κρατήστε το ένα κλικ μακριά, ώστε να βλέπετε πάντα την κατάσταση ασφαλείας της σελίδας στην οποία βρίσκεστε."
+   },
+   "main_welcome_pin_title": {
+      "message": "Καρφίτσωμα {product} στη γραμμή εργαλείων σας"
+   },
+   "main_welcome_protected_done": {
+      "message": "Η προστασία είναι ενεργοποιημένη. Δεν υπάρχει τίποτα άλλο να κάνετε εδώ — καρφιτσώστε το {product} για να παραμείνει ορατό."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Περιλαμβάνεται στο πρόγραμμα {plan} σας — ξεκλειδώνεται αυτόματα, δεν υπάρχει τίποτα προς ενεργοποίηση."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Τρέχει τώρα"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Δωρεάν με τον λογαριασμό σας Bitdefender."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Είστε προστατευμένοι — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Είστε προστατευμένοι — {product} Τυπικό"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Έχετε συνδεθεί και είστε προστατευμένοι"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Προστασία σε πραγματικό χρόνο από απάτες, ηλεκτρονικό ψάρεμα (phishing) και ιχνηλάτες, ακριβώς από όπου περιηγείστε. Δύο γρήγορα βήματα και τελειώσατε."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Η έκδοση {version} είναι ήδη εγκατεστημένη και σας προστατεύει. Να τι προσθέτει."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Η επέκτασή σας μόλις αναβαθμίστηκε σημαντικά. Όλα όσα έκανε ο/η TrafficLight είναι ακόμα εδώ και πολλά περισσότερα έχουν φτάσει."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Μέρος του {product} Premium, περιλαμβάνεται στο Bitdefender Total Security και άνω."
+   },
+   "main_welcome_title_new": {
+      "message": "Καλώς ήρθατε στο {product}"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} μόλις βελτιώθηκε"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight είναι τώρα {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Τι παίρνετε"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Τι νέο"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Τι νέο"
+   },
+   "main_welcome_tour_next": {
+      "message": "Επόμενο χαρακτηριστικό"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Προηγούμενο χαρακτηριστικό"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} από {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Όλα όσα κάνει το {product} για εσάς, μία λειτουργία τη φορά. Περάστε το από μέσα ή μπείτε κατευθείαν μέσα."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Νέο στην έκδοση {version}. Περάστε το από μέσα ή μπείτε κατευθείαν μέσα."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Όλα όσα έκανε ο/η TrafficLight, συν αυτό. Περάστε το από μέσα ή μπείτε κατευθείαν μέσα."
+   },
+   "main_welcome_window_title": {
+      "message": "Καλώς ήρθατε στο {product}"
+   },
+   "main_whitelist_add": {
+      "message": "Προσθήκη Ιστοσελίδας"
+   },
+   "main_whitelist_import": {
+      "message": "Εισαγωγή domains"
+   },
+   "main_whitelist_info": {
+      "message": "Τα domains στη λίστα επιτρεπόμενων θα παραλειφθούν από τη σάρωση. Δεν θα ειδοποιηθείτε για τυχόν απειλές που υπάρχουν σε αυτές τις σελίδες."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "ΚΑΤΑΡΓΗΣΗ"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Σάρωση απειλών"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Σενάρια παρακολούθησης"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Συλλέγει τις διαφημίσεις που εμφανίζονται στις σελίδες που επισκέπτεστε, ώστε να μπορούν να ελεγχθούν για απάτες και απάτες."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Παρακολούθηση διαφημίσεων"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Επισημαίνει κακόβουλες διαφημίσεις και χορηγούμενα αποτελέσματα που οδηγούν σε απάτες ή κακόβουλο λογισμικό."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ασπίδα κατά της διαφημιστικής απάτης"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Εντοπίζει ψεύτικους τραπεζικούς ιστότοπους και ψεύτικες επενδυτικές πλατφόρμες που έχουν σχεδιαστεί για να κλέβουν τα διαπιστευτήριά σας ή τα χρήματά σας."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Προστασία από οικονομική απάτη"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Σας προειδοποιεί για ψεύτικα καταστήματα και δόλιες σελίδες ολοκλήρωσης αγοράς πριν εισαγάγετε τα στοιχεία πληρωμής σας."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Ασφαλείς αγορές"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Αποκλεισμός αυτής της σελίδας"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Φόρτωση ούτως ή άλλως (μη ασφαλές)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Φόρτωση περιεχομένου ούτως ή άλλως (μη ασφαλές)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Δείξε μου περισσότερες λεπτομέρειες"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Εξετάζοντας τις λεπτομέρειες…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Δεν μπόρεσα να αναλύσω αυτήν τη σελίδα αυτή τη στιγμή. Παρακαλώ δοκιμάστε ξανά."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Η λεπτομερής ανάλυση σελίδων δεν αποτελεί μέρος της τρέχουσας συνδρομής σας, επομένως δεν μπορώ να εξετάσω αυτήν την επιλογή."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Αυτό πήρε περισσότερο χρόνο από όσο μπορούσα να περιμένω, οπότε σταμάτησα να το ψάχνω."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Ελέγχει τους συνδέσμους μέσα στα πλαίσια επισκόπησης της Τεχνητής Νοημοσύνης και επισημαίνει αυτούς που οδηγούν σε μη ασφαλείς ιστότοπους."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Σαρωτής επισκόπησης AI"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Απενεργοποιημένο στις Ρυθμίσεις"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Ενεργ."
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Μη διαθέσιμο"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "Σύμβουλος αναζήτησης τεχνητής νοημοσύνης"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Πληροφορίες συνδέσμων αποτελεσμάτων αναζήτησης"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Αναλύθηκε από {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Δεν μπόρεσα να αποκλείσω αυτήν τη σελίδα."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Αποκλεισμός αυτής της σελίδας…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Επιβολή ελέγχου (αφαίρεση από τη λίστα επιτρεπόμενων)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Σάρωση ξανά"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Ξεμπλοκάρισμα αυτής της σελίδας"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Έλεγχος βάσης δεδομένων γνωστών απειλών…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Επαλήθευση δικαιωμάτων…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Έλεγχος για απάτες…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Έλεγχος"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Πραγματοποιήθηκαν {n} έλεγχοι"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Αποκλεισμός σελίδας"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Συγκατάθεση"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Εκτελέστε μια εις βάθος ανάλυση"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Έκανα μια εις βάθος ανάλυση"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Ολοκληρώθηκε η εις βάθος ανάλυση"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Ανάλυση περιεχομένου σελίδας και στιγμιότυπου οθόνης…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Η εις βάθος ανάλυση δεν εντόπισε προβλήματα με αυτήν τη σελίδα."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Η εις βάθος ανάλυση ολοκληρώθηκε χωρίς να εντοπιστούν συγκεκριμένοι δείκτες."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Η εις βάθος ανάλυση επιβεβαίωσε ότι αυτή η σελίδα είναι επικίνδυνη."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Εκτέλεση ανάλυσης"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Με την έγκρισή σας, θα εξετάσω το περιεχόμενο της σελίδας και ένα στιγμιότυπο οθόνης για να βρω τι κρύβεται κάτω από την επιφάνεια."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Το χρονικό όριο της εις βάθος ανάλυσης έληξε"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Σταμάτησε η αναμονή μετά από {n} δευτερόλεπτα"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Η εις βάθος ανάλυση διαρκεί περισσότερο από όσο μπορώ να περιμένω, γι' αυτό σταμάτησα. Μπορείτε να το εκτελέσετε ξανά ή να αποφασίσετε με βάση αυτά που έχω ήδη βρει."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Να κάνω μια πιο εμπεριστατωμένη ανάλυση;"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Αφαίρεση από τη λίστα επιτρεπόμενων και επανέλεγχος…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Δημιουργήθηκε αναφορά: {n} προειδοποίηση"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Δημιουργήθηκε αναφορά: {n} προειδοποιήσεις"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Συνεχίζοντας στη σελίδα…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Κακόβουλο αποτέλεσμα αναζήτησης"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Ελέγχει τις διαφημίσεις στις σελίδες που επισκέπτεστε και επισημαίνει όσες οδηγούν σε απάτες."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Προστασία από απάτες διαφημίσεων"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Άνοιγμα ρυθμίσεων επέκτασης"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Το Opera εμποδίζει την πρόσβαση των επεκτάσεων στα αποτελέσματα αναζήτησης μέχρι να την επιτρέψετε. Ανοίξτε το opera://extensions, βρείτε αυτήν την επέκταση και ενεργοποιήστε την επιλογή «Να επιτρέπεται η πρόσβαση στα αποτελέσματα της σελίδας αναζήτησης»."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Τα αποτελέσματα αναζήτησης δεν ελέγχονται"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Ο Φύλακας Απορρήτου έχει μπλοκάρει {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Αυτός ο ιστότοπος μπορεί να έχει πρόσβαση στο {list}σας"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Δεν έχουν χορηγηθεί άδειες"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Μη διαθέσιμα δικαιώματα"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Δεν εντοπίστηκαν προειδοποιητικά σημάδια"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Το Privacy Guard προτείνει τον αποκλεισμό του {list} για αυτόν τον ιστότοπο."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Να τι βρήκα:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Επαναφέρθηκε όλο το αποκλεισμένο περιεχόμενο."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Επαναφορά αποκλεισμένου περιεχομένου…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Δεν εντοπίστηκαν μοτίβα απάτης"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "Βρέθηκε {n} κακόβουλος δείκτης"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "Βρέθηκαν {n} κακόβουλοι δείκτες"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "Βρέθηκε {n} ύποπτη ένδειξη"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "Βρέθηκαν {n} ύποπτοι δείκτες"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Η ανάλυση απάτης δεν μπόρεσε να ολοκληρωθεί"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Εμφανίστηκε σε μη αξιόπιστο διαφημιστικό περιεχόμενο"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Πρότυπο καταναγκαστικού εκβιασμού"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Πρότυπο απάτης πλαστών χρημάτων"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Πρότυπο απάτης εκμετάλλευσης κρίσης"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Πρότυπο απάτης κρυπτονομισμάτων"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Παραπλανητικό πρότυπο πλατφόρμας γνωριμιών ενηλίκων"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Πρότυπο παραπλανητικής διαφήμισης"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Παραπλανητικό πρότυπο δώρου"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Παραπλανητικό πρότυπο διαδικτυακής έρευνας"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Πρότυπο απάτης για επενδύσεις σε ενέργεια"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Πρότυπο απάτης εκβιασμού"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Πρότυπο ανταμοιβών προβολής ψεύτικης διαφήμισης"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Πρότυπο ψεύτικου ιστότοπου κρατήσεων"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Ψεύτικο πρότυπο καζίνο"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Ψεύτικο πρότυπο φιλανθρωπικού οργανισμού"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Ψεύτικο πρότυπο κλινικής"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Πρότυπο δώρων πλαστών κρυπτονομισμάτων"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Πρότυπο ψεύτικης υπηρεσίας παράδοσης"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Πρότυπο πλαστών εγγράφων"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Ψεύτικο πρότυπο ηλεκτρονικού εμπορίου"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Πρότυπο ψεύτικου εκπαιδευτικού ιδρύματος"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Πρότυπο ψεύτικης ευκαιρίας απασχόλησης"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Πρότυπο ψεύτικης υπηρεσίας ψυχαγωγίας"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Ψεύτικο πρότυπο χρηματοπιστωτικού ιδρύματος"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Πρότυπο ψεύτικης οικονομικής επένδυσης"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Πρότυπο ψεύτικου ιστότοπου τυχερών παιχνιδιών"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Πρότυπο πλαστών κερδών τυχερών παιχνιδιών"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Πρότυπο επένδυσης σε ψεύτικο χρυσό"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Πρότυπο πλαστών κρατικών παροχών"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Πρότυπο ψεύτικου κυβερνητικού ιδρύματος"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Ψεύτικο πρότυπο υπηρεσίας μετανάστευσης"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Πρότυπο πλαστού νομικού ιδρύματος"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Πρότυπο πλαστής υπηρεσίας επιστροφής χρημάτων"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Ψεύτικο πρότυπο διαδικτυακού φαρμακείου"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Ψεύτικο πρότυπο κλινικής"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Ψεύτικο πρότυπο πλατφόρμας πληρωμών"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Ψεύτικο πρότυπο καμπάνιας βραβείων"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Πρότυπο πλαστού βραβείου ή ανταμοιβής"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Πρότυπο ψεύτικου εκδοτικού οίκου"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Πρότυπο πλατφόρμας ψεύτικων κριτικών"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Ψεύτικα μοτίβα καταστημάτων σε διαφημιστική καμπάνια"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Πρότυπο ψεύτικου πνευματικού επαγγελματία"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Πρότυπο πλαστών κερδών"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Πρότυπο απατεώνα που προσποιείται τον πνευματικό θεραπευτή"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Καμπάνια διαφημίσεων ψεύτικου e-shop"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Πρότυπο απάτης στον τομέα της υγειονομικής περίθαλψης"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Εντοπίστηκε επίθεση με παραπλανητικούς χαρακτήρες"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Πρότυπο ιστότοπου παράνομων δραστηριοτήτων"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Πρότυπο παράνομων υπηρεσιών"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Πρότυπο παράνομων ουσιών"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP με κακόβουλα μοτίβα"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP με ύποπτα μοτίβα"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Γνωστό πρότυπο ηλεκτρονικού \"ψαρέματος\" (phishing)"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Γνωστό πρότυπο απάτης"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Πρότυπο απάτης λαχειοφόρου αγοράς"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Ηλεκτρονικό κατάστημα χαμηλής εμπιστοσύνης, μη εδραιωμένη παρουσία"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Πλατφόρμα συναλλαγών/επενδύσεων χαμηλής εμπιστοσύνης, μη εδραιωμένη παρουσία"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Κακόβουλος σύνδεσμος επενδυτικής πλατφόρμας"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Κακόβουλος σύνδεσμος ηλεκτρονικού καταστήματος"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Πρότυπο απάτης με ναρκωτικά"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Ηλεκτρονικό κατάστημα με αντιφατικές ενδείξεις αξιοπιστίας"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Ηλεκτρονικό κατάστημα χωρίς εδραιωμένη παρουσία"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Πρότυπο απάτης κατοικίδιων ζώων"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Πρότυπο απάτης τύπου Ponzi/πυραμίδας"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Πρότυπο απάτης ακινήτων"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Πρότυπο ερωτικής απάτης"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Πρότυπο ιστοσελίδας ερωτικής απάτης"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Πρότυπο ιστοσελίδας ερωτικής απάτης (Romance Scam)"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Ύποπτος σύνδεσμος επενδυτικής πλατφόρμας"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Ύποπτη μορφή συνδέσμου"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Ύποπτος σύνδεσμος ηλεκτρονικού καταστήματος"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Πρότυπο απάτης τεχνικής υποστήριξης"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Πλατφόρμα συναλλαγών / επενδύσεων με αντικρουόμενες ενδείξεις"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Πλατφόρμα συναλλαγών / επενδύσεων χωρίς εδραιωμένη παρουσία"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Ηλεκτρονικό κατάστημα πολύ χαμηλής αξιοπιστίας"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Ηλεκτρονικό κατάστημα πολύ χαμηλής αξιοπιστίας, χωρίς εδραιωμένη παρουσία"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Πλατφόρμα συναλλαγών/επενδύσεων πολύ χαμηλής αξιοπιστίας"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Πολύ ύποπτος σύνδεσμος"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Το έχω μπλοκάρει και του έχω διακόψει την πρόσβαση στο μικρόφωνο, την κάμερα και την τοποθεσία σας — μπορείτε να κλείσετε την καρτέλα με ασφάλεια..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Τα σενάρια παρακολούθησης αποκλείστηκαν και η πρόσβαση στο μικρόφωνο, την κάμερα και την τοποθεσία ανακλήθηκε για να παραμείνετε ασφαλείς."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Δεν μπόρεσα να ολοκληρώσω τον έλεγχο αυτών των αποτελεσμάτων αναζήτησης."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Η σάρωση δεν ολοκληρώθηκε"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Ο Σύμβουλος Ασφαλείας είναι ενεργοποιημένος"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Σάρωση αποτελεσμάτων αναζήτησης…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Ύποπτο αποτέλεσμα αναζήτησης"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Ο Σύμβουλος Αναζήτησης είναι απενεργοποιημένος. Μεταβείτε στις ρυθμίσεις για να το ενεργοποιήσετε."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Η Προστασία ιστού είναι απενεργοποιημένη. Μεταβείτε στις ρυθμίσεις για να το ενεργοποιήσετε."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Παράλειψη ελέγχων και φόρτωση σελίδας."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Αυτή η σελίδα έχει επισημανθεί ως κακόβουλη."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Αυτή η σελίδα αποτελεί μέρος μιας απόπειρας απάτης."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Αυτή η σελίδα αποτελεί μέρος μιας απάτης διαφήμισης."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Εντοπίσαμε στοιχεία που ενδέχεται να βλάψουν τη συσκευή σας."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Η σελίδα προσπάθησε να χρησιμοποιήσει τους πόρους της συσκευής σας για εξόρυξη κρυπτονομισμάτων και αποκλείστηκε."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Αυτή η σελίδα δεν μπορεί να σαρωθεί από το Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Παράλειψη ελέγχων και φόρτωση σελίδας."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Θα παραμείνει αποκλεισμένη μέχρι να την ξεμπλοκάρετε."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Αυτή η σελίδα αποτελεί μέρος μιας απόπειρας ηλεκτρονικού \"ψαρέματος\" (phishing)."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Η σελίδα επιχείρησε να κατεβάσει μια PUA (Πιθανώς ανεπιθύμητη εφαρμογή) στη συσκευή σας και αποκλείστηκε."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Αυτή η σελίδα παραλείπεται από τη σάρωση στην τρέχουσα περίοδο περιήγησης"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Αυτή η σελίδα μπορεί να είναι ασφαλής, αλλά στο παρελθόν έχουν αναφερθεί ορισμένες απειλές ασφαλείας."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Αυτή η σελίδα παραλείπεται από τη σάρωση επειδή προστέθηκε στη λίστα Εξαιρέσεις."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Προσθέτει μια αξιολόγηση ασφαλείας δίπλα σε κάθε αποτέλεσμα στο Google, το Bing, το Yahoo και το DuckDuckGo, ώστε να μπορείτε να εντοπίζετε επικίνδυνους συνδέσμους πριν κάνετε κλικ."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Σχολιασμός αποτελεσμάτων αναζήτησης"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Η προστασία απενεργοποιήθηκε"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Δεν είναι δυνατή η σάρωση των αποτελεσμάτων αναζήτησης"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Δεν είναι δυνατή η σάρωση αυτής της σελίδας"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Αυτός ο τομέας είναι στη λίστα επιτρεπόμενων"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Εντοπίστηκε δόλιο κατάστημα"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Εντοπίστηκε απόπειρα απάτης"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Εντοπίστηκε απάτη διαφήμισης"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Εντοπίστηκε Απειλή"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Εντοπίστηκε προσπάθεια εξόρυξης"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Δεν είναι δυνατή η σάρωση της σελίδας"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Αυτή η σελίδα παραλείπεται σε αυτήν την περίοδο σύνδεσης"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Αποκλείσατε αυτήν τη σελίδα"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Εντοπίστηκε προσπάθεια Phishing "
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Εντοπίστηκε πιθανώς ανεπιθύμητη λήψη εφαρμογής"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Αυτός ο ιστότοπος είναι ασφαλής"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Σάρωση..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Εντοπίστηκε μη αξιόπιστος τομέας"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Εντοπίστηκε εξαιρούμενη σελίδα"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Αποκλεισμένοι {n} ιχνηλάτες"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Ο αποκλεισμός σεναρίων παρακολούθησης είναι απενεργοποιημένος, επομένως αυτή η σελίδα δεν ελέγχθηκε για trackers"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Φόρτωση σεναρίων (μη ασφαλές)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Δεν εντοπίστηκαν σενάρια παρακολούθησης σε αυτήν τη σελίδα"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Δεν μπόρεσα να ξεμπλοκάρω αυτήν τη σελίδα."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Ξεμπλοκάρισμα αυτής της σελίδας…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Δεν βρέθηκαν γνωστές απειλές"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Η σελίδα αποκλείστηκε"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Η σελίδα φορτώθηκε σε {n}ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Είσαι ασφαλής"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Βρήκα κάποιους κινδύνους σε αυτήν τη σελίδα. Αποφύγετε την εισαγωγή προσωπικών στοιχείων, κωδικών πρόσβασης ή στοιχείων πληρωμής και μην κατεβάζετε τίποτα."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Να είστε προσεκτικοί εδώ"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Όλα καθαρά τώρα."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "Σας προστατεύει καθώς περιηγείστε."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Αυτή η σελίδα αποκλείστηκε από"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Ο τομέας επισημάνθηκε ως κακόβουλος"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Τα ψεύτικα καταστήματα μιμούνται τους πραγματικούς λιανοπωλητές για να εισπράξουν την πληρωμή σας και να πάρουν τα στοιχεία της κάρτας σας. Οι παραγγελίες σπάνια παραδίδονται και τα δεδομένα που εισάγετε μπορούν να επαναχρησιμοποιηθούν ή να πωληθούν."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Οι σελίδες απάτης συνήθως προσπαθούν να σας εξαπατήσουν να στείλετε χρήματα με σκοπό την απόκτηση παράνομου κέρδους."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Αυτή η σελίδα αποκλείστηκε για να αποτραπεί περαιτέρω αλληλεπίδραση με μια απάτη.\n\nΟι επιτιθέμενοι παρασύρουν τα πιθανά θύματά τους χρησιμοποιώντας deepfakes, επενδυτικές ευκαιρίες και άλλα δημοφιλή θέματα για να τα ξεγελάσουν ώστε να δώσουν ευαίσθητα δεδομένα, χρήματα ή να κατεβάσουν κακόβουλο λογισμικό."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Οι κακόβουλες σελίδες επιχειρούν να εγκαταστήσουν λογισμικό που μπορεί να βλάψει τη συσκευή, να συλλέξει προσωπικές πληροφορίες ή να λειτουργήσει χωρίς τη συγκατάθεση του χρήστη."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Οι miner σελίδες χρησιμοποιούν τους πόρους της συσκευής για την παραγωγή κρυπτονομισμάτων, επηρεάζοντας την χρηστικότητα και την διάρκεια ζωής του υλικού"
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Οι σελίδες ηλεκτρονικού \"ψαρέματος\" (phishing) επιχειρούν να αποκτήσουν πρόσβαση σε ευαίσθητες πληροφορίες, όπως διαπιστευτήρια σύνδεσης ή στοιχεία πιστωτικής κάρτας, μεταμφιεσμένες σε αξιόπιστες οντότητες. Τα κλεμμένα δεδομένα μπορούν στη συνέχεια να χρησιμοποιηθούν για οικονομικό όφελος."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Η σελίδα προσπάθησε να στείλει στη συσκευή σας μία κακόβουλη εφαρμογή. Οι συγκεκριμένοι τύποι των κακόβουλων εφαρμογών επηρεάζουν την ιδιωτικότητα της συσκευής και των δεδομένων σας."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Οι μη αξιόπιστες σελίδες παρουσιάζουν ύποπτες συμπεριφορές ή ιδιαιτερότητες που θεωρούμε επικίνδυνες, επομένως θα πρέπει να αποφύγετε την πρόσβαση σε αυτές για να διατηρήσετε τα δεδομένα σας άθικτα."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Δόλιο κατάστημα μπλοκαρίστηκε για την προστασία σας"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Αποκλείσαμε κάποιο περιεχόμενο για την ασφάλειά σας."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Εντοπίστηκε ύποπτο περιεχόμενο"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Δεν ήταν δυνατό το άνοιγμα του πίνακα. Δοκιμάστε ξανά."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Ανοίξτε τον πίνακα Bitdefender από την πλαϊνή γραμμή του προγράμματος περιήγησης για να δείτε τις λεπτομέρειες."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Η σελίδα αποκλείστηκε"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Αυτόματες λήψεις"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "κάμερα"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "πρόχειρο"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "ΚΛΕΙΣΙΜΟ"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "Η πρόσβαση σε αυτόν τον ιστότοπο έχει αποκλειστεί σε {permissions} χρήστες."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "Η πρόσβαση σε αυτόν τον ιστότοπο έχει αποκλειστεί στο {permissions}."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "Επιτρέπεται η πρόσβαση σε {permissions} για αυτόν τον ιστότοπο. Ρίξτε μια ματιά σε τι μπορεί να χρησιμοποιήσει αυτός ο ιστότοπος."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "{permissions} επιτρέπεται η πρόσβαση για αυτόν τον ιστότοπο. Ρίξτε μια ματιά σε τι μπορεί να χρησιμοποιήσει αυτός ο ιστότοπος."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Ο Υπεύθυνος Προστασίας Προσωπικών Δεδομένων βρήκε δικαιώματα για έλεγχο."
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} και {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "Τοποθεσία"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "Η πρόσβαση σε αυτόν τον ιστότοπο έχει αποκλειστεί σε {permissions} χρήστες. Εξετάστε τι μπορεί να χρησιμοποιήσει αυτός ο ιστότοπος."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "Η πρόσβαση σε αυτόν τον ιστότοπο έχει αποκλειστεί στο {permissions}. Εξετάστε τι μπορεί να χρησιμοποιήσει αυτός ο ιστότοπος."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Το Privacy Guard διαχειρίζεται τα δικαιώματα."
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "Μικρόφωνο"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Ειδοποιήσεις"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Το Privacy Guard διαχειρίζεται τα δικαιώματα."
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Προχωρήστε με προσοχή"
+   },
+   "urlScanning_see_details": {
+      "message": "Δείτε λεπτομέρειες"
+   },
+   "urlScanning_show_details": {
+      "message": "Εμφάνιση λεπτομερειών"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "ΚΛΕΙΣΙΜΟ"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Μερικά προειδοποιητικά σημάδια εδώ. Να είστε προσεκτικοί με τα προσωπικά στοιχεία και τις λήψεις."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Δεν είναι δυνατή η σάρωση των αποτελεσμάτων αναζήτησης"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Δεν είναι δυνατή η σάρωση αυτής της σελίδας"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Εντοπίστηκε δόλιο κατάστημα"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Εντοπίστηκε απόπειρα απάτης"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Εντοπίστηκε απάτη διαφήμισης"
+   },
+   "urlScanning_title_malware": {
+      "message": "Εντοπίστηκε Απειλή"
+   },
+   "urlScanning_title_miner": {
+      "message": "Εντοπίστηκε προσπάθεια εξόρυξης"
+   },
+   "urlScanning_title_phish": {
+      "message": "Εντοπίστηκε προσπάθεια Phishing "
+   },
+   "urlScanning_title_pua": {
+      "message": "Εντοπίστηκε πιθανώς ανεπιθύμητη λήψη εφαρμογής"
+   },
+   "urlScanning_title_safe": {
+      "message": "Αυτή η σελίδα είναι ασφαλής"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Εντοπίστηκε μη αξιόπιστος τομέας"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Σαρώνει τις διευθύνσεις URL που έχουν επισκεφθεί για κακόβουλο λογισμικό, ηλεκτρονικό ψάρεμα (phishing), απάτη και άλλες απειλές"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "προστασία ιστού"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Προστασία Web από Bitdefender"
+   }
+}

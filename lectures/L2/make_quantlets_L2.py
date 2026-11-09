@@ -317,7 +317,7 @@ def q_split_timeline():
             "electricity price forecasting, day-ahead market, Romania, OPCOM, backtest, calibration window, burn-in, test period",
             "Hourly day-ahead prices of Romania (power_da_prices_hourly_utc.csv); daily prices and Romanian generation "
             "(only to fix the cut-off, the last complete month)",
-            "Calibration, burn-in, test: time runs one way, data are never shuffled")
+            "Chronological split into calibration, burn-in and test periods")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF)
     q.md("## Price panel: one row per CET delivery day, 24 hourly columns\n\nAfter 1 October 2025 each hour is the mean of its four "
          "quarter-hours; on DST days the missing spring hour is the mean of its neighbours and the doubled autumn hour is averaged.")
@@ -436,7 +436,7 @@ def q_dm_matrix():
             "Hourly day-ahead prices, load, wind and solar of Romania; saved LEAR, GBM and MLP forecasts of the test year "
             "(forecasts_test.csv, from lectures/L2/analysis_L2.py; the GBM and MLP also use daily hydro, nuclear, net imports "
             "and the EUA price)",
-            "The DM chessboard: which model beats which on the Romanian test year")
+            "Pairwise DM tests on the Romanian test year")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md("## Expert ARX forecasts\n\n" + ARX_MD).code(ARX_FUNCS).code(ARX_RUN)
     q.md(LEAR_MD + ML_MD)
@@ -709,7 +709,7 @@ def q_ml_hour():
     q = new(n, "Hourly mean absolute error on the test year of four forecasts of the Romanian day-ahead price: AW-LEAR, gradient "
                "boosting (GBM), a neural network (MLP) and the equal-weight ensemble of AW-ARX, AW-LEAR, GBM and MLP.",
             "machine learning, gradient boosting, neural network, ensemble, LEAR, MAE by hour, electricity price forecasting, Romania",
-            ML_DATAFILE, "Hour by hour: machine learning helps inside the ensemble, not alone")
+            ML_DATAFILE, "Accuracy by hour: machine-learning models alone and in the ensemble")
     ml_quantlet(n, q)
     q.code('BYHOUR = {k: np.mean(np.abs(A - v), 0) for k, v in [("aw_lear", AW_LEAR), ("gbm", GBM), ("mlp", MLP), ("ens_all", ENS_ALL)]}')
     q.md("## The chart")

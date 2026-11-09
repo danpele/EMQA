@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Doğrulanıyor..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Üçüncü taraf reklam, analiz, sosyal medya ve çerez komut dosyalarının yüklenmesini engeller; böylece web siteleri gezinme alışkanlıklarınızı izleyemez ve sayfalar daha hızlı yüklenir."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "İzleme komut dosyalarını engelle"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "milisaniye"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "İzleme önleme performansı"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "İzleme komut dosyaları ile"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "İzleme komut dosyaları olmadan"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "Aşağıdaki alan adları, izleme önleme engellemesinden hariç tutulur."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "Özel tekliflerimizi kolayca bulmanıza yardımcı olmak için ticari izleyicileri kullanıyoruz.Misyonumuz gizliliğinizi korumak, toplanan bilgileri hiçbir zaman herhangi bir amaç için paylaşmıyoruz."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Özel teklifler"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Bir şeyler yanlış gitti"
+   },
+   "chatAgent_thinking": {
+      "message": "Düşünüyorum..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Mesajları, kimlik avı bağlantıları ve siber tehditler açısından tarayın."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Sohbet Koruması"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Hangi web sitelerine kamera, mikrofon, konum, bildirim, panoya erişim ve otomatik indirme izni verdiğinizi takip eder; böylece Privacy Guard'da bu izinleri gözden geçirebilir ve iptal edebilirsiniz."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "İzinleri yönet"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Tüm hakları saklıdır"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Telif Hakkı © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Gizlilik Politikası"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Üyelik Anlaşması"
+   },
+   "main_about_third_party_license": {
+      "message": "Üçüncü parti lisans koşulları"
+   },
+   "main_about_version": {
+      "message": "Sürüm"
+   },
+   "main_account_manage_account_description": {
+      "message": "Ayarlarınızı ve tercihlerinizi yönetmek için Bitdefender hesabınıza erişin."
+   },
+   "main_account_manage_account_title": {
+      "message": "Hesabı yönet"
+   },
+   "main_account_managed_by_description": {
+      "message": "Başka bir hesap kullanmak için lütfen Bitdefender uygulamanızda oturum açın."
+   },
+   "main_account_managed_by_title": {
+      "message": "Bitdefender uygulamanız tarafından yönetilir"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Bitdefender aboneliğinizi görüntüleyin ve yönetin."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Aboneliklerim"
+   },
+   "main_account_sign_out": {
+      "message": "Çıkış"
+   },
+   "main_account_subscription_active": {
+      "message": "Aktif"
+   },
+   "main_account_subscription_expired": {
+      "message": "Abonelik süresi doldu"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Abonelik süresi doldu ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "[Days] gün sonra sona erecek ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "[Days] gün içinde doluyor ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Bireysel Plan"
+   },
+   "main_account_subscription_section": {
+      "message": "Abonelik"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Ücretsiz"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Hesabım"
+   },
+   "main_activity_details_error": {
+      "message": "Etkinlik verileri yüklenemedi."
+   },
+   "main_activity_detections_analysed": {
+      "message": "incelendi"
+   },
+   "main_activity_detections_title": {
+      "message": "Tespitler"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "tespitler"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Tehdit istihbaratı"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Ziyaret ettiğiniz web sitelerinde farklı kategorilerdeki risk sinyallerinin nasıl bir araya geldiği."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Bu web sitesi zaten beyaz listenizde."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "İptal"
+   },
+   "main_add_whitelist_description": {
+      "message": "Beyaz listenizdeki alan adları taramadan hariç tutulacaktır. Bu sayfalarda bulunan herhangi bir tehdit konusunda uyarı almayacaksınız."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Web sitesi adresi"
+   },
+   "main_add_whitelist_save": {
+      "message": "Kaydet"
+   },
+   "main_add_whitelist_title": {
+      "message": "Web sitesini beyaz listeye ekle"
+   },
+   "main_autonomy_level_title": {
+      "message": "Otonomi seviyesi"
+   },
+   "main_autonomy_save": {
+      "message": "Ayarları kaydet"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Aktivite"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Koruma seviyesini değiştir"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Tehditleri otomatik olarak ele alır ve bir tehdit tespit eder etmez, sizi rahatsız etmeden harekete geçer."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Otomatik koruma"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Her şeyi kontrol eder, ardından harekete geçmeden önce size sorar."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Rehberli koruma"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Kontrol edilen alan adları"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Web mağazası bilgi destekli tarama"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Güvenli Alışveriş"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Gerçek zamanlı riskli alan istihbaratı"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Dolandırıcılık Koruması"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Yapay zeka destekli arama sonucu bağlantı analizi"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Arama Danışmanı"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Bankacılık, kripto para ve cüzdan bilgileri"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Güvenli Finans"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Aktif"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Ay"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Bugün"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Hafta"
+   },
+   "main_dashboard_load_error": {
+      "message": "Kontrol paneli verileri yüklenemedi."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Kapat"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Yer imlerini ve tarama geçmişini kontrol et"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Son etkinlikler"
+   },
+   "main_dashboard_retry": {
+      "message": "Tekrar Dene"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Etkinlik ayrıntılarına bakın"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "kötü niyetli"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "güvenli"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "şüpheli"
+   },
+   "main_error_boundary_text": {
+      "message": "Uzantı açılır penceresinin görüntülenmesi sırasında bir hata oluştu. Lütfen açılır pencereyi yenilemeyi veya yeniden açmayı deneyin."
+   },
+   "main_error_boundary_title": {
+      "message": "Bir sorun oluştu!"
+   },
+   "main_extension_description": {
+      "message": "Dolandırıcılık, kimlik hırsızlığı ve tehlikeli siteleri yüklenmeden önce engeller; tamamen ücretsiz. Premium, tehditleri açıklayan ve paranızı koruyan bir yapay zeka özelliği sunar."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Uygulama dili"
+   },
+   "main_general_app_theme": {
+      "message": "Uygulama teması"
+   },
+   "main_general_privacy_policy": {
+      "message": "Gizlilik Politikası"
+   },
+   "main_general_product_reports_description": {
+      "message": "Gizlilik Politikası uyarınca, ürünün iyileştirilmesi amacıyla siber tehdit raporlarını gönderin"
+   },
+   "main_general_product_reports_title": {
+      "message": "Ürün Raporları"
+   },
+   "main_general_theme_automatic": {
+      "message": "Otomatik"
+   },
+   "main_general_theme_dark": {
+      "message": "Karanlık"
+   },
+   "main_general_theme_light": {
+      "message": "Hafif"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Bu adımın açıklaması yoktur."
+   },
+   "main_login_button": {
+      "message": "Giriş Yap"
+   },
+   "main_login_connected_button": {
+      "message": "Devam et"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Ardından, Güvenlik Danışmanı'nın nasıl çalışacağını ayarlayın."
+   },
+   "main_login_connected_title": {
+      "message": "Bağlantı kuruldu!"
+   },
+   "main_login_create_account": {
+      "message": "Hesap oluşturun"
+   },
+   "main_login_no_account": {
+      "message": "Hesabınız yok mu?"
+   },
+   "main_login_subtitle": {
+      "message": "Bitdefender hesabınızla giriş yapın."
+   },
+   "main_login_title": {
+      "message": "Tarama deneyiminizi koruyun"
+   },
+   "main_navbar_dashboard": {
+      "message": "Panel"
+   },
+   "main_opera_hint_caption": {
+      "message": "Yan çubuktaki uzantı simgesine tıklayarak uzantıyı açın"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Opera’nın kenar çubuğundan Bitdefender Web Sage’i açın."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Bu özelliği kullanmak için Premium üyeliğe geçin."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "İzinleri yönet"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Bildirimleri, izinleri ve izleyicileri yönetin"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Bir inceleme yapılmasını önerir"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Gizlilik Koruması"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacy Guard, Premium bir özelliktir. Site izinlerini değiştirmek için buradan yükseltme yapın."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Bu değişiklik uygulanamadı. Lütfen tekrar deneyin."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Henüz hiçbir web sitesi izni yönetilmiyor. Privacy Guard, bir web sitesinin kullanmasına izin verilmiş olan izinleri engellediğinde, bu web sitesini buraya ekler."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Ayarlara git"
+   },
+   "main_privacy_guard_info": {
+      "message": "İzleme komut dosyalarını engelleyerek ve web sitesi izinlerini yöneterek gizliliğinizi korur. Bu seçenekleri Ayarlar menüsünden ayrıntılı olarak ayarlayabilirsiniz."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "İzinleri yönet"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Otomatik indirmeler"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Kamera kontrolü"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Pano erişimi"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Konum erişimi"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Mikrofon kontrolü"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Bildirimler"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Aramayı Temizle"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Aramanızla eşleşen hiçbir web sitesi bulunamadı"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Bir web sitesi bulun"
+   },
+   "main_privacy_guard_title": {
+      "message": "Gizlilik Koruması"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Bu web sitesine güven (hepsine izin ver)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "Daha önce bu web sitesine güvenmeyi ve talep ettiği tüm izinlere (bildirimler, konum erişimi, kamera ve mikrofon kontrolü) izin vermeyi seçmiştiniz."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Bu tarayıcıda web sitesi izinleri yönetilemiyor"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "İzinler neden yönetilir?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Bir web sitesi güvenli olmadığı için engellendiğinde, Privacy Guard bu sitenin kullanmasına izin verilmiş olan bildirimler veya kamera erişimi gibi izinleri de engeller. Web sitesinin hiçbir zaman sahip olmadığı izinler olduğu gibi bırakılır."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Kötü amaçlı sohbet bağlantısı tespit edildi"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Şüpheli sohbet bağlantısı tespit edildi"
+   },
+   "main_recent_activity_info": {
+      "message": "Son bir ay içinde verilen şüpheli veya kötü niyetli kararlar saklanır."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Son etkinlikler yüklenemedi."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Dolandırıcılık sayfası engellendi"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Dolandırıcılık sayfası tespit edildi"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Search Advisor tarafından tespit edilenler"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Kötü amaçlı sayfa engellendi"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Şüpheli etkinlik tespit edildi"
+   },
+   "main_rename_device_cancel": {
+      "message": "İptal"
+   },
+   "main_rename_device_description": {
+      "message": "Cihazınızı kolayca tanımlamanıza yardımcı olacak benzersiz bir ad verin."
+   },
+   "main_rename_device_field_label": {
+      "message": "Cihaz ismi "
+   },
+   "main_rename_device_save": {
+      "message": "Kaydet"
+   },
+   "main_rename_device_title": {
+      "message": "Bu cihazı yeniden adlandırın"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "{n} web sitesinin kamera erişimi iptal edildi"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "{n} web sitesinin kamera erişimini iptal etme"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "{n} web sitesi için pano erişimi geri alındı"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "{n} web sitesi için pano erişimi geri alınıyor"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "{n} web sitesine ait çerezler ve site verileri silindi"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "{n} web sitesinin çerezlerini ve site verilerini temizleme"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "{n} web sitesi için otomatik indirmeler engellendi"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "{n} web sitesi için otomatik indirmeler engelleniyor"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Düzeltmeleri uygula"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "{t} düzeltmeden {n} tanesi uygulandı"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "{n} web sitesinin konum erişimi iptal edildi"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "{n} web sitesinin konum erişimini iptal etme"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "{n} web sitesinin mikrofon erişimi iptal edildi"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "{n} web sitesinin mikrofon erişimini iptal etme"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "{n} web sitesi için engellenen bildirimler"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "{n} web sitesi için bildirimleri engelleme"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Adı değiştirilen {n} adet riskli yer imi"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "{n} riskli yer imi yeniden adlandırılıyor"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Düzeltmeler uygulanıyor…"
+   },
+   "main_sa_autonomy_full": {
+      "message": "Otomatik koruma"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Rehberli koruma"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Seçili düzeltmeleri uygula"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Yaptıklarım"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Düzeltmeler otomatik uygulanıyor"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Rolüm"
+   },
+   "main_sa_banner_criteria": {
+      "message": "İşaretleyeceklerim"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Düzelteceklerim"
+   },
+   "main_sa_banner_sources": {
+      "message": "Bakacaklarım"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Sizin seçiminiz"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Yer imleri bilinen tehditlerle karşılaştırılıyor…"
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "{n} kontrol gerçekleştirildi"
+   },
+   "main_sa_check_cookies": {
+      "message": "İşaretlenen alan adlarında saklanan çerezler ve site verileri kontrol ediliyor…"
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{t} yer iminin {b} tanesi bilinen tehditlerle eşleşiyor"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "{c} web sitesinde temizlemeye değer artık veri var"
+   },
+   "main_sa_check_done_history": {
+      "message": "İşaretlenen alan adlarına {h} ziyaret bulundu"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "Değiştirilen {t} iznin {n} tanesi gereksiz veya riskli görünüyor"
+   },
+   "main_sa_check_history_db": {
+      "message": "Geçmiş bilinen tehditlerle karşılaştırılıyor…"
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Önce en riskli şeyleri kontrol edeceğim ve her web sitesinin erişebildiklerini gerçekten ihtiyaç duyduklarıyla karşılaştıracağım."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Web sitesi izinleri değerlendiriliyor…"
+   },
+   "main_sa_continue": {
+      "message": "Devam et"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Pano ve indirmeler"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Panonuzu okuyabilen veya sormadan dosya indirebilen web sitelerini bulun ve bunu yapmaması gerekenleri kapatın."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Tarayıcı bildirimleri"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "İzin vermek istemediğiniz web sitelerinden gelen dolandırıcılık ve spam bildirimlerini durdurun."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Bildirimler"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Mikrofon, kamera ve konum erişimi"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Mikrofonunuzu, kameranızı veya konumunuzu kullanabilen web sitelerini bulun ve kullanmaması gerekenleri kapatın."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Mikrofon, kamera ve konum erişimi"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Bilinen tehditler"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Zararlı olduğu zaten bilinen web sitelerini yüklenmeden engelleyin."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Pano ve indirmeler — {n} web sitesi panonuzu okuyabiliyor veya otomatik olarak dosya indirebiliyor"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Saklanan veriler — {n} web sitesi cihazınıza çerez veya başka veriler kaydetmiş"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Sahte web siteleri — {n} web sitesi sizi kandırmak için gerçek işletmeleri taklit ediyor"
+   },
+   "main_sa_finding_permissions": {
+      "message": "İzinler — {n} web sitesi bildirimlerinize, konumunuza, mikrofonunuza veya kameranıza erişebiliyor"
+   },
+   "main_sa_finding_threats": {
+      "message": "Bilinen tehditler — {n} web sitesi bilinen zararlı siteler listemizde"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Oluşturulan rapor: {n} uyarı"
+   },
+   "main_sa_findings_heading": {
+      "message": "Tarama tamamlandı. Bulduklarım şunlar:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Tarama tamamlandı. Bulduklarımı düzeltiyorum:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Tarama tamamlandı."
+   },
+   "main_sa_findings_none": {
+      "message": "Dikkat çeken bir şey yok — bu taramadan uyarı çıkmadı."
+   },
+   "main_sa_finish_setup": {
+      "message": "Kaydet ve devam et"
+   },
+   "main_sa_fix_cam": {
+      "message": "Kamera erişimini geri al"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Pano erişimini geri al"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Şüpheli çerezleri ve yerel olarak saklanan verileri temizle"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Otomatik indirmeleri engelle"
+   },
+   "main_sa_fix_loc": {
+      "message": "Konum erişimini geri al"
+   },
+   "main_sa_fix_mic": {
+      "message": "Mikrofon erişimini geri al"
+   },
+   "main_sa_fix_notif": {
+      "message": "Bildirimleri engelle"
+   },
+   "main_sa_fix_rename": {
+      "message": "Riskli yer imlerini yeniden adlandır"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "{n} riskli yer imi tek bakışta görünsün diye işaretlendi"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "İşaretlenen {n} alan adından çerezler ve saklanan veriler temizlendi"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Aktif olarak kullanmadığınız {n} site izni geri alındı"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Temizlenecek bir şey yoktu — her şey yolunda görünüyor"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Bu konuda yapacaklarım şunlar:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Tehditleri otomatik olarak ele alır ve bir tehdit tespit eder etmez, sizi rahatsız etmeden harekete geçer."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Otomatik koruma"
+   },
+   "main_sa_go_dashboard": {
+      "message": "Bitti"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Her şeyi kontrol eder, ardından harekete geçmeden önce size sorar."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Rehberli koruma"
+   },
+   "main_sa_intro_scan": {
+      "message": "Başlamak için ilk taramamda neye bakmam gerektiğini seçin."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "İlk taramanız başlıyor. Buradan sonrasını ben hallederim."
+   },
+   "main_sa_list_last_separator": {
+      "message": " ve "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Planım şu:"
+   },
+   "main_sa_plan_body": {
+      "message": "{targets} kontrol edeceğim, bilinen tehditlerle karşılaştıracağım ve herhangi bir şeyi değiştirmeden önce size bir özet göstereceğim."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Yer imlerinizi, geçmişinizi ve izinlerinizi kontrol edeceğim, bilinen tehditlerle karşılaştıracağım ve riskli bulduğum her şeyi anında düzelteceğim."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Herhangi bir şeyi değiştirmeden önce bulduklarımı size göstereceğim. Sonrasına siz karar verirsiniz."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Yer İmleri"
+   },
+   "main_sa_plan_target_history": {
+      "message": "tarama geçmişi"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "site izinleri"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "{f} klasörde {n} yer imi okundu"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Yer imleri okunuyor…"
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "{n} kaynak okundu"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Şimdi her şeyi riskler açısından kontrol edeceğim."
+   },
+   "main_sa_read_history_done": {
+      "message": "{n} geçmiş kaydı okundu"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Tarama geçmişi okunuyor…"
+   },
+   "main_sa_read_permissions_done": {
+      "message": "İzinleri değiştirilmiş {n} web sitesi bulundu"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Web sitesi izinleri kontrol ediliyor…"
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Önce okuyacağım, sonra analiz edeceğim. Şimdi başlıyorum."
+   },
+   "main_sa_skip_assessment": {
+      "message": "İlk taramayı atla"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Atla ve raporu göster"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Yer İmleri"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Yer imine eklediğinizden bu yana sessizce riskli hale gelen kayıtlı web sitelerini yakalayın."
+   },
+   "main_sa_source_history": {
+      "message": "Tarama geçmişi"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Daha önce ziyaret ettiğiniz tehlikeli web sitelerini fark edin, böylece bir dahaki sefere onlardan kaçınabilirsiniz."
+   },
+   "main_sa_start_assessment": {
+      "message": "Taramayı Başlat"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Kendi başına ne kadarını yapacağını seçin:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Her şey tamam."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Her şey yolunda görünüyor."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} yer imi"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Kontrol ettiklerim:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} geçmiş kaydı"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{c} kategoride {n} site izni"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Temizlediklerim:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Bulduklarım:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Bundan sonra yeni yer imlerini ve izinleri arka planda kontrol edip riskli olanları işaretleyeceğim."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Hiçbir şey değiştirilmedi. Önerilen düzeltmeleri gözden geçirip uygulamak için istediğiniz zaman geri dönün."
+   },
+   "main_sa_summary_stand": {
+      "message": "Özet şu şekilde."
+   },
+   "main_sa_title_configure": {
+      "message": "Security Advisor'ı kurun"
+   },
+   "main_sa_what_look_for": {
+      "message": "İşaretleyeceklerim"
+   },
+   "main_sa_where_look": {
+      "message": "Bakacaklarım"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Özerklik"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Gizlilik Koruması"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Arama Danışmanı"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Özel Savunma"
+   },
+   "main_settings_about": {
+      "message": "Hakkında"
+   },
+   "main_settings_general": {
+      "message": "Genel"
+   },
+   "main_settings_language": {
+      "message": "Dil"
+   },
+   "main_settings_my_account": {
+      "message": "Hesabım"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor"
+   },
+   "main_settings_support": {
+      "message": "Destek"
+   },
+   "main_settings_title": {
+      "message": "Ayarlar"
+   },
+   "main_settings_upgrade": {
+      "message": "Gelişmiş koruma için {premium} sürümüne yükseltin"
+   },
+   "main_settings_whitelist": {
+      "message": "Beyazliste"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Tarayıcınızın kenar çubuğundan Bitdefender Web Sage’i açın."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Başlamak için Bitdefender hesabınızla giriş yapın."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage henüz sizi korumuyor"
+   },
+   "main_support_center_description": {
+      "message": "En yaygın sorunların yanıtlarını hızlıca bulun veya ekstra yardıma ihtiyacınız varsa destek ekibimizle iletişime geçin."
+   },
+   "main_support_center_link": {
+      "message": "Destek Merkezi'ne git"
+   },
+   "main_support_center_title": {
+      "message": "Destek Merkezi"
+   },
+   "main_support_community_description": {
+      "message": "Cevaplarını al, sorularını sor! Birbirimize yardım etmek için buradayız!"
+   },
+   "main_support_community_link": {
+      "message": "Topluluğa Sor"
+   },
+   "main_support_community_title": {
+      "message": "Topluluğa Sor"
+   },
+   "main_test": {
+      "message": "test"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Yazı tipleri"
+   },
+   "main_third_party_category_label": {
+      "message": "Kategori:"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript/TypeScript paketleri"
+   },
+   "main_third_party_licence_label": {
+      "message": "Lisans:"
+   },
+   "main_third_party_link_label": {
+      "message": "Bağlantı:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Aşağıda, Bitdefender tarayıcı uzantısının (sürüm $1) bazı bölümlerinde yer alan üçüncü parti açık kaynak yazılımlara ait atıf bildirimleri yer almaktadır. Tüm katkıları için açık kaynak topluluğuna teşekkür ederiz."
+   },
+   "main_third_party_page_title": {
+      "message": "Üçüncü parti lisans koşulları"
+   },
+   "main_third_party_version_label": {
+      "message": "Sürüm:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Uzun bir form değil. Bir e-posta adresi ve bir parola. Yaklaşık bir dakika, yalnızca bir kez, ve iş tamam."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Ödeme duvarı değil. {product} Standard ücretsizdir ve öyle kalacak. Kart yok, deneme süresi geri sayımı yok, son kullanma tarihi yok."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Abonelik değil. Hesap bir paket değildir. Hiçbir ücret alınmaz ve hiçbir şey otomatik yenilenmez."
+   },
+   "main_welcome_account_not_title": {
+      "message": "Ve açıkça söyleyelim, bu ne değil"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "İşte Chrome, evde Edge, bir de ikinci bilgisayar. Tek bir hesap, hepsinde {product} uygulamasını aynı kurallarla kapsar."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Her yerde koruma, tarayıcı başına değil"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Aynı Bitdefender hesabı, Bitdefender'ın ürettiği her şeyde geçerlidir. Sonradan ürün eklemek, desteğe ulaşmak, bir cihazı kontrol etmek — zaten hazırsınız."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Tek hesap, bir tane daha değil"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "İzin verdiğiniz her site, kapattığınız her koruma — artık sizinle birlikte geliyor. Yeni tarayıcı, yeni dizüstü, sıfırdan kurulum: hepsi hâlâ orada."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Ayarlarınız artık kaybolmuyor"
+   },
+   "main_welcome_account_straight": {
+      "message": "{product} koruması siz oturum açtığınızda başlar. O ana kadar koruma etkin değildir ve tarayıcınızdaki kalkan simgesi kapalı kalır."
+   },
+   "main_welcome_account_sub": {
+      "message": "Bu, TrafficLight'a göre gerçek bir değişiklik ve nedenini sormak hakkınız. Üç dürüst neden:"
+   },
+   "main_welcome_account_title": {
+      "message": "Değişen tek şey"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Gezinmeye devam et"
+   },
+   "main_welcome_button_open": {
+      "message": "{product}'yi aç"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Giriş Yap"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Hesabınız kontrol ediliyor…"
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Bu cihazda zaten Bitdefender var mı? Otomatik olarak oturumunuz açılabilir — bu gerçekleştiği anda bu sayfa güncellenir."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} yalnızca Bitdefender hesabınızda oturum açıkken sizi korur. Oturum açmak engellemeyi etkinleştirir, paketinizi otomatik uygular ve ayarlarınızı eşitler. Hesap oluşturmak ücretsizdir."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Oturum açın — koruma böyle devreye girer"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "Her şey hazır"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Güncelleme tamamlandı"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight büyüdü"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Panelinizi açın"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Giriş Yap"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Paneliniz, etkinlikleriniz ve ayarlarınız panelin en üstünde yer alır."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Hesabınız"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Bitdefender hesabınız korumayı devreye sokar, ayarlarınızı tarayıcılar ve cihazlar arasında eşitler ve etkinliklerinizle ayarlarınız için tek bir panel sunar."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Hesabınız, paneliniz"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "Panelde"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Security Advisor ile tanışın"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "İstediğiniz zaman bir kontrol başlatın; onayınız olmadan hiçbir şey değişmez."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Tarayıcınızın güvenlik durumunu kontrol eden ve bulduklarını sizin onayınızla düzelten bir yapay zekâ asistanı."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "Panelde"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Panelde görebilirsiniz"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Gerçek sitede sessizlik, sahte sitede gürültü."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Güvenli Finans"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Bankacılık, kripto para ve cüzdan sayfaları daha sıkı bir denetime tabi tutulur: Bankanızın veya kripto para borsasının kimliğine bürünme girişimleri, siz şifrenizi girmeden önce tespit edilir."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Güvenli Finans"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Bankacılık ve kripto para sitelerinde"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "İki adımda kurulum"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Açmanız gereken bir şey yok; güncellemeden bu yana sizi koruyor."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Hala buradayım"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Gerçek zamanlı sayfa engelleme ve Arama Danışmanı, eskisi gibi çalışıyor; ancak artık daha fazla kaynakla destekleniyor. Eğer ayrı bir Anti-tracker uzantısını da kullanıyorsanız, artık bu görevi Privacy Guard üstleniyor — o uzantıyı kaldırabilirsiniz."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Güvendiğiniz her şey hâlâ burada"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Her zaman açık"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Gizlilik Koruyucusunu Aç"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Yönettiği her site, her izin için bir açma/kapama düğmesi ile birlikte."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Gizlilik Koruması"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "İzleyicileri engeller ve bir sitenin sahip olduğu izinleri yönetir — bildirimler, konum, kamera, mikrofon, otomatik indirmeler ve panoya. Bir sitenin güvenli olmadığı ortaya çıktığında, size verilmiş olan her türlü izin iptal edilir."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Gizlilik Koruması"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "Panelde"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Panelde görebilirsiniz"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Uyarılar, tıklamadan önce tam da gezindiğiniz yerde görünür."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Dolandırıcılık Koruması"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Bilinen hatalı URL'lerin ötesinde: Şüpheli bir sayfa, sorunun ne olduğunu sade bir dille açıklayan, talep üzerine yapılan bir yapay zeka analizinden geçer."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Yapay zeka destekli derin tarama ile dolandırıcılık koruması"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Sayfada"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Paneli açın"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Her sonucun yanında bir işaret bulunur; nedenini görmek için fareyi üzerine getirin."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Arama Danışmanı"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Google, Bing, DuckDuckGo ve Yahoo’da arama sonuçlarınızın yanında yer alan güvenlik derecelendirmeleri sayesinde, tıklamadan önce neyle karşılaşacağınızı bilirsiniz."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Arama Danışmanı"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "Arama sonuçlarında"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Panelde görebilirsiniz"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Sadece şu anda bulunduğunuz sayfa değil, mağazanın kendisi hakkında bir değerlendirme."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Güvenli Alışveriş"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Siz gezinirken çevrimiçi mağazalar, Webshop Intelligence veritabanıyla karşılaştırılarak kontrol edilir; böylece sahte mağazalar ve gerçek olamayacak kadar cazip teklifler, ödeme yapmadan önce işaretlenir."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Güvenli Alışveriş"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Alışveriş sitelerinde"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Sayfanın durumuna bakın"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "Ancak bir şey söyleyecek bir şey olduğunda fark edersiniz."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Sayfa engelleme"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Açtığınız her sayfa, Bitdefender’ın tehdit istihbaratı verileriyle karşılaştırılarak kontrol edilir. Tehlikeli olanlar derhal kapatılır — ve yeniden yüklenemeden tamamen engellenir."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Tehlikeli sayfalar derhal kapatıldı"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Sayfada"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Hukuk ve destek"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Gizlilik Politikası"
+   },
+   "main_welcome_footer_support": {
+      "message": "Destek"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Kullanım Şartları"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Panel otomatik olarak açılamadı. Açmak için araç çubuğundaki {product} simgesine tıklayın."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Eklentinin tarayıcı araç çubuğuna nasıl sabitleneceğini gösteren animasyon"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Tarayıcınızın sağ üst köşesindeki “Eklentiler” düğmesine (yapboz parçası simgesi) tıklayın."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Tarayıcınızın sağ üst köşesindeki “Eklentiler” düğmesine (yapboz parçası simgesi) tıklayın."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Araç çubuğunuzdaki “Eklentiler” düğmesine (yapboz parçası simgesi) tıklayın."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Araç çubuğunuzdaki “Eklentiler” düğmesine (küp simgesi) tıklayın."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Tarayıcınızın uzantılar menüsünü açın."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "{product} öğesini bulun ve yanındaki iğne simgesine tıklayın."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "{product} öğesini bulun ve yanındaki iğne simgesine tıklayarak onu araç çubuğunda görüntüleyin."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "{product} öğesini bulun, ayarlarını (dişli simgesi) açın ve “Araç Çubuğuna Sabitle” seçeneğini seçin."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "{product} öğesini bulun ve yanındaki iğne simgesine tıklayın."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "{product} öğesini bulun ve araç çubuğuna sabitleyin."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Tek bir tıklama uzaklığında tutun, böylece bulunduğunuz sayfanın güvenlik durumunu her zaman görebilirsiniz."
+   },
+   "main_welcome_pin_title": {
+      "message": "{product} öğesini araç çubuğunuza sabitleyin"
+   },
+   "main_welcome_protected_done": {
+      "message": "Koruma özelliği etkindir. Burada yapacak başka bir şey yok — {product}’ı gözünüzün önüne gelecek şekilde sabitleyin."
+   },
+   "main_welcome_protected_plan": {
+      "message": "{plan} planınıza dahildir — otomatik olarak etkinleştirilir, etkinleştirmeniz gereken hiçbir şey yoktur."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Şu anda çalışıyor"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Bitdefender hesabınızla ücretsizdir."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "Korunuyorsunuz — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "Korunuyorsunuz — {product} Standart"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "Giriş yaptınız ve güvendesiniz"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Dolaştığınız her yerde dolandırıcılık, kimlik avı ve izleme araçlarına karşı gerçek zamanlı koruma. İki hızlı adım ve işiniz bitti."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "{version} sürümü yüklü ve sizi şimdiden koruyor. İşte bunun getirdiği yenilikler."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Eklentiniz az önce önemli bir güncelleme aldı. TrafficLight'ın yaptığı her şey hâlâ burada ve bunlara pek çok şey daha eklendi."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "{product} Premium paketinin bir parçasıdır; Bitdefender Total Security ve üstü sürümlerde dahildir."
+   },
+   "main_welcome_title_new": {
+      "message": "{product}'e Hoş Geldiniz"
+   },
+   "main_welcome_title_update": {
+      "message": "{product} artık daha da iyi oldu"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight artık {product} oldu"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Elinize ne geçecek?"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Neler yeni"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Neler yeni"
+   },
+   "main_welcome_tour_next": {
+      "message": "Bir sonraki özellik"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Önceki makale"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} nin {total} 'si"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "{product}'ın sizin için yaptığı her şey, tek tek her bir özellik. Adım adım ilerleyin ya da hemen başlayın."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "{version} sürümündeki yenilikler. Adım adım ilerleyin ya da hemen başlayın."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "TrafficLight'ın yaptığı her şeyin yanı sıra, bir de bu. Adım adım ilerleyin ya da hemen başlayın."
+   },
+   "main_welcome_window_title": {
+      "message": "{product}'e Hoş Geldiniz"
+   },
+   "main_whitelist_add": {
+      "message": "Web Sitesi Ekleyin"
+   },
+   "main_whitelist_import": {
+      "message": "Alan adlarını içe aktar"
+   },
+   "main_whitelist_info": {
+      "message": "Beyaz listenizdeki alan adları taramadan hariç tutulacaktır. Bu sayfalarda bulunan herhangi bir tehdit konusunda uyarı almayacaksınız."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Kaldır"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Tehdit taraması"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "İzleme komut dosyaları"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Ziyaret ettiğiniz sayfalarda gösterilen reklamları toplar; böylece bu reklamlar dolandırıcılık ve sahtekarlık açısından kontrol edilebilir."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Reklam izleme"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Dolandırıcılığa veya kötü amaçlı yazılımlara yol açan zararlı reklamları ve sponsorlu sonuçları işaretler."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Reklam Sahtekarlığı Koruması"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Kimlik bilgilerinizi veya paranızı çalmak amacıyla oluşturulmuş sahte bankacılık web sitelerini ve dolandırıcı yatırım platformlarını tespit eder."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Finansal Dolandırıcılık Koruması"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Ödeme bilgilerinizi girmeden önce sahte mağazalar ve dolandırıcı ödeme sayfaları konusunda sizi uyarır."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Güvenli Alışveriş"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Bu sayfayı engelle"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Yine de yükle (güvenli değil)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "İçeriği yine de yükle (güvenli değil)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Daha fazla ayrıntı göster"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "Ayrıntılara bir göz atalım…"
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Bu sayfayı şu anda analiz edemedim. Lütfen tekrar deneyin."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Sayfaları ayrıntılı olarak incelemek mevcut aboneliğinizin kapsamına girmiyor, bu nedenle bu konuyu inceleyemem."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Bu, sabırla bekleyebileceğimden daha uzun sürdü, bu yüzden bu konuyu araştırmayı bıraktım."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "AI genel bakış panellerindeki bağlantıları kontrol eder ve güvenli olmayan web sitelerine yönlendirenleri işaretler."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "Yapay zeka genel bakış tarayıcısı"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Ayarlar'da devre dışı bırakıldı"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Etkin"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Kullanılamıyor"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI Arama Danışmanı"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Arama sonucu bağlantı analizi"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "{product} tarafından analiz edildi"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Bu sayfayı engelleyemedim."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Bu sayfayı engelliyorum…"
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Zorla kontrol (beyaz listeden çıkar)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Tekrar tarayın"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Bu sayfanın engelini kaldır"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Bilinen tehditler veritabanı kontrol ediliyor…"
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "İzinler kontrol ediliyor…"
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Dolandırıcılık kontrolü…"
+   },
+   "searchAdvisor_checking": {
+      "message": "Kontrol ediliyor"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "{n} kontrol gerçekleştirildi"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Sayfayı engelle"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Onay"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Kapsamlı bir analiz yapın"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Kapsamlı bir analiz yaptım"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Derinlemesine analiz tamamlandı"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Sayfa içeriği ve ekran görüntüsü analiz ediliyor…"
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "Derinlemesine yapılan analizde bu sayfada herhangi bir sorun tespit edilmedi."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "Derinlemesine analiz, belirli göstergelere rastlanmadan tamamlandı."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "Derinlemesine yapılan analiz, bu sayfanın tehlikeli olduğunu doğruladı."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Analizi çalıştır"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Sizin onayınızla, sayfanın içeriğini ve ekran görüntüsünü inceleyerek, yüzeyin altında neler saklı olduğunu ortaya çıkaracağım."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Derinlemesine analiz zaman aşımına uğradı"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "{n} saniye sonra beklemeyi sonlandırdı"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "Derinlemesine analiz, bekleyebileceğimden daha uzun sürüyor, bu yüzden durdum. Bunu tekrar çalıştırabilirsin ya da benim bulduklarımla yetinebilirsin."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Daha kapsamlı bir analiz yapmalı mıyız?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Beyaz listeden çıkarıp yeniden kontrol ediyorum…"
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Oluşturulan rapor: {n} uyarı"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Oluşturulan rapor: {n} uyarı"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Sayfaya geçiliyor…"
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Zararlı arama sonucu"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Ziyaret ettiğiniz sayfalardaki reklamları kontrol eder ve dolandırıcılığa yol açanları işaretler."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Dolandırıcılık amaçlı reklamlara karşı koruma"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Uzantı ayarlarını aç"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera, siz izin verene kadar uzantıların arama sonuçlarına erişmesini engeller. opera://extensions sayfasını açın, bu uzantıyı bulun ve \"Arama sayfası sonuçlarına erişime izin ver\" seçeneğini açın."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Arama sonuçları kontrol edilmiyor"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Gizlilik Koruyucusu {list}'ı engelledi"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Bu web sitesi {list}'ınıza erişebilir"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Herhangi bir izin verilmemiştir"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "İzinler mevcut değil"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Herhangi bir uyarı işareti tespit edilmedi"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacy Guard, bu web sitesi için {list}'ı engellemeyi öneriyor."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "İşte bulduğum şeyler:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Engellenen tüm içerikler geri yüklendi."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Engellenen içerik yükleniyor…"
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Herhangi bir dolandırıcılık örneği tespit edilmedi"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} adet kötü amaçlı gösterge tespit edildi"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} adet kötü amaçlı gösterge bulundu"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} şüpheli gösterge tespit edildi"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} şüpheli gösterge bulundu"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Dolandırıcılık analizi tamamlanamadı"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Güvenilmeyen tanıtım içeriğinde yer aldı"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Zorlayıcı şantaj Şablonu"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Sahte para dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Krizden yararlanma dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Kripto Para Dolandırıcılığı Şablonu"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Aldatıcı yetişkin arkadaşlık platformu şablonu"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Aldatıcı reklam şablonu"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Aldatıcı hediye kampanyası şablonu"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Aldatıcı çevrimiçi anket şablonu"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Enerji yatırımı dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Şantaj dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Sahte reklam görüntüleme ödülleri şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Sahte rezervasyon sitesi şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Sahte kumarhane şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Sahte yardım kuruluşu şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Sahte klinik şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Sahte kripto para hediye kampanyası şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Sahte teslimat hizmeti şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Sahte belgeler şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Sahte E-ticaret Mağazası Şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Sahte eğitim kurumu şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Sahte iş ilanı şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Sahte eğlence hizmeti şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Sahte Finans Kurumu Şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Sahte finansal yatırım şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Sahte kumar sitesi şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Sahte oyun kazançları şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Sahte altın yatırımı şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Sahte devlet yardımları şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Sahte devlet kurumu şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Sahte göçmenlik hizmeti şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Sahte hukuk kurumu şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Sahte para iadesi hizmeti şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Sahte çevrimiçi eczane şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Sahte klinik şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Sahte Ödeme Platformu Şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Sahte ödül kampanyası şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Sahte ödül veya ikramiye şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Sahte yayınevi şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Sahte yorum platformu şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Reklam Kampanyasındaki Sahte Mağaza Modelleri"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Sahte manevi uygulayıcı şablonu"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Sahte kazanç şablonu"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Finansal dolandırıcılık şablonu"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Sahte Mağaza Reklam Kampanyası Dolandırıcılığı"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Sağlık Hizmetlerinde Dolandırıcılık Şablonu"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Homoglif Saldırısı Tespit Edildi"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Yasadışı faaliyetler sitesi şablonu"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Yasadışı hizmetler Şablonu"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Yasadışı maddeler Şablonu"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "Kötü niyetli davranış kalıpları gösteren IP adresleri"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "Şüpheli davranışlar sergileyen IP adresleri"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Bilinen bir kimlik avı şablonu"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Bilinen dolandırıcılık şablonu"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Piyango dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Güvenilirliği düşük bir çevrimiçi mağaza, piyasada henüz bir yer edinmemiş"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Güven düzeyi düşük bir ticaret/yatırım platformu, piyasada henüz yerini sağlamlaştırmamış"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Kötü niyetli yatırım platformu bağlantısı"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Zararlı çevrimiçi mağaza bağlantısı"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Uyuşturucu dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Çelişkili göstergelere sahip çevrimiçi mağaza"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Yerleşik bir varlığı olmayan çevrimiçi mağaza"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Evcil hayvan dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Ponzi/piramit şeması şablonu"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Gayrimenkul dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Romantik dolandırıcılık şablonu"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Romantik dolandırıcılık web sitesi şablonu"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Gizli dernek dolandırıcılığı şablonu"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Şüpheli yatırım platformu bağlantısı"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Şüpheli bağlantı biçimi"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Şüpheli çevrimiçi mağaza bağlantısı"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Teknik Destek Dolandırıcılığı Şablonu"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Göstergeleri birbiriyle çelişen ticaret / yatırım platformu"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Yerleşik bir varlığı olmayan ticaret / yatırım platformu"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Güvenilirliği oldukça düşük bir çevrimiçi mağaza"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Güvenilirliği oldukça düşük bir çevrimiçi mağaza; piyasada henüz bir yer edinmemiş"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Güven seviyesi çok düşük bir ticaret / yatırım platformu"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Oldukça şüpheli bir bağlantı"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Uygulamayı engelledim ve mikrofonuna, kamerana ve konum bilgilerine erişimini kestim — sekmeyi güvenle kapatabilirsin..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Güvenliğinizi sağlamak amacıyla izleme komut dosyaları engellendi ve mikrofon, kamera ile konum erişimi iptal edildi."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Bu arama sonuçlarını incelemeyi tamamlayamadım."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Tarama tamamlanmadı"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Güvenlik Danışmanı açık"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Arama sonuçları taranıyor…"
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Şüpheli arama sonucu"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Arama Danışmanı devre dışıdır. Bunu etkinleştirmek için ayarlara gidin."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Web Koruması devre dışıdır. Bunu etkinleştirmek için ayarlara gidin."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Kontroller atlanıyor ve sayfa yükleniyor."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Bu sayfa zararlı olarak işaretlenmiştir."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Bu sayfa bir dolandırıcılık girişiminin parçasıdır."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Bu sayfa, dolandırıcılık amaçlı bir reklamın parçasıdır."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "Cihazınıza zarar verebilecek öğeler tespit ettik."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "Bu sayfa, kripto para madenciliği yapmak için cihazınızın kaynaklarını kullanmaya çalıştı ve engellendi."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Bu sayfa, Security Advisor tarafından taranamaz."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Kontroller atlanıyor ve sayfa yükleniyor."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Engeli kaldırana kadar engelli kalır."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Bu sayfa, bir kimlik avı girişiminin parçasıdır."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "Bu sayfa, cihazınıza bir PUA (Potansiyel Olarak İstenmeyen Uygulama) indirmeye çalıştı ve engellendi."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Bu sayfa, mevcut tarama oturumunda taramadan atlanmaktadır"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Bu sayfa güvenli olabilir, ancak geçmişte bazı güvenlik tehditleri bildirilmiştir."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Bu sayfa, İstisnalar listesine eklendiği için taramadan atlanmaktadır."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Google, Bing, Yahoo ve DuckDuckGo’da her sonucun yanına bir güvenlik derecesi ekler; böylece tıklamadan önce riskli bağlantıları tespit edebilirsiniz."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Arama sonuçlarına ilişkin açıklamalar"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Koruma devre dışı bırakılmıştır"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Arama sonuçları taranamıyor"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Bu sayfa taranamıyor"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Bu alan adı beyaz listeye alınmıştır"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Sahte mağaza tespit edildi"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Dolandırıcılık girişimi tespit edildi"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Dolandırıcılık amaçlı reklam tespit edildi"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Tehdit tespit edildi!"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Madencilik girişimi tespit edildi"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Sayfa taranamıyor"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Bu oturumda bu sayfa atlanıyor"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "Bu sayfayı engellediniz"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Kimlik hırsızlığı girişimi tespit edildi"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Olası İstenmeyen Uygulama indirimi tespit edildi"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Bu web sitesi güvenlidir"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Taranıyor..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Güvenilmeyen bir etki alanı tespit edildi"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "İstisna sayfası tespit edildi"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Engellenen {n} izleyici"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "İzleme komut dosyası engelleme özelliği kapalı olduğundan, bu sayfada izleyiciler aranmadı"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Komut dosyalarını yükle (güvenli değildir)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Bu sayfada izleme komut dosyası tespit edilmedi"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Bu sayfanın engelini kaldıramadım."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Bu sayfanın engelini kaldırıyorum…"
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Bilinen herhangi bir tehdit bulunamadı"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Sayfa engellendi"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Sayfa {n} ms içinde yüklendi"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "Güvendesin"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Bu sayfada bazı riskler tespit ettim. Kişisel bilgilerinizi, şifrelerinizi veya ödeme bilgilerinizi girmeyin ve hiçbir şey indirmeyin."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Burada dikkatli olun"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Şu anda her şey yolunda."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "İnternette gezinirken sizi koruyoruz."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Bu sayfa şu kişi tarafından engellendi:"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Etki alanı zararlı olarak işaretlendi"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Sahte mağazalar, ödemenizi tahsil etmek ve kart bilgilerinizi almak için gerçek perakendecileri taklit eder. Siparişler nadiren teslim edilir ve girdiğiniz veriler yeniden kullanılabilir veya satılabilir."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Dolandırıcı sayfalar hukuka uygun olmayan kazanç sağlamak için sizin para göndermeniz için kandırmaya çalışır."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Bu sayfa, bir dolandırıcılık girişimi ile daha fazla etkileşimi önlemek amacıyla engellenmiştir.Saldırganlar, potansiyel kurbanlarını deepfake videolar, yatırım fırsatları ve diğer gündemdeki konularla tuzağa düşürerek, onları hassas verilerini veya paralarını vermeye ya da kötü amaçlı yazılım indirmeye ikna etmeye çalışıyor."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Tehlikeli sayfalar cihazınıza zarar verecek, kişisel verilerinizi toplayacak veya onayınız olmadan çalışabilecek yazılımlar yükleyebilir."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Miner sayfaları, cihazın kaynaklarını şifrelemek için kullanıyor, bu da kullanılabilirliğini ve donanım ömrünü etkiliyor."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Kimlik avı sayfaları, güvenilir kuruluşlar gibi davranarak oturum açma kimlik bilgileri veya kredi kartı ayrıntıları gibi hassas bilgileri elde etmeye çalışır. Çalınan veriler daha sonra finansal kazanç için kullanılabilir."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Sayfa, cihazınıza bir PUA (Potansiyel Olarak İstenmeyen Uygulama) indirmeye çalıştı. Bu tür uygulamalar, cihazın ve verilerin gizliliğini ve güvenliğini etkileyen davranışlar sergiler."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Güvenilmeyen sayfalar riskli saydığımız şüpheli davranışlar veya özellikler gösterirler, bundan dolayı verinizi zarar almadan tutabilmek için giriş yapmaktan sakınmalısınız."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Güvenliğiniz için dolandırıcılık sayfası engellendi"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "Güvenliğiniz için bazı içerikleri engelledik."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Şüpheli içerik tespit edildi"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Panel açılamadı. Lütfen tekrar deneyin."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Ayrıntıları görmek için tarayıcının kenar çubuğundan Bitdefender panelini açın."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Sayfa engellendi"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Otomatik indirmeler"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "kamera"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "panoya"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Kapat"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "Bu web sitesine {permissions} erişimi engellenmiştir."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "Bu web sitesine {permissions} erişimi engellenmiştir."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "Bu web sitesine {permissions} erişimi izin verilmektedir. Bu web sitesinde neler kullanılabileceğine bir göz atın."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "Bu web sitesine {permissions} erişimi izin verilmektedir. Bu web sitesinde neler kullanılabileceğine bir göz atın."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacy Guard, incelenmesi gereken izinler buldu"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} ve {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "konum"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "Bu web sitesine {permissions} erişimi engellenmiştir. Bu web sitesinde neler kullanılabileceğini gözden geçirin."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "Bu web sitesine {permissions} erişimi engellenmiştir. Bu web sitesinde neler kullanılabileceğini gözden geçirin."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacy Guard, izinleri yönetiyor"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "mikrofon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Bildirimler"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacy Guard, izinleri yönetiyor"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Dikkatli davranın"
+   },
+   "urlScanning_see_details": {
+      "message": "Ayrıntıları Göster"
+   },
+   "urlScanning_show_details": {
+      "message": "Ayrıntıları göster"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Kapat"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Burada bazı uyarı işaretleri var. Kişisel bilgilerinize ve indirdiğiniz dosyalara dikkat edin."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Arama sonuçları taranamıyor"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Bu sayfa taranamıyor"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Sahte mağaza tespit edildi"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Dolandırıcılık girişimi tespit edildi"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Dolandırıcılık amaçlı reklam tespit edildi"
+   },
+   "urlScanning_title_malware": {
+      "message": "Tehdit tespit edildi!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Madencilik girişimi tespit edildi"
+   },
+   "urlScanning_title_phish": {
+      "message": "Kimlik hırsızlığı girişimi tespit edildi"
+   },
+   "urlScanning_title_pua": {
+      "message": "Olası İstenmeyen Uygulama indirimi tespit edildi"
+   },
+   "urlScanning_title_safe": {
+      "message": "Bu sayfa güvenli"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Güvenilmeyen bir etki alanı tespit edildi"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Tarama işlemi, ziyaret edilen URL’leri kötü amaçlı yazılım, kimlik avı, dolandırıcılık ve diğer tehditlere karşı taradı"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "web koruması"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Bitdefender tarafından Web Koruma"
+   }
+}

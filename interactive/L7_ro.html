@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L7_data.js?v=20261108a", "L7_text_ro.js?v=20261108a", "common.js?v=20261108s"], "L7.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L7_data.js?v=20261108a", "L7_text_ro.js?v=20261108a", "common.js?v=20261108a"], "L7.js?v=20261108a");
 </script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">În stînga este slide-ul din curs, în dreapta aceeași figură, recalculată în browser din rezultatele salvate ale Quantlet-urilor (prognozele anului de test 1 noiembrie 2025 – 31 octombrie 2026) și din prețurile românești pentru ziua următoare. Butonul ▶ modifică parametrul principal pas cu pas. Abrevieri: MAE = eroarea absolută medie (mean absolute error); DNN = rețea neuronală adîncă (deep neural network); XGBoost = extreme gradient boosting; LEAR = model autoregresiv estimat cu LASSO (least absolute shrinkage and selection operator); AW-LEAR / AW-ARX = media prognozelor LEAR / ARX (model autoregresiv cu variabile exogene) pe mai multe ferestre de calibrare; GBM = gradient boosting machine; MLP = perceptron multistrat; DM = testul Diebold–Mariano; ROC = receiver operating characteristic (curba caracteristică de operare); AUC = aria de sub curba ROC.</p>
-<p class="toc"><a href="#s-dnn">Rețele neuronale adînci</a> · <a href="#s-cmp">Comparație onestă, combinare și cost</a> · <a href="#s-fm">Gradient boosting și modele fundație</a> · <a href="#s-spk">Salturi de preț, prețuri negative și un studiu de caz</a></p>
+<p class="toc"><a href="#s-dnn">Rețele neuronale adînci</a> · <a href="#s-cmp">Compararea modelelor, combinarea lor și costul de calcul</a> · <a href="#s-fm">Gradient boosting și modele fundație</a> · <a href="#s-spk">Salturi de preț, prețuri negative și un studiu de caz</a></p>
 <h2 class="sec" id="s-dnn">Rețele neuronale adînci</h2>
 <section class="blk" id="early-stopping">
   <h3>Oprirea timpurie: ne oprim cînd eroarea pe zilele recente nu mai scade</h3>
@@ -64,7 +64,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Întrebare pentru sală</span> Rețeaua DNN aleasă, reestimată pentru octombrie 2026, este antrenată cu oprire timpurie (early stopping): antrenarea se oprește după 25 de epoci fără o eroare mai mică pe ultimele 15% dintre zile, iar ponderile celei mai bune epoci sînt păstrate. Ar da antrenarea pînă la capăt (epoca 76) o eroare mai mică pe aceste zile recente?</div>
   <details><summary>Răspuns</summary><p>Nu. Eroarea de antrenare continuă să scadă, pînă la 23,06 EUR/MWh în epoca 76, dar eroarea pe zilele recente este minimă în epoca 51 (24,50 EUR/MWh) și ajunge la 25,07 EUR/MWh în epoca 76: după epoca 51, rețeaua memorează trecutul. Cu o răbdare scurtă, căutarea se oprește prea devreme: cu 5 epoci se oprește în epoca 30 și păstrează epoca 25 (24,91 EUR/MWh).</p></details>
-</section><h2 class="sec" id="s-cmp">Comparație onestă, combinare și cost</h2>
+</section><h2 class="sec" id="s-cmp">Compararea modelelor, combinarea lor și costul de calcul</h2>
 <section class="blk" id="monthly-mae">
   <h3>Lunar, combinația este mai precisă decît AW-LEAR în 10 din 12 luni</h3>
   <div class="pair">

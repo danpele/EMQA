@@ -118,7 +118,7 @@ Dutch gas hub price, Title Transfer Facility (TTF) & monthly & World Bank, Pink 
 
 \section{Price risk: losses, quantiles, VaR and ES}
 
-\begin{frame}{The risk sits in the daily price change: small until 2021, violent since}
+\begin{frame}{Daily price changes before and after 2021}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.439\textheight,keepaspectratio]{charts/en/price_changes.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E; own estimates. Data: daily, 2015-01-01 to 2026-10-31 (CET delivery days).}
@@ -256,7 +256,7 @@ Dutch gas hub price, Title Transfer Facility (TTF) & monthly & World Bank, Pink 
 
 \subsection{Historical simulation and parametric models}
 
-\begin{frame}{Historical simulation: the past year is the distribution of tomorrow}
+\begin{frame}{Historical simulation with a one-year window}
 \footnotesize
 \intuition{Sort the last 365 daily changes; the 4th largest is the 99\% VaR.}
 \begin{columns}[T,onlytextwidth]
@@ -325,7 +325,7 @@ Dutch gas hub price, Title Transfer Facility (TTF) & monthly & World Bank, Pink 
 
 \subsection{Filtered historical simulation and extreme values}
 
-\begin{frame}{Filtered historical simulation: today's volatility, the past's shape}
+\begin{frame}{Filtered historical simulation: past shocks rescaled to current volatility}
 \footnotesize
 \intuition{Divide past changes by their volatility, then rescale the shocks by today's volatility.}
 \begin{columns}[T,onlytextwidth]
@@ -414,7 +414,7 @@ Dutch gas hub price, Title Transfer Facility (TTF) & monthly & World Bank, Pink 
 
 \subsection{Comparing the methods}
 
-\begin{frame}{Same day, same data, five answers: choosing the method is a risk decision}
+\begin{frame}{VaR and ES on the same day by five methods}
 \footnotesize
 \begin{center}{\footnotesize\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrrr@{}}\toprule
@@ -472,7 +472,7 @@ EVT & 35.66 & 64.33 & 68.54 & 154 & 164 \\
 \end{frame}
 
 
-\section{Backtesting: did the model keep its promise?}
+\section{Backtesting VaR and ES}
 
 \begin{frame}{Kupiec test: are there as many exceedances as promised?}
 \footnotesize
@@ -669,7 +669,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 
 \subsection{Exchange margins}
 
-\begin{frame}{Exchange margins are VaR in cash, paid every day}
+\begin{frame}{Exchange margins: initial margin as a VaR, variation margin paid daily}
 \footnotesize
 \intuition{The clearing house holds a deposit that covers a 99\% two-day loss and settles gains and losses in cash every evening.}
 \begin{columns}[T,onlytextwidth]
@@ -823,7 +823,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \end{frame}
 
 
-\section{Supplier and producer: one price, two tails}
+\section{Price risk for suppliers and producers}
 
 \begin{frame}{A supplier's monthly cost-at-risk: the normal limit failed again}
 \footnotesize
@@ -875,7 +875,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation)}\hfill\qlink{EMQA\_L4\_supplier\_month}{Quantlets/L4/EMQA_L4_supplier_month}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Same price, two tails: the supplier's tail is heavier than the producer's}
+\begin{frame}{Loss tails: the supplier's tail is heavier than the producer's}
 \footnotesize
 \intuition{A supplier loses when the price rises, a producer when it falls; prices jump up more than down.}
 \begin{columns}[T,onlytextwidth]
@@ -996,7 +996,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimates; OPCOM)}\hfill\qlink{EMQA\_L4\_case2026}{Quantlets/L4/EMQA_L4_case2026}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study: in 2026 the danger was cash, not the daily VaR}
+\begin{frame}{Case study: market risk and liquidity needs in 2026}
 \footnotesize
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.50\textwidth}

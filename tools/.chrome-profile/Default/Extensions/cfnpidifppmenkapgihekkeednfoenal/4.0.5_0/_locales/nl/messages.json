@@ -1,0 +1,2078 @@
+{
+   "adDetection_ad_verification_in_progress": {
+      "message": "Wordt geverifieerd ..."
+   },
+   "antiTracker_anti_tracker_enabled_description": {
+      "message": "Voorkomt dat advertentie-, analyse-, socialemedia- en cookiescripts van derden worden geladen, zodat websites geen profiel van uw browsegedrag kunnen opstellen, en pagina's sneller laden."
+   },
+   "antiTracker_anti_tracker_enabled_display_name": {
+      "message": "Trackingscripts blokkeren"
+   },
+   "antiTracker_anti_tracker_milliseconds": {
+      "message": "milliseconden"
+   },
+   "antiTracker_anti_tracker_performance": {
+      "message": "Prestatie van Anti-tracker"
+   },
+   "antiTracker_anti_tracker_with_tracking": {
+      "message": "Met trackingscripts"
+   },
+   "antiTracker_anti_tracker_without_tracking": {
+      "message": "Zonder trackingscripts"
+   },
+   "antiTracker_exceptions_description": {
+      "message": "De onderstaande domeinen zijn uitgesloten van blokkering door Anti-tracker."
+   },
+   "antiTracker_special_offers_enabled_description": {
+      "message": "We maken gebruik van commerciële trackers om u te helpen onze speciale aanbiedingen makkelijk te vinden. Onze missie is om uw privacy te beschermen. Ingezamelde informatie wordt nooit gedeeld, met niemand en om geen enkele reden."
+   },
+   "antiTracker_special_offers_enabled_display_name": {
+      "message": "Speciale aanbiedingen"
+   },
+   "chatAgent_error_something_wrong": {
+      "message": "Er liep iets mis"
+   },
+   "chatAgent_thinking": {
+      "message": "Even nadenken ..."
+   },
+   "chatProtection_chat_protection_enabled_description": {
+      "message": "Berichten scannen op phishinglinks en cyberdreigingen."
+   },
+   "chatProtection_chat_protection_enabled_display_name": {
+      "message": "Chatbeveiliging"
+   },
+   "dataCollector_manage_permissions_description": {
+      "message": "Houdt bij welke websites u toegang hebt gegeven tot camera, microfoon, locatie, notificatie, klembord en automatische downloads, zodat u dit kan bekijken en intrekken in Privacybescherming."
+   },
+   "dataCollector_manage_permissions_display_name": {
+      "message": "Machtigingen beheren"
+   },
+   "main_about_all_rights_reserved": {
+      "message": "Alle rechten voorbehouden"
+   },
+   "main_about_app_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_about_copyright": {
+      "message": "Copyright © 1997 - 2026 Bitdefender"
+   },
+   "main_about_privacy_policy": {
+      "message": "Privacybeleid"
+   },
+   "main_about_subscription_agreement": {
+      "message": "Abonnementsovereenkomst"
+   },
+   "main_about_third_party_license": {
+      "message": "Licentievoorwaarden van derden"
+   },
+   "main_about_version": {
+      "message": "Versie"
+   },
+   "main_account_manage_account_description": {
+      "message": "Krijg toegang tot uw Bitdefender-account om uw instellingen en voorkeuren te beheren."
+   },
+   "main_account_manage_account_title": {
+      "message": "Account beheren"
+   },
+   "main_account_managed_by_description": {
+      "message": "Authenticeer u in uw Bitdefender-app om een ander account te gebruiken."
+   },
+   "main_account_managed_by_title": {
+      "message": "Beheerd door uw Bitdefender-app"
+   },
+   "main_account_my_subscriptions_description": {
+      "message": "Bekijk en beheer uw Bitdefender-abonnementen."
+   },
+   "main_account_my_subscriptions_title": {
+      "message": "Mijn Abonnementen"
+   },
+   "main_account_sign_out": {
+      "message": "Afmelden"
+   },
+   "main_account_subscription_active": {
+      "message": "Actief"
+   },
+   "main_account_subscription_expired": {
+      "message": "Abonnement verlopen"
+   },
+   "main_account_subscription_expired_on": {
+      "message": "Abonnement is verlopen ([Date])"
+   },
+   "main_account_subscription_expires_in_day": {
+      "message": "Verloopt over [Days] dag ([Date])"
+   },
+   "main_account_subscription_expires_in_days": {
+      "message": "Verloopt in [Days] dagen ([Date])"
+   },
+   "main_account_subscription_name": {
+      "message": "Bitdefender Total Security"
+   },
+   "main_account_subscription_plan": {
+      "message": "Individueel plan"
+   },
+   "main_account_subscription_section": {
+      "message": "Abonnement"
+   },
+   "main_account_subscription_tier_free": {
+      "message": "Vrij"
+   },
+   "main_account_subscription_tier_premium": {
+      "message": "Premium"
+   },
+   "main_account_title": {
+      "message": "Mijn account"
+   },
+   "main_activity_details_error": {
+      "message": "De activiteitsgegevens konden niet worden geladen."
+   },
+   "main_activity_detections_analysed": {
+      "message": "geanalyseerd"
+   },
+   "main_activity_detections_title": {
+      "message": "Detecties"
+   },
+   "main_activity_threat_intel_detections": {
+      "message": "detecties"
+   },
+   "main_activity_threat_intel_title": {
+      "message": "Dreigingsinformatie"
+   },
+   "main_activity_threat_intel_tooltip": {
+      "message": "Hoe risicosignalen uit verschillende categorieën worden gecombineerd voor de websites die u bezoekt."
+   },
+   "main_add_whitelist_already_added": {
+      "message": "Deze website staat al op de witte lijst."
+   },
+   "main_add_whitelist_cancel": {
+      "message": "Annuleren"
+   },
+   "main_add_whitelist_description": {
+      "message": "Domeinen in uw witte lijst worden overgeslagen tijdens het scannen. U krijgt geen waarschuwing over eventuele dreigingen op deze pagina’s."
+   },
+   "main_add_whitelist_field_label": {
+      "message": "Adres van de website"
+   },
+   "main_add_whitelist_save": {
+      "message": "Opslaan"
+   },
+   "main_add_whitelist_title": {
+      "message": "Website toevoegen aan witte lijst"
+   },
+   "main_autonomy_level_title": {
+      "message": "Autonomieniveau"
+   },
+   "main_autonomy_save": {
+      "message": "Instelling opslaan"
+   },
+   "main_dashboard_activity_title": {
+      "message": "Activiteit"
+   },
+   "main_dashboard_autonomy_change": {
+      "message": "Beveiligingsniveau wijzigen"
+   },
+   "main_dashboard_autonomy_full_desc": {
+      "message": "Pakt dreigingen automatisch aan zodra ze worden gedetecteerd, zonder u te onderbreken."
+   },
+   "main_dashboard_autonomy_full_label": {
+      "message": "Automatische beveiliging"
+   },
+   "main_dashboard_autonomy_guided_desc": {
+      "message": "Controleert alles en vraagt u om bevestiging voordat er actie wordt ondernomen."
+   },
+   "main_dashboard_autonomy_guided_label": {
+      "message": "Begeleide beveiliging"
+   },
+   "main_dashboard_domains_checked": {
+      "message": "Gecontroleerde domeinen"
+   },
+   "main_dashboard_feature_safe_shopping_description": {
+      "message": "Scannen op basis van webshopinformatie"
+   },
+   "main_dashboard_feature_safe_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_dashboard_feature_scam_protection_description": {
+      "message": "Realtime informatie over risicovolle websites"
+   },
+   "main_dashboard_feature_scam_protection_title": {
+      "message": "Beveiliging tegen scams"
+   },
+   "main_dashboard_feature_search_advisor_description": {
+      "message": "Door AI aangestuurde informatie over links in zoekresultaten"
+   },
+   "main_dashboard_feature_search_advisor_title": {
+      "message": "Search Advisor"
+   },
+   "main_dashboard_feature_secure_finances_description": {
+      "message": "Informatie over banken, crypto en wallets"
+   },
+   "main_dashboard_feature_secure_finances_title": {
+      "message": "Veilige financiën"
+   },
+   "main_dashboard_feature_status_active": {
+      "message": "Actief"
+   },
+   "main_dashboard_filter_month": {
+      "message": "Maand"
+   },
+   "main_dashboard_filter_today": {
+      "message": "Vandaag"
+   },
+   "main_dashboard_filter_week": {
+      "message": "Week"
+   },
+   "main_dashboard_load_error": {
+      "message": "Dashboardgegevens konden niet worden geladen."
+   },
+   "main_dashboard_onboarding_card_dismiss": {
+      "message": "Sluiten"
+   },
+   "main_dashboard_onboarding_card_title": {
+      "message": "Bladwijzers en browsegeschiedenis controleren"
+   },
+   "main_dashboard_recent_activity_title": {
+      "message": "Recente activiteit"
+   },
+   "main_dashboard_retry": {
+      "message": "Opnieuw"
+   },
+   "main_dashboard_see_activity_details": {
+      "message": "Activiteitsgegevens bekijken"
+   },
+   "main_dashboard_title": {
+      "message": "Bitdefender® Web Sage"
+   },
+   "main_dashboard_verdict_malicious": {
+      "message": "schadelijk"
+   },
+   "main_dashboard_verdict_safe": {
+      "message": "veilig"
+   },
+   "main_dashboard_verdict_suspicious": {
+      "message": "verdacht"
+   },
+   "main_error_boundary_text": {
+      "message": "Er is een fout opgetreden bij de weergave van de extensie-popup. Probeer de pop-up te vernieuwen of opnieuw te openen."
+   },
+   "main_error_boundary_title": {
+      "message": "Er is iets fout gegaan!"
+   },
+   "main_extension_description": {
+      "message": "Blokkeert scams, phishing en gevaarlijke sites vóór ze laden, gratis. Premium biedt AI die dreigingen uitlegt en uw geld beschermt."
+   },
+   "main_extension_name": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_general_app_language": {
+      "message": "Apptaal"
+   },
+   "main_general_app_theme": {
+      "message": "Appthema"
+   },
+   "main_general_privacy_policy": {
+      "message": "Privacybeleid"
+   },
+   "main_general_product_reports_description": {
+      "message": "Rapporten over cyberdreigingen versturen voor productverbetering, in overeenstemming met het Privacybeleid"
+   },
+   "main_general_product_reports_title": {
+      "message": "Productrapporten"
+   },
+   "main_general_theme_automatic": {
+      "message": "Automatisch"
+   },
+   "main_general_theme_dark": {
+      "message": "Donker"
+   },
+   "main_general_theme_light": {
+      "message": "Licht"
+   },
+   "main_list_item_missing_prompt": {
+      "message": "Deze stap heeft geen beschrijving."
+   },
+   "main_login_button": {
+      "message": "Aanmelden"
+   },
+   "main_login_connected_button": {
+      "message": "Doorgaan"
+   },
+   "main_login_connected_subtitle": {
+      "message": "Bepaal vervolgens hoe Security Advisor moet werken."
+   },
+   "main_login_connected_title": {
+      "message": "U bent verbonden!"
+   },
+   "main_login_create_account": {
+      "message": "Maak er een aan"
+   },
+   "main_login_no_account": {
+      "message": "Geen account?"
+   },
+   "main_login_subtitle": {
+      "message": "Meld u aan met uw Bitdefender account."
+   },
+   "main_login_title": {
+      "message": "Beveilig uw browse-ervaring"
+   },
+   "main_navbar_dashboard": {
+      "message": "Dashboard"
+   },
+   "main_opera_hint_caption": {
+      "message": "Klik op het extensie-pictogram in de zijbalk om het te openen"
+   },
+   "main_opera_hint_instruction": {
+      "message": "Open Bitdefender Web Sage in de zijbalk van Opera."
+   },
+   "main_popup_window_title": {
+      "message": "Bitdefender Web Sage"
+   },
+   "main_premium_tag_label": {
+      "message": "Premium"
+   },
+   "main_premium_tag_tooltip": {
+      "message": "Upgrade naar Premium om deze functie te gebruiken."
+   },
+   "main_privacy_guard_card_managing_status": {
+      "message": "Machtigingen beheren"
+   },
+   "main_privacy_guard_card_status": {
+      "message": "Notificaties, machtigingen en trackers beheren"
+   },
+   "main_privacy_guard_card_suggesting_status": {
+      "message": "Stelt een evaluatie voor"
+   },
+   "main_privacy_guard_card_title": {
+      "message": "Privacybescherming"
+   },
+   "main_privacy_guard_detail_locked_notice": {
+      "message": "Privacybescherming is een Premium-functie. Upgrade om sitemachtigingen hier te wijzigen."
+   },
+   "main_privacy_guard_detail_write_failed_notice": {
+      "message": "Die wijziging kon niet worden toegepast. Probeer het opnieuw."
+   },
+   "main_privacy_guard_empty": {
+      "message": "Er worden nog geen websitemachtigingen beheerd. Privacy Guard voegt hier een website toe wanneer het de machtigingen blokkeert die deze website had mogen gebruiken."
+   },
+   "main_privacy_guard_go_to_settings": {
+      "message": "Ga naar Instellingen"
+   },
+   "main_privacy_guard_info": {
+      "message": "Beschermt uw privacy door trackingscripts te blokkeren en websitemachtigingen te beheren. U kan deze opties bijstellen in het menu Instellingen."
+   },
+   "main_privacy_guard_manage_permissions": {
+      "message": "Machtigingen beheren"
+   },
+   "main_privacy_guard_permission_automatic_downloads": {
+      "message": "Automatische downloads"
+   },
+   "main_privacy_guard_permission_camera": {
+      "message": "Camerabediening"
+   },
+   "main_privacy_guard_permission_clipboard": {
+      "message": "Toegang tot klembord"
+   },
+   "main_privacy_guard_permission_location": {
+      "message": "Locatietoegang"
+   },
+   "main_privacy_guard_permission_microphone": {
+      "message": "Microfoonbediening"
+   },
+   "main_privacy_guard_permission_notifications": {
+      "message": "Notificaties"
+   },
+   "main_privacy_guard_search_clear": {
+      "message": "Zoekopdracht wissen"
+   },
+   "main_privacy_guard_search_empty": {
+      "message": "Geen enkele website komt overeen met uw zoekopdracht"
+   },
+   "main_privacy_guard_search_placeholder": {
+      "message": "Een website zoeken"
+   },
+   "main_privacy_guard_title": {
+      "message": "Privacybescherming"
+   },
+   "main_privacy_guard_trust_all": {
+      "message": "Deze website vertrouwen (alles toestaan)"
+   },
+   "main_privacy_guard_trusted_description": {
+      "message": "U hebt er eerder voor gekozen om deze website te vertrouwen en alle gevraagde machtigingen te verlenen (notificaties, locatietoegang, camera- en microfoonbediening)."
+   },
+   "main_privacy_guard_unsupported": {
+      "message": "Websitemachtigingen kunnen niet worden beheerd in deze browser"
+   },
+   "main_privacy_guard_why_managed": {
+      "message": "Waarom worden machtigingen beheerd?"
+   },
+   "main_privacy_guard_why_managed_tooltip": {
+      "message": "Wanneer een website wordt geblokkeerd omdat deze onveilig is, blokkeert Privacybescherming ook de machtigingen die het mocht gebruiken, zoals notificaties of cameratoegang. Machtigingen die de website nooit had, blijven onaangeroerd."
+   },
+   "main_recent_activity_chat_blocked": {
+      "message": "Schadelijke chatlink gedetecteerd"
+   },
+   "main_recent_activity_chat_detected": {
+      "message": "Verdachte chatlink gedetecteerd"
+   },
+   "main_recent_activity_info": {
+      "message": "Recente beoordelingen als verdacht of schadelijk worden gedurende één maand bewaard."
+   },
+   "main_recent_activity_load_error": {
+      "message": "Recente activiteit kon niet worden geladen."
+   },
+   "main_recent_activity_scam_blocked": {
+      "message": "Scampagina geblokkeerd"
+   },
+   "main_recent_activity_scam_detected": {
+      "message": "Scampagina gedetecteerd"
+   },
+   "main_recent_activity_search_advisor": {
+      "message": "Detecties van Search Advisor"
+   },
+   "main_recent_activity_url_malicious": {
+      "message": "Schadelijke pagina geblokkeerd"
+   },
+   "main_recent_activity_url_suspicious": {
+      "message": "Verdachte activiteit gedetecteerd"
+   },
+   "main_rename_device_cancel": {
+      "message": "Annuleren"
+   },
+   "main_rename_device_description": {
+      "message": "Geef uw apparaat een unieke naam zodat u het gemakkelijk kunt identificeren."
+   },
+   "main_rename_device_field_label": {
+      "message": "Apparaatnaam"
+   },
+   "main_rename_device_save": {
+      "message": "Opslaan"
+   },
+   "main_rename_device_title": {
+      "message": "Dit apparaat hernoemen"
+   },
+   "main_sa_apply_cam_done": {
+      "message": "Trok cameratoegang in voor {n} websites"
+   },
+   "main_sa_apply_cam_pending": {
+      "message": "Cameratoegang wordt ingetrokken voor {n} websites"
+   },
+   "main_sa_apply_clipboard_done": {
+      "message": "Klembordtoegang ingetrokken voor {n} websites"
+   },
+   "main_sa_apply_clipboard_pending": {
+      "message": "Klembordtoegang wordt ingetrokken voor {n} websites"
+   },
+   "main_sa_apply_cookies_done": {
+      "message": "Wiste cookies en sitegegevens voor {n} websites"
+   },
+   "main_sa_apply_cookies_pending": {
+      "message": "Cookies en sitegegevens voor {n} websites worden gewist"
+   },
+   "main_sa_apply_downloads_done": {
+      "message": "Automatische downloads geblokkeerd voor {n} websites"
+   },
+   "main_sa_apply_downloads_pending": {
+      "message": "Automatische downloads worden geblokkeerd voor {n} websites"
+   },
+   "main_sa_apply_fixes": {
+      "message": "Oplossingen toepassen"
+   },
+   "main_sa_apply_fixes_log": {
+      "message": "Paste {n} van {t} oplossingen toe"
+   },
+   "main_sa_apply_loc_done": {
+      "message": "Trok locatietoegang in voor {n} websites"
+   },
+   "main_sa_apply_loc_pending": {
+      "message": "Locatietoegang wordt ingetrokken voor {n} websites"
+   },
+   "main_sa_apply_mic_done": {
+      "message": "Trok microfoontoegang in voor {n} websites"
+   },
+   "main_sa_apply_mic_pending": {
+      "message": "Microfoontoegang wordt ingetrokken voor {n} websites"
+   },
+   "main_sa_apply_notif_done": {
+      "message": "Blokkeerde notificaties voor {n} websites"
+   },
+   "main_sa_apply_notif_pending": {
+      "message": "Notificaties worden geblokkeerd voor {n} websites"
+   },
+   "main_sa_apply_rename_done": {
+      "message": "Hernoemde {n} risicovolle bladwijzers"
+   },
+   "main_sa_apply_rename_pending": {
+      "message": "{n} risicovolle bladwijzers worden hernoemd"
+   },
+   "main_sa_applying_fixes": {
+      "message": "Oplossingen worden toegepast ..."
+   },
+   "main_sa_autonomy_full": {
+      "message": "Automatische beveiliging"
+   },
+   "main_sa_autonomy_guided": {
+      "message": "Begeleide beveiliging"
+   },
+   "main_sa_banner_apply_fixes": {
+      "message": "Geselecteerde oplossingen toepassen"
+   },
+   "main_sa_banner_auto_action": {
+      "message": "Wat ik aan het doen ben"
+   },
+   "main_sa_banner_auto_fixes": {
+      "message": "Oplossingen worden automatisch toegepast"
+   },
+   "main_sa_banner_autonomy_set": {
+      "message": "Mijn rol"
+   },
+   "main_sa_banner_criteria": {
+      "message": "Wat ik zal markeren"
+   },
+   "main_sa_banner_criteria_full": {
+      "message": "Wat is zal oplossen"
+   },
+   "main_sa_banner_sources": {
+      "message": "Waar ik naar zal kijken"
+   },
+   "main_sa_banner_user_choice": {
+      "message": "Uw keuze"
+   },
+   "main_sa_check_bookmarks_db": {
+      "message": "Bladwijzers worden vergeleken met bekende dreigingen ..."
+   },
+   "main_sa_check_collapsed_summary": {
+      "message": "Voerde {n} controles uit"
+   },
+   "main_sa_check_cookies": {
+      "message": "Er wordt gecontroleerd of er opgeslagen cookies en websitegegevens zijn in gemarkeerde domeinen ..."
+   },
+   "main_sa_check_done_bookmarks": {
+      "message": "{b} van {t} bladwijzers komen overeen met bekende dreigingen"
+   },
+   "main_sa_check_done_cookies": {
+      "message": "op {c} websites staan nog gegevens die beter gewist kunnen worden"
+   },
+   "main_sa_check_done_history": {
+      "message": "Vond {h} bezoeken aan gemarkeerde domeinen"
+   },
+   "main_sa_check_done_permissions": {
+      "message": "{n} van {t} gewijzigde machtigingen lijken onnodig of risicovol"
+   },
+   "main_sa_check_history_db": {
+      "message": "Geschiedenis worden vergeleken met bekende dreigingen ..."
+   },
+   "main_sa_check_parallel_blurb": {
+      "message": "Ik zal eerst de meest risicovolle zaken controleren en nagaan welke gegevens elke website kan inzien in vergelijking met wat deze daadwerkelijk nodig heeft."
+   },
+   "main_sa_check_permissions_eval": {
+      "message": "Websitemachtigingen worden geëvalueerd ..."
+   },
+   "main_sa_continue": {
+      "message": "Doorgaan"
+   },
+   "main_sa_criterion_clipboard_downloads": {
+      "message": "Klembord en downloads"
+   },
+   "main_sa_criterion_clipboard_downloads_desc": {
+      "message": "Websites zoeken die uw klembord kunnen lezen of zonder te vragen bestanden kunnen downloaden, en websites die dat niet zouden mogen, uitschakelen."
+   },
+   "main_sa_criterion_notifications": {
+      "message": "Browsernotificaties"
+   },
+   "main_sa_criterion_notifications_desc": {
+      "message": "Scam- en spamnotificaties van websites die u niet bewust hebt toegestaan, stoppen."
+   },
+   "main_sa_criterion_notifications_short": {
+      "message": "Notificaties"
+   },
+   "main_sa_criterion_permissions": {
+      "message": "Toegang tot microfoon, camera en locatie"
+   },
+   "main_sa_criterion_permissions_desc": {
+      "message": "Websites zoeken die uw microfoon, camera of locatie mogen gebruiken, en websites die dat niet zouden mogen, uitschakelen."
+   },
+   "main_sa_criterion_permissions_short": {
+      "message": "Toegang tot microfoon, camera en locatie"
+   },
+   "main_sa_criterion_threats": {
+      "message": "Bekende dreigingen"
+   },
+   "main_sa_criterion_threats_desc": {
+      "message": "Websites blokkeren die al bekend staan als schadelijk voordat ze laden."
+   },
+   "main_sa_finding_clipboard_downloads": {
+      "message": "Klembord en downloads — {n} websites kunnen uw klembord lezen of automatisch bestanden downloaden"
+   },
+   "main_sa_finding_cookies": {
+      "message": "Opgeslagen gegevens — {n} websites hebben al cookies of andere gegevens op uw apparaat opgeslagen"
+   },
+   "main_sa_finding_impersonators": {
+      "message": "Nepwebsites — {n} websites kopiëren echte bedrijven om u te misleiden"
+   },
+   "main_sa_finding_permissions": {
+      "message": "Machtigingen — {n} websites hebben toegang tot uw notificaties, locatie, microfoon of camera"
+   },
+   "main_sa_finding_threats": {
+      "message": "Bekende dreigingen — {n} websites staan op onze lijst van bekende schadelijke websites"
+   },
+   "main_sa_findings_collapsed_summary": {
+      "message": "Gegenereerd rapport: {n} waarschuwingen"
+   },
+   "main_sa_findings_heading": {
+      "message": "Scan voltooid. Dit is wat ik heb gevonden:"
+   },
+   "main_sa_findings_heading_full": {
+      "message": "Scan voltooid. Wat ik heb gevonden wordt opgelost:"
+   },
+   "main_sa_findings_heading_none": {
+      "message": "Scan voltooid."
+   },
+   "main_sa_findings_none": {
+      "message": "Niets viel op — geen waarschuwingen van deze scan."
+   },
+   "main_sa_finish_setup": {
+      "message": "Opslaan en doorgaan"
+   },
+   "main_sa_fix_cam": {
+      "message": "Cameratoegang intrekken"
+   },
+   "main_sa_fix_clipboard": {
+      "message": "Klembordtoegang intrekken"
+   },
+   "main_sa_fix_cookies": {
+      "message": "Verdachte cookies en lokaal opgeslagen gegevens wissen"
+   },
+   "main_sa_fix_downloads": {
+      "message": "Automatische downloads blokkeren"
+   },
+   "main_sa_fix_loc": {
+      "message": "Locatietoegang intrekken"
+   },
+   "main_sa_fix_mic": {
+      "message": "Microfoontoegang intrekken"
+   },
+   "main_sa_fix_notif": {
+      "message": "Notificaties blokkeren"
+   },
+   "main_sa_fix_rename": {
+      "message": "Risicovolle bladwijzers hernoemen"
+   },
+   "main_sa_fixed_item_1": {
+      "message": "Markeerde {n} risicovolle bladwijzers zodat ze in één oogopslag zichtbaar zijn"
+   },
+   "main_sa_fixed_item_2": {
+      "message": "Wiste cookies en sitegegevens van {n} gemarkeerde domeinen"
+   },
+   "main_sa_fixed_item_3": {
+      "message": "Trok {n} sitemachtigingen in die u niet actief gebruikte"
+   },
+   "main_sa_fixed_item_none": {
+      "message": "Er hoefde niets opgeschoond te worden — alles klopte"
+   },
+   "main_sa_fixes_heading": {
+      "message": "Dit is wat ik eraan zou doen:"
+   },
+   "main_sa_full_protection_desc": {
+      "message": "Pakt dreigingen automatisch aan zodra ze worden gedetecteerd, zonder u te onderbreken."
+   },
+   "main_sa_full_protection_title": {
+      "message": "Automatische beveiliging"
+   },
+   "main_sa_go_dashboard": {
+      "message": "klaar"
+   },
+   "main_sa_guided_protection_desc": {
+      "message": "Controleert alles en vraagt u om bevestiging voordat er actie wordt ondernomen."
+   },
+   "main_sa_guided_protection_title": {
+      "message": "Begeleide beveiliging"
+   },
+   "main_sa_intro_scan": {
+      "message": "Om te beginnen, kiezen wat ik in uw eerste scan moet bekijken."
+   },
+   "main_sa_intro_scan_full": {
+      "message": "Uw eerste scan wordt gestart. Vanaf hier neem ik het over."
+   },
+   "main_sa_list_last_separator": {
+      "message": " en "
+   },
+   "main_sa_list_separator": {
+      "message": ", "
+   },
+   "main_sa_my_plan": {
+      "message": "Hier is mijn plan:"
+   },
+   "main_sa_plan_body": {
+      "message": "Ik controleer uw {targets}, vergelijk ze met bekende dreigingen en laat u dan een samenvatting zien voordat ik iets verander."
+   },
+   "main_sa_plan_body_full": {
+      "message": "Ik controleer uw bladwijzers, geschiedenis en machtigingen, vergelijk ze met bekende dreigingen en los alles wat risicovol is op, zodra ik het vind."
+   },
+   "main_sa_plan_disclaimer": {
+      "message": "Ik laat u zien wat ik heb gevonden voordat ik iets verander. U beslist wat er daarna gebeurt."
+   },
+   "main_sa_plan_target_bookmarks": {
+      "message": "Bladwijzers"
+   },
+   "main_sa_plan_target_history": {
+      "message": "browsegeschiedenis"
+   },
+   "main_sa_plan_target_permissions": {
+      "message": "sitemachtigingen"
+   },
+   "main_sa_read_bookmarks_done": {
+      "message": "Las {n} bladwijzers in {f} mappen"
+   },
+   "main_sa_read_bookmarks_pending": {
+      "message": "Bladwijzers worden gelezen ..."
+   },
+   "main_sa_read_collapsed_summary": {
+      "message": "Las {n} bonnen"
+   },
+   "main_sa_read_done_blurb": {
+      "message": "Nu ga ik alles controleren op risico's."
+   },
+   "main_sa_read_history_done": {
+      "message": "Las {n} geschiedenisvermeldingen"
+   },
+   "main_sa_read_history_pending": {
+      "message": "Browsegeschiedenis wordt gelezen ..."
+   },
+   "main_sa_read_permissions_done": {
+      "message": "Vond {n} websites met gewijzigde machtigingen"
+   },
+   "main_sa_read_permissions_pending": {
+      "message": "Websitemachtigingen worden gecontroleerd ..."
+   },
+   "main_sa_reading_kickoff": {
+      "message": "Ik lees eerst, dan analyseer ik. Vanaf nu."
+   },
+   "main_sa_skip_assessment": {
+      "message": "Eerste scan overslaan"
+   },
+   "main_sa_skip_fixes": {
+      "message": "Overslaan en het rapport tonen"
+   },
+   "main_sa_source_bookmarks": {
+      "message": "Bladwijzers"
+   },
+   "main_sa_source_bookmarks_desc": {
+      "message": "Opgeslagen websites opsporen die stilletjes riskant zijn geworden sinds sinds u ze aan uw bladwijzers hebt toegevoegd."
+   },
+   "main_sa_source_history": {
+      "message": "browsegeschiedenis"
+   },
+   "main_sa_source_history_desc": {
+      "message": "Gevaarlijke websites opsporen die u al hebt bezocht, zodat u ze de volgende keer kan vermijden."
+   },
+   "main_sa_start_assessment": {
+      "message": "Scan starten"
+   },
+   "main_sa_subtitle_autonomy": {
+      "message": "Kiezen hoeveel het op zichzelf doet:"
+   },
+   "main_sa_summary_all_done": {
+      "message": "Helemaal klaar."
+   },
+   "main_sa_summary_all_good": {
+      "message": "Alles ziet er goed uit."
+   },
+   "main_sa_summary_checked_bookmarks": {
+      "message": "{n} bladwijzers"
+   },
+   "main_sa_summary_checked_heading": {
+      "message": "Wat ik heb gecontroleerd:"
+   },
+   "main_sa_summary_checked_history": {
+      "message": "{n} geschiedenisvermeldingen"
+   },
+   "main_sa_summary_checked_permissions": {
+      "message": "{n} sitemachtigingen over {c} categorieën"
+   },
+   "main_sa_summary_cleaned_heading": {
+      "message": "Wat ik heb opgeschoond:"
+   },
+   "main_sa_summary_found_heading": {
+      "message": "Wat ik heb gevonden:"
+   },
+   "main_sa_summary_paragraph_applied": {
+      "message": "Vanaf nu zal ik nieuwe bladwijzers en machtigingen op de achtergrond controleren, en alles wat risicovol is, markeren."
+   },
+   "main_sa_summary_paragraph_skipped": {
+      "message": "Er werd niets veranderd. Kom gerust nog eens terug om de voorgestelde oplossingen te bekijken en toe te passen."
+   },
+   "main_sa_summary_stand": {
+      "message": "Hier is de samenvatting."
+   },
+   "main_sa_title_configure": {
+      "message": "Security Advisor instellen"
+   },
+   "main_sa_what_look_for": {
+      "message": "Wat ik zal markeren"
+   },
+   "main_sa_where_look": {
+      "message": "Waar ik naar zal kijken"
+   },
+   "main_security_advisor_autonomy_title": {
+      "message": "Autonomie"
+   },
+   "main_security_advisor_section_privacy_guard": {
+      "message": "Privacybescherming"
+   },
+   "main_security_advisor_section_search_advisor": {
+      "message": "Search Advisor"
+   },
+   "main_security_advisor_section_specialized_defense": {
+      "message": "Gespecialiseerde verdediging"
+   },
+   "main_settings_about": {
+      "message": "Info"
+   },
+   "main_settings_general": {
+      "message": "Algemeen"
+   },
+   "main_settings_language": {
+      "message": "Taal"
+   },
+   "main_settings_my_account": {
+      "message": "Mijn account"
+   },
+   "main_settings_security_advisor": {
+      "message": "Security Advisor"
+   },
+   "main_settings_support": {
+      "message": "Ondersteuning"
+   },
+   "main_settings_title": {
+      "message": "Instellingen"
+   },
+   "main_settings_upgrade": {
+      "message": "Upgraden naar {premium} voor verbeterde beveiliging"
+   },
+   "main_settings_whitelist": {
+      "message": "Witte lijst"
+   },
+   "main_sidebar_hint_instruction": {
+      "message": "Open Bitdefender Web Sage in de zijbalk van uw browser."
+   },
+   "main_sign_in_reminder_description": {
+      "message": "Meld u aan met uw Bitdefender account om te beginnen."
+   },
+   "main_sign_in_reminder_title": {
+      "message": "Web Sage beschermt u nog niet"
+   },
+   "main_support_center_description": {
+      "message": "Vind snel antwoorden op de meest voorkomende problemen of neem contact op met ons ondersteuningsteam als u extra hulp nodig hebt."
+   },
+   "main_support_center_link": {
+      "message": "Ga naar Ondersteuningscentrum"
+   },
+   "main_support_center_title": {
+      "message": "Ondersteuningscentrum"
+   },
+   "main_support_community_description": {
+      "message": "Krijg uw antwoorden, stel uw vragen! We zijn hier om elkaar te helpen!"
+   },
+   "main_support_community_link": {
+      "message": "Vragen aan de community"
+   },
+   "main_support_community_title": {
+      "message": "Vragen aan de community"
+   },
+   "main_test": {
+      "message": "test"
+   },
+   "main_third_party_category_fonts": {
+      "message": "Lettertypen"
+   },
+   "main_third_party_category_label": {
+      "message": "Categorie:"
+   },
+   "main_third_party_category_packages": {
+      "message": "JavaScript/TypeScript-pakketten"
+   },
+   "main_third_party_licence_label": {
+      "message": "Licentie:"
+   },
+   "main_third_party_link_label": {
+      "message": "Link:"
+   },
+   "main_third_party_page_intro": {
+      "message": "Hieronder vindt u de naamsvermeldingen voor opensourcesoftware van derden die is opgenomen in delen van de Bitdefender-browserextensie (versie $1). We bedanken de opensourcecommunity voor al hun bijdragen."
+   },
+   "main_third_party_page_title": {
+      "message": "Licentievoorwaarden van derden"
+   },
+   "main_third_party_version_label": {
+      "message": "Versie:"
+   },
+   "main_welcome_account_not_form": {
+      "message": "Geen lang formulier. Een e-mailadres en een wachtwoord. Ongeveer een minuut, één keer, en u bent klaar."
+   },
+   "main_welcome_account_not_paywall": {
+      "message": "Geen betaalmuur. {product} Standard is gratis en blijft gratis. Geen kaart, geen proefperiode, geen vervaldatum."
+   },
+   "main_welcome_account_not_subscription": {
+      "message": "Geen abonnement. Een account is geen abonnement. Niets wordt gefactureerd en niets wordt automatisch verlengd."
+   },
+   "main_welcome_account_not_title": {
+      "message": "En om maar meteen duidelijk te maken wat dit niet is"
+   },
+   "main_welcome_account_reason_everywhere_text": {
+      "message": "Chrome op het werk, Edge thuis, een tweede machine. Eén account dekt {product} in allemaal, met dezelfde regels."
+   },
+   "main_welcome_account_reason_everywhere_title": {
+      "message": "Beveiliging overal, niet per browser"
+   },
+   "main_welcome_account_reason_one_text": {
+      "message": "Hetzelfde Bitdefender-account werkt voor alles wat Bitdefender maakt. Een product later toevoegen, contact opnemen met de klantenservice, een apparaat controleren — u bent al helemaal klaar."
+   },
+   "main_welcome_account_reason_one_title": {
+      "message": "Eén account, niet nog één"
+   },
+   "main_welcome_account_reason_settings_text": {
+      "message": "Elke site die u hebt toegestaan, elke beveiliging die u hebt uitgeschakeld — het volgt u nu. Nieuwe browser, nieuwe laptop, helemaal opnieuw geïnstalleerd: het is er allemaal nog steeds."
+   },
+   "main_welcome_account_reason_settings_title": {
+      "message": "Uw instellingen verdwijnen niet meer"
+   },
+   "main_welcome_account_straight": {
+      "message": "{product}-beveiliging begint zodra u zich aanmeldt. Tot die tijd blijft de beveiliging inactief en blijft het schildpictogram in uw browser uitgeschakeld."
+   },
+   "main_welcome_account_sub": {
+      "message": "Dat is een echte verandering ten opzichte van TrafficLight, en u mag zich terecht afvragen waarom. Drie eerlijke redenen:"
+   },
+   "main_welcome_account_title": {
+      "message": "Het enige dat veranderde"
+   },
+   "main_welcome_button_keep_browsing": {
+      "message": "Blijf browsen"
+   },
+   "main_welcome_button_open": {
+      "message": "{product} openen"
+   },
+   "main_welcome_button_sign_in": {
+      "message": "Aanmelden"
+   },
+   "main_welcome_cta_checking": {
+      "message": "Uw account wordt gecontroleerd ..."
+   },
+   "main_welcome_cta_note_logged_out": {
+      "message": "Hebt u Bitdefender al op dit apparaat? Mogelijk wordt u automatisch aangemeld — deze pagina wordt bijgewerkt zodra dat gebeurt."
+   },
+   "main_welcome_cta_text_logged_out": {
+      "message": "{product} beschermt u alleen zolang u bent ingelogd op uw Bitdefender-account. Inloggen activeert het blokkeren, past uw abonnement automatisch toe en houdt uw instellingen synchroon. Een account aanmaken is gratis."
+   },
+   "main_welcome_cta_title_logged_out": {
+      "message": "Log in — dit schakelt de beveiliging in"
+   },
+   "main_welcome_eyebrow_new": {
+      "message": "U bent helemaal klaar"
+   },
+   "main_welcome_eyebrow_update": {
+      "message": "Update voltooid"
+   },
+   "main_welcome_eyebrow_upgrade": {
+      "message": "TrafficLight is volwassen geworden"
+   },
+   "main_welcome_feature_account_cta_in": {
+      "message": "Open uw dashboard"
+   },
+   "main_welcome_feature_account_cta_out": {
+      "message": "Aanmelden"
+   },
+   "main_welcome_feature_account_hint": {
+      "message": "Uw dashboard, activiteit en instellingen staan bovenaan het deelvenster."
+   },
+   "main_welcome_feature_account_tab": {
+      "message": "Uw account"
+   },
+   "main_welcome_feature_account_text": {
+      "message": "Uw Bitdefender-account schakelt de beveiliging aan, houdt uw instellingen synchroon tussen browsers en apparaten, en geeft u één dashboard voor uw activiteit en instellingen."
+   },
+   "main_welcome_feature_account_title": {
+      "message": "Uw account, uw dashboard"
+   },
+   "main_welcome_feature_account_where": {
+      "message": "In het deelvenster"
+   },
+   "main_welcome_feature_advisor_cta": {
+      "message": "Maak kennis met de Security Advisor"
+   },
+   "main_welcome_feature_advisor_hint": {
+      "message": "Elke beschermingsinstelling bestaat hier, inclusief hoeveel deze op zichzelf doet."
+   },
+   "main_welcome_feature_advisor_tab": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_text": {
+      "message": "Bij de installatie controleert de functie uw bladwijzers en browsegeschiedenis op bekende dreigingen, en begeleidt u vervolgens door wat ze aantreft op de pagina's die u bezoekt. U kiest of de functie eerst toestemming vraagt voordat ze actie onderneemt, of alles zelf regelt."
+   },
+   "main_welcome_feature_advisor_title": {
+      "message": "Security Advisor"
+   },
+   "main_welcome_feature_advisor_where": {
+      "message": "In het deelvenster"
+   },
+   "main_welcome_feature_finances_cta": {
+      "message": "Bekijk het in het deelvenster"
+   },
+   "main_welcome_feature_finances_hint": {
+      "message": "Stil op de echte site, luid op een nepsite."
+   },
+   "main_welcome_feature_finances_tab": {
+      "message": "Veilige financiën"
+   },
+   "main_welcome_feature_finances_text": {
+      "message": "Bank-, crypto- en walletpagina's worden extra gecontroleerd: imitaties van uw bank of beurs worden opgespoord nog voordat u een wachtwoord invoert."
+   },
+   "main_welcome_feature_finances_title": {
+      "message": "Veilige financiën"
+   },
+   "main_welcome_feature_finances_where": {
+      "message": "Op bank- en cryptosites"
+   },
+   "main_welcome_feature_kept_cta": {
+      "message": "Instellen in twee stappen"
+   },
+   "main_welcome_feature_kept_hint": {
+      "message": "Niets om aan te zetten; het beschermt u sinds de update."
+   },
+   "main_welcome_feature_kept_tab": {
+      "message": "Nog altijd hier"
+   },
+   "main_welcome_feature_kept_text": {
+      "message": "Realtime paginablokkering en Search Advisor werken precies zoals voorheen, nu met meer bronnen erachter. Als u ook de aparte Anti-tracker-extensie gebruikte, neemt Privacy Guard die taak nu over — u kan deze extensie verwijderen."
+   },
+   "main_welcome_feature_kept_title": {
+      "message": "Alles waarop u vertrouwde, is er nog steeds"
+   },
+   "main_welcome_feature_kept_where": {
+      "message": "Altijd aan"
+   },
+   "main_welcome_feature_privacy_cta": {
+      "message": "Open Privacy Guard"
+   },
+   "main_welcome_feature_privacy_hint": {
+      "message": "Elke site die ze beheert, met een schakelaar voor elke machtiging."
+   },
+   "main_welcome_feature_privacy_tab": {
+      "message": "Privacybescherming"
+   },
+   "main_welcome_feature_privacy_text": {
+      "message": "Blokkeert trackers en beheert de machtigingen die een site heeft — meldingen, locatie, camera, microfoon, automatische downloads en klembord. Wanneer een site onveilig blijkt te zijn, wordt alles wat er is verleend voor u ingetrokken."
+   },
+   "main_welcome_feature_privacy_title": {
+      "message": "Privacybescherming"
+   },
+   "main_welcome_feature_privacy_where": {
+      "message": "In het deelvenster"
+   },
+   "main_welcome_feature_scam_cta": {
+      "message": "Bekijk het in het deelvenster"
+   },
+   "main_welcome_feature_scam_hint": {
+      "message": "Waarschuwingen verschijnen precies waar u browst, voordat u klikt."
+   },
+   "main_welcome_feature_scam_tab": {
+      "message": "Beveiliging tegen scams"
+   },
+   "main_welcome_feature_scam_text": {
+      "message": "Naast bekende slechte URL's: een verdachte pagina krijgt een AI-analyse op aanvraag, die in eenvoudige woorden uitlegt wat er mis is."
+   },
+   "main_welcome_feature_scam_title": {
+      "message": "Beveiliging tegen scams met AI deep scan"
+   },
+   "main_welcome_feature_scam_where": {
+      "message": "Op de pagina"
+   },
+   "main_welcome_feature_search_cta": {
+      "message": "Het deelvenster openen"
+   },
+   "main_welcome_feature_search_hint": {
+      "message": "Een markering naast elk resultaat; beweeg erover met de cursor om de reden te zien."
+   },
+   "main_welcome_feature_search_tab": {
+      "message": "Search Advisor"
+   },
+   "main_welcome_feature_search_text": {
+      "message": "Veiligheidsbeoordelingen naast uw resultaten op Google, Bing, DuckDuckGo en Yahoo, zodat u het weet voordat u klikt."
+   },
+   "main_welcome_feature_search_title": {
+      "message": "Search Advisor"
+   },
+   "main_welcome_feature_search_where": {
+      "message": "In zoekresultaten"
+   },
+   "main_welcome_feature_shopping_cta": {
+      "message": "Bekijk het in het deelvenster"
+   },
+   "main_welcome_feature_shopping_hint": {
+      "message": "Een oordeel over de winkel zelf, niet alleen over de pagina waar u op staat."
+   },
+   "main_welcome_feature_shopping_tab": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_text": {
+      "message": "Online winkels worden gecontroleerd op de informatie van de webshop tijdens het browsen, zodat nepwinkels en aanbiedingen die te mooi zijn om waar te zijn, worden gesignaleerd voordat u betaalt."
+   },
+   "main_welcome_feature_shopping_title": {
+      "message": "Safe Shopping"
+   },
+   "main_welcome_feature_shopping_where": {
+      "message": "Op winkelsites"
+   },
+   "main_welcome_feature_web_cta": {
+      "message": "Bekijk de status van de pagina"
+   },
+   "main_welcome_feature_web_hint": {
+      "message": "U merkt het pas als het iets te melden heeft."
+   },
+   "main_welcome_feature_web_tab": {
+      "message": "Paginablokkering"
+   },
+   "main_welcome_feature_web_text": {
+      "message": "Elke pagina die u opent wordt getoetst aan de dreigingsinformatie van Bitdefender. Een gevaarlijke pagina wordt onmiddellijk uitgeschakeld — en direct geblokkeerd voordat deze opnieuw kan geladen kan worden."
+   },
+   "main_welcome_feature_web_title": {
+      "message": "Gevaarlijke pagina’s worden onmiddellijk geblokkeerd"
+   },
+   "main_welcome_feature_web_where": {
+      "message": "Op de pagina"
+   },
+   "main_welcome_footer_copyright": {
+      "message": "© {year} Bitdefender"
+   },
+   "main_welcome_footer_links_label": {
+      "message": "Juridische dienst en ondersteuning"
+   },
+   "main_welcome_footer_privacy_policy": {
+      "message": "Privacybeleid"
+   },
+   "main_welcome_footer_support": {
+      "message": "Ondersteuning"
+   },
+   "main_welcome_footer_terms": {
+      "message": "Gebruiksvoorwaarden"
+   },
+   "main_welcome_open_failed_hint": {
+      "message": "Het deelvenster kon niet automatisch worden geopend. Klik op het {product}-pictogram in uw werkbalk om het te openen."
+   },
+   "main_welcome_pin_animation_label": {
+      "message": "Animatie die laat zien hoe u de extensie vastmaakt aan de werkbalk van de browser"
+   },
+   "main_welcome_pin_step1_chrome": {
+      "message": "Klik op de knop 'Extensies' (het puzzelstukje) rechtsboven in uw browser."
+   },
+   "main_welcome_pin_step1_edge": {
+      "message": "Klik op de knop 'Extensies' (het puzzelstukje) rechtsboven in uw browser."
+   },
+   "main_welcome_pin_step1_firefox": {
+      "message": "Klik op de knop Extensies (het puzzelstukje) in uw werkbalk."
+   },
+   "main_welcome_pin_step1_opera": {
+      "message": "Klik op de Extensies-knop (de kubus) in uw werkbalk."
+   },
+   "main_welcome_pin_step1_other": {
+      "message": "Open het extensiemenu van uw browser."
+   },
+   "main_welcome_pin_step2_chrome": {
+      "message": "Zoek {product} en klik op het pin-pictogram ernaast."
+   },
+   "main_welcome_pin_step2_edge": {
+      "message": "Zoek {product} en klik op het pin-pictogram ernaast om het in de werkbalk te tonen."
+   },
+   "main_welcome_pin_step2_firefox": {
+      "message": "Zoek {product}, open de instellingen (het tandwielpictogram) en kies Vastmaken aan Werkbalk."
+   },
+   "main_welcome_pin_step2_opera": {
+      "message": "Zoek {product} en klik op het pin-pictogram ernaast."
+   },
+   "main_welcome_pin_step2_other": {
+      "message": "Zoek {product} en maak het vast aan de werkbalk."
+   },
+   "main_welcome_pin_subtitle": {
+      "message": "Zorg ervoor dat u er met één klik toegang toe hebt, zodat u altijd de veiligheidsstatus kan zien van de pagina waarop u zich bevindt."
+   },
+   "main_welcome_pin_title": {
+      "message": "Maak {product} vast aan uw werkbalk"
+   },
+   "main_welcome_protected_done": {
+      "message": "Beveiliging staat aan. Er is hier verder niets te doen — maak {product} vast zodat het zichtbaar blijft."
+   },
+   "main_welcome_protected_plan": {
+      "message": "Inbegrepen bij uw {plan}-abonnement — automatisch ontgrendeld, niets te activeren."
+   },
+   "main_welcome_protected_plan_generic": {
+      "message": "Bitdefender"
+   },
+   "main_welcome_protected_running": {
+      "message": "Wordt nu uitgevoerd"
+   },
+   "main_welcome_protected_standard_source": {
+      "message": "Gratis bij uw Bitdefender-account."
+   },
+   "main_welcome_protected_title_premium": {
+      "message": "U bent beschermd — {product} Premium"
+   },
+   "main_welcome_protected_title_standard": {
+      "message": "U bent beschermd — {product} Standard"
+   },
+   "main_welcome_protected_title_unknown": {
+      "message": "U bent ingelogd en beschermd"
+   },
+   "main_welcome_subtitle_new": {
+      "message": "Realtime bescherming tegen oplichting, phishing en trackers, precies waar u browst. Twee snelle stappen en u bent klaar."
+   },
+   "main_welcome_subtitle_update": {
+      "message": "Versie {version} is geïnstalleerd en beschermt u al. Dit is wat het toevoegt."
+   },
+   "main_welcome_subtitle_upgrade": {
+      "message": "Uw extensie heeft net een grote upgrade gekregen. Alles wat TrafficLight deed is er nog steeds, en er is nog veel meer bijgekomen."
+   },
+   "main_welcome_tier_premium": {
+      "message": "Premium"
+   },
+   "main_welcome_tier_premium_note": {
+      "message": "Onderdeel van {product} Premium, inbegrepen bij Bitdefender Total Security en hoger."
+   },
+   "main_welcome_title_new": {
+      "message": "Welkom bij {product} "
+   },
+   "main_welcome_title_update": {
+      "message": "{product} is net beter geworden"
+   },
+   "main_welcome_title_upgrade": {
+      "message": "TrafficLight is nu {product}"
+   },
+   "main_welcome_tour_heading_new": {
+      "message": "Wat u krijgt"
+   },
+   "main_welcome_tour_heading_update": {
+      "message": "Wat is er nieuw"
+   },
+   "main_welcome_tour_heading_upgrade": {
+      "message": "Wat is er nieuw"
+   },
+   "main_welcome_tour_next": {
+      "message": "Volgende functie"
+   },
+   "main_welcome_tour_prev": {
+      "message": "Vorige functie"
+   },
+   "main_welcome_tour_progress": {
+      "message": "{n} van {total}"
+   },
+   "main_welcome_tour_subheading_new": {
+      "message": "Alles wat {product} voor u doet, één functie tegelijk. Doe het stap voor stap, of duik er meteen in."
+   },
+   "main_welcome_tour_subheading_update": {
+      "message": "Nieuw in versie {version}. Doe het stap voor stap, of duik er meteen in."
+   },
+   "main_welcome_tour_subheading_upgrade": {
+      "message": "Alles wat TrafficLight deed, plus dit. Doe het stap voor stap, of duik er meteen in."
+   },
+   "main_welcome_window_title": {
+      "message": "Welkom bij {product} "
+   },
+   "main_whitelist_add": {
+      "message": "Website toevoegen"
+   },
+   "main_whitelist_import": {
+      "message": "Importdomeinen"
+   },
+   "main_whitelist_info": {
+      "message": "Domeinen in uw witte lijst worden overgeslagen tijdens het scannen. U krijgt geen waarschuwing over eventuele dreigingen op deze pagina’s."
+   },
+   "main_whitelist_remove_prefix": {
+      "message": "Wissen"
+   },
+   "main_whitelist_tab_threat_scanning": {
+      "message": "Scannen op dreigingen"
+   },
+   "main_whitelist_tab_tracking_scripts": {
+      "message": "Trackingscripts"
+   },
+   "malvertising_monitoring_enabled_description": {
+      "message": "Verzamelt de advertenties die worden getoond op de pagina's die u bezoekt, zodat ze gecontroleerd kunnen worden op oplichting en fraude."
+   },
+   "malvertising_monitoring_enabled_display_name": {
+      "message": "Advertentiemonitoring"
+   },
+   "scamProtection_ad_fraud_enabled_description": {
+      "message": "Markeert schadelijke advertenties en gesponsorde resultaten die leiden tot oplichting of malware."
+   },
+   "scamProtection_ad_fraud_enabled_display_name": {
+      "message": "Ad Fraud Shield"
+   },
+   "scamProtection_financial_fraud_enabled_description": {
+      "message": "Detecteert valse bankwebsites en nep-beleggingsplatformen die zijn ontworpen om uw gegevens of geld te stelen."
+   },
+   "scamProtection_financial_fraud_enabled_display_name": {
+      "message": "Bescherming tegen financiële fraude"
+   },
+   "scamProtection_safe_shopping_enabled_description": {
+      "message": "Waarschuwt u voor nepwinkels en frauduleuze betaalpagina's voordat u uw betalingsgegevens invoert."
+   },
+   "scamProtection_safe_shopping_enabled_display_name": {
+      "message": "Safe Shopping"
+   },
+   "searchAdvisor_action_block_this_page": {
+      "message": "Deze pagina blokkeren"
+   },
+   "searchAdvisor_action_load_anyway_unsafe": {
+      "message": "Toch laden (onveilig)"
+   },
+   "searchAdvisor_action_load_iframe_unsafe": {
+      "message": "Inhoud toch laden (onveilig)"
+   },
+   "searchAdvisor_action_show_more_details": {
+      "message": "Mij meer details tonen"
+   },
+   "searchAdvisor_agent_details_loading": {
+      "message": "De details worden bekeken ..."
+   },
+   "searchAdvisor_agent_fallback_message": {
+      "message": "Ik kon deze pagina nu niet analyseren. Probeer het opnieuw."
+   },
+   "searchAdvisor_agent_feature_gated_message": {
+      "message": "Het gedetailleerd analyseren van pagina's maakt geen deel uit van uw huidige abonnement, dus ik kan deze pagina niet onderzoeken."
+   },
+   "searchAdvisor_agent_timed_out_message": {
+      "message": "Dat duurde langer dan ik kon wachten, dus ben ik gestopt met mijn onderzoek."
+   },
+   "searchAdvisor_ai_overview_description": {
+      "message": "Controleert de links in AI-overzichtsschermen en markeert de links die leiden naar onveilige websites."
+   },
+   "searchAdvisor_ai_overview_display_name": {
+      "message": "AI-overzichtsscanner"
+   },
+   "searchAdvisor_ai_search_advisor_disabled": {
+      "message": "Uitgeschakeld in Instellingen"
+   },
+   "searchAdvisor_ai_search_advisor_enabled": {
+      "message": "Ingeschakeld"
+   },
+   "searchAdvisor_ai_search_advisor_not_available": {
+      "message": "Niet beschikbaar"
+   },
+   "searchAdvisor_ai_search_advisor_title": {
+      "message": "AI Search Advisor"
+   },
+   "searchAdvisor_ai_search_advisor_tooltip": {
+      "message": "Informatie over links in zoekresultaten"
+   },
+   "searchAdvisor_analyzed_by": {
+      "message": "Geanalyseerd door {product}"
+   },
+   "searchAdvisor_block_page_failed": {
+      "message": "Ik kon deze pagina niet blokkeren."
+   },
+   "searchAdvisor_block_page_in_progress": {
+      "message": "Deze pagina wordt geblokkeerd ..."
+   },
+   "searchAdvisor_button_force_check": {
+      "message": "Controle forceren (verwijderen uit witte lijst)"
+   },
+   "searchAdvisor_button_scan_again": {
+      "message": "Opnieuw scannen"
+   },
+   "searchAdvisor_button_unblock_page": {
+      "message": "Blokkering van deze pagina opheffen"
+   },
+   "searchAdvisor_check_known_threats_progress": {
+      "message": "Database van bekende dreigingen wordt gecontroleerd ..."
+   },
+   "searchAdvisor_check_permissions_progress": {
+      "message": "Machtigingen worden geverifieerd ..."
+   },
+   "searchAdvisor_check_scams_progress": {
+      "message": "Er wordt gecontroleerd op scams ..."
+   },
+   "searchAdvisor_checking": {
+      "message": "Bezig met controleren"
+   },
+   "searchAdvisor_checks_performed": {
+      "message": "Voerde {n} controles uit"
+   },
+   "searchAdvisor_deep_analysis_block": {
+      "message": "Pagina blokkeren"
+   },
+   "searchAdvisor_deep_analysis_consent_label": {
+      "message": "Toestemming"
+   },
+   "searchAdvisor_deep_analysis_consent_title": {
+      "message": "Een diepgaande analyse uitvoeren"
+   },
+   "searchAdvisor_deep_analysis_done": {
+      "message": "Voerde een diepgaande analyse uit"
+   },
+   "searchAdvisor_deep_analysis_done_detail": {
+      "message": "Diepgaande analyse voltooid"
+   },
+   "searchAdvisor_deep_analysis_progress": {
+      "message": "Pagina-inhoud en screenshots worden geanalyseerd ..."
+   },
+   "searchAdvisor_deep_analysis_result_clean": {
+      "message": "De diepgaande analyse vond geen problemen met deze pagina."
+   },
+   "searchAdvisor_deep_analysis_result_inconclusive": {
+      "message": "De diepgaande analyse werd voltooid zonder specifieke indicatoren te vinden."
+   },
+   "searchAdvisor_deep_analysis_result_malicious": {
+      "message": "De diepgaande analyse bevestigde dat deze pagina gevaarlijk is."
+   },
+   "searchAdvisor_deep_analysis_run": {
+      "message": "Analyse uitvoeren"
+   },
+   "searchAdvisor_deep_analysis_text": {
+      "message": "Met uw toestemming zal ik de inhoud van de pagina bekijken, en een screenshot maken om te ontdekken wat er onder het oppervlak verborgen zit."
+   },
+   "searchAdvisor_deep_analysis_timed_out": {
+      "message": "Diepgaande analyse onderbroken"
+   },
+   "searchAdvisor_deep_analysis_timed_out_detail": {
+      "message": "Gestopt met wachten na {n} seconden"
+   },
+   "searchAdvisor_deep_analysis_timed_out_message": {
+      "message": "De diepgaande analyse duurt langer dan ik kan wachten, dus ben ik gestopt. U kan deze opnieuw uitvoeren, of beslissen met wat ik al heb gevonden."
+   },
+   "searchAdvisor_deep_analysis_title": {
+      "message": "Een diepgaandere analyse uitvoeren?"
+   },
+   "searchAdvisor_force_check_in_progress": {
+      "message": "Wordt verwijderd van de witte lijst en opnieuw gecontroleerd ..."
+   },
+   "searchAdvisor_generated_report_warning": {
+      "message": "Gegenereerd rapport: {n} waarschuwing"
+   },
+   "searchAdvisor_generated_report_warnings": {
+      "message": "Gegenereerd rapport: {n} waarschuwingen"
+   },
+   "searchAdvisor_ignore_page_in_progress": {
+      "message": "Doorgaan naar de pagina ..."
+   },
+   "searchAdvisor_malicious_search_result": {
+      "message": "Schadelijk zoekresultaat"
+   },
+   "searchAdvisor_malvertising_description": {
+      "message": "Controleert de advertenties op de pagina's die u bezoekt, en markeert de advertenties die tot oplichting leiden."
+   },
+   "searchAdvisor_malvertising_display_name": {
+      "message": "Beveiliging tegen oplichtingsadvertenties"
+   },
+   "searchAdvisor_opera_search_access_open_settings": {
+      "message": "Extensie-instellingen openen"
+   },
+   "searchAdvisor_opera_search_access_text": {
+      "message": "Opera blokkeert extensies op zoekresultaten totdat je dit toestaat. Open opera://extensions, zoek deze extensie en schakel 'Toegang tot resultaten op zoekpagina toestaan' in."
+   },
+   "searchAdvisor_opera_search_access_title": {
+      "message": "Zoekresultaten worden niet gecontroleerd"
+   },
+   "searchAdvisor_permissions_blocked_by_privacy_guard": {
+      "message": "Privacybescherming blokkeerde {list}"
+   },
+   "searchAdvisor_permissions_granted": {
+      "message": "Deze website kan toegang krijgen tot uw {list}"
+   },
+   "searchAdvisor_permissions_none_granted": {
+      "message": "Geen machtigingen verleend"
+   },
+   "searchAdvisor_permissions_unavailable": {
+      "message": "Machtigingen onbeschikbaar"
+   },
+   "searchAdvisor_popup_text_safe": {
+      "message": "Geen waarschuwingssignalen geïdentificeerd"
+   },
+   "searchAdvisor_privacy_guard_suggestion": {
+      "message": "Privacybescherming raadt aan om {list} te blokkeren voor deze website."
+   },
+   "searchAdvisor_reasons_found_title": {
+      "message": "Dit is wat ik heb gevonden:"
+   },
+   "searchAdvisor_restore_iframes_done": {
+      "message": "Alle geblokkeerde inhoud is hersteld."
+   },
+   "searchAdvisor_restore_iframes_in_progress": {
+      "message": "Geblokkeerde inhoud wordt hersteld ..."
+   },
+   "searchAdvisor_scam_check_done_clean": {
+      "message": "Geen scampatronen gedetecteerd"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicator": {
+      "message": "{n} schadelijke indicator gevonden"
+   },
+   "searchAdvisor_scam_check_done_malicious_indicators": {
+      "message": "{n} schadelijke indicatoren gevonden"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicator": {
+      "message": "{n} verdachte indicator gevonden"
+   },
+   "searchAdvisor_scam_check_done_suspicious_indicators": {
+      "message": "{n} verdachte indicatoren gevonden"
+   },
+   "searchAdvisor_scam_check_failed": {
+      "message": "Oplichtingsanalyse kon niet worden voltooid"
+   },
+   "searchAdvisor_scam_reason_appeared_in_untrusted_promotional_content": {
+      "message": "Verscheen in onbetrouwbare promotionele inhoud"
+   },
+   "searchAdvisor_scam_reason_coercive_extortion_template": {
+      "message": "Sjabloon voor dwingende afpersing"
+   },
+   "searchAdvisor_scam_reason_counterfeit_money_scam_template": {
+      "message": "Sjabloon voor oplichting met vals geld"
+   },
+   "searchAdvisor_scam_reason_crisis_exploitation_scam_template": {
+      "message": "Sjabloon voor oplichting die misbruik maakt van een crisis"
+   },
+   "searchAdvisor_scam_reason_cryptocurrency_fraud_template": {
+      "message": "Sjabloon voor cryptofraude"
+   },
+   "searchAdvisor_scam_reason_deceptive_adult_dating_platform_template": {
+      "message": "Sjabloon voor misleidend datingplatform voor volwassenen"
+   },
+   "searchAdvisor_scam_reason_deceptive_advertising_template": {
+      "message": "Sjabloon voor misleidende reclame"
+   },
+   "searchAdvisor_scam_reason_deceptive_giveaway_template": {
+      "message": "Sjabloon voor misleidende weggeefactie"
+   },
+   "searchAdvisor_scam_reason_deceptive_online_survey_template": {
+      "message": "Sjabloon voor misleidende online enquête"
+   },
+   "searchAdvisor_scam_reason_energy_investment_scam_template": {
+      "message": "Sjabloon voor oplichting met energie-investeringen"
+   },
+   "searchAdvisor_scam_reason_extortion_scam_template": {
+      "message": "Sjabloon voor oplichting via afpersing"
+   },
+   "searchAdvisor_scam_reason_fake_ad_view_rewards_template": {
+      "message": "Sjabloon voor valse beloningen voor het bekijken van advertenties"
+   },
+   "searchAdvisor_scam_reason_fake_booking_site_template": {
+      "message": "Sjabloon voor valse boekingssite"
+   },
+   "searchAdvisor_scam_reason_fake_casino_template": {
+      "message": "Sjabloon voor vals casino"
+   },
+   "searchAdvisor_scam_reason_fake_charity_template": {
+      "message": "Sjabloon voor vals goed doel"
+   },
+   "searchAdvisor_scam_reason_fake_clinic_template": {
+      "message": "Sjabloon voor valse kliniek"
+   },
+   "searchAdvisor_scam_reason_fake_crypto_giveaway_template": {
+      "message": "Sjabloon voor valse crypto-weggeefactie"
+   },
+   "searchAdvisor_scam_reason_fake_delivery_service_template": {
+      "message": "Sjabloon voor valse bezorgdienst"
+   },
+   "searchAdvisor_scam_reason_fake_documents_template": {
+      "message": "Sjabloon voor valse documenten"
+   },
+   "searchAdvisor_scam_reason_fake_e_commerce_shop_template": {
+      "message": "Sjabloon voor valse e-commercewinkel"
+   },
+   "searchAdvisor_scam_reason_fake_education_institution_template": {
+      "message": "Sjabloon voor valse onderwijsinstelling"
+   },
+   "searchAdvisor_scam_reason_fake_employment_opportunity_template": {
+      "message": "Sjabloon voor valse vacature"
+   },
+   "searchAdvisor_scam_reason_fake_entertainment_service_template": {
+      "message": "Sjabloon voor valse entertainmentdienst"
+   },
+   "searchAdvisor_scam_reason_fake_financial_institution_template": {
+      "message": "Sjabloon voor valse financiële instelling"
+   },
+   "searchAdvisor_scam_reason_fake_financial_investment_template": {
+      "message": "Sjabloon voor valse financiële belegging"
+   },
+   "searchAdvisor_scam_reason_fake_gambling_site_template": {
+      "message": "Sjabloon voor valse goksite"
+   },
+   "searchAdvisor_scam_reason_fake_gaming_winnings_template": {
+      "message": "Sjabloon voor valse spelwinsten"
+   },
+   "searchAdvisor_scam_reason_fake_gold_investment_template": {
+      "message": "Sjabloon voor valse goudbelegging"
+   },
+   "searchAdvisor_scam_reason_fake_government_benefits_template": {
+      "message": "Sjabloon voor valse overheidsuitkeringen"
+   },
+   "searchAdvisor_scam_reason_fake_government_institution_template": {
+      "message": "Sjabloon voor valse overheidsinstantie"
+   },
+   "searchAdvisor_scam_reason_fake_immigration_service_template": {
+      "message": "Sjabloon voor valse immigratiedienst"
+   },
+   "searchAdvisor_scam_reason_fake_law_institution_template": {
+      "message": "Sjabloon voor valse juridische instelling"
+   },
+   "searchAdvisor_scam_reason_fake_money_back_service_template": {
+      "message": "Sjabloon voor valse terugbetalingsdienst"
+   },
+   "searchAdvisor_scam_reason_fake_online_pharmacy_template": {
+      "message": "Sjabloon voor valse online apotheek"
+   },
+   "searchAdvisor_scam_reason_fake_online_shop_detected": {
+      "message": "Valse webwinkel gedetecteerd"
+   },
+   "searchAdvisor_scam_reason_fake_payment_platform_template": {
+      "message": "Sjabloon voor vals betaalplatform"
+   },
+   "searchAdvisor_scam_reason_fake_prize_campaign_template": {
+      "message": "Sjabloon voor valse prijsactie"
+   },
+   "searchAdvisor_scam_reason_fake_prize_or_reward_template": {
+      "message": "Sjabloon voor valse prijs of beloning"
+   },
+   "searchAdvisor_scam_reason_fake_publishing_house_template": {
+      "message": "Sjabloon voor valse uitgeverij"
+   },
+   "searchAdvisor_scam_reason_fake_review_platform_template": {
+      "message": "Sjabloon voor vals reviewplatform"
+   },
+   "searchAdvisor_scam_reason_fake_shop_patterns_in_ad_campaign": {
+      "message": "Patronen van valse winkels in advertentiecampagne"
+   },
+   "searchAdvisor_scam_reason_fake_spiritual_practitioner_template": {
+      "message": "Sjabloon voor valse spirituele adviseur"
+   },
+   "searchAdvisor_scam_reason_fake_winnings_template": {
+      "message": "Sjabloon voor valse winsten"
+   },
+   "searchAdvisor_scam_reason_financial_scam_template": {
+      "message": "Sjabloon voor financiële oplichting"
+   },
+   "searchAdvisor_scam_reason_fraudulent_fake_shop_ad_campaign": {
+      "message": "Frauduleuze advertentiecampagne voor valse winkel"
+   },
+   "searchAdvisor_scam_reason_healthcare_fraud_template": {
+      "message": "Sjabloon voor fraude in de gezondheidszorg"
+   },
+   "searchAdvisor_scam_reason_homoglyph_attack_detected": {
+      "message": "Homoglyph-aanval gedetecteerd"
+   },
+   "searchAdvisor_scam_reason_illegal_activities_site_template": {
+      "message": "Sjabloon voor site met illegale activiteiten"
+   },
+   "searchAdvisor_scam_reason_illegal_services_template": {
+      "message": "Sjabloon voor illegale diensten"
+   },
+   "searchAdvisor_scam_reason_illegal_substances_template": {
+      "message": "Sjabloon voor illegale middelen"
+   },
+   "searchAdvisor_scam_reason_ip_with_malicious_patterns": {
+      "message": "IP met schadelijke patronen"
+   },
+   "searchAdvisor_scam_reason_ip_with_suspicious_patterns": {
+      "message": "IP met verdachte patronen"
+   },
+   "searchAdvisor_scam_reason_known_phishing_template": {
+      "message": "Bekend phishingsjabloon"
+   },
+   "searchAdvisor_scam_reason_known_scam_template": {
+      "message": "Bekend oplichtingssjabloon"
+   },
+   "searchAdvisor_scam_reason_lottery_scam_template": {
+      "message": "Sjabloon voor loterijoplichting"
+   },
+   "searchAdvisor_scam_reason_low_trust_online_shop_unestablished_presence": {
+      "message": "Weinig betrouwbare webwinkel zonder gevestigde naam"
+   },
+   "searchAdvisor_scam_reason_low_trust_trading_investment_platform_unestablished_presence": {
+      "message": "Weinig betrouwbaar handels- of beleggingsplatform zonder gevestigde naam"
+   },
+   "searchAdvisor_scam_reason_malicious_investment_platform_link": {
+      "message": "Schadelijke link naar beleggingsplatform"
+   },
+   "searchAdvisor_scam_reason_malicious_online_shop_link": {
+      "message": "Schadelijke link naar webwinkel"
+   },
+   "searchAdvisor_scam_reason_narcotics_scam_template": {
+      "message": "Sjabloon voor oplichting met verdovende middelen"
+   },
+   "searchAdvisor_scam_reason_online_shop_with_conflicting_indicators": {
+      "message": "Webwinkel met tegenstrijdige indicatoren"
+   },
+   "searchAdvisor_scam_reason_online_shop_without_an_established_presence": {
+      "message": "Webwinkel zonder gevestigde naam"
+   },
+   "searchAdvisor_scam_reason_pet_scam_template": {
+      "message": "Sjabloon voor oplichting met huisdieren"
+   },
+   "searchAdvisor_scam_reason_ponzi_pyramid_scheme_template": {
+      "message": "Sjabloon voor ponzi- of piramidespel"
+   },
+   "searchAdvisor_scam_reason_real_estate_scam_template": {
+      "message": "Sjabloon voor vastgoedoplichting"
+   },
+   "searchAdvisor_scam_reason_romance_scam_template": {
+      "message": "Sjabloon voor datingfraude"
+   },
+   "searchAdvisor_scam_reason_romance_scam_website_template": {
+      "message": "Sjabloon voor website met datingfraude"
+   },
+   "searchAdvisor_scam_reason_secret_society_scam_template": {
+      "message": "Sjabloon voor oplichting met geheim genootschap"
+   },
+   "searchAdvisor_scam_reason_suspicious_investment_platform_link": {
+      "message": "Verdachte link naar beleggingsplatform"
+   },
+   "searchAdvisor_scam_reason_suspicious_link_format": {
+      "message": "Verdacht linkformaat"
+   },
+   "searchAdvisor_scam_reason_suspicious_online_shop_link": {
+      "message": "Verdachte link naar webwinkel"
+   },
+   "searchAdvisor_scam_reason_tech_support_scam_template": {
+      "message": "Sjabloon voor oplichting via technische ondersteuning"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_with_conflicting_indicators": {
+      "message": "Handels- of beleggingsplatform met tegenstrijdige indicatoren"
+   },
+   "searchAdvisor_scam_reason_trading_investment_platform_without_an_established_presence": {
+      "message": "Handels- of beleggingsplatform zonder gevestigde naam"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop": {
+      "message": "Zeer onbetrouwbare webwinkel"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_online_shop_unestablished_presence": {
+      "message": "Zeer onbetrouwbare webwinkel zonder gevestigde naam"
+   },
+   "searchAdvisor_scam_reason_very_low_trust_trading_investment_platform": {
+      "message": "Zeer onbetrouwbaar handels- of beleggingsplatform"
+   },
+   "searchAdvisor_scam_reason_very_suspicious_link": {
+      "message": "Zeer verdachte link"
+   },
+   "searchAdvisor_scam_summary_malicious": {
+      "message": "Ik heb deze geblokkeerd en de toegang tot uw microfoon, camera en locatie afgesloten — u kan het tabblad veilig sluiten ..."
+   },
+   "searchAdvisor_scam_summary_suspicious": {
+      "message": "Trackingscripts werden geblokkeerd en microfoon-, camera- en locatietoegang werden ingetrokken om u veilig te houden."
+   },
+   "searchAdvisor_search_advisor_incomplete_text": {
+      "message": "Ik kon deze zoekresultaten niet afmaken."
+   },
+   "searchAdvisor_search_advisor_incomplete_title": {
+      "message": "Scan onvolledig"
+   },
+   "searchAdvisor_search_advisor_ready": {
+      "message": "Security Advisor staat aan"
+   },
+   "searchAdvisor_search_advisor_scanning": {
+      "message": "Zoekresultaten worden gescand ..."
+   },
+   "searchAdvisor_suspicious_search_result": {
+      "message": "Verdacht zoekresultaat"
+   },
+   "searchAdvisor_text_disabled_search_analyzer": {
+      "message": "Search Advisor is uitgeschakeld. Ga naar instellingen om deze in te schakelen."
+   },
+   "searchAdvisor_text_disabled_threat_filter": {
+      "message": "Webbeveiliging is uitgeschakeld. Ga naar instellingen om deze in te schakelen."
+   },
+   "searchAdvisor_text_domain_whitelisted": {
+      "message": "Controles worden overgeslagen en pagina wordt geladen."
+   },
+   "searchAdvisor_text_fakeshop": {
+      "message": "Deze pagina werd gemarkeerd als schadelijk."
+   },
+   "searchAdvisor_text_fraud": {
+      "message": "Deze pagina maakt deel uit van een fraudepoging."
+   },
+   "searchAdvisor_text_malvertising": {
+      "message": "Deze pagina maakt deel uit van een oplichtingsadvertentie."
+   },
+   "searchAdvisor_text_malware": {
+      "message": "We hebben elementen gedetecteerd die schadelijk zouden kunnen zijn voor uw apparaat."
+   },
+   "searchAdvisor_text_miner": {
+      "message": "De pagina probeerde de middelen van uw apparaat te gebruiken om cryptomunten te minen, en werd geblokkeerd."
+   },
+   "searchAdvisor_text_page_cannot_be_scanned": {
+      "message": "Deze pagina kan niet worden gescand door Security Advisor."
+   },
+   "searchAdvisor_text_page_session_whitelisted": {
+      "message": "Controles worden overgeslagen en pagina wordt geladen."
+   },
+   "searchAdvisor_text_page_user_blocked": {
+      "message": "Ze blijft geblokkeerd totdat u de blokkering opheft."
+   },
+   "searchAdvisor_text_phish": {
+      "message": "Deze pagina maakt deel uit van een phishingpoging."
+   },
+   "searchAdvisor_text_pua": {
+      "message": "De pagina probeerde een PUA (Potentially Unwanted App - mogelijk ongewenste app) op uw apparaat te downloaden, en werd geblokkeerd."
+   },
+   "searchAdvisor_text_session_whitelist_popup": {
+      "message": "Deze pagina wordt overgeslagen bij het scannen in de huidige browsesessie"
+   },
+   "searchAdvisor_text_untrusted": {
+      "message": "Deze pagina is misschien veilig, maar er zijn in het verleden enkele beveiligingsdreigingen gemeld."
+   },
+   "searchAdvisor_text_whitelist_popup": {
+      "message": "Deze pagina wordt overgeslagen bij het scannen omdat deze is toegevoegd aan de lijst met uitzonderingen."
+   },
+   "searchAdvisor_threat_filter_description": {
+      "message": "Voegt een veiligheidsbeoordeling toe naast elk resultaat op Google, Bing, Yahoo en DuckDuckGo, zodat u risicovolle links kan herkennen voordat u klikt."
+   },
+   "searchAdvisor_threat_filter_display_name": {
+      "message": "Annotatie van zoekresultaten"
+   },
+   "searchAdvisor_title_disabled": {
+      "message": "Beveiliging is uitgeschakeld"
+   },
+   "searchAdvisor_title_disabled_search_analyzer": {
+      "message": "Kan zoekresultaten niet scannen"
+   },
+   "searchAdvisor_title_disabled_threat_filter": {
+      "message": "Kan deze pagina niet scannen"
+   },
+   "searchAdvisor_title_domain_whitelisted": {
+      "message": "Dit domein staat op de witte lijst"
+   },
+   "searchAdvisor_title_fakeshop": {
+      "message": "Frauduleuze winkel gedetecteerd"
+   },
+   "searchAdvisor_title_fraud": {
+      "message": "Fraudepoging gedetecteerd"
+   },
+   "searchAdvisor_title_malvertising": {
+      "message": "Oplichtingsadvertentie gedetecteerd"
+   },
+   "searchAdvisor_title_malware": {
+      "message": "Dreiging gedetecteerd"
+   },
+   "searchAdvisor_title_miner": {
+      "message": "Miningpoging gedetecteerd"
+   },
+   "searchAdvisor_title_page_cannot_be_scanned": {
+      "message": "Pagina kan niet worden gescand"
+   },
+   "searchAdvisor_title_page_session_whitelisted": {
+      "message": "Deze pagina wordt deze sessie overgeslagen"
+   },
+   "searchAdvisor_title_page_user_blocked": {
+      "message": "U hebt deze pagina geblokkeerd"
+   },
+   "searchAdvisor_title_phish": {
+      "message": "Phishing-poging gedetecteerd"
+   },
+   "searchAdvisor_title_pua": {
+      "message": "Download van mogelijk ongewenste app gedetecteerd"
+   },
+   "searchAdvisor_title_safe": {
+      "message": "Deze website is veilig"
+   },
+   "searchAdvisor_title_scanning": {
+      "message": "Bezig met scannen ..."
+   },
+   "searchAdvisor_title_untrusted": {
+      "message": "Onbetrouwbaar domein gedetecteerd"
+   },
+   "searchAdvisor_title_whitelist": {
+      "message": "Uitgezonderde pagina gedetecteerd"
+   },
+   "searchAdvisor_trackers_blocked": {
+      "message": "Blokkeerde {n} trackers"
+   },
+   "searchAdvisor_trackers_blocking_disabled": {
+      "message": "Tracking script-blokkering staat uit, dus deze pagina is niet gecontroleerd op trackers"
+   },
+   "searchAdvisor_trackers_load_scripts_unsafe": {
+      "message": "Scripts laden (onveilig)"
+   },
+   "searchAdvisor_trackers_none_detected": {
+      "message": "Geen trackingscripts gedetecteerd op deze pagina"
+   },
+   "searchAdvisor_unblock_page_failed": {
+      "message": "Ik kon de blokkering van deze pagina niet opheffen."
+   },
+   "searchAdvisor_unblock_page_in_progress": {
+      "message": "Blokkering van deze pagina wordt opgeheven ..."
+   },
+   "searchAdvisor_url_check_done_safe": {
+      "message": "Geen bekende dreigingen gevonden"
+   },
+   "searchAdvisor_verdict_malicious_title": {
+      "message": "Pagina geblokkeerd"
+   },
+   "searchAdvisor_verdict_safe_load_time": {
+      "message": "Pagina geladen in {n} ms"
+   },
+   "searchAdvisor_verdict_safe_title": {
+      "message": "U bent veilig"
+   },
+   "searchAdvisor_verdict_suspicious_text": {
+      "message": "Ik heb enkele risico's gevonden op deze pagina. Het invoeren van persoonlijke gegevens, wachtwoorden of betalingsgegevens vermijden en niets downloaden."
+   },
+   "searchAdvisor_verdict_suspicious_title": {
+      "message": "Wees voorzichtig hier"
+   },
+   "searchAdvisor_waiting_all_clear": {
+      "message": "Alles is in orde nu."
+   },
+   "searchAdvisor_waiting_for_user": {
+      "message": "U wordt beschermd tijdens het browsen."
+   },
+   "urlScanning_blocked_by": {
+      "message": "Deze pagina werd geblokkeerd door"
+   },
+   "urlScanning_blocked_reason": {
+      "message": "Domein gemarkeerd als schadelijk"
+   },
+   "urlScanning_blocked_text_fakeshop": {
+      "message": "Nepwinkels doen zich voor als echte winkels om uw betaling te innen en uw kaartgegevens te stelen. Bestellingen worden zelden geleverd, en de gegevens die u invoert worden mogelijk hergebruikt of doorverkocht."
+   },
+   "urlScanning_blocked_text_fraud": {
+      "message": "Frauduleuze pagina's proberen u meestal uit illegaal winstbejag geld te doen sturen."
+   },
+   "urlScanning_blocked_text_malvertising": {
+      "message": "Deze pagina werd geblokkeerd om verdere interactie met een scam te voorkomen.\n\nAanvallers lokken hun potentiële slachtoffers met behulp van deepfakes, investeringsmogelijkheden en andere trending topics om hen te misleiden tot het weggeven van gevoelige gegevens, geld of het downloaden van malware."
+   },
+   "urlScanning_blocked_text_malware": {
+      "message": "Gevaarlijke pagina's proberen software te installeren die het apparaat kan beschadigen, persoonlijke gegevens kan verzamelen of zonder uw toestemming handelingen kan stellen."
+   },
+   "urlScanning_blocked_text_miner": {
+      "message": "Miner-webpagina's gebruiken de middelen van het apparaat om te mijnen naar cryptovaluta, wat de bruikbaarheid en de levensduur van de hardware beïnvloedt."
+   },
+   "urlScanning_blocked_text_phish": {
+      "message": "Phishing-pagina's proberen gevoelige informatie zoals inloggegevens of kredietkaartgegevens te verzamelen, door zich voor te doen als betrouwbare entiteiten. De gestolen gegevens kunnen dan voor financieel winstbejag worden gebruikt."
+   },
+   "urlScanning_blocked_text_pua": {
+      "message": "Een pagina heeft geprobeerd om een PUA (Potentially Unwanted App) te downloaden naar uw apparaat. Dit soort toepassingen vertoont gedrag dat de privacy en beveiliging van uw apparaat en gegevens aantast."
+   },
+   "urlScanning_blocked_text_untrusted": {
+      "message": "Niet-vertrouwde pagina's vertonen verdacht gedrag of bijzonderheden die we als riskant beschouwen: om uw gegevens veilig te houden, kunt u deze pagina's beter niet bezoeken."
+   },
+   "urlScanning_blocked_title_fakeshop": {
+      "message": "Frauduleuze winkel voor uw beveiliging geblokkeerd"
+   },
+   "urlScanning_iframe_suspicious_blocked_message": {
+      "message": "We hebben wat content geblokkeerd voor uw veiligheid."
+   },
+   "urlScanning_iframe_suspicious_content_detected": {
+      "message": "Verdachte inhoud gedetecteerd"
+   },
+   "urlScanning_open_panel_failed_retry": {
+      "message": "Het deelvenster kon niet worden geopend. Probeer het opnieuw."
+   },
+   "urlScanning_open_panel_from_sidebar_hint": {
+      "message": "Open het Bitdefender-deelvenster in de zijbalk van de browser om de details te bekijken."
+   },
+   "urlScanning_page_blocked": {
+      "message": "Pagina geblokkeerd"
+   },
+   "urlScanning_permissions_toast_automatic_downloads": {
+      "message": "Automatische downloads"
+   },
+   "urlScanning_permissions_toast_camera": {
+      "message": "camera"
+   },
+   "urlScanning_permissions_toast_clipboard": {
+      "message": "klembord"
+   },
+   "urlScanning_permissions_toast_close": {
+      "message": "Sluiten"
+   },
+   "urlScanning_permissions_toast_description_multiple": {
+      "message": "{permissions} voor toegang tot deze website werden geblokkeerd."
+   },
+   "urlScanning_permissions_toast_description_single": {
+      "message": "{permissions} voor toegang tot deze website werd geblokkeerd."
+   },
+   "urlScanning_permissions_toast_guided_description_multiple": {
+      "message": "{permissions} voor toegang zijn toegestaan voor deze website. Bekijk wat deze website kan gebruiken."
+   },
+   "urlScanning_permissions_toast_guided_description_single": {
+      "message": "{permissions} voor toegang is toegestaan voor deze website. Bekijk wat deze website kan gebruiken."
+   },
+   "urlScanning_permissions_toast_guided_title": {
+      "message": "Privacybescherming vond machtigingen om te beoordelen"
+   },
+   "urlScanning_permissions_toast_list_and": {
+      "message": "{first} en {second}"
+   },
+   "urlScanning_permissions_toast_location": {
+      "message": "locatie"
+   },
+   "urlScanning_permissions_toast_managed_description_multiple": {
+      "message": "{permissions} voor toegang zijn geblokkeerd voor deze website. Bekijk wat deze website kan gebruiken."
+   },
+   "urlScanning_permissions_toast_managed_description_single": {
+      "message": "{permissions} voor toegang is geblokkeerd voor deze website. Bekijk wat deze website kan gebruiken."
+   },
+   "urlScanning_permissions_toast_managed_title": {
+      "message": "Privacybescherming beheert machtigingen"
+   },
+   "urlScanning_permissions_toast_microphone": {
+      "message": "microfoon"
+   },
+   "urlScanning_permissions_toast_notifications": {
+      "message": "Notificaties"
+   },
+   "urlScanning_permissions_toast_title": {
+      "message": "Privacybescherming beheert machtigingen"
+   },
+   "urlScanning_proceed_with_caution": {
+      "message": "Ga voorzichtig verder"
+   },
+   "urlScanning_see_details": {
+      "message": "Zie details"
+   },
+   "urlScanning_show_details": {
+      "message": "Details tonen"
+   },
+   "urlScanning_suspicious_warning_close": {
+      "message": "Sluiten"
+   },
+   "urlScanning_suspicious_warning_message": {
+      "message": "Een aantal waarschuwingssignalen hier. Wees voorzichtig met persoonlijke informatie en downloads."
+   },
+   "urlScanning_title_disabled_search_analyzer": {
+      "message": "Kan zoekresultaten niet scannen"
+   },
+   "urlScanning_title_disabled_threat_filter": {
+      "message": "Kan deze pagina niet scannen"
+   },
+   "urlScanning_title_fakeshop": {
+      "message": "Frauduleuze winkel gedetecteerd"
+   },
+   "urlScanning_title_fraud": {
+      "message": "Fraudepoging gedetecteerd"
+   },
+   "urlScanning_title_malvertising": {
+      "message": "Oplichtingsadvertentie gedetecteerd"
+   },
+   "urlScanning_title_malware": {
+      "message": "Dreiging gedetecteerd!"
+   },
+   "urlScanning_title_miner": {
+      "message": "Miningpoging gedetecteerd"
+   },
+   "urlScanning_title_phish": {
+      "message": "Phishing-poging gedetecteerd"
+   },
+   "urlScanning_title_pua": {
+      "message": "Download van mogelijk ongewenste app gedetecteerd"
+   },
+   "urlScanning_title_safe": {
+      "message": "Deze pagina is veilig"
+   },
+   "urlScanning_title_untrusted": {
+      "message": "Onbetrouwbaar domein gedetecteerd"
+   },
+   "urlScanning_web_protection_description": {
+      "message": "Scans doorzochten URL's op malware, phishing, fraude en andere dreigingen"
+   },
+   "urlScanning_web_protection_display_name": {
+      "message": "webbeveiliging"
+   },
+   "urlScanning_web_protection_title": {
+      "message": "Webbescherming door Bitdefender"
+   }
+}

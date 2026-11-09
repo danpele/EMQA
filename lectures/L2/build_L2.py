@@ -310,7 +310,7 @@ def build(lang, H=None):
                    "o testare retrospectivă cu consumul realizat în ziua $d-1$ pare excelentă, dar la 12:00 acest consum nu se cunoaște."), NB + " \\S1"), "footnotesize", cite=t("(Assignment 1; OPCOM; Lago et al., 2021, APEN)",
                                                                            "(tema 1; OPCOM; Lago et al., 2021, APEN)"))
 
-    D.chart(t("Calibration, burn-in, test: time runs one way, data are never shuffled",
+    D.chart(t("Chronological split into calibration, burn-in and test periods",
               "Datele se împart cronologic în calibrare, rodaj și test, fără amestecare"), "split_timeline", [
         t("Models re-estimated every day on the window ending at $d-1$; no random K-fold, no random validation split.",
           "Calibrare = estimarea modelului, rodaj = prognoze folosite doar pentru intervale, test = măsurarea erorii; reestimare zilnică pe fereastra încheiată în $d-1$, fără K-fold aleator.")],
@@ -371,7 +371,7 @@ def build(lang, H=None):
                 "cereți oricărui furnizor de prognoze rMAE față de această regulă naivă, calculată pe orele care vă interesează."),
               tryit=NB + " \\S2", cite="(Nogales et al., 2002, IEEE TPWRS; Weron, 2014, IJF)", wl="0.52", wr="0.45")
 
-    D.concept(t("Four error measures, one benchmark-relative score", "Patru măsuri ale erorii și rMAE, care compară modelul cu cel naiv"),
+    D.concept(t("Four error measures and the relative MAE", "Patru măsuri ale erorii și rMAE, care compară modelul cu cel naiv"),
               t("Absolute errors are in EUR/MWh, squared errors punish spikes, rMAE compares with naive.",
                 "Erorile absolute sînt în EUR/MWh, cele pătratice penalizează salturile, rMAE compară cu modelul naiv."),
               "\\[ \\text{MAE}=\\tfrac1N\\textstyle\\sum|e_{d,h}|,\\quad \\text{RMSE}=\\sqrt{\\tfrac1N\\textstyle\\sum e_{d,h}^2} \\]"
@@ -404,7 +404,7 @@ def build(lang, H=None):
                tryit=NB + " \\S2", height=t("0.60\\textheight", "0.55\\textheight"), cite="(Hyndman \\& Koehler, 2006, IJF; Weron, 2014, IJF)")
 
     D.subsection(t("Testing forecast accuracy", "Testarea acurateței prognozelor"))
-    D.concept(t("The Diebold--Mariano test: is the gain larger than luck?", "Testul Diebold--Mariano arată dacă un model este cu adevărat mai precis decît altul"),
+    D.concept(t("The Diebold--Mariano test of equal predictive accuracy", "Testul Diebold--Mariano arată dacă un model este cu adevărat mai precis decît altul"),
               t("Compare the daily average error of two models; if the mean difference is large relative to its own noise, one model is really better.",
                 "Comparăm, zi de zi, eroarea medie a două modele; dacă diferența medie este mare față de variabilitatea ei, avantajul unui model nu se datorează întîmplării."),
               "\\[ \\Delta_d=\\underbrace{\\tfrac1{24}\\textstyle\\sum_h|e^{A}_{d,h}|}_{\\text{" + t("model A", "modelul A") + "}}-"
@@ -427,7 +427,7 @@ def build(lang, H=None):
                 "schimbați modelul numai dacă îmbunătățirea este semnificativă pe orele care vă interesează."),
               tryit=NB + " \\S2", cite="(Diebold \\& Mariano, 1995, JBES; Ziel \\& Weron, 2018, ENEECO)", wl="0.51", wr="0.46")
 
-    D.chart(t("The DM chessboard: which model beats which on the Romanian test year", "Matricea testelor DM: care modele sînt semnificativ mai precise în România"),
+    D.chart(t("Pairwise DM tests on the Romanian test year", "Matricea testelor DM: care modele sînt semnificativ mai precise în România"),
             "dm_matrix", [
                 t("@{dm.n_sig_vs_naive} of the @{dm.n_others} other models beat the naive benchmark at 5\\%; green cells mark a significant win of the column.",
                   "@{dm.n_sig_vs_naive} dintre celelalte @{dm.n_others} modele sînt semnificativ mai precise decît modelul naiv, la pragul de 5\\%; o celulă verde = modelul din coloană este semnificativ mai precis decît cel din rînd.")],
@@ -515,7 +515,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 4 LEAR
     D.subsection(t("LASSO-estimated autoregression", "Autoregresia estimată cu LASSO"))
-    D.concept(t("LEAR: give the model 247 candidates and let the LASSO switch most of them off",
+    D.concept(t("LEAR: LASSO selection among 247 candidate regressors",
                 "LEAR pornește de la 247 de regresori, iar LASSO îi elimină pe cei mai mulți"),
               t("A penalty on the size of the coefficients sets the useless ones exactly to zero, so the data choose the regressors.",
                 "O penalizare a mărimii coeficienților îi face zero pe cei inutili, deci datele aleg regresorii."),
@@ -550,7 +550,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 5 windows and combinations
     D.section(t("Windows, combinations and machine learning", "Ferestre, combinații și învățare automată"))
     D.subsection(t("Calibration windows", "Ferestre de calibrare"))
-    D.concept(t("Short windows adapt, long windows are stable: average them", "Ferestrele scurte se adaptează, cele lungi sînt stabile: mediați prognozele"),
+    D.concept(t("Averaging forecasts across calibration windows", "Medierea prognozelor obținute pe ferestre de calibrare diferite"),
               t("Instead of guessing the best window length, estimate the model on several windows and average the forecasts.",
                 "În loc să ghiciți lungimea optimă a ferestrei de calibrare, estimați modelul pe mai multe ferestre și faceți media prognozelor."),
               "\\[ \\hat P^{\\text{AW}}_{d,h}=\\frac1{|\\mathcal T|}\\sum_{T\\in\\mathcal T}\\underbrace{\\hat P^{(T)}_{d,h}}_{\\text{" +
@@ -663,7 +663,7 @@ def build(lang, H=None):
                 "o rețea neuronală cere ani de date și o calibrare atentă; altfel, păstrați LEAR."),
               tryit=NB + " \\S6", cite="(Lago, Marcjasz, De Schutter \\& Weron, 2021, APEN)", wl="0.50", wr="0.47")
 
-    D.chart(t("Hour by hour: machine learning helps inside the ensemble, not alone", "Pe ore, învățarea automată ajută în cadrul ansamblului, nu luată separat"), "ml_hour", [
+    D.chart(t("Accuracy by hour: machine-learning models alone and in the ensemble", "Precizia pe ore: modelele de învățare automată, separat și în ansamblu"), "ml_hour", [
         t("Better than AW-LEAR in @{byhour.gbm_beats_lear_h} hours (GBM), @{byhour.mlp_beats_lear_h} (MLP) and @{byhour.ens_beats_lear_h} of 24 (" + MN["ens_all"] + ").",
           "GBM este mai precis decît AW-LEAR în @{byhour.gbm_beats_lear_h} ore, MLP în @{byhour.mlp_beats_lear_h}, iar " + MN["ens_all"] + " în @{byhour.ens_beats_lear_h} din 24 de ore."),
         t("The hardest hour is @{byhour.lear_worst_h} h CET, the evening ramp (AW-LEAR MAE @{byhour.lear_worst|.2f} EUR/MWh).",
@@ -834,7 +834,7 @@ def build(lang, H=None):
                                         "(calcule proprii; OPCOM; trecerea SDAC la 15 minute, 1 oct. 2025)"))
 
     bt, fx = N["battery"], N["flex"]
-    D.subsection(t("(d) From forecast to money", "(d) Valoarea economică a prognozei"))
+    D.subsection(t("(d) Economic value of the forecast", "(d) Valoarea economică a prognozei"))
     D.chart(t("Case study (d): what a better forecast is worth", "Studiul de caz (d): cît valorează, în bani, o prognoză mai bună"), "battery", [
         t("Battery 1 MW / 2 MWh, one daily cycle, @{battery.n_days} days without DST; @{battery.ens_all.eur|,.0f} EUR per MW with the ensemble (@{battery.ens_all.pct|.1f}\\% of perfect foresight), @{battery.naive.eur|,.0f} with naive.",
           "Baterie de 1 MW / 2 MWh, un ciclu pe zi, @{battery.n_days} " + de("battery.n_days") + "zile fără schimbarea orei; @{battery.ens_all.eur|,.0f} EUR pe MW cu ansamblul (@{battery.ens_all.pct|.1f}\\% din profitul cu informație perfectă), @{battery.naive.eur|,.0f} cu modelul naiv."),
@@ -869,8 +869,8 @@ def build(lang, H=None):
     WER = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/weron_ml_electricity_price_forecasting.pdf"
     PET = "https://github.com/danpele/EMQA/blob/main/resources/aida2026/petukhina_multivariate_probabilistic_epf.pdf"
     D.subsection(t("Research and practice: AIDA 2026", "Cercetare și practică: conferința AIDA 2026"))
-    D.frame(t("AIDA 2026: probabilistic forecasts are judged by the money they make",
-              "AIDA 2026: prognozele probabilistice se judecă după banii pe care îi aduc"), cols(
+    D.frame(t("AIDA 2026: economic evaluation of probabilistic forecasts",
+              "AIDA 2026: evaluarea economică a prognozelor probabilistice"), cols(
         it((t("\\textbf{R.\\ Weron, keynote} (4 June 2026, \\href{" + WER + "}{slides})",
               "\\textbf{R.\\ Weron}, 4 iunie 2026 (\\href{" + WER + "}{diapozitive})"),
             t("one model per hour (as our ARX, LEAR) or all 24 hours jointly; averaging across windows and LEAR stay the benchmarks to beat",
