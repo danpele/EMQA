@@ -21,7 +21,7 @@ Cursul folosește aceleași date reale și același an de test ca în cursul 2: 
 
 Modelele flexibile pot învăța tipare pe care un model liniar nu le vede, dar pot învăța și zgomotul trecutului; secțiunea stabilește regulile care păstrează evaluarea corectă. Datele sînt împărțite în eșantioane de antrenare, de validare și de test, în ordine cronologică, iar setările se aleg prin căutare aleatoare numai pe anul de validare.
 
-## Aceleași date și același an de test ca în cursul 2, plus un an de validare {h=cb3e7af7}
+## Datele: eșantionul și anul de test din cursul 2, cu un an suplimentar de validare {h=bd46999a}
 
 Variabila prognozată este prețul orar de pe PZU pentru zona de ofertare România (RO). Variabilele explicative sînt cele din cursul 2: prețurile pînă în ziua $d-1$; consumul, producția eoliană și solară, hidro, nucleară și importul net pînă în ziua $d-2$, de la Rețeaua europeană a operatorilor de transport și de sistem pentru energie electrică (ENTSO-E); și prețul certificatelor de emisii (EUA) ale Uniunii Europene (UE), printr-un titlu tranzacționat la bursă, garantat cu mărfuri (ETC). Datele acoperă perioada pînă la 31 octombrie 2026 și au fost descărcate la 4 noiembrie 2026 de pe energy-charts.info, portalul de date al Institutului Fraunhofer pentru Sisteme de Energie Solară (ISE), și de pe Yahoo Finance.
 

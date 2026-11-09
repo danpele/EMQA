@@ -20,7 +20,7 @@ The lecture uses only real data, downloaded on 4 November 2026 and cut off at 31
 
 The price of electricity in Romania is set by a single daily auction that is coupled with the rest of Europe and, since October 2025, clears every quarter-hour. This section explains the auction, the merit order, the sequence of markets around a delivery day, the institutions that set the rules, market coupling and the Romanian generation mix.
 
-## Real data only: what we use and where it ends {h=bab9e266}
+## Real data only: sources and sample period {h=2a7859bf}
 
 Every number and chart in this lecture comes from downloaded data. Prices come from four exchanges: OPCOM for Romania, the Independent Bulgarian Energy Exchange (IBEX), the Hungarian Power Exchange (HUPX) and the European Power Exchange (EPEX SPOT) for Germany; they are collected through the European Network of Transmission System Operators for Electricity (ENTSO-E) and republished by energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE).
 
@@ -93,13 +93,13 @@ The picture of one capacity per border is a simplification. Since 8 June 2022 th
 
 @practice a trader on RO–HU flows earns the price spread only when cross-border capacity binds.
 
-## Ten years of coupling: from four countries to one European auction {h=0f7925d8}
+## Milestones of market coupling for Romania, 2014–2025 {h=f4a91241}
 
 The Romanian market joined the European one step by step. In 2014 Romania was coupled with Czechia, Slovakia and Hungary in the 4M Market Coupling. On 19 November 2019 it joined the Single Intraday Coupling (SIDC), and on 17 June 2021 the Single Day-Ahead Coupling, through the 4M interim coupling. The Bulgaria–Romania border was coupled in SDAC on 27 October 2021, and on 8 June 2022 the Romania–Hungary border moved to Core flow-based allocation. In March 2025 the Romanian borders entered the intraday auctions, and on 1 October 2025 SDAC moved to a 15-minute market time unit.
 
 All prices are computed by the Pan-European Hybrid Electricity Market Integration Algorithm (EUPHEMIA). For the analyst the lesson is simple: each of these steps changed the data, by bringing new neighbours, new products or a finer resolution. Before comparing two periods, check which of these dates lies between them.
 
-## Since 1 October 2025 a trading day has 96 prices, not 24 {h=55426d2b}
+## The 15-minute market time unit since 1 October 2025 {h=b0c23ba6}
 
 The market time unit (MTU) shrank from one hour to 15 minutes, so every count of hours must now be converted. The daily base price and the number of hours with a negative price are computed as
 
@@ -111,7 +111,7 @@ Our data contain 94,222 hourly MTUs until September 2025 and 38,020 quarter-hour
 
 @practice always ask "hours or quarter-hours?" before comparing years.
 
-## Romania's power: hydro, nuclear, gas and coal, with solar rising fast {h=f69a30bb}
+## Romania's generation mix: hydro, nuclear, gas, coal and growing solar {h=b057005b}
 
 Romania produces electricity from a diversified mix. In the chart, hydro is the sum of run-of-river (RoR) and reservoir plants, and coal the sum of lignite and hard coal. The black bar is consumption: when it lies above the stacked production, the country was a net importer that year. Energy is summed over the hours reported by the TSO, with coverage of at least 98.1% in the full years, and metered solar may miss part of the output of rooftop panels, which is consumed behind the meter.
 
@@ -120,7 +120,7 @@ The left panel shows how production shrank and changed composition over a decade
 @chart mix_ro_annual
 Annual Romanian generation by source (TWh, stacked) for the full years 2015–2025, with consumption as a black bar (left), and the shares of each source in January–October 2025 and 2026 (right).
 
-## Romania: coal shrinks, solar grows, nuclear drops in 2026 {h=acaf501c}
+## Generation by source in Romania: less coal, more solar, lower nuclear output in 2026 {h=097b5ab2}
 
 Comparing the shares of each source in 2015, 2025 and January–October 2026 shows three movements. Coal output fell by 63.9% from 2015 to 2025, while metered solar grew 2.2 times over the same years. In 2026, nuclear output fell by 31.3% in January–October compared with the same months of 2025, on the hours reported in both years. The true fall is at least as large, because the 29 September days for which nuclear output was not reported are simply left out of the comparison. The detailed table is in Appendix D.
 
@@ -342,7 +342,7 @@ Brent daily log returns in % (top) and their 21-day volatility in % a year (bott
 
 Energy prices shift level, follow daily, weekly and annual cycles, spike, turn negative, have fat tails and cluster in volatility. Units, clocks and gaps must be handled before any of these facts can be measured.
 
-# Time-series toolkit
+# Time-series methods
 
 This section introduces the tools used throughout the course to describe a price series: stationarity, autocorrelation and partial autocorrelation, the naive benchmark, unit-root tests, decomposition and exponential smoothing. Each tool is applied to the Romanian, German or Brent data.
 
@@ -361,7 +361,7 @@ The chart shows three simulated series, the only simulated figure of the lecture
 @chart sim_wn_ar_rw
 Simulated series (T = 500, standard normal shocks): white noise, AR(1) with phi = 0.9 and a random walk, with their sample autocorrelation functions below.
 
-## Autocorrelation measures how much today's price remembers the past {h=063d4b29}
+## Autocorrelation: dependence of today's price on past prices {h=0d0b4557}
 
 The autocorrelation at lag $k$ is the correlation between the series and itself shifted by $k$ periods:
 
@@ -385,7 +385,7 @@ Sample autocorrelation (left) and partial autocorrelation (right) of Romanian da
 @chart acf_ro_hourly
 Sample autocorrelation of Romanian hourly prices in 2024 (T = 8784) up to lag 168 hours, with the white-noise band.
 
-## The benchmark to beat: the naive forecast {h=1ce24edf}
+## The naive forecast as a benchmark {h=cc949f6a}
 
 The simplest sensible forecast says that tomorrow's price for each hour is today's price for that hour, except after weekends, when the same day of the previous week is used:
 
@@ -523,7 +523,7 @@ The right panel zooms in on 16 July 2024, when the daily gap between Romania and
 @chart separation_2024
 Daily base prices in the four zones, 1 June to 30 September 2024 (left), and hourly prices on 16 July 2024 (right).
 
-## Case study (c): evening, heat and a congested network {h=846cdc10}
+## Case study (c): evening hours, heat and network congestion {h=868631ff}
 
 The share of July 2024 hours in which prices were equal, within 0.01 EUR/MWh, shows where the network was binding: 86.8% for Romania–Bulgaria, but only 6.3% for Romania–Hungary and 3.1% for Romania–Germany. The network towards Central Europe was binding, although which element was binding cannot be read from prices alone. After sunset solar output disappears while air conditioning keeps demand high, so the region must import exactly when the network is full.
 
@@ -650,7 +650,7 @@ Several papers from our group study the same market. Andrei, Pele & Cramer (2026
 
 Proșcanu, Proșcanu, Pele & Costea (2025) compare classical seasonal models with neural networks for forecasting Romanian national consumption, a preview of Lecture 2. Proșcanu, Proșcanu & Pele (2025) show that Romanian consumption is price-inelastic and that Granger causality runs from consumption to price, not back, which explains why the demand curve is steep. Shahar, Lessmann & Pele (2025) apply causal machine learning to market liberalisation in the United States and find a short-term price decrease of about 7%. These findings are stated as in the papers' abstracts; all other numbers in the lecture come from our own data.
 
-## Want to learn more? {h=61857090}
+## Further reading and resources {h=4833a889}
 
 - R. Weron, IIF Distinguished Lectures on electricity price forecasting (2025): slides [part I](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_1.pdf), [part II](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_2.pdf), [notebooks](https://github.com/lipiecki/energy-analytics-2025), [videos](https://www.youtube.com/playlist?list=PLUxduCQo6_X2UTvdP9OE8DwfuBClKFNur).
 - **epftoolbox**, the open benchmark of Lago et al. (2021): [github.com/jeslago/epftoolbox](https://github.com/jeslago/epftoolbox).

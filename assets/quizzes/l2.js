@@ -199,7 +199,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Why MAPE explodes",
+                "title": "MAPE at prices near zero",
                 "text": "The mean absolute percentage error (MAPE) of AW-LEAR (LEAR, the LASSO-estimated autoregression, averaged across calibration windows) is 5,777.7% on the test year. Without the 387 hours with absolute price below 5 EUR/MWh it falls to 32.4%. What should you tell an alarmed board?",
                 "options": [
                     "MAPE divides by prices near zero; those few hours produce 99.5% of it, so report the mean absolute error (MAE) and the relative MAE (rMAE) instead",
@@ -211,7 +211,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "The forecast is the same; only the measure changes. Hours with near-zero prices are real (sunny hours with high solar output), so they must stay in the evaluation; the fix is to use MAE and rMAE, never MAPE, for power prices."
             },
             "ro": {
-                "title": "De ce explodează MAPE",
+                "title": "MAPE la prețuri apropiate de zero",
                 "text": "Eroarea procentuală absolută medie (MAPE) pentru AW-LEAR (LEAR, autoregresia estimată cu LASSO, mediată pe ferestre de calibrare) este 5 777,7% în anul de test. Fără cele 387 de ore în care prețul are valoarea absolută sub 5 EUR/MWh, ea scade la 32,4%. Ce îi spuneți consiliului de administrație alarmat?",
                 "options": [
                     "MAPE împarte la prețuri apropiate de zero; aceste puține ore produc 99,5% din valoarea ei, deci raportați eroarea absolută medie (MAE) și MAE relativă (rMAE)",
@@ -415,7 +415,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 2,
             "en": {
-                "title": "How sparse is LEAR",
+                "title": "Sparsity of LEAR",
                 "text": "The LASSO-estimated autoregression (LEAR) starts from 247 candidates: the 24 prices of $d-1$, $d-2$, $d-3$ and $d-7$ (96), the load and the wind + solar generation of $d-2$, $d-3$ and $d-7$ (144), and 7 weekday dummies. LEAR(728) keeps on average 42 of them. What share is that?",
                 "options": [
                     "About 42%",
@@ -427,7 +427,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "Divide the number kept by the number of candidates: 42 / 247 is about 17%. The 83% is the share switched off, and 8 is the minimum number of regressors kept in a single fit."
             },
             "ro": {
-                "title": "Cît de rar este LEAR",
+                "title": "Numărul de regresori păstrați de LEAR",
                 "text": "Autoregresia estimată cu LASSO (LEAR) pornește de la 247 de regresori candidați: cele 24 de prețuri din $d-1$, $d-2$, $d-3$ și $d-7$ (96), consumul și producția eoliană și solară din $d-2$, $d-3$ și $d-7$ (144) și 7 indicatori ai zilei săptămînii. LEAR(728) păstrează în medie 42 dintre ei. Ce procent reprezintă?",
                 "options": [
                     "Circa 42%",
@@ -523,7 +523,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Weak members still help",
+                "title": "Contribution of weaker ensemble members",
                 "text": "Alone, the gradient boosting machine (GBM) and the multilayer perceptron (MLP) beat AW-LEAR (LEAR, the LASSO-estimated autoregression, averaged across calibration windows) in 0 of the 24 hours. Yet the equal-weight ensemble of 4 that contains them beats AW-LEAR in 15 of the 24 hours. Why?",
                 "options": [
                     "The ensemble gives GBM and MLP larger weights in the evening hours",
@@ -535,7 +535,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "The weights are equal and need no estimation, which makes them robust. A weaker model with different errors still lowers the error of the average; this is the practical meaning of the ensemble variance formula."
             },
             "ro": {
-                "title": "Membrii slabi ajută totuși",
+                "title": "Contribuția membrilor mai slabi ai ansamblului",
                 "text": "Luate separat, modelul gradient boosting (GBM) și perceptronul multistrat (MLP) sînt mai precise decît AW-LEAR (LEAR, autoregresia estimată cu LASSO, mediată pe ferestre de calibrare) în 0 din 24 de ore. Totuși, ansamblul de 4 modele cu ponderi egale care le include este mai precis decît AW-LEAR în 15 din 24 de ore. De ce?",
                 "options": [
                     "Ansamblul dă ponderi mai mari modelelor GBM și MLP la orele de seară",
@@ -577,7 +577,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Training a neural network honestly",
+                "title": "Training a neural network without look-ahead",
                 "text": "Which choice respects time-series discipline when training the multilayer perceptron (MLP) of the lecture?",
                 "options": [
                     "Choosing the number of epochs on a random 15% of the training days",
@@ -901,7 +901,7 @@ window.EMQA_DATA.quizzes['l2'] = {
         {
             "correct": 3,
             "en": {
-                "title": "What a better forecast earns",
+                "title": "Economic value of a better forecast",
                 "text": "A battery of 1 MW (megawatt) and 2 MWh with 90% round-trip efficiency runs one daily cycle chosen from the forecast. Over the 363 days without daylight saving time changes it earns 90,738 EUR per MW with the ensemble forecast, 84,623 EUR with the naive forecast and 99,698 EUR under perfect foresight. How much more does the ensemble earn than naive?",
                 "options": [
                     "About 8,960 EUR per MW",
@@ -913,7 +913,7 @@ window.EMQA_DATA.quizzes['l2'] = {
                 "incorrectExplanation": "8,960 EUR is the gap between perfect foresight and the ensemble, not between the ensemble and naive. Translating relative accuracy into euros like this is what should precede paying for a forecast."
             },
             "ro": {
-                "title": "Cît aduce o prognoză mai bună",
+                "title": "Valoarea economică a unei prognoze mai bune",
                 "text": "O baterie de 1 MW (megawatt) și 2 MWh, cu randament de 90%, face un ciclu pe zi, ales după prognoză. În cele 363 de zile fără schimbarea orei, cîștigă 90 738 EUR pe MW cu prognoza ansamblului, 84 623 EUR cu modelul naiv și 99 698 EUR cu informație perfectă. Cu cît cîștigă mai mult ansamblul decît modelul naiv?",
                 "options": [
                     "Cu circa 8 960 EUR pe MW",

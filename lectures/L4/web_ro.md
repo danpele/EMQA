@@ -105,7 +105,7 @@ unde $W$ = 365 de zile este fereastra, $\hat q_\alpha$ cuantila empirică a vari
 
 @practice HS este metoda implicită în multe companii energetice și reacționează cu întîrziere.
 
-## Repartițiile normală și Student-t: doi sau trei parametri {h=6ee5603a}
+## VaR parametrică: repartițiile normală și Student-t {h=648efcd4}
 
 Abordarea parametrică ajustează o curbă pe variațiile din ultimul an și citește cuantila ei. Repartiția normală are doi parametri; repartiția Student-t adaugă un al treilea, numărul gradelor de libertate, care îi îngroașă cozile:
 
@@ -198,7 +198,7 @@ Cuantila empirică de 99% a variațiilor prețului pe orizonturi de pînă la 10
 
 O VaR este o promisiune privind frecvența cu care pierderile o vor depăși, iar promisiunea poate fi verificată ulterior. Secțiunea numără depășirile cu testul Kupiec, le verifică momentul apariției cu testul Christoffersen și cu semaforul Basel și testează ES cu statistica Acerbi–Székely, pe 3 587 de zile.
 
-## Testul Kupiec: sînt atîtea depășiri cîte au fost promise? {h=898f3ddd}
+## Testul Kupiec pentru frecvența depășirilor {h=786815f0}
 
 O VaR de 99% promite că va fi depășită în 1% din zile. Testul Kupiec (1995) numără depășirile și verifică dacă proporția lor diferă de această promisiune:
 
@@ -212,7 +212,7 @@ Pentru VaR de 99% pe 3 587 de zile se așteaptă 35,9 depășiri. VaR normală a
 
 @practice cereți numărul depășirilor înainte de a avea încredere în VaR raportată de cineva.
 
-## Testul Christoffersen: apar depășirile grupate? {h=b74858b1}
+## Testul Christoffersen pentru independența depășirilor {h=4700bb99}
 
 Un model bun nu este surprins de două ori la rînd: o depășire azi nu trebuie să facă mai probabilă o depășire mîine. Christoffersen (1998) verifică acest lucru comparînd două probabilități condiționate:
 
@@ -269,7 +269,7 @@ Zona din semaforul Basel pentru VaR de 99% a fiecărei metode (numărul depăși
 
 @practice testați orice model pe 2021–2022 înainte de a vă baza pe el într-o criză.
 
-## Testarea ES: sînt pierderile de dincolo de VaR atît de mari cît s-a prognozat? {h=55d2acca}
+## Testarea ES: mărimea pierderilor de dincolo de VaR {h=b3f58915}
 
 ES nu poate fi verificat prin numărare, pentru că se referă la mărimea pierderilor de dincolo de VaR. Acerbi și Székely (2014) împart fiecare pierdere din zilele cu depășiri la prognoza ES; dacă ES este corect, media acestor rapoarte este 1:
 
@@ -289,7 +289,7 @@ unde $T$ este numărul zilelor, $\alpha$ = 0,975, $I_t$ depășirea VaR$_{0,975}
 
 @practice evaluați ES pe mai mulți ani, niciodată pe un trimestru (circa 9 zile extreme pe an).
 
-## AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează {h=5aae05ca}
+## AIDA 2026: deplasarea conformală corectează erorile de calibrare ale VaR {h=54fd0f46}
 
 La conferința AIDA (Academia de Studii Economice din București, 4 iunie 2026), D. T. Pele a prezentat o lucrare comună cu V. Bolovăneanu, A. T. Ginavar, S. Lessmann și W. K. Härdle despre recalibrarea prognozelor VaR ([diapozitive](https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf); lucrarea a fost trimisă spre publicare). Metoda are nevoie de un singur număr. În fiecare zi, scorul $s_t=\hat q_t-r_t$ compară cuantila prognozată cu randamentul realizat și este pozitiv în ziua unei depășiri; $\hat q_V$ este cuantila de 99% a scorurilor trecute, iar VaR corectată este VaR plus $\hat q_V$. Deplasarea este fie fixă, estimată pe un eșantion de calibrare (un audit), fie glisantă, pe ultimele 250 de zile (pentru utilizarea zilnică). Lucrarea o aplică VaR de 1% a 10 modele, modele fundaționale, modele de tip GARCH și HS, pe 24 de active, inclusiv petrol și gaze, în total 240 de perechi, și evaluează rezultatul cu testele Kupiec și Christoffersen și cu semaforul Basel din această secțiune.
 
@@ -346,7 +346,7 @@ Cu $\tau$ = 0,99, în 2017–2026, prețul a rămas sub prognoză în 96,90% din
 
 @practice dimensionați linia bancară din spatele garanției pe cuantila din criză, înainte de criză.
 
-## Lărgirea cozilor apropie cuantila de 99% de acoperirea promisă {h=e37ef8af}
+## Lărgirea cozilor apropie cuantila de 99% de acoperirea nominală {h=5d8ac3b0}
 
 Graficul compară, pe toată perioada de testare, proporția zilelor în care prețul a rămas sub fiecare prognoză de 99%. Valorile $p$ ale testului Kupiec la 99% sînt sub 0,001 pentru QR simplă, 0,003 pentru QR lărgită și 0,005 pentru FHS: corecția conformală apropie acoperirea de promisiune, fără să o atingă complet. La 95%, QR lărgită trece testul, cu $p$ = 0,053, așa cum sugera cursul 2 pentru cozi (Nowotarski și Weron, 2018).
 
@@ -371,7 +371,7 @@ Cu VaR FHS de 99% pe datele din România, VaR mediană din 2019 a fost 20,27 EUR
 
 Furnizorul și producătorul se confruntă cu același preț, dar cu cozi opuse, iar factura lunară a furnizorului depinde și de profilul consumului. Secțiunea măsoară fluxul de numerar lunar la risc al furnizorului, compară cele două cozi și rezumă studiul de caz C4 despre riscul sistemic și riscurile specifice sectorului energetic.
 
-## Costul lunar la risc al unui furnizor: limita normală a eșuat din nou {h=34d9efd9}
+## Costul lunar la risc al unui furnizor, calculat cu repartiția normală {h=1a23d68c}
 
 Furnizorul stabilește prețul lunii viitoare după costul lunii curente; riscul este un salt al prețului ponderat cu consumul. Depășirea costului și cuantila ei sînt
 

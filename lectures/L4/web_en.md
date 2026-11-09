@@ -105,7 +105,7 @@ On October 2026, HS gives a VaR$_{0.99}$ of 86.63 and an ES$_{0.975}$ of 87.59 E
 
 @practice HS is the default in many energy companies, and it lags the market.
 
-## Normal and Student-t: two parameters or three {h=37a64f96}
+## Parametric VaR: normal and Student-t distributions {h=f0b6fe6f}
 
 The parametric approach fits a curve to the last year of changes and reads its quantile. The normal curve has two parameters; the Student-t curve adds a third, the degrees of freedom, which makes its tails fatter:
 
@@ -198,7 +198,7 @@ Empirical 99% quantile of price changes over horizons up to 10 days, in Romania 
 
 A VaR is a promise about how often losses will exceed it, and the promise can be checked after the fact. This section counts exceedances with the Kupiec test, checks their timing with the Christoffersen test and the Basel traffic light, and tests ES with the Acerbi–Székely statistic, over 3,587 days.
 
-## Kupiec test: are there as many exceedances as promised? {h=1942c185}
+## Kupiec test of the exceedance frequency {h=75883790}
 
 A 99% VaR promises to be exceeded on 1% of days. The Kupiec (1995) test counts the exceedances and tests whether their share differs from that promise:
 
@@ -212,7 +212,7 @@ For the 99% VaR on 3,587 days, 35.9 exceedances are expected. The normal VaR had
 
 @practice ask for the exceedance count before you trust anyone's VaR.
 
-## Christoffersen test: do exceedances come in clusters? {h=ce564536}
+## Christoffersen test of independent exceedances {h=d0331e9c}
 
 A good model is not surprised twice in a row: an exceedance today should not make one tomorrow more likely. Christoffersen (1998) tests this by comparing two conditional probabilities:
 
@@ -269,7 +269,7 @@ In the crisis even FHS was exceeded on 2.88% of days in Romania: the gas shock m
 
 @practice test every model on 2021–2022 before you trust it in a crisis.
 
-## Backtesting ES: are the losses beyond VaR as large as forecast? {h=13ae87ce}
+## Backtesting ES: the size of losses beyond VaR {h=061813ec}
 
 ES cannot be checked by counting, because it is a statement about the size of the losses beyond VaR. Acerbi and Székely (2014) divide each exceedance loss by its ES forecast; if ES is right, these ratios average 1:
 
@@ -289,7 +289,7 @@ Every ES was too small in the crisis, the normal one by the widest margin. Since
 
 @practice judge ES on several years, never on one quarter (about 9 tail days a year).
 
-## AIDA 2026: one conformal shift measures how far a VaR misses, and repairs it {h=dc1b80ab}
+## AIDA 2026: a conformal shift measures and corrects the miscalibration of VaR {h=ce542221}
 
 At the AIDA conference (Bucharest University of Economic Studies, 4 June 2026), D. T. Pele presented joint work with V. Bolovăneanu, A. T. Ginavar, S. Lessmann and W. K. Härdle on recalibrating VaR forecasts ([slides](https://github.com/danpele/EMQA/blob/main/resources/aida2026/pele_conformal_tail_risk.pdf); the paper is submitted). The method needs a single number. Each day the score $s_t=\hat q_t-r_t$ compares the forecast quantile with the realised return and is positive on an exceedance day; $\hat q_V$ is the 99% quantile of past scores, and the corrected VaR is the VaR plus $\hat q_V$. The shift is either fixed on a calibration sample (an audit) or rolled over the last 250 days (for daily use). The work applies it to the 1% VaR of 10 models, foundation models, GARCH-type models and HS, on 24 assets including oil and gas, 240 pairs in all, and judges the result with the Kupiec and Christoffersen tests and the traffic light of this section.
 
@@ -346,7 +346,7 @@ With $\tau$ = 0.99 over 2017–2026, the price stayed below the forecast on 96.9
 
 @practice size the bank line behind the guarantee on the crisis quantile, before the crisis.
 
-## Widening the tails brings the 99% quantile close to its promise {h=396abf42}
+## Heavier tails bring the 99% quantile close to its nominal coverage {h=4b1190e2}
 
 The chart compares, through the backtest, the share of days on which the price stayed below each 99% forecast. The Kupiec $p$-values at 99% are below 0.001 for plain QR, 0.003 for the widened QR and 0.005 for FHS: the conformal correction moves the coverage close to its promise, though not quite to it. At 95% the widened QR passes, with $p$ = 0.053, as Lecture 2 suggested for the tails (Nowotarski and Weron, 2018).
 
@@ -371,7 +371,7 @@ With the FHS 99% VaR on Romanian data, the median VaR of 2019 was 20.27 EUR/MWh,
 
 A supplier and a producer face the same price but opposite tails, and a supplier's monthly bill adds the shape of its load. This section measures the supplier's monthly cash-flow-at-risk, compares the two tails and summarises case study C4 on systemic and energy-specific risks.
 
-## A supplier's monthly cost-at-risk: the normal limit failed again {h=0eaeb60f}
+## A supplier's monthly cost-at-risk under the normal distribution {h=46817159}
 
 A supplier prices next month at this month's cost; the risk is a jump of the load-weighted price. The cost overrun and its quantile are
 
@@ -484,7 +484,7 @@ Three recent papers from our group, at the Bucharest University of Economic Stud
 - **Foundation models for VaR and ES** (Jheng, Tak, Găman, Mazurencu-Marinescu-Pele and Pele, 2026). The paper uses ten daily return series from five Central and Eastern European (CEE) markets, including Romania, out of sample in 2018–2025. It applies three pre-trained time-series models, without fine-tuning, against classical benchmarks, and evaluates them with the Kupiec, Christoffersen and Acerbi–Székely tests and the Basel traffic light. The best raw model has a green-zone rate of 90%, which rises to 96.7% after a rolling conformal calibration, the highest of all models.
 - **How precise is an ES comparison?** (Pele and Mazurencu-Marinescu-Pele, 2026). The paper turns the $(n\alpha)^{-1/2}$ precision limit of ES into four practical diagnostics, including a sample-size rule. On global financial assets it finds that about one in five pairwise ES comparisons cannot be trusted at regulatory tail levels.
 
-## Want to learn more? {h=6f35f6fb}
+## Further reading and resources {h=b6d305d6}
 
 - **McNeil, Frey and Embrechts**, *Quantitative Risk Management*, 2nd edition: VaR, ES, EVT and backtesting.
 - **Christoffersen**, *Elements of Financial Risk Management*, 2nd edition: FHS and backtests, with exercises.

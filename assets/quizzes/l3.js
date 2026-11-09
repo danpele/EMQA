@@ -523,7 +523,7 @@ window.EMQA_DATA.quizzes['l3'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Tails before asymmetry",
+                "title": "Fat tails versus asymmetry",
                 "text": "Six models, the generalised autoregressive conditional heteroskedasticity (GARCH) model, the Glosten–Jagannathan–Runkle (GJR) model and the exponential GARCH (EGARCH) model, each with normal and Student-t shocks, are compared by the Bayesian information criterion (BIC) in both units. What is the main lesson?",
                 "options": [
                     "Asymmetry matters most: GJR with normal shocks beats GARCH with Student-t shocks",
@@ -535,7 +535,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "In percent, GJR with normal shocks has a BIC of 24,690.7, far above 24,220.8 for GARCH with Student-t shocks; fat tails dominate in both units."
             },
             "ro": {
-                "title": "Cozile înaintea asimetriei",
+                "title": "Cozile groase și asimetria",
                 "text": "Șase modele, modelul cu heteroscedasticitate condiționată autoregresivă generalizată (GARCH), modelul Glosten–Jagannathan–Runkle (GJR) și modelul GARCH exponențial (EGARCH), fiecare cu șocuri normale și Student, sînt comparate cu criteriul informațional bayesian (BIC), în ambele unități. Care este lecția principală?",
                 "options": [
                     "Asimetria contează cel mai mult: GJR cu șocuri normale îl depășește pe GARCH cu șocuri Student",
@@ -793,7 +793,7 @@ window.EMQA_DATA.quizzes['l3'] = {
         {
             "correct": 0,
             "en": {
-                "title": "A limit that jumps without news",
+                "title": "Limit changes without news",
                 "text": "On 22 January 2026 a shock of +124 euro per megawatt-hour (EUR/MWh) hit. The next day the forecast $\\hat\\sigma$ of the generalised autoregressive conditional heteroskedasticity (GARCH) model jumped from 25 to 47 EUR/MWh, the 30-day historical forecast only to 33; thirty days later the historical forecast fell from 32 to 23 overnight. What does this teach a risk manager?",
                 "options": [
                     "A limit that jumps 30 days after a shock, with no news, is the sign of a historical-window model",
@@ -805,7 +805,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "Nothing happened on the day of the drop: the shock simply left the window. GARCH's quick reaction is why it beats the history out of sample."
             },
             "ro": {
-                "title": "O limită care sare fără știri",
+                "title": "Modificarea limitei în absența știrilor",
                 "text": "La 22 ianuarie 2026 a avut loc un șoc de +124 euro pe megawatt-oră (EUR/MWh). A doua zi, prognoza $\\hat\\sigma$ a modelului cu heteroscedasticitate condiționată autoregresivă generalizată (GARCH) a crescut de la 25 la 47 EUR/MWh, iar prognoza istorică pe 30 de zile doar la 33; după 30 de zile, prognoza istorică a scăzut într-o singură zi de la 32 la 23. Ce învață din aceasta un manager de risc?",
                 "options": [
                     "O limită care se modifică brusc la 30 de zile după un șoc, fără nicio informație nouă, trădează un model cu fereastră istorică",
@@ -901,7 +901,7 @@ window.EMQA_DATA.quizzes['l3'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Is 2026 a new 2022?",
+                "title": "2026 compared with 2022",
                 "text": "In 2026 the mean monthly $\\hat\\sigma$ in percent was 17.4%, as in 2022; in euro per megawatt-hour (EUR/MWh) it doubled from 2019 (10.9 to 21.8) but peaked at 34.7 in January 2026, against 65.1 in September 2022. How should a supplier renewing contracts in November 2026 price risk?",
                 "options": [
                     "As in 2022, since percent volatility is identical",
@@ -913,7 +913,7 @@ window.EMQA_DATA.quizzes['l3'] = {
                 "incorrectExplanation": "Percent volatility is the same in all three years and says nothing about money at risk; in EUR/MWh 2026 is clearly above 2019 but far below the 2022 peak."
             },
             "ro": {
-                "title": "Este 2026 un nou 2022?",
+                "title": "Anul 2026 comparat cu 2022",
                 "text": "În 2026, $\\hat\\sigma$ lunar mediu în procente a fost de 17,4%, ca în 2022; în euro pe megawatt-oră (EUR/MWh) s-a dublat față de 2019 (de la 10,9 la 21,8), dar maximul din 2026, 34,7 în ianuarie, rămîne mult sub cel din 2022, 65,1 în septembrie. Cum trebuie să includă riscul în preț un furnizor care reînnoiește contractele în noiembrie 2026?",
                 "options": [
                     "Ca în 2022, deoarece volatilitatea procentuală este aceeași",

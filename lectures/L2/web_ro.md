@@ -36,7 +36,7 @@ Din ziua de livrare 1 octombrie 2025, licitația stabilește 96 de prețuri pe s
 
 Calendarul contează pentru că stabilește ce poate ști prognozistul. Prognoza pentru ziua $d$ trebuie să fie gata înainte de închiderea licitației, la prînz în ziua $d-1$, iar ziua $d$ începe abia după douăsprezece ore și se încheie la 36 de ore după licitație.
 
-## Notația și regula pe care o respectă toate prognozele {h=d9b0d031}
+## Notația și regula informației disponibile pentru toate prognozele {h=27ee4468}
 
 Cursul folosește o notație fixă. Ziua livrării este $d$; $d-1$ este ziua dinainte, în care are loc licitația; $d-2$ este cu două zile înainte. Ora livrării este $h=0,\dots,23$ (CET), $P_{d,h}$ este prețul PZU al orei $h$ din ziua $d$, în EUR/MWh (euro pe megawatt-oră), iar $\hat P_{d,h}$ este prognoza acestui preț.
 
@@ -421,7 +421,7 @@ Pentru România și Ungaria, cu date zilnice din 1 ianuarie 2022, $\hat\beta$ = 
 
 @practice o poziție pe diferența de preț RO–HU se închide în cîteva zile, nu în luni.
 
-## România și Ungaria: piețe cuplate, cu o diferență de preț care se închide repede {h=7a01d77c}
+## România și Ungaria: prețuri cointegrate pe piețe cuplate {h=146a5487}
 
 Panoul de sus al graficului arată prețurile zilnice de bază din România (OPCOM PZU) și din Ungaria (HUPX) din 2022, iar panoul de jos diferența dintre ele. La această scară, cele două serii aproape că nu se pot distinge. Diferența RO − HU are media −2,07 EUR/MWh și abaterea standard 15,08. Prin comparație, diferența dintre România și Germania–Luxemburg are media 21,06 și abaterea standard 37,79: piața mai îndepărtată este mai slab legată de cea românească.
 
@@ -496,7 +496,7 @@ Graficul arată o singură zi, 1 iulie 2026: prețul realizat pe 15 minute, prog
 @chart mtu15
 Prețurile realizate pe 15 minute din 1 iulie 2026, prognoza orară AW-LEAR constantă în interiorul orei și prognoza cu profilul intraorar din ultimele 28 de zile, în EUR/MWh.
 
-## Studiul de caz (d): cît valorează, în bani, o prognoză mai bună {h=46687da1}
+## Studiul de caz (d): valoarea economică a unei prognoze mai precise {h=8c518e6a}
 
 O rMAE mai bună contează numai dacă schimbă deciziile. Studiul de caz traduce acuratețea prognozei în bani pentru doi utilizatori. Primul este o baterie de 1 MW (megawatt) și 2 MWh, cu randament de 90%, care face un ciclu pe zi: se încarcă în orele cele mai ieftine și se descarcă în cele mai scumpe, alese după prognoză. În cele 363 de zile fără schimbarea orei, bateria cîștigă 90 738 EUR pe MW cu prognoza ansamblului, adică 91,0% din profitul cu informație perfectă, față de 84 623 EUR cu modelul naiv.
 

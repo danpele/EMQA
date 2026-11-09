@@ -36,7 +36,7 @@ Since 1 October 2025 the auction sets 96 quarter-hour prices per day instead of 
 
 The timeline matters because it fixes what a forecaster can know. The forecast for day $d$ must be ready before the gate closes at noon on $d-1$, while day $d$ itself starts only twelve hours later and ends 36 hours after the auction.
 
-## Notation, and the rule every forecast obeys {h=2a8d11c4}
+## Notation and the information rule for all forecasts {h=9b777e55}
 
 The lecture uses a fixed notation. The delivery day is $d$; $d-1$ is the day before, when the auction runs; $d-2$ is two days before. The hour of delivery is $h=0,\dots,23$ in CET, $P_{d,h}$ is the day-ahead price of hour $h$ on day $d$ in EUR/MWh (euro per megawatt-hour) and $\hat P_{d,h}$ is its forecast.
 
@@ -65,7 +65,7 @@ The chart shows how the sample is used. The first forecast is made with a calibr
 @chart split_timeline
 Daily base price of Romania from 1 Jan 2022 to 31 Oct 2026, in EUR/MWh, with the first 728-day calibration window, the 182-day burn-in and the 365-day test period shaded.
 
-## Older information, larger error, except at the weekly lag {h=66499fbc}
+## Forecast error grows with the age of the information, except at the weekly lag {h=0ccc49d1}
 
 The simplest possible forecast copies the price of the same hour $k$ days earlier, $\hat P_{d,h}=P_{d-k,h}$. The chart shows its MAE on the test year as a function of the age $k$ of the information. With yesterday's price, $k=1$, the MAE is 29.37 EUR/MWh. With the price of two days earlier it rises to 38.52, because the information is older. At $k=7$, however, the error falls back to 34.41, since the same weekday a week earlier shares the weekly pattern of consumption.
 
@@ -201,7 +201,7 @@ The reason is timing. What happened on $d-2$ is already reflected in the price o
 
 @practice buy the TSO's day-ahead load and renewable forecasts before buying a more complex model.
 
-## One model per hour beats one model for all hours {h=19f39679}
+## Separate models for each hour are more accurate than a single model {h=2a395045}
 
 An alternative to 24 hourly regressions is a single pooled regression for all hours, with hour-specific intercepts but common slopes. The pooled model is simpler and uses 24 times more observations per coefficient, but it forces every hour to react in the same way to yesterday's price and to the fundamentals.
 
@@ -212,7 +212,7 @@ On the test year the per-hour ARX(728) has MAE 22.72 EUR/MWh, while the pooled v
 @chart per_hour_single
 MAE by hour (CET) on the test year for the naive benchmark, ARX(728) with one model for all hours and ARX(728) with one model per hour.
 
-## The asinh transformation tames spikes and negative prices {h=38e0f185}
+## The asinh transformation for price spikes and negative prices {h=884a4652}
 
 Electricity prices have spikes and can be negative, so a regression on raw prices is dominated by a few extreme hours. A variance-stabilising transformation (VST) compresses the extremes before estimation (Uniejewski, Weron & Ziel, 2018). The lecture uses the inverse hyperbolic sine:
 
@@ -239,7 +239,7 @@ On our data LEAR(728) keeps on average 42 of the 247 regressors (17%), between 8
 
 @practice a LASSO model explains itself, since the kept regressors show what drives each hour.
 
-## What LEAR keeps: yesterday's same hour and the weekday, rarely the lagged fundamentals {h=6d41cf38}
+## Regressors selected by LEAR: yesterday's same hour and the weekday, rarely the lagged fundamentals {h=3f718685}
 
 Because the LASSO sets coefficients exactly to zero, one can count how often each group of regressors survives. The heat map shows, for each hour of the day and each group of candidate regressors, the share kept by LEAR(728) over the 365 daily fits of the test year.
 
@@ -293,7 +293,7 @@ On our data the ensemble of 4 averages AW-ARX, AW-LEAR, a gradient boosting mach
 
 @practice ask vendors for forecasts you can average with yours, not for a single best model.
 
-## Results on the Romanian test year: the scoreboard {h=8e8df989}
+## Accuracy of all models on the Romanian test year {h=6f62c191}
 
 The table collects the accuracy of all models on the test year, 1 Nov 2025 to 31 Oct 2026, 8,760 hours. On the slide the cells are coloured per column, green for better and red for worse.
 
@@ -353,7 +353,7 @@ The profile by hour also shows where errors are concentrated. The hardest hour i
 @chart ml_hour
 MAE by hour (CET) on the test year for AW-LEAR, GBM, MLP and the ensemble of 4; the ML models are refitted monthly.
 
-## Our group on Romanian load: machine learning wins when the series is smooth {h=9f5c00f0}
+## Research from our group on Romanian load: machine learning is most accurate for smooth series {h=78d7fa39}
 
 Machine learning is not always behind linear models. A study from our group (Proșcanu, Proșcanu, Pele & Costea, 2025) benchmarked classical seasonal models against neural networks on the hourly national load of Romania for 2022–2024. Case study C2 of the course replicates the comparison under the same gate-closure rule as this lecture: 217 test days from 27 May 2024, with load metered up to $d-2$.
 
@@ -421,7 +421,7 @@ For Romania and Hungary, daily since 1 Jan 2022, $\hat\beta$ = 0.963 and the Eng
 
 @practice a RO–HU spread trade closes within days, not months.
 
-## Romania and Hungary: coupled markets, a spread that keeps closing {h=aa6c1c34}
+## Romania and Hungary: cointegrated prices in coupled markets {h=e1e4bf3a}
 
 The upper panel of the chart shows the daily base prices of Romania (OPCOM PZU) and Hungary (HUPX) since 2022; the lower panel shows their spread. The two series are almost indistinguishable at this scale. The spread RO − HU has a mean of −2.07 EUR/MWh and a standard deviation of 15.08. For comparison, the spread between Romania and Germany–Luxembourg has a mean of 21.06 and a standard deviation of 37.79: the farther market is less tightly linked.
 
@@ -496,7 +496,7 @@ The chart shows one day, 1 Jul 2026: the actual 15-minute price, the hourly AW-L
 @chart mtu15
 Actual 15-minute prices on 1 Jul 2026, the hourly AW-LEAR forecast kept flat within the hour and the forecast with the intra-hour shape of the 28 previous days, in EUR/MWh.
 
-## Case study (d): what a better forecast is worth {h=0ab1117e}
+## Case study (d): economic value of a more accurate forecast {h=876b8a41}
 
 A better rMAE is useful only if it changes decisions. The case study translates forecast accuracy into money for two users. The first is a battery of 1 MW (megawatt) and 2 MWh with a round-trip efficiency of 90%, which runs one daily cycle, charging in the cheapest hours and discharging in the most expensive ones as chosen from the forecast. Over the 363 days without DST it earns 90,738 EUR per MW with the ensemble forecast, which is 91.0% of the profit under perfect foresight, against 84,623 EUR with the naive forecast.
 
@@ -561,7 +561,7 @@ Several papers from our group at the Bucharest University of Economic Studies an
 - **Explaining price forecasts across horizons.** Andrei, Pele & Cramer (2026) show which drivers matter at which forecast horizon and in which price regime for Romanian hourly prices.
 - **Early warning of price spikes.** Andrei, Pele, Cramer, Amza & Diaconu (2026) build an explainable artificial intelligence (AI) system for the Romanian market in which the previous price and the residual load drive the spikes, a preview of Lecture 7.
 
-## Want to learn more? {h=d7888f9d}
+## Further reading and resources {h=d56d4fb1}
 
 - R. Weron, IIF Distinguished Lectures on electricity price forecasting (2025): slides [part I](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_1.pdf), [part II](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_2.pdf) and [notebooks](https://github.com/lipiecki/energy-analytics-2025).
 - epftoolbox, with LEAR and DNN and the open benchmark of Lago et al. (2021): [github.com/jeslago/epftoolbox](https://github.com/jeslago/epftoolbox).

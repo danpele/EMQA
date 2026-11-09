@@ -291,7 +291,7 @@ Prețul gazelor la hubul olandez Title Transfer Facility (TTF) & lunară & Banca
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Jorion, 2007; Christoffersen, 2012)}\hfill\tryit{notebook-ul Jupyter, secțiunea 3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Repartițiile normală și Student-$t$: doi sau trei parametri}
+\begin{frame}{VaR parametrică: repartițiile normală și Student-$t$}
 \footnotesize
 \intuition{Ajustăm o curbă pe variațiile din ultimul an și citim cuantila ei; curba Student-$t$ are cozi mai groase.}
 \begin{columns}[T,onlytextwidth]
@@ -476,7 +476,7 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
 
 \section{Testarea retrospectivă a VaR și ES}
 
-\begin{frame}{Testul Kupiec: sînt atîtea depășiri cîte au fost promise?}
+\begin{frame}{Testul Kupiec pentru frecvența depășirilor}
 \footnotesize
 \intuition{O VaR de 99\% promite că va fi depășită în 1\% din zile; numărăm depășirile și testăm dacă proporția lor diferă de 1\%.}
 \begin{columns}[T,onlytextwidth]
@@ -511,7 +511,7 @@ EVT & 35{,}66 & 64{,}33 & 68{,}54 & 154 & 164 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Testul Christoffersen: apar depășirile grupate?}
+\begin{frame}{Testul Christoffersen pentru independența depășirilor}
 \footnotesize
 \intuition{Un model bun nu este surprins de două ori la rînd: o depășire azi nu trebuie să facă mai probabilă o depășire mîine.}
 \begin{columns}[T,onlytextwidth]
@@ -604,7 +604,7 @@ EVT & \cellcolor{Forest!48}1{,}24 & \cellcolor{Forest!15}2{,}47 & \cellcolor{For
 \par\vfill\noindent{\scriptsize\color{FooterGray}(estimări proprii)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Testarea ES: sînt pierderile de dincolo de VaR atît de mari cît s-a prognozat?}
+\begin{frame}{Testarea ES: mărimea pierderilor de dincolo de VaR}
 \footnotesize
 \intuition{Împărțim fiecare pierdere din zilele cu depășiri la prognoza ES; dacă ES este corect, media este 1.}
 \begin{columns}[T,onlytextwidth]
@@ -640,7 +640,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Acerbi \& Székely, 2014; Pele \& Mazurencu-Marinescu-Pele, 2026)}\hfill\tryit{notebook-ul Jupyter, secțiunea 4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează}
+\begin{frame}{AIDA 2026: deplasarea conformală corectează erorile de calibrare ale VaR}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Ce a făcut lucrarea} (D.\,T.\ Pele, conferința AIDA (AI and Digital Assets in Energy and Finance), 4 iunie 2026)
@@ -774,7 +774,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 2025; Koenker \& Bassett, 1978; Romano et al., 2019)}\hfill\tryit{notebook-ul Jupyter, secțiunea 6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Lărgirea cozilor apropie cuantila de 99\% de acoperirea promisă}
+\begin{frame}{Lărgirea cozilor apropie cuantila de 99\% de acoperirea nominală}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/ro/coverage.pdf}\end{center}\vspace{-3mm}
 \chartsource{Sursa: energy-charts.info (Fraunhofer ISE); prețurile PZU ale OPCOM, prin ENTSO-E; estimări proprii. Date: prognoze 2017-01-01 - 2026-10-31, cuantila de 99\%.}
@@ -826,7 +826,7 @@ EVT & 0{,}279 & 0{,}009 & 1{,}183 & $<$0{,}001 & \ensuremath{-}0{,}114 & 0{,}722
 
 \section{Riscul de preț pentru furnizori și producători}
 
-\begin{frame}{Costul lunar la risc al unui furnizor: limita normală a eșuat din nou}
+\begin{frame}{Costul lunar la risc al unui furnizor, calculat cu repartiția normală}
 \footnotesize
 \intuition{Furnizorul stabilește prețul lunii viitoare după costul lunii curente; riscul este un salt al prețului ponderat cu consumul.}
 \begin{columns}[T,onlytextwidth]

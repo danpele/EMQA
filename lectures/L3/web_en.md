@@ -183,7 +183,7 @@ The Student model wins clearly, with a much lower BIC. The difference is not onl
 
 @practice Use Student-t shocks: with normal shocks the limits stay wide for too long.
 
-## GARCH volatility: short spikes in percent, a long hump in EUR/MWh {h=4b81e446}
+## GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh {h=c7dd8e99}
 
 The chart shows the daily conditional volatility $\hat\sigma_t$ of the two GARCH(1,1)-t models over the whole sample. In percent, volatility consists of short spikes on top of a fairly stable floor; the highest, 156% per day, came on 26 December 2023, right after the Christmas fall, and was gone within days. In EUR/MWh the picture is a long hump: volatility rose through 2021, peaked at 85.7 EUR/MWh on 4 September 2022, at the height of the crisis, and came down slowly through 2023. The minimum, 8.8 EUR/MWh, was on 6 July 2019, and at the cut-off of the data the value was 27.4.
 
@@ -376,7 +376,7 @@ Estimated on the data before the test year, the weights are $\hat b_D$ = 0.40, $
 
 @practice A battery operator schedules maintenance on days with low forecast variation.
 
-## HAR forecasts follow intraday variation, not its isolated spikes {h=9838c041}
+## HAR forecasts track the level of intraday variation but smooth out isolated spikes {h=a8eecf85}
 
 The chart shows, over the test year from 1 November 2025 to 31 October 2026, the realised intraday variation of each day and the HAR forecast made the day before. The model is re-estimated every day on the data available on $d-1$, so the forecast uses no future information. Its mean absolute error is 35.6 EUR/MWh.
 
@@ -549,7 +549,7 @@ Spillovers are strongly time-varying and mainly short-run: the short-run band is
 
 @practice Shocks between energy tokens and other markets pass within days; judge the diversification value of each token separately.
 
-## Want to learn more? {h=df06a6cc}
+## Further reading and resources {h=ac8f3804}
 
 - **R. F. Engle, GARCH 101** (2001): the clearest short introduction, by the Nobel laureate who invented ARCH, [doi:10.1257/jep.15.4.157](https://doi.org/10.1257/jep.15.4.157).
 - **R. Weron, Modeling and Forecasting Electricity Loads and Prices** (Wiley, 2006): stylised facts and volatility of power prices, [doi:10.1002/9781118673362](https://doi.org/10.1002/9781118673362).

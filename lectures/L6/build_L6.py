@@ -340,7 +340,7 @@ def build(lang, H=None):
                tryit=NB + " \\S4", height="0.56\\textheight", size="footnotesize",
                cite="(López Prol, Steininger \\& Zilberman, 2020, ENEECO)")
 
-    D.chart(t("The region cannibalises together: Romanian, Bulgarian and Hungarian capture rates fell in step",
+    D.chart(t("Regional cannibalisation: Romanian, Bulgarian and Hungarian capture rates fell in step",
               "Rata de captare solară a scăzut simultan în România, Bulgaria și Ungaria"), "capture_region", [
         t(("\\textbf{2025}: Romania @{capt.RO.solar.2025.crp|.1f}\\%, Bulgaria @{capt.BG.solar.2025.crp|.1f}\\%, Hungary @{capt.HU.solar.2025.crp|.1f}\\%",
            "@{Y}: Bulgaria rises to @{capt.BG.solar.2026.crp|.1f}\\% as its battery fleet grows, an association, not a proof"),
@@ -708,7 +708,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{Hirth (2013)}: the reference paper on the value factor of wind and solar: ",
           "\\textbf{Hirth (2013)}: lucrarea de referință despre rata de captare a energiei eoliene și solare: ") + "\\href{https://doi.org/10.1016/j.eneco.2013.02.004}{doi:10.1016/j.eneco.2013.02.004}.",
         t("\\textbf{Cole \\& Karmakar (2023)}: battery costs, efficiency and lifetime used in this lecture: ",

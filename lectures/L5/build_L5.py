@@ -217,7 +217,7 @@ def build(lang, H=None):
                                          "contează și momentul: contractele cumpărate la sfîrșitul lui 2021 au costat dublu."),
         tryit=NB + " \\S2", cite=t("(own computation; OPCOM)", "(calcule proprii; OPCOM)"))
 
-    D.frame(t("The crisis froze forward trading and brought regulated prices", "Criza a blocat piața forward și a adus prețuri reglementate"), it(
+    D.frame(t("The crisis reduced forward trading and led to regulated prices", "Criza a redus tranzacțiile forward și a dus la prețuri reglementate"), it(
         t(("\\textbf{A transfer, not a gain}", "each MWh sold forward for 2022 went @{crisis.gap|.1f} EUR/MWh below spot: producers lost what hedged suppliers saved"),
           ("\\textbf{Un transfer, nu un cîștig}", "fiecare MWh vîndut forward pentru 2022 a fost cu @{crisis.gap|.1f} EUR/MWh sub spot: producătorii au pierdut exact cît au economisit furnizorii acoperiți")),
         t(("\\textbf{Then forwards overshot}", "calendar 2023 traded up to @{crisis.c23_max|.1f} on @{crisis.c23_argmax|date}; 2023 averaged @{cal.2023.realised|.1f} EUR/MWh"),
@@ -445,7 +445,7 @@ def build(lang, H=None):
         h_ = hg[z]
         return [lab, fmt(h_["h"], ".3f", lang), fmt(h_["se"], ".3f", lang), "[" + fmt(h_["lo"], ".2f", lang) + "; " + fmt(h_["hi"], ".2f", lang) + "]",
                 fmt(h_["r2"], ".2f", lang), fmt(h_["h_in"], ".2f", lang), fmt(h_["vr_oos_h"], ".1f", lang) + "\\%"]
-    D.frame(t("Hungary hedges Romania almost fully; Germany leaves a fifth", "Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime"),
+    D.frame(t("Cross-border hedges: Hungarian contracts are more effective than German ones", "Acoperirea cu contracte din alte zone: contractele din Ungaria sînt mai eficiente decît cele germane"),
             D.fig("hedge_scatter", "0.47\\textheight") + "\n\\vspace{0.3mm}\n" +
             "\\begin{center}" + table("@{}lrrrrrr@{}",
                                       [t("Hedge", "Instrument"), "$h^{*}$", t("HAC s.e.", "eroare std.\\ HAC"), t("bootstrap 95\\%", "bootstrap 95\\%"), "$R^2$",
@@ -455,7 +455,7 @@ def build(lang, H=None):
                        "folosiți contractele din Ungaria înaintea celor din Germania."), NB + " \\S5"),
             "footnotesize", cite=t("(own computation; out of sample: $h^{*}$ of 2015--2020 applied from 2021)", "(calcule proprii; $h^{*}$ din 2015--2020, testat din 2021)"))
 
-    D.concept(t("Basis risk: what a foreign hedge leaves behind", "Riscul de bază: ce lasă descoperit un contract din altă zonă"),
+    D.concept(t("Basis risk of a cross-border hedge", "Riscul de bază al unui contract din altă zonă"),
               t("Hedged with a German future, a Romanian supplier pays the German forward plus the Romania--Germany gap at delivery.",
                 "Acoperit cu un contract futures german, furnizorul din România plătește forward-ul german plus diferența România--Germania de la livrare."),
               "\\[ \\bar S^{\\text{RO}}-h(\\bar S^{X}-F^{X}_0)=hF^{X}_0+\\underbrace{(\\bar S^{\\text{RO}}-h\\bar S^{X})}_{\\text{" + t("basis } b", "baza } b") + "} \\]" +
@@ -540,7 +540,7 @@ def build(lang, H=None):
                 "întrebați banca ce volatilitate a folosit; prima crește aproape proporțional cu $\\sigma$."),
               tryit=NB + " \\S6", cite="(Black, 1976; Hull, 2022)", wl="0.58", wr="0.39")
 
-    D.frame(t("Volatility is the input you must estimate; real estimates disagree", "Volatilitatea trebuie estimată, iar estimările reale diferă"), cols(
+    D.frame(t("Estimating volatility for option pricing: estimates differ across data sources", "Estimarea volatilității pentru evaluarea opțiunilor: estimările diferă în funcție de sursa datelor"), cols(
         it((t("\\textbf{1. Romanian yearly forwards}", "\\textbf{1. Forward-urile anuale din România}"),
             t("irregular auctions: $\\hat\\sigma^2=\\sum_k(\\Delta\\ln F_k)^2/\\sum_k\\Delta t_k$, gaps $\\le$ 30 days",
               "licitații neregulate: $\\hat\\sigma^2=\\sum_k(\\Delta\\ln F_k)^2/\\sum_k\\Delta t_k$, intervale de cel mult 30 de zile"),
@@ -624,7 +624,7 @@ def build(lang, H=None):
     def crow(k, lab):
         c = cs[k]
         return [lab, fmt(c["mean"], ".1f", lang), fmt(c["sd"], ".1f", lang), fmt(c["max"], ".1f", lang), fmt(c["eur_mw"], ",.0f", lang)]
-    D.frame(t("Case study: the forward cut cost and risk; the cap cut risk", "Studiul de caz: forward-ul a redus costul și riscul"), cols(
+    D.frame(t("Case study: the forward reduced cost and risk, the cap reduced risk", "Studiul de caz: forward-ul a redus costul și riscul, iar plafonul doar riscul"), cols(
         table("@{}lrrrr@{}", [t("EUR/MWh", "EUR/MWh"), t("mean", "media"), t("st.\\ dev.", "abat.\\ std."), t("worst", "maxim"), t("EUR/MW", "EUR/MW")],
               [crow("spot", t("spot", "spot")), crow("fwd", t("100\\% forward", "100\\% forward")),
                crow("half", t("50\\% forward", "50\\% forward")), crow("cap", t("caps", "plafoane"))], size="footnotesize", stretch="1.25") +
@@ -723,7 +723,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{J.\\ Hull, Options, Futures, and Other Derivatives}, chapters on hedging, futures and Black's model.",
           "\\textbf{J.\\ Hull, Options, Futures, and Other Derivatives}, capitolele despre acoperirea riscului, contracte futures și modelul Black."),
         t("\\textbf{Benth, Šaltytė Benth \\& Koekebakker (2008)}: forward curves and options in electricity markets.",

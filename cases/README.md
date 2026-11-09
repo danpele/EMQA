@@ -34,7 +34,7 @@ Papers cited only as pointers inside the briefs, not replicated:
 
 | File | Content |
 |---|---|
-| `Cx_case_EN.pdf`, `Cx_case_RO.pdf` | The case brief (question, paper, method, replication with figures and tables, 5 discussion questions, limitations of the classroom replication), followed by a one-page "case at a glance". |
+| `Cx_case_EN.pdf`, `Cx_case_RO.pdf` | The case brief (question, paper, method, replication with figures and tables, 5 discussion questions, limitations of the classroom replication), followed by a one-page summary of the case. |
 | `Cx_brief.tex` | One LaTeX source for both languages (`\T{EN}{RO}`). `Cx_case_EN.tex` and `Cx_case_RO.tex` are the wrappers. |
 | `Cx_notebook_EN.ipynb`, `Cx_notebook_RO.ipynb` | The simplified replication, end to end. The code is the same in both; the RO notebook has Romanian text and shows the Romanian charts. Both are executed. |
 | `nb_spec.py` | The source of the two notebooks (cells in EN and RO). Edit this file, not the notebooks. |

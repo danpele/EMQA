@@ -173,7 +173,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Same data, same test year as Lecture 2, plus a validation year", "Aceleași date și același an de test ca în cursul 2, plus un an de validare"), table(
+    D.frame(t("Data: the Lecture 2 sample and test year, with an added validation year", "Datele: eșantionul și anul de test din cursul 2, cu un an suplimentar de validare"), table(
         "@{}p{0.24\\textwidth}p{0.70\\textwidth}@{}",
         [t("Element", "Element"), t("Choice in this lecture", "Alegerea din acest curs")],
         [[t("Target", "Variabila prognozată"),
@@ -484,7 +484,7 @@ def build(lang, H=None):
         dmp = pval(f"dm.{dmk}.p") if dmk in N["dm"] else "--"
         rows.append([lab] + [heat(a[k][c], min(vals[c]), max(vals[c]), c != "vs_lear", fmt(a[k][c], f, lang))
                              for c, f in [("mae", ".2f"), ("rmse", ".2f"), ("rmae", ".3f"), ("vs_lear", "+.1f")]] + [dmp])
-    D.frame(t("Scoreboard: Chronos-2 is the best single model",
+    D.frame(t("Model ranking: Chronos-2 is the best single model",
               "Clasamentul: Chronos-2 este cel mai bun model individual"),
             "\\begin{center}" + table("@{}lrrrrr@{}", [t("Model", "Model"), "MAE", "RMSE", "rMAE", t("vs AW-LEAR, \\%", "față de AW-LEAR, \\%"),
                                                      t("DM $p$", "DM, $p$")], rows, size="scriptsize", stretch="0.96") + "\\end{center}\\vspace{-2mm}" + note(
@@ -735,7 +735,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 7 pitfalls
     D.section(t("Evaluation errors that overstate accuracy", "Erori de evaluare care supraestimează precizia"))
-    D.chart(t("Look-ahead: two invalid evaluations flatter XGBoost", "Informația din viitor: două evaluări invalide avantajează XGBoost"), "pit_leak", [
+    D.chart(t("Look-ahead bias: two invalid evaluations overstate the accuracy of XGBoost", "Informația din viitor: două evaluări invalide avantajează XGBoost"), "pit_leak", [
         (t("\\textbf{Shuffled 5-fold cross-validation}: future days end up in the training sample",
            "\\textbf{Validare încrucișată cu 5 subeșantioane amestecate}: zile din viitor intră în antrenare"),
          t("MAE @{pit.shuffled|.2f} instead of @{pit.honest|.2f}: @{pit.shuf_gain|.1f}\\% better, on paper only", "MAE @{pit.shuffled|.2f} în loc de @{pit.honest|.2f}: cu @{pit.shuf_gain|.1f}\\% mai bine, doar pe hîrtie")),
@@ -872,7 +872,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{epftoolbox}: the DNN and LEAR of Lago et al.\\ (2021) with open benchmark data --- ",
           "\\textbf{epftoolbox}: rețeaua DNN și modelul LEAR din Lago et al.\\ (2021), cu date deschise pentru evaluare --- ") +
         "\\href{https://github.com/jeslago/epftoolbox}{github.com/jeslago/epftoolbox}.",

@@ -172,7 +172,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Association, not causation",
+                "title": "Association and causation",
                 "text": "In the price regression, $\\alpha_{m(t)}$ is a constant for the month of hour $t$. What does it absorb, and why is the solar coefficient still read as an association rather than a causal effect?",
                 "options": [
                     "It absorbs the clock-hour pattern; the coefficient is causal because the hour is fixed",
@@ -184,7 +184,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "The clock hour has its own constant $\\gamma_{h(t)}$ and flows are not in the model. Fixed effects remove calendar patterns only; other variables that move with sunshine may still be picked up by the solar coefficient."
             },
             "ro": {
-                "title": "Asociere, nu cauzalitate",
+                "title": "Asocierea și cauzalitatea",
                 "text": "În regresia prețului, $\\alpha_{m(t)}$ este o constantă pentru luna orei $t$. Ce preia ea și de ce coeficientul solarului se citește totuși ca o asociere, nu ca un efect cauzal?",
                 "options": [
                     "Preia profilul orei din zi; coeficientul este cauzal pentru că ora este fixată",
@@ -901,7 +901,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Batteries erode their spread",
+                "title": "Self-cannibalisation of batteries",
                 "text": "On the OPCOM (Romanian market operator) curves of 21 Oct 2026, the evening price exceeded the midday price by 91.77 EUR/MWh (euro per megawatt-hour). Adding $X$ MW (megawatts) of batteries as midday demand and evening supply, what happens to the spread on the local order book alone?",
                 "options": [
                     "With 50 MW it becomes −13.15 EUR/MWh: 50 MW are enough to close it, an upper bound since flows adjust in the coupled market",
@@ -913,7 +913,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "Batteries cannibalise their own spread just as solar cannibalises its price. 766 MW is the maximum Romanian battery output in 2026, not the volume that closes the local spread."
             },
             "ro": {
-                "title": "Bateriile își erodează diferența",
+                "title": "Autocanibalizarea bateriilor",
                 "text": "Pe curbele OPCOM (operatorul pieței din România) din 21 octombrie 2026, prețul de seară a depășit prețul de la amiază cu 91,77 EUR/MWh (euro pe megawatt-oră). Dacă se adaugă $X$ MW (megawați) de baterii, drept cerere la amiază și ofertă seara, ce se întîmplă cu diferența numai pe ofertele locale?",
                 "options": [
                     "Cu 50 MW devine −13,15 EUR/MWh: 50 MW sînt suficienți ca s-o anuleze, o limită superioară, pentru că în piața cuplată fluxurile se ajustează",
@@ -955,7 +955,7 @@ window.EMQA_DATA.quizzes['l6'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Same week, two verdicts",
+                "title": "Solar park and battery in the same week",
                 "text": "Case study: in the week of 20–26 Apr 2026, Romania had 24 negative hours and prices ranged from −99.75 to 328.00 EUR/MWh (euro per megawatt-hour). How did the week look for a solar park and for a battery?",
                 "options": [
                     "Good for both: high solar output and high price peaks",
@@ -967,7 +967,7 @@ window.EMQA_DATA.quizzes['l6'] = {
                 "incorrectExplanation": "Deep midday valleys and high evening peaks cut the value of solar output and widen the spread a battery trades: the same sunny week is the worst for a solar park and among the best for a battery."
             },
             "ro": {
-                "title": "Aceeași săptămînă, două verdicte",
+                "title": "Parcul solar și bateria în aceeași săptămînă",
                 "text": "Studiu de caz: în săptămîna 20–26 aprilie 2026, România a avut 24 de ore cu preț negativ, iar prețurile au variat între −99,75 și 328,00 EUR/MWh (euro pe megawatt-oră). Cum a arătat săptămîna pentru un parc solar și pentru o baterie?",
                 "options": [
                     "Bună pentru amîndouă: producție solară mare și vîrfuri mari de preț",

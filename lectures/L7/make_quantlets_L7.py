@@ -906,7 +906,7 @@ save_chart(fig, "snooping", bottom=0.27)''')],
     # ------------------------------------------------------------------ 15 pit_leak
     PF = ns["PF"]
     Q["pit_leak"] = dict(
-        title="Look-ahead: two invalid evaluations flatter XGBoost",
+        title="Look-ahead bias: two invalid evaluations overstate the accuracy of XGBoost",
         desc=("Test-year MAE of the tuned XGBoost evaluated honestly (monthly refits on past days), with shuffled 5-fold cross-validation "
               "(future days in the training folds) and with the realised load and wind+solar of the delivery day as inputs (not known at "
               f"gate closure), against AW-LEAR. Romanian day-ahead prices, {test}."),

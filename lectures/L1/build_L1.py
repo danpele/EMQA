@@ -188,7 +188,7 @@ def build(lang, H=None):
             "\\end{columns}")
     D.parts.append("% END-ABBR\n")
 
-    D.frame(t("Real data only: what we use and where it ends", "Numai date reale: surse și perioadă acoperită"), note(t("Exchanges: Romanian electricity and gas market operator (OPCOM), Independent Bulgarian Energy Exchange (IBEX), "
+    D.frame(t("Real data only: sources and sample period", "Numai date reale: surse și perioadă acoperită"), note(t("Exchanges: Romanian electricity and gas market operator (OPCOM), Independent Bulgarian Energy Exchange (IBEX), "
                "Hungarian Power Exchange (HUPX), European Power Exchange (EPEX SPOT); European Network of Transmission System "
                "Operators for Electricity (ENTSO-E).",
                "Burse: operatorul pieței de energie electrică și gaze naturale din România (OPCOM), bursa independentă de energie din "
@@ -388,7 +388,7 @@ def build(lang, H=None):
         tik += (f"\\fill[MainBlue] ({x:.2f},0) circle (2.2pt);\\draw[MainBlue] ({x:.2f},0) -- ({x:.2f},{yv * 0.55:.2f});\n"
                 f"\\node[align=center,text width=2.25cm,font=\\scriptsize] at ({x:.2f},{yv:.2f}) {{\\textbf{{{dte}}}\\\\ {txt}}};\n")
     tik += "\\end{tikzpicture}\\end{center}"
-    D.frame(t("Ten years of coupling: from four countries to one European auction", "Zece ani de cuplare: de la patru țări la o licitație europeană"),
+    D.frame(t("Milestones of market coupling for Romania, 2014--2025", "Etapele cuplării piețelor pentru România, 2014--2025"),
             "\\vspace{0.5mm}" + tik + "\n\\vspace{0.5mm}\n" + it(
                 t("Prices are computed by the Pan-European Hybrid Electricity Market Integration Algorithm (EUPHEMIA).",
                   "Prețurile se calculează cu algoritmul hibrid paneuropean de integrare a piețelor de energie electrică (EUPHEMIA)."),
@@ -397,7 +397,7 @@ def build(lang, H=None):
             "small", cite=t("(OPCOM press releases 2019--2025; IBEX/OPCOM, 27 Oct 2021; JAO)", "(comunicate OPCOM 2019--2025; IBEX/OPCOM, 27 oct. 2021; JAO)"))
 
     D.concept(
-        t("Since 1 October 2025 a trading day has 96 prices, not 24", "Din 1 octombrie 2025, o zi are 96 de prețuri, nu 24"),
+        t("The 15-minute market time unit since 1 October 2025", "Intervalul de tranzacționare de 15 minute, din 1 octombrie 2025"),
         t("The market time unit (MTU) shrank from one hour to 15 minutes, so every count of hours must be converted.",
           "Intervalul de tranzacționare (MTU) s-a redus de la o oră la 15 minute, așa că numărul intervalelor trebuie convertit "
           "în ore echivalente."),
@@ -423,8 +423,8 @@ def build(lang, H=None):
           "întrebați mereu „ore sau sferturi de oră?” înainte de a compara anii între ei."),
         tryit=NB + " \\S1", cite=t("(OPCOM, 1 Oct 2025)", "(OPCOM, 1 oct. 2025)"))
     D.subsection(t("What Romania generates", "Ce produce România"))
-    D.chart(t("Romania's power: hydro, nuclear, gas and coal --- with solar rising fast",
-              "Producția României: hidro, nuclear, gaze, cărbune și tot mai mult solar"), "mix_ro_annual", [
+    D.chart(t("Romania's generation mix: hydro, nuclear, gas, coal and growing solar",
+              "Mixul de producție al României: hidro, nuclear, gaze, cărbune și solar în creștere"), "mix_ro_annual", [
         t("Hydro = run-of-river (RoR) + reservoir, coal = lignite + hard coal; black bar = consumption, above the stack it means "
           "net imports; energy summed over reported hours (coverage $\\ge$ @{mix.min_cov_full|.1f}\\% in full years); "
           "metered solar may miss rooftop output.",
@@ -451,7 +451,7 @@ def build(lang, H=None):
               [t("Jan--Oct ", "ian.--oct. ") + "@{YP}", t("Jan--Oct ", "ian.--oct. ") + "@{Y}"], rows, size="footnotesize", stretch="1.1") +
               note(t("Last two columns: hours reported in both years.", "Ultimele două coloane: numai orele raportate în ambii ani."),
                    t("Net imports $>0$: into Romania.", "Import net $>0$: energie intrată în România.")))
-    D.figframe(t("Romania: coal shrinks, solar grows, nuclear drops in @{Y}", "România: cărbunele scade, solarul crește, iar nuclearul se reduce în @{Y}"), None, None,
+    D.figframe(t("Generation by source in Romania: less coal, more solar, lower nuclear output in @{Y}", "Producția pe surse în România: mai puțin cărbune, mai mult solar, producție nucleară mai mică în @{Y}"), None, None,
                "mix_shares", [
                    t("Coal output: @{mix.coal_change_pct|.1f}\\% from @{mix.first} to @{mix.last}; metered solar @{mix.solar_x|.1f}$\\times$ over the same years.",
                      "Producția pe cărbune: @{mix.coal_change_pct|.1f}\\% între @{mix.first} și @{mix.last}; în aceeași perioadă, solarul măsurat a crescut de @{mix.solar_x|.1f} ori."),
@@ -573,7 +573,7 @@ def build(lang, H=None):
                                 "goluri completate), nu în model."), NB + " \\S1"), "footnotesize", cite="(Lago, Marcjasz, De Schutter \\& Weron, 2021, APEN)")
 
     D.subsection(t("Price level and seasonality", "Nivelul prețurilor și sezonalitatea"))
-    D.chart(t("Prices jumped in 2021--2022 and never returned to the old level", "Prețurile au explodat în 2021--2022 și nu au mai revenit la vechiul nivel"),
+    D.chart(t("Prices jumped in 2021--2022 and never returned to the old level", "Prețurile au crescut puternic în 2021--2022 și nu au mai revenit la vechiul nivel"),
             "prices_daily_4zones", [
                 t("Romanian daily maximum @{stats.RO.max|.2f} EUR/MWh on @{stats.RO.max_date|date}; RO, BG and HU move "
                   "together (coupled), while Germany has been cheaper since 2023.",
@@ -760,7 +760,7 @@ def build(lang, H=None):
         job=t("after a shock, a risk desk keeps wider limits for weeks, not days (Lecture 3).",
               "după un șoc, limitele de risc rămîn mai largi săptămîni, nu zile (cursul 3)."),
         tryit=NB + " \\S5", cite="(Ljung \\& Box, 1978, Biometrika)", height="0.60\\textheight")
-    D.section(t("Time-series toolkit", "Instrumente de analiză a seriilor de timp"))
+    D.section(t("Time-series methods", "Instrumente de analiză a seriilor de timp"))
     D.subsection(t("Stationarity and autocorrelation", "Staționaritate și autocorelație"))
     D.figframe(
         t("Weak stationarity: constant mean, variance and autocovariances", "Staționaritatea slabă: medie, varianță și autocovarianțe constante"),
@@ -779,7 +779,7 @@ def build(lang, H=None):
     D.parts[-1] = D.parts[-1].replace("\\chartsource{", "\\chartsource{\\simlabel\\ ")
 
     D.concept(
-        t("Autocorrelation measures how much today's price remembers the past", "Autocorelația: cît din trecut se regăsește în prețul de azi"),
+        t("Autocorrelation: dependence of today's price on past prices", "Autocorelația: dependența prețului de azi de prețurile anterioare"),
         t("The autocorrelation at lag $k$ is the correlation between the series and itself shifted by $k$ periods.",
           "Autocorelația de ordinul $k$ este corelația dintre serie și aceeași serie decalată cu $k$ perioade."),
         "\\[ \\hat\\rho_k=\\frac{\\sum_{t=k+1}^{T}(x_t-\\bar x)(x_{t-k}-\\bar x)}{\\sum_{t=1}^{T}(x_t-\\bar x)^2} \\]" +
@@ -822,7 +822,7 @@ def build(lang, H=None):
             rows.append(r)
     NAIVETAB = table("@{}l" + "r" * len(nvy) + "@{}", ["MAE"] + nvy, rows, size="footnotesize", stretch="1.1")
     D.figframe(
-        t("The benchmark to beat: the naive forecast", "Prognoza naivă: reperul pe care orice model trebuie să-l depășească"),
+        t("The naive forecast as a benchmark", "Prognoza naivă ca model de referință"),
         t("Tomorrow, each hour costs what it cost today (after weekends: the same day last week).",
           "Mîine, fiecare oră costă cît a costat azi (după weekend: ca săptămîna trecută)."),
         "\\[ \\hat p_{d,h}=\\begin{cases} p_{d-1,h} & " + t("d=\\text{Tue--Fri}", "d=\\text{Ma--Vi}") + "\\\\ p_{d-7,h} & " +
@@ -937,7 +937,7 @@ def build(lang, H=None):
               "producția unei companii hidro și factura unui importator net depind de ploaie."),
         tryit=NB + " \\S10a", cite=t("(energy-charts.info; data source: ENTSO-E)", "(energy-charts.info; sursa datelor: ENTSO-E)"))
     D.concept(
-        t("Case study (a): wetter months go with lower Romanian prices", "Studiul de caz (a): mai multă apă, prețuri mai mici"),
+        t("Case study (a): wetter months go with lower Romanian prices", "Studiul de caz (a): în lunile mai ploioase, prețurile din România sînt mai mici"),
         t("Holding the gas price fixed, months with more hydro output have had lower Romanian prices --- an association, not a measured effect.",
           "Cu gazele la preț fix, lunile cu mai multă apă au avut prețuri mai mici: o asociere, nu un efect cauzal."),
         "\\[ p_m=\\beta_0+\\underbrace{\\beta_1\\,\\mathrm{Hydro}_m}_{" + t("\\text{water}", "\\text{apa}") + "}+\\underbrace{\\beta_2\\,\\mathrm{TTF}_m}_{" +
@@ -988,7 +988,7 @@ def build(lang, H=None):
               "pentru cumpărătorii din sud-estul Europei, serile verilor caniculare și secetoase reprezintă principalul risc de preț."),
         tryit=NB + " \\S10c", cite=t("(energy-charts.info; daily and hourly day-ahead prices)", "(energy-charts.info; prețuri PZU zilnice și orare)"))
 
-    D.frame(t("Case study (c): evening, heat and a congested network", "Studiul de caz (c): seri caniculare și o rețea congestionată"), cols(it(
+    D.frame(t("Case study (c): evening hours, heat and network congestion", "Studiul de caz (c): orele de seară, canicula și congestia rețelei"), cols(it(
         t("Equal prices (within 0.01 EUR/MWh) in July hours: RO--BG @{sep.eq_ro_bg|.1f}\\%, RO--HU @{sep.eq_ro_hu|.1f}\\%, RO--DE-LU @{sep.eq_ro_de|.1f}\\%; "
           "the network towards Central Europe was binding; which element was binding cannot be read from prices alone.",
           "Prețuri egale (diferență sub 0{,}01 EUR/MWh) în orele din iulie: RO--BG @{sep.eq_ro_bg|.1f}\\%, RO--HU @{sep.eq_ro_hu|.1f}\\%, "
@@ -1202,7 +1202,7 @@ def build(lang, H=None):
                             "Rezultatele sînt preluate din rezumatele lucrărilor; cifrele de pe celelalte diapozitive provin din datele noastre.")),
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)", "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Vreți să aflați mai mult?"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{R.\\ Weron, IIF Distinguished Lectures on electricity price forecasting} (2025): slides ",
           "\\textbf{R.\\ Weron, IIF Distinguished Lectures despre prognoza prețurilor energiei electrice} (2025): prezentări ") +
         "\\href{https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_1.pdf}{" + t("part I", "partea I") + "}, "

@@ -53,7 +53,7 @@ Momentul cumpărării a contat aproape la fel de mult ca decizia de a se acoperi
 @chart crisis_cal22
 Media lunară a prețului PZU în România, 2020–2022, fiecare licitație pentru banda 2022 (puncte), prețul forward mediu ponderat și media realizată în 2022 (linii întrerupte).
 
-## Criza a blocat piața forward și a adus prețuri reglementate {h=5d2270ad}
+## Criza a redus tranzacțiile forward și a dus la prețuri reglementate {h=04bb5dbf}
 
 Acoperirea riscului este un transfer, nu un cîștig creat din nimic. Fiecare MWh vîndut forward pentru 2022 a fost cu 187,9 EUR/MWh sub spot: producătorii care au vîndut forward au pierdut exact cît au economisit furnizorii acoperiți. Apoi prețurile forward au crescut excesiv în sens invers: banda pentru 2023 s-a tranzacționat la 509,2 EUR/MWh pe 17 august 2022, iar media realizată în 2023 a fost doar 103,7 EUR/MWh.
 
@@ -261,7 +261,7 @@ Ca instrumente folosim mediile lunare ale prețurilor din Ungaria și din DE-LU,
 
 @practice un raport de acoperire fără interval de încredere este o simplă presupunere.
 
-## Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime {h=8b6676ce}
+## Acoperirea cu contracte din alte zone: contractele din Ungaria sînt mai eficiente decît cele germane {h=5b3f9b4b}
 
 Prețul din România urmează îndeaproape prețul din Ungaria: $h^{*}$ este 0,966, iar regresia explică 98% din varianța variațiilor lunare din România. Prețul german acoperă mai slab riscul: $h^{*}$ = 0,875, cu $R^2$ = 0,80, deci rămîne descoperită aproximativ o cincime din varianță.
 
@@ -277,7 +277,7 @@ Ultimele două coloane testează acoperirea în afara eșantionului: raportul es
 @chart hedge_scatter
 Variațiile lunare ale prețului PZU din România în funcție de cele din Ungaria (stînga) și din Germania (dreapta), în EUR/MWh, cu dreapta raportului de acoperire estimat.
 
-## Riscul de bază: ce lasă descoperit un contract din altă zonă {h=de505714}
+## Riscul de bază al unui contract din altă zonă {h=5867a38f}
 
 Un furnizor din România acoperit cu un contract futures german plătește forward-ul german plus diferența de preț România–Germania de la livrare:
 
@@ -357,7 +357,7 @@ Pentru banda din 2027 din România, datele de intrare sînt $F$ = 148,12 EUR/MWh
 
 @practice întrebați banca ce volatilitate a folosit: prima crește aproape proporțional cu $\sigma$.
 
-## Volatilitatea trebuie estimată, iar estimările reale diferă {h=88baf3ae}
+## Estimarea volatilității pentru evaluarea opțiunilor: estimările diferă în funcție de sursa datelor {h=c5b5f1f6}
 
 Trei estimări pe date reale dau rezultate foarte diferite. Prima folosește contractele forward anuale din România. Licitațiile sînt neregulate, așa că varianța se calculează pe unitatea de timp:
 
@@ -437,7 +437,7 @@ Graficul arată costul lunar al fiecărei strategii. Prețurile au crescut în c
 @chart case2026
 Costul lunar pentru 1 MW în bandă în 2026, în EUR/MWh, cu patru strategii: fără acoperire (spot), 100% forward, 50% forward și 50% spot, plafoane lunare la prețul de exercitare $K$.
 
-## Studiul de caz: forward-ul a redus costul și riscul {h=3721516e}
+## Studiul de caz: forward-ul a redus costul și riscul, iar plafonul doar riscul {h=c67a5902}
 
 Tabelul rezumă cele patru strategii, ponderate cu numărul de ore al fiecărei luni.
 

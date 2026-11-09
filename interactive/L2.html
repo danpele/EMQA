@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'en';</script>
-<link rel="preload" as="script" href="L2.js?v=20261108a">
+<link rel="preload" as="script" href="L2.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261108a", "L2_text_en.js?v=20261108a", "common.js?v=20261109m"], "L2.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L2_data.js?v=20261109m", "L2_text_en.js?v=20261109m", "common.js?v=20261109m"], "L2.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -76,9 +76,9 @@
   <details><summary>Answer</summary><p>The first yes, the second no. The DM test works on the daily loss differential d_t (mean over the 24 hours of |e_A| − |e_B|) with a Newey–West variance (7 lags): naive vs AW-LEAR gives DM = 7.32, one-sided p < 0.001; AW-ARX vs AW-LEAR gives DM = −0.83, p = 0.80, so AW-LEAR is not more accurate than AW-ARX. Change the loss to squared errors or the number of lags: the sign of the conclusion for naive vs AW-LEAR does not change; for close models it can.</p></details>
 </section><h2 class="sec" id="s-expert">Expert models: ARX and LEAR</h2>
 <section class="blk" id="per-hour">
-  <h3>One model per hour beats one model for all hours</h3>
+  <h3>Separate models for each hour are more accurate than a single model</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L2_per_hour_single_en.jpg" alt="Slide 22: One model per hour beats one model for all hours" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L2/lecture2.pdf#page=22" target="_blank" rel="noopener"><img src="slides/L2_per_hour_single_en.jpg" alt="Slide 22: Separate models for each hour are more accurate than a single model" loading="lazy"></a>
       <figcaption>Slide 22</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="ph-m"><span class="lbl">Models</span><div class="tgs"><label class="tg"><input type="checkbox" name="ph-m" value="naive" checked> Naive</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728" checked> ARX(728)</label><label class="tg"><input type="checkbox" name="ph-m" value="arx728_single" checked> ARX(728), single regression</label><label class="tg"><input type="checkbox" name="ph-m" value="aw_lear"> AW-LEAR</label><label class="tg"><input type="checkbox" name="ph-m" value="gbm"> GBM</label><label class="tg"><input type="checkbox" name="ph-m" value="ens_all"> Ensemble of 4 models</label></div></div><div class="ctl"><label for="ph-q">Period</label><select id="ph-q"><option value="all" selected>Whole test year</option><option value="win">Winter (Dec–Feb)</option><option value="spr">Spring (Mar–May)</option><option value="sum">Summer (Jun–Aug)</option><option value="aut">Autumn (Sep–Nov)</option></select></div><div class="ctl"><label for="ph-e">Measure</label><select id="ph-e"><option value="mae" selected>MAE</option><option value="rmse">RMSE</option></select></div></div><div class="charts one"><div class="chart" id="ph-chart"></div></div><ul class="out" id="ph-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_per_hour_single" target="_blank" rel="noopener">EMQA_L2_per_hour_single</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L2/EMQA_L2_per_hour_single/EMQA_L2_per_hour_single.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

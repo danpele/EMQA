@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'ro';</script>
-<link rel="preload" as="script" href="L5.js?v=20261108a">
+<link rel="preload" as="script" href="L5.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261108a", "L5_text_ro.js?v=20261108a", "common.js?v=20261109m"], "L5.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261109m", "L5_text_ro.js?v=20261109m", "common.js?v=20261109m"], "L5.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -76,9 +76,9 @@
   <details><summary>Răspuns</summary><p>Numărul scade, deoarece un randament mai mare reduce atît costul combustibilului, cît și costul emisiilor pe MWh de energie electrică: clean spark spread = p − gaz/η − (0,202/η)·EUA. La 0,58, numărul scade de la 67 la 29 de luni. Spread-ul clean dark al cărbunelui nu se schimbă cu acest cursor: alegerea între gaz și cărbune depinde de costul relativ, nu doar de prețul energiei.</p></details>
 </section><h2 class="sec" id="s-hedge">Raportul de acoperire, riscul de bază și riscul de profil</h2>
 <section class="blk" id="hedge-ratio">
-  <h3>Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime</h3>
+  <h3>Acoperirea cu contracte din alte zone: contractele din Ungaria sînt mai eficiente decît cele germane</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_ro.jpg" alt="Slide-ul 28: Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L5/lecture5_ro.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_ro.jpg" alt="Slide-ul 28: Acoperirea cu contracte din alte zone: contractele din Ungaria sînt mai eficiente decît cele germane" loading="lazy"></a>
       <figcaption>Slide-ul 28</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="hr-z">Instrumentul de acoperire</label><select id="hr-z"><option value="HU" selected>Prețul din Ungaria</option><option value="DE_LU">Prețul din Germania–Luxemburg</option></select></div><div class="ctl"><label for="hr-a">Primul an al eșantionului: <b id="hr-a-v"></b></label><input type="range" id="hr-a" min="2015" max="2024" step="1" value="2015"></div><div class="ctl"><label for="hr-b">Ultimul an al eșantionului: <b id="hr-b-v"></b></label><input type="range" id="hr-b" min="2016" max="2026" step="1" value="2026"></div><button class="btn play" id="hr-play" type="button"></button></div><div class="charts "><div class="chart" id="hr-sc"></div><div class="chart" id="hr-roll"></div></div><ul class="out" id="hr-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_hedge_scatter" target="_blank" rel="noopener">EMQA_L5_hedge_scatter</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_hedge_scatter/EMQA_L5_hedge_scatter.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>

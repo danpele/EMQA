@@ -289,7 +289,7 @@ Dutch gas hub price, Title Transfer Facility (TTF) & monthly & World Bank, Pink 
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Jorion, 2007; Christoffersen, 2012)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Normal and Student-$t$: two parameters or three}
+\begin{frame}{Parametric VaR: normal and Student-$t$ distributions}
 \footnotesize
 \intuition{Fit a curve to the last year of changes and read its quantile; the Student-$t$ curve has fatter tails.}
 \begin{columns}[T,onlytextwidth]
@@ -474,7 +474,7 @@ EVT & 35.66 & 64.33 & 68.54 & 154 & 164 \\
 
 \section{Backtesting VaR and ES}
 
-\begin{frame}{Kupiec test: are there as many exceedances as promised?}
+\begin{frame}{Kupiec test of the exceedance frequency}
 \footnotesize
 \intuition{A 99\% VaR promises to be exceeded on 1\% of days; count the exceedances and test whether the share differs from 1\%.}
 \begin{columns}[T,onlytextwidth]
@@ -509,7 +509,7 @@ EVT & 35.66 & 64.33 & 68.54 & 154 & 164 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Kupiec, 1995, J.\ Derivatives)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Christoffersen test: do exceedances come in clusters?}
+\begin{frame}{Christoffersen test of independent exceedances}
 \footnotesize
 \intuition{A good model is not surprised twice in a row: an exceedance today should not make one tomorrow more likely.}
 \begin{columns}[T,onlytextwidth]
@@ -602,7 +602,7 @@ EVT & \cellcolor{Forest!48}1.24 & \cellcolor{Forest!15}2.47 & \cellcolor{Forest!
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimates)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Backtesting ES: are the losses beyond VaR as large as forecast?}
+\begin{frame}{Backtesting ES: the size of losses beyond VaR}
 \footnotesize
 \intuition{Divide each exceedance loss by its ES forecast; if ES is right, the ratios average 1.}
 \begin{columns}[T,onlytextwidth]
@@ -638,7 +638,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Acerbi \& Székely, 2014; Pele \& Mazurencu-Marinescu-Pele, 2026)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{AIDA 2026: one conformal shift measures how far a VaR misses, and repairs it}
+\begin{frame}{AIDA 2026: a conformal shift measures and corrects the miscalibration of VaR}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{What the work did} (D.\,T.\ Pele, AIDA (AI and Digital Assets in Energy and Finance) conference, 4 June 2026)
@@ -773,7 +773,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM, 2025; Koenker \& Bassett, 1978; Romano et al., 2019)}\hfill\tryit{notebook \S6}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Widening the tails brings the 99\% quantile close to its promise}
+\begin{frame}{Heavier tails bring the 99\% quantile close to its nominal coverage}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/en/coverage.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E; own estimates. Data: forecasts 2017-01-01 to 2026-10-31, 99\% quantile.}
@@ -825,7 +825,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 
 \section{Price risk for suppliers and producers}
 
-\begin{frame}{A supplier's monthly cost-at-risk: the normal limit failed again}
+\begin{frame}{A supplier's monthly cost-at-risk under the normal distribution}
 \footnotesize
 \intuition{A supplier prices next month at this month's cost; the risk is a jump of the load-weighted price.}
 \begin{columns}[T,onlytextwidth]
@@ -1203,7 +1203,7 @@ EVT & 0.279 & 0.009 & 1.183 & $<$0.001 & \ensuremath{-}0.114 & 0.722 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Want to learn more?}
+\begin{frame}{Further reading and resources}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

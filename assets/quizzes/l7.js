@@ -253,7 +253,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 0,
             "en": {
-                "title": "What Chronos sees",
+                "title": "Inputs used by Chronos",
                 "text": "How is the Chronos-2 foundation model used for the 24 day-ahead prices in this lecture (zero-shot)?",
                 "options": [
                     "It receives the last 2048 hourly prices (85 days) and, without any training on Romanian data, returns quantiles; the median is the point forecast",
@@ -265,7 +265,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "Zero-shot means no training or fine-tuning on the target data. The context ends with day $d-1$, and the code checks that it is built only from days before day $d$."
             },
             "ro": {
-                "title": "Ce vede Chronos",
+                "title": "Datele de intrare ale modelului Chronos",
                 "text": "Cum este folosit modelul fundațional Chronos-2 pentru cele 24 de prețuri ale zilei următoare în acest curs (zero-shot)?",
                 "options": [
                     "Primește ultimele 2048 de prețuri orare (85 de zile) și, fără nicio antrenare pe datele din România, dă cuantile; mediana este prognoza punctuală",
@@ -820,7 +820,7 @@ window.EMQA_DATA.quizzes['l7'] = {
         {
             "correct": 3,
             "en": {
-                "title": "False wins among many models",
+                "title": "Spurious gains among many models",
                 "text": "With $m$ independent tests at the 5% level, the probability of at least one false win is $1-0.95^m$. What is it for $m = 10$ models?",
                 "options": [
                     "0.050",
@@ -832,7 +832,7 @@ window.EMQA_DATA.quizzes['l7'] = {
                 "incorrectExplanation": "0.050 is the level of a single test, and 0.599 is the probability of no false win at all. The risk grows quickly with the number of models tried, which is why one should ask how many were tried before the one presented."
             },
             "ro": {
-                "title": "Victorii false între multe modele",
+                "title": "Cîștiguri aparente între multe modele",
                 "text": "Cu $m$ teste independente la pragul de 5%, probabilitatea a cel puțin unei victorii false este $1-0{,}95^m$. Cît este ea pentru $m = 10$ modele?",
                 "options": [
                     "0,050",

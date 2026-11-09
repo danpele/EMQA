@@ -574,7 +574,7 @@ def q_coverage():
                  "quantile regression, conformal prediction, collateral, guarantee, coverage, Kupiec test, filtered historical simulation, electricity prices, Romania",
                  f"power_da_prices_daily_cet.csv: daily day-ahead base prices of Romania, EUR/MWh, {SRC_EC} (cut-off {END}); "
                  "the quantile regressions and the FHS forecasts are recomputed in the notebook",
-                 title="Widening the tails brings the 99% quantile close to its promise")
+                 title="Heavier tails bring the 99% quantile close to its nominal coverage")
     q.code(SETUP).code(prices()).code(ARCH).md(ENGINE_MD).code(ENGINE)
     q.md("## Quantile forecasts of tomorrow's price\n\n$\\hat q_{\\tau,t}=\\beta_0+\\beta_1P_{t-1}+\\beta_2P_{t-7}+\\sum_j"
          "\\delta_jD_{j,t}$ fitted on the last 365 days (one regression per day, from 2016), widened by the "

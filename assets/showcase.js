@@ -18,15 +18,15 @@
    "src": "Quantlets/L1/EMQA_L1_mix_ro_annual/mix_ro_annual.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_mix_ro_annual",
    "q": "EMQA_L1_mix_ro_annual",
-   "en": "Romania's power: hydro, nuclear, gas and coal — with solar rising fast",
-   "ro": "Producția României: hidro, nuclear, gaze, cărbune și tot mai mult solar"
+   "en": "Romania's generation mix: hydro, nuclear, gas, coal and growing solar",
+   "ro": "Mixul de producție al României: hidro, nuclear, gaze, cărbune și solar în creștere"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_mix_shares/mix_shares.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_mix_shares",
    "q": "EMQA_L1_mix_shares",
-   "en": "Romania: coal shrinks, solar grows, nuclear drops in 2026",
-   "ro": "România: cărbunele scade, solarul crește, iar nuclearul se reduce în 2026"
+   "en": "Generation by source in Romania: less coal, more solar, lower nuclear output in 2026",
+   "ro": "Producția pe surse în România: mai puțin cărbune, mai mult solar, producție nucleară mai mică în 2026"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_day_load/day_load.png",
@@ -40,7 +40,7 @@
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_prices_daily_4zones",
    "q": "EMQA_L1_prices_daily_4zones",
    "en": "Prices jumped in 2021–2022 and never returned to the old level",
-   "ro": "Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel"
+   "ro": "Prețurile au crescut puternic în 2021–2022 și nu au mai revenit la vechiul nivel"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_profile_intraday/profile_intraday.png",
@@ -109,8 +109,8 @@
    "src": "Quantlets/L1/EMQA_L1_naive_bar/naive_bar.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_naive_bar",
    "q": "EMQA_L1_naive_bar",
-   "en": "The benchmark to beat: the naive forecast",
-   "ro": "Prognoza naivă: reperul pe care orice model trebuie să-l depășească"
+   "en": "The naive forecast as a benchmark",
+   "ro": "Prognoza naivă ca model de referință"
   },
   {
    "src": "Quantlets/L1/EMQA_L1_decomp_load/decomp_load.png",
@@ -195,7 +195,7 @@
    "src": "Quantlets/L2/EMQA_L2_horizon_naive/horizon_naive.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_horizon_naive",
    "q": "EMQA_L2_horizon_naive",
-   "en": "Older information, larger error, except at the weekly lag",
+   "en": "Forecast error grows with the age of the information, except at the weekly lag",
    "ro": "Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă"
   },
   {
@@ -223,21 +223,21 @@
    "src": "Quantlets/L2/EMQA_L2_per_hour_single/per_hour_single.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_per_hour_single",
    "q": "EMQA_L2_per_hour_single",
-   "en": "One model per hour beats one model for all hours",
+   "en": "Separate models for each hour are more accurate than a single model",
    "ro": "Cîte un model pentru fiecare oră este mai precis decît un model comun"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_vst/vst.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_vst",
    "q": "EMQA_L2_vst",
-   "en": "The asinh transformation tames spikes and negative prices",
+   "en": "The asinh transformation for price spikes and negative prices",
    "ro": "Transformarea asinh atenuează salturile și acceptă prețuri negative"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_lear_sel/lear_sel.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_lear_sel",
    "q": "EMQA_L2_lear_sel",
-   "en": "What LEAR keeps: yesterday's same hour and the weekday, rarely the lagged fundamentals",
+   "en": "Regressors selected by LEAR: yesterday's same hour and the weekday, rarely the lagged fundamentals",
    "ro": "LEAR păstrează prețul aceleiași ore de ieri și ziua săptămînii"
   },
   {
@@ -272,8 +272,8 @@
    "src": "Quantlets/L2/EMQA_L2_coint_daily/coint_daily.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_coint_daily",
    "q": "EMQA_L2_coint_daily",
-   "en": "Romania and Hungary: coupled markets, a spread that keeps closing",
-   "ro": "România și Ungaria: piețe cuplate, cu o diferență de preț care se închide repede"
+   "en": "Romania and Hungary: cointegrated prices in coupled markets",
+   "ro": "România și Ungaria: prețuri cointegrate pe piețe cuplate"
   },
   {
    "src": "Quantlets/L2/EMQA_L2_coint_monthly/coint_monthly.png",
@@ -307,8 +307,8 @@
    "src": "Quantlets/L2/EMQA_L2_battery/battery.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L2/EMQA_L2_battery",
    "q": "EMQA_L2_battery",
-   "en": "Case study (d): what a better forecast is worth",
-   "ro": "Studiul de caz (d): cît valorează, în bani, o prognoză mai bună"
+   "en": "Case study (d): economic value of a more accurate forecast",
+   "ro": "Studiul de caz (d): valoarea economică a unei prognoze mai precise"
   }
  ],
  "l3": [
@@ -351,7 +351,7 @@
    "src": "Quantlets/L3/EMQA_L3_cond_vol/cond_vol.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_cond_vol",
    "q": "EMQA_L3_cond_vol",
-   "en": "GARCH volatility: short spikes in percent, a long hump in EUR/MWh",
+   "en": "GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh",
    "ro": "GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh"
   },
   {
@@ -393,7 +393,7 @@
    "src": "Quantlets/L3/EMQA_L3_har_fc/har_fc.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_har_fc",
    "q": "EMQA_L3_har_fc",
-   "en": "HAR forecasts follow intraday variation, not its isolated spikes",
+   "en": "HAR forecasts track the level of intraday variation but smooth out isolated spikes",
    "ro": "Prognozele HAR urmăresc variația, dar nu și salturile izolate"
   },
   {
@@ -472,8 +472,8 @@
    "src": "Quantlets/L4/EMQA_L4_coverage/coverage.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L4/EMQA_L4_coverage",
    "q": "EMQA_L4_coverage",
-   "en": "Widening the tails brings the 99% quantile close to its promise",
-   "ro": "Lărgirea cozilor apropie cuantila de 99% de acoperirea promisă"
+   "en": "Heavier tails bring the 99% quantile close to its nominal coverage",
+   "ro": "Lărgirea cozilor apropie cuantila de 99% de acoperirea nominală"
   },
   {
    "src": "Quantlets/L4/EMQA_L4_supplier_month/supplier_month.png",
@@ -544,8 +544,8 @@
    "src": "Quantlets/L5/EMQA_L5_hedge_scatter/hedge_scatter.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_hedge_scatter",
    "q": "EMQA_L5_hedge_scatter",
-   "en": "Hungary hedges Romania almost fully; Germany leaves a fifth",
-   "ro": "Contractele din Ungaria acoperă aproape tot riscul; cele germane lasă o cincime"
+   "en": "Cross-border hedges: Hungarian contracts are more effective than German ones",
+   "ro": "Acoperirea cu contracte din alte zone: contractele din Ungaria sînt mai eficiente decît cele germane"
   },
   {
    "src": "Quantlets/L5/EMQA_L5_basis/basis.png",
@@ -623,7 +623,7 @@
    "src": "Quantlets/L6/EMQA_L6_capture_region/capture_region.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L6/EMQA_L6_capture_region",
    "q": "EMQA_L6_capture_region",
-   "en": "The region cannibalises together: Romanian, Bulgarian and Hungarian capture rates fell in step",
+   "en": "Regional cannibalisation: Romanian, Bulgarian and Hungarian capture rates fell in step",
    "ro": "Rata de captare solară a scăzut simultan în România, Bulgaria și Ungaria"
   },
   {
@@ -807,7 +807,7 @@
    "src": "Quantlets/L7/EMQA_L7_pit_leak/pit_leak.png",
    "url": "https://github.com/danpele/EMQA/tree/main/Quantlets/L7/EMQA_L7_pit_leak",
    "q": "EMQA_L7_pit_leak",
-   "en": "Look-ahead: two invalid evaluations flatter XGBoost",
+   "en": "Look-ahead bias: two invalid evaluations overstate the accuracy of XGBoost",
    "ro": "Informația din viitor: două evaluări invalide avantajează XGBoost"
   },
   {

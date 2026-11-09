@@ -63,7 +63,7 @@ acronym audits and writes `lecturek[_ro]_contact_sheet.png`, which must be check
    `full name (ACR)`; `build_Lk.py` fails the audit otherwise (math symbols and citation lines are exempt).
 7. **Size.** At most 60 main frames including title and section outlines, at most 5 quiz frames, detailed derivations
    in an appendix after the references. Learning objectives at the start; wrap-up outline, "Research from our group",
-   "Want to learn more?" and references at the end. References verified against Crossref/DOI pages.
+   "Further reading and resources" and references at the end. References verified against Crossref/DOI pages.
 8. **Charts.** Generated twice (`charts/en`, `charts/ro`) with translated labels; transparent background; legend at the
    bottom outside the plot; no gridlines; one y-axis per panel; colours fixed per entity (`emqa_plot.PAL`). Draw them at
    display size: 6.4 in wide and about 2 in tall, 10–10.5 pt fonts, so text stays legible (≥ 6.5 pt) on the slide; no

@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'ro';</script>
-<link rel="preload" as="script" href="L1.js?v=20261108a">
+<link rel="preload" as="script" href="L1.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_ro.js?v=20261108a", "common.js?v=20261109m"], "L1.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261109m", "L1_text_ro.js?v=20261109m", "common.js?v=20261109m"], "L1.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -66,9 +66,9 @@
   <details><summary>Răspuns</summary><p>Circa 50 MW. Lîngă punctul de intersecție, curba cererii este aproape verticală: cumpărătorii cer aproximativ 2.816 MW la 152 EUR/MWh și doar cu circa 11 MW mai mult la 0 EUR/MWh. Cu 25 MW de ofertă în plus, curbele publicate se intersectează la 131,40 EUR/MWh, iar cu 50 MW la 0,68 EUR/MWh. În intervalul de seară, curbele se intersectează pe un segment vertical (orice preț între 206,49 și 247,00 EUR/MWh închide 3.423 MW; prețul oficial este 244,00 EUR/MWh), iar 300 MW la preț zero duc prețul la 0. Cererea inelastică la preț explică de ce o oră însorită poate face prețul negativ.</p></details>
 </section><h2 class="sec" id="s-facts">Datele din energie și faptele stilizate</h2>
 <section class="blk" id="daily-prices">
-  <h3>Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel</h3>
+  <h3>Prețurile au crescut puternic în 2021–2022 și nu au mai revenit la vechiul nivel</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=23" target="_blank" rel="noopener"><img src="slides/L1_prices_daily_4zones_ro.jpg" alt="Slide-ul 23: Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L1/lecture1_ro.pdf#page=23" target="_blank" rel="noopener"><img src="slides/L1_prices_daily_4zones_ro.jpg" alt="Slide-ul 23: Prețurile au crescut puternic în 2021–2022 și nu au mai revenit la vechiul nivel" loading="lazy"></a>
       <figcaption>Slide-ul 23</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl ctl-tg" id="dp-z"><span class="lbl">Zone</span><div class="tgs"><label class="tg"><input type="checkbox" name="dp-z" value="RO" checked> România</label><label class="tg"><input type="checkbox" name="dp-z" value="BG"> Bulgaria</label><label class="tg"><input type="checkbox" name="dp-z" value="HU"> Ungaria</label><label class="tg"><input type="checkbox" name="dp-z" value="DE_LU" checked> Germania–Luxemburg</label></div></div><div class="ctl"><label for="dp-w">Media mobilă (zile): <b id="dp-w-v"></b></label><input type="range" id="dp-w" min="1" max="90" step="1" value="30"></div><div class="ctl"><label for="dp-y">Începutul perioadei: <b id="dp-y-v"></b></label><input type="range" id="dp-y" min="2015" max="2026" step="1" value="2019"></div><button class="btn play" id="dp-play" type="button"></button></div><div class="charts one"><div class="chart" id="dp-chart"></div></div><ul class="out" id="dp-out"></ul><p class="qlk">Codul acestei figuri: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L1/EMQA_L1_prices_daily_4zones" target="_blank" rel="noopener">EMQA_L1_prices_daily_4zones</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L1/EMQA_L1_prices_daily_4zones/EMQA_L1_prices_daily_4zones.ipynb" target="_blank" rel="noopener">deschide în Colab</a></p></div>
   </div>

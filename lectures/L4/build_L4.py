@@ -294,7 +294,7 @@ def build(lang, H=None):
                 "HS este metoda implicită în multe companii energetice și reacționează cu întîrziere."),
               tryit=NB + " \\S3", cite="(Jorion, 2007; Christoffersen, 2012)", wl="0.50", wr="0.47")
 
-    D.concept(t("Normal and Student-$t$: two parameters or three", "Repartițiile normală și Student-$t$: doi sau trei parametri"),
+    D.concept(t("Parametric VaR: normal and Student-$t$ distributions", "VaR parametrică: repartițiile normală și Student-$t$"),
               t("Fit a curve to the last year of changes and read its quantile; the Student-$t$ curve has fatter tails.",
                 "Ajustăm o curbă pe variațiile din ultimul an și citim cuantila ei; curba Student-$t$ are cozi mai groase."),
               "\\[ \\text{VaR}^{N}_{\\alpha}=\\mu+\\sigma z_\\alpha,\\qquad \\text{ES}^{N}_{\\alpha}=\\mu+\\sigma\\frac{\\varphi(z_\\alpha)}{1-\\alpha} \\]"
@@ -411,7 +411,7 @@ def build(lang, H=None):
 
     # ------------------------------------------------------------------ 3 backtesting
     D.section(t("Backtesting VaR and ES", "Testarea retrospectivă a VaR și ES"))
-    D.concept(t("Kupiec test: are there as many exceedances as promised?", "Testul Kupiec: sînt atîtea depășiri cîte au fost promise?"),
+    D.concept(t("Kupiec test of the exceedance frequency", "Testul Kupiec pentru frecvența depășirilor"),
               t("A 99\\% VaR promises to be exceeded on 1\\% of days; count the exceedances and test whether the share differs from 1\\%.",
                 "O VaR de 99\\% promite că va fi depășită în 1\\% din zile; numărăm depășirile și testăm dacă proporția lor diferă de 1\\%."),
               "\\[ I_t=\\mathbf 1\\{L_t>\\text{VaR}_{\\alpha,t}\\},\\qquad x=\\textstyle\\sum_{t=1}^{n}I_t,\\qquad \\hat p=x/n \\]"
@@ -430,7 +430,7 @@ def build(lang, H=None):
                 "cereți numărul depășirilor înainte de a avea încredere în VaR raportată de cineva."),
               tryit=NB + " \\S4", cite="(Kupiec, 1995, J.\\ Derivatives)", wl="0.52", wr="0.45")
 
-    D.concept(t("Christoffersen test: do exceedances come in clusters?", "Testul Christoffersen: apar depășirile grupate?"),
+    D.concept(t("Christoffersen test of independent exceedances", "Testul Christoffersen pentru independența depășirilor"),
               t("A good model is not surprised twice in a row: an exceedance today should not make one tomorrow more likely.",
                 "Un model bun nu este surprins de două ori la rînd: o depășire azi nu trebuie să facă mai probabilă o depășire mîine."),
               "\\[ \\pi_{01}=\\Pr(I_t=1\\mid I_{t-1}=0),\\qquad \\pi_{11}=\\Pr(I_t=1\\mid I_{t-1}=1) \\]"
@@ -503,7 +503,7 @@ def build(lang, H=None):
     zrows = [[MN[m], fmt(BT["RO"][m]["z2"]["all"]["z2"], ".3f", lang), pval(f"bt.RO.{m}.z2.all.p"),
               fmt(BT["RO"][m]["z2"]["crisis"]["z2"], ".3f", lang), pval(f"bt.RO.{m}.z2.crisis.p"),
               fmt(BT["RO"][m]["z2"]["after"]["z2"], ".3f", lang), pval(f"bt.RO.{m}.z2.after.p")] for m in METHODS]
-    D.concept(t("Backtesting ES: are the losses beyond VaR as large as forecast?", "Testarea ES: sînt pierderile de dincolo de VaR atît de mari cît s-a prognozat?"),
+    D.concept(t("Backtesting ES: the size of losses beyond VaR", "Testarea ES: mărimea pierderilor de dincolo de VaR"),
               t("Divide each exceedance loss by its ES forecast; if ES is right, the ratios average 1.",
                 "Împărțim fiecare pierdere din zilele cu depășiri la prognoza ES; dacă ES este corect, media este 1."),
               "\\[ Z_2=\\frac{1}{T(1-\\alpha)}\\sum_{t=1}^{T}\\frac{L_t\\,I_t}{\\text{ES}_{\\alpha,t}}-1,\\qquad \\E_{H_0}[Z_2]=0 \\]" +
@@ -519,8 +519,8 @@ def build(lang, H=None):
               tryit=NB + " \\S4", cite="(Acerbi \\& Székely, 2014; Pele \\& Mazurencu-Marinescu-Pele, 2026)", wl="0.45", wr="0.52")
 
     # ------------------------------------------------------------------ AIDA 2026: conformal diagnosis of VaR forecasts
-    D.frame(t("AIDA 2026: one conformal shift measures how far a VaR misses, and repairs it",
-              "AIDA 2026: o deplasare conformală arată cît greșește VaR și o corectează"), it(
+    D.frame(t("AIDA 2026: a conformal shift measures and corrects the miscalibration of VaR",
+              "AIDA 2026: deplasarea conformală corectează erorile de calibrare ale VaR"), it(
         (t("\\textbf{What the work did} (D.\\,T.\\ Pele, AIDA (AI and Digital Assets in Energy and Finance) conference, 4 June 2026)", "\\textbf{Ce a făcut lucrarea} (D.\\,T.\\ Pele, conferința AIDA (AI and Digital Assets in Energy and Finance), 4 iunie 2026)"),
          t("score $s_t=\\hat q_t-r_t$ ($>0$ on an exceedance day); $\\hat q_V$ = 99\\% quantile of past scores; corrected VaR = VaR + $\\hat q_V$, fixed (audit) or rolling over 250 days",
            "scorul $s_t=\\hat q_t-r_t$ ($>0$ în ziua unei depășiri); $\\hat q_V$ = cuantila de 99\\% a scorurilor trecute; VaR corectată = VaR + $\\hat q_V$, fixă (audit) sau glisantă pe 250 de zile"),
@@ -616,7 +616,7 @@ def build(lang, H=None):
                 "dimensionați linia bancară din spatele garanției pe cuantila din criză, înainte de criză."),
               tryit=NB + " \\S6", cite="(OPCOM, 2025; Koenker \\& Bassett, 1978; Romano et al., 2019)", wl="0.55", wr="0.42")
 
-    D.chart(t("Widening the tails brings the 99\\% quantile close to its promise", "Lărgirea cozilor apropie cuantila de 99\\% de acoperirea promisă"), "coverage", [
+    D.chart(t("Heavier tails bring the 99\\% quantile close to its nominal coverage", "Lărgirea cozilor apropie cuantila de 99\\% de acoperirea nominală"), "coverage", [
         t(("Kupiec $p$ at 99\\%: QR " + pval(g + ".qr.kupiec_p") + ", widened " + pval(g + ".cqr.kupiec_p") + ", FHS " + pval(g + ".fhs.kupiec_p"),
            "at 95\\% the widened QR passes ($p$ = " + pval("guar.a95.cqr.kupiec_p") + "), as Lecture 2 suggested for the tails"),
           ("Testul Kupiec la 99\\%: QR " + pval(g + ".qr.kupiec_p") + "; QR lărgită " + pval(g + ".cqr.kupiec_p") + "; FHS " + pval(g + ".fhs.kupiec_p"),
@@ -645,7 +645,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 5 positions
     D.section(t("Price risk for suppliers and producers", "Riscul de preț pentru furnizori și producători"))
     S = "supplier"
-    D.concept(t("A supplier's monthly cost-at-risk: the normal limit failed again", "Costul lunar la risc al unui furnizor: limita normală a eșuat din nou"),
+    D.concept(t("A supplier's monthly cost-at-risk under the normal distribution", "Costul lunar la risc al unui furnizor, calculat cu repartiția normală"),
               t("A supplier prices next month at this month's cost; the risk is a jump of the load-weighted price.",
                 "Furnizorul stabilește prețul lunii viitoare după costul lunii curente; riscul este un salt al prețului ponderat cu consumul."),
               "\\[ \\bar P^{L}_m=\\frac{\\sum_h P_hL_h}{\\sum_h L_h},\\qquad o_m=\\frac{\\bar P^{L}_m}{\\bar P^{L}_{m-1}}-1 \\]\\vspace{-2mm}\\[ \\text{CFaR}_{0.95}=\\hat q_{0.95}(o_m) \\]".replace("0.95", "0{,}95" if ro else "0.95") +
@@ -869,7 +869,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{McNeil, Frey \\& Embrechts}, \\textit{Quantitative Risk Management}, 2nd ed.: VaR, ES, EVT, backtesting.",
           "\\textbf{McNeil, Frey \\& Embrechts}, \\textit{Quantitative Risk Management}, ed.\\ a 2-a: VaR, ES, EVT, testare retrospectivă."),
         t("\\textbf{Christoffersen}, \\textit{Elements of Financial Risk Management}, 2nd ed.: FHS and backtests, with exercises.",

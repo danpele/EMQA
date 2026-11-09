@@ -21,7 +21,7 @@ The lecture uses the same real data and the same test year as Lecture 2, the hou
 
 Flexible models can learn patterns that a linear model misses, but they can also learn the noise of the past; this section sets the rules that keep the evaluation honest. Data are split into training, validation and test samples in time order, and settings are chosen by random search on the validation year only.
 
-## Same data, same test year as Lecture 2, plus a validation year {h=d56abc3d}
+## Data: the Lecture 2 sample and test year, with an added validation year {h=f750e851}
 
 The target is the hourly day-ahead price of the Romania (RO) bidding zone on the PZU. The inputs are those of Lecture 2: prices up to day $d-1$; load, wind and solar generation, hydro, nuclear and net imports up to day $d-2$, from the European Network of Transmission System Operators for Electricity (ENTSO-E); and the price of carbon, the European Union (EU) emission allowance (EUA), through an exchange-traded commodity (ETC). The data run to 31 Oct 2026 and were downloaded on 4 Nov 2026 from energy-charts.info, the data portal of the Fraunhofer Institute for Solar Energy Systems (ISE), and from Yahoo Finance.
 
@@ -213,7 +213,7 @@ Tuned boosted trees improve on the GBM of Lecture 2 but stay behind AW-LEAR. The
 
 All models are now compared on the same test year, with the same error measures and DM tests against AW-LEAR. The section shows that combinations of machine learning and statistical models are significantly better, explains why averaging works, and weighs accuracy against computing cost.
 
-## Scoreboard: Chronos-2 is the best single model {h=71d0d3d9}
+## Model ranking: Chronos-2 is the best single model {h=c222e001}
 
 The table brings together every model on the test year. The RMSE penalises large errors more than the MAE; the rMAE divides the MAE by that of the naive model; the column "vs AW-LEAR" gives the percentage gain over AW-LEAR; and "DM $p$" is the p-value of a one-sided test that the model is more accurate than AW-LEAR, computed on the daily mean absolute error with a Newey–West variance, as in Lecture 2 (Diebold and Mariano, 1995).
 
@@ -463,7 +463,7 @@ Spikes come in the evening and negative prices at midday. A good price forecast 
 
 Most claims of large gains from machine learning come from evaluation mistakes rather than from better models. This section reproduces three such mistakes on our data, look-ahead, data snooping and frozen models, measures how much each flatters the result, and ends with a self-check for leakage.
 
-## Look-ahead: two invalid evaluations flatter XGBoost {h=c78133da}
+## Look-ahead bias: two invalid evaluations overstate the accuracy of XGBoost {h=2c14caa7}
 
 The chart compares the honest MAE of XGBoost, 23.26 EUR/MWh, with two invalid evaluations. The first is shuffled 5-fold cross-validation: the days are shuffled before being split, so future days end up in the training sample. The MAE drops to 22.01, 5.4% better, on paper only.
 
@@ -560,7 +560,7 @@ The other lesson is about discipline. Every model, statistical or machine learni
 
 The findings are as stated in the papers; the numbers in the rest of the lecture come from our own data.
 
-## Want to learn more? {h=5d597929}
+## Further reading and resources {h=07a31068}
 
 - **epftoolbox**: the DNN and LEAR of Lago et al. (2021) with open benchmark data, [github.com/jeslago/epftoolbox](https://github.com/jeslago/epftoolbox).
 - **XGBoost** and **shap** documentation: [xgboost.readthedocs.io](https://xgboost.readthedocs.io), [shap.readthedocs.io](https://shap.readthedocs.io).

@@ -165,7 +165,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(NEMO Committee, 2025, 2026; OPCOM)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Notation, and the rule every forecast in this lecture obeys}
+\begin{frame}{Notation and the information rule for all forecasts}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{Notation}
@@ -245,7 +245,7 @@ Neighbours: Hungary (HU), Germany--Luxembourg (DE-LU); gas: Title Transfer Facil
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; Lago, Marcjasz, De Schutter \& Weron, 2021, APEN)}\hfill\qlink{EMQA\_L2\_split\_timeline}{Quantlets/L2/EMQA_L2_split_timeline}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Older information, larger error, except at the weekly lag}
+\begin{frame}{Forecast error grows with the age of the information, except at the weekly lag}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.450\textheight,keepaspectratio]{charts/en/horizon_naive.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM day-ahead prices for Romania, via ENTSO-E. Data: test year 2025-11-01 to 2026-10-31, hourly.}
@@ -522,7 +522,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own estimation; Lago et al., 2021, APEN)}\hfill\tryit{notebook \S3}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{One model per hour beats one model for all hours}
+\begin{frame}{Separate models for each hour are more accurate than a single model}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.500\textheight,keepaspectratio]{charts/en/per_hour_single.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: test year 2025-11-01 to 2026-10-31.}
@@ -539,7 +539,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 
 \subsection{Variance-stabilising transformations}
 
-\begin{frame}{The asinh transformation tames spikes and negative prices}
+\begin{frame}{The asinh transformation for price spikes and negative prices}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.424\textheight,keepaspectratio]{charts/en/vst.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: left, median and scale of the last window; right, test year 2025-11-01 to 2026-10-31.}
@@ -589,7 +589,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Tibshirani, 1996; Uniejewski, Nowotarski \& Weron, 2016; Lago et al., 2021)}\hfill\tryit{notebook \S4}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{What LEAR keeps: yesterday's same hour and the weekday, rarely the lagged fundamentals}
+\begin{frame}{Regressors selected by LEAR: yesterday's same hour and the weekday, rarely the lagged fundamentals}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.492\textheight,keepaspectratio]{charts/en/lear_sel.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E load, wind and solar (Transelectrica data for Romania). Data: LEAR(728), 365 daily fits of the test year.}
@@ -693,7 +693,7 @@ prices and calendar only & 22.63 & 36.49 & 0.813 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bates \& Granger, 1969; Nowotarski \& Weron, 2015)}\hfill\tryit{notebook \S5}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Results on the Romanian test year: the scoreboard}
+\begin{frame}{Accuracy of all models on the Romanian test year}
 \small
 \begin{center}{\scriptsize\renewcommand{\arraystretch}{1.02}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrr@{}}\toprule
@@ -803,7 +803,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(own computation, test year 1 Nov 2025 -- 31 Oct 2026)}\hfill\qlink{EMQA\_L2\_ml\_hour}{Quantlets/L2/EMQA_L2_ml_hour}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Our group on Romanian load: machine learning wins when the series is smooth}
+\begin{frame}{Research from our group on Romanian load: machine learning is most accurate for smooth series}
 \footnotesize
 \begin{itemize}\setlength{\itemsep}{1pt}
   \item \textbf{The study} (Proșcanu, Proșcanu, Pele \& Costea, 2025)
@@ -932,7 +932,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Engle \& Granger, 1987; Johansen, 1991; MacKinnon, 1996)}\hfill\tryit{notebook \S8}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Romania and Hungary: coupled markets, a spread that keeps closing}
+\begin{frame}{Romania and Hungary: cointegrated prices in coupled markets}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.437\textheight,keepaspectratio]{charts/en/coint_daily.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); prices of OPCOM (RO), HUPX (HU) and EPEX SPOT (DE-LU), via ENTSO-E. Data: daily base prices, 2022-01-01 to 2026-10-31.}
@@ -1060,7 +1060,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 
 \subsection{(d) Economic value of the forecast}
 
-\begin{frame}{Case study (d): what a better forecast is worth}
+\begin{frame}{Case study (d): economic value of a more accurate forecast}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.480\textheight,keepaspectratio]{charts/en/battery.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); OPCOM prices; ENTSO-E generation and flows (Transelectrica data for Romania); Yahoo Finance (SparkChange EUA ETC). Data: test year 2025-11-01 to 2026-10-31; 1 MW / 2 MWh, round-trip efficiency 90\%.}
@@ -1314,7 +1314,7 @@ Ensemble of 4 & \cellcolor{Forest!55}22.13 & \cellcolor{Forest!55}35.76 & \cellc
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Want to learn more?}
+\begin{frame}{Further reading and resources}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

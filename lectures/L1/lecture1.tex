@@ -96,7 +96,7 @@ YTD & year to date\\\end{tabular}}\end{column}
 
 % END-ABBR
 
-\begin{frame}{Real data only: what we use and where it ends}
+\begin{frame}{Real data only: sources and sample period}
 \small
 
 \par\vspace{0.5mm}{\scriptsize \begin{itemize}\setlength{\itemsep}{0pt}
@@ -299,7 +299,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Weron, 2014, IJF; JAO; Core flow-based market coupling)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Ten years of coupling: from four countries to one European auction}
+\begin{frame}{Milestones of market coupling for Romania, 2014--2025}
 \small
 \vspace{0.5mm}\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
 \draw[-{Latex},thick,MainBlue] (0,0) -- (14.1,0);
@@ -329,7 +329,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(OPCOM press releases 2019--2025; IBEX/OPCOM, 27 Oct 2021; JAO)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Since 1 October 2025 a trading day has 96 prices, not 24}
+\begin{frame}{The 15-minute market time unit since 1 October 2025}
 \footnotesize
 \intuition{The market time unit (MTU) shrank from one hour to 15 minutes, so every count of hours must be converted.}
 \begin{columns}[T,onlytextwidth]
@@ -362,7 +362,7 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 
 \subsection{What Romania generates}
 
-\begin{frame}{Romania's power: hydro, nuclear, gas and coal --- with solar rising fast}
+\begin{frame}{Romania's generation mix: hydro, nuclear, gas, coal and growing solar}
 \small
 \begin{center}\includegraphics[width=\textwidth,height=0.526\textheight,keepaspectratio]{charts/en/mix_ro_annual.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2015-2025 full years (left); Jan-Oct 2025 and 2026, hours reported in both years (right); cut-off 2026-10-31.}
@@ -378,9 +378,9 @@ Title Transfer Facility (TTF) gas, monthly & monthly & World Bank; European Cent
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; data source: ENTSO-E)}\hfill\qlink{EMQA\_L1\_mix\_ro\_annual}{Quantlets/L1/EMQA_L1_mix_ro_annual}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Romania: coal shrinks, solar grows, nuclear drops in 2026}
+\begin{frame}{Generation by source in Romania: less coal, more solar, lower nuclear output in 2026}
 \small
-\begin{center}\includegraphics[width=\textwidth,height=0.444\textheight,keepaspectratio]{charts/en/mix_shares.pdf}\end{center}\vspace{-3mm}
+\begin{center}\includegraphics[width=\textwidth,height=0.365\textheight,keepaspectratio]{charts/en/mix_shares.pdf}\end{center}\vspace{-3mm}
 \chartsource{Source: energy-charts.info (Fraunhofer ISE); ENTSO-E (Transelectrica data for Romania). Data: 2015, 2025 full years; Jan-Oct 2026, hours reported in both 2025 and 2026.}
 \vspace{0.5mm}
 \begin{itemize}\setlength{\itemsep}{0pt}
@@ -777,7 +777,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \end{frame}
 
 
-\section{Time-series toolkit}
+\section{Time-series methods}
 
 \subsection{Stationarity and autocorrelation}
 
@@ -798,7 +798,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Hyndman \& Athanasopoulos, 2021, OTexts)}\hfill\qlink{EMQA\_L1\_sim\_wn\_ar\_rw}{Quantlets/L1/EMQA_L1_sim_wn_ar_rw}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Autocorrelation measures how much today's price remembers the past}
+\begin{frame}{Autocorrelation: dependence of today's price on past prices}
 \footnotesize
 \intuition{The autocorrelation at lag $k$ is the correlation between the series and itself shifted by $k$ periods.}
 \begin{columns}[T,onlytextwidth]
@@ -840,7 +840,7 @@ DE-LU & \cellcolor{MainBlue!7}69 & \cellcolor{MainBlue!31}301 & \cellcolor{MainB
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Ziel \& Weron, 2018, ENEECO)}\hfill\qlink{EMQA\_L1\_acf\_pacf\_ro\_daily}{Quantlets/L1/EMQA_L1_acf_pacf_ro_daily}\hspace{0.8em}\qlink{EMQA\_L1\_acf\_ro\_hourly}{Quantlets/L1/EMQA_L1_acf_ro_hourly}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{The benchmark to beat: the naive forecast}
+\begin{frame}{The naive forecast as a benchmark}
 \small
 \intuition{Tomorrow, each hour costs what it cost today (after weekends: the same day last week).}
 \vspace{-1mm}\[ \hat p_{d,h}=\begin{cases} p_{d-1,h} & d=\text{Tue--Fri}\\ p_{d-7,h} & d=\text{Mon, Sat, Sun}\end{cases},\qquad \mathrm{MAE}=\frac{1}{n}\sum_{d,h}|p_{d,h}-\hat p_{d,h}| \]\vspace{-2mm}
@@ -1049,7 +1049,7 @@ TTF & 1.89 & 0.06 & 34.16 \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(energy-charts.info; daily and hourly day-ahead prices)}\hfill\qlink{EMQA\_L1\_separation\_2024}{Quantlets/L1/EMQA_L1_separation_2024}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Case study (c): evening, heat and a congested network}
+\begin{frame}{Case study (c): evening hours, heat and network congestion}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.60\textwidth}
@@ -1333,7 +1333,7 @@ RO net imports, TWh & 3.67 & 2.51 &  \\
 \par\vfill\noindent{\scriptsize\color{FooterGray}(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)}\par\vspace{0.5mm}
 \end{frame}
 
-\begin{frame}{Want to learn more?}
+\begin{frame}{Further reading and resources}
 \small
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.52\textwidth}

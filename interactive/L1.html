@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'en';</script>
-<link rel="preload" as="script" href="L1.js?v=20261108a">
+<link rel="preload" as="script" href="L1.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261108a", "L1_text_en.js?v=20261108a", "common.js?v=20261109m"], "L1.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L1_data.js?v=20261109m", "L1_text_en.js?v=20261109m", "common.js?v=20261109m"], "L1.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 </ul></nav>
 <main class="imain">
 <p class="lead">The slide of the lecture is on the left, the same figure on the right, recomputed in your browser from the course data (data/clean) when you move a control. The ▶ button moves the main parameter step by step. Under each figure: a readout, a question for the room and the Quantlet with the code of the chart.</p>
-<p class="toc"><a href="#s-mkt">Power markets in Romania and Europe</a> · <a href="#s-facts">Energy data and stylized facts</a> · <a href="#s-tool">Time-series toolkit</a></p>
+<p class="toc"><a href="#s-mkt">Power markets in Romania and Europe</a> · <a href="#s-facts">Energy data and stylized facts</a> · <a href="#s-tool">Time-series methods</a></p>
 <h2 class="sec" id="s-mkt">Power markets in Romania and Europe</h2>
 <section class="blk" id="merit-order">
   <h3>The merit order on real OPCOM curves, 21 Oct 2026</h3>
@@ -104,7 +104,7 @@
   </div>
   <div class="ask"><span class="ask-tag">Question for the room</span> Hourly prices have a long right tail and, since 2023, negative values. Why not simply take logarithms?</div>
   <details><summary>Answer</summary><p>The logarithm is not defined for zero or negative prices. The area hyperbolic sine, asinh((p − median)/(c·MAD)), where MAD is the median absolute deviation, behaves like a logarithm in the tails and is almost linear near the median, and it accepts any sign. For Romania in 2025, c = 1 brings the skewness from 0.90 to 0.09 and the excess kurtosis from 4.24 to −0.24; a smaller c compresses the tails further (negative excess kurtosis), a larger c leaves the series closer to the raw prices.</p></details>
-</section><h2 class="sec" id="s-tool">Time-series toolkit</h2>
+</section><h2 class="sec" id="s-tool">Time-series methods</h2>
 <section class="blk" id="acf-hourly">
   <h3>Autocorrelation of prices at daily and weekly lags</h3>
   <div class="pair">

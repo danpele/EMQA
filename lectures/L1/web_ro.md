@@ -93,13 +93,13 @@ Imaginea unei singure capacități pe fiecare graniță este o simplificare. Din
 
 @practice pe RO–HU, un trader cîștigă din diferența de preț doar cînd interconexiunea este saturată.
 
-## Zece ani de cuplare: de la patru țări la o licitație europeană {h=3254189f}
+## Etapele cuplării piețelor pentru România, 2014–2025 {h=be460116}
 
 Piața românească s-a integrat treptat în cea europeană. În 2014, România s-a cuplat cu Cehia, Slovacia și Ungaria în 4M Market Coupling. La 19 noiembrie 2019 a aderat la cuplarea unică a piețelor intrazilnice (SIDC), iar la 17 iunie 2021 la SDAC, prin cuplarea interimară 4M. Granița Bulgaria–România a fost cuplată în SDAC la 27 octombrie 2021, iar la 8 iunie 2022 granița România–Ungaria a trecut la alocarea bazată pe fluxuri din regiunea Core. În martie 2025, granițele României au intrat în licitațiile intrazilnice, iar la 1 octombrie 2025 SDAC a trecut la intervalul de tranzacționare de 15 minute.
 
 Toate prețurile se calculează cu algoritmul hibrid paneuropean de integrare a piețelor de energie electrică (EUPHEMIA). Pentru analist, concluzia este simplă: fiecare dintre aceste etape a schimbat datele, prin vecini noi, produse noi sau o rezoluție mai fină. Înainte de a compara două perioade, verificați care dintre aceste date se află între ele.
 
-## Din 1 octombrie 2025, o zi are 96 de prețuri, nu 24 {h=f1734e1f}
+## Intervalul de tranzacționare de 15 minute, din 1 octombrie 2025 {h=c66db93c}
 
 Intervalul de tranzacționare (MTU) s-a redus de la o oră la 15 minute, așa că orice număr de intervale trebuie acum convertit în ore echivalente. Prețul mediu zilnic și numărul de ore cu preț negativ se calculează astfel:
 
@@ -111,7 +111,7 @@ Datele noastre conțin 94 222 de intervale orare pînă în septembrie 2025 și 
 
 @practice întrebați mereu „ore sau sferturi de oră?” înainte de a compara anii între ei.
 
-## Producția României: hidro, nuclear, gaze, cărbune și tot mai mult solar {h=d9aaba9b}
+## Mixul de producție al României: hidro, nuclear, gaze, cărbune și solar în creștere {h=81bf0fb1}
 
 România produce energie electrică dintr-un mix diversificat. În grafic, producția hidro însumează centralele pe firul apei (RoR) și pe cele cu lac de acumulare, iar cărbunele însumează lignitul și huila. Bara neagră reprezintă consumul: cînd se află deasupra coloanei de producție, țara a fost importator net în anul respectiv. Energia este însumată pe orele raportate de TSO, cu o acoperire de cel puțin 98,1% în anii compleți, iar datele solare măsurate pot exclude o parte din producția panourilor de pe acoperișuri, consumată direct de proprietari.
 
@@ -120,7 +120,7 @@ Panoul din stînga arată cum s-a redus și și-a schimbat structura producția 
 @chart mix_ro_annual
 Producția anuală a României pe surse (TWh, cumulat) în anii compleți 2015–2025, cu consumul marcat printr-o bară neagră (stînga), și ponderile surselor în ianuarie–octombrie 2025 și 2026 (dreapta).
 
-## România: cărbunele scade, solarul crește, iar nuclearul se reduce în 2026 {h=488e0773}
+## Producția pe surse în România: mai puțin cărbune, mai mult solar, producție nucleară mai mică în 2026 {h=71df9c10}
 
 Comparația ponderilor fiecărei surse în 2015, 2025 și ianuarie–octombrie 2026 arată trei evoluții. Producția pe cărbune a scăzut cu 63,9% între 2015 și 2025, în timp ce producția solară măsurată a crescut de 2,2 ori în aceeași perioadă. În 2026, producția nucleară din ianuarie–octombrie a fost cu 31,3% mai mică decît în aceleași luni din 2025, pe orele raportate în ambii ani. Scăderea reală este cel puțin la fel de mare, deoarece cele 29 de zile din septembrie pentru care producția nucleară nu a fost raportată sînt pur și simplu excluse din comparație. Tabelul complet se află în Anexa D.
 
@@ -184,7 +184,7 @@ Sursa, energy-charts.info, care republică prețurile raportate de OPCOM și de 
 
 @practice la un furnizor, cele mai multe erori de prognoză apar la prelucrarea datelor (fus orar greșit, goluri completate), nu în model.
 
-## Prețurile au explodat în 2021–2022 și nu au mai revenit la vechiul nivel {h=d5e0efbd}
+## Prețurile au crescut puternic în 2021–2022 și nu au mai revenit la vechiul nivel {h=c29f4158}
 
 Graficul prezintă prețurile zilnice pentru ziua următoare în cele patru zone, din 2015 pînă în octombrie 2026. Pînă în 2020, prețurile au rămas într-un interval îngust; în 2021–2022, criza gazelor din Europa le-a dus la niveluri fără precedent, iar maximul zilnic din România a ajuns la 738,28 EUR/MWh, la 30 august 2022. Prețurile au scăzut apoi, dar nu pînă la vechiul nivel.
 
@@ -361,7 +361,7 @@ Graficul prezintă trei serii simulate, singurul grafic cu date simulate din cur
 @chart sim_wn_ar_rw
 Serii simulate (T = 500, șocuri normale standard): zgomot alb, AR(1) cu phi = 0,9 și mers aleator, cu funcțiile lor de autocorelație de selecție dedesubt.
 
-## Autocorelația: cît din trecut se regăsește în prețul de azi {h=20415e29}
+## Autocorelația: dependența prețului de azi de prețurile anterioare {h=c2986c1f}
 
 Autocorelația de ordinul $k$ este corelația dintre serie și aceeași serie decalată cu $k$ perioade:
 
@@ -385,7 +385,7 @@ Autocorelația (stînga) și autocorelația parțială (dreapta) a prețurilor z
 @chart acf_ro_hourly
 Autocorelația prețurilor orare din România în 2024 (T = 8784), pînă la decalajul de 168 de ore, cu banda pentru zgomot alb.
 
-## Prognoza naivă: reperul pe care orice model trebuie să-l depășească {h=222ca816}
+## Prognoza naivă ca model de referință {h=72de2b04}
 
 Cea mai simplă prognoză rezonabilă spune că prețul de mîine pentru fiecare oră este prețul de azi pentru aceeași oră; luni, sîmbătă și duminică se folosește prețul aceleiași ore din ziua corespunzătoare a săptămînii precedente:
 
@@ -483,7 +483,7 @@ Producția hidro a României depinde de ploi și de zăpadă. În 2023, un an pl
 @chart hydro_case
 Producția hidro lunară a României (TWh) în 2023 și 2025, cu media lunară 2015–2025 (stînga), și prețul mediu lunar în funcție de producția hidro lunară (dreapta).
 
-## Studiul de caz (a): mai multă apă, prețuri mai mici {h=ee5a5635}
+## Studiul de caz (a): în lunile mai ploioase, prețurile din România sînt mai mici {h=3af5994c}
 
 Pentru a lega apa de preț la același preț al gazelor, estimăm pe date lunare din 2015–2025 modelul
 
@@ -523,7 +523,7 @@ Panoul din dreapta detaliază ziua de 16 iulie 2024, cînd diferența zilnică d
 @chart separation_2024
 Prețurile zilnice în bandă în cele patru zone, 1 iunie – 30 septembrie 2024 (stînga), și prețurile orare din 16 iulie 2024 (dreapta).
 
-## Studiul de caz (c): seri caniculare și o rețea congestionată {h=c3f3d99e}
+## Studiul de caz (c): orele de seară, canicula și congestia rețelei {h=2ebbcbb2}
 
 Ponderea orelor din iulie 2024 în care prețurile au fost egale, cu o diferență sub 0,01 EUR/MWh, arată unde rețeaua era la limită: 86,8% pentru România–Bulgaria, dar numai 6,3% pentru România–Ungaria și 3,1% pentru România–Germania. Rețeaua spre Europa Centrală era la limita capacității, deși elementul de rețea saturat nu poate fi identificat numai din prețuri. După apus, producția solară dispare, iar aerul condiționat menține cererea ridicată, așa că regiunea trebuie să importe exact atunci cînd rețeaua este plină.
 
@@ -650,7 +650,7 @@ Mai multe lucrări ale grupului nostru studiază aceeași piață. Andrei, Pele 
 
 Proșcanu, Proșcanu, Pele & Costea (2025) compară modele sezoniere clasice cu rețele neuronale pentru prognoza consumului național al României, temă reluată în cursul 2. Proșcanu, Proșcanu & Pele (2025) arată că consumul din România este inelastic la preț și că cauzalitatea în sens Granger merge de la consum la preț, nu invers, ceea ce explică de ce curba cererii este abruptă. Shahar, Lessmann & Pele (2025) aplică metode cauzale de învățare automată liberalizării piețelor din Statele Unite și găsesc o scădere a prețului de circa 7% pe termen scurt. Rezultatele sînt preluate din rezumatele lucrărilor; toate celelalte cifre din curs provin din datele noastre.
 
-## Vreți să aflați mai mult? {h=a5ef6cf5}
+## Lecturi și resurse suplimentare {h=a1bb62f6}
 
 - R. Weron, IIF Distinguished Lectures despre prognoza prețurilor energiei electrice (2025): prezentări [partea I](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_1.pdf), [partea a II-a](https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_2.pdf), [notebook-uri Jupyter](https://github.com/lipiecki/energy-analytics-2025), [înregistrări video](https://www.youtube.com/playlist?list=PLUxduCQo6_X2UTvdP9OE8DwfuBClKFNur).
 - **epftoolbox**, setul de evaluare cu acces liber realizat de Lago et al. (2021): [github.com/jeslago/epftoolbox](https://github.com/jeslago/epftoolbox).

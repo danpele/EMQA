@@ -167,7 +167,7 @@ For Romania, on 94 months, the estimated slope is $\hat b$ = −4.20 (SE 1.03), 
 @chart cannibal
 Monthly solar capture rate against solar output as a share of load in Romania, Bulgaria and Hungary, with the fitted line for Romania.
 
-## The region cannibalises together: Romanian, Bulgarian and Hungarian capture rates fell in step {h=7fec914f}
+## Regional cannibalisation: Romanian, Bulgarian and Hungarian capture rates fell in step {h=17fdb405}
 
 The chart compares the yearly solar capture rates of the three coupled markets. They fell together: in 2025 the rate was 59.4% in Romania, 68.6% in Bulgaria and 57.5% in Hungary. Coupled markets share their midday surplus, so a park in one country is affected by the parks built in the others.
 
@@ -459,7 +459,7 @@ Several papers from our group study the Romanian market with the same drivers as
 - **Early warning of spikes** (Andrei, Pele, Cramer, Amza & Diaconu, 2026): the paper builds an explainable artificial intelligence (AI) early-warning system for Romanian price spikes. The residual-load forecast is the main driver, the same variable as in our regression.
 - **Price elasticity of demand** (Proșcanu, Proșcanu & Pele, 2025): the paper tests Granger causality between Romanian consumption and price. Consumption does not react to price, which explains the almost vertical demand curve of the merit order.
 
-## Want to learn more? {h=21078cb0}
+## Further reading and resources {h=41ea5c36}
 
 - **Hirth (2013)**: the reference paper on the value factor of wind and solar, [doi:10.1016/j.eneco.2013.02.004](https://doi.org/10.1016/j.eneco.2013.02.004).
 - **Cole & Karmakar (2023)**: battery costs, efficiency and lifetime used in this lecture, [doi:10.2172/1984976](https://doi.org/10.2172/1984976).

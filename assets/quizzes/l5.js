@@ -118,7 +118,7 @@ window.EMQA_DATA.quizzes['l5'] = {
         {
             "correct": 1,
             "en": {
-                "title": "A hedge is a transfer",
+                "title": "Hedging as a risk transfer",
                 "text": "Each megawatt-hour (MWh) sold forward for 2022 went 187.9 EUR/MWh below the spot price. How should a board interpret this number?",
                 "options": [
                     "As value created by the forward market for both sides",
@@ -130,7 +130,7 @@ window.EMQA_DATA.quizzes['l5'] = {
                 "incorrectExplanation": "The forward is a zero-sum contract between the two sides. One crisis year does not prove that selling forward is wrong (in 2025 producers gave up only 6.0 EUR/MWh for a fixed revenue), and the 2022 gap was a loss for sellers, not a premium earned by them."
             },
             "ro": {
-                "title": "Acoperirea ca transfer",
+                "title": "Acoperirea ca transfer al riscului",
                 "text": "Fiecare megawatt-oră (MWh) vîndut forward pentru 2022 a fost cu 187,9 EUR/MWh sub prețul spot. Cum ar trebui să interpreteze consiliul de administrație această cifră?",
                 "options": [
                     "Ca valoare creată de piața forward pentru ambele părți",
@@ -307,7 +307,7 @@ window.EMQA_DATA.quizzes['l5'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Forward is not a forecast",
+                "title": "Forward prices and forecasts",
                 "text": "The 2023 baseload forward on the platform of the Romanian electricity and gas market operator (OPCOM) was bought at a volume-weighted average price (VWAP) of 172.5 EUR per megawatt-hour (EUR/MWh), while the 2023 spot averaged 103.7; for 2021 the figures were 51.3 and 111.4. What is the right reading?",
                 "options": [
                     "The forward is a biased forecast that always exceeds the realised price",
@@ -319,7 +319,7 @@ window.EMQA_DATA.quizzes['l5'] = {
                 "incorrectExplanation": "Errors of both signs rule out a bias in one fixed direction, and the 2023 buyers did exactly what a hedge does: they removed uncertainty at the price then available. The forward should not be relied on as a forecast in a crisis."
             },
             "ro": {
-                "title": "Forward-ul nu este o prognoză",
+                "title": "Prețurile forward și prognozele",
                 "text": "Banda pentru 2023 a fost cumpărată pe platforma operatorului pieței de energie electrică și de gaze naturale din România (OPCOM) la un preț mediu ponderat cu volumul (VWAP) de 172,5 EUR pe megawatt-oră (EUR/MWh), iar spotul din 2023 a avut media 103,7; pentru 2021, cifrele au fost 51,3 și 111,4. Care este interpretarea corectă?",
                 "options": [
                     "Forward-ul este o prognoză deplasată, care depășește întotdeauna prețul realizat",

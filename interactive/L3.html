@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'en';</script>
-<link rel="preload" as="script" href="L3.js?v=20261108a">
+<link rel="preload" as="script" href="L3.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261108a", "L3_text_en.js?v=20261108a", "common.js?v=20261109m"], "L3.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L3_data.js?v=20261109m", "L3_text_en.js?v=20261109m", "common.js?v=20261109m"], "L3.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -76,9 +76,9 @@
   <details><summary>Answer</summary><p>About 0.18, i.e. none: the normal tail beyond 4 standard deviations has probability 6.3 × 10⁻⁵. Even after GARCH removes the clustering, the tails stay fat; the estimated Student-t, with ν = 4.27 degrees of freedom, expects 12.7. Move ν: with a small ν the Student-t curve reaches the far bins of the histogram, with ν above 30 it is close to the normal.</p></details>
 </section><h2 class="sec" id="s-garch">The GARCH family</h2>
 <section class="blk" id="garch-filter">
-  <h3>GARCH volatility: short spikes in percent, a long hump in EUR/MWh</h3>
+  <h3>GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=18" target="_blank" rel="noopener"><img src="slides/L3_cond_vol_en.jpg" alt="Slide 18: GARCH volatility: short spikes in percent, a long hump in EUR/MWh" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L3/lecture3.pdf#page=18" target="_blank" rel="noopener"><img src="slides/L3_cond_vol_en.jpg" alt="Slide 18: GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh" loading="lazy"></a>
       <figcaption>Slide 18</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="gf-u">Unit of the shocks</label><select id="gf-u"><option value="pct" selected>Change in % (log)</option><option value="eur">Change in EUR/MWh</option></select></div><div class="ctl"><label for="gf-a">α (reaction to yesterday's shock): <b id="gf-a-v"></b></label><input type="range" id="gf-a" min="0" max="0.5" step="any" value="0.3081"></div><div class="ctl"><label for="gf-b">β (memory of the variance): <b id="gf-b-v"></b></label><input type="range" id="gf-b" min="0" max="0.99" step="any" value="0.4378"></div><button class="btn play" id="gf-play" type="button"></button></div><div class="charts one"><div class="chart" id="gf-chart"></div></div><ul class="out" id="gf-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L3/EMQA_L3_cond_vol" target="_blank" rel="noopener">EMQA_L3_cond_vol</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L3/EMQA_L3_cond_vol/EMQA_L3_cond_vol.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

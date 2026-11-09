@@ -24,7 +24,7 @@ BLOCKS = [('merit-order', 'merit_opcom', 'mkt', 'mo'),
           ('acf-hourly', 'acf_ro_hourly', 'tool', 'ac')]
 
 SECTIONS = {
- 'en': dict(mkt='Power markets in Romania and Europe', facts='Energy data and stylized facts', tool='Time-series toolkit'),
+ 'en': dict(mkt='Power markets in Romania and Europe', facts='Energy data and stylized facts', tool='Time-series methods'),
  'ro': dict(mkt='Piețele de energie electrică din România și Europa', facts='Datele din energie și faptele stilizate',
             tool='Instrumente pentru serii de timp'),
 }

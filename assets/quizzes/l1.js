@@ -523,7 +523,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Why asinh, not logs",
+                "title": "Asinh versus the logarithm",
                 "text": "In January–October 2026, 1,189 of 29,184 Romanian quarter-hours had a price of zero or below, 502 of them exactly 0. Why does the lecture transform prices with $\\operatorname{asinh}$ rather than with logarithms?",
                 "options": [
                     "Asinh is defined for zero and negative prices and behaves like a logarithm in both tails",
@@ -535,7 +535,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "Logarithms and percentage changes need a positive price, so they fail precisely in the zero and negative hours that matter most for solar and storage; asinh keeps those hours and does not remove seasonality."
             },
             "ro": {
-                "title": "De ce asinh, nu logaritm",
+                "title": "Transformarea asinh și logaritmul",
                 "text": "În ianuarie–octombrie 2026, 1 189 din cele 29 184 de sferturi de oră din România au avut un preț nul sau negativ, dintre care 502 un preț exact 0. De ce cursul transformă prețurile cu $\\operatorname{asinh}$ și nu cu logaritmul?",
                 "options": [
                     "Funcția asinh este definită pentru prețuri nule și negative și se comportă ca un logaritm în ambele cozi",
@@ -604,7 +604,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Persistent is not noise",
+                "title": "Persistence versus noise",
                 "text": "An analyst reports that the price on the day-ahead market (PZU, Piața pentru Ziua Următoare) has an autocorrelation of 0.98 at lag 1 and 0.90 at lag 30, and concludes that prices are white noise, so last month tells us nothing. What do you answer?",
                 "options": [
                     "Correct: such high autocorrelations mean the series is erratic",
@@ -616,7 +616,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "A random walk looks erratic but its level autocorrelation is close to 1, because every value contains all past shocks; 0.98 is far outside any white-noise band, and a slow decay is persistence, not seasonality."
             },
             "ro": {
-                "title": "Persistența nu este zgomot",
+                "title": "Persistența și zgomotul",
                 "text": "Un analist raportează că prețul de pe Piața pentru Ziua Următoare (PZU) are o autocorelație de 0,98 la decalajul 1 și de 0,90 la decalajul 30 și conchide că prețurile sînt zgomot alb, deci luna trecută nu ne spune nimic. Ce îi răspundeți?",
                 "options": [
                     "Are dreptate: autocorelații atît de mari înseamnă că seria este haotică",
@@ -712,7 +712,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Unit-root verdict for Romania",
+                "title": "Unit-root test result for Romania",
                 "text": "On Romanian daily price levels (2015–2026), the augmented Dickey–Fuller (ADF) test gives $p=0.073$ and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) statistic is 3.645, with $p$ below 0.01. What is the verdict at the 5% level?",
                 "options": [
                     "Stationary: ADF rejects a unit root and KPSS keeps stationarity",
@@ -724,7 +724,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "The two tests have opposite nulls: ADF tests for a unit root, KPSS for stationarity. Here only KPSS rejects; ADF has low power against slow mean reversion, and the 2022 level break pushes it towards a unit root."
             },
             "ro": {
-                "title": "Verdictul de rădăcină unitară",
+                "title": "Rezultatul testului de rădăcină unitară",
                 "text": "Pe nivelurile zilnice ale prețului din România (2015–2026), testul Dickey–Fuller augmentat (ADF) dă $p=0{,}073$, iar statistica Kwiatkowski–Phillips–Schmidt–Shin (KPSS) este 3,645, cu $p$ sub 0,01. Care este verdictul la pragul de 5%?",
                 "options": [
                     "Staționară: ADF respinge rădăcina unitară, iar KPSS nu respinge staționaritatea",
@@ -793,7 +793,7 @@ window.EMQA_DATA.quizzes['l1'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Hydro: wet versus dry year",
+                "title": "Hydro output in a wet and a dry year",
                 "text": "Romanian hydro output was 18.34 terawatt-hours (TWh) in wet 2023 and 12.15 TWh in dry 2025, while the 2015–2025 mean was 15.85 TWh. By how much did 2025 fall relative to 2023?",
                 "options": [
                     "−23.3%",
@@ -805,7 +805,7 @@ window.EMQA_DATA.quizzes['l1'] = {
                 "incorrectExplanation": "The change must be divided by the 2023 base: −23.3% is the gap of 2025 to the long-run mean, dividing by 2025 gives 50.9%, and 6.19 is the fall in TWh, not in percent."
             },
             "ro": {
-                "title": "Hidro: an ploios și an secetos",
+                "title": "Producția hidro într-un an ploios și într-unul secetos",
                 "text": "Producția hidro a României a fost de 18,34 terawați-oră (TWh) în anul ploios 2023 și de 12,15 TWh în anul secetos 2025, iar media 2015–2025 a fost de 15,85 TWh. Cu cît a scăzut producția din 2025 față de 2023?",
                 "options": [
                     "−23,3%",

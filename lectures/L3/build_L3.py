@@ -373,7 +373,7 @@ def build(lang, H=None):
                 "folosiți șocuri de tip Student; cu șocuri normale, limitele rămîn largi prea mult timp."),
               tryit=NB + " \\S3", cite="(Bollerslev, 1987, RESTAT)", wl="0.50", wr="0.47")
 
-    D.chart(t("GARCH volatility: short spikes in percent, a long hump in EUR/MWh", "GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh"),
+    D.chart(t("GARCH volatility: short spikes in percent, a prolonged rise in EUR/MWh", "GARCH: salturi scurte în procente, valori mari durabile în EUR/MWh"),
             "cond_vol", [
                 t(("Peaks", "in percent: @{garch.cv.pct_max|.0f}\\% per day on @{garch.cv.pct_max_date|date}, gone within days",
                    "in EUR/MWh: @{garch.cv.eur_max|.1f} on @{garch.cv.eur_max_date|date}, against a minimum of @{garch.cv.eur_min|.1f} on @{garch.cv.eur_min_date|date}; @{garch.cv.eur_last|.1f} at the cut-off"),
@@ -495,7 +495,7 @@ def build(lang, H=None):
     # ------------------------------------------------------------------ 3 regimes
     D.section(t("Regimes and the energy crisis", "Regimuri de volatilitate și criza energetică"))
     M = "ms.eur"
-    D.concept(t("A Markov-switching model separates calm and turbulent regimes", "Modelul Markov cu schimbare de regim separă calmul de agitație"),
+    D.concept(t("A Markov-switching model separates calm and turbulent regimes", "Modelul Markov cu schimbare de regim separă regimul calm de cel agitat"),
               t("Two hidden states, each with its own volatility; for every day the model gives the probability of the turbulent one.",
                 "Două stări neobservate, fiecare cu volatilitatea ei; pentru fiecare zi, modelul dă probabilitatea stării agitate."),
               "\\[ u_t=\\mu_{s_t}+\\sigma_{s_t}\\eta_t,\\qquad \\Pr(s_t=j\\mid s_{t-1}=i)=p_{ij} \\]\\vspace{-1mm}"
@@ -604,7 +604,7 @@ def build(lang, H=None):
                 "o baterie își programează mentenanța în zilele cu variație prognozată mică."),
               tryit=NB + " \\S6", cite="(Corsi, 2009, JFEC)", wl="0.56", wr="0.41")
 
-    D.chart(t("HAR forecasts follow intraday variation, not its isolated spikes", "Prognozele HAR urmăresc variația, dar nu și salturile izolate"),
+    D.chart(t("HAR forecasts track the level of intraday variation but smooth out isolated spikes", "Prognozele HAR urmăresc variația, dar nu și salturile izolate"),
             "har_fc", [
                 t(("Test year, forecast made on $d-1$", "HAR re-estimated every day on the data available on $d-1$; MAE @{har.mae_har|.1f} EUR/MWh"),
                   ("Anul de test, prognoză făcută în ziua $d-1$", "HAR reestimat zilnic pe datele disponibile în ziua $d-1$; MAE @{har.mae_har|.1f} EUR/MWh"))],
@@ -887,7 +887,7 @@ def build(lang, H=None):
                    "șocurile se transmit în cîteva zile; valoarea pentru diversificare se judecă pentru fiecare token în parte.")),
         "footnotesize", cite=t("(Ben Amor \\& Horváth, AIDA conference, Bucharest, 4 June 2026)", "(Ben Amor și Horváth, conferința AIDA, București, 4 iunie 2026)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{R.\\,F.\\ Engle, GARCH 101} (2001): the clearest short introduction, by the Nobel laureate who invented ARCH --- ",
           "\\textbf{R.\\,F.\\ Engle, GARCH 101} (2001): cea mai clară introducere scurtă, scrisă de laureatul Nobel care a propus modelul ARCH --- ") +
         "\\href{https://doi.org/10.1257/jep.15.4.157}{doi:10.1257/jep.15.4.157}.",

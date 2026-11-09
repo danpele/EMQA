@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261108a">
-<link rel="stylesheet" href="interactive.css?v=20261108a">
+<link rel="stylesheet" href="../assets/site.css?v=20261109m">
+<link rel="stylesheet" href="interactive.css?v=20261109m">
 <script>window.EMQA_LANG = 'en';</script>
-<link rel="preload" as="script" href="L5.js?v=20261108a">
+<link rel="preload" as="script" href="L5.js?v=20261109m">
 <script>
 (function (early, page) {
   'use strict';
@@ -34,7 +34,7 @@
   early.forEach(src => add(src, 0, r => { ok = ok && r; left--; go(); }, false));
   if (!parsed) document.addEventListener('DOMContentLoaded', () => { parsed = true; go(); });
   go();
-})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261108a", "L5_text_en.js?v=20261108a", "common.js?v=20261109m"], "L5.js?v=20261108a");
+})(["https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js", "L5_data.js?v=20261109m", "L5_text_en.js?v=20261109m", "common.js?v=20261109m"], "L5.js?v=20261109m");
 </script>
 </head>
 <body>
@@ -76,9 +76,9 @@
   <details><summary>Answer</summary><p>The count falls, because a higher efficiency lowers both the fuel cost and the carbon cost per MWh of electricity: clean spark spread = p − gas/η − (0.202/η)·EUA. At 0.58 the count falls from 67 to 29 months. The clean dark spread of coal does not change with the gas slider: the switch between gas and coal depends on the relative cost, not on the price of power alone.</p></details>
 </section><h2 class="sec" id="s-hedge">Hedge ratio, basis risk and shape risk</h2>
 <section class="blk" id="hedge-ratio">
-  <h3>Hungary hedges Romania almost fully; Germany leaves a fifth</h3>
+  <h3>Cross-border hedges: Hungarian contracts are more effective than German ones</h3>
   <div class="pair">
-    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_en.jpg" alt="Slide 28: Hungary hedges Romania almost fully; Germany leaves a fifth" loading="lazy"></a>
+    <figure class="slide"><a href="../lectures/L5/lecture5.pdf#page=28" target="_blank" rel="noopener"><img src="slides/L5_hedge_scatter_en.jpg" alt="Slide 28: Cross-border hedges: Hungarian contracts are more effective than German ones" loading="lazy"></a>
       <figcaption>Slide 28</figcaption></figure>
     <div class="live"><div class="ctls"><div class="ctl"><label for="hr-z">Hedging instrument</label><select id="hr-z"><option value="HU" selected>Hungarian price</option><option value="DE_LU">German–Luxembourg price</option></select></div><div class="ctl"><label for="hr-a">First year of the sample: <b id="hr-a-v"></b></label><input type="range" id="hr-a" min="2015" max="2024" step="1" value="2015"></div><div class="ctl"><label for="hr-b">Last year of the sample: <b id="hr-b-v"></b></label><input type="range" id="hr-b" min="2016" max="2026" step="1" value="2026"></div><button class="btn play" id="hr-play" type="button"></button></div><div class="charts "><div class="chart" id="hr-sc"></div><div class="chart" id="hr-roll"></div></div><ul class="out" id="hr-out"></ul><p class="qlk">Code of this chart: <a href="https://github.com/danpele/EMQA/tree/main/Quantlets/L5/EMQA_L5_hedge_scatter" target="_blank" rel="noopener">EMQA_L5_hedge_scatter</a> · <a href="https://colab.research.google.com/github/danpele/EMQA/blob/main/Quantlets/L5/EMQA_L5_hedge_scatter/EMQA_L5_hedge_scatter.ipynb" target="_blank" rel="noopener">open in Colab</a></p></div>
   </div>

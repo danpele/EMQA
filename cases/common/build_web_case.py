@@ -828,7 +828,7 @@ window.MathJax = {{ tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\
   startup: {{ pageReady: () => MathJax.startup.defaultPageReady().then(() => {{ document.body.setAttribute('data-mj', 'done'); window.dispatchEvent(new Event('emqa-mathjax')); }}) }} }};
 </script>
 <script id="MathJax-script" async src="{MATHJAX}"></script>
-<script defer src="../web.js?v={VER}"></script>
+<script defer src="../web.js?v=20261109m"></script>
 </head>
 <body class="web case">
 <header>

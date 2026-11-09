@@ -352,7 +352,7 @@ def q_horizon_naive():
                "lags k = 7 and 14 (same weekday).",
             "electricity price forecasting, naive forecast, forecast horizon, weekly seasonality, MAE, Romania, OPCOM",
             "Hourly day-ahead prices of Romania (power_da_prices_hourly_utc.csv); daily prices and Romanian generation (cut-off only)",
-            "Older information, larger error, except at the weekly lag")
+            "Forecast error grows with the age of the information, except at the weekly lag")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Price panel").code(panel(lr=False))
     q.md(r"## MAE of the forecast $\hat P_{d,h}=P_{d-k,h}$ on the test year")
     q.code("hz = {k: float(np.mean(np.abs(A - P_[TI_ROWS - k]))) for k in range(1, 15)}\n"
@@ -528,7 +528,7 @@ def q_per_hour_single():
                "slopes) and the naive benchmark.",
             "ARX, per-hour model, pooled model, multivariate, univariate, MAE by hour, electricity price forecasting, Romania",
             "Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)",
-            "One model per hour beats one model for all hours")
+            "Separate models for each hour are more accurate than a single model")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md("## Expert ARX(728): one model per hour, and one pooled model for all hours").code(ARX_FUNCS)
     q.code("ARX728 = np.array([arx_day(P_, L_, R_, None, i, 728)[0] for i in TI_ROWS])\n"
@@ -569,7 +569,7 @@ def q_vst():
             "variance-stabilising transformation, asinh, area hyperbolic sine, median absolute deviation, ARX, price spikes, "
             "negative prices, electricity price forecasting, Romania",
             "Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv)",
-            "The asinh transformation tames spikes and negative prices")
+            "The asinh transformation for price spikes and negative prices")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md("## Expert ARX(728) on raw and on asinh-transformed prices").code(ARX_FUNCS)
     q.code("ARX728 = np.array([arx_day(P_, L_, R_, None, i, 728)[0] for i in TI_ROWS])\n"
@@ -606,7 +606,7 @@ def q_lear_sel():
             "LEAR, LASSO, variable selection, sparsity, AIC, autoregression, electricity price forecasting, Romania",
             "Hourly day-ahead prices of Romania; hourly load, wind and solar generation of Romania (generation_ro_mw_hourly_utc.csv); "
             "saved LASSO selection of the test year (lear_nz_test.npz, from lectures/L2/analysis_L2.py)",
-            "What LEAR keeps: yesterday's same hour and the weekday, rarely the lagged fundamentals")
+            "Regressors selected by LEAR: yesterday's same hour and the weekday, rarely the lagged fundamentals")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF).md("## Panels of price, load and wind + solar").code(panel())
     q.md("## LASSO selection\n\nLEAR(728) is re-estimated every day of the test year for each hour; the LASSO keeps a "
          "regressor when its coefficient is not zero. The 247 columns are, in order: price of d-1, d-2, d-3, d-7 (24 hours "
@@ -851,7 +851,7 @@ def q_coint_daily():
             "day-ahead electricity prices",
             "Daily and hourly day-ahead prices of Romania, Hungary and Germany-Luxembourg (power_da_prices_daily_cet.csv, "
             "power_da_prices_hourly_utc.csv); Romanian generation (cut-off only)",
-            "Romania and Hungary: coupled markets, a spread that keeps closing")
+            "Romania and Hungary: cointegrated prices in coupled markets")
     q.code(SETUP).md("## Data and cut-off").code(CUTOFF)
     q.md("## Unit roots and cointegration, daily prices since 2022")
     q.code("import statsmodels.api as sm\nfrom statsmodels.tsa.stattools import adfuller, coint\n"
@@ -1081,7 +1081,7 @@ def q_battery():
                "AW-LEAR, GBM, AW-ARX and the naive forecast; right, price paid by a flexible 4-hour consumer who places its "
                "process on the forecast, against a fixed 8-12 h block.",
             "value of forecasts, battery arbitrage, demand flexibility, perfect foresight, LEAR, ensemble, electricity price, Romania",
-            ML_DATAFILE, "Case study (d): what a better forecast is worth")
+            ML_DATAFILE, "Case study (d): economic value of a more accurate forecast")
     ml_quantlet(n, q)
     q.md("## Battery and flexible consumer, valued at the actual prices (days with a clock change left out)")
     q.code(fsrc("battery", "flex") + "\n\n\n"

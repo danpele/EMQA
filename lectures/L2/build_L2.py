@@ -248,8 +248,8 @@ def build(lang, H=None):
            ("\\textbf{Intervalele de livrare}", "din ziua de livrare 1 octombrie 2025: 96 de prețuri pe sfert de oră (înainte: 24 de prețuri orare)",
             "în datele noastre, prețul orar = media celor patru sferturi de oră; tot anul de test folosește aceste medii")),
          sep="1pt"), "footnotesize", cite="(NEMO Committee, 2025, 2026; OPCOM)")
-    D.frame(t("Notation, and the rule every forecast in this lecture obeys",
-              "Notația și regula pe care o respectă toate prognozele din acest curs"), it(
+    D.frame(t("Notation and the information rule for all forecasts",
+              "Notația și regula informației disponibile pentru toate prognozele"), it(
         t(("\\textbf{Notation}", "$d$ = delivery day; $d-1$ = the day before, when the auction runs; $d-2$ = two days before",
            "$h=0,\\dots,23$ = hour of delivery (CET); $P_{d,h}$ = day-ahead price of hour $h$ on day $d$, in EUR/MWh; $\\hat P_{d,h}$ = its forecast"),
           ("\\textbf{Notația}", "$d$ = ziua livrării; $d-1$ = ziua dinainte, în care are loc licitația; $d-2$ = cu două zile înainte",
@@ -318,7 +318,7 @@ def build(lang, H=None):
                                          "cereți furnizorului o testare retrospectivă (backtest) pe fereastră glisantă, nu ajustarea pe datele de estimare."),
         tryit=NB + " \\S1", cite=CITE_W)
 
-    D.figframe(t("Older information, larger error, except at the weekly lag", "Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă"),
+    D.figframe(t("Forecast error grows with the age of the information, except at the weekly lag", "Prețul mai vechi dă erori mai mari, cu excepția celui de acum o săptămînă"),
                None, None, "horizon_naive", [
                    t("Forecast $\\hat P_{d,h}=P_{d-k,h}$; MAE @{horizon.1|.2f} EUR/MWh for $k=1$, @{horizon.2|.2f} for $k=2$, back to @{horizon.7|.2f} for $k=7$ (same weekday).",
                      "Prognoza $\\hat P_{d,h}=P_{d-k,h}$ (prețul aceleiași ore de acum $k$ zile); "
@@ -493,7 +493,7 @@ def build(lang, H=None):
                    "cumpărați prognozele TSO de consum și de producție regenerabilă pentru ziua următoare înainte de a plăti pentru un model mai complex."), NB + " \\S3"),
         "footnotesize", cite=t("(own estimation; Lago et al., 2021, APEN)", "(estimare proprie; Lago et al., 2021, APEN)"))
 
-    D.chart(t("One model per hour beats one model for all hours", "Cîte un model pentru fiecare oră este mai precis decît un model comun"),
+    D.chart(t("Separate models for each hour are more accurate than a single model", "Cîte un model pentru fiecare oră este mai precis decît un model comun"),
             "per_hour_single", [
                 t("MAE @{acc.arx728.mae|.2f} per hour vs @{acc.arx728_single.mae|.2f} EUR/MWh pooled (hour intercepts, common slopes); pooled worse in @{byhour.single_worse_h} of 24 hours.",
                   "MAE: @{acc.arx728.mae|.2f} cu cîte un model pe oră, @{acc.arx728_single.mae|.2f} EUR/MWh cu un model comun (constantă proprie fiecărei ore, pante comune); modelul comun este mai slab în @{byhour.single_worse_h} din 24 de ore.")],
@@ -502,7 +502,7 @@ def build(lang, H=None):
             tryit=NB + " \\S3", cite="(Ziel \\& Weron, 2018, ENEECO)")
 
     D.subsection(t("Variance-stabilising transformations", "Transformări de stabilizare a varianței"))
-    D.figframe(t("The asinh transformation tames spikes and negative prices",
+    D.figframe(t("The asinh transformation for price spikes and negative prices",
                  "Transformarea asinh atenuează salturile și acceptă prețuri negative"),
                None, None, "vst", [
                    t("Variance-stabilising transformation (VST) $Y=\\asinh((P-m)/s)$, $m$ = median, $s$ = 1.4826 $\\times$ median absolute deviation (MAD), from the window only.",
@@ -539,7 +539,7 @@ def build(lang, H=None):
               tryit=NB + " \\S4", cite="(Tibshirani, 1996; Uniejewski, Nowotarski \\& Weron, 2016; Lago et al., 2021)",
               wl="0.53", wr="0.44")
 
-    D.chart(t("What LEAR keeps: yesterday's same hour and the weekday, rarely the lagged fundamentals",
+    D.chart(t("Regressors selected by LEAR: yesterday's same hour and the weekday, rarely the lagged fundamentals",
               "LEAR păstrează prețul aceleiași ore de ieri și ziua săptămînii"), "lear_sel", [
         t("Kept on average, $P_{d-1,h}$ @{lear.p1_same|.0f}\\%, weekday @{lear.dow|.0f}\\%, load @{lear.load|.0f}\\%, wind + solar @{lear.res|.0f}\\% of the regressors.",
           "Procentul mediu al regresorilor păstrați din fiecare grupă: $P_{d-1,h}$ (aceeași oră, ieri) @{lear.p1_same|.0f}\\%, ziua săptămînii @{lear.dow|.0f}\\%, consum @{lear.load|.0f}\\%, producție eoliană și solară @{lear.res|.0f}\\%.")],
@@ -612,7 +612,7 @@ def build(lang, H=None):
     for k, lab in RES:
         rows.append([lab] + [heat(N["acc"][k][c], min(vals[c]), max(vals[c]), True, fmt(N["acc"][k][c], f, lang))
                              for c, f in [("mae", ".2f"), ("rmse", ".2f"), ("smape", ".1f"), ("rmae", ".3f")]])
-    D.frame(t("Results on the Romanian test year: the scoreboard", "Clasamentul modelelor pe anul de test în România"),
+    D.frame(t("Accuracy of all models on the Romanian test year", "Clasamentul modelelor pe anul de test în România"),
             "\\begin{center}" + table("@{}lrrrr@{}", [t("Model", "Model"), "MAE", "RMSE", "sMAPE, \\%", "rMAE"], rows,
                                       size="scriptsize", stretch="1.02") + "\\end{center}\\vspace{-2mm}" + note(
                 t(TEST[0].upper() + TEST[1:] + ", @{test.n_hours|,d} hours; green = better, red = worse, per column.",
@@ -673,7 +673,7 @@ def build(lang, H=None):
         tryit=NB + " \\S6", cite=t("(own computation, " + TEST + ")", "(calcule proprii, " + TEST + ")"))
 
     c2 = N["c2"]
-    D.frame(t("Our group on Romanian load: machine learning wins when the series is smooth",
+    D.frame(t("Research from our group on Romanian load: machine learning is most accurate for smooth series",
               "Studiul de caz C2: pentru consumul din România, învățarea automată dă cele mai mici erori"), it(
         t((t("\\textbf{The study} (Proșcanu, Proșcanu, Pele \\& Costea, 2025)", "\\textbf{Studiul} (Proșcanu, Proșcanu, Pele \\& Costea, 2025)"),
          t("hourly national load of Romania, 2022--2024; classical seasonal models against neural networks",
@@ -764,7 +764,7 @@ def build(lang, H=None):
               t("a RO--HU spread trade closes within days, not months.", "o poziție pe diferența de preț RO--HU se închide în cîteva zile, nu în luni."),
               tryit=NB + " \\S8", cite="(Engle \\& Granger, 1987; Johansen, 1991; MacKinnon, 1996)", wl="0.50", wr="0.47")
 
-    D.chart(t("Romania and Hungary: coupled markets, a spread that keeps closing", "România și Ungaria: piețe cuplate, cu o diferență de preț care se închide repede"),
+    D.chart(t("Romania and Hungary: cointegrated prices in coupled markets", "România și Ungaria: prețuri cointegrate pe piețe cuplate"),
             "coint_daily", [
                 t("Spread RO $-$ HU: mean @{coint.HU.mean_spread|.2f}, standard deviation @{coint.HU.sd_spread|.2f} EUR/MWh; Romania vs Germany--Luxembourg: @{coint.DE_LU.mean_spread|.2f} and @{coint.DE_LU.sd_spread|.2f}.",
                   "Diferența RO $-$ HU: media @{coint.HU.mean_spread|.2f}, abaterea standard @{coint.HU.sd_spread|.2f} EUR/MWh; pentru România și Germania--Luxemburg: @{coint.DE_LU.mean_spread|.2f} și @{coint.DE_LU.sd_spread|.2f}."),
@@ -835,7 +835,7 @@ def build(lang, H=None):
 
     bt, fx = N["battery"], N["flex"]
     D.subsection(t("(d) Economic value of the forecast", "(d) Valoarea economică a prognozei"))
-    D.chart(t("Case study (d): what a better forecast is worth", "Studiul de caz (d): cît valorează, în bani, o prognoză mai bună"), "battery", [
+    D.chart(t("Case study (d): economic value of a more accurate forecast", "Studiul de caz (d): valoarea economică a unei prognoze mai precise"), "battery", [
         t("Battery 1 MW / 2 MWh, one daily cycle, @{battery.n_days} days without DST; @{battery.ens_all.eur|,.0f} EUR per MW with the ensemble (@{battery.ens_all.pct|.1f}\\% of perfect foresight), @{battery.naive.eur|,.0f} with naive.",
           "Baterie de 1 MW / 2 MWh, un ciclu pe zi, @{battery.n_days} " + de("battery.n_days") + "zile fără schimbarea orei; @{battery.ens_all.eur|,.0f} EUR pe MW cu ansamblul (@{battery.ens_all.pct|.1f}\\% din profitul cu informație perfectă), @{battery.naive.eur|,.0f} cu modelul naiv."),
         t("Flexible 4-hour load: @{flex.aw_lear.eur_mwh|.2f} EUR/MWh with AW-LEAR vs @{flex.base_eur_mwh|.2f} for the fixed 8--12 h CET block.",
@@ -1001,7 +1001,7 @@ def build(lang, H=None):
         "footnotesize", cite=t("(Bucharest University of Economic Studies; Romanian Academy, Institute for Economic Forecasting)",
                                "(Academia de Studii Economice din București; Academia Română, Institutul de Prognoză Economică)"))
 
-    D.frame(t("Want to learn more?", "Lecturi și resurse suplimentare"), cols(it(
+    D.frame(t("Further reading and resources", "Lecturi și resurse suplimentare"), cols(it(
         t("\\textbf{R.\\ Weron, IIF Distinguished Lectures on electricity price forecasting} (2025): slides ",
           "\\textbf{R.\\ Weron, IIF Distinguished Lectures despre prognoza prețurilor energiei electrice} (2025): prezentări ") +
         "\\href{https://p.wz.pwr.edu.pl/~weron.rafal/assets/PDF/Weron25_IIF_1.pdf}{" + t("part I", "partea I") + "}, "

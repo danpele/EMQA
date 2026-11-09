@@ -53,7 +53,7 @@ The timing of the purchase mattered almost as much as the decision to hedge. Con
 @chart crisis_cal22
 The monthly mean day-ahead price in Romania, 2020–2022, with each auction of the 2022 baseload forward (dots), the volume-weighted forward price and the realised 2022 average (dashed lines).
 
-## The crisis froze forward trading and brought regulated prices {h=15d29a9c}
+## The crisis reduced forward trading and led to regulated prices {h=6d0ac2e9}
 
 A hedge is a transfer, not a gain created from nothing. Each MWh sold forward for 2022 went 187.9 EUR/MWh below the spot: producers that sold forward lost exactly what hedged suppliers saved. Forwards then overshot in the other direction: the calendar 2023 contract traded at up to 509.2 EUR/MWh on 17 Aug 2022, while the spot of 2023 averaged 103.7 EUR/MWh.
 
@@ -261,7 +261,7 @@ As instruments we use the monthly mean prices of Hungary and of DE-LU, because a
 
 @practice a hedge ratio without a confidence interval is a guess.
 
-## Hungary hedges Romania almost fully; Germany leaves a fifth {h=3549c4e3}
+## Cross-border hedges: Hungarian contracts are more effective than German ones {h=fd86f525}
 
 The Romanian price follows the Hungarian one closely: $h^{*}$ is 0.966 and the regression explains 98% of the variance of Romanian monthly changes. The German price is a weaker hedge: $h^{*}$ = 0.875 with $R^2$ = 0.80, so about a fifth of the variance remains.
 
@@ -277,7 +277,7 @@ The last two columns test the hedge out of sample: the ratio estimated on 2015�
 @chart hedge_scatter
 Monthly changes of the Romanian day-ahead price against those of Hungary (left) and Germany (right), in EUR/MWh, with the fitted hedge-ratio line.
 
-## Basis risk: what a foreign hedge leaves behind {h=4fc928e4}
+## Basis risk of a cross-border hedge {h=85446abe}
 
 A Romanian supplier hedged with a German future pays the German forward plus the Romania–Germany gap at delivery:
 
@@ -357,7 +357,7 @@ For the 2027 Romanian band the inputs are $F$ = 148.12 EUR/MWh (the OPCOM VWAP),
 
 @practice ask the bank which volatility it used: the premium grows almost linearly with $\sigma$.
 
-## Volatility is the input you must estimate; real estimates disagree {h=3b68e27b}
+## Estimating volatility for option pricing: estimates differ across data sources {h=851a14ec}
 
 Three estimates from real data give very different answers. The first uses the Romanian yearly forwards. Auctions are irregular, so the variance is computed per unit of time:
 
@@ -437,7 +437,7 @@ The chart shows the monthly cost of each strategy. Prices rose during the year, 
 @chart case2026
 Monthly cost of 1 MW of baseload in 2026, in EUR/MWh, for four strategies: unhedged (spot), 100% forward, 50% forward and 50% spot, and monthly caps at strike $K$.
 
-## Case study: the forward cut cost and risk; the cap cut risk {h=4edf9ad2}
+## Case study: the forward reduced cost and risk, the cap reduced risk {h=77af9ffa}
 
 The table summarises the four strategies, weighted by the hours of each month.
 
@@ -504,7 +504,7 @@ Three recent papers from our group, at the Bucharest University of Economic Stud
 
 The findings are as stated in the papers; the numbers on the other slides come from our own data.
 
-## Want to learn more? {h=752672e0}
+## Further reading and resources {h=66d28bf3}
 
 - J. Hull, *Options, Futures, and Other Derivatives*: the chapters on hedging, futures and Black's model.
 - Benth, Šaltytė Benth & Koekebakker (2008): forward curves and options in electricity markets.

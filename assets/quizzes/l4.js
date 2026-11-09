@@ -27,14 +27,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Changes, not log returns",
+                "title": "Price changes versus log returns",
                 "text": "Why does the lecture measure the risk of a power position on daily price changes $X_t=P_t-P_{t-1}$, in EUR per megawatt-hour (EUR/MWh), rather than on log returns?",
                 "options": ["Log returns are too volatile for power prices to be useful", "Regulators require changes in euro for all power positions", "Price changes are normally distributed, while log returns are not", "Power prices can be negative, and log returns are not defined for a negative price"],
                 "correctExplanation": "A log return needs a positive price; power prices can fall below zero, so the lecture works with changes in euro, which also translate directly into the loss $L_t=Q\\cdot 24\\cdot X_t$.",
                 "incorrectExplanation": "The reason is technical, not regulatory: the logarithm of a negative price does not exist. Price changes are far from normal too (excess kurtosis of 12.0), so normality is not the argument."
             },
             "ro": {
-                "title": "Variații, nu randamente",
+                "title": "Variații de preț și randamente logaritmice",
                 "text": "De ce măsoară cursul riscul unei poziții pe piața energiei electrice pe variațiile zilnice ale prețului, $X_t=P_t-P_{t-1}$, în EUR pe megawatt-oră (EUR/MWh), și nu pe randamente logaritmice?",
                 "options": ["Randamentele logaritmice sînt prea volatile pentru a fi utile la prețurile energiei", "Autoritățile de reglementare cer variații în euro pentru toate pozițiile pe energie", "Variațiile prețului urmează o repartiție normală, iar randamentele logaritmice nu", "Prețul energiei electrice poate fi negativ, iar randamentul logaritmic nu este definit pentru un preț negativ"],
                 "correctExplanation": "Un randament logaritmic cere un preț pozitiv; prețul energiei poate coborî sub zero, de aceea cursul lucrează cu variații în euro, care se transformă direct în pierderea $L_t=Q\\cdot 24\\cdot X_t$.",
@@ -44,14 +44,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 0,
             "en": {
-                "title": "What VaR promises",
+                "title": "Interpreting VaR",
                 "text": "Your 99% one-day value-at-risk (VaR) for 100 megawatts (MW) flat is 162 thousand EUR. What does this number promise?",
                 "options": ["On about 1 day in 100 the loss should exceed 162 thousand EUR; it says nothing about how large the loss is on those days", "The average loss on the worst 1% of days is 162 thousand EUR", "The company loses exactly 162 thousand EUR on 1 day in 100, and never more", "On 99 days in 100 the loss equals 162 thousand EUR"],
                 "correctExplanation": "VaR is a quantile of tomorrow's loss: a threshold, not an average. The size of the loss beyond it is measured by expected shortfall (ES), the mean loss beyond VaR.",
                 "incorrectExplanation": "Confusing VaR with an average loss is the classic mistake: the average loss on the bad days is expected shortfall (ES). VaR only says how often the threshold should be crossed."
             },
             "ro": {
-                "title": "Ce promite VaR",
+                "title": "Interpretarea VaR",
                 "text": "Valoarea la risc (VaR) de 99% pe o zi, pentru 100 de megawați (MW) în bandă, este de 162 de mii EUR. Ce promite această cifră?",
                 "options": ["În aproximativ o zi din 100, pierderea ar trebui să depășească 162 de mii EUR; cifra nu spune nimic despre mărimea pierderii în acele zile", "Pierderea medie în cele mai proaste 1% dintre zile este de 162 de mii EUR", "Compania pierde exact 162 de mii EUR într-o zi din 100 și niciodată mai mult", "În 99 de zile din 100, pierderea este egală cu 162 de mii EUR"],
                 "correctExplanation": "VaR este o cuantilă a pierderii de mîine: un prag, nu o medie. Mărimea pierderii de dincolo de prag o măsoară deficitul așteptat (ES), pierderea medie dincolo de VaR.",
@@ -95,14 +95,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Two zones, one VaR",
+                "title": "Joint VaR of two zones",
                 "text": "For 100 megawatts (MW) in Romania and 100 MW in Germany–Luxembourg (DE-LU), the 99% value-at-risk (VaR) is 86.63 and 91.76 EUR per megawatt-hour (EUR/MWh) separately. The correlation between the two price changes is 0.55. What joint 99% VaR does the lecture report?",
                 "options": ["178.39 EUR/MWh, the sum of the two", "150.77 EUR/MWh, less than the sum", "91.76 EUR/MWh, the larger of the two", "196.20 EUR/MWh, more than the sum because of the correlation"],
                 "correctExplanation": "Together the two positions have a 99% VaR of 150.77 EUR/MWh, below the sum of 178.39: with a correlation of 0.55, part of the risk diversifies away.",
                 "incorrectExplanation": "Adding VaRs assumes the two prices always move together (perfect correlation). With a correlation of 0.55 the joint risk is smaller than the sum, but larger than either position alone."
             },
             "ro": {
-                "title": "Două zone, o singură VaR",
+                "title": "VaR comună pentru două zone",
                 "text": "Pentru cîte 100 de megawați (MW) în România și în Germania–Luxemburg (DE-LU), valoarea la risc (VaR) de 99% este 86,63 și 91,76 EUR pe megawatt-oră (EUR/MWh), considerate separat. Corelația dintre variațiile celor două prețuri este 0,55. Ce VaR de 99% pentru cele două poziții împreună raportează cursul?",
                 "options": ["178,39 EUR/MWh, suma celor două", "150,77 EUR/MWh, mai puțin decît suma", "91,76 EUR/MWh, cea mai mare dintre cele două", "196,20 EUR/MWh, mai mult decît suma, din cauza corelației"],
                 "correctExplanation": "Împreună, cele două poziții au o VaR de 99% de 150,77 EUR/MWh, sub suma de 178,39: cu o corelație de 0,55, o parte din risc se diversifică.",
@@ -248,14 +248,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Five methods, one day",
+                "title": "Five VaR methods on the same day",
                 "text": "For 100 megawatts (MW) flat, the table of the lecture gives the mean of the 31 forecasts made for October 2026 by five methods. Between which values does the 99% value-at-risk (VaR) lie?",
                 "options": ["Between 162 and 167 thousand EUR, practically the same for all methods", "Between 64 and 87 thousand EUR", "Between 208 and 254 thousand EUR", "Between 154 and 208 thousand EUR, a gap that is a risk decision in itself"],
                 "correctExplanation": "Extreme value theory gives 154 and historical simulation 208 thousand EUR for the same position on the same days. The gap is not noise: methods that use today's volatility differ from those that carry the past year in their window.",
                 "incorrectExplanation": "64.33 to 86.63 are the VaRs in EUR per megawatt-hour, not in thousand EUR; multiplied by 2,400 MWh per day they give 154 to 208 thousand EUR. Choosing a method is therefore a risk decision, and the lecture advises reporting two methods side by side."
             },
             "ro": {
-                "title": "Cinci metode, o singură zi",
+                "title": "Cinci metode VaR pentru aceeași zi",
                 "text": "Pentru 100 de megawați (MW) în bandă, tabelul din curs dă media celor 31 de prognoze făcute de cinci metode pentru zilele din octombrie 2026. Între ce valori se află valoarea la risc (VaR) de 99%?",
                 "options": ["Între 162 și 167 de mii EUR, practic aceeași pentru toate metodele", "Între 64 și 87 de mii EUR", "Între 208 și 254 de mii EUR", "Între 154 și 208 mii EUR, o diferență care este ea însăși o decizie de risc"],
                 "correctExplanation": "Teoria valorilor extreme dă 154, iar simularea istorică 208 mii EUR pentru aceeași poziție, în aceleași zile. Diferența nu este zgomot: metodele care folosesc volatilitatea actuală diferă de cele care păstrează în fereastră ultimul an.",
@@ -316,14 +316,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 1,
             "en": {
-                "title": "Kupiec verdict on FHS",
+                "title": "Kupiec test result for FHS",
                 "text": "Filtered historical simulation (FHS) had 54 exceedances of its 99% value-at-risk (VaR) over 3,587 days, against 35.9 expected, with a Kupiec likelihood ratio (LR) statistic $\\text{LR}_{uc}$ = 8.0. At the 5% level the critical value is 3.84. What is the verdict?",
                 "options": ["Not rejected: 54 is close enough to 35.9", "Rejected: too many exceedances, even though FHS is among the best methods", "Rejected: too few exceedances, so the model is too prudent", "The test cannot be applied when there are more than 50 exceedances"],
                 "correctExplanation": "8.0 exceeds 3.84, so FHS is rejected at 99%. In fact every method is rejected at 99% over ten years; the normal VaR, with 115 exceedances, has $\\text{LR}_{uc}$ = 111.5.",
                 "incorrectExplanation": "With 3,587 days the test is sharp: 54 against 35.9 is a significant excess, not a small deviation, and it is an excess, not a shortfall. The $\\text{LR}_{uc}$ statistic follows a $\\chi^2_1$ distribution under the null whatever the count."
             },
             "ro": {
-                "title": "Verdictul Kupiec pentru FHS",
+                "title": "Rezultatul testului Kupiec pentru FHS",
                 "text": "Simularea istorică filtrată (FHS) a avut 54 de depășiri ale valorii la risc (VaR) de 99% în 3 587 de zile, față de 35,9 așteptate, iar statistica testului Kupiec, bazat pe raportul de verosimilitate (LR), este $\\text{LR}_{uc}$ = 8,0. La pragul de 5%, valoarea critică este 3,84. Care este verdictul?",
                 "options": ["Nu se respinge: 54 este suficient de aproape de 35,9", "Se respinge: prea multe depășiri, deși FHS se numără printre cele mai bune metode", "Se respinge: prea puține depășiri, deci modelul este prea prudent", "Testul nu poate fi aplicat cînd sînt peste 50 de depășiri"],
                 "correctExplanation": "8,0 depășește 3,84, deci FHS este respinsă la 99%. De fapt, pe zece ani toate metodele sînt respinse la 99%; VaR normală, cu 115 depășiri, are $\\text{LR}_{uc}$ = 111,5.",
@@ -333,14 +333,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "What Christoffersen misses",
+                "title": "Limits of the Christoffersen test",
                 "text": "For the 99% value-at-risk (VaR), the Christoffersen independence $p$-values are 0.682 for historical simulation (HS), 0.868 for the normal VaR and 0.199 for filtered historical simulation (FHS). What is the right reading?",
                 "options": ["Exceedances are independent, so all three models are correct", "The test proves that exceedances never cluster in time", "The normal VaR is the best model, because its $p$-value is the highest", "Exceedances rarely fall on consecutive days, but they cluster in months, which a first-order test misses and the traffic light sees"],
                 "correctExplanation": "The test compares $\\pi_{01}$ and $\\pi_{11}$, so it only looks at yesterday. The normal VaR was exceeded on 7.26% of days in 2021–2022 and on 2.33% in 2017–2020: clustering by months, which the 250-day traffic light detects.",
                 "incorrectExplanation": "Passing the independence test says nothing about the number of exceedances (all three fail Kupiec at 99%), and a high $p$-value is not a ranking of models. A first-order test cannot see clustering over months."
             },
             "ro": {
-                "title": "Ce nu vede Christoffersen",
+                "title": "Limitele testului Christoffersen",
                 "text": "Pentru valoarea la risc (VaR) de 99%, valorile $p$ ale testului de independență Christoffersen sînt 0,682 pentru simularea istorică (HS), 0,868 pentru VaR normală și 0,199 pentru simularea istorică filtrată (FHS). Care este interpretarea corectă?",
                 "options": ["Depășirile sînt independente, deci toate cele trei modele sînt corecte", "Testul dovedește că depășirile nu se grupează niciodată în timp", "VaR normală este cel mai bun model, pentru că are cea mai mare valoare $p$", "Depășirile cad rareori în zile consecutive, dar se grupează pe luni, ceea ce un test de ordinul întîi nu observă, iar semaforul Basel observă"],
                 "correctExplanation": "Testul compară $\\pi_{01}$ cu $\\pi_{11}$, deci privește numai ziua precedentă. VaR normală a fost depășită în 7,26% din zile în 2021–2022 și în 2,33% în 2017–2020: o grupare pe luni, pe care semaforul Basel, cu fereastra de 250 de zile, o detectează.",
@@ -401,14 +401,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Lesson of 2021–2022",
+                "title": "Backtests in 2021–2022",
                 "text": "In 2021–2022 even the 99% value-at-risk (VaR) from filtered historical simulation (FHS) was exceeded on 2.88% of days in Romania, while since 2023 FHS and extreme value theory (EVT) are at 0.93%. What is the lesson?",
                 "options": ["The gas shock moved the whole distribution, not only its scale; a model that looks good in calm years tells little about a crisis", "FHS is broken and should be replaced by the normal curve", "The failure in 2021–2022 was caused by missing data", "Since 2023 a 99% VaR is no longer needed"],
                 "correctExplanation": "A volatility filter rescales the distribution but cannot anticipate a shift of its whole shape. Hence the advice: test every model on 2021–2022 before trusting it in a crisis.",
                 "incorrectExplanation": "In the crisis every method failed, and the normal VaR worst of all (7.26%); since 2023 it still stays far off, at 2.00%. Only five days of the Romanian price are missing, so data gaps cannot explain the failure."
             },
             "ro": {
-                "title": "Lecția din 2021–2022",
+                "title": "Testele retrospective din 2021–2022",
                 "text": "În 2021–2022, chiar și valoarea la risc (VaR) de 99% obținută prin simularea istorică filtrată (FHS) a fost depășită în 2,88% din zile în România, în timp ce din 2023 FHS și teoria valorilor extreme (EVT) sînt la 0,93%. Care este lecția?",
                 "options": ["Șocul gazelor a mutat întreaga repartiție, nu doar scala ei; un model care arată bine în anii liniștiți spune puțin despre o criză", "FHS nu funcționează și trebuie înlocuită cu repartiția normală", "Eșecul din 2021–2022 s-a datorat datelor lipsă", "Din 2023, o VaR de 99% nu mai este necesară"],
                 "correctExplanation": "Un filtru de volatilitate rescalează repartiția, dar nu poate anticipa o deplasare a întregii ei forme. De aici recomandarea: testați orice model pe 2021–2022 înainte de a vă baza pe el într-o criză.",
@@ -452,7 +452,7 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 3,
             "en": {
-                "title": "Conformal shift as repair",
+                "title": "Conformal correction of VaR",
                 "text": "In the work presented at AIDA 2026, each value-at-risk (VaR) forecast is widened by $\\hat q_V$, the 99% quantile of past scores, across 240 model–asset pairs. What happened to the number of pairs in the green zone of the Basel traffic light?",
                 "options": ["It fell from 203/240 to 63/240", "It stayed at about one pair in four", "It rose to 240/240, and the clustering of exceedances also disappeared", "It rose from 63/240 raw to 203/240 with the fixed shift and to 234/240 with the rolling shift"],
                 "correctExplanation": "The green-zone pairs rose from 26.2% raw to 84.6% with the fixed shift and 97.5% with the rolling 250-day shift. The exceedance rate is restored, but not their clustering, so the Christoffersen test keeps its role.",
@@ -469,14 +469,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Variation margin tonight",
+                "title": "Computing the variation margin",
                 "text": "You sold 100 lots of Brent futures (1,000 barrels each) to hedge your production, and today the price rises by 5 United States dollars (USD) per barrel. What happens tonight with the variation margin (VM)?",
                 "options": ["You receive 500,000 USD in cash", "You pay 5,000 USD in cash", "You pay 500,000 USD in cash, although the physical oil you sell later is worth more", "Nothing is paid until the contract expires"],
                 "correctExplanation": "$\\text{VM}_t=nK(F_t-F_{t-1})$ = 100 × 1,000 × 5 = 500,000 USD, paid in cash the same evening. The hedge works in value, but the cash leaves today while the gain on the physical sale arrives later.",
                 "incorrectExplanation": "A short futures position loses when the price rises, and the clearing house settles gains and losses every evening. Forgetting the 1,000 barrels per lot gives the 5,000 USD slip."
             },
             "ro": {
-                "title": "Marja de variație de diseară",
+                "title": "Calculul marjei de variație",
                 "text": "Ați vîndut 100 de loturi futures Brent (cîte 1 000 de barili) pentru a vă acoperi producția, iar astăzi prețul crește cu 5 dolari americani (USD) pe baril. Ce se întîmplă diseară cu marja de variație (VM)?",
                 "options": ["Primiți 500 000 USD în numerar", "Plătiți 5 000 USD în numerar", "Plătiți 500 000 USD în numerar, deși țițeiul pe care îl veți vinde mai tîrziu valorează mai mult", "Nu se plătește nimic pînă la scadența contractului"],
                 "correctExplanation": "$\\text{VM}_t=nK(F_t-F_{t-1})$ = 100 × 1 000 × 5 = 500 000 USD, plătiți în numerar în aceeași seară. Acoperirea funcționează ca valoare, dar banii pleacă azi, iar cîștigul din vînzarea fizică vine mai tîrziu.",
@@ -503,14 +503,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 0,
             "en": {
-                "title": "Hedgers short of cash",
+                "title": "Liquidity needs of hedged firms",
                 "text": "According to the European Central Bank (ECB), which firms were hurt most by margin calls in 2022, when Title Transfer Facility (TTF) gas futures reached 227 EUR per megawatt-hour (EUR/MWh) on 7 March 2022?",
                 "options": ["Utilities and producers that had sold forward: hedgers whose physical gain would arrive only at delivery", "Speculators with large unhedged long positions", "Households on fixed-price supply contracts", "Banks that had lent to energy traders"],
                 "correctExplanation": "The physical position of the hedgers gained value, but the gain would arrive only at delivery, while the margin had to be paid in cash immediately. By mid-2022 about twice as much initial margin was posted as in late 2021.",
                 "incorrectExplanation": "A short forward hedge loses on the futures leg when prices rise, so the margin calls hit those who had sold forward. The risk that sinks a hedged company is liquidity, not the price itself."
             },
             "ro": {
-                "title": "Firme acoperite, fără numerar",
+                "title": "Nevoia de lichiditate a firmelor acoperite",
                 "text": "Potrivit Băncii Centrale Europene (BCE), ce firme au fost cel mai grav afectate de apelurile în marjă din 2022, cînd contractele futures pe gaze la hubul olandez Title Transfer Facility (TTF) au atins 227 EUR pe megawatt-oră (EUR/MWh), la 7 martie 2022?",
                 "options": ["Utilitățile și producătorii care vînduseră la termen: firme acoperite la risc, al căror cîștig fizic urma să vină abia la livrare", "Speculatorii cu poziții long mari, neacoperite", "Gospodăriile cu contracte de furnizare la preț fix", "Băncile care creditaseră traderii de energie"],
                 "correctExplanation": "Poziția fizică a firmelor acoperite se apreciase, dar cîștigul urma să vină abia la livrare, în timp ce marja trebuia plătită imediat, în numerar. La jumătatea anului 2022 se depunea o marjă inițială de aproximativ două ori mai mare decît la sfîrșitul anului 2021.",
@@ -588,14 +588,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 1,
             "en": {
-                "title": "A systemic meter needs breadth",
+                "title": "Number of firms in a systemic risk measure",
                 "text": "The Energy Financial Risk Meter (EFRM), built on 100 European energy firms, together with the Composite Indicator of Systemic Stress (CISS) predicts volatile months with an area under the curve (AUC) of 0.731. The case study C4 replication on OMV Petrom, Romgaz and Nuclearelectrica gave an AUC of 0.38, against 0.61 for past volatility. What is the lesson?",
                 "options": ["Systemic risk meters do not work for energy firms", "A systemic meter needs many firms, as in the paper; three firms are too few", "Past volatility is always the better systemic indicator", "Romanian energy firms carry no systemic risk"],
                 "correctExplanation": "The EFRM is the mean LASSO penalty (least absolute shrinkage and selection operator) across many firms; its strength comes from the breadth of the cross-section. On 100 firms it captures the shocks of 2020 and 2022 and has a break in July 2021.",
                 "incorrectExplanation": "The weak result on three firms reflects the small cross-section, not a failure of the method. A firm's own value-at-risk cannot see contagion, so the lecture advises reading a sector meter next to it."
             },
             "ro": {
-                "title": "Riscul sistemic cere multe firme",
+                "title": "Numărul de firme într-o măsură a riscului sistemic",
                 "text": "Indicatorul de risc financiar al sectorului energetic (EFRM), construit pe 100 de companii energetice europene, împreună cu indicatorul compozit de stres sistemic (CISS) al Băncii Centrale Europene (BCE), prognozează lunile volatile cu o arie de sub curbă (AUC) de 0,731. Replicarea din studiul de caz C4 pe OMV Petrom, Romgaz și Nuclearelectrica a dat o AUC de 0,38, față de 0,61 pentru volatilitatea trecută. Care este lecția?",
                 "options": ["Indicatorii de risc sistemic nu funcționează pentru companiile energetice", "Un indicator sistemic are nevoie de multe companii, ca în lucrare; trei companii sînt prea puține", "Volatilitatea trecută este întotdeauna un indicator sistemic mai bun", "Companiile energetice din România nu au risc sistemic"],
                 "correctExplanation": "EFRM este penalizarea medie a operatorului de contracție și selecție în normă absolută (LASSO) pe multe companii; puterea lui vine din numărul mare de firme. Pe 100 de companii surprinde șocurile din 2020 și 2022 și are o ruptură în iulie 2021.",
@@ -605,14 +605,14 @@ window.EMQA_DATA.quizzes['l4'] = {
         {
             "correct": 2,
             "en": {
-                "title": "Autumn 2026: the real danger",
+                "title": "Autumn 2026: liquidity risk",
                 "text": "Between June and October 2026 the monthly mean of the Romanian day-ahead price rose from 122.99 to 239.32 EUR per megawatt-hour (EUR/MWh), while the 99% value-at-risk (VaR) from filtered historical simulation (FHS) moved only from 61.64 to 67.50. What was the real danger for a supplier of 100 megawatts (MW)?",
                 "options": ["Market risk: the VaR was exceeded far too often", "Too few exceedances, so the model was far too prudent", "Cash: the day-ahead guarantee rose from 0.416 to 0.776 million EUR per day, and three monthly cost overruns came in a row", "Currency risk, because Brent is priced in dollars"],
                 "correctExplanation": "Over the 153 days a correct 99% VaR should have been exceeded 1.5 times, and FHS was exceeded 2 times: by the daily VaR nothing alarming happened. Cash needs doubled, and the bill rose by +25.1%, +16.2% and +34.0% in August, September and October.",
                 "incorrectExplanation": "A slow rise through many moderate daily changes passes the VaR tests and still drains cash. A risk report needs a liquidity line next to VaR: guarantees, margins and the cumulative monthly overrun."
             },
             "ro": {
-                "title": "Toamna 2026: pericolul real",
+                "title": "Toamna 2026: riscul de lichiditate",
                 "text": "Între iunie și octombrie 2026, media lunară a prețului de pe piața pentru ziua următoare (PZU) din România a crescut de la 122,99 la 239,32 EUR pe megawatt-oră (EUR/MWh), în timp ce valoarea la risc (VaR) de 99% obținută prin simularea istorică filtrată (FHS) s-a modificat doar de la 61,64 la 67,50. Care a fost pericolul real pentru un furnizor de 100 de megawați (MW)?",
                 "options": ["Riscul de piață: VaR a fost depășită mult prea des", "Prea puține depășiri, deci un model mult prea prudent", "Lichiditățile: garanția pentru PZU a crescut de la 0,416 la 0,776 milioane EUR pe zi, iar trei depășiri lunare ale costului au venit la rînd", "Riscul valutar, pentru că Brent se cotează în dolari"],
                 "correctExplanation": "În cele 153 de zile, o VaR corectă de 99% ar fi trebuit depășită de 1,5 ori, iar FHS a fost depășită de 2 ori: judecînd după VaR zilnică, nu s-a întîmplat nimic alarmant. Nevoia de lichidități s-a dublat, iar factura a crescut cu +25,1%, +16,2% și +34,0% în august, septembrie și octombrie.",

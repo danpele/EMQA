@@ -293,7 +293,7 @@ Modelul GARCH prognozează varianța de mîine pe baza șocului de azi și a var
 
 În modelul GARCH volatilitatea se modifică treptat; criza energetică a semănat mai degrabă cu trecerea într-o altă stare. Secțiunea estimează un model Markov cu două regimuri, datează perioadele agitate din 2019–2026 și arată cum depinde persistența GARCH de perioadă și de unitatea de măsură.
 
-## Modelul Markov cu schimbare de regim separă calmul de agitație {h=f50d0528}
+## Modelul Markov cu schimbare de regim separă regimul calm de cel agitat {h=e78e804d}
 
 Modelul presupune două stări neobservate, una calmă și una agitată, fiecare cu volatilitatea ei, și o probabilitate fixă de trecere de la una la alta:
 
