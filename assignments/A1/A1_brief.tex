@@ -56,7 +56,7 @@ Răspundeți cu un notebook reproductibil și cu un memoriu de două pagini care
   explicați numerele din propriul notebook.}
 \end{enumerate}
 
-\section{\T{Your personal parameters}{Parametrii dumneavoastră personali}}
+\section{\T{Personal parameters}{Parametrii personali}}
 \T{Every student (or team) receives different settings. They are computed from your student ID by a fixed rule (a seed from the SHA-256 secure hash algorithm),
 so you always get the same values and nobody else gets the same set. Get them in either way:}%
 {Fiecare student (sau echipă) primește alți parametri. Ei sînt calculați din numărul matricol printr-o regulă fixă (o valoare inițială, \emph{seed}, obținută cu algoritmul de hash SHA-256, \emph{Secure Hash Algorithm}),
@@ -140,7 +140,7 @@ The points add up to 100.}%
 {Rezolvați sarcinile în ordine. Fiecare sarcină spune ce calculați, pe ce date, cu ce metodă și ce arătați.
 Punctele însumează 100.}
 
-\task{1}{\T{Know your test window}{Cunoașteți-vă fereastra de test}}{8}
+\task{1}{\T{The test window}{Fereastra de test}}{8}
 \T{On the 365 test days, compute the mean, standard deviation, minimum and maximum of $P_{d,h}$; the number of negative hours;
 the number of negative market time units (MTUs) in \texttt{ea.quarter\_hours("RO")} (hourly rows before 1 October 2025, quarter-hour rows after; filter on the CET date of the index); and the share of test days with 15-minute MTU.
 Plot the daily base price from 1 January 2023 to the end of your test window and shade the window.
@@ -202,7 +202,7 @@ $d-T,\dots,d-1$, apoi prognozați ziua $d$; avansați o zi și reestimați (reca
 $\hat P^{\text{AW}}_{d,h}=\tfrac16\sum_{T}\hat P^{(T)}_{d,h}$ \cite{Hubicka2019}.}
 \out{\T{seven forecasts in \texttt{F}: ARX(56), \dots, ARX(728) and AW-ARX; \texttt{ea.leakage\_check} passed for ARX(56).}{șapte prognoze în \texttt{F}: ARX(56), \dots, ARX(728) și AW-ARX; testul \texttt{ea.leakage\_check} reușit pentru ARX(56).}}
 
-\task{4}{\T{LEAR, the strong benchmark}{LEAR, modelul de referință puternic}}{10}
+\task{4}{\T{LEAR: a penalised autoregression}{LEAR: o autoregresie penalizată}}{10}
 \T{LEAR (LASSO-estimated autoregression; LASSO = least absolute shrinkage and selection operator) \cite{Uniejewski2016,Lago2021}
 uses many candidate regressors and lets the LASSO penalty switch off the useless ones. For each hour $h$:}%
 {LEAR (autoregresie estimată cu LASSO; LASSO = \emph{least absolute shrinkage and selection operator}) \cite{Uniejewski2016,Lago2021}
