@@ -42,7 +42,7 @@ OUT = os.path.join(ROOT, 'web')
 REPO = 'https://github.com/danpele/EMQA'
 COLAB = 'https://colab.research.google.com/github/danpele/EMQA/blob/main/'
 MATHJAX = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js'
-VER = '20261107a'
+VER = '20261109m'
 
 L = {
     'en': dict(course='Energy Markets Quantitative Analysis', lecture='Lecture', back='Course site', site='../index.html#chapters',

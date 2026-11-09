@@ -35,7 +35,7 @@ OUT = os.path.join(ROOT, 'interactive')
 DATA = os.path.join(ROOT, 'data', 'clean')
 QLROOT = os.path.join(ROOT, 'Quantlets')
 PLOTLY = 'https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js'
-V = '20261108a'
+V = '20261109m'
 GH = 'https://github.com/danpele/EMQA'
 COLAB = 'https://colab.research.google.com/github/danpele/EMQA/blob/main'
 
